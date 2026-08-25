@@ -13,9 +13,7 @@
   },
   "runtime": {
     "command": "/usr/local/bin/node",
-    "args": [
-      "~/.local/share/swiss-legal-mcp/node_modules/swiss-legal-mcp/dist/stdio.js"
-    ],
+    "args": ["~/.local/share/swiss-legal-mcp/node_modules/swiss-legal-mcp/dist/stdio.js"],
     "transport": "stdio",
     "httpPublicPortExposed": false
   },

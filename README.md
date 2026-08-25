@@ -1,6 +1,6 @@
 # Swiss Legal MCP Server
 
-Servidor MCP modular para fuentes jurídicas suizas verificadas. El proyecto está preparado para uso local interno; no se publica externamente desde este repositorio.
+Servidor MCP modular para fuentes jurídicas suizas verificadas. El proyecto se distribuye públicamente desde este repositorio bajo Apache-2.0.
 
 ## Estado
 
@@ -15,7 +15,7 @@ Servidor MCP modular para fuentes jurídicas suizas verificadas. El proyecto est
 - Resolvedor oficial de jurisprudencia suiza implementado con `resolve_official_swiss_case`, `fetch_official_swiss_case_full_text`, `verify_swiss_case_identity`, `compare_swiss_case_sources` y `validate_swiss_case_ground_coverage`; ver `docs/official-swiss-case-resolver.md`.
 - Jurisprudencia: snippets/headnotes/resultados de búsqueda son solo candidatos; una sentencia parcial no puede usarse como precedente decisivo ni incorporarse silenciosamente a un escrito. Ver `docs/case-full-text-policy.md`.
 - Licencia: Apache-2.0.
-- Release 1.0: preparada localmente; no publicada externamente.
+- Release 1.0: publicación pública inicial del repositorio.
 
 ## Validación Local
 
