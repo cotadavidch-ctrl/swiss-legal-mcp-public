@@ -1,0 +1,106 @@
+{
+  "105": [
+    {
+      "id": 256,
+      "systematic_number": "324.1",
+      "systematic_category_id": 105,
+      "title": "Gesetz betreffend die Einführung des Bundesgesetzes vom 24. Juni 1970 über Ordnungsbussen im Strassenverkehr und die Erhebung von anderen Ordnungsbussen",
+      "abrogated": false,
+      "structured_document_id": 413
+    },
+    {
+      "id": 274,
+      "systematic_number": "324.111",
+      "systematic_category_id": 105,
+      "title": "Kantonale Ordnungsbussenverordnung (KOBV)",
+      "abrogated": false,
+      "structured_document_id": 27639
+    }
+  ],
+  "378": [
+    {
+      "id": 512,
+      "systematic_number": "439.71",
+      "systematic_category_id": 378,
+      "title": "Arrêté du Conseil-exécutif concernant l'accord entre les cantons de Berne, du Jura et de Neuchâtel instituant la Commission intercantonale de littérature (Accord CiLi BEJUNE)",
+      "abrogated": false,
+      "structured_document_id": 27585
+    },
+    {
+      "id": 513,
+      "systematic_number": "439.71-1",
+      "systematic_category_id": 378,
+      "title": "Accord entre les cantons de Berne, du Jura et de Neuchâtel instituant la Commission intercantonale de littérature (Accord CiLi BEJUNE)",
+      "abrogated": false,
+      "structured_document_id": 27587
+    }
+  ],
+  "280": [
+    {
+      "id": 258,
+      "systematic_number": "833.21",
+      "systematic_category_id": 280,
+      "title": "Gesetz über das Einigungsamt (EAG)",
+      "abrogated": false,
+      "structured_document_id": 19848
+    }
+  ],
+  "278": [
+    {
+      "id": 260,
+      "systematic_number": "832.71",
+      "systematic_category_id": 278,
+      "title": "Gesetz über die Familienzulagen (KFamZG)",
+      "abrogated": false,
+      "structured_document_id": 17253
+    },
+    {
+      "id": 259,
+      "systematic_number": "832.711",
+      "systematic_category_id": 278,
+      "title": "Verordnung über die Familienzulagen (KFamZV)",
+      "abrogated": false,
+      "structured_document_id": 10826
+    }
+  ],
+  "277": [
+    {
+      "id": 261,
+      "systematic_number": "832.521",
+      "systematic_category_id": 277,
+      "title": "Verordnung über den Vollzug der Eidgenössischen Verordnung über die Arbeits- und Ruhezeit der berufsmässigen Motorfahrzeugführer (Chauffeurverordnung)",
+      "abrogated": false,
+      "structured_document_id": 19847
+    }
+  ],
+  "351": [
+    {
+      "id": 264,
+      "systematic_number": "824.761",
+      "systematic_category_id": 351,
+      "title": "Kantonale Lärmschutzverordnung (KLSV)",
+      "abrogated": false,
+      "structured_document_id": 33055
+    }
+  ],
+  "182": [
+    {
+      "id": 522,
+      "systematic_number": "101.1",
+      "systematic_category_id": 182,
+      "title": "Verfassung des Kantons Bern (KV)",
+      "abrogated": false,
+      "structured_document_id": 33807
+    }
+  ],
+  "292": [
+    {
+      "id": 779,
+      "systematic_number": "170.511",
+      "systematic_category_id": 292,
+      "title": "Direktionsverordnung über den Finanzhaushalt der Gemeinden (FHDV)",
+      "abrogated": false,
+      "structured_document_id": 33014
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "head": { "link": [], "vars": ["p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Consolidation"
+        }
+      },
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Work"
+        }
+      },
+      {
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/created" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2024-05-07T17:32:20.670+02:00"
+        }
+      },
+      {
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/modified" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2024-05-30T08:38:03.765+02:00"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isMemberOf"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#publicationDate"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2024-05-07"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#publicationDate"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2024-05-10"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#publicationDate"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2024-05-24"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#publicationDate"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2024-05-30"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isRealizedBy"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/rm" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isRealizedBy"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/en" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isRealizedBy"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isRealizedBy"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/fr" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isRealizedBy"
+        },
+        "o": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/it" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#legalResourceFamilyType"
+        },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/resource-family/cc"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#dateApplicability"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2024-03-03"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#dateEndApplicability"
+        },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "value": "2028-12-31"
+        }
+      }
+    ]
+  }
+}

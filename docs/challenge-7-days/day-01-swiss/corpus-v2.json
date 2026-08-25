@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-06T23:17:43.571Z",
+  "provider": "swiss_federal_supreme_court_official_search",
+  "filters": {
+    "chamber": "II_civil_law",
+    "language": "de",
+    "date_from": "1990-01-01",
+    "date_to": "2026-12-31"
+  },
+  "included": [],
+  "official_extracts": [],
+  "metadata_only": [],
+  "identity_mismatches": [],
+  "excluded_incomplete": [],
+  "failed": [],
+  "deduplication_summary": {
+    "candidates_before_dedup": 0,
+    "candidates_after_dedup": 0,
+    "duplicates_removed": 0,
+    "duplicate_groups": 0,
+    "dedup_levels_applied": [],
+    "items_without_dedup_key": 0
+  },
+  "statistics": {
+    "candidates_discovered": 0,
+    "candidates_resolved": 0,
+    "included_count": 0,
+    "official_extract_count": 0,
+    "metadata_only_count": 0,
+    "identity_mismatch_count": 0,
+    "failed_count": 0,
+    "duplicates_removed": 0,
+    "minimum_target": 50,
+    "objective_target": 60,
+    "minimum_target_reached": false,
+    "objective_target_reached": false,
+    "duration_ms": 114
+  },
+  "checkpoint": {
+    "checkpoint_id": "day1-corpus-v2-1786058263457",
+    "status": "saved"
+  },
+  "warnings": [
+    "minimum_corpus_size_not_reached: included=0 minimum=50. This reflects real official-source availability under the given filters, not a fabricated shortfall."
+  ]
+}

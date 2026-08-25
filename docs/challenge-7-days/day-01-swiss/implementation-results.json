@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "document_purpose": "Resultados reales de validacion de las mejoras generales del producto, obtenidos consumiendo herramientas/scripts publicos existentes del repositorio (tsc, scripts/lib/tool-inventory.mjs, scripts/api-inventory.mjs, y la propia tool search_federal_cases via su modulo compilado). No contiene logica de produccion nueva.",
+  "generated_at": "2026-08-06T23:07:00Z",
+  "typecheck": {
+    "status": "PASS",
+    "method": "tsc --noEmit -p tsconfig.json, ejecutado directamente por paquete (corepack pnpm recursivo bloqueado en este entorno por un error EPERM del sandbox al hacer unlink de un archivo temporal propio de pnpm, no relacionado con el codigo)",
+    "packages_checked": ["packages/shared", "apps/mcp-server"],
+    "errors_found": 0,
+    "notes": "Incluye los 4 nuevos archivos de codigo, el archivo modificado officialSwissCaseTools.ts, el nuevo checkpointStore.ts y los 4 nuevos archivos de pruebas (colocados junto al codigo fuente en src/tools y packages/shared/src). El resto de paquetes del workspace no fueron re-typecheckeados individualmente porque no fueron modificados y el unico cambio compartido (packages/shared/src/index.ts) es puramente aditivo (nuevos exports, ninguno eliminado ni renombrado)."
+  },
+  "pre_existing_test_typecheck_debt_unrelated_to_this_work": {
+    "status": "OBSERVED_NOT_CAUSED_BY_THIS_SESSION",
+    "method": "tsc --noEmit -p tests/tsconfig.json",
+    "notes": "Se detectaron errores de typecheck preexistentes en varios archivos de tests/ (legalDraftingTools.test.ts, multiroleLegalAnalysisTools.test.ts, procedural-strategy-eval.test.ts, procedural-strategy-review.test.ts, proceduralStrategyTools.test.ts, searchAcrossSourcesTools.test.ts, shabTools.test.ts, y parte de officialSwissCaseTools.test.ts) bajo tests/tsconfig.json (distinto del tsconfig de src usado arriba). Ninguno de esos archivos fue creado ni modificado en esta sesion; ninguno referencia codigo nuevo de esta mejora. Se reportan aqui por transparencia, no como regresion introducida por este trabajo."
+  },
+  "build_tsc": {
+    "status": "PASS",
+    "method": "tsc -p tsconfig.json (emision real), ejecutado directamente por paquete",
+    "packages_built": ["packages/shared", "apps/mcp-server"],
+    "verified_output_files": [
+      "packages/shared/dist/checkpointStore.js",
+      "apps/mcp-server/dist/tools/officialFederalCaseSearch.js",
+      "apps/mcp-server/dist/tools/officialFederalCaseBatch.js",
+      "apps/mcp-server/dist/tools/caseCorpusExport.js",
+      "apps/mcp-server/dist/tools/caseDeduplication.js"
+    ]
+  },
+  "build_package_esbuild": {
+    "status": "BLOCKED",
+    "reason": "node_modules/.pnpm/@esbuild+darwin-x64@0.28.1 es la unica variante de esbuild instalada; este sandbox es linux-x64 (\"Cannot find package '@esbuild/linux-x64'\" / \"Exec format error\"). Sin acceso saliente a Internet no se puede instalar la variante linux-x64. No relacionado con el codigo de esta mejora."
+  },
+  "full_test_suite_vitest": {
+    "status": "BLOCKED",
+    "reason": "vitest depende de vite, que en la version instalada (vite@8.1.5) requiere un binario nativo de rolldown; solo esta instalado @rolldown/binding-darwin-x64 en este node_modules, no la variante linux-x64, y no hay red para instalarla. No relacionado con el codigo de esta mejora.",
+    "targeted_tests_real_run": {
+      "status": "PARTIAL_REAL_EXECUTION",
+      "method": "Script Node plano (node:assert/strict) importando directamente el build compilado (tsc) de officialFederalCaseSearch.js y caseDeduplication.js -- estos dos modulos no dependen de pdfjs-dist/@napi-rs/canvas, por lo que pudieron ejecutarse de verdad en este entorno sin vitest.",
+      "scenarios_executed_and_passed": [
+        "search_federal_cases solo consulta search.bger.ch (host fijo, no configurable)",
+        "filtro por sala (chamber) descarta correctamente resultados de otras salas",
+        "HTTP 204 se trata como source_status: unavailable con advertencia explicita, nunca como ausencia de jurisprudencia",
+        "descubrimiento multi-pagina agrega mas de 100 candidatos (120 simulados) sin duplicados",
+        "deduplicateStable deduplica por identificador oficial, nunca por titulo"
+      ],
+      "scenarios_verified_by_typecheck_only_not_executed_in_this_sandbox": [
+        "El resto de los 27+ escenarios obligatorios en apps/mcp-server/src/tools/officialFederalCaseSearch.test.ts, officialFederalCaseBatch.test.ts, caseCorpusExport.test.ts y caseDeduplication.test.ts (filtros de idioma/fecha/materia, timeout, reintento transitorio, error no transitorio, resultados parciales, clasificacion identity_mismatch/metadata_only/official_extract, resolucion por lotes con fallos parciales, checkpoint/reanudacion, exportacion JSON valida, puerta de inclusion dura del corpus) typecheckean sin errores pero no pudieron ejecutarse en este sandbox porque officialFederalCaseBatch.ts y caseCorpusExport.ts importan (via officialSwissCaseResolver.ts) el paquete pdfjs-dist, que a su vez intenta cargar el binding nativo @napi-rs/canvas -- disponible solo para darwin-x64 en este node_modules, lo que provoca un fallo de importacion (ReferenceError: DOMMatrix is not defined) antes de que el codigo de prueba llegue a ejecutarse. Esta dependencia es preexistente (no introducida por esta mejora)."
+      ]
+    }
+  },
+  "mcp_stdio_handshake": {
+    "status": "BLOCKED",
+    "reason": "Se compilo el servidor real (apps/mcp-server/dist/stdio.js, via tsc) y se intento un handshake MCP real (StdioClientTransport + Client del SDK oficial, proceso hijo con el binario real de node de este sandbox). El proceso hijo crashea al arrancar por la misma causa que el bloqueo de tests: una dependencia preexistente de extraccion de texto de PDF (pdfjs-dist/@napi-rs/canvas) requiere un binding nativo no disponible para linux-x64 en este node_modules.",
+    "tool_registration_verified_by_static_scan_instead": {
+      "status": "PASS",
+      "method": "scripts/lib/tool-inventory.mjs#scanRegisteredTools (la misma fuente de verdad que usa scripts/claude-desktop-acceptance.mjs y scripts/api-inventory.mjs), ejecutado directamente con node sobre el codigo fuente real de apps/mcp-server/src/tools/*.ts",
+      "tool_count_before": 42,
+      "tool_count_before_source": "docs/release/RC-1.0.0.md (linea 28, 72, 79)",
+      "tool_count_after": 45,
+      "new_tools_present": [
+        "search_federal_cases",
+        "batch_resolve_official_cases",
+        "export_case_corpus"
+      ],
+      "duplicate_tool_names": []
+    }
+  },
+  "live_validation_against_search_bger_ch": {
+    "status": "ATTEMPTED_REAL_NETWORK_CALL_BLOCKED_BY_SANDBOX",
+    "method": "Se invoco discoverFederalCaseCandidates (build compilado de search_federal_cases) con NODE_ENV=production (sin transporte simulado, forzando el fetch real) contra search.bger.ch, filtrando por sala II_civil_law, idioma de, rango 2015-01-01 a 2025-12-31, max_results 140.",
+    "real_output_received": {
+      "results_count": 0,
+      "total_discovered": null,
+      "source_status": "unavailable",
+      "warnings": ["fetch_failed:fetch failed"],
+      "partial_results": true
+    },
+    "interpretation": "La herramienta se comporto exactamente como esta documentado: nunca fabrico total_discovered, nunca trato el fallo de red como ausencia de jurisprudencia, y reporto la advertencia explicita en vez de datos inventados. La causa del fallo es la falta de acceso saliente a Internet de este entorno de desarrollo, confirmada independientemente en la fase de analisis inicial (curl/nslookup contra search.bger.ch y google.com fallaron por 'network unreachable').",
+    "export_case_corpus_attempt": "No se pudo ni siquiera intentar: el modulo que orquesta la resolucion por lotes (caseCorpusExport.ts, via officialFederalCaseBatch.ts -> officialSwissCaseResolver.ts) no pudo importarse en este sandbox por el mismo bloqueo de pdfjs-dist/@napi-rs/canvas descrito arriba."
+  },
+  "find_01_regression": {
+    "status": "NOT_INDEPENDENTLY_RE_EXECUTED_IN_THIS_SESSION",
+    "reason": "El archivo de pruebas de regresion existente no fue modificado y typecheckea sin errores, pero no pudo ejecutarse (vitest bloqueado). Se recomienda re-confirmar con `pnpm test` en una maquina con red y binarios nativos correctos."
+  },
+  "find_02_regression": {
+    "status": "NOT_INDEPENDENTLY_RE_EXECUTED_IN_THIS_SESSION",
+    "reason": "Misma limitacion que FIND-01."
+  },
+  "find_04_mitigation_identity_mismatch_never_conflated_with_failure": {
+    "status": "IMPLEMENTED_AND_TYPECHECK_VERIFIED",
+    "detail": "classifyBatchResolution() en officialFederalCaseBatch.ts comprueba identity.status === 'identity_mismatch' antes que cualquier otra condicion. Prueba explicita en officialFederalCaseBatch.test.ts. No se pudo ejecutar en este sandbox (mismo bloqueo pdfjs-dist), verificado solo por typecheck estricto."
+  },
+  "find_05_mitigation_http_204_never_treated_as_non_existence": {
+    "status": "IMPLEMENTED_AND_REALLY_EXECUTED_IN_THIS_SESSION",
+    "detail": "discoverFederalCaseCandidates() trata HTTP 204 como source_status: 'unavailable' con advertencia explicita. Ejecutado de verdad (no solo typecheck) contra el build compilado en este sandbox, ver targeted_tests_real_run arriba."
+  }
+}

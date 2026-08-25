@@ -1,0 +1,98 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 70190,\n  \"hits\": [\n    {\n      \"id\": \"CH_BGE_004_BGE-106-II-45_1980-05-12\",\n      \"title\": \"Bundesgericht (BGE) Teil II 12.05.1980 BGE 106 II 45\",\n      \"abstract\": \"Regeste\\n<br>Litige relatif à un <em>contrat</em> présentant les caractéristiques d'un <em>contrat</em> de travail partiaire ou d'un <em>contrat</em> de société. Le mode de rétribution fixé par une convention collective de travail ne s'applique pas à un tel <em>contrat</em> (consid. 3). Recours téméraire (art. 343 al. 3 CO, 31 OJ).\",\n      \"text\": \"large mesure les risques et profits de l'entreprise - définissent l'accord des parties non pas comme un <em>contrat</em> de travail au sens des art. 319 ss CO et de la convention collective, mais comme un <em>contrat</em> de travail ATF 99 II 304 ss consid. 4, ATF 94 II 126), voire un <em>contrat</em> de société.\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1980-05-12\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-106-II-45_1980-05-12.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.522486,\n        \"CH_BGE_004_BGE-106-II-45_1980-05-12\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-130-III-458_2004\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2004 BGE 130 III 458\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> ayant pour objet la révision d'extincteurs; nature juridique: <em>contrat</em> d'entretien ou <em>contrat</em> d'entreprise? En l'absence de tout élément de durée pouvant impliquer d'éventuels conseils sur les mesures à prendre pour la lutte contre l'incendie et l'entretien à long terme des extincteurs, un <em>contrat</em> portant sur la révision ponctuelle de tels appareils doit être qualifié de <em>contrat</em> d'entreprise (consid. 4). Conséquences sur les délais de prescription applicables à la garantie des défauts (consid. 3 et 5).\",\n      \"text\": \"En l'absence d'un élément de durée, il fallait qualifier cette convention de <em>contrat</em> d'entreprise au Selon l'art. 363 CO, le <em>contrat</em> d'entreprise est un <em>contrat</em> par lequel une des parties (l'entrepreneur La qualification du <em>contrat</em> s'opère en analysant les prestations conclues in concreto (CORBOZ, op. cit En l'occurrence, la cour cantonale a retenu que l'objet du <em>contrat</em> résidait dans le bon fonctionnement Le <em>contrat</em> d'entreprise se distingue par le régime applicable à la garantie des défauts, singulièrement\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2004-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-130-III-458_2004.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.363809,\n        \"CH_BGE_005_BGE-130-III-458_2004\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-126-III-192_2000-03-03\",\n      \"title\": \"Bundesgericht (BGE) Teil III 03.03.2000 BGE 126 III 192\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> de dépôt; responsabilité du dépositaire. Distinction entre le <em>contrat</em> de commission-expédition (art. 439 CO), le <em>contrat</em> de dépôt (art. 472 ss CO) et le <em>contrat</em> d'entrepôt (art. 482 ss CO). La remise d'une chose mobilière à un cocontractant qui accepte de la conserver gratuitement en stock dans l'attente d'un probable ordre d'expédition relève du <em>contrat</em> de dépôt (consid. 2a et b). Responsabilité du dépositaire en cas de vol des bijoux qui lui ont été confiés (consid. 2c et d).\",\n      \"text\": \"Le <em>contrat</em> de commission-expédition est le <em>contrat</em> par lequel le commissionnaire-expéditeur s'engage que si un tel <em>contrat</em> a été conclu, ce qui suppose que le commissionnaire-expéditeur ait été BGE 126 La qualification de <em>contrat</em> d'entrepôt (art. 482 ss CO) doit être exclue, parce qu'il a été constaté tel <em>contrat</em> n'a pas été conclu au sujet des bijoux en cause. Le <em>contrat</em> conclu doit être qualifié de dépôt.\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2000-03-03\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-126-III-192_2000-03-03.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.2799225,\n        \"CH_BGE_005_BGE-126-III-192_2000-03-03\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-107-II-196_1981-06-10\",\n      \"title\": \"Bundesgericht (BGE) Teil II 10.06.1981 BGE 107 II 196\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> de réassurance. Reconduction tacite de l'assurance de base; effets sur le <em>contrat</em> de réassurance. Importance de la convention et des usages pour déterminer les droits et les devoirs des parties au <em>contrat</em> de réassurance.\",\n      \"text\": \"dénonciation, avec quatre compagnies d'assurances, dont la Mobilière Suisse à Berne, qui gérait le <em>contrat</em> Privatversicherungsrecht, Bern 1967 p. 538), le <em>contrat</em> de réassurance consiste en un <em>contrat</em> par lequel Le <em>contrat</em> de réassurance ne crée de relations juridiques qu'entre les parties. s'agit d'un <em>contrat</em> d'assurance ayant pour objet une assurance de patrimoine. de réassurance, il s'agit d'un <em>contrat</em> innommé (MAURER, op.cit., p. 429/430).\",\n      \"meta\": \"IIe Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1981-06-10\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-107-II-196_1981-06-10.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.186844,\n        \"CH_BGE_004_BGE-107-II-196_1981-06-10\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-131-III-528_2005\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2005 BGE 131 III 528\",\n      \"abstract\": \"Regeste\\n<br>Art. 18 al. 1 et art. 261, 275 et 290 CO; <em>contrat</em> de management d'hôtel; effet sur ce <em>contrat</em> de l'adjudication des immeubles lors des enchères forcées. En présence d'un <em>contrat</em> mixte ou composé, chaque question litigieuse doit être résolue conformément aux normes légales ou aux principes juridiques adaptés à chacune d'elles, en recherchant le centre de gravité du <em>contrat</em>, appréhendé comme un accord global unique (consid. 7.1). Application de ces principes à la question de savoir si un <em>contrat</em> de management d'hôtel a passé aux adjudicataires des immeubles (consid. 7.2).\",\n      \"text\": \"de management de <em>contrat</em> de bail à ferme, opposable aux nouveaux propriétaires. Il ne sera que rarement possible de le soumettre entièrement à un <em>contrat</em> réglé par la loi (<em>contrat</em>-type à des règles de divers contrats nommés (par exemple <em>contrat</em> de travail, <em>contrat</em> de société, <em>contrat</em> de livraison, <em>contrat</em> de mandat, <em>contrat</em> de bail; ATF 118 II 157 consid. 2c p. 160/161 et les citations Il est indéniable que le <em>contrat</em> de management comporte des clauses qui auraient pu figurer dans un <em>contrat</em>\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2005-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-131-III-528_2005.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.115054,\n        \"CH_BGE_005_BGE-131-III-528_2005\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    14.115054,\n    \"CH_BGE_005_BGE-131-III-528_2005\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 70190,
+        "hits": [
+          {
+            "id": "CH_BGE_004_BGE-106-II-45_1980-05-12",
+            "title": "Bundesgericht (BGE) Teil II 12.05.1980 BGE 106 II 45",
+            "abstract": "Regeste\n<br>Litige relatif à un <em>contrat</em> présentant les caractéristiques d'un <em>contrat</em> de travail partiaire ou d'un <em>contrat</em> de société. Le mode de rétribution fixé par une convention collective de travail ne s'applique pas à un tel <em>contrat</em> (consid. 3). Recours téméraire (art. 343 al. 3 CO, 31 OJ).",
+            "text": "large mesure les risques et profits de l'entreprise - définissent l'accord des parties non pas comme un <em>contrat</em> de travail au sens des art. 319 ss CO et de la convention collective, mais comme un <em>contrat</em> de travail ATF 99 II 304 ss consid. 4, ATF 94 II 126), voire un <em>contrat</em> de société.",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1980-05-12",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-106-II-45_1980-05-12.html",
+            "original_url": null,
+            "sort": [14.522486, "CH_BGE_004_BGE-106-II-45_1980-05-12"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-130-III-458_2004",
+            "title": "Bundesgericht (BGE) Teil III 2004 BGE 130 III 458",
+            "abstract": "Regeste\n<br><em>Contrat</em> ayant pour objet la révision d'extincteurs; nature juridique: <em>contrat</em> d'entretien ou <em>contrat</em> d'entreprise? En l'absence de tout élément de durée pouvant impliquer d'éventuels conseils sur les mesures à prendre pour la lutte contre l'incendie et l'entretien à long terme des extincteurs, un <em>contrat</em> portant sur la révision ponctuelle de tels appareils doit être qualifié de <em>contrat</em> d'entreprise (consid. 4). Conséquences sur les délais de prescription applicables à la garantie des défauts (consid. 3 et 5).",
+            "text": "En l'absence d'un élément de durée, il fallait qualifier cette convention de <em>contrat</em> d'entreprise au Selon l'art. 363 CO, le <em>contrat</em> d'entreprise est un <em>contrat</em> par lequel une des parties (l'entrepreneur La qualification du <em>contrat</em> s'opère en analysant les prestations conclues in concreto (CORBOZ, op. cit En l'occurrence, la cour cantonale a retenu que l'objet du <em>contrat</em> résidait dans le bon fonctionnement Le <em>contrat</em> d'entreprise se distingue par le régime applicable à la garantie des défauts, singulièrement",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2004-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-130-III-458_2004.html",
+            "original_url": null,
+            "sort": [14.363809, "CH_BGE_005_BGE-130-III-458_2004"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-126-III-192_2000-03-03",
+            "title": "Bundesgericht (BGE) Teil III 03.03.2000 BGE 126 III 192",
+            "abstract": "Regeste\n<br><em>Contrat</em> de dépôt; responsabilité du dépositaire. Distinction entre le <em>contrat</em> de commission-expédition (art. 439 CO), le <em>contrat</em> de dépôt (art. 472 ss CO) et le <em>contrat</em> d'entrepôt (art. 482 ss CO). La remise d'une chose mobilière à un cocontractant qui accepte de la conserver gratuitement en stock dans l'attente d'un probable ordre d'expédition relève du <em>contrat</em> de dépôt (consid. 2a et b). Responsabilité du dépositaire en cas de vol des bijoux qui lui ont été confiés (consid. 2c et d).",
+            "text": "Le <em>contrat</em> de commission-expédition est le <em>contrat</em> par lequel le commissionnaire-expéditeur s'engage que si un tel <em>contrat</em> a été conclu, ce qui suppose que le commissionnaire-expéditeur ait été BGE 126 La qualification de <em>contrat</em> d'entrepôt (art. 482 ss CO) doit être exclue, parce qu'il a été constaté tel <em>contrat</em> n'a pas été conclu au sujet des bijoux en cause. Le <em>contrat</em> conclu doit être qualifié de dépôt.",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2000-03-03",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-126-III-192_2000-03-03.html",
+            "original_url": null,
+            "sort": [14.2799225, "CH_BGE_005_BGE-126-III-192_2000-03-03"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-107-II-196_1981-06-10",
+            "title": "Bundesgericht (BGE) Teil II 10.06.1981 BGE 107 II 196",
+            "abstract": "Regeste\n<br><em>Contrat</em> de réassurance. Reconduction tacite de l'assurance de base; effets sur le <em>contrat</em> de réassurance. Importance de la convention et des usages pour déterminer les droits et les devoirs des parties au <em>contrat</em> de réassurance.",
+            "text": "dénonciation, avec quatre compagnies d'assurances, dont la Mobilière Suisse à Berne, qui gérait le <em>contrat</em> Privatversicherungsrecht, Bern 1967 p. 538), le <em>contrat</em> de réassurance consiste en un <em>contrat</em> par lequel Le <em>contrat</em> de réassurance ne crée de relations juridiques qu'entre les parties. s'agit d'un <em>contrat</em> d'assurance ayant pour objet une assurance de patrimoine. de réassurance, il s'agit d'un <em>contrat</em> innommé (MAURER, op.cit., p. 429/430).",
+            "meta": "IIe Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1981-06-10",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-107-II-196_1981-06-10.html",
+            "original_url": null,
+            "sort": [14.186844, "CH_BGE_004_BGE-107-II-196_1981-06-10"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-131-III-528_2005",
+            "title": "Bundesgericht (BGE) Teil III 2005 BGE 131 III 528",
+            "abstract": "Regeste\n<br>Art. 18 al. 1 et art. 261, 275 et 290 CO; <em>contrat</em> de management d'hôtel; effet sur ce <em>contrat</em> de l'adjudication des immeubles lors des enchères forcées. En présence d'un <em>contrat</em> mixte ou composé, chaque question litigieuse doit être résolue conformément aux normes légales ou aux principes juridiques adaptés à chacune d'elles, en recherchant le centre de gravité du <em>contrat</em>, appréhendé comme un accord global unique (consid. 7.1). Application de ces principes à la question de savoir si un <em>contrat</em> de management d'hôtel a passé aux adjudicataires des immeubles (consid. 7.2).",
+            "text": "de management de <em>contrat</em> de bail à ferme, opposable aux nouveaux propriétaires. Il ne sera que rarement possible de le soumettre entièrement à un <em>contrat</em> réglé par la loi (<em>contrat</em>-type à des règles de divers contrats nommés (par exemple <em>contrat</em> de travail, <em>contrat</em> de société, <em>contrat</em> de livraison, <em>contrat</em> de mandat, <em>contrat</em> de bail; ATF 118 II 157 consid. 2c p. 160/161 et les citations Il est indéniable que le <em>contrat</em> de management comporte des clauses qui auraient pu figurer dans un <em>contrat</em>",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2005-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-131-III-528_2005.html",
+            "original_url": null,
+            "sort": [14.115054, "CH_BGE_005_BGE-131-III-528_2005"]
+          }
+        ],
+        "next_cursor": [14.115054, "CH_BGE_005_BGE-131-III-528_2005"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

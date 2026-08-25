@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /Login/
+Disallow: *Login*
+Disallow: *login*
+Disallow: /Documentation/
+Disallow: /Install/
+Disallow: /Activity-Feed/userId/

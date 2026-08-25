@@ -1,0 +1,19 @@
+# npm/pnpm pack usa .npmignore EN LUGAR DE .gitignore cuando ambos existen
+# (nunca los combina), asi que este archivo replica .gitignore explicitamente
+# antes de anadir su unica exclusion propia -- si no, perderiamos las
+# exclusiones de node_modules/dist/coverage/etc. solo por anadir esta.
+node_modules/
+dist/
+coverage/
+.cache/
+*.local
+*.log
+*.tmp
+_tmp_*
+.DS_Store
+.aider*
+
+# Configuracion local del harness de Claude Code: no se distribuye en el
+# paquete npm. El archivo en si no se borra ni se modifica, solo se excluye
+# del tarball.
+.claude/settings.local.json

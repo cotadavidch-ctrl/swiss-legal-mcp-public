@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-08-05T22:25:43.656Z",
+  "serverPath": "apps/mcp-server/dist/stdio.js",
+  "cacheDir": "/var/folders/lp/_jmygv_17p79c3zdxm2dgrt80000gn/T/swiss-legal-multirole-iL7Vje",
+  "transport": "stdio",
+  "networkAllowedByScenario": false,
+  "firstProcess": {
+    "process_label": "first",
+    "process_pid_or_equivalent": "85162",
+    "started_at": "2026-08-05T22:25:43.665Z",
+    "finished_at": "2026-08-05T22:25:48.482Z",
+    "stderr_lines": [
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:46.368Z\",\"pid\":85162,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_shab_publications\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:46.369Z\",\"pid\":85162,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"get_shab_publication\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:46.370Z\",\"pid\":85162,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"msg\":\"swiss-legal-mcp: servidor stdio conectado\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:48.447Z\",\"pid\":85162,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"signal\":\"SIGTERM\",\"msg\":\"cerrando servidor stdio\"}"
+    ],
+    "tools_count": 42,
+    "fixture_tools_exposed": [],
+    "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+    "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+    "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+    "role_hashes": {
+      "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+      "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+      "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+      "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+      "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+      "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+    },
+    "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+    "cache_origin": "stored_multirole_analysis",
+    "network_request_performed": false,
+    "validation_status": "passed_with_warnings",
+    "validation": {
+      "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+      "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-05T22:25:46.434Z",
+      "updated_at": "2026-08-05T22:25:46.434Z",
+      "persistence_verified": true,
+      "network_request_performed": false,
+      "validation_status": "passed_with_warnings",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_4fb3e48072964d6d",
+      "narrative_state_check_hash": "4fb3e48072964d6dd86b0334e6219c45cb0870858f46c2da078b9cf20be63355",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "finding_codes": [
+      "prosecution_role_correctly_excluded",
+      "defence_role_correctly_excluded",
+      "jurisdiction_correctly_left_unverified",
+      "burden_holder_not_verified",
+      "burden_holder_correctly_left_unverified",
+      "standard_of_review_not_verified",
+      "standard_of_review_correctly_left_unverified",
+      "predicted_outcome_correctly_conditioned"
+    ]
+  },
+  "secondProcess": {
+    "process_label": "second",
+    "process_pid_or_equivalent": "85163",
+    "started_at": "2026-08-05T22:25:48.483Z",
+    "finished_at": "2026-08-05T22:25:52.975Z",
+    "stderr_lines": [
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:50.901Z\",\"pid\":85163,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_shab_publications\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:50.902Z\",\"pid\":85163,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"get_shab_publication\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:50.904Z\",\"pid\":85163,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"msg\":\"swiss-legal-mcp: servidor stdio conectado\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-05T22:25:52.945Z\",\"pid\":85163,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"signal\":\"SIGTERM\",\"msg\":\"cerrando servidor stdio\"}"
+    ],
+    "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+    "cache_origin": "stored_multirole_analysis",
+    "network_request_performed": false,
+    "validation_status": "passed_with_warnings",
+    "validation": {
+      "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+      "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-05T22:25:46.434Z",
+      "updated_at": "2026-08-05T22:25:46.434Z",
+      "persistence_verified": true,
+      "network_request_performed": false,
+      "validation_status": "passed_with_warnings",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_4fb3e48072964d6d",
+      "narrative_state_check_hash": "4fb3e48072964d6dd86b0334e6219c45cb0870858f46c2da078b9cf20be63355",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "finding_codes": [
+      "prosecution_role_correctly_excluded",
+      "defence_role_correctly_excluded",
+      "jurisdiction_correctly_left_unverified",
+      "burden_holder_not_verified",
+      "burden_holder_correctly_left_unverified",
+      "standard_of_review_not_verified",
+      "standard_of_review_correctly_left_unverified",
+      "predicted_outcome_correctly_conditioned"
+    ]
+  },
+  "comparisons": {
+    "same_analysis_id": true,
+    "same_analysis_hash": true,
+    "same_evidence_snapshot_hash": true,
+    "same_narrative_hash": true,
+    "no_network_first_process": true,
+    "no_network_second_process": true,
+    "no_fixture_tools_first_process": true,
+    "persistence_verified_after_restart": true,
+    "no_new_narrative_mismatch": true,
+    "role_integrity_verified": true
+  },
+  "final_status": "PASS"
+}

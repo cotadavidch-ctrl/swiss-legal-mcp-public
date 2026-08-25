@@ -1,0 +1,21 @@
+dist
+coverage
+.cache
+docs/release/generated
+node_modules
+pnpm-lock.yaml
+THIRD_PARTY_NOTICES.md
+# Fragmentos HTML reales capturados en vivo (Fase 4): intencionalmente
+# parciales/no validos como documento HTML independiente, preservados
+# verbatim como evidencia -- prettier no debe reformatearlos.
+tests/fixtures/**/*.html
+# Idem para .htm (plataforma SIL, cierre de cobertura cantonal): bytes
+# reales windows-1252 preservados verbatim, no UTF-8 valido -- prettier no
+# debe tocarlos.
+tests/fixtures/**/*.htm
+
+# Capturas/artefactos de validacion y scripts temporales de diagnostico
+# preservados como evidencia local; no forman parte del paquete ni del runtime.
+_day1-validation-output/**
+debug_sections.js
+final_answer.ts

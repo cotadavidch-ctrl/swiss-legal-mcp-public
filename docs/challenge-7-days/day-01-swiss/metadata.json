@@ -1,0 +1,95 @@
+{
+  "challenge": "7-days",
+  "day": "01",
+  "title": "El estilo del juez suizo",
+  "status": "PARTIAL",
+  "created_at": "2026-08-06",
+  "project_path": "/workspace/swiss-legal-mcp",
+  "selected_candidate": {
+    "name": "II. zivilrechtliche Abteilung des Schweizerischen Bundesgerichts",
+    "style_type": "institutional",
+    "language": "de",
+    "individual_judge": null,
+    "individual_judge_attribution_status": "not_supported"
+  },
+  "corpus": {
+    "requested_minimum": 50,
+    "requested_objective": 60,
+    "requested_maximum": 70,
+    "verified_full_text_cases": 8,
+    "comparators": 1,
+    "excluded_or_limited": 5,
+    "duplicates_detected": 0,
+    "metadata_only_included": false,
+    "official_sources_only_for_authority": true
+  },
+  "mcp_tools_used": ["search_cases", "resolve_official_swiss_case", "get_law"],
+  "official_sources": ["search.bger.ch", "fedlex.admin.ch", "fedlex.data.admin.ch"],
+  "fedlex_records_verified": [
+    {
+      "short_name": "BGG",
+      "systematic_number": "173.110",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/2006/218/20260401/de",
+      "version_date": "2026-04-01"
+    },
+    {
+      "short_name": "BV",
+      "systematic_number": "101",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de",
+      "version_date": "2024-03-03"
+    },
+    {
+      "short_name": "ZGB",
+      "systematic_number": "210",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/24/233_245_233/20260701/de",
+      "version_date": "2026-07-01"
+    },
+    {
+      "short_name": "ZPO",
+      "systematic_number": "272",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/2010/262/20260701/de",
+      "version_date": "2026-07-01"
+    }
+  ],
+  "validation": {
+    "candidate_selected": true,
+    "corpus_target_met": false,
+    "corpus_marked_partial": true,
+    "identity_verified_for_included_cases": true,
+    "full_text_verified_for_included_cases": true,
+    "official_sources_prioritized": true,
+    "no_duplicate_cases": true,
+    "no_individual_authorship_claimed": true,
+    "skill_created": true,
+    "example_brief_created": true,
+    "citations_limited_to_verified_sources": true,
+    "limitations_documented": true,
+    "json_validated": true
+  },
+  "files_created": [
+    "docs/challenge-7-days/day-01-swiss/judge-selection.md",
+    "docs/challenge-7-days/day-01-swiss/corpus.json",
+    "docs/challenge-7-days/day-01-swiss/style-analysis.md",
+    "docs/challenge-7-days/day-01-swiss/swiss-federal-court-writing-style.md",
+    "docs/challenge-7-days/day-01-swiss/example-brief.md",
+    "docs/challenge-7-days/day-01-swiss/generic-vs-skilled-comparison.md",
+    "docs/challenge-7-days/day-01-swiss/metadata.json"
+  ],
+  "restrictions_honored": {
+    "code_modified": false,
+    "tests_modified": false,
+    "rc_modified": false,
+    "dependencies_modified": false,
+    "tarball_modified": false,
+    "mcp_config_modified": false,
+    "publication_performed": false,
+    "git_created": false
+  },
+  "limitations": [
+    "The verified full-text corpus contains 8 decisions, below the requested 50-case minimum.",
+    "No individual judge style was extracted because official decisions verify composition but not individual authorship.",
+    "Article-level statutory text was not reproduced; statutes were verified at Fedlex law-version level.",
+    "French and Italian style support was not validated in this run."
+  ],
+  "confidence": "MEDIUM"
+}

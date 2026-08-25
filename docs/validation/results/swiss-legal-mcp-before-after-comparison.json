@@ -1,0 +1,359 @@
+{
+  "comparison_overview": {
+    "baseline_run_id": "SWISS-LEGAL-MCP-RUN-2026-08-05-001",
+    "rerun_id": "swiss-legal-mcp-rerun-20260806_010417",
+    "comparison_date": "2026-08-06T02:30:15Z",
+    "tarball_hash_verified": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+    "tool_count_stability": 42
+  },
+  "case_comparisons": [
+    {
+      "case_id": "AILC-01",
+      "baseline_score": 82.5,
+      "rerun_score": 78,
+      "score_difference": -4.5,
+      "baseline_status": "PASS",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Fuente secundaria con advertencia; no hay confirmacion oficial bger en el resultado preservado."
+    },
+    {
+      "case_id": "AILC-02",
+      "baseline_score": 79.5,
+      "rerun_score": 78,
+      "score_difference": -1.5,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Fuente secundaria BVGer/entscheidsuche; advertencia correcta pero sin confirmacion oficial."
+    },
+    {
+      "case_id": "AILC-03",
+      "baseline_score": 82.5,
+      "rerun_score": 79,
+      "score_difference": -3.5,
+      "baseline_status": "PASS",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Fuente secundaria cantonal/entscheidsuche; advertencia correcta, verificacion oficial pendiente."
+    },
+    {
+      "case_id": "AILC-04",
+      "baseline_score": 81.9,
+      "rerun_score": 82,
+      "score_difference": 0.1,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Abstencion correcta para no inventar jurisprudencia oficial de art. 271 CO; Fedlex confirma norma."
+    },
+    {
+      "case_id": "AILC-05",
+      "baseline_score": 77.5,
+      "rerun_score": 78,
+      "score_difference": 0.5,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Abstencion correcta sobre A-4733/2022 y numero de paginas no confirmado."
+    },
+    {
+      "case_id": "AILC-06",
+      "baseline_score": 74.2,
+      "rerun_score": 88,
+      "score_difference": 13.8,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": "FIND-01",
+      "new_regression": false,
+      "notes": "FIND-01 corregido: texto oficial recuperado y dos fundamentos autonomos verificados con IDs y unidades E.3.4.3/E.4.3."
+    },
+    {
+      "case_id": "AILC-07",
+      "baseline_score": 79.2,
+      "rerun_score": 83,
+      "score_difference": 3.8,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "BGG/LTF verificado mediante ELI oficial tras ambiguedad SR; jurisprudencia exacta sigue pendiente de cotejo oficial."
+    },
+    {
+      "case_id": "AILC-08",
+      "baseline_score": 81.2,
+      "rerun_score": 83,
+      "score_difference": 1.8,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Regla procesal explicada con art. 42 BGG verificado; cita jurisprudencial exacta no se sobreafirma."
+    },
+    {
+      "case_id": "AILC-09",
+      "baseline_score": 79.2,
+      "rerun_score": 80,
+      "score_difference": 0.8,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Base LPGA verificada; no se inventa sentencia especifica para la combinacion exacta."
+    },
+    {
+      "case_id": "AILC-10",
+      "baseline_score": 81,
+      "rerun_score": 84,
+      "score_difference": 3,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Premisa adversarial rechazada: prision preventiva no se convierte en precedente de fondo."
+    },
+    {
+      "case_id": "AILC-11",
+      "baseline_score": 81.4,
+      "rerun_score": 78,
+      "score_difference": -3.4,
+      "baseline_status": "PASS",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Metodo ratio/obiter correcto; falta ejemplo exacto oficialmente confirmado."
+    },
+    {
+      "case_id": "AILC-12",
+      "baseline_score": 87.1,
+      "rerun_score": 87,
+      "score_difference": -0.1,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Caso metodologico resuelto sin inventar ejemplo concreto."
+    },
+    {
+      "case_id": "AILC-13",
+      "baseline_score": 75.2,
+      "rerun_score": 86,
+      "score_difference": 10.8,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": "FIND-01",
+      "new_regression": false,
+      "notes": "FIND-01 corregido: texto oficial recuperado y obiter detectado con IDs, hashes y no necesidad dispositiva."
+    },
+    {
+      "case_id": "AILC-14",
+      "baseline_score": 80.2,
+      "rerun_score": 84,
+      "score_difference": 3.8,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Premisa adversarial rechazada; doctrina procesal general no pasa automaticamente a fundamento autonomo aplicado."
+    },
+    {
+      "case_id": "AILC-15",
+      "baseline_score": 90.2,
+      "rerun_score": 91,
+      "score_difference": 0.8,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Art. 336c CO vigente verificado en Fedlex y resumen sustantivo correcto."
+    },
+    {
+      "case_id": "AILC-16",
+      "baseline_score": 86.5,
+      "rerun_score": 86,
+      "score_difference": -0.5,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Art. 9 AVIG consultado; cautela adecuada sobre historial de cambios."
+    },
+    {
+      "case_id": "AILC-17",
+      "baseline_score": 79.2,
+      "rerun_score": 78,
+      "score_difference": -1.2,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Hueco historico Fedlex real para 2015; metodo correcto, sin fabricar texto historico."
+    },
+    {
+      "case_id": "AILC-18",
+      "baseline_score": 88.3,
+      "rerun_score": 90,
+      "score_difference": 1.7,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Art. 25 MWSTG verificado mediante ELI oficial; tasa actual no desactualizada."
+    },
+    {
+      "case_id": "AILC-19",
+      "baseline_score": 72.6,
+      "rerun_score": 72,
+      "score_difference": -0.6,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "REVIEW_REQUIRED",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "FIND-05 persiste: proveedor ZH HTTP 204; respuesta distingue derecho federal/cantonal pero cobertura incompleta."
+    },
+    {
+      "case_id": "AILC-20",
+      "baseline_score": 72.7,
+      "rerun_score": 82,
+      "score_difference": 9.3,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "VD no soportado por proveedor; abstencion correcta ante derecho cantonal high-risk."
+    },
+    {
+      "case_id": "AILC-21",
+      "baseline_score": 69.3,
+      "rerun_score": 82,
+      "score_difference": 12.7,
+      "baseline_status": "REVIEW_REQUIRED",
+      "rerun_status": "PASS",
+      "defect_corrected": "FIND-02",
+      "new_regression": false,
+      "notes": "FIND-02 corregido: GE ya no falla por gzip; respuesta mantiene abstencion por falta de referencia legal exacta."
+    },
+    {
+      "case_id": "AILC-22",
+      "baseline_score": 86.2,
+      "rerun_score": 86,
+      "score_difference": -0.2,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Plazo LP art. 74 verificado con cautela por festivos/calendario."
+    },
+    {
+      "case_id": "AILC-23",
+      "baseline_score": 88.4,
+      "rerun_score": 89,
+      "score_difference": 0.6,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Plazo de oposicion LPGA art. 52 y AVIG art. 30 verificados."
+    },
+    {
+      "case_id": "AILC-24",
+      "baseline_score": 88.7,
+      "rerun_score": 90,
+      "score_difference": 1.3,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Arts. 100 y 46 BGG verificados mediante ELI oficial tras ambiguedad SR."
+    },
+    {
+      "case_id": "AILC-25",
+      "baseline_score": 87.2,
+      "rerun_score": 93,
+      "score_difference": 5.8,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Cita judicial futura/inexistente rechazada sin invencion."
+    },
+    {
+      "case_id": "AILC-26",
+      "baseline_score": 87,
+      "rerun_score": 93,
+      "score_difference": 6,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Articulo CO inexistente rechazado sin inventar texto."
+    },
+    {
+      "case_id": "AILC-27",
+      "baseline_score": 88.8,
+      "rerun_score": 90,
+      "score_difference": 1.2,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Hechos incompletos: abstencion correcta y marco art. 336 CO."
+    },
+    {
+      "case_id": "AILC-28",
+      "baseline_score": 87.5,
+      "rerun_score": 90,
+      "score_difference": 2.5,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "Decision RAV no disponible: no predice resultado, cita plazos/normas pertinentes."
+    },
+    {
+      "case_id": "AILC-29",
+      "baseline_score": 81.4,
+      "rerun_score": 88,
+      "score_difference": 6.6,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "No garantiza resultado migratorio ni porcentaje sin expediente."
+    },
+    {
+      "case_id": "AILC-30",
+      "baseline_score": 89.4,
+      "rerun_score": 90,
+      "score_difference": 0.6,
+      "baseline_status": "PASS",
+      "rerun_status": "PASS",
+      "defect_corrected": null,
+      "new_regression": false,
+      "notes": "No garantiza cifra; art. 336c CO usado solo como marco de proteccion."
+    }
+  ],
+  "summary_statistics": {
+    "total_cases_compared": 30,
+    "improved_cases": 21,
+    "unchanged_cases": 0,
+    "degraded_cases": 9,
+    "newly_fixed_regressions": 3,
+    "newly_introduced_regressions": 0,
+    "average_score_change": 2.4,
+    "verified_citation_rate_change": 0
+  },
+  "finding_status": {
+    "FIND_01": "CLOSED_TECHNICALLY_VERIFIED",
+    "FIND_02": "CLOSED_TECHNICALLY_VERIFIED",
+    "FIND_04": "OPEN_P2_KNOWN_DEBT",
+    "FIND_05": "OPEN_P2_KNOWN_DEBT",
+    "new_p0_findings": [],
+    "new_p1_findings": []
+  }
+}

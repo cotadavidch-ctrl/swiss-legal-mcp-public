@@ -1,0 +1,209 @@
+{
+  "assessmentDate": "2026-08-06",
+  "scope": {
+    "installPath": "~/.local/share/swiss-legal-mcp",
+    "runtimeEntrypoint": "~/.local/share/swiss-legal-mcp/node_modules/swiss-legal-mcp/dist/stdio.js",
+    "runtimeCommand": "/usr/local/bin/node ~/.local/share/swiss-legal-mcp/node_modules/swiss-legal-mcp/dist/stdio.js",
+    "sourceTarball": "/workspace/swiss-legal-mcp/swiss-legal-mcp-1.0.0.tgz",
+    "sha256Expected": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+    "sha256Actual": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+    "sha256Verified": true
+  },
+  "npmAudit": {
+    "totalVulnerabilitiesReported": 3,
+    "moderateVulnerabilities": 3,
+    "highVulnerabilities": 0,
+    "criticalVulnerabilities": 0,
+    "productionVulnerabilities": 3,
+    "devOnlyVulnerabilities": 0,
+    "omitDevSameAsDefault": true,
+    "productionCommandSupported": true,
+    "productionCommandWarning": "npm warn config production Use `--omit=dev` instead."
+  },
+  "vulnerabilities": [
+    {
+      "package": "@hono/node-server",
+      "installedVersion": "1.19.17",
+      "severity": "moderate",
+      "advisory": "GHSA-frvp-7c67-39w9",
+      "cve": null,
+      "cwe": ["CWE-22"],
+      "title": "Node.js Adapter for Hono: Path traversal in `serve-static` on Windows via encoded backslash (`%5C`)",
+      "vulnerableRange": "<2.0.5",
+      "fixedVersionOrRange": ">=2.0.5",
+      "fixAvailable": false,
+      "isDirect": false,
+      "dependencyClass": "production transitive dependency",
+      "introducedBy": "@modelcontextprotocol/sdk@1.29.0",
+      "dependencyPath": [
+        "local install root",
+        "swiss-legal-mcp@1.0.0",
+        "@modelcontextprotocol/sdk@1.29.0",
+        "@hono/node-server@1.19.17"
+      ],
+      "runtimeClassification": "PRESENT_BUT_NOT_REACHABLE",
+      "runtimeReachabilityEvidence": [
+        "The stdio entrypoint imports @modelcontextprotocol/sdk/server/stdio.js, not @modelcontextprotocol/sdk/server/streamableHttp.js.",
+        "The MCP SDK stdio server transport does not import @hono/node-server.",
+        "The installed stdio bundle does not reference serveStatic, serve-static, getRequestListener, or StreamableHTTPServerTransport.",
+        "The affected code is @hono/node-server/serve-static, but the assessed runtime serves no static files."
+      ],
+      "impact": {
+        "rce": "not_applicable",
+        "ssrf": "not_applicable",
+        "pathTraversal": "not_reachable_in_assessed_stdio_runtime",
+        "prototypePollution": "not_applicable",
+        "redos": "not_applicable",
+        "xss": "not_applicable",
+        "dos": "no_reachable_path_found",
+        "informationDisclosure": "not_reachable_in_assessed_stdio_runtime",
+        "legalAnswerIntegrity": "no_reachable_path_found",
+        "cache": "no_reachable_path_found",
+        "localFilesystem": "not_reachable_in_assessed_stdio_runtime"
+      },
+      "recommendation": {
+        "privatePersonalBeta": "accept_temporarily_with_documented_risk",
+        "publicBeta": "remediate_before_public_http_or_broader_distribution",
+        "publicStableRelease": "remediate_and_revalidate_release"
+      }
+    },
+    {
+      "package": "@modelcontextprotocol/sdk",
+      "installedVersion": "1.29.0",
+      "severity": "moderate",
+      "advisory": "inherited via @hono/node-server GHSA-frvp-7c67-39w9",
+      "cve": null,
+      "vulnerableRange": "1.25.0 - 1.29.0",
+      "fixedVersionOrRange": "not available through npm audit for this dependency graph",
+      "fixAvailable": false,
+      "isDirect": false,
+      "dependencyClass": "production dependency of installed package",
+      "introducedBy": "swiss-legal-mcp@1.0.0",
+      "dependencyPath": [
+        "local install root",
+        "swiss-legal-mcp@1.0.0",
+        "@modelcontextprotocol/sdk@1.29.0"
+      ],
+      "runtimeClassification": "PRESENT_BUT_NOT_REACHABLE",
+      "runtimeReachabilityEvidence": [
+        "The SDK is reachable for stdio runtime.",
+        "The reported vulnerability is inherited through @hono/node-server.",
+        "The assessed runtime imports SDK stdio server/client modules but not SDK server streamable HTTP.",
+        "No path from MCP tool input to Hono static-file serving was found."
+      ],
+      "impact": {
+        "rce": "not_applicable_to_reported_advisory",
+        "ssrf": "not_applicable_to_reported_advisory",
+        "pathTraversal": "inherited_but_not_reachable_in_assessed_stdio_runtime",
+        "prototypePollution": "not_applicable",
+        "redos": "not_applicable",
+        "xss": "not_applicable",
+        "dos": "no_reachable_path_found",
+        "informationDisclosure": "not_reachable_in_assessed_stdio_runtime",
+        "legalAnswerIntegrity": "no_reachable_path_found",
+        "cache": "no_reachable_path_found",
+        "localFilesystem": "not_reachable_in_assessed_stdio_runtime"
+      },
+      "recommendation": {
+        "privatePersonalBeta": "accept_temporarily_with_documented_risk",
+        "publicBeta": "update_sdk_or_override_transitive_dependency_after_testing",
+        "publicStableRelease": "remediate_and_revalidate_release"
+      }
+    },
+    {
+      "package": "swiss-legal-mcp",
+      "installedVersion": "1.0.0",
+      "severity": "moderate",
+      "advisory": "root package roll-up inherited via @modelcontextprotocol/sdk and @hono/node-server",
+      "cve": null,
+      "vulnerableRange": "",
+      "fixedVersionOrRange": "not applicable as direct application package roll-up",
+      "fixAvailable": false,
+      "isDirect": true,
+      "dependencyClass": "production dependency in local install root",
+      "introducedBy": "local install root package dependency on tarball",
+      "dependencyPath": ["local install root", "swiss-legal-mcp@1.0.0"],
+      "runtimeClassification": "PRESENT_BUT_NOT_REACHABLE",
+      "runtimeReachabilityEvidence": [
+        "No Swiss Legal MCP application-code advisory was reported.",
+        "The package entry is npm's roll-up of the inherited SDK/Hono advisory.",
+        "The assessed stdio bundle does not import the vulnerable Hono static-serving module."
+      ],
+      "impact": {
+        "rce": "not_applicable_to_reported_advisory",
+        "ssrf": "not_applicable_to_reported_advisory",
+        "pathTraversal": "inherited_but_not_reachable_in_assessed_stdio_runtime",
+        "prototypePollution": "not_applicable",
+        "redos": "not_applicable",
+        "xss": "not_applicable",
+        "dos": "no_reachable_path_found",
+        "informationDisclosure": "not_reachable_in_assessed_stdio_runtime",
+        "legalAnswerIntegrity": "no_reachable_path_found",
+        "cache": "no_reachable_path_found",
+        "localFilesystem": "not_reachable_in_assessed_stdio_runtime"
+      },
+      "recommendation": {
+        "privatePersonalBeta": "accept_temporarily_with_documented_risk",
+        "publicBeta": "remediate_dependency_tree_before_public_distribution",
+        "publicStableRelease": "remediate_and_revalidate_release"
+      }
+    }
+  ],
+  "deprecatedPackages": [
+    {
+      "package": "whatwg-encoding",
+      "installedVersion": "3.1.1",
+      "deprecationMessage": "Use @exodus/bytes instead for a more spec-conformant and faster implementation",
+      "introducedBy": "cheerio@1.2.0 via encoding-sniffer@0.2.1",
+      "dependencyPath": [
+        "local install root",
+        "swiss-legal-mcp@1.0.0",
+        "cheerio@1.2.0",
+        "encoding-sniffer@0.2.1",
+        "whatwg-encoding@3.1.1"
+      ],
+      "runtimeStatus": "PRESENT_AND_RUNTIME_LOADABLE_AS_CHEERIO_TRANSITIVE_DEPENDENCY",
+      "npmAuditVulnerability": false,
+      "requiresImmediateAction": false,
+      "recommendation": "maintenance_future_dependency_refresh"
+    }
+  ],
+  "auditFixImpact": {
+    "auditFixExecuted": false,
+    "fixAvailableReportedByNpm": false,
+    "wouldModifyDependencyVersions": "not directly available through npm audit; remediation requires manual dependency or override change",
+    "wouldAlterLockfile": true,
+    "wouldRequireTarballRegeneration": true,
+    "wouldInvalidateCurrentTarballHash": true,
+    "wouldRequireReleaseRevalidation": true
+  },
+  "runtimeClassifications": {
+    "EXPLOITABLE_IN_RUNTIME": [],
+    "POTENTIALLY_REACHABLE": [],
+    "PRESENT_BUT_NOT_REACHABLE": [
+      "@hono/node-server",
+      "@modelcontextprotocol/sdk",
+      "swiss-legal-mcp"
+    ],
+    "DEV_ONLY": [],
+    "FALSE_POSITIVE_OR_NOT_APPLICABLE": [],
+    "UNDETERMINED": []
+  },
+  "releaseModeConclusions": {
+    "PRIVATE_PERSONAL_BETA": "PASS_WITH_ACCEPTED_RISK",
+    "PUBLIC_BETA": "PASS_WITH_REMEDIATION_REQUIRED",
+    "PUBLIC_STABLE_RELEASE": "REMEDIATION_REQUIRED"
+  },
+  "modifications": {
+    "auditFixExecuted": false,
+    "dependenciesModified": false,
+    "packageJsonModified": false,
+    "packageLockModified": false,
+    "tarballModified": false,
+    "codeModified": false,
+    "testsModified": false,
+    "rcActModified": false,
+    "publicationPerformed": false,
+    "gitCreated": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 791860,\n  \"hits\": [\n    {\n      \"id\": \"CH_BGE_012_20260723-15345-20_2026-07-23\",\n      \"title\": \"EGMR EGMR 23.07.2026 20260723_15345_20 (A.G. c. Suisse)\",\n      \"abstract\": \"Regeste\\n<br><i>Diese Zusammenfassung existiert nur auf Französisch.</i>\\n<br>SUISSE: Art. 8 CEDH. Femme enceinte placée en détention provisoire; droit de visite du concubin et père allégué de l'enfant à naître; présence de ce dernier lors de l'accouchement. La requérante fut arrêtée et placée en détention provisoire en raison de soupçons de trafic de stupéfiants, alors qu'elle était enceinte de six mois. Elle se plaint du refus des autorités compétentes d'autoriser son concubin, père allégué de l'enfant à naître, de lui rendre visite en prison et d'assister à l'accouchement prévu à l'hôpital. Les autorités ont motivé leur refus par un risque de collusion trop important.\\nSelon la Cour, il apparaît que, bien que les textes légaux pertinents et la jurisprudence du Tribunal fédéral imposent aux autorités compétentes l'obligation de respecter les droits fondamentaux des personnes détenues, notamment le droit au respect de leur vie privée et familiale, et, en particulier, d'opérer pour chaque atteinte à ces droits une pesée des intérêts privés et publics en tenant compte de l'ensemble des circonstances pertinentes, la mise en balance de ces intérêts telle qu'elle a été opérée par les autorités nationales dans le cas de la requérante n'était pas suffisante, faute pour elles d'avoir pris en considération la situation particulière de l'intéressée. Par ailleurs, lesdites autorités ont manqué à leur devoir de recourir à toute mesure qui aurait permis d'aboutir au même résultat tout en portant moins gravement atteinte aux droits de la requérante garantis par l'art. 8 CEDH. Dès lors, tout en reconnaissant l'importance du but légitime poursuivi par les mesures litigieuses, à savoir la prévention des infractions pénales dans le cadre d'une investigation pour trafic de stupéfiants, la Cour estime que les ingérences dans le droit de la requérante au respect de sa vie privée et familiale ne peuvent être considérées comme nécessaires dans une société démocratique (ch. 64-88).\\nConclusion: Violation de l'art. 8 CEDH.\",\n      \"text\": \"\",\n      \"meta\": \"Eidgenossenschaft EGMR EGMR\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2026-07-23\",\n      \"scrape_date\": \"2026-07-25\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_012_20260723-15345-20_2026-07-23.html\",\n      \"original_url\": null,\n      \"sort\": [\n        1784764800000,\n        \"CH_BGE_012_20260723-15345-20_2026-07-23\"\n      ]\n    },\n    {\n      \"id\": \"BS_APG_001_AUS-2026-63_2026-07-23\",\n      \"title\": \"Basel-Stadt Appellationsgericht 23.07.2026 AUS.2026.63 (AG.2026.471)\",\n      \"abstract\": \"Dublin Ausschaffungshaft\",\n      \"text\": \"\",\n      \"meta\": \"Basel-Stadt Appellationsgericht \",\n      \"canton\": \"BS\",\n      \"court\": \"BS_APG\",\n      \"decision_date\": \"2026-07-23\",\n      \"scrape_date\": \"2026-07-25\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/BS_Omni/BS_APG_001_AUS-2026-63_2026-07-23.html\",\n      \"original_url\": null,\n      \"sort\": [\n        1784764800000,\n        \"BS_APG_001_AUS-2026-63_2026-07-23\"\n      ]\n    },\n    {\n      \"id\": \"CH_BSTG_001_CA-2026-10_2026-07-22\",\n      \"title\": \"Bundesstrafgericht 22.07.2026 CA.2026.10\",\n      \"abstract\": \"Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide\",\n      \"text\": \"\",\n      \"meta\": \"Eidgenossenschaft Bundesstrafgericht \",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BSTG\",\n      \"decision_date\": \"2026-07-22\",\n      \"scrape_date\": \"2026-07-21\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BSTG/CH_BSTG_001_CA-2026-10_2026-07-22.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        1784678400000,\n        \"CH_BSTG_001_CA-2026-10_2026-07-22\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    1784678400000,\n    \"CH_BSTG_001_CA-2026-10_2026-07-22\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 791860,
+        "hits": [
+          {
+            "id": "CH_BGE_012_20260723-15345-20_2026-07-23",
+            "title": "EGMR EGMR 23.07.2026 20260723_15345_20 (A.G. c. Suisse)",
+            "abstract": "Regeste\n<br><i>Diese Zusammenfassung existiert nur auf Französisch.</i>\n<br>SUISSE: Art. 8 CEDH. Femme enceinte placée en détention provisoire; droit de visite du concubin et père allégué de l'enfant à naître; présence de ce dernier lors de l'accouchement. La requérante fut arrêtée et placée en détention provisoire en raison de soupçons de trafic de stupéfiants, alors qu'elle était enceinte de six mois. Elle se plaint du refus des autorités compétentes d'autoriser son concubin, père allégué de l'enfant à naître, de lui rendre visite en prison et d'assister à l'accouchement prévu à l'hôpital. Les autorités ont motivé leur refus par un risque de collusion trop important.\nSelon la Cour, il apparaît que, bien que les textes légaux pertinents et la jurisprudence du Tribunal fédéral imposent aux autorités compétentes l'obligation de respecter les droits fondamentaux des personnes détenues, notamment le droit au respect de leur vie privée et familiale, et, en particulier, d'opérer pour chaque atteinte à ces droits une pesée des intérêts privés et publics en tenant compte de l'ensemble des circonstances pertinentes, la mise en balance de ces intérêts telle qu'elle a été opérée par les autorités nationales dans le cas de la requérante n'était pas suffisante, faute pour elles d'avoir pris en considération la situation particulière de l'intéressée. Par ailleurs, lesdites autorités ont manqué à leur devoir de recourir à toute mesure qui aurait permis d'aboutir au même résultat tout en portant moins gravement atteinte aux droits de la requérante garantis par l'art. 8 CEDH. Dès lors, tout en reconnaissant l'importance du but légitime poursuivi par les mesures litigieuses, à savoir la prévention des infractions pénales dans le cadre d'une investigation pour trafic de stupéfiants, la Cour estime que les ingérences dans le droit de la requérante au respect de sa vie privée et familiale ne peuvent être considérées comme nécessaires dans une société démocratique (ch. 64-88).\nConclusion: Violation de l'art. 8 CEDH.",
+            "text": "",
+            "meta": "Eidgenossenschaft EGMR EGMR",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2026-07-23",
+            "scrape_date": "2026-07-25",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_012_20260723-15345-20_2026-07-23.html",
+            "original_url": null,
+            "sort": [1784764800000, "CH_BGE_012_20260723-15345-20_2026-07-23"]
+          },
+          {
+            "id": "BS_APG_001_AUS-2026-63_2026-07-23",
+            "title": "Basel-Stadt Appellationsgericht 23.07.2026 AUS.2026.63 (AG.2026.471)",
+            "abstract": "Dublin Ausschaffungshaft",
+            "text": "",
+            "meta": "Basel-Stadt Appellationsgericht ",
+            "canton": "BS",
+            "court": "BS_APG",
+            "decision_date": "2026-07-23",
+            "scrape_date": "2026-07-25",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/BS_Omni/BS_APG_001_AUS-2026-63_2026-07-23.html",
+            "original_url": null,
+            "sort": [1784764800000, "BS_APG_001_AUS-2026-63_2026-07-23"]
+          },
+          {
+            "id": "CH_BSTG_001_CA-2026-10_2026-07-22",
+            "title": "Bundesstrafgericht 22.07.2026 CA.2026.10",
+            "abstract": "Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide;;Gesuch um Kostenerlass; Nachträgliche Entscheide",
+            "text": "",
+            "meta": "Eidgenossenschaft Bundesstrafgericht ",
+            "canton": "CH",
+            "court": "CH_BSTG",
+            "decision_date": "2026-07-22",
+            "scrape_date": "2026-07-21",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BSTG/CH_BSTG_001_CA-2026-10_2026-07-22.pdf",
+            "original_url": null,
+            "sort": [1784678400000, "CH_BSTG_001_CA-2026-10_2026-07-22"]
+          }
+        ],
+        "next_cursor": [1784678400000, "CH_BSTG_001_CA-2026-10_2026-07-22"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

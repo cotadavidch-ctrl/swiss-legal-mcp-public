@@ -1,0 +1,9 @@
+HTTP/2 200 
+server: nginx
+date: Sun, 26 Jul 2026 19:42:25 GMT
+content-type: application/pdf
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-24=":443"; ma=86400
+strict-transport-security: max-age=31536000; includeSubDomains;
+x-cache-status: BYPASS
+x-bypass-reason: bypass=0 url=1
+

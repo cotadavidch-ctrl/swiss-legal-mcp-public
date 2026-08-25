@@ -1,0 +1,30 @@
+{
+  "name": "@swiss-legal-mcp/legal-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@swiss-legal-mcp/chronology": "workspace:*",
+    "@swiss-legal-mcp/contradiction-engine": "workspace:*",
+    "@swiss-legal-mcp/core": "workspace:*",
+    "@swiss-legal-mcp/legal-drafting": "workspace:*",
+    "@swiss-legal-mcp/legal-intelligence": "workspace:*",
+    "@swiss-legal-mcp/legal-language": "workspace:*",
+    "@swiss-legal-mcp/litigation-intelligence": "workspace:*",
+    "@swiss-legal-mcp/matter-store": "workspace:*",
+    "@swiss-legal-mcp/procedural-intelligence": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}

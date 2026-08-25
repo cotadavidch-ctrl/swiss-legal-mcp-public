@@ -1,0 +1,28 @@
+# Fixtures reales de legislación cantonal (Fase 5)
+
+Auditoría en vivo del 2026-07-27 sobre una muestra representativa de cantones, agrupados por familia técnica (ver `docs/providers/cantonal-legislation.md` para el análisis completo y el inventario de los 26 cantones).
+
+## `be-lexwork/` — Cantón de Berna, plataforma comercial LexWork
+
+Berna (`belex.sites.be.ch`) confirma en vivo que usa la plataforma comercial **LexWork** (título real de página: "LexWork"), la misma identificada en Fase 0 como base de ~23 cantones. Es la familia técnica más extendida.
+
+| Archivo                               | Qué prueba                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `systematic_categories.json`          | Respuesta real de `GET /api/de/systematic_categories?show_abrogated=false`: árbol jerárquico completo de categorías sistemáticas (9 categorías de nivel superior, ej. "1 - Staat, Volk, Behörden"), con sub-categorías anidadas hasta el número sistemático real (ej. "101" = Verfassung/Constitución).                                                                      |
+| `texts_of_law_lightweight_index.json` | Extracto real (8 de ~180 categorías) de `GET /api/de/texts_of_law/lightweight_index?show_abrogated=false`: confirma estructura real por ley (`id`, `systematic_number` p.ej. "324.111", `title`, `abrogated` boolean, `structured_document_id`). Es la API real que alimenta la propia SPA Angular del cantón, verificada por inspección de red.                             |
+| `robots.txt`                          | Real: permite explícitamente los endpoints de listado/catálogo usados arriba; **solo prohíbe los endpoints de búsqueda de texto libre** (`/api/*fulltext_search*`, `/api/*direct_searches*`, `/app/*quick_search/*`, `/app/*systematic/search/*`) — una restricción precisa y respetada por el adaptador (que nunca llama a esos endpoints, solo a los de catálogo/listado). |
+
+## `zh-lex/` — Cantón de Zúrich, sistema propio (HTML estable)
+
+| Archivo                                 | Qué prueba                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `erlass_131_1_gemeindegesetz_main.html` | Fragmento real (`<main>`) de `https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-131_1-2015_04_20-2018_01_01-105.html`: confirma el esquema de URL real con numero sistematico ("Ordnungsnummer", `131_1`) y fechas de vigencia (`2015_04_20`/`2018_01_01`) codificadas directamente en la URL — versionado real explícito sin necesidad de una API separada. |
+| `robots.txt`                            | Real: solo declara un sitemap, sin restricciones (`Disallow` vacío) — crawling permitido.                                                                                                                                                                                                                                                                                                          |
+
+## Cantones auditados pero NO implementados en esta fase (acceso restringido o complejidad no resuelta durante la auditoría)
+
+- **Ticino** (`m3.ti.ch/CAN/RLeggi`): portal real confirmado (Phase 0), pero devolvió HTTP 403 tanto a peticiones `curl` con User-Agent realista como a la navegación real por navegador durante esta auditoría — no se intentó eludir la protección.
+- **Vaud** (`prestations.vd.ch/pub/blv-publication`): esquema de URL real confirmado por fuente externa (`/actes/consolide/{numeroBLV}`, ej. "170.21"), pero el dominio devolvió "Accès non autorisé" de forma consistente durante la auditoría (incluso para su propio `robots.txt`), indicando una barrera de acceso a nivel de dominio no resuelta.
+- **Genève** (`silgeneve.ch/legis`): portal real confirmado, `robots.txt` vacío (sin restricción), pero es una interfaz antigua basada en frames/JavaScript (`javascript:void(0)` en los enlaces principales) que requeriría una exploración sustancialmente mayor para extraer contenido de forma fiable — documentado como "HTML complejo", no implementado en esta fase.
+
+No se auditó en profundidad ningún otro cantón mas allá de estos cinco (Berna, Zúrich, Ticino, Vaud, Ginebra) en Fase 5; el resto de los 26 se documenta solo con la información ya recogida en Fase 0 (ver `docs/source-audit.md`).

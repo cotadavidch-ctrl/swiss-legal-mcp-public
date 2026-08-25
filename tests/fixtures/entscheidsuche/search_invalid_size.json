@@ -1,0 +1,16 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 7,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool search: 1 validation error for searchArguments\nsize\n  Input should be less than or equal to 100 [type=less_than_equal, input_value=99999, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/less_than_equal"
+        }
+      ],
+      "isError": true
+    }
+  }
+}

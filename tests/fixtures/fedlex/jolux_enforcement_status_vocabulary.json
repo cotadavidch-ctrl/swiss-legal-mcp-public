@@ -1,0 +1,492 @@
+{
+  "head": { "link": [], "vars": ["s", "p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#EnforcementStatus"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#Concept" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "fr", "value": "En vigueur" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "en", "value": "In force" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "rm", "value": "En vigur" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "de", "value": "In Kraft" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "it", "value": "In vigore" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/created" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2023-08-18T00:00:00Z"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#inScheme" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#topConceptOf" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://publications.europa.eu/ontology/euvoc#status" },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/concept-status/CURRENT"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/0"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2002/07/owl#deprecated" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "value": "0"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#EnforcementStatus"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#Concept" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "rm", "value": "Betg pli publitg\u00E0 en la SR" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "de", "value": "Nicht mehr in der SR publiziert" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "en", "value": "No longer published in the SR" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "it", "value": "Non pi\u00F9 pubblicato nella RS" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "fr", "value": "Plus publi\u00E9 dans le RS" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/created" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2023-08-18T00:00:00Z"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#inScheme" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#topConceptOf" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://publications.europa.eu/ontology/euvoc#status" },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/concept-status/CURRENT"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/1"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2002/07/owl#deprecated" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "value": "0"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#EnforcementStatus"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#Concept" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#EnforcementStatus"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#Concept" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "de", "value": "Gegenstandslos" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "en", "value": "Not applicable" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "it", "value": "Privo d'oggetto" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "fr", "value": "Sans objet" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "rm", "value": "Senza object" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "rm", "value": "Betg pli en vigur" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "de", "value": "Nicht mehr in Kraft" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "en", "value": "No longer in force" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "it", "value": "Non pi\u00F9 in vigore" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#prefLabel" },
+        "o": { "type": "literal", "xml:lang": "fr", "value": "Plus en vigueur" }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/created" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2023-08-18T00:00:00Z"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://purl.org/dc/terms/created" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "value": "2023-08-18T00:00:00Z"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#inScheme" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#inScheme" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#topConceptOf" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#topConceptOf" },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://publications.europa.eu/ontology/euvoc#status" },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/concept-status/CURRENT"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://publications.europa.eu/ontology/euvoc#status" },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/concept-status/CURRENT"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/2"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2002/07/owl#deprecated" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "value": "0"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/3"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/2002/07/owl#deprecated" },
+        "o": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "value": "0"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/4"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#EnforcementStatus"
+        }
+      },
+      {
+        "s": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/vocabulary/enforcement-status/4"
+        },
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": { "type": "uri", "value": "http://www.w3.org/2004/02/skos/core#Concept" }
+      }
+    ]
+  }
+}

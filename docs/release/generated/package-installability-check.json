@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-08-05T23:50:19.422Z",
+  "tarballName": "swiss-legal-mcp-1.0.0.tgz",
+  "tarballSha256": "62967e3213fa350ebe43da95ab0b38a4533c10e1d09fcbbc7279ca23fa389935",
+  "cleanInstallPath": "/var/folders/lp/_jmygv_17p79c3zdxm2dgrt80000gn/T/swiss-legal-mcp-clean-install-1785973821268-tK8s10",
+  "checks": [
+    {
+      "name": "1_pack_generates_tarball",
+      "passed": true,
+      "detail": "swiss-legal-mcp-1.0.0.tgz"
+    },
+    {
+      "name": "2_tarball_contains_dist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "3_tarball_contains_package_json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "4_tarball_contains_bin_entrypoint",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "16_no_packaged_node_modules",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "14_no_env_files",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "15_no_settings_local_json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "5_bin_is_executable",
+      "passed": true,
+      "detail": "mode=755"
+    },
+    {
+      "name": "12_no_absolute_user_paths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "17_no_workspace_protocol_in_installed_package_json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "6_clean_install_succeeds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "6b_dependencies_resolve_in_temp_node_modules",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "10_no_workspace_imports_in_installed_js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "11_no_live_symlink_to_workspace",
+      "passed": true,
+      "detail": "/tmp/swiss-legal-mcp-clean-install-<id>"
+    },
+    {
+      "name": "7_server_starts_from_temp_node_modules",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "8_mcp_handshake_passes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "9_tools_list_returns_42",
+      "passed": true,
+      "detail": "actual=42"
+    },
+    {
+      "name": "9b_no_duplicate_tools",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "18_shab_policy_error_no_network",
+      "passed": true,
+      "detail": "{\"code\":\"PROVIDER_UNAVAILABLE_BY_POLICY\",\"message\":\"El proveedor 'shab' no esta disponible por politica de cumplimiento (robots_txt_disallow).\",\"correlationId\":\"2fbb8248-5724-4867-98a5-5ffc436d0905\",\"retryable\":false,\"provider\":\"shab\",\"details\":{\"reason\":\"robots_txt_disallow\",\"networkRequestPerformed\":false}}"
+    },
+    {
+      "name": "19_legal_capability_smoke_passes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "13_no_local_hostname_in_runtime_output",
+      "passed": true,
+      "detail": "<hostname>"
+    },
+    {
+      "name": "server_shutdown_clean",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "20_temp_cleanup_correct",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "finalStatus": "PASS"
+}

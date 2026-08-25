@@ -1,0 +1,53 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 22081,\n  \"hits\": [\n    {\n      \"id\": \"VD_TC_031_EF-2020-0001_2020-10-29\",\n      \"title\": \"Vaud Tribunal cantonal Cour de droit administratif et public 29.10.2020 EF.2020.0001\",\n      \"abstract\": \"A.________/Commission d'estimation fiscale | Décision sur réclamation de la Commission d'estimation fiscale des immeubles se fondant sur le montant du <em>loyer</em> tel qu'annoncé au SCL plutôt que celui figurant dans le contrat de <em>bail</em> <em>à</em> <em>loyer</em>. Le montant annoncé au SCL résultant vraisemblablement d'une erreur, il y a lieu de tenir compte du montant du <em>loyer</em> net figurant sur le <em>bail</em> pour fixer l'estimation fiscale. Recours admis.\",\n      \"text\": \"A.________ pour produire une copie du\\n<em>bail</em> <em>à</em> <em>loyer</em> accompagné des \\\"éventuelles notifications\\\". Le 26 août 2019, A.________ a produit une copie du\\n<em>bail</em> <em>à</em> <em>loyer</em> du 19 juin 2012 signé entre les anciens Elle a ainsi tenu compte d'un\\n<em>loyer</em> net annuel de 29'400 fr., montant capitalisé <em>à</em> 7% pour obtenir une soit celui figurant dans le contrat de <em>bail</em> <em>à</em> <em>loyer</em>. <em>à</em> <em>loyer</em> conclu entre les anciens propriétaires et l'actuel\\nlocataire dont il résultait que le montant\",\n      \"meta\": \"Vaud Tribunal cantonal Cour de droit administratif et public\",\n      \"canton\": \"VD\",\n      \"court\": \"VD_TC\",\n      \"decision_date\": \"2020-10-29\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/VD_Omni/VD_TC_031_EF-2020-0001_2020-10-29.html\",\n      \"original_url\": null,\n      \"sort\": [\n        23.703968,\n        \"VD_TC_031_EF-2020-0001_2020-10-29\"\n      ]\n    },\n    {\n      \"id\": \"VD_TC_031_PS-2005-0374_2006-02-24\",\n      \"title\": \"Vaud Tribunal cantonal Cour de droit administratif et public 24.02.2006 PS.2005.0374\",\n      \"abstract\": \"X c/Centre social régional de Nyon-Rolle, Service de prévoyance et d'aide sociales | Pour une personne qui vit avec un colocataire, l'aide sociale comprend l'entier des forfaits 1 et 2, ainsi que la moitié des <em>loyer</em> et charges fixés dans le <em>bail</em>. Si la part du <em>loyer</em> excède le plafond fixé par les normes, sa prise en charge sera réduite <em>à</em> la prochaine échéance du <em>bail</em>.\",\n      \"text\": \"Selon le contrat de <em>bail</em> <em>à</em> <em>loyer</em> signé par Mme Y.________,\\nle <em>loyer</em> mensuel du duplex 5 pièces qu'elle .________ <em>à</em> partir du 1er novembre 2005, <em>à</em> raison\\nde 2'100 fr. par mois, dont 990 fr. pour le <em>loyer</em>. c) Le <em>loyer</em> peut être garanti selon le <em>bail</em> dans la\\nmesure où il est considéré comme raisonnable (Recueil Toutefois, le recourant peut bénéficier\\nde la prise en charge de la moitié du <em>loyer</em> fixé dans le <em>bail</em> Au-delà, le <em>loyer</em> devra être réduit <em>à</em> 650 fr.,\\néventuellement majoré de 15%, soit 747 fr. 50.\",\n      \"meta\": \"Vaud Tribunal cantonal Cour de droit administratif et public\",\n      \"canton\": \"VD\",\n      \"court\": \"VD_TC\",\n      \"decision_date\": \"2006-02-24\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/VD_Omni/VD_TC_031_PS-2005-0374_2006-02-24.html\",\n      \"original_url\": null,\n      \"sort\": [\n        22.583967,\n        \"VD_TC_031_PS-2005-0374_2006-02-24\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    22.583967,\n    \"VD_TC_031_PS-2005-0374_2006-02-24\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 22081,
+        "hits": [
+          {
+            "id": "VD_TC_031_EF-2020-0001_2020-10-29",
+            "title": "Vaud Tribunal cantonal Cour de droit administratif et public 29.10.2020 EF.2020.0001",
+            "abstract": "A.________/Commission d'estimation fiscale | Décision sur réclamation de la Commission d'estimation fiscale des immeubles se fondant sur le montant du <em>loyer</em> tel qu'annoncé au SCL plutôt que celui figurant dans le contrat de <em>bail</em> <em>à</em> <em>loyer</em>. Le montant annoncé au SCL résultant vraisemblablement d'une erreur, il y a lieu de tenir compte du montant du <em>loyer</em> net figurant sur le <em>bail</em> pour fixer l'estimation fiscale. Recours admis.",
+            "text": "A.________ pour produire une copie du\n<em>bail</em> <em>à</em> <em>loyer</em> accompagné des \"éventuelles notifications\". Le 26 août 2019, A.________ a produit une copie du\n<em>bail</em> <em>à</em> <em>loyer</em> du 19 juin 2012 signé entre les anciens Elle a ainsi tenu compte d'un\n<em>loyer</em> net annuel de 29'400 fr., montant capitalisé <em>à</em> 7% pour obtenir une soit celui figurant dans le contrat de <em>bail</em> <em>à</em> <em>loyer</em>. <em>à</em> <em>loyer</em> conclu entre les anciens propriétaires et l'actuel\nlocataire dont il résultait que le montant",
+            "meta": "Vaud Tribunal cantonal Cour de droit administratif et public",
+            "canton": "VD",
+            "court": "VD_TC",
+            "decision_date": "2020-10-29",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/VD_Omni/VD_TC_031_EF-2020-0001_2020-10-29.html",
+            "original_url": null,
+            "sort": [23.703968, "VD_TC_031_EF-2020-0001_2020-10-29"]
+          },
+          {
+            "id": "VD_TC_031_PS-2005-0374_2006-02-24",
+            "title": "Vaud Tribunal cantonal Cour de droit administratif et public 24.02.2006 PS.2005.0374",
+            "abstract": "X c/Centre social régional de Nyon-Rolle, Service de prévoyance et d'aide sociales | Pour une personne qui vit avec un colocataire, l'aide sociale comprend l'entier des forfaits 1 et 2, ainsi que la moitié des <em>loyer</em> et charges fixés dans le <em>bail</em>. Si la part du <em>loyer</em> excède le plafond fixé par les normes, sa prise en charge sera réduite <em>à</em> la prochaine échéance du <em>bail</em>.",
+            "text": "Selon le contrat de <em>bail</em> <em>à</em> <em>loyer</em> signé par Mme Y.________,\nle <em>loyer</em> mensuel du duplex 5 pièces qu'elle .________ <em>à</em> partir du 1er novembre 2005, <em>à</em> raison\nde 2'100 fr. par mois, dont 990 fr. pour le <em>loyer</em>. c) Le <em>loyer</em> peut être garanti selon le <em>bail</em> dans la\nmesure où il est considéré comme raisonnable (Recueil Toutefois, le recourant peut bénéficier\nde la prise en charge de la moitié du <em>loyer</em> fixé dans le <em>bail</em> Au-delà, le <em>loyer</em> devra être réduit <em>à</em> 650 fr.,\néventuellement majoré de 15%, soit 747 fr. 50.",
+            "meta": "Vaud Tribunal cantonal Cour de droit administratif et public",
+            "canton": "VD",
+            "court": "VD_TC",
+            "decision_date": "2006-02-24",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/VD_Omni/VD_TC_031_PS-2005-0374_2006-02-24.html",
+            "original_url": null,
+            "sort": [22.583967, "VD_TC_031_PS-2005-0374_2006-02-24"]
+          }
+        ],
+        "next_cursor": [22.583967, "VD_TC_031_PS-2005-0374_2006-02-24"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

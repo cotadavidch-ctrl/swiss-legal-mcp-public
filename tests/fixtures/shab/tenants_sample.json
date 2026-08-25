@@ -1,0 +1,373 @@
+[
+  {
+    "id": "shab",
+    "title": {
+      "code": "tenant.title.shab",
+      "en": "Swiss Official Gazette of Commerce",
+      "de": "Schweizerisches Handelsamtsblatt",
+      "fr": "Feuille officielle suisse du commerce",
+      "it": "Foglio ufficiale svizzero di commercio",
+      "version": 0
+    },
+    "code": "shab",
+    "type": "SHAB",
+    "canton": null,
+    "external": false,
+    "shortName": {
+      "code": "tenant.short.name.shab",
+      "en": "SOGC",
+      "de": "SHAB",
+      "fr": "FOSC",
+      "it": "FUSC",
+      "version": 0
+    },
+    "pdfFilenameTranslation": null,
+    "pdfFooterTranslation": {
+      "code": "TENANT.METADATA.PDF.FOOTER.shab",
+      "en": "SOGC no #number# / #date# / page #page#",
+      "de": "SHAB Nr. #number# / #date# / Seite #page#",
+      "fr": "FOSC N° #number# / #date# / page #page#",
+      "it": "FUSC No. #number# / #date# / pagina #page#",
+      "version": 0
+    },
+    "archiveSearchEnabled": true,
+    "dailyIssueAvailabilityYears": null,
+    "languages": ["de", "fr", "it", "en"],
+    "version": 2724,
+    "orderCode": "1S",
+    "domain": "https://shab.ch",
+    "additionalDomains": [
+      "https://www.shab.ch",
+      "https://fosc.ch",
+      "https://www.fosc.ch",
+      "https://fusc.ch",
+      "https://www.fusc.ch",
+      "https://sogc.ch",
+      "https://www.sogc.ch",
+      "https://shab.amtsblattportal.ch",
+      "https://shab.prod.eshab.shab.ch",
+      "https://fosc.prod.eshab.shab.ch",
+      "https://fusc.prod.eshab.shab.ch",
+      "https://sogc.prod.eshab.shab.ch"
+    ],
+    "inTransition": false,
+    "startTransitionDate": "2017-01-01T00:00:00.000Z",
+    "endTransitionDate": "2018-09-02T00:00:00.000Z",
+    "files": [
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "de"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "fr"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "it"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "fr"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "it"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "fr"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "it"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_PDF",
+        "language": null
+      },
+      {
+        "fileType": "AGGREGATED_PDF_LOGO",
+        "language": null
+      },
+      {
+        "fileType": "CSS",
+        "language": null
+      },
+      {
+        "fileType": "FAVICON",
+        "language": null
+      }
+    ],
+    "current": true,
+    "legalFoundationExcerptDe": "<h4><b>Verordnung und allgemeine Geschäftsbedinungen</b></h4><p><!--EndFragment-->Die gesetzlichen Grundlagen des SHAB finden Sie in der <a href=\"https://www.admin.ch/opc/de/classified-compilation/20052339/index.html\" target=\"blank\">Verordnung über das Schweizerische Handelsamtsblatt</a> vom 15. Februar 2006.</p><p>Das SHAB wird über das Amtsblattportal veröffentlicht. Publizierende Stellen erfassen ihre Meldungen über diesen Kanal. Deshalb wurden die <a href=\"https://amtsblattportal.ch/static/agb_de.pdf\" target=\"blank\">Allgemeinen Geschäftsbedingungen (AGB)</a> für die Nutzung des Amtsblattportals hinterlegt.<br/></p><p><br/></p><h4 style=\"font-size: 18px;\"><b><b>AGB des Amtsblattportals</b></b></h4><p style=\"font-size: 14px;\">Das SHAB wird über das Amtsblattportal veröffentlicht. Publizierende Stellen erfassen ihre Meldungen über diesen Kanal. Deshalb wurden die <a href=\"https://amtsblattportal.ch/static/agb_de.pdf\" target=\"blank\" style=\"background-color: transparent;text-decoration: underline;\">Allgemeine Geschäftsbedingungen (AGB)</a> für die Nutzung des Amtsblattportals hinterlegt.</p><p style=\"font-size: 14px;\"><br/></p><h4><b>Verbindliche Gesetzesartikel zu den einzelnen Rubriken</b><br/></h4><p><a href=\"https://www.admin.ch/opc/de/classified-compilation/20072056/index.html\" target=\"blank\">Handelsregisterverordnung (HRegV)</a><br/><a href=\"https://www.admin.ch/opc/de/classified-compilation/18890002/index.html\" target=\"blank\">Schuldbetreibungs- und Konkursgesetz (SchKG)</a><br/><a href=\"https://www.admin.ch/opc/de/classified-compilation/19110009/index.html\" target=\"blank\">Obligationenrecht (OR)</a><br/><a href=\"https://www.admin.ch/opc/de/classified-compilation/19070042/index.html\" target=\"blank\">Zivilgesetzbuch (ZGB)</a><br/><a href=\"https://www.admin.ch/opc/de/classified-compilation/20001208/index.html\" target=\"blank\">Fusionsgesetz (FusG)</a></p><p><br/></p>"
+  },
+  {
+    "id": "kabtg",
+    "title": {
+      "code": "tenant.title.kabtg",
+      "en": "Amtsblatt des Kantons Thurgau",
+      "de": "Amtsblatt des Kantons Thurgau",
+      "fr": "Amtsblatt des Kantons Thurgau",
+      "it": "Amtsblatt des Kantons Thurgau",
+      "version": 2
+    },
+    "code": "kabtg",
+    "type": "CANTON",
+    "canton": "TG",
+    "external": true,
+    "shortName": {
+      "code": "tenant.short.name.kabtg",
+      "en": "Official Gazette TG",
+      "de": "Amtsblatt TG",
+      "fr": "FAO TG",
+      "it": "FU TG",
+      "version": 0
+    },
+    "pdfFilenameTranslation": null,
+    "pdfFooterTranslation": null,
+    "archiveSearchEnabled": false,
+    "dailyIssueAvailabilityYears": null,
+    "languages": [],
+    "version": 91,
+    "orderCode": "TG",
+    "current": false
+  },
+  {
+    "id": "kabge",
+    "title": {
+      "code": "tenant.title.kabge",
+      "en": "Feuille d'avis officielle de la République et Canton de Genève",
+      "de": "Feuille d'avis officielle de la République et Canton de Genève",
+      "fr": "Feuille d'avis officielle de la République et Canton de Genève",
+      "it": "Feuille d'avis officielle de la République et Canton de Genève",
+      "version": 1
+    },
+    "code": "kabge",
+    "type": "CANTON",
+    "canton": "GE",
+    "external": true,
+    "shortName": {
+      "code": "tenant.short.name.kabge",
+      "en": "Official Gazette GE",
+      "de": "Amtsblatt GE",
+      "fr": "FAO GE",
+      "it": "FU GE",
+      "version": 0
+    },
+    "pdfFilenameTranslation": null,
+    "pdfFooterTranslation": null,
+    "archiveSearchEnabled": false,
+    "dailyIssueAvailabilityYears": null,
+    "languages": [],
+    "version": 5,
+    "orderCode": "GE",
+    "current": false
+  },
+  {
+    "id": "kabzh",
+    "title": {
+      "code": "tenant.title.kabzh",
+      "en": "Amtsblatt des Kantons Zürich",
+      "de": "Amtsblatt des Kantons Zürich",
+      "fr": "Amtsblatt des Kantons Zürich",
+      "it": "Amtsblatt des Kantons Zürich",
+      "version": 1
+    },
+    "code": "kabzh",
+    "type": "CANTON",
+    "canton": "ZH",
+    "external": false,
+    "shortName": {
+      "code": "tenant.short.name.kabzh",
+      "en": "Official Gazette ZH",
+      "de": "Amtsblatt ZH",
+      "fr": "FAO ZH",
+      "it": "FU ZH",
+      "version": 0
+    },
+    "pdfFilenameTranslation": null,
+    "pdfFooterTranslation": null,
+    "archiveSearchEnabled": true,
+    "dailyIssueAvailabilityYears": null,
+    "languages": ["de"],
+    "version": 2176,
+    "orderCode": "ZH",
+    "domain": "https://amtsblatt.zh.ch",
+    "additionalDomains": [
+      "https://www.amtsblatt.zh.ch",
+      "https://kabzh.amtsblattportal.ch",
+      "https://kabzh.prod.eshab.shab.ch"
+    ],
+    "inTransition": false,
+    "startTransitionDate": "2017-01-01T00:00:00.000Z",
+    "endTransitionDate": "2018-09-02T00:00:00.000Z",
+    "files": [
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_PDF",
+        "language": null
+      },
+      {
+        "fileType": "AGGREGATED_PDF_LOGO",
+        "language": null
+      },
+      {
+        "fileType": "CSS",
+        "language": null
+      },
+      {
+        "fileType": "FAVICON",
+        "language": null
+      }
+    ],
+    "current": false
+  },
+  {
+    "id": "kabzg",
+    "title": {
+      "code": "tenant.title.kabzg",
+      "en": "Amtsblatt des Kantons Zug",
+      "de": "Amtsblatt des Kantons Zug",
+      "fr": "Amtsblatt des Kantons Zug",
+      "it": "Amtsblatt des Kantons Zug",
+      "version": 0
+    },
+    "code": "kabzg",
+    "type": "CANTON",
+    "canton": "ZG",
+    "external": false,
+    "shortName": {
+      "code": "tenant.short.name.kabzg",
+      "en": "Official Gazette ZG",
+      "de": "Amtsblatt ZG",
+      "fr": "FAO ZG",
+      "it": "FU ZG",
+      "version": 0
+    },
+    "pdfFilenameTranslation": {
+      "code": "TENANT.METADATA.PDF.FNAME.kabzg",
+      "en": null,
+      "de": "Amtsblatt Zug_#date#",
+      "fr": null,
+      "it": null,
+      "version": 0
+    },
+    "pdfFooterTranslation": {
+      "code": "TENANT.METADATA.PDF.FOOTER.kabzg",
+      "en": null,
+      "de": "Amtsblatt Kanton Zug Nr. #number# / #date# / Seite #page#",
+      "fr": null,
+      "it": null,
+      "version": 0
+    },
+    "archiveSearchEnabled": false,
+    "dailyIssueAvailabilityYears": null,
+    "languages": ["de"],
+    "version": 314,
+    "orderCode": "ZG",
+    "domain": "https://amtsblatt.zg.ch",
+    "additionalDomains": ["https://www.amtsblatt.zg.ch"],
+    "inTransition": false,
+    "startTransitionDate": "2022-12-01T00:00:00.000Z",
+    "endTransitionDate": "2022-12-27T00:00:00.000Z",
+    "files": [
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "de"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "fr"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "it"
+      },
+      {
+        "fileType": "HOME_IMAGE",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "fr"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "it"
+      },
+      {
+        "fileType": "LOGO_DESKTOP",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "de"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "fr"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "it"
+      },
+      {
+        "fileType": "LOGO_MOBILE",
+        "language": "en"
+      },
+      {
+        "fileType": "LOGO_PDF",
+        "language": null
+      },
+      {
+        "fileType": "AGGREGATED_PDF_LOGO",
+        "language": null
+      },
+      {
+        "fileType": "CSS",
+        "language": null
+      },
+      {
+        "fileType": "FAVICON",
+        "language": null
+      }
+    ],
+    "current": false
+  }
+]

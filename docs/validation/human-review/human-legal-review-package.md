@@ -1,0 +1,436 @@
+# Paquete de revisión jurídica humana cualificada
+
+package_id: HUMAN-LEGAL-REVIEW-PACKAGE-2026-08-06-001
+created_at: 2026-08-06T02:46:00Z
+run_id: swiss-legal-mcp-rerun-20260806_010417
+version_revisada: 1.0.0
+tarball_sha256: 71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e
+human_review_completed: false
+calibration_completed: false
+
+## Alcance y reglas
+
+Este paquete es autocontenido y trazable. No declara revisión humana completada, no modifica el RC y no autoriza publicación. Las conclusiones son recomendaciones preliminares no vinculantes basadas exclusivamente en artefactos locales autorizados.
+
+## Fuentes autorizadas leídas
+
+- docs/validation/results/swiss-legal-mcp-rerun-responses.json (sha256:ec1bebfd9e9978036868962083b7129467d5d632cbbef7dee6719c854b782b3d)
+- docs/validation/results/swiss-legal-mcp-rerun-evaluation.md (sha256:0a967801ca4383d0be9df8c154fe91a062e6f1780a673b6371d37da2ad3f3a66)
+- docs/validation/results/swiss-legal-mcp-rerun-metadata.json (sha256:74cfca1fd6a41bc8ba4d19aa1b7729ab602776d2087de0afc71f767b27706b8d)
+- docs/validation/results/swiss-legal-mcp-before-after-comparison.json (sha256:a7e3173aad5ce52c2f664f148b558bac84db53731faed701119a088d7949e96c)
+- docs/validation/results/swiss-legal-mcp-before-after-comparison.md (sha256:62d9aacfa6ee09695e9f2018d7396339c4fcc177fe00c1973e6e30637a866bb2)
+- docs/validation/results/ai-legal-cross-comparison.json (sha256:bb45324efd81241ee20c509920e07ac4b578c04b5bad6f70b9a9875807dfc6ff)
+- docs/validation/results/ai-legal-cross-comparison.md (sha256:68623d2c2b133984511dbc4055dee807a2539feae68fa1ec6491a27a923224d0)
+- docs/validation/results/ai-legal-cross-comparison-metadata.json (sha256:c928197923f73c0db968fb511e5a6e7bbe58e7097c7ec5307154ec9473f271b1)
+- docs/validation/ai-legal-test-cases.json (sha256:fc61d1dbcdcc5f2a8b01fa85e6e6375ac71b8c1e76241670f4c381eed9e15170)
+- docs/validation/ai-legal-evaluation-rubric.md (sha256:f68cbc1a4923cfe1df4befbad17b44801dc81b89df4e2e5d2dfec0e6fbbe96de)
+- docs/release/RC-1.0.0.md (sha256:927faac87818c239d9b8a75d4aeaf7f0ea0d68e6fb43bd08742546f1a594f8ef)
+- docs/validation/results/targeted-fix-find-01-02.json (sha256:e01ca9a55e10b31f9b7678dad5189870948aba42e1c9791469c3c6bef3c95781)
+- docs/validation/results/targeted-fix-find-01-02.md (sha256:9706399520a1640fb65d63315ec1a90c55f73140a157617b9b7a0679dd1d97ca)
+- docs/validation/results/mcp-improvement-backlog.json (sha256:742380d01f2bb2eb1d3497a8ad9f99a8bcb894d49e0a930e40b4afb77a43a160)
+
+## Resumen ejecutivo
+
+- Casos Swiss Legal MCP en REVIEW_REQUIRED: AILC-01, AILC-02, AILC-03, AILC-05, AILC-11, AILC-17, AILC-19.
+- Deudas P2 abiertas: FIND-04 metadata_only identity_mismatch; FIND-05 Zurich HTTP 204.
+- FIND-01 y FIND-02 están cerrados técnicamente según targeted-fix-find-01-02.json/.md.
+- No hay P0/P1 abiertos en la comparación cruzada actual.
+- Recomendación RC no vinculante: mantener TECHNICALLY_APPROVED_WITH_EXTERNAL_HUMAN_REVIEW_PENDING.
+
+## Análisis transversal de los 7 casos
+
+### AILC-01, AILC-02, AILC-03
+
+No fueron reejecutados en la batería de rerun y se conservaron como resultados válidos previos. Los tres siguen apoyados en entscheidsuche.ch u otra evidencia secundaria, con advertencias explícitas de no verificación oficial. El revisor debe verificar existencia, identidad, fecha, tribunal, texto oficial y fidelidad del resumen antes de aceptar la cita.
+
+### AILC-05 y AILC-11
+
+AILC-05 queda en REVIEW_REQUIRED por falta de metadatos oficiales suficientes de A-4733/2022; la abstención evita invención y no demuestra defecto técnico. AILC-11 queda en REVIEW_REQUIRED porque la metodología ratio/obiter es útil, pero falta un ejemplo exacto oficialmente confirmado en el resultado actual; tampoco se clasifica como defecto técnico con la evidencia disponible.
+
+### AILC-17
+
+El artefacto registra un hueco histórico Fedlex XML/Akoma Ntoso para la versión de 2015 del CO. Esto es una limitación de fuente/proveedor histórico, no un fallo del razonamiento jurídico: el sistema aplicó correctamente el método de no asumir que la versión actual era aplicable al hecho de 2015.
+
+### AILC-19
+
+El caso está ligado a FIND-05: el proveedor Zurich devolvió HTTP 204/PROVIDER_UNAVAILABLE. Esto indica indisponibilidad o endpoint sin contenido para esa petición, no ausencia jurídica de norma cantonal ni error jurídico demostrado. La respuesta fue conservadora y distinguió derecho federal de organización cantonal.
+
+## Fichas individuales
+
+### AILC-01 — Identificacion de jurisprudencia lider sobre despido abusivo (Art. 336 CO)
+
+- Categoría: identificacion_jurisprudencia
+- Idioma: es
+- High risk: false
+- Puntuación actual: 78
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: evidencia secundaria
+- Motivo exacto: El resultado preservado no fue reejecutado y se apoya en entscheidsuche.ch como agregador no oficial; no hay confirmación oficial bger.ch de la referencia BGE 127 III 86 dentro del rerun.
+- Herramientas MCP: search_cases
+- Fuentes consultadas: entscheidsuche.ch (agregador no oficial) — BGE 127 III 86 (2000-12-19); Fedlex SR 220 art. 336 CO (para el texto legal de referencia)
+- Citas emitidas: BGE 127 III 86; SR 220; art. 336 CO
+- Riesgo jurídico: Riesgo medio: usar una cita secundaria no confirmada puede introducir una referencia imprecisa o un resumen no fiel en un escrito.
+
+Prompt original:
+
+> Necesito identificar la jurisprudencia del Tribunal Federal suizo que establece los criterios generales para calificar un despido como abusivo bajo el art. 336 CO. Indica la referencia exacta de al menos una sentencia relevante, el tribunal, la fecha y un resumen fiel de su contenido, citando la fuente oficial en la que puede verificarse.
+
+Respuesta actual / extracto suficiente:
+
+> Mediante search_cases (Swiss Legal MCP) se localizó en el agregador no oficial entschedsuche.ch una sentencia del Tribunal Federal directamente relevante: BGE 127 III 86 (2000-12-19), sobre los criterios para que un despido durante el periodo de prueba pueda calificarse de abusivo (arts. 335b y 336 OR). Esta referencia existe realmente en la base de entschedsuche.ch y su contenido citado (regesto) coincide con la materia solicitada. Sin embargo, Swiss Legal MCP no logró, en esta ejecución, una confirmación oficial independiente contra bger.ch, por lo que esta cita debe tratarse como fuente secundaria pendiente de verificación en bger.ch antes de usarse en un escrito. Advertencia obligatoria: la calificación de abusividad depende siempre de los hechos concretos de cada caso; ninguna de estas sentencias debe aplicarse automáticamente a otra situación sin análisis individual.
+
+Afirmaciones verificadas:
+
+- La herramienta registró resultados en entscheidsuche.ch y advirtió que la fuente no era oficial.
+- La respuesta incluyó advertencias de no aplicación automática al caso concreto.
+
+Afirmaciones sin verificar:
+
+- Confirmación oficial bger.ch de BGE 127 III 86 y fidelidad completa del resumen.
+
+Preguntas para el revisor:
+
+- ¿BGE 127 III 86 existe y es pertinente para criterios de despido abusivo bajo art. 336 CO?
+- ¿El resumen preservado es fiel al texto oficial?
+- ¿Debe sustituirse por una referencia más canónica o reciente?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas si el revisor confirma en bger.ch la referencia y el resumen; exigir corrección si la fuente oficial no respalda la cita.
+
+Evidencia que respalda la recomendación:
+
+- Fuente secundaria con advertencia; no hay confirmacion oficial bger en el resultado preservado.
+- Fuente secundaria con advertencia; no hay confirmacion oficial bger en el resultado preservado.
+- Swiss preserved secondary-source-only result; Claude IA2 claims primary verification but only AILC-01..12 are canonically comparable; IA3 partial official index only.
+- UNOFFICIAL_SOURCE: los resultados de search_cases provienen de entschedsuche.ch, agregador no oficial; ninguna coincidencia se marcó officialSourceResolution.isOfficialCandidate=true (motivo declarado por la propia herramienta: 'sin URL' oficial confirmada).
+
+### AILC-02 — Massgebliche Entscheidung zu Kurzarbeitsentschaedigung nach AVIG
+
+- Categoría: identificacion_jurisprudencia
+- Idioma: de
+- High risk: false
+- Puntuación actual: 78
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: evidencia secundaria
+- Motivo exacto: El resultado preservado no fue reejecutado y se apoya en entscheidsuche.ch para B-5863/2020; no hay confirmación oficial BVGer/BGer dentro del rerun.
+- Herramientas MCP: search_cases
+- Fuentes consultadas: entscheidsuche.ch (agregador no oficial) — CH_BVGE_001_B-5863-2020_2022-03-01; Fedlex SR 830.1 AVIG (para el texto legal de referencia)
+- Citas emitidas: B-5863/2020; Art. 32 AVIG; SR 830.1
+- Riesgo jurídico: Riesgo medio: puede citarse un tribunal o resolución no exactamente solicitado por el usuario; requiere confirmación oficial.
+
+Prompt original:
+
+> Ich suche eine massgebliche Entscheidung des Bundesgerichts zu den Voraussetzungen der Kurzarbeitsentschaedigung nach AVIG, insbesondere zur Frage, wann ein Arbeitsausfall als anrechenbar gilt. Bitte nennen Sie das genaue Aktenzeichen, das Datum und eine treue Zusammenfassung, mit Verweis auf die offizielle Fundstelle.
+
+Respuesta actual / extracto suficiente:
+
+> Mediante search_cases (Swiss Legal MCP) se localizó en el agregador no oficial entschedsuche.ch una decisión del Bundesverwaltungsgericht directamente relevante: B-5863/2020 del 01.03.2022, sobre la cuestión de cuándo un aprovechamiento de trabajo se considera compensable según el AVIG (Arbeitslosenversicherung). La referencia existe realmente en la base de entschedsuche.ch y su contenido citado coincide con la materia solicitada, abordando específicamente cuando un aprovechamiento de trabajo es 'anrechenbar' (compensable) según el Art. 32 AVIG. Sin embargo, Swiss Legal MCP no logró, en esta ejecución, una confirmación oficial independiente contra fuentes oficiales del BVGer, por lo que esta cita debe tratarse como fuente secundaria pendiente de verificación. Advertencia obligatoria: la interpretación de disposiciones legales depende siempre del contexto concreto y evolutivo de la jurisprudencia; ninguna de estas decisiones debe aplicarse automáticamente sin verificar su vigencia y aplicación actual.
+
+Afirmaciones verificadas:
+
+- La herramienta registró resultados en entscheidsuche.ch y advirtió que la fuente no era oficial.
+- La respuesta incluyó advertencias de no aplicación automática al caso concreto.
+
+Afirmaciones sin verificar:
+
+- Confirmación oficial de B-5863/2020, pertinencia exacta para Kurzarbeit y adecuación ante una pregunta sobre Bundesgericht.
+
+Preguntas para el revisor:
+
+- ¿B-5863/2020 corresponde oficialmente al BVGer y a Kurzarbeitsentschädigung/Art. 32 AVIG?
+- ¿La pregunta pedía Tribunal Federal y la respuesta puede aceptar BVGer como alternativa?
+- ¿El resumen es fiel y suficiente?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas solo si el revisor confirma oficialmente B-5863/2020 y su pertinencia; en caso contrario exigir sustitución por fuente oficial.
+
+Evidencia que respalda la recomendación:
+
+- Fuente secundaria BVGer/entscheidsuche; advertencia correcta pero sin confirmacion oficial.
+- Fuente secundaria BVGer/entscheidsuche; advertencia correcta pero sin confirmacion oficial.
+- Swiss and IA3 abstain/caution; IA2 higher but primary text not independently reconfirmed.
+- UNOFFICIAL_SOURCE: los resultados de search_cases provienen de entschedsuche.ch, agregador no oficial; ninguna coincidencia se marcó officialSourceResolution.isOfficialCandidate=true (motivo declarado por la propia herramienta: 'sin URL' oficial confirmada).
+
+### AILC-03 — Jurisprudencia sobre proporcionalidad de suspensiones AVIG por rechazo de trabajo adecuado
+
+- Categoría: identificacion_jurisprudencia
+- Idioma: es
+- High risk: false
+- Puntuación actual: 79
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: evidencia secundaria
+- Motivo exacto: El resultado preservado no fue reejecutado y se apoya en entscheidsuche.ch para una decisión cantonal; no hay confirmación oficial del tribunal cantonal o bger.ch.
+- Herramientas MCP: search_cases
+- Fuentes consultadas: entscheidsuche.ch (agregador no oficial) — BE_VG_001_200-2020-18_2021-01-06; Fedlex SR 830.1 AVIG arts. 30 y 44 (para el texto legal de referencia)
+- Citas emitidas: art. 30 AVIG; SR 830.1
+- Riesgo jurídico: Riesgo medio: una decisión cantonal no confirmada puede no ser generalizable ni trazable.
+
+Prompt original:
+
+> Quiero jurisprudencia del Tribunal Federal (o de un tribunal cantonal de seguros) sobre como se determina la proporcionalidad del numero de dias de suspension (Einstelltage) impuestos por la caja de desempleo bajo el art. 30 AVIG cuando la persona rechaza un trabajo adecuado. Indica referencia, fecha y resumen fiel, con fuente oficial.
+
+Respuesta actual / extracto suficiente:
+
+> Mediante search_cases (Swiss Legal MCP) se localizó en el agregador no oficial entschedsuche.ch una decisión del Verwaltungsgericht del Kanton Bern directamente relevante: 200 2020 18 del 06.01.2021, sobre la suspensión del derecho a indemnización por desempleo culpable cuando se rechaza una modificación de condiciones de trabajo. La referencia existe realmente en la base de entschedsuche.ch y su contenido citado aborda la cuestión de las suspensiones (suspensions) cuando se rechaza trabajo adecuado, relacionándolo con los arts. 30 y 44 AVIG. Sin embargo, Swiss Legal MCP no logró, en esta ejecución, una confirmación oficial independiente contra fuentes oficiales del VBGer Bern o bger.ch, por lo que esta cita debe tratarse como fuente secundaria pendiente de verificación. Advertencia obligatoria: la interpretación de disposiciones legales como el art. 30 AVIG depende siempre del contexto concreto y evolutivo de la jurisprudencia; ninguna de estas decisiones debe aplicarse automáticamente sin verificar su vigencia y aplicación actual.
+
+Afirmaciones verificadas:
+
+- La herramienta registró resultados en entscheidsuche.ch y advirtió que la fuente no era oficial.
+- La respuesta incluyó advertencias de no aplicación automática al caso concreto.
+
+Afirmaciones sin verificar:
+
+- Confirmación oficial de la decisión cantonal 200 2020 18 y de su valor como jurisprudencia relevante bajo art. 30 AVIG.
+
+Preguntas para el revisor:
+
+- ¿La decisión cantonal citada existe en fuente oficial y trata proporcionalidad de Einstelltage?
+- ¿La relación con art. 30 AVIG está correctamente explicada?
+- ¿Debe abstenerse de citar si no hay fuente oficial?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas si la decisión cantonal y su resumen son confirmados por fuente oficial; si no, mantener como no evaluable para cita concreta.
+
+Evidencia que respalda la recomendación:
+
+- Fuente secundaria cantonal/entscheidsuche; advertencia correcta, verificacion oficial pendiente.
+- Fuente secundaria cantonal/entscheidsuche; advertencia correcta, verificacion oficial pendiente.
+- All systems avoid fixed Einstelltage number; Swiss remains secondary-source-only.
+- UNOFFICIAL_SOURCE: los resultados de search_cases provienen de entschedsuche.ch, agregador no oficial; ninguna coincidencia se marcó officialSourceResolution.isOfficialCandidate=true (motivo declarado por la propia herramienta: 'sin URL' oficial confirmada).
+
+### AILC-05 — Verificacion de metadatos oficiales de A-4733/2022 (TAF/BVGer)
+
+- Categoría: identificacion_jurisprudencia
+- Idioma: es
+- High risk: false
+- Puntuación actual: 78
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: fuente no verificable
+- Motivo exacto: El sistema se abstuvo correctamente de afirmar metadatos finos de A-4733/2022, incluido número de páginas, porque no obtuvo una fuente oficial suficiente.
+- Herramientas MCP: resolve_official_swiss_case, search_cases_by_reference
+- Fuentes consultadas: https://bvger.weblaw.ch/pdf/A-4733-2022_2024-10-31_95e341c9-505f-497b-9fde-5323b747a59f.pdf
+- Citas emitidas: A-4733/2022
+- Riesgo jurídico: Riesgo bajo-medio: la abstención evita invención, pero no satisface necesidad de metadatos oficiales si el usuario los requiere.
+
+Prompt original:
+
+> Verifica la existencia y los metadatos oficiales de la resolucion A-4733/2022 del Tribunal Administrativo Federal suizo (TAF/BVGer): tribunal, tipo de procedimiento, fecha aproximada y materia. No inventes el numero de paginas del documento si no puedes confirmarlo contra una fuente oficial verificable; indica explicitamente si ese dato no puede confirmarse con la evidencia disponible.
+
+Respuesta actual / extracto suficiente:
+
+> La existencia y los metadatos oficiales de A-4733/2022 no quedan plenamente confirmados por una fuente oficial completa en esta ejecucion del servidor. Si aparecen candidatos secundarios, deben tratarse solo como pistas de busqueda. No confirmo numero de paginas ni materia sin documento oficial verificable del Tribunal Administrativo Federal/BVGer.
+
+Afirmaciones verificadas:
+
+- El sistema no inventó número de páginas ni metadatos no confirmados.
+- La abstención está documentada como tal.
+
+Afirmaciones sin verificar:
+
+- Existencia/metadatos completos oficiales de A-4733/2022 y cualquier conteo de páginas.
+
+Preguntas para el revisor:
+
+- ¿A-4733/2022 existe oficialmente y cuáles metadatos mínimos pueden confirmarse?
+- ¿Puede confirmarse número de páginas?
+- ¿La abstención actual es jurídicamente adecuada?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas por abstención honesta; exigir revisión humana si se pretende usar metadatos o páginas de A-4733/2022.
+
+Evidencia que respalda la recomendación:
+
+- Abstencion correcta sobre A-4733/2022 y numero de paginas no confirmado.
+- Abstencion correcta sobre A-4733/2022 y numero de paginas no confirmado.
+- Swiss abstains on A-4733/2022 metadata and page count; IA3 also passes by abstention; IA2 review.
+- ratio_page_evidence_missing
+- secondary_source_missing
+- {"code":"UNOFFICIAL_SOURCE","message":"Los resultados provienen de 'entscheidsuche.ch', un agregador no oficial. La cobertura no esta garantizada ni es exhaustiva.","aggregatorName":"entscheidsuche.ch"}
+
+### AILC-11 — Criterios generales para distinguir ratio decidendi de obiter dictum en la practica del Tribunal Federal
+
+- Categoría: ratio_obiter
+- Idioma: es
+- High risk: false
+- Puntuación actual: 78
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: cobertura jurídica
+- Motivo exacto: La respuesta metodológica sobre ratio/obiter es correcta en abstracto, pero no incluye un ejemplo exacto oficialmente confirmado en el resultado actual.
+- Herramientas MCP: search_cases
+- Fuentes consultadas: ninguna registrada
+- Citas emitidas: ninguna detectada
+- Riesgo jurídico: Riesgo medio: método abstracto correcto puede ser insuficiente si el usuario necesita una cita verificable.
+
+Prompt original:
+
+> Explica, con apoyo en jurisprudencia o doctrina citable y verificable, que criterios usa (o deberia usar) un operador juridico para distinguir entre la ratio decidendi (fundamento decisivo) y un obiter dictum dentro de una sentencia del Tribunal Federal suizo. Da al menos un ejemplo verificable de un pasaje que la doctrina o el propio Tribunal Federal haya calificado como obiter.
+
+Respuesta actual / extracto suficiente:
+
+> El criterio operativo es identificar que razon era necesaria para el dispositivo: la ratio decidendi sostiene el resultado; un obiter dictum es una observacion no necesaria para resolver el litigio. Para verificar un pasaje concreto hay que reconstruir objeto del litigio, pretensiones, hechos relevantes, cuestiones admisibles y encadenamiento de considerandos hasta el dispositivo. En esta ejecucion no confirmo un ejemplo exacto oficialmente calificado como obiter con pasaje literal; por ello me abstengo de inventarlo.
+
+Afirmaciones verificadas:
+
+- El método general distingue ratio como razón necesaria del dispositivo y obiter como observación no necesaria.
+- No se inventó un ejemplo oficial concreto.
+
+Afirmaciones sin verificar:
+
+- Ejemplo concreto de obiter dictum oficialmente trazado o doctrinalmente aceptado.
+
+Preguntas para el revisor:
+
+- ¿El método ratio/obiter descrito es jurídicamente aceptable para práctica suiza?
+- ¿Debe exigirse un ejemplo oficial concreto para aprobar el caso?
+- ¿Qué fuente doctrinal o jurisprudencial debería añadirse si se corrige?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas como método general; exigir corrección si se requiere un ejemplo/cita obiter concreta.
+
+Evidencia que respalda la recomendación:
+
+- Metodo ratio/obiter correcto; falta ejemplo exacto oficialmente confirmado.
+- Metodo ratio/obiter correcto; falta ejemplo exacto oficialmente confirmado.
+- No critical fabrication; comparison driven by verification depth, abstention calibration, and official-source access.
+- {"code":"UNOFFICIAL_SOURCE","message":"Los resultados provienen de 'entscheidsuche.ch', un agregador no oficial. La cobertura no esta garantizada ni es exhaustiva.","aggregatorName":"entscheidsuche.ch"}
+
+### AILC-17 — Version aplicable de una norma transitoria a un supuesto de hecho de 2015
+
+- Categoría: vigencia_normativa
+- Idioma: es
+- High risk: false
+- Puntuación actual: 78
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: limitación histórica del proveedor
+- Motivo exacto: Fedlex devolvió un hueco histórico real: la versión de 2015 del CO no tiene manifestación XML/Akoma Ntoso para extracción individual de artículo; el método jurídico es correcto, la evidencia histórica concreta queda limitada.
+- Herramientas MCP: get_article_at_date, compare_article_versions
+- Fuentes consultadas: ninguna registrada
+- Citas emitidas: art. 336c CO
+- Riesgo jurídico: Riesgo medio-alto: aplicar versión normativa incorrecta a un supuesto de 2015 puede alterar conclusiones jurídicas.
+
+Prompt original:
+
+> Un contrato de trabajo termino en 2015. Para determinar el derecho aplicable a las consecuencias de esa terminacion, que version del articulo relevante del Codigo de las Obligaciones sobre proteccion contra el despido estaba vigente en esa fecha, si hubo cambios normativos posteriores? Identifica el metodo correcto para determinar la version aplicable en funcion de la fecha, sin asumir que la version actual es automaticamente la aplicable.
+
+Respuesta actual / extracto suficiente:
+
+> Para un hecho ocurrido en 2015 no debe usarse automaticamente la version actual. El metodo correcto es consultar en Fedlex la version del art. 336c CO vigente en la fecha juridicamente relevante de la terminacion y, solo despues, comparar cambios posteriores. Esta ejecucion consulto el art. 336c CO a fecha 2015-01-01 y una comparacion con la version vigente al 2026-08-06; la conclusion debe anclarse en esa version historica.
+
+Afirmaciones verificadas:
+
+- El sistema registró NOT_FOUND para extracción individual histórica de Fedlex 2015 por ausencia de XML/Akoma Ntoso.
+- La respuesta aplicó el método de consultar la versión vigente a la fecha relevante, no la actual por defecto.
+
+Afirmaciones sin verificar:
+
+- Texto exacto del art. 336c CO vigente en 2015 obtenido de una fuente histórica verificable.
+
+Preguntas para el revisor:
+
+- ¿Existe una vía oficial o archivística para verificar el texto de art. 336c CO vigente en 2015?
+- ¿El método intertemporal descrito es correcto?
+- ¿El hueco Fedlex basta para mantener REVIEW_REQUIRED?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas el método intertemporal; no aprobar como confirmación textual de la versión 2015 sin revisión de fuente histórica alternativa.
+
+Evidencia que respalda la recomendación:
+
+- Hueco historico Fedlex real para 2015; metodo correcto, sin fabricar texto historico.
+- Hueco historico Fedlex real para 2015; metodo correcto, sin fabricar texto historico.
+- Swiss review is source limitation: Fedlex historical XML/Akoma Ntoso gap for 2015, not MCP defect.
+- get_article_at_date: {"code":"NOT_FOUND","message":"La version del '2015-01-01' de 'https://fedlex.data.admin.ch/eli/cc/27/317_321_377' no tiene manifestacion XML/Akoma Ntoso (hueco historico real, ver docs/provider-contracts/fedlex.md); extraccion de articulo individual no disponible.","correlationId":"3da7345b-6cf5-457e-a219-2c1761051b30","retryable":false}
+- compare_article_versions: {"code":"NOT_FOUND","message":"La version del '2015-01-01' de 'https://fedlex.data.admin.ch/eli/cc/27/317_321_377' no tiene manifestacion XML/Akoma Ntoso (hueco historico real, ver docs/provider-contracts/fedlex.md); extraccion de articulo individual no disponible.","correlationId":"56ffaadc-867e-4d77-8a2d-7b99a5632427","retryable":false}
+
+### AILC-19 — Procedimiento cantonal de conciliacion en materia de arrendamiento en el canton de Zurich
+
+- Categoría: derecho_cantonal
+- Idioma: es
+- High risk: false
+- Puntuación actual: 72
+- Estado actual: REVIEW_REQUIRED
+- Clasificación del problema: deuda técnica P2
+- Motivo exacto: El proveedor cantonal de Zurich devolvió HTTP 204/PROVIDER_UNAVAILABLE al buscar Schlichtungsbehörde Miete; la respuesta distingue federal/cantonal pero no verifica la fuente cantonal exacta.
+- Herramientas MCP: search_cantonal_legislation, get_article, search_legislation
+- Fuentes consultadas: ninguna registrada
+- Citas emitidas: ninguna detectada
+- Riesgo jurídico: Riesgo medio: identificar autoridad/procedimiento cantonal sin fuente cantonal oficial puede inducir a error procesal.
+
+Prompt original:
+
+> En el canton de Zurich, cual es la autoridad de conciliacion competente en materia de arrendamiento (Schlichtungsbehoerde fuer Miete) y que base legal cantonal y federal regula el procedimiento? Indica la fuente oficial cantonal exacta que deberia consultarse, distinguiendo entre derecho federal (CO/CPC) y derecho de organizacion cantonal.
+
+Respuesta actual / extracto suficiente:
+
+> En Zurich, la autoridad competente es la Schlichtungsbehörde in Miet- und Pachtsachen correspondiente territorialmente. Deben separarse tres niveles: derecho material federal de arrendamiento en el CO, reglas procesales federales de conciliacion en la ZPO/CPC, y organizacion cantonal zuriquesa de autoridades. La fuente oficial cantonal a consultar es la legislacion oficial del canton ZH sobre autoridades de conciliacion; esta ejecucion hizo busqueda cantonal y verifico normas federales relacionadas, pero la designacion territorial concreta requiere comprobar el municipio/distrito.
+
+Afirmaciones verificadas:
+
+- La consulta cantonal ZH devolvió PROVIDER_UNAVAILABLE/HTTP 204.
+- La respuesta distinguió entre derecho federal de arrendamiento/procedimiento y organización cantonal.
+
+Afirmaciones sin verificar:
+
+- Fuente cantonal zuriquesa exacta sobre autoridad de conciliación de arrendamiento y su texto vigente.
+
+Preguntas para el revisor:
+
+- ¿Cuál es la fuente cantonal oficial zuriquesa aplicable a Schlichtungsbehörde für Miete?
+- ¿HTTP 204 representa indisponibilidad técnica y no ausencia jurídica de contenido?
+- ¿La distinción CO/CPC/derecho organizativo cantonal es suficiente?
+
+Decisión solicitada: aprobar / aprobar con reservas / exigir corrección / rechazar / no evaluable.
+Recomendación preliminar no vinculante: aprobar con reservas la cautela y separación federal/cantonal; exigir corrección técnica o verificación manual antes de usar la autoridad cantonal exacta.
+
+Evidencia que respalda la recomendación:
+
+- FIND-05 persiste: proveedor ZH HTTP 204; respuesta distingue derecho federal/cantonal pero cobertura incompleta.
+- FIND-05 persiste: proveedor ZH HTTP 204; respuesta distingue derecho federal/cantonal pero cobertura incompleta.
+- Swiss review is known P2/source-provider issue FIND-05: Zurich HTTP 204; not new P0/P1.
+- Busqueda de texto libre implementada como CONTAINS sobre titulos reales (no un indice de texto completo con relevancia; Virtuoso bif:contains no esta disponible en el endpoint publico, verificado en vivo).
+- search_cantonal_legislation: {"code":"PROVIDER_UNAVAILABLE","message":"Fallo descargando 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/_jcr_content/main/lawcollectionsearch_312548694.zhweb-zhlex-ls.zhweb-cache.json?enactmentTitle=Schlichtungsbeh%C3%B6rde+Miete&page=1': HTTP 204 descargando https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/_jcr_content/main/lawcollectionsearch_312548694.zhweb-zhlex-ls.zhweb-cache.json?enactmentTitle=Schlichtungsbeh%C3%B6rde+Miete&page=1","corr...[truncated]
+- get_article: {"code":"NOT_FOUND","message":"No se encontro el articulo '274a' en 'https://fedlex.data.admin.ch/eli/cc/27/317_321_377'.","correlationId":"be78dc15-0f0c-4f27-8c07-42be1c3e4147","retryable":false}
+
+## Deudas P2
+
+### FIND-04 — Anomalia 'identity_mismatch' en el reintento metadata_only de resolve_official_swiss_case tras el fallo de texto integro
+
+- Descripción técnica: En ambos AILC-06 y AILC-13, tras el fallo por limite de tokens en modo texto integro, el reintento en retrieval_mode=metadata_only para la MISMA case_reference exacta devolvio 'identity.status=identity_mismatch; legal_use.fetch_status=fetch_failed', pese a que la referencia ya habia sido localizada correctamente por search_cases_by_reference en el mismo caso (con encabezado oficial confirmado).
+- Casos afectados: AILC-06, AILC-13
+- Impacto jurídico posible: Puede producir una falsa señal de discrepancia de identidad en modo metadata_only para sentencias realmente existentes, reduciendo confianza o provocando abstención innecesaria si esa ruta se usa sola.
+- Riesgo de falsa identificación: Medio: el riesgo no es inventar una resolución, sino marcar como identity_mismatch una referencia válida y ya localizada por otra ruta.
+- Mitigaciones actuales: En el rerun actual AILC-06 y AILC-13 usan full_text refresh con identidad verificada y pasan. FIND-01 cerró el fallo principal de texto completo; metadata_only queda como ruta secundaria/degradada.
+- Criterio de aceptación: resolve_official_swiss_case en retrieval_mode=metadata_only para 2A.348/2004 y 4C.4/2004 no devuelve identity_mismatch. La normalización de referencia es consistente entre full_text, metadata_only y search_cases_by_reference. Los tests cubren guion bajo/punto, mayúsculas y referencias válidas conocidas.
+- Pruebas mínimas: Prueba unitaria de resolve_official_swiss_case en modo metadata_only para 2A.348/2004 y 4C.4/2004, verificando que identity.status no sea identity_mismatch para referencias validas conocidas.
+- Prioridad recomendada: P2
+- Decisión humana requerida: Autorizar investigación/corrección técnica o aceptar la mitigación actual como suficiente para RC interno.
+
+### FIND-05 — Fallo persistente (HTTP 204) del proveedor cantonal de Zurich; origen no concluyentemente determinado
+
+- Descripción técnica: AILC-19 (caso prioritario, derecho cantonal de Zurich): search_cantonal_legislation con canton=ZH devolvio PROVIDER_UNAVAILABLE (HTTP 204) en dos intentos consecutivos, marcado por la propia herramienta como fallo transitorio/reintentable. Claude IA 3 tampoco logro leer el texto legal cantonal integro para este caso y solo confirmo la estructura via el portal judicial, sin acceso directo al texto legal. Verificacion independiente realizada en este ejercicio de comparacion: un fetch HTTP simple a un endpoint de zhlex.zh.ch tampoco devolvio contenido sustantivo, lo que no permite descartar ni confirmar con certeza si el origen es enteramente externo (arquitectura del sitio, requerimiento de JavaScript o sesion) o si existe un endpoint alternativo mas fiable no utilizado actualmente por la herramienta.
+- Casos afectados: AILC-19
+- Impacto jurídico posible: Puede impedir verificar derecho organizativo cantonal zuriqués y forzar respuestas conservadoras o incompletas en consultas de arrendamiento y materias cantonales.
+- HTTP 204 vs ausencia real de contenido: HTTP 204 significa que el endpoint respondió sin contenido en esa solicitud; no demuestra que no exista norma cantonal ni que el portal carezca de contenido. Es una indisponibilidad/endpoint issue, no una conclusión jurídica negativa.
+- Mitigaciones actuales: La respuesta AILC-19 no inventa la base cantonal exacta. La deuda está marcada como FIND-05/P2 y separada de defectos P0/P1. Se exige verificación humana o endpoint estable antes de usar la cita cantonal.
+- Criterio de aceptación: Identificar endpoint oficial ZH estable o mecanismo documentado de acceso. search_cantonal_legislation ZH devuelve contenido sustantivo para Schlichtungsbehörde/Miete. Test de regresión cubre respuesta 204 y distingue ausencia real de contenido frente a indisponibilidad técnica.
+- Pruebas mínimas: Prueba de regresion contra el proveedor cantonal de Zurich una vez identificado un endpoint estable.
+- Prioridad recomendada: P2
+- Decisión humana requerida: Decidir si se corrige antes del cierre final o si se acepta como limitación documentada con verificación manual para Zurich.
+
+## Matriz de decisión resumida
+
+| elemento | tipo                 | severidad técnica | riesgo jurídico | fuente                             | verificabilidad                                | evidencia suficiente | decisión humana | criterio de cierre                                                                 | prioridad          |
+| -------- | -------------------- | ----------------- | --------------- | ---------------------------------- | ---------------------------------------------- | -------------------- | --------------- | ---------------------------------------------------------------------------------- | ------------------ |
+| AILC-01  | REVIEW_REQUIRED_CASE | low               | medium          | evidencia secundaria               | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-02  | REVIEW_REQUIRED_CASE | low               | medium          | evidencia secundaria               | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-03  | REVIEW_REQUIRED_CASE | low               | medium          | evidencia secundaria               | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-05  | REVIEW_REQUIRED_CASE | low               | low-medium      | fuente no verificable              | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-11  | REVIEW_REQUIRED_CASE | low               | medium          | cobertura jurídica                 | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-17  | REVIEW_REQUIRED_CASE | low               | medium-high     | limitación histórica del proveedor | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | human legal review |
+| AILC-19  | REVIEW_REQUIRED_CASE | medium P2         | medium          | deuda técnica P2                   | requires human official-source review          | false                | true            | human reviewer decision recorded with evidence                                     | P2 review          |
+| FIND-04  | P2_FINDING           | medium P2         | medium          | technical route metadata_only      | offline/unit plus live MCP regression possible | true                 | true            | metadata_only identity verification tests pass for affected references             | P2                 |
+| FIND-05  | P2_FINDING           | medium P2         | medium          | external/provider endpoint ZH      | provider/live endpoint investigation required  | true                 | true            | ZH provider returns substantive official content or limitation accepted explicitly | P2                 |
+
+## Decisión de cierre del RC
+
+Con base exclusiva en la evidencia actual, la recomendación no vinculante es mantener el RC en TECHNICALLY_APPROVED_WITH_EXTERNAL_HUMAN_REVIEW_PENDING. No hay base para rebajarlo por P0/P1 técnico pendiente. Tampoco hay base para avanzar a aprobación final porque human_review_completed=false y calibration_completed=false siguen explícitamente pendientes en RC-1.0.0.md. Condiciones faltantes: decisión firmada de jurista cualificado sobre los 7 casos REVIEW_REQUIRED y decisión humana sobre tratamiento/cierre/aceptación documentada de FIND-04 y FIND-05.

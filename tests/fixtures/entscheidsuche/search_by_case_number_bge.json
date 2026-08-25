@@ -1,0 +1,68 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 8,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 172,\n  \"hits\": [\n    {\n      \"id\": \"CH_BGE_005_BGE-142-III-1_2016\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2016 <em>BGE</em> <em>142</em> <em>III</em> <em>1</em>\",\n      \"abstract\": \"Regeste a\\n<br>Art. 85 Abs. 1 IPRG; Art. 5 des Haager Kindesschutzübereinkommens vom 19. Oktober 1996 (HKsÜ); Wegzug des Kindes in einen Nichtvertragsstaat. Das Haager Kindesschutzübereinkommen findet auch in Bezug auf Nichtvertragsstaaten Anwendung. Bei Wegzug des Kindes während eines hängigen Verfahrens in einen Nichtvertragsstaat bleibt aber die in der Schweiz begründete Zuständigkeit für Kindesschutzmassnahmen bestehen (E. 2.1). <br>\\nRegeste b\\n<br>Art. 298 Abs. 1 und Art. 298b Abs. 2 ZGB; Zuteilung der alleinigen elterlichen Sorge. Die Behauptung eines zukünftigen Konfliktes, die aktuelle Auseinandersetzung in einem gerichtlichen Verfahren oder im konkreten Zusammenhang mit einem Wegzug des Kindes rechtfertigen in der Regel nicht die Alleinzuteilung des elterlichen Sorgerechts (E. 3.3-3.6).\",\n      \"text\": \"Sachverhalt ab Seite 2\\n\\n\\n\\n\\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 2\\n\\n   \\n\\n\\n\\n    A. Mit\\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 3\\n\\n    Entscheid vom 30. Es muss sich in jedem Fall um einen erheblichen und chronischen\\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 6\\n\\n    Konflikt <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 7\\n\\n   \\n\\n\\n    Halten sich die Eltern nicht an diese Spielregeln, droht das Kind in einen Bis zum Zeitpunkt des angefochtenen Entscheides\\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 8\\n\\n    wurden keine konkreten Anhaltspunkte\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2016-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-142-III-1_2016.html\",\n      \"original_url\": null,\n      \"sort\": [\n        51.054447,\n        \"CH_BGE_005_BGE-142-III-1_2016\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-143-III-237_2017\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2017 BGE 143 III 237\",\n      \"abstract\": \"Regeste\\n<br>Art. 5 Abs. 2 HEsÜ; Aufrechterhaltung der schweizerischen Zuständigkeit bei Wegzug in einen Nichtvertragsstaat. Bei Verlegung des gewöhnlichen Aufenthaltes in einen Nichtvertragsstaat gilt für hängige Verfahren der Grundsatz der perpetuatio fori (E. 2.3 und 2.5).\",\n      \"text\": \"<em>142</em> <em>III</em> <em>1</em> E. 2.1 S. 4 f.; Urteile 5A_809/2012 vom 8. April 2012, den er in vollem Wortlaut wiedergibt und aus welchem er ableitet, dass die in      <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 2.1 zum Ausdruck gebrachte Rechtsprechung nicht tel quel auf jeden Kinder- oder Erwachsenenschutzfall MSA (BGE 123 III 411 E. 2a/bb S. 413; BGE 132 III 586 E. 2.2.3 S. 591; BGE 143 III 237 S. 242\\n\\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 2.1 S. 4), sondern auch derjenigen des deutschen Bundesgerichtshofes (vgl.\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2017-01-01\",\n      \"scrape_date\": \"2026-07-17\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-143-III-237_2017.html\",\n      \"original_url\": null,\n      \"sort\": [\n        5.570927,\n        \"CH_BGE_005_BGE-143-III-237_2017\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-142-III-612_2016\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2016 BGE 142 III 612\",\n      \"abstract\": \"Regeste\\n<br>Art. 176 Abs. 3 ZGB; Streit um die alleinige oder alternierende Obhut im Eheschutzprozess. Zum Obhutsbegriff im revidierten Sorgerecht (E. 4.1). Ob die alternierende Obhut voraussichtlich dem Wohl des Kindes entspricht, hat der Richter im konkreten Einzelfall gestützt auf eine sachverhaltsbasierte Prognose zu prüfen (E. 4.2). Zu den verschiedenen Kriterien, auf die es bei dieser Beurteilung ankommt (E. 4.3). Fällt eine alternierende Obhut ausser Betracht, ist zusätzlich die Fähigkeit eines jeden Elternteils zu würdigen, den Kontakt zwischen dem Kind und dem andern Elternteil zu fördern (E. 4.4). Zur Prüfungsbefugnis des Bundesgerichts (E. 4.5).\",\n      \"text\": \"Sie soll aber die eng begrenzte Ausnahme sein (<em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 3.3 S. 5 f. mit Hinweis). einschliesst, den Aufenthaltsort des Kindes zu bestimmen (Art. 301a Abs. 1 ZGB; BGE 142 III 56 E. 3 S. 62 f., <em>BGE</em> <em>142</em> <em>III</em> <em>1</em>  E. 3.3 S. 5 mit Hinweis), geht damit nicht notwendigerweise die Errichtung einer alternierenden\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2016-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-142-III-612_2016.html\",\n      \"original_url\": null,\n      \"sort\": [\n        4.8373356,\n        \"CH_BGE_005_BGE-142-III-612_2016\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    4.8373356,\n    \"CH_BGE_005_BGE-142-III-612_2016\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 172,
+        "hits": [
+          {
+            "id": "CH_BGE_005_BGE-142-III-1_2016",
+            "title": "Bundesgericht (BGE) Teil III 2016 <em>BGE</em> <em>142</em> <em>III</em> <em>1</em>",
+            "abstract": "Regeste a\n<br>Art. 85 Abs. 1 IPRG; Art. 5 des Haager Kindesschutzübereinkommens vom 19. Oktober 1996 (HKsÜ); Wegzug des Kindes in einen Nichtvertragsstaat. Das Haager Kindesschutzübereinkommen findet auch in Bezug auf Nichtvertragsstaaten Anwendung. Bei Wegzug des Kindes während eines hängigen Verfahrens in einen Nichtvertragsstaat bleibt aber die in der Schweiz begründete Zuständigkeit für Kindesschutzmassnahmen bestehen (E. 2.1). <br>\nRegeste b\n<br>Art. 298 Abs. 1 und Art. 298b Abs. 2 ZGB; Zuteilung der alleinigen elterlichen Sorge. Die Behauptung eines zukünftigen Konfliktes, die aktuelle Auseinandersetzung in einem gerichtlichen Verfahren oder im konkreten Zusammenhang mit einem Wegzug des Kindes rechtfertigen in der Regel nicht die Alleinzuteilung des elterlichen Sorgerechts (E. 3.3-3.6).",
+            "text": "Sachverhalt ab Seite 2\n\n\n\n\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 2\n\n   \n\n\n\n    A. Mit\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 3\n\n    Entscheid vom 30. Es muss sich in jedem Fall um einen erheblichen und chronischen\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 6\n\n    Konflikt <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 7\n\n   \n\n\n    Halten sich die Eltern nicht an diese Spielregeln, droht das Kind in einen Bis zum Zeitpunkt des angefochtenen Entscheides\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> S. 8\n\n    wurden keine konkreten Anhaltspunkte",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2016-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-142-III-1_2016.html",
+            "original_url": null,
+            "sort": [51.054447, "CH_BGE_005_BGE-142-III-1_2016"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-143-III-237_2017",
+            "title": "Bundesgericht (BGE) Teil III 2017 BGE 143 III 237",
+            "abstract": "Regeste\n<br>Art. 5 Abs. 2 HEsÜ; Aufrechterhaltung der schweizerischen Zuständigkeit bei Wegzug in einen Nichtvertragsstaat. Bei Verlegung des gewöhnlichen Aufenthaltes in einen Nichtvertragsstaat gilt für hängige Verfahren der Grundsatz der perpetuatio fori (E. 2.3 und 2.5).",
+            "text": "<em>142</em> <em>III</em> <em>1</em> E. 2.1 S. 4 f.; Urteile 5A_809/2012 vom 8. April 2012, den er in vollem Wortlaut wiedergibt und aus welchem er ableitet, dass die in      <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 2.1 zum Ausdruck gebrachte Rechtsprechung nicht tel quel auf jeden Kinder- oder Erwachsenenschutzfall MSA (BGE 123 III 411 E. 2a/bb S. 413; BGE 132 III 586 E. 2.2.3 S. 591; BGE 143 III 237 S. 242\n\n    <em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 2.1 S. 4), sondern auch derjenigen des deutschen Bundesgerichtshofes (vgl.",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2017-01-01",
+            "scrape_date": "2026-07-17",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-143-III-237_2017.html",
+            "original_url": null,
+            "sort": [5.570927, "CH_BGE_005_BGE-143-III-237_2017"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-142-III-612_2016",
+            "title": "Bundesgericht (BGE) Teil III 2016 BGE 142 III 612",
+            "abstract": "Regeste\n<br>Art. 176 Abs. 3 ZGB; Streit um die alleinige oder alternierende Obhut im Eheschutzprozess. Zum Obhutsbegriff im revidierten Sorgerecht (E. 4.1). Ob die alternierende Obhut voraussichtlich dem Wohl des Kindes entspricht, hat der Richter im konkreten Einzelfall gestützt auf eine sachverhaltsbasierte Prognose zu prüfen (E. 4.2). Zu den verschiedenen Kriterien, auf die es bei dieser Beurteilung ankommt (E. 4.3). Fällt eine alternierende Obhut ausser Betracht, ist zusätzlich die Fähigkeit eines jeden Elternteils zu würdigen, den Kontakt zwischen dem Kind und dem andern Elternteil zu fördern (E. 4.4). Zur Prüfungsbefugnis des Bundesgerichts (E. 4.5).",
+            "text": "Sie soll aber die eng begrenzte Ausnahme sein (<em>BGE</em> <em>142</em> <em>III</em> <em>1</em> E. 3.3 S. 5 f. mit Hinweis). einschliesst, den Aufenthaltsort des Kindes zu bestimmen (Art. 301a Abs. 1 ZGB; BGE 142 III 56 E. 3 S. 62 f., <em>BGE</em> <em>142</em> <em>III</em> <em>1</em>  E. 3.3 S. 5 mit Hinweis), geht damit nicht notwendigerweise die Errichtung einer alternierenden",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2016-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-142-III-612_2016.html",
+            "original_url": null,
+            "sort": [4.8373356, "CH_BGE_005_BGE-142-III-612_2016"]
+          }
+        ],
+        "next_cursor": [4.8373356, "CH_BGE_005_BGE-142-III-612_2016"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

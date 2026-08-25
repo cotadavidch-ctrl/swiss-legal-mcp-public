@@ -1,0 +1,50 @@
+{
+  "head": { "link": [], "vars": ["p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Expression"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#historicalLegalId"
+        },
+        "o": { "type": "literal", "value": "101" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#language"
+        },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/language/DEU"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#title"
+        },
+        "o": {
+          "type": "literal",
+          "value": "Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#titleShort"
+        },
+        "o": { "type": "literal", "value": "BV" }
+      }
+    ]
+  }
+}

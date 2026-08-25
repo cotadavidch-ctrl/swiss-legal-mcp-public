@@ -1,0 +1,81 @@
+{
+  "name": "swiss-legal-mcp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Asistente juridico suizo modular sobre Model Context Protocol",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.17.0",
+  "main": "./dist/stdio.js",
+  "bin": {
+    "swiss-legal-mcp": "./dist/stdio.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES.md",
+    "README.md",
+    "SECURITY.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "cheerio": "1.2.0",
+    "fast-xml-parser": "5.10.1",
+    "pdf-parse": "2.4.5",
+    "pino": "10.3.1",
+    "zod": "4.4.3"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "build:package": "node scripts/build-package.mjs",
+    "build:verify": "node scripts/build-verify.mjs",
+    "prepack": "pnpm build:package",
+    "api:inventory": "node scripts/api-inventory.mjs",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:claude-desktop": "node scripts/claude-desktop-acceptance.mjs",
+    "test:official-case-live": "tsx scripts/official-case-live.ts",
+    "diagnose:official-case-pipeline": "tsx scripts/diagnose-official-case-pipeline.ts",
+    "test:coverage": "vitest run --coverage",
+    "test:security": "vitest run packages/shared-web/src/secureHttpClient.test.ts packages/shared-web/src/pdfSecurity.test.ts packages/shared-web/src/rdfSecurity.test.ts packages/providers/fedlex/src/xml/akomaNtosoParser.test.ts packages/shared/src/domainAllowlistResolver.test.ts packages/shared/src/logger.test.ts packages/shared/src/metrics.test.ts packages/core/src/errors.test.ts && node scripts/security-check.mjs",
+    "test:updater": "vitest run packages/updater/src/updater.test.ts",
+    "test:breach-detection": "vitest run packages/updater/src/security.test.ts",
+    "test:integration": "vitest run packages/providers/*/src/liveIntegration.test.ts",
+    "test:legal-capability-live": "tsx scripts/legal-capability-live-check.ts",
+    "test:multirole-persistence": "node scripts/multirole-persistence-check.mjs",
+    "test:package-install": "node scripts/package-installability-check.mjs",
+    "test:packaging-gates": "RUN_PACKAGING_GATE_TESTS=true vitest run tests/packagingReleaseGates.test.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "eval:procedural-strategy": "pnpm --filter @swiss-legal-mcp/mcp-server exec tsx scripts/procedural-strategy-eval.ts --all --update-report",
+    "review:procedural-strategy": "pnpm --filter @swiss-legal-mcp/mcp-server exec tsx scripts/procedural-strategy-review.ts",
+    "sbom": "node scripts/generate-sbom.mjs",
+    "licenses:check": "node scripts/check-licenses.mjs",
+    "update-security:check": "node scripts/update-security-release-check.mjs",
+    "ci": "pnpm format:check && pnpm lint && pnpm typecheck && NODE_ENV=test pnpm test && pnpm build && pnpm build:package && pnpm test:packaging-gates && pnpm test:claude-desktop && pnpm test:legal-capability-live && pnpm test:security && pnpm test:updater && pnpm test:breach-detection && pnpm test:integration && pnpm test:coverage && pnpm benchmark && pnpm eval:procedural-strategy && pnpm review:procedural-strategy --prepare && pnpm api:inventory && pnpm run sbom && pnpm licenses:check && pnpm build:verify && pnpm test:package-install && pnpm release:prepare && pnpm release:check",
+    "release:prepare": "pnpm api:inventory && pnpm run sbom && pnpm licenses:check && pnpm build:verify && pnpm build:package && pnpm test:packaging-gates && pnpm benchmark && pnpm test:claude-desktop && pnpm test:legal-capability-live && pnpm test:updater && pnpm test:breach-detection && pnpm update-security:check && pnpm eval:procedural-strategy && pnpm review:procedural-strategy --prepare && pnpm test:package-install && node scripts/release-prepare.mjs",
+    "release:check": "node scripts/release-check.mjs && node scripts/final-legal-capability-gate.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.1.1",
+    "@vitest/coverage-v8": "4.1.10",
+    "esbuild": "0.28.1",
+    "eslint": "10.8.0",
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.9.6",
+    "tsx": "4.23.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.65.0",
+    "vitest": "4.1.10"
+  }
+}

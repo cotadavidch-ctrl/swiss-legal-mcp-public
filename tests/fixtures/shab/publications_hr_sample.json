@@ -1,0 +1,151 @@
+{
+  "content": [
+    {
+      "meta": {
+        "id": "6eda8016-3fb4-48e6-8eba-599cb35b3c95",
+        "creationDate": "2026-07-23T09:38:57.902Z",
+        "updateDate": "2026-07-26T22:36:39.277Z",
+        "rubric": "HR",
+        "subRubric": "HR02",
+        "language": "de",
+        "registrationOffice": {
+          "id": "e15a629a-a08d-11e8-aa11-0050569d3c43",
+          "displayName": "Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister",
+          "street": "Bundesrain",
+          "streetNumber": "20",
+          "swissZipCode": "3003",
+          "town": "Bern",
+          "containsPostOfficeBox": false,
+          "postOfficeBox": null,
+          "municipalityId": null,
+          "uid": null
+        },
+        "publicationOriginator": null,
+        "publicationNumber": "HR02-1006716804",
+        "publicationState": "PUBLISHED",
+        "publicationDate": "2026-07-27T00:00:00.000Z",
+        "expirationDate": null,
+        "primaryTenantCode": "shab",
+        "onBehalfOf": null,
+        "invoiceAddressId": null,
+        "legalRemedy": "Die Mutation der aufgeführten Rechtseinheit wurde im Handelsregister vorgenommen. <br />Publikation nach HRegV Art. 9 und Art. 35.",
+        "cantons": ["ZG"],
+        "secondaryTenants": [
+          { "tenantCode": "kabzg", "publicationDate": "2026-07-27T00:00:00.000Z" }
+        ],
+        "repeatedPublications": null,
+        "customsStampImages": [],
+        "title": {
+          "de": "Mutation AD Astra Research AG, Zug",
+          "en": "Change AD Astra Research AG, Zug",
+          "it": "Cambiamenti AD Astra Research AG, Zug",
+          "fr": "Mutation AD Astra Research AG, Zug"
+        },
+        "dossierReference": null,
+        "copyDeadline": null
+      },
+      "links": [],
+      "attachments": [],
+      "content": null,
+      "commented": false
+    },
+    {
+      "meta": {
+        "id": "0679a646-fe14-4eb9-a5a1-830abcc99565",
+        "creationDate": "2026-07-23T10:01:21.532Z",
+        "updateDate": "2026-07-26T22:36:40.105Z",
+        "rubric": "HR",
+        "subRubric": "HR02",
+        "language": "de",
+        "registrationOffice": {
+          "id": "e15a629a-a08d-11e8-aa11-0050569d3c43",
+          "displayName": "Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister",
+          "street": "Bundesrain",
+          "streetNumber": "20",
+          "swissZipCode": "3003",
+          "town": "Bern",
+          "containsPostOfficeBox": false,
+          "postOfficeBox": null,
+          "municipalityId": null,
+          "uid": null
+        },
+        "publicationOriginator": null,
+        "publicationNumber": "HR02-1006716784",
+        "publicationState": "PUBLISHED",
+        "publicationDate": "2026-07-27T00:00:00.000Z",
+        "expirationDate": null,
+        "primaryTenantCode": "shab",
+        "onBehalfOf": null,
+        "invoiceAddressId": null,
+        "legalRemedy": "Die Mutation der aufgeführten Rechtseinheit wurde im Handelsregister vorgenommen. <br />Publikation nach HRegV Art. 9 und Art. 35.",
+        "cantons": ["NW"],
+        "secondaryTenants": [
+          { "tenantCode": "kabnw", "publicationDate": "2026-07-27T00:00:00.000Z" }
+        ],
+        "repeatedPublications": null,
+        "customsStampImages": [],
+        "title": {
+          "de": "Mutation Stiftung für Kinder in der Schweiz - Maggi Romeo & Cornelia, Hergiswil (NW)",
+          "en": "Change Stiftung für Kinder in der Schweiz - Maggi Romeo & Cornelia, Hergiswil (NW)",
+          "it": "Cambiamenti Stiftung für Kinder in der Schweiz - Maggi Romeo & Cornelia, Hergiswil (NW)",
+          "fr": "Mutation Stiftung für Kinder in der Schweiz - Maggi Romeo & Cornelia, Hergiswil (NW)"
+        },
+        "dossierReference": null,
+        "copyDeadline": null
+      },
+      "links": [],
+      "attachments": [],
+      "content": null,
+      "commented": false
+    },
+    {
+      "meta": {
+        "id": "ec310425-ab8d-4602-a765-3d6a0b8f3212",
+        "creationDate": "2026-07-23T10:01:41.862Z",
+        "updateDate": "2026-07-26T22:36:39.558Z",
+        "rubric": "HR",
+        "subRubric": "HR02",
+        "language": "de",
+        "registrationOffice": {
+          "id": "e15a629a-a08d-11e8-aa11-0050569d3c43",
+          "displayName": "Bundesamt für Justiz (BJ), Eidgenössisches Amt für das Handelsregister",
+          "street": "Bundesrain",
+          "streetNumber": "20",
+          "swissZipCode": "3003",
+          "town": "Bern",
+          "containsPostOfficeBox": false,
+          "postOfficeBox": null,
+          "municipalityId": null,
+          "uid": null
+        },
+        "publicationOriginator": null,
+        "publicationNumber": "HR02-1006716793",
+        "publicationState": "PUBLISHED",
+        "publicationDate": "2026-07-27T00:00:00.000Z",
+        "expirationDate": null,
+        "primaryTenantCode": "shab",
+        "onBehalfOf": null,
+        "invoiceAddressId": null,
+        "legalRemedy": "Die Mutation der aufgeführten Rechtseinheit wurde im Handelsregister vorgenommen. <br />Publikation nach HRegV Art. 9 und Art. 35.",
+        "cantons": ["GL"],
+        "secondaryTenants": null,
+        "repeatedPublications": null,
+        "customsStampImages": [],
+        "title": {
+          "de": "Mutation Interhoval AG, Glarus",
+          "en": "Change Interhoval AG, Glarus",
+          "it": "Cambiamenti Interhoval AG, Glarus",
+          "fr": "Mutation Interhoval AG, Glarus"
+        },
+        "dossierReference": null,
+        "copyDeadline": null
+      },
+      "links": [],
+      "attachments": [],
+      "content": null,
+      "commented": false
+    }
+  ],
+  "total": 2270048,
+  "pageRequest": { "sortOrders": [], "page": 0, "size": 3 }
+}

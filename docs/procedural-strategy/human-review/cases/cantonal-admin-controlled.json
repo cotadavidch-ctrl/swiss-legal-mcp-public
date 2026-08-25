@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "systemVersion": "1.0.0",
+  "caseId": "cantonal-admin-controlled",
+  "title": "Cantonal administrative permit decision",
+  "caseHash": "280995f2cee3c3fb1929737d1b7978e2f9406733f81f6443361e83507869d31a",
+  "outputHash": "13ea29eaaf1f4dd151cba9848c0e9f72e856055cf6d34dfcf6a9d4510ec8e6b6",
+  "input": {
+    "jurisdiction": {
+      "country": "CH",
+      "canton": "ZH"
+    },
+    "matter": {
+      "area": "administrative",
+      "subarea": "permit",
+      "description": "Cantonal administrative permit appeal with Art. 29 BV hearing issue."
+    },
+    "parties": [
+      {
+        "role": "appellant",
+        "type": "natural_person",
+        "description": "Anonymized appellant"
+      },
+      {
+        "role": "authority",
+        "type": "public_authority",
+        "description": "Cantonal authority"
+      }
+    ],
+    "facts": [
+      {
+        "id": "f-decision",
+        "date": "2026-01-10",
+        "description": "Authority issued a permit refusal.",
+        "status": "accepted",
+        "sourceDocumentIds": ["fixture:case-2"]
+      }
+    ],
+    "proceduralHistory": [
+      {
+        "date": "2026-01-10",
+        "authority": "Cantonal authority",
+        "action": "Decision issued",
+        "documentId": "fixture:case-2"
+      }
+    ],
+    "challengedDecision": {
+      "authority": "Cantonal authority",
+      "decisionDate": "2026-01-10",
+      "notificationDate": "2026-01-13",
+      "summary": "Permit refusal.",
+      "documentId": "fixture:case-2"
+    },
+    "claims": [
+      {
+        "description": "Annul the decision.",
+        "priority": "primary"
+      }
+    ],
+    "availableEvidence": [
+      {
+        "id": "e-decision",
+        "type": "official-record",
+        "description": "Permit refusal decision.",
+        "documentId": "fixture:case-2",
+        "authenticity": "confirmed"
+      }
+    ],
+    "deadlines": [],
+    "objectives": ["annulment", "preserve-rights"],
+    "constraints": {
+      "urgency": "high",
+      "representation": "self-represented",
+      "riskTolerance": "low",
+      "language": "de"
+    },
+    "documents": [
+      {
+        "documentId": "fixture:case-2",
+        "documentType": "decision"
+      }
+    ],
+    "analysisDate": "2026-01-15"
+  },
+  "output": {
+    "caseSummary": {
+      "legalCharacterization": "administrative/permit: Cantonal administrative permit appeal with Art. 29 BV hearing issue.",
+      "proceduralPosture": "post-decision challenge or review",
+      "keyFacts": [
+        {
+          "id": "f-decision",
+          "date": "2026-01-10",
+          "description": "Authority issued a permit refusal.",
+          "status": "accepted",
+          "sourceDocumentIds": ["fixture:case-2"]
+        }
+      ],
+      "disputedFacts": [],
+      "allegedFacts": [],
+      "uncertainFacts": [],
+      "missingFacts": []
+    },
+    "jurisdictionAndCompetence": {
+      "likelyJurisdiction": "CH-ZH",
+      "likelyAuthorityOrCourt": "cantonal administrative objection/appeal route or federal administrative route depending on authority",
+      "dimensions": {
+        "country_legal_system": {
+          "status": "confirmed",
+          "value": "CH"
+        },
+        "territorial_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "ZH"
+        },
+        "subject_matter_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "administrative"
+        },
+        "functional_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "Cantonal authority"
+        },
+        "issuing_authority": {
+          "status": "confirmed",
+          "value": "Cantonal authority"
+        },
+        "appellate_authority": {
+          "status": "not_verified",
+          "value": null
+        },
+        "procedural_remedy": {
+          "status": "requires_legal_review",
+          "value": "Permit refusal."
+        },
+        "venue_or_filing_destination": {
+          "status": "not_verified",
+          "value": null
+        }
+      },
+      "territorialCompetence": "territorial link to canton ZH requires verification",
+      "subjectMatterCompetence": "cantonal administrative objection/appeal route or federal administrative route depending on authority",
+      "confidence": 0.55,
+      "sources": [
+        {
+          "sourceId": "fixture:case-2",
+          "providerId": "fixture",
+          "documentIdentifier": "fixture-case-2",
+          "courtOrAuthority": null,
+          "date": "2023-11-20",
+          "provisionOrParagraph": null,
+          "passage": "Texto de prueba: sentencia cantonal ficticia de Zurich.",
+          "officialUrl": "https://fixture.invalid/case-2",
+          "retrievedAt": "2026-07-25T00:00:00.000Z",
+          "confidence": 0.45,
+          "extractionMethod": "explicit_holding"
+        }
+      ]
+    },
+    "admissibility": {
+      "standing": {
+        "id": "standing",
+        "status": "potentially_applicable",
+        "rationale": "Standing cannot be confirmed from roles alone."
+      },
+      "appealableAct": {
+        "id": "appealable_act",
+        "status": "potentially_applicable",
+        "rationale": "A challengeable decision or procedural act must be verified from documents."
+      },
+      "exhaustion": {
+        "id": "exhaustion",
+        "status": "potentially_applicable",
+        "rationale": "Prior administrative/procedural steps affect admissibility."
+      },
+      "formalRequirements": {
+        "id": "formal_requirements",
+        "status": "potentially_applicable",
+        "rationale": "Written form, signature, requests and reasoning commonly require checking."
+      },
+      "languageRequirements": {
+        "id": "language",
+        "status": "potentially_applicable",
+        "rationale": "Language requirements depend on authority/canton."
+      },
+      "representationRequirements": {
+        "id": "representation",
+        "status": "potentially_applicable",
+        "rationale": "Self-represented parties face form and evidence risks."
+      },
+      "risks": []
+    },
+    "deadlines": [
+      {
+        "deadlineType": "appeal_or_objection_deadline",
+        "startEvent": "notification_date",
+        "calculatedDate": null,
+        "calculationStatus": "cannot_calculate",
+        "suspensionRules": [],
+        "restorationPossibility": null,
+        "sources": [],
+        "warnings": [
+          "notification_date_present_but_legal_basis_missing",
+          "do_not_calculate_final_deadline_without_applicable_rule"
+        ]
+      }
+    ],
+    "applicableLaw": [
+      {
+        "source": null,
+        "provision": "Art. 29 BV",
+        "versionDate": "2026-01-15",
+        "relevance": "citation_detected_in_user_supplied_case_material",
+        "confidence": 0.35
+      }
+    ],
+    "burdenOfProof": [],
+    "evidenceAssessment": [
+      {
+        "evidenceId": "e-decision",
+        "proves": ["f-decision"],
+        "strength": "strong",
+        "admissibilityRisk": "not_assessed",
+        "authenticityRisk": "confirmed",
+        "gaps": []
+      }
+    ],
+    "legalAidClarification": {
+      "unbeholfenAssessment": {
+        "status": "contextual_possible",
+        "factors": [
+          "representation:self-represented",
+          "request_clarity_not_confirmed",
+          "no_prior_warning_confirmed",
+          "opportunity_count_not_confirmed"
+        ],
+        "warnings": ["self_represented_not_automatically_unbeholfen"]
+      },
+      "proceduralLawBasis": {
+        "art29Abs3Bv": "potentially_relevant_for_legal_aid",
+        "art56Zpo": "not_confirmed_direct_or_supplementary",
+        "mitwirkungspflicht": "must_be_addressed",
+        "cantonalProceduralLaw": "must_verify_ZH",
+        "strategicInference": "request clarification only as contingent argument, not as automatic right",
+        "warnings": ["procedural_law_not_confirmed"]
+      },
+      "evidentiaryPosture": {
+        "category": "documentation_incomplete_or_uncertain",
+        "doubleCountingRisk": false,
+        "clarificationDuty": "not_automatic",
+        "partyOmissionRisk": "medium"
+      },
+      "mandatoryCounterargument": "Mitwirkungspflicht: the applicant must substantiate indigence and provide requested financial documents; the authority is not a party adviser or general investigator."
+    },
+    "caseLawAnalysis": {
+      "favorableCases": [],
+      "unfavorableCases": [],
+      "mixedCases": [],
+      "distinguishableCases": [],
+      "patterns": [],
+      "structuredComparability": [],
+      "courtBehavior": [],
+      "limitations": [
+        "insufficient_case_law",
+        "no_percentages_reported_without_complete_corpus",
+        "no_judge_profiling",
+        "no_decisive_precedent_from_unverified_or_fragmentary_case",
+        "terminological_overlap_never_sufficient_for_direct_comparability"
+      ]
+    },
+    "proceduralOptions": [
+      {
+        "optionId": "option-1",
+        "title": "Verify admissible procedural route before merits filing",
+        "description": "Protect procedural rights first, then present merits arguments supported by documents.",
+        "legalBasis": [
+          {
+            "sourceId": "fixture:case-2",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-case-2",
+            "courtOrAuthority": null,
+            "date": "2023-11-20",
+            "provisionOrParagraph": null,
+            "passage": "Texto de prueba: sentencia cantonal ficticia de Zurich.",
+            "officialUrl": "https://fixture.invalid/case-2",
+            "retrievedAt": "2026-07-25T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "preconditions": [
+          "verify_competent_authority",
+          "verify_deadline",
+          "confirm_notification_evidence"
+        ],
+        "advantages": ["reduces_admissibility_risk", "keeps_arguments_ordered"],
+        "disadvantages": ["deadline_uncertain"],
+        "risks": [],
+        "costConsiderations": [],
+        "timingConsiderations": ["urgent_deadline_review_required"],
+        "evidenceNeeds": [],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.55
+      },
+      {
+        "optionId": "option-2",
+        "title": "Alternative protective filing or clarification request",
+        "description": "Where legally available, consider a protective filing or request for clarification while avoiding categorical admissibility claims.",
+        "legalBasis": [],
+        "preconditions": ["professional_review_of_route", "do_not_miss_deadline"],
+        "advantages": ["preserve_rights"],
+        "disadvantages": ["may_be_inadmissible_if_wrong_route"],
+        "risks": ["authority_incompetent", "costs_risk"],
+        "costConsiderations": ["court_or_administrative_costs_must_be_checked"],
+        "timingConsiderations": ["act_before_possible_deadline_expiry"],
+        "evidenceNeeds": ["proof_of_notification", "copy_of_challenged_decision"],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.3
+      }
+    ],
+    "recommendedStrategy": {
+      "primaryRoute": "Verify admissible procedural route before merits filing",
+      "alternativeRoute": "Alternative protective filing or clarification request",
+      "recommendedSequence": [
+        "verify_deadline_and_notification",
+        "confirm_competent_authority",
+        "organize_facts_chronologically",
+        "attach_key_evidence",
+        "address_admissibility_before_merits"
+      ],
+      "immediateActions": ["urgent_deadline_verification", "preserve_rights_if_legally_available"],
+      "documentsToPrepare": [
+        "challenged_decision",
+        "proof_of_notification",
+        "chronology",
+        "evidence_index"
+      ],
+      "evidenceToObtain": [],
+      "argumentsToPrioritize": ["admissibility", "competence", "timely_filing", "documented_facts"],
+      "argumentsToAvoid": [
+        "unsupported_factual_assertions",
+        "emotional_arguments_without_legal_relevance",
+        "claims_not_tied_to_requested_relief"
+      ],
+      "settlementPosition": null,
+      "protectiveFilings": ["consider_only_after_verifying_legal_basis_and_authority"],
+      "confidence": 0.5
+    },
+    "scenarioAnalysis": [
+      {
+        "scenario": "best_case",
+        "description": "The authority accepts admissibility and the decisive facts are supported by reliable documents.",
+        "triggeringFactors": ["timely_filing", "competent_authority", "documented_key_facts"],
+        "proceduralConsequences": ["merits_review"]
+      },
+      {
+        "scenario": "likely_case",
+        "description": "Outcome remains uncertain because procedural route, deadlines or evidentiary record require verification.",
+        "triggeringFactors": ["uncertain_deadline"],
+        "proceduralConsequences": ["requests_for_clarification_or_evidence_possible"]
+      },
+      {
+        "scenario": "adverse_case",
+        "description": "The matter may fail procedurally or on proof if missing documents, deadlines or facts are not cured.",
+        "triggeringFactors": ["deadline_not_proven"],
+        "proceduralConsequences": ["inadmissibility_or_dismissal_risk"]
+      }
+    ],
+    "risks": [
+      {
+        "risk": "plazo incierto o no calculable",
+        "probability": "unknown",
+        "impact": "high",
+        "mitigation": "verify legal basis, notification date and suspension rules immediately"
+      },
+      {
+        "risk": "jurisprudencia comparable insuficiente en la muestra recuperada",
+        "probability": "unknown",
+        "impact": "medium",
+        "mitigation": "run targeted case-law searches with narrower issues and court filters"
+      }
+    ],
+    "missingInformation": [],
+    "warnings": [
+      "not_legal_advice_no_success_guarantee",
+      "human_legal_review_required",
+      "uncertain_deadline",
+      "insufficient_case_law",
+      "do_not_destroy_or_hide_evidence",
+      "do_not_make_false_statements"
+    ],
+    "sources": [
+      {
+        "sourceId": "fixture:case-2",
+        "providerId": "fixture",
+        "documentIdentifier": "fixture-case-2",
+        "courtOrAuthority": null,
+        "date": "2023-11-20",
+        "provisionOrParagraph": null,
+        "passage": "Texto de prueba: sentencia cantonal ficticia de Zurich.",
+        "officialUrl": "https://fixture.invalid/case-2",
+        "retrievedAt": "2026-07-25T00:00:00.000Z",
+        "confidence": 0.45,
+        "extractionMethod": "explicit_holding"
+      }
+    ],
+    "trace": {
+      "timeline": {
+        "entries": [
+          {
+            "date": "2026-01-10",
+            "kind": "fact",
+            "id": "f-decision",
+            "description": "Authority issued a permit refusal.",
+            "confidence": 0.75
+          },
+          {
+            "date": "2026-01-10",
+            "kind": "procedural_event",
+            "id": "fixture:case-2",
+            "description": "Cantonal authority: Decision issued",
+            "confidence": 0.7
+          },
+          {
+            "date": "2026-01-10",
+            "kind": "challenged_decision",
+            "id": "fixture:case-2",
+            "description": "Permit refusal.",
+            "confidence": 0.7
+          }
+        ],
+        "contradictions": [],
+        "missingDocuments": []
+      },
+      "issues": [
+        {
+          "id": "competence",
+          "status": "potentially_applicable",
+          "rationale": "Competence depends on matter, authority and territorial link."
+        },
+        {
+          "id": "standing",
+          "status": "potentially_applicable",
+          "rationale": "Standing cannot be confirmed from roles alone."
+        },
+        {
+          "id": "appealable_act",
+          "status": "potentially_applicable",
+          "rationale": "A challengeable decision or procedural act must be verified from documents."
+        },
+        {
+          "id": "exhaustion",
+          "status": "potentially_applicable",
+          "rationale": "Prior administrative/procedural steps affect admissibility."
+        },
+        {
+          "id": "deadline",
+          "status": "potentially_applicable",
+          "rationale": "Deadline calculation requires start event and legal basis."
+        },
+        {
+          "id": "formal_requirements",
+          "status": "potentially_applicable",
+          "rationale": "Written form, signature, requests and reasoning commonly require checking."
+        },
+        {
+          "id": "language",
+          "status": "potentially_applicable",
+          "rationale": "Language requirements depend on authority/canton."
+        },
+        {
+          "id": "representation",
+          "status": "potentially_applicable",
+          "rationale": "Self-represented parties face form and evidence risks."
+        },
+        {
+          "id": "burden_of_proof",
+          "status": "potentially_applicable",
+          "rationale": "Disputed or alleged facts require proof planning."
+        },
+        {
+          "id": "suspensive_effect",
+          "status": "not_applicable",
+          "rationale": "Requested only if the objective includes suspensive effect."
+        },
+        {
+          "id": "interim_measures",
+          "status": "not_applicable",
+          "rationale": "Requested only if interim relief is an objective."
+        }
+      ],
+      "loadedDocuments": [
+        {
+          "documentId": "fixture:case-2",
+          "documentType": "decision",
+          "status": "loaded",
+          "provider": "fixture"
+        }
+      ],
+      "guardrails": [
+        "no_success_guarantee",
+        "no_invented_case_law",
+        "no_invented_deadlines",
+        "no_document_body_logging",
+        "professional_review_recommended_for_high_risk_matters",
+        "no_direct_comparability_from_lexical_overlap_only",
+        "separate_ratio_obiter_party_allegations_and_lower_court_reasoning",
+        "no_automatic_unbeholfen_from_self_representation",
+        "no_automatic_nachfrist_from_first_deficiency"
+      ]
+    },
+    "confidence": {
+      "facts": 0.6,
+      "competence": 0.45,
+      "proceduralRoute": 0.45,
+      "deadline": 0.2,
+      "applicableLaw": 0.55,
+      "comparableCaseLaw": 0.15,
+      "evidence": 0.6,
+      "strategy": 0.45
+    }
+  },
+  "reviewerQuestions": [
+    {
+      "dimension": "fact_reconstruction",
+      "question": "Assess fact reconstruction on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "chronology",
+      "question": "Assess chronology on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "fact_classification",
+      "question": "Assess fact classification on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "competence",
+      "question": "Assess competence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "authority",
+      "question": "Assess authority on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "procedural_route",
+      "question": "Assess procedural route on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "admissibility",
+      "question": "Assess admissibility on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "standing",
+      "question": "Assess standing on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "deadlines",
+      "question": "Assess deadlines on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "applicable_law",
+      "question": "Assess applicable law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "burden_of_proof",
+      "question": "Assess burden of proof on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "evidence_assessment",
+      "question": "Assess evidence assessment on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "comparable_case_law",
+      "question": "Assess comparable case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "adverse_case_law",
+      "question": "Assess adverse case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "primary_strategy",
+      "question": "Assess primary strategy on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "alternatives",
+      "question": "Assess alternatives on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "counteranalysis",
+      "question": "Assess counteranalysis on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "risks",
+      "question": "Assess risks on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "confidence",
+      "question": "Assess confidence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "traceability",
+      "question": "Assess traceability on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "clarity",
+      "question": "Assess clarity on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "practical_utility",
+      "question": "Assess practical utility on the 0-4/N/A scale. Explain every score below 3."
+    }
+  ],
+  "privacyNotice": "This package is anonymized for review. Do not add names, account numbers, addresses, private docket numbers or medical identifiers."
+}

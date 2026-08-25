@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "systemVersion": "1.0.0",
+  "caseId": "uncertain-deadline-controlled",
+  "title": "Uncertain deadline",
+  "caseHash": "ef88979d77076e3bded2ab6ea497ad77f3db991ead1008980ca24b6e3c5a9989",
+  "outputHash": "c897cb3309f67cd3a964a82a2e1ace614ac3c8d6cd170cbf000d0d9e5967cacb",
+  "input": {
+    "jurisdiction": {
+      "country": "CH",
+      "canton": "TI"
+    },
+    "matter": {
+      "area": "administrative",
+      "description": "Administrative matter with missing notification proof."
+    },
+    "parties": [
+      {
+        "role": "appellant",
+        "type": "natural_person",
+        "description": "Anonymized appellant"
+      },
+      {
+        "role": "authority",
+        "type": "public_authority",
+        "description": "Authority"
+      }
+    ],
+    "facts": [],
+    "proceduralHistory": [],
+    "claims": [
+      {
+        "description": "Preserve rights.",
+        "priority": "primary"
+      }
+    ],
+    "availableEvidence": [],
+    "deadlines": [],
+    "objectives": ["preserve-rights"],
+    "constraints": {
+      "urgency": "critical",
+      "representation": "unknown",
+      "riskTolerance": "low",
+      "language": "it"
+    },
+    "documents": [],
+    "analysisDate": "2026-06-10"
+  },
+  "output": {
+    "caseSummary": {
+      "legalCharacterization": "administrative: Administrative matter with missing notification proof.",
+      "proceduralPosture": "pre-filing or insufficient procedural posture information",
+      "keyFacts": [],
+      "disputedFacts": [],
+      "allegedFacts": [],
+      "uncertainFacts": [],
+      "missingFacts": ["challenged_decision", "evidence_inventory"]
+    },
+    "jurisdictionAndCompetence": {
+      "likelyJurisdiction": "CH-TI",
+      "likelyAuthorityOrCourt": "cantonal administrative objection/appeal route or federal administrative route depending on authority",
+      "dimensions": {
+        "country_legal_system": {
+          "status": "confirmed",
+          "value": "CH"
+        },
+        "territorial_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "TI"
+        },
+        "subject_matter_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "administrative"
+        },
+        "functional_jurisdiction": {
+          "status": "not_verified",
+          "value": null
+        },
+        "issuing_authority": {
+          "status": "not_verified",
+          "value": null
+        },
+        "appellate_authority": {
+          "status": "not_verified",
+          "value": null
+        },
+        "procedural_remedy": {
+          "status": "requires_legal_review",
+          "value": "preserve-rights"
+        },
+        "venue_or_filing_destination": {
+          "status": "not_verified",
+          "value": null
+        }
+      },
+      "territorialCompetence": "territorial link to canton TI requires verification",
+      "subjectMatterCompetence": "cantonal administrative objection/appeal route or federal administrative route depending on authority",
+      "confidence": 0.35,
+      "sources": []
+    },
+    "admissibility": {
+      "standing": {
+        "id": "standing",
+        "status": "potentially_applicable",
+        "rationale": "Standing cannot be confirmed from roles alone."
+      },
+      "appealableAct": {
+        "id": "appealable_act",
+        "status": "insufficient_information",
+        "rationale": "A challengeable decision or procedural act must be verified from documents."
+      },
+      "exhaustion": {
+        "id": "exhaustion",
+        "status": "insufficient_information",
+        "rationale": "Prior administrative/procedural steps affect admissibility."
+      },
+      "formalRequirements": {
+        "id": "formal_requirements",
+        "status": "potentially_applicable",
+        "rationale": "Written form, signature, requests and reasoning commonly require checking."
+      },
+      "languageRequirements": {
+        "id": "language",
+        "status": "potentially_applicable",
+        "rationale": "Language requirements depend on authority/canton."
+      },
+      "representationRequirements": {
+        "id": "representation",
+        "status": "not_applicable",
+        "rationale": "Self-represented parties face form and evidence risks."
+      },
+      "risks": [
+        "admisibilidad incierta: appealable_act",
+        "admisibilidad incierta: exhaustion",
+        "admisibilidad incierta: deadline"
+      ]
+    },
+    "deadlines": [
+      {
+        "deadlineType": "unknown_procedural_deadline",
+        "startEvent": "unknown",
+        "calculatedDate": null,
+        "calculationStatus": "cannot_calculate",
+        "suspensionRules": [],
+        "restorationPossibility": null,
+        "sources": [],
+        "warnings": ["uncertain_deadline", "proof_of_notification_and_legal_basis_required"]
+      }
+    ],
+    "applicableLaw": [],
+    "burdenOfProof": [],
+    "evidenceAssessment": [],
+    "legalAidClarification": {
+      "unbeholfenAssessment": {
+        "status": "not_automatic",
+        "factors": [
+          "representation:unknown",
+          "request_clarity_not_confirmed",
+          "no_prior_warning_confirmed",
+          "opportunity_count_not_confirmed"
+        ],
+        "warnings": []
+      },
+      "proceduralLawBasis": {
+        "art29Abs3Bv": "potentially_relevant_for_legal_aid",
+        "art56Zpo": "not_confirmed_direct_or_supplementary",
+        "mitwirkungspflicht": "must_be_addressed",
+        "cantonalProceduralLaw": "must_verify_TI",
+        "strategicInference": "request clarification only as contingent argument, not as automatic right",
+        "warnings": ["procedural_law_not_confirmed"]
+      },
+      "evidentiaryPosture": {
+        "category": "documentation_incomplete_or_uncertain",
+        "doubleCountingRisk": false,
+        "clarificationDuty": "not_automatic",
+        "partyOmissionRisk": "medium"
+      },
+      "mandatoryCounterargument": "Mitwirkungspflicht: the applicant must substantiate indigence and provide requested financial documents; the authority is not a party adviser or general investigator."
+    },
+    "caseLawAnalysis": {
+      "favorableCases": [],
+      "unfavorableCases": [],
+      "mixedCases": [],
+      "distinguishableCases": [],
+      "patterns": [],
+      "structuredComparability": [],
+      "courtBehavior": [],
+      "limitations": [
+        "insufficient_case_law",
+        "no_percentages_reported_without_complete_corpus",
+        "no_judge_profiling",
+        "no_decisive_precedent_from_unverified_or_fragmentary_case",
+        "terminological_overlap_never_sufficient_for_direct_comparability"
+      ]
+    },
+    "proceduralOptions": [
+      {
+        "optionId": "option-1",
+        "title": "Verify admissible procedural route before merits filing",
+        "description": "Protect procedural rights first, then present merits arguments supported by documents.",
+        "legalBasis": [],
+        "preconditions": [
+          "verify_competent_authority",
+          "verify_deadline",
+          "confirm_notification_evidence"
+        ],
+        "advantages": ["reduces_admissibility_risk", "keeps_arguments_ordered"],
+        "disadvantages": ["deadline_uncertain"],
+        "risks": ["appealable_act", "exhaustion", "deadline"],
+        "costConsiderations": [],
+        "timingConsiderations": ["urgent_deadline_review_required"],
+        "evidenceNeeds": [],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.35
+      },
+      {
+        "optionId": "option-2",
+        "title": "Alternative protective filing or clarification request",
+        "description": "Where legally available, consider a protective filing or request for clarification while avoiding categorical admissibility claims.",
+        "legalBasis": [],
+        "preconditions": ["professional_review_of_route", "do_not_miss_deadline"],
+        "advantages": ["preserve_rights"],
+        "disadvantages": ["may_be_inadmissible_if_wrong_route"],
+        "risks": ["authority_incompetent", "costs_risk"],
+        "costConsiderations": ["court_or_administrative_costs_must_be_checked"],
+        "timingConsiderations": ["act_before_possible_deadline_expiry"],
+        "evidenceNeeds": ["proof_of_notification", "copy_of_challenged_decision"],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.3
+      }
+    ],
+    "recommendedStrategy": {
+      "primaryRoute": "Verify admissible procedural route before merits filing",
+      "alternativeRoute": "Alternative protective filing or clarification request",
+      "recommendedSequence": [
+        "verify_deadline_and_notification",
+        "confirm_competent_authority",
+        "organize_facts_chronologically",
+        "attach_key_evidence",
+        "address_admissibility_before_merits"
+      ],
+      "immediateActions": ["urgent_deadline_verification", "preserve_rights_if_legally_available"],
+      "documentsToPrepare": [
+        "challenged_decision",
+        "proof_of_notification",
+        "chronology",
+        "evidence_index"
+      ],
+      "evidenceToObtain": [],
+      "argumentsToPrioritize": ["admissibility", "competence", "timely_filing", "documented_facts"],
+      "argumentsToAvoid": [
+        "unsupported_factual_assertions",
+        "emotional_arguments_without_legal_relevance",
+        "claims_not_tied_to_requested_relief"
+      ],
+      "settlementPosition": null,
+      "protectiveFilings": ["consider_only_after_verifying_legal_basis_and_authority"],
+      "confidence": 0.35
+    },
+    "scenarioAnalysis": [
+      {
+        "scenario": "best_case",
+        "description": "The authority accepts admissibility and the decisive facts are supported by reliable documents.",
+        "triggeringFactors": ["timely_filing", "competent_authority", "documented_key_facts"],
+        "proceduralConsequences": ["merits_review"]
+      },
+      {
+        "scenario": "likely_case",
+        "description": "Outcome remains uncertain because procedural route, deadlines or evidentiary record require verification.",
+        "triggeringFactors": ["uncertain_deadline"],
+        "proceduralConsequences": ["requests_for_clarification_or_evidence_possible"]
+      },
+      {
+        "scenario": "adverse_case",
+        "description": "The matter may fail procedurally or on proof if missing documents, deadlines or facts are not cured.",
+        "triggeringFactors": ["deadline_not_proven", "no_challenged_decision"],
+        "proceduralConsequences": ["inadmissibility_or_dismissal_risk"]
+      }
+    ],
+    "risks": [
+      {
+        "risk": "admisibilidad incierta: appealable_act",
+        "probability": "unknown",
+        "impact": "high",
+        "mitigation": "obtain missing document or source before filing"
+      },
+      {
+        "risk": "admisibilidad incierta: exhaustion",
+        "probability": "unknown",
+        "impact": "high",
+        "mitigation": "obtain missing document or source before filing"
+      },
+      {
+        "risk": "admisibilidad incierta: deadline",
+        "probability": "unknown",
+        "impact": "high",
+        "mitigation": "obtain missing document or source before filing"
+      },
+      {
+        "risk": "plazo incierto o no calculable",
+        "probability": "high",
+        "impact": "high",
+        "mitigation": "verify legal basis, notification date and suspension rules immediately"
+      },
+      {
+        "risk": "jurisprudencia comparable insuficiente en la muestra recuperada",
+        "probability": "unknown",
+        "impact": "medium",
+        "mitigation": "run targeted case-law searches with narrower issues and court filters"
+      }
+    ],
+    "missingInformation": ["challenged_decision", "evidence_inventory"],
+    "warnings": [
+      "not_legal_advice_no_success_guarantee",
+      "human_legal_review_required",
+      "critical_urgency_professional_review_recommended",
+      "uncertain_deadline",
+      "insufficient_case_law",
+      "do_not_destroy_or_hide_evidence",
+      "do_not_make_false_statements"
+    ],
+    "sources": [],
+    "trace": {
+      "timeline": {
+        "entries": [],
+        "contradictions": [],
+        "missingDocuments": []
+      },
+      "issues": [
+        {
+          "id": "competence",
+          "status": "potentially_applicable",
+          "rationale": "Competence depends on matter, authority and territorial link."
+        },
+        {
+          "id": "standing",
+          "status": "potentially_applicable",
+          "rationale": "Standing cannot be confirmed from roles alone."
+        },
+        {
+          "id": "appealable_act",
+          "status": "insufficient_information",
+          "rationale": "A challengeable decision or procedural act must be verified from documents."
+        },
+        {
+          "id": "exhaustion",
+          "status": "insufficient_information",
+          "rationale": "Prior administrative/procedural steps affect admissibility."
+        },
+        {
+          "id": "deadline",
+          "status": "insufficient_information",
+          "rationale": "Deadline calculation requires start event and legal basis."
+        },
+        {
+          "id": "formal_requirements",
+          "status": "potentially_applicable",
+          "rationale": "Written form, signature, requests and reasoning commonly require checking."
+        },
+        {
+          "id": "language",
+          "status": "potentially_applicable",
+          "rationale": "Language requirements depend on authority/canton."
+        },
+        {
+          "id": "representation",
+          "status": "not_applicable",
+          "rationale": "Self-represented parties face form and evidence risks."
+        },
+        {
+          "id": "burden_of_proof",
+          "status": "potentially_applicable",
+          "rationale": "Disputed or alleged facts require proof planning."
+        },
+        {
+          "id": "suspensive_effect",
+          "status": "not_applicable",
+          "rationale": "Requested only if the objective includes suspensive effect."
+        },
+        {
+          "id": "interim_measures",
+          "status": "not_applicable",
+          "rationale": "Requested only if interim relief is an objective."
+        }
+      ],
+      "loadedDocuments": [],
+      "guardrails": [
+        "no_success_guarantee",
+        "no_invented_case_law",
+        "no_invented_deadlines",
+        "no_document_body_logging",
+        "professional_review_recommended_for_high_risk_matters",
+        "no_direct_comparability_from_lexical_overlap_only",
+        "separate_ratio_obiter_party_allegations_and_lower_court_reasoning",
+        "no_automatic_unbeholfen_from_self_representation",
+        "no_automatic_nachfrist_from_first_deficiency"
+      ]
+    },
+    "confidence": {
+      "facts": 0.3,
+      "competence": 0.45,
+      "proceduralRoute": 0.25,
+      "deadline": 0.2,
+      "applicableLaw": 0.25,
+      "comparableCaseLaw": 0.15,
+      "evidence": 0.3,
+      "strategy": 0.3
+    }
+  },
+  "reviewerQuestions": [
+    {
+      "dimension": "fact_reconstruction",
+      "question": "Assess fact reconstruction on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "chronology",
+      "question": "Assess chronology on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "fact_classification",
+      "question": "Assess fact classification on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "competence",
+      "question": "Assess competence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "authority",
+      "question": "Assess authority on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "procedural_route",
+      "question": "Assess procedural route on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "admissibility",
+      "question": "Assess admissibility on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "standing",
+      "question": "Assess standing on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "deadlines",
+      "question": "Assess deadlines on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "applicable_law",
+      "question": "Assess applicable law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "burden_of_proof",
+      "question": "Assess burden of proof on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "evidence_assessment",
+      "question": "Assess evidence assessment on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "comparable_case_law",
+      "question": "Assess comparable case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "adverse_case_law",
+      "question": "Assess adverse case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "primary_strategy",
+      "question": "Assess primary strategy on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "alternatives",
+      "question": "Assess alternatives on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "counteranalysis",
+      "question": "Assess counteranalysis on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "risks",
+      "question": "Assess risks on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "confidence",
+      "question": "Assess confidence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "traceability",
+      "question": "Assess traceability on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "clarity",
+      "question": "Assess clarity on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "practical_utility",
+      "question": "Assess practical utility on the 0-4/N/A scale. Explain every score below 3."
+    }
+  ],
+  "privacyNotice": "This package is anonymized for review. Do not add names, account numbers, addresses, private docket numbers or medical identifiers."
+}

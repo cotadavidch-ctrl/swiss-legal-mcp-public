@@ -1,0 +1,1054 @@
+{
+  "generatedAt": "2026-08-06T22:59:45.407Z",
+  "packages": [
+    {
+      "path": "apps/admin-cli",
+      "name": "@swiss-legal-mcp/admin-cli",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": {
+        "swiss-legal-mcp-admin": "./dist/index.js"
+      },
+      "scripts": [
+        "build",
+        "dev",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/provider-bsv",
+        "@swiss-legal-mcp/provider-cantonal",
+        "@swiss-legal-mcp/provider-entscheidsuche",
+        "@swiss-legal-mcp/provider-estv",
+        "@swiss-legal-mcp/provider-fedlex",
+        "@swiss-legal-mcp/provider-fixture",
+        "@swiss-legal-mcp/provider-seco",
+        "@swiss-legal-mcp/provider-shab",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/updater"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "tsx",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "apps/mcp-server",
+      "name": "@swiss-legal-mcp/mcp-server",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./src/index.ts",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "dev:http",
+        "dev:stdio",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@modelcontextprotocol/sdk",
+        "@swiss-legal-mcp/citations",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/provider-bsv",
+        "@swiss-legal-mcp/provider-cantonal",
+        "@swiss-legal-mcp/provider-entscheidsuche",
+        "@swiss-legal-mcp/provider-estv",
+        "@swiss-legal-mcp/provider-fedlex",
+        "@swiss-legal-mcp/provider-fixture",
+        "@swiss-legal-mcp/provider-seco",
+        "@swiss-legal-mcp/provider-shab",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/shared-web",
+        "express",
+        "express-rate-limit",
+        "pino-http",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/express",
+        "@types/node",
+        "@types/supertest",
+        "supertest",
+        "tsx",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "",
+      "name": "swiss-legal-mcp",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/stdio.js",
+      "types": null,
+      "bin": {
+        "swiss-legal-mcp": "./dist/stdio.js"
+      },
+      "scripts": [
+        "api:inventory",
+        "benchmark",
+        "build",
+        "build:package",
+        "build:verify",
+        "ci",
+        "diagnose:official-case-pipeline",
+        "eval:procedural-strategy",
+        "format",
+        "format:check",
+        "format:fix",
+        "licenses:check",
+        "lint",
+        "lint:fix",
+        "prepack",
+        "release:check",
+        "release:prepare",
+        "review:procedural-strategy",
+        "sbom",
+        "test",
+        "test:breach-detection",
+        "test:claude-desktop",
+        "test:coverage",
+        "test:integration",
+        "test:legal-capability-live",
+        "test:multirole-persistence",
+        "test:official-case-live",
+        "test:package-install",
+        "test:packaging-gates",
+        "test:security",
+        "test:updater",
+        "test:watch",
+        "typecheck",
+        "update-security:check"
+      ],
+      "dependencies": [
+        "@modelcontextprotocol/sdk",
+        "cheerio",
+        "fast-xml-parser",
+        "pdf-parse",
+        "pino",
+        "zod"
+      ],
+      "devDependencies": [
+        "@eslint/js",
+        "@types/node",
+        "@vitest/coverage-v8",
+        "esbuild",
+        "eslint",
+        "eslint-config-prettier",
+        "prettier",
+        "tsx",
+        "typescript",
+        "typescript-eslint",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/citations",
+      "name": "@swiss-legal-mcp/citations",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "test",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/core",
+      "name": "@swiss-legal-mcp/core",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/documents",
+      "name": "@swiss-legal-mcp/documents",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/bsv",
+      "name": "@swiss-legal-mcp/provider-bsv",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/shared-web",
+        "cheerio",
+        "domhandler",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/cantonal",
+      "name": "@swiss-legal-mcp/provider-cantonal",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/shared-web",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/entscheidsuche",
+      "name": "@swiss-legal-mcp/provider-entscheidsuche",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@modelcontextprotocol/sdk",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/estv",
+      "name": "@swiss-legal-mcp/provider-estv",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/shared-web",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/fedlex",
+      "name": "@swiss-legal-mcp/provider-fedlex",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "fast-xml-parser",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/fixture",
+      "name": "@swiss-legal-mcp/provider-fixture",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/seco",
+      "name": "@swiss-legal-mcp/provider-seco",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "@swiss-legal-mcp/shared-web",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/providers/shab",
+      "name": "@swiss-legal-mcp/provider-shab",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/search",
+      "name": "@swiss-legal-mcp/search",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [],
+      "devDependencies": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "packages/shared",
+      "name": "@swiss-legal-mcp/shared",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "pino",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/shared-web",
+      "name": "@swiss-legal-mcp/shared-web",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/shared",
+        "cheerio",
+        "pdf-parse",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/updater",
+      "name": "@swiss-legal-mcp/updater",
+      "version": "1.0.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "test",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/shared",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    }
+  ],
+  "publicExports": [
+    {
+      "file": "packages/citations/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/citations/src/index.ts",
+      "export": "export { parseCitations, classifyCitation } from \"./parser.js\";"
+    },
+    {
+      "file": "packages/citations/src/index.ts",
+      "export": "export { normalizeCitation } from \"./normalizer.js\";"
+    },
+    {
+      "file": "packages/citations/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/documents/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/documents/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/documents/src/index.ts",
+      "export": "export { computeContentHash } from \"./contentHash.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { loadBsvConfig, type BsvConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { parseBsvFolderListing, type BsvFolderListingItem } from \"./folderListingParser.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { parseBsvDocumentPage, type BsvVersionDetail } from \"./documentPageParser.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { extractBsvDates, type ExtractedBsvDates } from \"./referenceExtractor.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { buildBsvDocumentId, mapBsvVersionToNormalizedDocument } from \"./mapper.js\";"
+    },
+    {
+      "file": "packages/providers/bsv/src/index.ts",
+      "export": "export { BsvProvider, type BsvSearchParams, type BsvSearchOutcome } from \"./bsvProvider.js\";"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export { LEXWORK_CANTONS, type LexWorkCantonDescriptor } from \"./lexWorkCantons.js\";"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export { loadCantonalLexWorkConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/cantonal/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export { EntscheidsucheMcpProvider } from \"./entscheidsucheProvider.js\";"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export type {"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export { EntscheidsucheRemoteClient } from \"./remoteClient.js\";"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export { loadEntscheidsucheConfig, type EntscheidsucheConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export { OfficialSourceResolver, type OfficialSourceResolution } from \"./officialSourceResolver.js\";"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/entscheidsuche/src/index.ts",
+      "export": "export * from \"./remoteTypes.js\";"
+    },
+    {
+      "file": "packages/providers/estv/src/index.ts",
+      "export": "export { loadEstvConfig, type EstvConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/estv/src/index.ts",
+      "export": "export { parseEstvListing, type EstvListingItem } from \"./listingParser.js\";"
+    },
+    {
+      "file": "packages/providers/estv/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/estv/src/index.ts",
+      "export": "export { buildEstvDocumentId, mapEstvItemToNormalizedDocument } from \"./mapper.js\";"
+    },
+    {
+      "file": "packages/providers/estv/src/index.ts",
+      "export": "export { EstvProvider, type EstvSearchParams, type EstvSearchOutcome } from \"./estvProvider.js\";"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export { FedlexProvider, FEDLEX_CAPABILITIES } from \"./fedlexProvider.js\";"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export { loadFedlexConfig, type FedlexConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export { FedlexSourceResolver, type FedlexSourceResolution } from \"./officialSourceResolver.js\";"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/fedlex/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/fixture/src/index.ts",
+      "export": "export { FixtureProvider, FixtureNotAllowedError } from \"./fixtureProvider.js\";"
+    },
+    {
+      "file": "packages/providers/fixture/src/index.ts",
+      "export": "export { FIXTURE_DOCUMENTS } from \"./fixtureDocuments.js\";"
+    },
+    {
+      "file": "packages/providers/seco/src/index.ts",
+      "export": "export { loadSecoConfig, type SecoConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/seco/src/index.ts",
+      "export": "export { parseSecoListing, SECO_LANGUAGES, type SecoListingItem } from \"./listingParser.js\";"
+    },
+    {
+      "file": "packages/providers/seco/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/seco/src/index.ts",
+      "export": "export { buildSecoDocumentId, mapSecoItemToNormalizedDocument } from \"./mapper.js\";"
+    },
+    {
+      "file": "packages/providers/seco/src/index.ts",
+      "export": "export { SecoProvider, type SecoSearchParams, type SecoSearchOutcome } from \"./secoProvider.js\";"
+    },
+    {
+      "file": "packages/providers/shab/src/index.ts",
+      "export": "export { loadShabConfig, type ShabConfig } from \"./config.js\";"
+    },
+    {
+      "file": "packages/providers/shab/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/shab/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/providers/shab/src/index.ts",
+      "export": "export { ShabProvider, type ShabSearchParams } from \"./shabProvider.js\";"
+    },
+    {
+      "file": "packages/search/src/index.ts",
+      "export": "export const SEARCH_PACKAGE_STATUS = \"pending\" as const;"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { loadEnv, loadHttpEnv, loadStdioEnv, InvalidEnvironmentError, type Env } from \"./env.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { createLogger, type Logger, type CreateLoggerOptions } from \"./logger.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { generateCorrelationId, CORRELATION_ID_HEADER } from \"./correlationId.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { runWithCorrelationId, getCorrelationId } from \"./correlationContext.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { TtlCache } from \"./ttlCache.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export { CircuitBreaker, type CircuitState } from \"./circuitBreaker.js\";"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export { sha256Hex } from \"./contentHash.js\";"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export { parseHtml, extractSanitizedText, type HtmlDocument } from \"./htmlParser.js\";"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export { extractPdfText, type ExtractedPdfText } from \"./pdfTextExtractor.js\";"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export { buildOfficialSourceAttribution } from \"./sourceAttribution.js\";"
+    },
+    {
+      "file": "packages/shared-web/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export { createUpdater, type Updater, type UpdaterConfig, type UpdateStatus } from \"./updater.js\";"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/updater/src/index.ts",
+      "export": "export {"
+    }
+  ],
+  "mcpTools": [
+    {
+      "name": "analyze_procedural_strategy",
+      "file": "apps/mcp-server/src/tools/proceduralStrategyTools.ts"
+    },
+    {
+      "name": "analyze_swiss_legal_positions",
+      "file": "apps/mcp-server/src/tools/multiroleLegalAnalysisTools.ts"
+    },
+    {
+      "name": "batch_resolve_official_cases",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "build_case_citation_network",
+      "file": "apps/mcp-server/src/tools/citationNetworkTools.ts"
+    },
+    {
+      "name": "build_evidence_index",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "build_rebuttal_matrix",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "compare_article_versions",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "compare_legal_documents",
+      "file": "apps/mcp-server/src/tools/compareDocumentsTools.ts"
+    },
+    {
+      "name": "compare_swiss_case_sources",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "draft_swiss_legal_document",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "export_case_corpus",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "extract_challenged_passages",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "extract_legal_passages",
+      "file": "apps/mcp-server/src/tools/extractPassagesTools.ts"
+    },
+    {
+      "name": "fetch_official_swiss_case_full_text",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "find_cited_sources",
+      "file": "apps/mcp-server/src/tools/citationNetworkTools.ts"
+    },
+    {
+      "name": "generate_rechtsbegehren",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "get_amendment_history",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "get_article",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "get_article_at_date",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "get_cantonal_article",
+      "file": "apps/mcp-server/src/tools/cantonalTools.ts"
+    },
+    {
+      "name": "get_cantonal_law",
+      "file": "apps/mcp-server/src/tools/cantonalTools.ts"
+    },
+    {
+      "name": "get_case",
+      "file": "apps/mcp-server/src/tools/entscheidsucheTools.ts"
+    },
+    {
+      "name": "get_case_metadata",
+      "file": "apps/mcp-server/src/tools/entscheidsucheTools.ts"
+    },
+    {
+      "name": "get_law",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "get_official_document",
+      "file": "apps/mcp-server/src/tools/administrativeTools.ts"
+    },
+    {
+      "name": "get_shab_publication",
+      "file": "apps/mcp-server/src/tools/shabTools.ts"
+    },
+    {
+      "name": "identify_applicable_version",
+      "file": "apps/mcp-server/src/tools/citationTools.ts"
+    },
+    {
+      "name": "resolve_official_swiss_case",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "review_swiss_legal_document",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "search_across_sources",
+      "file": "apps/mcp-server/src/tools/searchAcrossSourcesTools.ts"
+    },
+    {
+      "name": "search_bsv_documents",
+      "file": "apps/mcp-server/src/tools/administrativeTools.ts"
+    },
+    {
+      "name": "search_cantonal_legislation",
+      "file": "apps/mcp-server/src/tools/cantonalTools.ts"
+    },
+    {
+      "name": "search_cases",
+      "file": "apps/mcp-server/src/tools/entscheidsucheTools.ts"
+    },
+    {
+      "name": "search_cases_by_reference",
+      "file": "apps/mcp-server/src/tools/entscheidsucheTools.ts"
+    },
+    {
+      "name": "search_estv_documents",
+      "file": "apps/mcp-server/src/tools/administrativeTools.ts"
+    },
+    {
+      "name": "search_federal_cases",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "search_legislation",
+      "file": "apps/mcp-server/src/tools/fedlexTools.ts"
+    },
+    {
+      "name": "search_seco_documents",
+      "file": "apps/mcp-server/src/tools/administrativeTools.ts"
+    },
+    {
+      "name": "search_shab_publications",
+      "file": "apps/mcp-server/src/tools/shabTools.ts"
+    },
+    {
+      "name": "validate_multirole_legal_analysis",
+      "file": "apps/mcp-server/src/tools/multiroleLegalAnalysisTools.ts"
+    },
+    {
+      "name": "validate_procedural_requirements",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "validate_swiss_case_ground_coverage",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "validate_swiss_legal_draft",
+      "file": "apps/mcp-server/src/tools/legalDraftingTools.ts"
+    },
+    {
+      "name": "verify_legal_citation",
+      "file": "apps/mcp-server/src/tools/citationTools.ts"
+    },
+    {
+      "name": "verify_swiss_case_identity",
+      "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    }
+  ],
+  "environmentVariables": [
+    "LOG_LEVEL",
+    "MCP_HTTP_BEARER_TOKEN",
+    "MCP_HTTP_HOST",
+    "MCP_HTTP_MAX_CONCURRENCY",
+    "MCP_HTTP_MAX_REQUEST_BYTES",
+    "MCP_HTTP_PORT",
+    "MCP_HTTP_RATE_LIMIT_MAX",
+    "MCP_HTTP_RATE_LIMIT_WINDOW_MS",
+    "MCP_HTTP_REQUEST_TIMEOUT_MS",
+    "NODE_ENV"
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "comparison_id": "AI-LEGAL-CROSS-COMPARISON-2026-08-06-RERUN-001",
+  "created_at": "2026-08-06T02:40:55Z",
+  "files_updated": [
+    "docs/validation/results/ai-legal-cross-comparison.json",
+    "docs/validation/results/ai-legal-cross-comparison.md",
+    "docs/validation/results/ai-legal-cross-comparison-metadata.json"
+  ],
+  "cases_compared": 30,
+  "ids_complete": true,
+  "ids_without_duplicates": true,
+  "metrics_recalculated_from_sources": true,
+  "system_summaries": {
+    "swiss_legal_mcp": {
+      "pass": 23,
+      "review_required": 7,
+      "critical_failure": 0,
+      "average_score": 84.6,
+      "median_score": 85,
+      "verified_citation_rate_raw": 0.767,
+      "verified_citation_rate_fraction": 0.767,
+      "correct_abstention_rate_raw": 0.917,
+      "correct_abstention_rate_fraction": 0.917,
+      "regression_cases": [
+        {
+          "case_id": "AILC-05",
+          "score": 78,
+          "status": "REVIEW_REQUIRED",
+          "abstention": true,
+          "official": true,
+          "note": "Abstencion correcta sobre A-4733/2022 y numero de paginas no confirmado.",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-06",
+          "score": 88,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "FIND-01 corregido: texto oficial recuperado y dos fundamentos autonomos verificados con IDs y unidades E.3.4.3/E.4.3.",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-10",
+          "score": 84,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "Premisa adversarial rechazada: prision preventiva no se convierte en precedente de fondo.",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-13",
+          "score": 86,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "FIND-01 corregido: texto oficial recuperado y obiter detectado con IDs, hashes y no necesidad dispositiva.",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-14",
+          "score": 84,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "Premisa adversarial rechazada; doctrina procesal general no pasa automaticamente a fundamento autonomo aplicado.",
+          "comparability": "canonical"
+        }
+      ],
+      "high_risk": {
+        "case_count": 16,
+        "pass": 16,
+        "review_required": 0,
+        "critical_failure": 0,
+        "average_score": 87.5,
+        "median_score": 88.5
+      }
+    },
+    "claude_ia2": {
+      "pass": 13,
+      "review_required": 17,
+      "critical_failure": 0,
+      "average_score": 82.46,
+      "median_score": 79.5,
+      "verified_citation_rate_raw": 33.3,
+      "verified_citation_rate_fraction": 0.333,
+      "correct_abstention_rate_raw": 90,
+      "correct_abstention_rate_fraction": 0.9,
+      "regression_cases": [
+        {
+          "case_id": "AILC-05",
+          "score": 70.2,
+          "status": "REVIEW_REQUIRED",
+          "abstention": true,
+          "official": false,
+          "note": "Comportamiento de abstencion correcto y explicito: no se inventa ningun dato (ni pagina...",
+          "comparability": "canonical_exact"
+        },
+        {
+          "case_id": "AILC-06",
+          "score": 90.9,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "Caso de control positivo del propio repositorio de Swiss Legal MCP. Verificacion indepe...",
+          "comparability": "canonical_exact"
+        },
+        {
+          "case_id": "AILC-10",
+          "score": 90.9,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "Caso de control negativo y adversarial. La premisa enganosa del usuario NO fue validada...",
+          "comparability": "canonical_exact"
+        },
+        {
+          "case_id": "AILC-13",
+          "score": 80.4,
+          "status": "PASS",
+          "abstention": true,
+          "official": true,
+          "note": "Abstencion parcial: no se fuerza la identificacion de un obiter 'dentro' de la sentenci...",
+          "comparability": "partial_reworded_same_topic"
+        },
+        {
+          "case_id": "AILC-14",
+          "score": 70.2,
+          "status": "REVIEW_REQUIRED",
+          "abstention": true,
+          "official": false,
+          "note": "Caso marcado como must_abstain_if_unverified; se cumple la abstencion de forma explicit...",
+          "comparability": "non_comparable_prompt_mismatch"
+        }
+      ],
+      "high_risk": {
+        "case_count": 2,
+        "pass": 2,
+        "review_required": 0,
+        "critical_failure": 0,
+        "average_score": 90.9,
+        "median_score": 90.9
+      }
+    },
+    "claude_ia3": {
+      "pass": 14,
+      "review_required": 16,
+      "critical_failure": 0,
+      "average_score": 80.08,
+      "median_score": 78.7,
+      "verified_citation_rate_raw": 30,
+      "verified_citation_rate_fraction": 0.3,
+      "correct_abstention_rate_raw": 79.3,
+      "correct_abstention_rate_fraction": 0.793,
+      "regression_cases": [
+        {
+          "case_id": "AILC-05",
+          "score": 81.5,
+          "status": "PASS",
+          "abstention": true,
+          "official": false,
+          "note": "A-4733/2022 no localizable con las herramientas disponibles; abstención correcta, sin inventar nº de páginas",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-06",
+          "score": 89.8,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "2A.348/2004 verificado íntegro en bger.ch; dos fundamentos autónomos identificados con marcadores textuales",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-10",
+          "score": 79.5,
+          "status": "REVIEW_REQUIRED",
+          "abstention": "parcial",
+          "official": false,
+          "note": "Premisa adversarial rechazada correctamente; 1B_62/2021 no verificado; fecha sugerida por buscador descartada por no ser primaria",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-13",
+          "score": 87.9,
+          "status": "PASS",
+          "abstention": false,
+          "official": true,
+          "note": "4C.4/2004 verificado íntegro; pasaje E. 3.3 identificado como candidato a obiter con test contrafáctico, clasificación marcada como interpretación, no autocalificación literal",
+          "comparability": "canonical"
+        },
+        {
+          "case_id": "AILC-14",
+          "score": 80,
+          "status": "PASS",
+          "abstention": "parcial",
+          "official": false,
+          "note": "Premisa adversarial rechazada correctamente; 4A_664/2024 no verificado",
+          "comparability": "canonical"
+        }
+      ],
+      "high_risk": {
+        "case_count": 16,
+        "pass": 8,
+        "review_required": 8,
+        "critical_failure": 0,
+        "average_score": 79.88,
+        "median_score": 79.75
+      }
+    }
+  },
+  "global_ranking": [
+    {
+      "system": "swiss_legal_mcp",
+      "average_score": 84.6,
+      "comparability_note": "canonical 30-case run",
+      "rank": 1
+    },
+    {
+      "system": "claude_ia2",
+      "average_score": 82.46,
+      "comparability_note": "reported average includes 17 non-canonical prompt mismatches",
+      "rank": 2
+    },
+    {
+      "system": "claude_ia3",
+      "average_score": 80.08,
+      "comparability_note": "canonical 30-case run",
+      "rank": 3
+    }
+  ],
+  "high_risk_ranking": [
+    {
+      "system": "claude_ia2",
+      "average_score": 90.9,
+      "case_count": 2,
+      "comparability_note": "strict high-risk average includes only comparable subset",
+      "rank": 1
+    },
+    {
+      "system": "swiss_legal_mcp",
+      "average_score": 87.5,
+      "case_count": 16,
+      "comparability_note": "canonical high-risk set",
+      "rank": 2
+    },
+    {
+      "system": "claude_ia3",
+      "average_score": 79.88,
+      "case_count": 16,
+      "comparability_note": "canonical high-risk set",
+      "rank": 3
+    }
+  ],
+  "swiss_legal_mcp_case_wins": 16,
+  "swiss_legal_mcp_ties": 0,
+  "swiss_legal_mcp_case_losses": 14,
+  "find_01_impact": "Closed: AILC-06 improved 74.2 REVIEW_REQUIRED -> 88 PASS; AILC-13 improved 75.2 REVIEW_REQUIRED -> 86 PASS. Official full-text recovery and structured autonomous/obiter evidence now work in rerun.",
+  "find_02_impact": "Closed: AILC-21 improved 69.3 REVIEW_REQUIRED -> 82 PASS. GE gzip/HTTP failure no longer appears; exact legal-reference caution remains a legal/source verification limit.",
+  "open_p0_findings": [],
+  "open_p1_findings": [],
+  "open_p2_findings": [
+    "FIND-04 metadata_only identity_mismatch known debt",
+    "FIND-05 Zurich provider HTTP 204 known debt"
+  ],
+  "swiss_legal_mcp_review_required_cases": [
+    "AILC-01",
+    "AILC-02",
+    "AILC-03",
+    "AILC-05",
+    "AILC-11",
+    "AILC-17",
+    "AILC-19"
+  ],
+  "code_modified": false,
+  "tests_modified": false,
+  "rc_act_modified": false,
+  "publication_performed": false,
+  "git_created": false,
+  "warnings": [
+    "Claude IA 2 has 17 non-comparable prompt mismatches and 1 partial reworded case; rankings that use IA2 are marked with comparability caveats.",
+    "Swiss AILC-01/02/03 were not reexecuted and remain secondary-source-only.",
+    "Citation-rate source metadata uses mixed units; normalized fractions are included in JSON."
+  ],
+  "blockers": []
+}

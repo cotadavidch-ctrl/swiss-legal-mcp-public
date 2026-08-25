@@ -1,0 +1,68 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 2296,\n  \"hits\": [\n    {\n      \"id\": \"BL_KG_005_410-15-142_2015-11-10\",\n      \"title\": \"Basel-Land Kantonsgericht Aufsichtsbehörde Schuldbetreibung und Konkurs Basel-Landschaft 10.11.2015 410 15 142 (410 2015 142)\",\n      \"abstract\": \"<em>Mietrecht</em>\",\n      \"text\": \"______________________________________________________________ \\n\\n \\n\\n \\n\\n \\n\\nObligationenrecht \\n\\n \\n\\n \\n\\n<em>Mietrecht</em> Sarah Brutschin, Picassoplatz 8, Postfach \\n330, 4010 Basel,  \\nBeschwerdegegnerin \\n\\n   \\n\\nGegenstand  <em>Mietrecht</em> Ehegatten nicht, sondern einzig \\nder unterzeichnende Ehegatte ist Vertragspartei (LACHAT ET AL., Das <em>Mietrecht</em> Auflage, Basel 2011, Nr. 6 zu Art. 259d OR, S. 1456, und DAVID LACHAT / CLAUDE ROY, \\n\\nDas <em>Mietrecht</em> für länger dauernder Ausfall der Heizung im Winter oder Fehlen von Trinkwas-\\nser (DAVID LACHAT/CLAUDE ROY, <em>Mietrecht</em>\",\n      \"meta\": \"Basel-Land Kantonsgericht Aufsichtsbehörde Schuldbetreibung und Konkurs Basel-Landschaft\",\n      \"canton\": \"BL\",\n      \"court\": \"BL_KG\",\n      \"decision_date\": \"2015-11-10\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_005_410-15-142_2015-11-10.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        23.335545,\n        \"BL_KG_005_410-15-142_2015-11-10\"\n      ]\n    },\n    {\n      \"id\": \"BL_KG_001_410-2018-3_2018-03-06\",\n      \"title\": \"Basel-Land Kantonsgericht Abteilung Zivilrecht 06.03.2018 410 2018 3\",\n      \"abstract\": \"<em>Mietrecht</em>\",\n      \"text\": \".____, \\n\\nVermieterin, Gesuchsbeklagte und Beschwerdegegnerin 2 \\n\\nGegenstand  <em>Mietrecht</em> \\n\\nBeschwerde vom\",\n      \"meta\": \"Abteilung Zivilrecht,\",\n      \"canton\": \"BL\",\n      \"court\": \"BL_KG\",\n      \"decision_date\": \"2018-03-06\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_001_410-2018-3_2018-03-06.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        23.335545,\n        \"BL_KG_001_410-2018-3_2018-03-06\"\n      ]\n    },\n    {\n      \"id\": \"BL_KG_001_410-2015-167_2015-09-15\",\n      \"title\": \"Basel-Land Kantonsgericht Abteilung Zivilrecht 15.09.2015 410 2015 167 (410 15 167)\",\n      \"abstract\": \"<em>Mietrecht</em>\",\n      \"text\": \"______________________________________________________________ \\n\\n \\n\\n \\n\\n \\n\\nObligationenrecht \\n\\n \\n\\n \\n\\n<em>Mietrecht</em> Advokat Andreas Béguin, Picassoplatz 8, Postfach 330, \\n4010 Basel,  \\nBeschwerdegegner \\n\\n   \\n\\nGegenstand  <em>Mietrecht</em>\",\n      \"meta\": \"Basel-Land Kantonsgericht Abteilung Zivilrecht\",\n      \"canton\": \"BL\",\n      \"court\": \"BL_KG\",\n      \"decision_date\": \"2015-09-15\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_001_410-2015-167_2015-09-15.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        23.335545,\n        \"BL_KG_001_410-2015-167_2015-09-15\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    23.335545,\n    \"BL_KG_001_410-2015-167_2015-09-15\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 2296,
+        "hits": [
+          {
+            "id": "BL_KG_005_410-15-142_2015-11-10",
+            "title": "Basel-Land Kantonsgericht Aufsichtsbehörde Schuldbetreibung und Konkurs Basel-Landschaft 10.11.2015 410 15 142 (410 2015 142)",
+            "abstract": "<em>Mietrecht</em>",
+            "text": "______________________________________________________________ \n\n \n\n \n\n \n\nObligationenrecht \n\n \n\n \n\n<em>Mietrecht</em> Sarah Brutschin, Picassoplatz 8, Postfach \n330, 4010 Basel,  \nBeschwerdegegnerin \n\n   \n\nGegenstand  <em>Mietrecht</em> Ehegatten nicht, sondern einzig \nder unterzeichnende Ehegatte ist Vertragspartei (LACHAT ET AL., Das <em>Mietrecht</em> Auflage, Basel 2011, Nr. 6 zu Art. 259d OR, S. 1456, und DAVID LACHAT / CLAUDE ROY, \n\nDas <em>Mietrecht</em> für länger dauernder Ausfall der Heizung im Winter oder Fehlen von Trinkwas-\nser (DAVID LACHAT/CLAUDE ROY, <em>Mietrecht</em>",
+            "meta": "Basel-Land Kantonsgericht Aufsichtsbehörde Schuldbetreibung und Konkurs Basel-Landschaft",
+            "canton": "BL",
+            "court": "BL_KG",
+            "decision_date": "2015-11-10",
+            "scrape_date": "2023-01-01",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_005_410-15-142_2015-11-10.pdf",
+            "original_url": null,
+            "sort": [23.335545, "BL_KG_005_410-15-142_2015-11-10"]
+          },
+          {
+            "id": "BL_KG_001_410-2018-3_2018-03-06",
+            "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 06.03.2018 410 2018 3",
+            "abstract": "<em>Mietrecht</em>",
+            "text": ".____, \n\nVermieterin, Gesuchsbeklagte und Beschwerdegegnerin 2 \n\nGegenstand  <em>Mietrecht</em> \n\nBeschwerde vom",
+            "meta": "Abteilung Zivilrecht,",
+            "canton": "BL",
+            "court": "BL_KG",
+            "decision_date": "2018-03-06",
+            "scrape_date": "2023-01-01",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_001_410-2018-3_2018-03-06.pdf",
+            "original_url": null,
+            "sort": [23.335545, "BL_KG_001_410-2018-3_2018-03-06"]
+          },
+          {
+            "id": "BL_KG_001_410-2015-167_2015-09-15",
+            "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 15.09.2015 410 2015 167 (410 15 167)",
+            "abstract": "<em>Mietrecht</em>",
+            "text": "______________________________________________________________ \n\n \n\n \n\n \n\nObligationenrecht \n\n \n\n \n\n<em>Mietrecht</em> Advokat Andreas Béguin, Picassoplatz 8, Postfach 330, \n4010 Basel,  \nBeschwerdegegner \n\n   \n\nGegenstand  <em>Mietrecht</em>",
+            "meta": "Basel-Land Kantonsgericht Abteilung Zivilrecht",
+            "canton": "BL",
+            "court": "BL_KG",
+            "decision_date": "2015-09-15",
+            "scrape_date": "2023-01-01",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_001_410-2015-167_2015-09-15.pdf",
+            "original_url": null,
+            "sort": [23.335545, "BL_KG_001_410-2015-167_2015-09-15"]
+          }
+        ],
+        "next_cursor": [23.335545, "BL_KG_001_410-2015-167_2015-09-15"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

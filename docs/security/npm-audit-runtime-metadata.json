@@ -1,0 +1,74 @@
+{
+  "assessment": "npm-audit-runtime-assessment",
+  "status": "PASS",
+  "createdAt": "2026-08-06",
+  "workingDirectory": "/workspace/swiss-legal-mcp",
+  "installationReviewed": "~/.local/share/swiss-legal-mcp",
+  "artifact": {
+    "path": "/workspace/swiss-legal-mcp/swiss-legal-mcp-1.0.0.tgz",
+    "sha256Expected": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+    "sha256Actual": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+    "verified": true,
+    "modified": false
+  },
+  "runtime": {
+    "command": "/usr/local/bin/node",
+    "args": [
+      "~/.local/share/swiss-legal-mcp/node_modules/swiss-legal-mcp/dist/stdio.js"
+    ],
+    "transport": "stdio",
+    "httpPublicPortExposed": false
+  },
+  "commandResults": {
+    "npmAuditJson": {
+      "exitCode": 1,
+      "total": 3,
+      "moderate": 3,
+      "high": 0,
+      "critical": 0
+    },
+    "npmLsAll": {
+      "exitCode": 0
+    },
+    "npmExplain": {
+      "@hono/node-server": {
+        "exitCode": 0
+      },
+      "@modelcontextprotocol/sdk": {
+        "exitCode": 0
+      },
+      "swiss-legal-mcp": {
+        "exitCode": 0
+      },
+      "whatwg-encoding": {
+        "exitCode": 0
+      }
+    },
+    "npmAuditOmitDevJson": {
+      "exitCode": 1,
+      "total": 3,
+      "moderate": 3,
+      "high": 0,
+      "critical": 0
+    },
+    "npmAuditProductionJson": {
+      "exitCode": 1,
+      "total": 3,
+      "moderate": 3,
+      "high": 0,
+      "critical": 0,
+      "warning": "npm warn config production Use `--omit=dev` instead."
+    }
+  },
+  "filesCreated": [
+    "/workspace/swiss-legal-mcp/docs/security/npm-audit-runtime-assessment.md",
+    "/workspace/swiss-legal-mcp/docs/security/npm-audit-runtime-assessment.json",
+    "/workspace/swiss-legal-mcp/docs/security/npm-audit-runtime-metadata.json"
+  ],
+  "blockers": [],
+  "warnings": [
+    "The vulnerable dependency is present in the production dependency tree even though the assessed stdio runtime does not reach the vulnerable static-serving code path.",
+    "The advisory should be remediated before broader public beta or stable release, especially before any HTTP runtime is exposed.",
+    "whatwg-encoding@3.1.1 is deprecated through Cheerio's encoding stack but is not reported as a vulnerability by npm audit."
+  ]
+}

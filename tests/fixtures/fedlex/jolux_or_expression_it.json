@@ -1,0 +1,50 @@
+{
+  "head": { "link": [], "vars": ["p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Expression"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#historicalLegalId"
+        },
+        "o": { "type": "literal", "value": "220" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#language"
+        },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/language/ITA"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#title"
+        },
+        "o": {
+          "type": "literal",
+          "value": "Legge federale del 30 marzo 1911 di complemento del Codice civile svizzero (Libro quinto: Diritto delle obbligazioni)"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#titleShort"
+        },
+        "o": { "type": "literal", "value": "CO" }
+      }
+    ]
+  }
+}

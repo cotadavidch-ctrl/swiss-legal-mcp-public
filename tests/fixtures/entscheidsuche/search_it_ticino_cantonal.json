@@ -1,0 +1,53 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 15754,\n  \"hits\": [\n    {\n      \"id\": \"TI_TRAC_002_12-2016-123_2016-10-19\",\n      \"title\": \"Ticino Tribunale di appello diritto civile La seconda Camera civile 19.10.2016 12.2016.123\",\n      \"abstract\": \"<em>Contratto</em> di comunicazione - <em>contratto</em> pubblicitario\",\n      \"text\": \"Il <em>contratto</em>, retto dal\\ndiritto svizzero e che istituiva il foro esclusivo per ogni controversia a L_ Il <em>contratto</em> è indi stato rinnovato, per cui sarebbe venuto a scadenza il 30\\nsettembre 2009. C) rappresentasse un <em>contratto</em> misto. Infatti, in presenza di un\\n<em>contratto</em> misto, con elementi sia del <em>contratto</em> d'appalto che di quello di Il <em>contratto</em>, del 2 ottobre\\n2003 (doc.\",\n      \"meta\": \"Ticino Tribunale di appello diritto civile La seconda Camera civile\",\n      \"canton\": \"TI\",\n      \"court\": \"TI_TRAC\",\n      \"decision_date\": \"2016-10-19\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/TI_Gerichte/TI_TRAC_002_12-2016-123_2016-10-19.html\",\n      \"original_url\": null,\n      \"sort\": [\n        6.7899637,\n        \"TI_TRAC_002_12-2016-123_2016-10-19\"\n      ]\n    },\n    {\n      \"id\": \"TI_TRAC_004_16-2023-32_2024-09-27\",\n      \"title\": \"Ticino Tribunale di appello diritto civile La Camera civile dei reclami 27.09.2024 16.2023.32\",\n      \"abstract\": \"<em>Contratto</em> di mandato: esistenza del <em>contratto</em>\",\n      \"text\": \"di mandato per atti concludenti o se, come addotto invece dal\\nconvenuto, nessun <em>contratto</em> è venuto in A suo avviso, già al primo colloquio vi erano tutti gli\\nelementi costitutivi del <em>contratto</em> di mandato Per l'art. 394 cpv. 1 CO il mandatario si\\nobbliga a compiere, a norma\\ndel <em>contratto</em>, i servizi di cui Non\\ndifferentemente che in ogni altro tipo di <em>contratto</em>, il mandato è validamente\\nstipulato allorché In simile eve­nienza\\nvi è un dissenso latente e il <em>contratto</em> è con­cluso nel senso oggettivo\\nche può\",\n      \"meta\": \"Ticino Tribunale di appello diritto civile La Camera civile dei reclami\",\n      \"canton\": \"TI\",\n      \"court\": \"TI_TRAC\",\n      \"decision_date\": \"2024-09-27\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/TI_Gerichte/TI_TRAC_004_16-2023-32_2024-09-27.html\",\n      \"original_url\": null,\n      \"sort\": [\n        6.631318,\n        \"TI_TRAC_004_16-2023-32_2024-09-27\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    6.631318,\n    \"TI_TRAC_004_16-2023-32_2024-09-27\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 15754,
+        "hits": [
+          {
+            "id": "TI_TRAC_002_12-2016-123_2016-10-19",
+            "title": "Ticino Tribunale di appello diritto civile La seconda Camera civile 19.10.2016 12.2016.123",
+            "abstract": "<em>Contratto</em> di comunicazione - <em>contratto</em> pubblicitario",
+            "text": "Il <em>contratto</em>, retto dal\ndiritto svizzero e che istituiva il foro esclusivo per ogni controversia a L_ Il <em>contratto</em> è indi stato rinnovato, per cui sarebbe venuto a scadenza il 30\nsettembre 2009. C) rappresentasse un <em>contratto</em> misto. Infatti, in presenza di un\n<em>contratto</em> misto, con elementi sia del <em>contratto</em> d'appalto che di quello di Il <em>contratto</em>, del 2 ottobre\n2003 (doc.",
+            "meta": "Ticino Tribunale di appello diritto civile La seconda Camera civile",
+            "canton": "TI",
+            "court": "TI_TRAC",
+            "decision_date": "2016-10-19",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TRAC_002_12-2016-123_2016-10-19.html",
+            "original_url": null,
+            "sort": [6.7899637, "TI_TRAC_002_12-2016-123_2016-10-19"]
+          },
+          {
+            "id": "TI_TRAC_004_16-2023-32_2024-09-27",
+            "title": "Ticino Tribunale di appello diritto civile La Camera civile dei reclami 27.09.2024 16.2023.32",
+            "abstract": "<em>Contratto</em> di mandato: esistenza del <em>contratto</em>",
+            "text": "di mandato per atti concludenti o se, come addotto invece dal\nconvenuto, nessun <em>contratto</em> è venuto in A suo avviso, già al primo colloquio vi erano tutti gli\nelementi costitutivi del <em>contratto</em> di mandato Per l'art. 394 cpv. 1 CO il mandatario si\nobbliga a compiere, a norma\ndel <em>contratto</em>, i servizi di cui Non\ndifferentemente che in ogni altro tipo di <em>contratto</em>, il mandato è validamente\nstipulato allorché In simile eve­nienza\nvi è un dissenso latente e il <em>contratto</em> è con­cluso nel senso oggettivo\nche può",
+            "meta": "Ticino Tribunale di appello diritto civile La Camera civile dei reclami",
+            "canton": "TI",
+            "court": "TI_TRAC",
+            "decision_date": "2024-09-27",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TRAC_004_16-2023-32_2024-09-27.html",
+            "original_url": null,
+            "sort": [6.631318, "TI_TRAC_004_16-2023-32_2024-09-27"]
+          }
+        ],
+        "next_cursor": [6.631318, "TI_TRAC_004_16-2023-32_2024-09-27"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

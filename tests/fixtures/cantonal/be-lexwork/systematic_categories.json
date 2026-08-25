@@ -1,0 +1,2831 @@
+[
+  {
+    "systematic_category": {
+      "id": 4,
+      "systematic_number": "1",
+      "name": "Staat, Volk, Behörden",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 35,
+            "systematic_number": "10",
+            "name": "Grundlagen",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 182,
+                  "systematic_number": "101",
+                  "name": "Verfassung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 179,
+                  "systematic_number": "102",
+                  "name": "Französischsprachige Minderheiten",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 175,
+                  "systematic_number": "103",
+                  "name": "Amtliche Veröffentlichungen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 171,
+                  "systematic_number": "105",
+                  "name": "Kantonsgebiet",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 371,
+                        "systematic_number": "105.2",
+                        "name": "Berner Jura",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 372,
+                        "systematic_number": "105.3",
+                        "name": "Amtsbezirke",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 383,
+                        "systematic_number": "105.4",
+                        "name": "Gemeinden",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 165,
+                  "systematic_number": "107",
+                  "name": "Information der Bevölkerung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 164,
+                  "systematic_number": "108",
+                  "name": "Archivierung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 390,
+                  "systematic_number": "109",
+                  "name": "Digitale Verwaltung",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 13,
+            "systematic_number": "12",
+            "name": "Bürgerrecht, Niederlassung, Aufenthalt",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 162,
+                  "systematic_number": "121",
+                  "name": "Bürgerrecht",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 160,
+                  "systematic_number": "122",
+                  "name": "Niederlassung und Aufenthalt",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 193,
+                        "systematic_number": "122.1",
+                        "name": "Schweizer/-innen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 194,
+                        "systematic_number": "122.2",
+                        "name": "Ausländer/-innen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 382,
+                        "systematic_number": "122.3",
+                        "name": "Schengen / Dublin",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 153,
+                  "systematic_number": "123",
+                  "name": "Ausweisschriften",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 373,
+                        "systematic_number": "123.2",
+                        "name": "Ausweise",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 349,
+                  "systematic_number": "124",
+                  "name": "Integration der ausländischen Bevölkerung",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 15,
+            "systematic_number": "14",
+            "name": "Politische Rechte",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 151,
+                  "systematic_number": "141",
+                  "name": "Wahlen und Abstimmungen",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 40,
+            "systematic_number": "15",
+            "name": "Behörden",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 143,
+                  "systematic_number": "151",
+                  "name": "Grosser Rat",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 196,
+                        "systematic_number": "151.2",
+                        "name": "Organisation",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 197,
+                        "systematic_number": "151.4",
+                        "name": "Zusammenarbeit mit anderen Kantonen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 125,
+                  "systematic_number": "152",
+                  "name": "Regierungsrat und Verwaltung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 206,
+                        "systematic_number": "152.0",
+                        "name": "Allgemeine Organisation, Zuständigkeit, Information",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 211,
+                        "systematic_number": "152.1",
+                        "name": "Regierungsrat",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 230,
+                        "systematic_number": "152.2",
+                        "name": "Zentralverwaltung",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 335,
+                              "systematic_number": "152.21",
+                              "name": "Staatskanzlei",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 334,
+                              "systematic_number": "152.22",
+                              "name": "Direktionen",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 338,
+                              "systematic_number": "152.25",
+                              "name": "Ausserparlamentarische Kommissionen",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 231,
+                        "systematic_number": "152.3",
+                        "name": "Dezentrale Verwaltung",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 327,
+                              "systematic_number": "152.32",
+                              "name": "Regierungsstatthalter",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 357,
+                              "systematic_number": "152.38",
+                              "name": "Amtssprache",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 111,
+                  "systematic_number": "153",
+                  "name": "Dienstrecht",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 358,
+                        "systematic_number": "153.0",
+                        "name": "Dienstverhältnis, Gehalt",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 232,
+                        "systematic_number": "153.1",
+                        "name": "Wahl und Anstellung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 258,
+                        "systematic_number": "153.3",
+                        "name": "Entschädigungen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 267,
+                        "systematic_number": "153.4",
+                        "name": "Pensionskasse",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 94,
+                  "systematic_number": "154",
+                  "name": "Gebühren, Mehrwertsteuer",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 273,
+                        "systematic_number": "154.1",
+                        "name": "Allgemeine Bestimmungen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 274,
+                        "systematic_number": "154.2",
+                        "name": "Gebühren der Kantonsverwaltung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 305,
+                        "systematic_number": "154.6",
+                        "name": "Bezug und Verrechnung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 91,
+                  "systematic_number": "155",
+                  "name": "Verwaltungsverfahren und Verwaltungsrechtspflege",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 374,
+                        "systematic_number": "155.2",
+                        "name": "Verwaltungsrechtspflege",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 53,
+            "systematic_number": "16",
+            "name": "Gerichtsorganisation, Anwälte und Notare",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 90,
+                  "systematic_number": "161",
+                  "name": "Allgemeine Gerichtsorganisation",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 74,
+                  "systematic_number": "162",
+                  "name": "Gerichtsbehörden",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 311,
+                        "systematic_number": "162.1",
+                        "name": "Obergericht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 303,
+                        "systematic_number": "162.5",
+                        "name": "Jugendgericht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 302,
+                        "systematic_number": "162.6",
+                        "name": "Verwaltungsgericht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 353,
+                        "systematic_number": "162.7",
+                        "name": "Staatsanwaltschaft",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 69,
+                  "systematic_number": "163",
+                  "name": "Regionalgerichte",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 352,
+                  "systematic_number": "164",
+                  "name": "Schlichtungsbehörden",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 67,
+                  "systematic_number": "166",
+                  "name": "Taggelder und Entschädigungen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 58,
+                  "systematic_number": "168",
+                  "name": "Anwältinnen und Anwälte (Fürsprecherinnen und Fürsprecher)",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 355,
+                        "systematic_number": "168.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 301,
+                        "systematic_number": "168.2",
+                        "name": "Ausbildung, Prüfungen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 300,
+                        "systematic_number": "168.4",
+                        "name": "Aufsicht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 354,
+                        "systematic_number": "168.7",
+                        "name": "Entschädigung der amtlichen Anwältinnen und Anwälte",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 299,
+                        "systematic_number": "168.8",
+                        "name": "Parteikostenersatz",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 57,
+                  "systematic_number": "169",
+                  "name": "Notare",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 359,
+                        "systematic_number": "169.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 298,
+                        "systematic_number": "169.2",
+                        "name": "Ausbildung, Prüfungen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 360,
+                        "systematic_number": "169.8",
+                        "name": "Gebühren",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 48,
+            "systematic_number": "17",
+            "name": "Gemeindewesen",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 63,
+                  "systematic_number": "170",
+                  "name": "Allgemeine Bestimmungen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 295,
+                        "systematic_number": "170.1",
+                        "name": "Gemeindegesetz",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 294,
+                        "systematic_number": "170.2",
+                        "name": "Regionalkonferenzen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 292,
+                        "systematic_number": "170.5",
+                        "name": "Finanzen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 362,
+                        "systematic_number": "170.7",
+                        "name": "Archivierung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 361,
+                  "systematic_number": "173",
+                  "name": "Internationale Zusammenarbeit",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 7,
+      "systematic_number": "2",
+      "name": "Zivilrecht, Zivilrechtspflege, Vollstreckung",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 43,
+            "systematic_number": "21",
+            "name": "Ergänzungs- und Ausführungserlasse zum ZGB",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 68,
+                  "systematic_number": "211",
+                  "name": "Einführungsgesetz",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 71,
+                  "systematic_number": "212",
+                  "name": "Personenrecht",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 284,
+                        "systematic_number": "212.1",
+                        "name": "Natürliche Personen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 283,
+                        "systematic_number": "212.2",
+                        "name": "Juristische Personen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 75,
+                  "systematic_number": "213",
+                  "name": "Familienrecht",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 279,
+                        "systematic_number": "213.2",
+                        "name": "Verwandtschaft",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 276,
+                        "systematic_number": "213.3",
+                        "name": "Kindes- und Erwachsenenschutz",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 76,
+                  "systematic_number": "214",
+                  "name": "Erbrecht",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 86,
+                  "systematic_number": "215",
+                  "name": "Sachenrecht",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 272,
+                        "systematic_number": "215.1",
+                        "name": "Eigentum",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 342,
+                              "systematic_number": "215.124",
+                              "name": "Bäuerlicher Grundbesitz",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 340,
+                              "systematic_number": "215.126",
+                              "name": "Erwerb von Grundstücken durch Personen im Ausland",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 341,
+                              "systematic_number": "215.129",
+                              "name": "Amtliche Schätzung von Grundstücken",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 271,
+                        "systematic_number": "215.2",
+                        "name": "Beschränkte dingliche Rechte",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 265,
+                        "systematic_number": "215.3",
+                        "name": "Besitz und Grundbuch",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 316,
+                              "systematic_number": "215.32",
+                              "name": "Grundbuch",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 317,
+                              "systematic_number": "215.33",
+                              "name": "Seybuch",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 318,
+                              "systematic_number": "215.34",
+                              "name": "Grundbuchvermessung",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 38,
+            "systematic_number": "22",
+            "name": "Ergänzungs- und Ausführungserlasse zum OR",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 92,
+                  "systematic_number": "222",
+                  "name": "Einzelne Vertragsverhältnisse",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 387,
+                        "systematic_number": "222.10",
+                        "name": "Miete und Pacht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 322,
+                        "systematic_number": "222.15",
+                        "name": "Arbeitsvertrag",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 344,
+                              "systematic_number": "222.153.1",
+                              "name": "Gesamtarbeitsvertrag",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 343,
+                              "systematic_number": "222.153.2",
+                              "name": "Normalarbeitsvertrag",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 93,
+                  "systematic_number": "224",
+                  "name": "Handelsregister",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 37,
+            "systematic_number": "27",
+            "name": "Zivilrechtspflege",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 95,
+                  "systematic_number": "271",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 36,
+            "systematic_number": "28",
+            "name": "Schuldbetreibung und Konkurs",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 97,
+                  "systematic_number": "281",
+                  "name": "Einführungsgesetz",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 98,
+                  "systematic_number": "282",
+                  "name": "Organisation",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 375,
+                        "systematic_number": "282.2",
+                        "name": "Betreibungs- und Konkursbeamtinnen und -beamte",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 377,
+                        "systematic_number": "282.3",
+                        "name": "Betreibungsweibelinnen und -weibel",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 99,
+                  "systematic_number": "284",
+                  "name": "Besondere Verfahren",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 8,
+      "systematic_number": "3",
+      "name": "Strafrecht, Strafrechtspflege, Strafvollzug",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 34,
+            "systematic_number": "31",
+            "name": "Strafrecht",
+            "children": []
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 33,
+            "systematic_number": "32",
+            "name": "Strafverfahren",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 104,
+                  "systematic_number": "321",
+                  "name": "Im Allgemeinen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 392,
+                  "systematic_number": "322",
+                  "name": "Informatik in der Strafjustiz",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 105,
+                  "systematic_number": "324",
+                  "name": "Ordnungsbussen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 106,
+                  "systematic_number": "326",
+                  "name": "Opferhilfe",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 32,
+            "systematic_number": "34",
+            "name": "Strafvollzug",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 109,
+                  "systematic_number": "341",
+                  "name": "Im Allgemeinen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 110,
+                  "systematic_number": "349",
+                  "name": "Interkantonale Vereinbarungen",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 2,
+      "systematic_number": "4",
+      "name": "Kirche, Kultur, Ausbildung und Wissenschaft",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 25,
+            "systematic_number": "41",
+            "name": "Kirche",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 119,
+                  "systematic_number": "410",
+                  "name": "Organisation",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 257,
+                        "systematic_number": "410.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 256,
+                        "systematic_number": "410.2",
+                        "name": "Evangelisch-reformierte Landeskirche",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 255,
+                        "systematic_number": "410.3",
+                        "name": "Römisch-katholische Landeskirche",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 253,
+                        "systematic_number": "410.5",
+                        "name": "Jüdische Gemeinden",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 123,
+                  "systematic_number": "411",
+                  "name": "Kirchgemeinden",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 252,
+                        "systematic_number": "411.2",
+                        "name": "Evangelisch-reformierte",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 124,
+                  "systematic_number": "412",
+                  "name": "Pfarrstellen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 128,
+                  "systematic_number": "414",
+                  "name": "Geistliche",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 247,
+                        "systematic_number": "414.1",
+                        "name": "Ausbildung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 246,
+                        "systematic_number": "414.3",
+                        "name": "Dienstverhältnis",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 242,
+                        "systematic_number": "414.5",
+                        "name": "Besoldung und Pensionierung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 129,
+                  "systematic_number": "415",
+                  "name": "Kirchensteuer",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 22,
+            "systematic_number": "42",
+            "name": "Kultur",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 132,
+                  "systematic_number": "421",
+                  "name": "Dokumentation",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 240,
+                        "systematic_number": "421.2",
+                        "name": "Bibliotheken",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 133,
+                  "systematic_number": "423",
+                  "name": "Kulturförderung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 55,
+                  "systematic_number": "426",
+                  "name": "Natur- und Heimatschutz",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 239,
+                        "systematic_number": "426.1",
+                        "name": "Naturschutz",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 238,
+                        "systematic_number": "426.2",
+                        "name": "Schutz der Orts- und Landschaftsbilder",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 237,
+                        "systematic_number": "426.4",
+                        "name": "Denkmalpflege, archäologischer Dienst und Kulturgüterschutz",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 363,
+                        "systematic_number": "426.5",
+                        "name": "Pärke von nationaler Bedeutung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 41,
+            "systematic_number": "43",
+            "name": "Ausbildung und Wissenschaft",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 148,
+                  "systematic_number": "430",
+                  "name": "Allgemeines",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 234,
+                        "systematic_number": "430.1",
+                        "name": "Organisation des Schulwesens",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 323,
+                              "systematic_number": "430.12",
+                              "name": "Lehrmittel",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 228,
+                        "systematic_number": "430.2",
+                        "name": "Lehrer/-innen",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 326,
+                              "systematic_number": "430.21",
+                              "name": "Ausbildung und Fortbildung",
+                              "children": [
+                                {
+                                  "systematic_category": {
+                                    "id": 339,
+                                    "systematic_number": "430.210",
+                                    "name": "Allgemeines",
+                                    "children": [
+                                      {
+                                        "systematic_category": {
+                                          "id": 345,
+                                          "systematic_number": "430.210.141",
+                                          "name": "Pädagogische Hochschule Bern, Jura, Neuenburg",
+                                          "children": []
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 328,
+                              "systematic_number": "430.25",
+                              "name": "Anstellung",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 330,
+                              "systematic_number": "430.26",
+                              "name": "Versicherung",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 227,
+                        "systematic_number": "430.4",
+                        "name": "Schulärztlicher Dienst",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 149,
+                  "systematic_number": "431",
+                  "name": "Erziehungsberatung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 156,
+                  "systematic_number": "432",
+                  "name": "Volksschule",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 222,
+                        "systematic_number": "432.2",
+                        "name": "Volksschule",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 331,
+                              "systematic_number": "432.21",
+                              "name": "Allgemeines",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 332,
+                              "systematic_number": "432.27",
+                              "name": "Einfache Sonderpädagogische Massnahmen",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 333,
+                              "systematic_number": "432.28",
+                              "name": "Besondere Volkschulangebot",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 218,
+                        "systematic_number": "432.3",
+                        "name": "Musikschulen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 159,
+                  "systematic_number": "433",
+                  "name": "Mittelschulen, Fachmittelschulen, Diplommittelschulen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 214,
+                        "systematic_number": "433.1",
+                        "name": "Mittelschulen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 163,
+                  "systematic_number": "435",
+                  "name": "Berufsbildung, Weiterbildung, Berufsberatung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 202,
+                        "systematic_number": "435.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 201,
+                        "systematic_number": "435.3",
+                        "name": "Berufliche Fortbildung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 200,
+                        "systematic_number": "435.4",
+                        "name": "Fachhochschulen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 173,
+                  "systematic_number": "436",
+                  "name": "Universität",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 198,
+                        "systematic_number": "436.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 190,
+                        "systematic_number": "436.7",
+                        "name": "Eintritt",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 189,
+                        "systematic_number": "436.8",
+                        "name": "Fachhochschulen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 348,
+                        "systematic_number": "436.9",
+                        "name": "Pädagogische Hochschulen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 177,
+                  "systematic_number": "437",
+                  "name": "Turnen und Sport",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 188,
+                        "systematic_number": "437.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 180,
+                  "systematic_number": "438",
+                  "name": "Staatsbeiträge, Ausbildungsbeiträge, Stiftungen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 364,
+                        "systematic_number": "438.3",
+                        "name": "Ausbildungsbeiträge",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 181,
+                  "systematic_number": "439",
+                  "name": "Interkantonale Vereinbarungen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 380,
+                        "systematic_number": "439.6",
+                        "name": "Volksschule",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 378,
+                        "systematic_number": "439.7",
+                        "name": "Kulturelle Kommissionen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 6,
+      "systematic_number": "5",
+      "name": "Landesverteidigung, Polizei",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 49,
+            "systematic_number": "51",
+            "name": "Militär",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 176,
+                  "systematic_number": "515",
+                  "name": "Angehörige der Armee",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 185,
+                        "systematic_number": "515.8",
+                        "name": "Stiftungen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 47,
+            "systematic_number": "52",
+            "name": "Gesamtverteidigung und Katastrophenhilfe",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 174,
+                  "systematic_number": "521",
+                  "name": "Bevölkerungsschutz",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 395,
+                  "systematic_number": "522",
+                  "name": "Zivilschutz",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 172,
+                  "systematic_number": "525",
+                  "name": "Finanzierung",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 39,
+            "systematic_number": "55",
+            "name": "Polizei",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 170,
+                  "systematic_number": "551",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 168,
+                  "systematic_number": "555",
+                  "name": "Ruhetagspolizei",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 166,
+                  "systematic_number": "559",
+                  "name": "Interkantonale Vereinbarungen",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 9,
+      "systematic_number": "6",
+      "name": "Finanzen, Regalien",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 29,
+            "systematic_number": "62",
+            "name": "Finanzhaushalt",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 365,
+                  "systematic_number": "622",
+                  "name": "Finanzkontrolle",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 28,
+            "systematic_number": "63",
+            "name": "Finanz- und Lastenausgleich",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 381,
+                  "systematic_number": "632",
+                  "name": "Lastenausgleich",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 11,
+            "systematic_number": "64",
+            "name": "Staatsbeiträge",
+            "children": []
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 12,
+            "systematic_number": "66",
+            "name": "Steuern und Abgaben",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 158,
+                  "systematic_number": "661",
+                  "name": "Direkte Kantons- und Gemeindesteuern",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 203,
+                        "systematic_number": "661.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 204,
+                        "systematic_number": "661.2",
+                        "name": "Steuerhoheit und Steuerpflicht",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 205,
+                        "systematic_number": "661.3",
+                        "name": "Einzelne Steuern",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 208,
+                        "systematic_number": "661.5",
+                        "name": "Steuerveranlagung",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 325,
+                              "systematic_number": "661.52",
+                              "name": "Natürliche Personen",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 329,
+                              "systematic_number": "661.54",
+                              "name": "Bewertung von Grundstücken und Wasserkräften",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 209,
+                        "systematic_number": "661.6",
+                        "name": "Justizbehörden und Rechtsmittel",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 212,
+                        "systematic_number": "661.7",
+                        "name": "Steuerbezug",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 337,
+                              "systematic_number": "661.71",
+                              "name": "Quellensteuer",
+                              "children": []
+                            }
+                          },
+                          {
+                            "systematic_category": {
+                              "id": 336,
+                              "systematic_number": "661.73",
+                              "name": "Fälligkeit und Einzug",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 157,
+                  "systematic_number": "662",
+                  "name": "Erbschafts- und Schenkungssteuer",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 155,
+                  "systematic_number": "668",
+                  "name": "Vollzug von Bundessteuern und -abgaben",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 215,
+                        "systematic_number": "668.1",
+                        "name": "Direkte Bundessteuer",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 216,
+                        "systematic_number": "668.2",
+                        "name": "Verrechnungssteuer",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 391,
+                        "systematic_number": "668.3",
+                        "name": "Ergänzungssteuer des Bundes",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 217,
+                        "systematic_number": "668.6",
+                        "name": "Wehrpflichtersatz",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 154,
+                  "systematic_number": "669",
+                  "name": "Steuerabkommen, Doppelbesteuerung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 219,
+                        "systematic_number": "669.1",
+                        "name": "Steuerabkommen mit Steuerpflichtigen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 220,
+                        "systematic_number": "669.7",
+                        "name": "Doppelbesteuerung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 221,
+                        "systematic_number": "669.8",
+                        "name": "Grenzgänger/-innen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 14,
+            "systematic_number": "68",
+            "name": "Regalien",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 152,
+                  "systematic_number": "682",
+                  "name": "Salzregal",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 5,
+      "systematic_number": "7",
+      "name": "Bauwesen, öffentliche Werke, Energie und Verkehr",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 18,
+            "systematic_number": "70",
+            "name": "Raumplanung",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 146,
+                  "systematic_number": "704",
+                  "name": "See- und Flussufer",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 144,
+                  "systematic_number": "706",
+                  "name": "Finanzierung",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 19,
+            "systematic_number": "71",
+            "name": "Enteignung",
+            "children": []
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 20,
+            "systematic_number": "72",
+            "name": "Bauwesen",
+            "children": []
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 23,
+            "systematic_number": "73",
+            "name": "Öffentliche Werke",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 140,
+                  "systematic_number": "731",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 139,
+                  "systematic_number": "732",
+                  "name": "Verkehrswege",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 235,
+                        "systematic_number": "732.1",
+                        "name": "Strassenbau und -unterhalt",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 24,
+            "systematic_number": "74",
+            "name": "Energie",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 135,
+                  "systematic_number": "741",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 27,
+            "systematic_number": "75",
+            "name": "Wasser",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 127,
+                  "systematic_number": "751",
+                  "name": "Wasserbau",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 241,
+                        "systematic_number": "751.1",
+                        "name": "Unterhalt und Korrektion der Gewässer",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 126,
+                  "systematic_number": "752",
+                  "name": "Wasserwirtschaft",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 243,
+                        "systematic_number": "752.3",
+                        "name": "Wasserversorgung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 244,
+                        "systematic_number": "752.4",
+                        "name": "Wassernutzung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 245,
+                        "systematic_number": "752.5",
+                        "name": "Hydrologie",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 10,
+            "systematic_number": "76",
+            "name": "Verkehr",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 122,
+                  "systematic_number": "761",
+                  "name": "Strassenverkehr",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 366,
+                        "systematic_number": "761.1",
+                        "name": "Allgemeine Bestimmungen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 249,
+                        "systematic_number": "761.6",
+                        "name": "Steuern und Abgaben",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 121,
+                  "systematic_number": "762",
+                  "name": "Öffentlicher Verkehr",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 120,
+                  "systematic_number": "763",
+                  "name": "Seilbahnen und Skilifte",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 118,
+                  "systematic_number": "764",
+                  "name": "Personentransporte",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 117,
+                  "systematic_number": "766",
+                  "name": "Rohrleitungsanlagen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 116,
+                  "systematic_number": "767",
+                  "name": "Schifffahrt",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 115,
+                  "systematic_number": "768",
+                  "name": "Luftfahrt",
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 3,
+      "systematic_number": "8",
+      "name": "Gesundheit, Arbeit, soziale Sicherheit",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 44,
+            "systematic_number": "81",
+            "name": "Gesundheit",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 89,
+                  "systematic_number": "811",
+                  "name": "Allgemeines",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 259,
+                        "systematic_number": "811.1",
+                        "name": "Gesundheitsfachpersonen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 367,
+                        "systematic_number": "811.5",
+                        "name": "Passivrauchen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 368,
+                        "systematic_number": "811.8",
+                        "name": "Bestattungswesen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 191,
+                        "systematic_number": "811.9",
+                        "name": "Gebührentarife",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 85,
+                  "systematic_number": "812",
+                  "name": "Spitalwesen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 262,
+                        "systematic_number": "812.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 84,
+                  "systematic_number": "813",
+                  "name": "Heilmittel, Betäubungsmittel, Chemikalien",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 266,
+                        "systematic_number": "813.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 83,
+                  "systematic_number": "815",
+                  "name": "Krankheitsbekämpfung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 268,
+                        "systematic_number": "815.1",
+                        "name": "Übertragbare Krankheiten",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 388,
+                        "systematic_number": "815.2",
+                        "name": "Krebseerkrankungen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 82,
+                  "systematic_number": "817",
+                  "name": "Lebensmittel",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 45,
+            "systematic_number": "82",
+            "name": "Umweltschutz",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 80,
+                  "systematic_number": "820",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 79,
+                  "systematic_number": "821",
+                  "name": "Gewässerschutz, Kanalisation, Abfallbeseitigung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 78,
+                  "systematic_number": "822",
+                  "name": "Abfallbeseitigung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 77,
+                  "systematic_number": "823",
+                  "name": "Reinhaltung der Luft",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 351,
+                  "systematic_number": "824",
+                  "name": "Lärmbekämpfung",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 46,
+            "systematic_number": "83",
+            "name": "Arbeit",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 73,
+                  "systematic_number": "832",
+                  "name": "Arbeitnehmerschutz",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 369,
+                        "systematic_number": "832.0",
+                        "name": "Arbeit in Industrie, Gewerbe und Handel",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 277,
+                        "systematic_number": "832.5",
+                        "name": "Arbeits- und Ruhezeit",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 278,
+                        "systematic_number": "832.7",
+                        "name": "Familien- und Kinderzulagen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 72,
+                  "systematic_number": "833",
+                  "name": "Arbeitsrechtliche Streitigkeiten",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 280,
+                        "systematic_number": "833.2",
+                        "name": "Einigungsämter",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 70,
+                  "systematic_number": "836",
+                  "name": "Arbeitsmarkt",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 282,
+                        "systematic_number": "836.1",
+                        "name": "Krisenbekämpfung und Arbeitsbeschaffung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 51,
+            "systematic_number": "84",
+            "name": "Sozialversicherung",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 65,
+                  "systematic_number": "841",
+                  "name": "Alters-, Hinterlassenen- und Invalidenversicherung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 285,
+                        "systematic_number": "841.1",
+                        "name": "Alters- und Hinterlassenenversicherung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 286,
+                        "systematic_number": "841.2",
+                        "name": "Invalidenversicherung",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 287,
+                        "systematic_number": "841.3",
+                        "name": "Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 64,
+                  "systematic_number": "842",
+                  "name": "Kranken- und Unfallversicherung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 289,
+                        "systematic_number": "842.1",
+                        "name": "Besondere Bestimmungen für die Krankenversicherung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 52,
+            "systematic_number": "85",
+            "name": "Wohnungswesen",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 61,
+                  "systematic_number": "854",
+                  "name": "Verbesserung des Wohnungsangebotes",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 54,
+            "systematic_number": "86",
+            "name": "Sozialhilfe",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 59,
+                  "systematic_number": "860",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 389,
+                  "systematic_number": "861",
+                  "name": "Sozialhilfe im Asyl- und Flüchtlingsbereich",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 56,
+                  "systematic_number": "862",
+                  "name": "Heime und andere Fürsorgeeinrichtungen",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 50,
+            "systematic_number": "87",
+            "name": "Schutz gegen Feuer- und Elementarschäden",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 60,
+                  "systematic_number": "871",
+                  "name": "Feuerverhütung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 62,
+                  "systematic_number": "873",
+                  "name": "Versicherung",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 379,
+                        "systematic_number": "873.1",
+                        "name": "Gebäudeversicherung",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "systematic_category": {
+      "id": 1,
+      "systematic_number": "9",
+      "name": "Volkswirtschaft",
+      "children": [
+        {
+          "systematic_category": {
+            "id": 42,
+            "systematic_number": "90",
+            "name": "Wirtschaftliche Entwicklung",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 81,
+                  "systematic_number": "901",
+                  "name": "Im Allgemeinen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 87,
+                  "systematic_number": "902",
+                  "name": "In den Berggebieten",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 31,
+            "systematic_number": "91",
+            "name": "Landwirtschaft",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 96,
+                  "systematic_number": "910",
+                  "name": "Förderung im Allgemeinen",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 101,
+                  "systematic_number": "913",
+                  "name": "Boden- und Waldverbesserung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 102,
+                  "systematic_number": "915",
+                  "name": "Landwirtschaftliche Berufsbildung",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 103,
+                  "systematic_number": "916",
+                  "name": "Produktion und Absatz",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 309,
+                        "systematic_number": "916.1",
+                        "name": "Pflanzenbau",
+                        "children": [
+                          {
+                            "systematic_category": {
+                              "id": 312,
+                              "systematic_number": "916.14",
+                              "name": "Rebbau",
+                              "children": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 370,
+                        "systematic_number": "916.3",
+                        "name": "Hunde",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 310,
+                        "systematic_number": "916.5",
+                        "name": "Bekämpfung von Tierseuchen",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 308,
+                        "systematic_number": "916.8",
+                        "name": "Tierschutz",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 275,
+                        "systematic_number": "916.9",
+                        "name": "Tierarzneimittel",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 26,
+            "systematic_number": "92",
+            "name": "Forstwesen, Jagd, Fischerei",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 112,
+                  "systematic_number": "921",
+                  "name": "Forstwesen",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 269,
+                        "systematic_number": "921.1",
+                        "name": "Allgemeines, Schutz und Erhaltung des Waldes",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 113,
+                  "systematic_number": "922",
+                  "name": "Jagd- und Wildtierschutz",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 263,
+                        "systematic_number": "922.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 261,
+                        "systematic_number": "922.5",
+                        "name": "Wildschäden",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 260,
+                        "systematic_number": "922.6",
+                        "name": "Wildtierschutz",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 114,
+                  "systematic_number": "923",
+                  "name": "Fischerei",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 236,
+                        "systematic_number": "923.1",
+                        "name": "Allgemeines",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 233,
+                        "systematic_number": "923.9",
+                        "name": "Interkantonale und internationale Vereinbarungen",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 21,
+            "systematic_number": "93",
+            "name": "Industrie und Gewerbe",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 130,
+                  "systematic_number": "930",
+                  "name": "Allgemeines",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 131,
+                  "systematic_number": "931",
+                  "name": "Bergbau",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 138,
+                  "systematic_number": "935",
+                  "name": "Dienstleistungsgewerbe",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 229,
+                        "systematic_number": "935.1",
+                        "name": "Gastgewerbe und Handel mit geistigen Getränken",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 225,
+                        "systematic_number": "935.2",
+                        "name": "Fremdenverkehr, Tourismus",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 224,
+                        "systematic_number": "935.5",
+                        "name": "Geldspiele",
+                        "children": []
+                      }
+                    },
+                    {
+                      "systematic_category": {
+                        "id": 223,
+                        "systematic_number": "935.9",
+                        "name": "Weitere bewilligungspflichtige Gewerbe",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 16,
+            "systematic_number": "94",
+            "name": "Handel",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 141,
+                  "systematic_number": "941",
+                  "name": "Mass und Gewicht",
+                  "children": []
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 142,
+                  "systematic_number": "943",
+                  "name": "Ausübung des Handels",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 207,
+                        "systematic_number": "943.5",
+                        "name": "Handel mit Waffen, Munition, Sprengstoff",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "systematic_category": {
+                  "id": 150,
+                  "systematic_number": "945",
+                  "name": "Interkantonale Vereinbarungen",
+                  "children": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "systematic_category": {
+            "id": 17,
+            "systematic_number": "95",
+            "name": "Kredit",
+            "children": [
+              {
+                "systematic_category": {
+                  "id": 161,
+                  "systematic_number": "951",
+                  "name": "Kreditinstitute des öffentlichen Rechts",
+                  "children": [
+                    {
+                      "systematic_category": {
+                        "id": 195,
+                        "systematic_number": "951.1",
+                        "name": "Kantonalbank",
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-08-04T21:11:36.772Z",
+  "serverPath": "apps/mcp-server/dist/stdio.js",
+  "cacheDir": "/var/folders/lp/_jmygv_17p79c3zdxm2dgrt80000gn/T/swiss-legal-mcp-persistence-XYriRe",
+  "firstProcess": {
+    "resolution_id": "e37bffadc68c9b4e6b784c7f",
+    "document_id": "doc_d42d73b0d7dc3c9f5cc214f550738de2",
+    "document_hash": "d42d73b0d7dc3c9f5cc214f550738de25e318f118d0076ea8654b63d19e08584",
+    "fetch_status": "fetch_success",
+    "identity_status": "identity_verified",
+    "candidate_count": 1,
+    "selected_candidate_id": "9a3f688d3be908aa",
+    "selection_blockers": [],
+    "cache_status_after_fetch": "cache_hit_valid",
+    "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+    "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+    "schema_version": 1,
+    "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+    "role_count": 6,
+    "role_ids": [
+      "claimant_or_appellant",
+      "respondent_or_authority",
+      "first_instance_court",
+      "appellate_court",
+      "neutral_risk_assessment",
+      "deliberation_panel"
+    ],
+    "role_hashes": {
+      "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+      "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+      "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+      "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+      "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+      "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+    },
+    "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+    "created_at": "2026-08-04T21:11:40.090Z",
+    "updated_at": "2026-08-04T21:11:40.090Z",
+    "validation": {
+      "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+      "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-04T21:11:40.090Z",
+      "updated_at": "2026-08-04T21:11:40.090Z",
+      "persistence_verified": true,
+      "network_request_performed": false,
+      "validation_status": "passed_with_warnings",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_4fb3e48072964d6d",
+      "narrative_state_check_hash": "4fb3e48072964d6dd86b0334e6219c45cb0870858f46c2da078b9cf20be63355",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "stderrLines": [
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.878Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_seco_documents\",\"status\":\"blocked\",\"reason\":\"El proveedor 'seco' no esta disponible (estado: unhealthy).\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.879Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_bsv_documents\",\"status\":\"blocked\",\"reason\":\"El proveedor 'bsv' no esta disponible (estado: unhealthy).\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.879Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_estv_documents\",\"status\":\"blocked\",\"reason\":\"El proveedor 'estv' no esta disponible (estado: unhealthy).\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.879Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_shab_publications\",\"status\":\"blocked\",\"reason\":\"El proveedor 'shab' no esta disponible (estado: unhealthy).\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.879Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"get_shab_publication\",\"status\":\"blocked\",\"reason\":\"El proveedor 'shab' no esta disponible (estado: unhealthy).\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.879Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"get_cantonal_article\",\"status\":\"blocked\",\"reason\":\"Ninguno de los proveedores alternativos (cantonal-be, cantonal-lu, cantonal-ur, cantonal-ow, cantonal-nw, cantonal-gl, cantonal-zg, cantonal-sh, cantonal-ar, cantonal-ai, cantonal-sg, cantonal-gr, cantonal-ag, cantonal-tg, cantonal-so, cantonal-bs, cantonal-bl, cantonal-fr, cantonal-vs) esta disponible.\",\"msg\":\"Herramienta no registrada: sin proveedor activo\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:38.881Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"msg\":\"swiss-legal-mcp: servidor stdio conectado\"}",
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:42.101Z\",\"pid\":29438,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"signal\":\"SIGTERM\",\"msg\":\"cerrando servidor stdio\"}"
+    ]
+  },
+  "secondProcess": {
+    "resolution_id": "e37bffadc68c9b4e6b784c7f",
+    "document_hash": "d42d73b0d7dc3c9f5cc214f550738de25e318f118d0076ea8654b63d19e08584",
+    "fetch_status": "fetch_success",
+    "cache_status": "cache_hit_valid",
+    "network_request_performed": false,
+    "identity_status": "identity_verified",
+    "official_identity_verified": true,
+    "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+    "validation": {
+      "analysis_id": "analysis_fea15d2bb4bc964f2618436b4e43adb5",
+      "analysis_hash": "fea15d2bb4bc964f2618436b4e43adb5688df15b88d879db5c45cfed720ce334",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-04T21:11:40.090Z",
+      "updated_at": "2026-08-04T21:11:40.090Z",
+      "persistence_verified": true,
+      "network_request_performed": false,
+      "validation_status": "passed_with_warnings",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_4fb3e48072964d6d",
+      "narrative_state_check_hash": "4fb3e48072964d6dd86b0334e6219c45cb0870858f46c2da078b9cf20be63355",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "stderrLines": [
+      "{\"level\":\"info\",\"time\":\"2026-08-04T21:11:43.220Z\",\"pid\":29439,\"hostname\":\"test-host\",\"name\":\"swiss-legal-mcp-stdio\",\"msg\":\"swiss-legal-mcp: servidor stdio conectado\"}"
+    ]
+  },
+  "finalStatus": "PASS"
+}

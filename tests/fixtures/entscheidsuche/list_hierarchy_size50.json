@@ -1,0 +1,220 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"entries\": [\n    {\n      \"id\": \"CH\",\n      \"count\": 322141\n    },\n    {\n      \"id\": \"CH_BGer\",\n      \"count\": 177259\n    },\n    {\n      \"id\": \"CH_BVGE\",\n      \"count\": 93641\n    },\n    {\n      \"id\": \"CH_BVGE_001\",\n      \"count\": 93641\n    },\n    {\n      \"id\": \"GE\",\n      \"count\": 91197\n    },\n    {\n      \"id\": \"VD\",\n      \"count\": 91095\n    },\n    {\n      \"id\": \"VD_TC\",\n      \"count\": 91083\n    },\n    {\n      \"id\": \"GE_CJ\",\n      \"count\": 87909\n    },\n    {\n      \"id\": \"ZH\",\n      \"count\": 83632\n    },\n    {\n      \"id\": \"TI\",\n      \"count\": 58895\n    },\n    {\n      \"id\": \"ZH_SVG\",\n      \"count\": 34209\n    },\n    {\n      \"id\": \"ZH_SVG_001\",\n      \"count\": 34209\n    },\n    {\n      \"id\": \"CH_BGer_008\",\n      \"count\": 32529\n    },\n    {\n      \"id\": \"ZH_OG\",\n      \"count\": 29209\n    },\n    {\n      \"id\": \"VD_TC_031\",\n      \"count\": 28636\n    },\n    {\n      \"id\": \"GE_CJ_014\",\n      \"count\": 27454\n    },\n    {\n      \"id\": \"CH_BGer_001\",\n      \"count\": 27350\n    },\n    {\n      \"id\": \"CH_BGer_005\",\n      \"count\": 26355\n    },\n    {\n      \"id\": \"CH_BGer_002\",\n      \"count\": 25227\n    },\n    {\n      \"id\": \"CH_BGer_006\",\n      \"count\": 24599\n    },\n    {\n      \"id\": \"TI_TRAC\",\n      \"count\": 21638\n    },\n    {\n      \"id\": \"GE_CJ_013\",\n      \"count\": 21529\n    },\n    {\n      \"id\": \"CH_BGE\",\n      \"count\": 21316\n    },\n    {\n      \"id\": \"BE\",\n      \"count\": 20539\n    },\n    {\n      \"id\": \"ZH_OG_001\",\n      \"count\": 18974\n    },\n    {\n      \"id\": \"CH_BGer_004\",\n      \"count\": 18758\n    },\n    {\n      \"id\": \"GR\",\n      \"count\": 18427\n    },\n    {\n      \"id\": \"CH_BGer_009\",\n      \"count\": 16987\n    },\n    {\n      \"id\": \"VD_TC_004\",\n      \"count\": 15425\n    },\n    {\n      \"id\": \"CH_BGB\",\n      \"count\": 14739\n    },\n    {\n      \"id\": \"FR\",\n      \"count\": 14571\n    },\n    {\n      \"id\": \"FR_TC\",\n      \"count\": 14570\n    },\n    {\n      \"id\": \"VD_TC_013\",\n      \"count\": 14003\n    },\n    {\n      \"id\": \"SG\",\n      \"count\": 13558\n    },\n    {\n      \"id\": \"TI_TCAS\",\n      \"count\": 13159\n    },\n    {\n      \"id\": \"TI_TCAS_001\",\n      \"count\": 13159\n    },\n    {\n      \"id\": \"ZH_VG\",\n      \"count\": 11769\n    },\n    {\n      \"id\": \"ZH_VG_001\",\n      \"count\": 11769\n    },\n    {\n      \"id\": \"CH_BSTG\",\n      \"count\": 11717\n    },\n    {\n      \"id\": \"CH_BSTG_001\",\n      \"count\": 11717\n    },\n    {\n      \"id\": \"BE_VG\",\n      \"count\": 11505\n    },\n    {\n      \"id\": \"BE_VG_001\",\n      \"count\": 11505\n    },\n    {\n      \"id\": \"AG\",\n      \"count\": 11061\n    },\n    {\n      \"id\": \"BS\",\n      \"count\": 10842\n    },\n    {\n      \"id\": \"GR_VG\",\n      \"count\": 10054\n    },\n    {\n      \"id\": \"VD_TC_002\",\n      \"count\": 9582\n    },\n    {\n      \"id\": \"BL\",\n      \"count\": 9314\n    },\n    {\n      \"id\": \"SO\",\n      \"count\": 9269\n    },\n    {\n      \"id\": \"AG_OG\",\n      \"count\": 8899\n    },\n    {\n      \"id\": \"BS_APG\",\n      \"count\": 8635\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "entries": [
+          {
+            "id": "CH",
+            "count": 322141
+          },
+          {
+            "id": "CH_BGer",
+            "count": 177259
+          },
+          {
+            "id": "CH_BVGE",
+            "count": 93641
+          },
+          {
+            "id": "CH_BVGE_001",
+            "count": 93641
+          },
+          {
+            "id": "GE",
+            "count": 91197
+          },
+          {
+            "id": "VD",
+            "count": 91095
+          },
+          {
+            "id": "VD_TC",
+            "count": 91083
+          },
+          {
+            "id": "GE_CJ",
+            "count": 87909
+          },
+          {
+            "id": "ZH",
+            "count": 83632
+          },
+          {
+            "id": "TI",
+            "count": 58895
+          },
+          {
+            "id": "ZH_SVG",
+            "count": 34209
+          },
+          {
+            "id": "ZH_SVG_001",
+            "count": 34209
+          },
+          {
+            "id": "CH_BGer_008",
+            "count": 32529
+          },
+          {
+            "id": "ZH_OG",
+            "count": 29209
+          },
+          {
+            "id": "VD_TC_031",
+            "count": 28636
+          },
+          {
+            "id": "GE_CJ_014",
+            "count": 27454
+          },
+          {
+            "id": "CH_BGer_001",
+            "count": 27350
+          },
+          {
+            "id": "CH_BGer_005",
+            "count": 26355
+          },
+          {
+            "id": "CH_BGer_002",
+            "count": 25227
+          },
+          {
+            "id": "CH_BGer_006",
+            "count": 24599
+          },
+          {
+            "id": "TI_TRAC",
+            "count": 21638
+          },
+          {
+            "id": "GE_CJ_013",
+            "count": 21529
+          },
+          {
+            "id": "CH_BGE",
+            "count": 21316
+          },
+          {
+            "id": "BE",
+            "count": 20539
+          },
+          {
+            "id": "ZH_OG_001",
+            "count": 18974
+          },
+          {
+            "id": "CH_BGer_004",
+            "count": 18758
+          },
+          {
+            "id": "GR",
+            "count": 18427
+          },
+          {
+            "id": "CH_BGer_009",
+            "count": 16987
+          },
+          {
+            "id": "VD_TC_004",
+            "count": 15425
+          },
+          {
+            "id": "CH_BGB",
+            "count": 14739
+          },
+          {
+            "id": "FR",
+            "count": 14571
+          },
+          {
+            "id": "FR_TC",
+            "count": 14570
+          },
+          {
+            "id": "VD_TC_013",
+            "count": 14003
+          },
+          {
+            "id": "SG",
+            "count": 13558
+          },
+          {
+            "id": "TI_TCAS",
+            "count": 13159
+          },
+          {
+            "id": "TI_TCAS_001",
+            "count": 13159
+          },
+          {
+            "id": "ZH_VG",
+            "count": 11769
+          },
+          {
+            "id": "ZH_VG_001",
+            "count": 11769
+          },
+          {
+            "id": "CH_BSTG",
+            "count": 11717
+          },
+          {
+            "id": "CH_BSTG_001",
+            "count": 11717
+          },
+          {
+            "id": "BE_VG",
+            "count": 11505
+          },
+          {
+            "id": "BE_VG_001",
+            "count": 11505
+          },
+          {
+            "id": "AG",
+            "count": 11061
+          },
+          {
+            "id": "BS",
+            "count": 10842
+          },
+          {
+            "id": "GR_VG",
+            "count": 10054
+          },
+          {
+            "id": "VD_TC_002",
+            "count": 9582
+          },
+          {
+            "id": "BL",
+            "count": 9314
+          },
+          {
+            "id": "SO",
+            "count": 9269
+          },
+          {
+            "id": "AG_OG",
+            "count": 8899
+          },
+          {
+            "id": "BS_APG",
+            "count": 8635
+          }
+        ]
+      },
+      "isError": false
+    }
+  }
+}

@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow:
+Sitemap: https://www.arbeit.swiss/sitemap_index.xml

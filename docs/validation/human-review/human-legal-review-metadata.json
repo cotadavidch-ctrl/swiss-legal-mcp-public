@@ -1,0 +1,92 @@
+{
+  "package_id": "HUMAN-LEGAL-REVIEW-PACKAGE-2026-08-06-001",
+  "created_at": "2026-08-06T02:46:00Z",
+  "project_path": "/workspace/swiss-legal-mcp",
+  "run_id": "swiss-legal-mcp-rerun-20260806_010417",
+  "project_version": "1.0.0",
+  "tarball_sha256": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+  "tarball_sha256_recorded": true,
+  "review_required_cases_included": [
+    "AILC-01",
+    "AILC-02",
+    "AILC-03",
+    "AILC-05",
+    "AILC-11",
+    "AILC-17",
+    "AILC-19"
+  ],
+  "p2_findings_included": ["FIND-04", "FIND-05"],
+  "total_review_items": 9,
+  "source_files": [
+    {
+      "path": "docs/validation/results/swiss-legal-mcp-rerun-responses.json",
+      "sha256": "ec1bebfd9e9978036868962083b7129467d5d632cbbef7dee6719c854b782b3d"
+    },
+    {
+      "path": "docs/validation/results/swiss-legal-mcp-rerun-evaluation.md",
+      "sha256": "0a967801ca4383d0be9df8c154fe91a062e6f1780a673b6371d37da2ad3f3a66"
+    },
+    {
+      "path": "docs/validation/results/swiss-legal-mcp-rerun-metadata.json",
+      "sha256": "74cfca1fd6a41bc8ba4d19aa1b7729ab602776d2087de0afc71f767b27706b8d"
+    },
+    {
+      "path": "docs/validation/results/swiss-legal-mcp-before-after-comparison.json",
+      "sha256": "a7e3173aad5ce52c2f664f148b558bac84db53731faed701119a088d7949e96c"
+    },
+    {
+      "path": "docs/validation/results/swiss-legal-mcp-before-after-comparison.md",
+      "sha256": "62d9aacfa6ee09695e9f2018d7396339c4fcc177fe00c1973e6e30637a866bb2"
+    },
+    {
+      "path": "docs/validation/results/ai-legal-cross-comparison.json",
+      "sha256": "bb45324efd81241ee20c509920e07ac4b578c04b5bad6f70b9a9875807dfc6ff"
+    },
+    {
+      "path": "docs/validation/results/ai-legal-cross-comparison.md",
+      "sha256": "68623d2c2b133984511dbc4055dee807a2539feae68fa1ec6491a27a923224d0"
+    },
+    {
+      "path": "docs/validation/results/ai-legal-cross-comparison-metadata.json",
+      "sha256": "c928197923f73c0db968fb511e5a6e7bbe58e7097c7ec5307154ec9473f271b1"
+    },
+    {
+      "path": "docs/validation/ai-legal-test-cases.json",
+      "sha256": "fc61d1dbcdcc5f2a8b01fa85e6e6375ac71b8c1e76241670f4c381eed9e15170"
+    },
+    {
+      "path": "docs/validation/ai-legal-evaluation-rubric.md",
+      "sha256": "f68cbc1a4923cfe1df4befbad17b44801dc81b89df4e2e5d2dfec0e6fbbe96de"
+    },
+    {
+      "path": "docs/release/RC-1.0.0.md",
+      "sha256": "927faac87818c239d9b8a75d4aeaf7f0ea0d68e6fb43bd08742546f1a594f8ef"
+    },
+    {
+      "path": "docs/validation/results/targeted-fix-find-01-02.json",
+      "sha256": "e01ca9a55e10b31f9b7678dad5189870948aba42e1c9791469c3c6bef3c95781"
+    },
+    {
+      "path": "docs/validation/results/targeted-fix-find-01-02.md",
+      "sha256": "9706399520a1640fb65d63315ec1a90c55f73140a157617b9b7a0679dd1d97ca"
+    },
+    {
+      "path": "docs/validation/results/mcp-improvement-backlog.json",
+      "sha256": "742380d01f2bb2eb1d3497a8ad9f99a8bcb894d49e0a930e40b4afb77a43a160"
+    }
+  ],
+  "rc_recommendation": "Mantener TECHNICALLY_APPROVED_WITH_EXTERNAL_HUMAN_REVIEW_PENDING; no avanzar a aprobación final hasta revisión jurídica humana cualificada y calibración de confianza documentadas.",
+  "human_review_completed": false,
+  "calibration_completed": false,
+  "code_modified": false,
+  "tests_modified": false,
+  "rc_act_modified": false,
+  "publication_performed": false,
+  "git_created": false,
+  "warnings": [
+    "AILC-01/02/03 no fueron reejecutados y siguen con evidencia secundaria.",
+    "FIND-04/FIND-05 permanecen P2 abiertos.",
+    "Este paquete no sustituye revisión jurídica humana ni modifica el RC."
+  ],
+  "blockers": []
+}

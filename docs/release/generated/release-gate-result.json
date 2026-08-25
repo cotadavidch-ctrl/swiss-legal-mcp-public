@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-16T02:45:46.825Z",
+  "status": "READY WITH WARNINGS",
+  "blockers": [],
+  "warnings": [
+    "2 dependency fixture package(s) require manual license review.",
+    "Procedural strategy qualified human legal review is not completed.",
+    "Procedural strategy confidence calibration against human review is not completed."
+  ],
+  "validation": {
+    "automated_evaluation_complete": true,
+    "live_evaluation_prepared": true,
+    "live_evaluation_completed": true,
+    "human_review_prepared": true,
+    "human_review_completed": false,
+    "critical_findings_open": 0,
+    "privacy_findings_open": 0,
+    "calibration_completed": false
+  }
+}

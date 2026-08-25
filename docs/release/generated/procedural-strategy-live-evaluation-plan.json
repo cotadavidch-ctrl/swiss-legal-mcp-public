@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-08-16T17:47:56.988Z",
+  "status": "planned_not_executed",
+  "liveEvaluationCompleted": false,
+  "limits": {
+    "maxQueriesPerCase": 5,
+    "maxResultsPerQuery": 5,
+    "maxDocumentsPerCase": 10,
+    "timeoutMs": 15000,
+    "retries": 1,
+    "maxDownloadedBytesPerDocument": 1000000
+  },
+  "privacyRules": [
+    "no names",
+    "no account numbers",
+    "no addresses",
+    "no private docket numbers",
+    "no medical identifiers",
+    "no private documents"
+  ],
+  "cases": [
+    {
+      "caseId": "legal-aid-ar",
+      "queries": [
+        "unentgeltliche Rechtspflege Bedürftigkeit Bankunterlagen",
+        "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+        "unentgeltliche Rechtspflege Kostenvorschuss Vermögen Bankkonto",
+        "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+        "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege"
+      ],
+      "providers": [
+        "fedlex",
+        "entscheidsuche",
+        "cantonal providers already integrated when applicable"
+      ],
+      "classificationDimensions": [
+        "procedure type",
+        "instance",
+        "authority",
+        "legal norm",
+        "procedural issue",
+        "determinative facts",
+        "burden of proof",
+        "missing document",
+        "outcome",
+        "ratio decidendi"
+      ]
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "queries": [
+        "kantonale Verwaltungsbeschwerde rechtliches Gehoer Art. 29 BV",
+        "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde"
+      ],
+      "providers": [
+        "fedlex",
+        "entscheidsuche",
+        "cantonal providers already integrated when applicable"
+      ],
+      "classificationDimensions": [
+        "procedure type",
+        "instance",
+        "authority",
+        "legal norm",
+        "procedural issue",
+        "determinative facts",
+        "burden of proof",
+        "missing document",
+        "outcome",
+        "ratio decidendi"
+      ]
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "queries": [
+        "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+        "Sozialversicherungsrecht unvollstaendige Akten Beweislast"
+      ],
+      "providers": [
+        "fedlex",
+        "entscheidsuche",
+        "cantonal providers already integrated when applicable"
+      ],
+      "classificationDimensions": [
+        "procedure type",
+        "instance",
+        "authority",
+        "legal norm",
+        "procedural issue",
+        "determinative facts",
+        "burden of proof",
+        "missing document",
+        "outcome",
+        "ratio decidendi"
+      ]
+    },
+    {
+      "caseId": "employment-controlled",
+      "queries": [
+        "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+        "Arbeitsvertrag Lohnklage Schlichtungsverfahren Beweise"
+      ],
+      "providers": [
+        "fedlex",
+        "entscheidsuche",
+        "cantonal providers already integrated when applicable"
+      ],
+      "classificationDimensions": [
+        "procedure type",
+        "instance",
+        "authority",
+        "legal norm",
+        "procedural issue",
+        "determinative facts",
+        "burden of proof",
+        "missing document",
+        "outcome",
+        "ratio decidendi"
+      ]
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "queries": [
+        "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+        "mangelhafte Zustellung Verwaltungsentscheid Fristbeginn rechtliches Gehoer"
+      ],
+      "providers": [
+        "fedlex",
+        "entscheidsuche",
+        "cantonal providers already integrated when applicable"
+      ],
+      "classificationDimensions": [
+        "procedure type",
+        "instance",
+        "authority",
+        "legal norm",
+        "procedural issue",
+        "determinative facts",
+        "burden of proof",
+        "missing document",
+        "outcome",
+        "ratio decidendi"
+      ]
+    }
+  ]
+}

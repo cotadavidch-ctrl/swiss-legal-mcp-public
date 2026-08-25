@@ -1,0 +1,3 @@
+# Generated on 27.07.2026 19:20:48 for rsju.jura.ch
+User-agent: *
+Sitemap: http://rsju.jura.ch/sitemap/Francais_fr_fr_z31_sitemap_p.xml

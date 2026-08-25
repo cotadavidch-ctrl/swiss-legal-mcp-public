@@ -1,0 +1,47 @@
+{
+  "name": "@swiss-legal-mcp/mcp-server",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "dev:stdio": "tsx src/stdio.ts",
+    "dev:http": "tsx src/http.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@swiss-legal-mcp/citations": "workspace:*",
+    "@swiss-legal-mcp/core": "workspace:*",
+    "@swiss-legal-mcp/documents": "workspace:*",
+    "@swiss-legal-mcp/legal-drafting": "workspace:*",
+    "@swiss-legal-mcp/legal-runtime": "workspace:*",
+    "@swiss-legal-mcp/matter-store": "workspace:*",
+    "@swiss-legal-mcp/provider-bsv": "workspace:*",
+    "@swiss-legal-mcp/provider-cantonal": "workspace:*",
+    "@swiss-legal-mcp/provider-entscheidsuche": "workspace:*",
+    "@swiss-legal-mcp/provider-estv": "workspace:*",
+    "@swiss-legal-mcp/provider-fedlex": "workspace:*",
+    "@swiss-legal-mcp/provider-fixture": "workspace:*",
+    "@swiss-legal-mcp/provider-seco": "workspace:*",
+    "@swiss-legal-mcp/provider-shab": "workspace:*",
+    "@swiss-legal-mcp/shared": "workspace:*",
+    "@swiss-legal-mcp/shared-web": "workspace:*",
+    "express": "5.2.1",
+    "express-rate-limit": "8.6.0",
+    "pino-http": "11.0.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "26.1.1",
+    "supertest": "7.2.2",
+    "@types/supertest": "7.2.1",
+    "tsx": "4.23.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}

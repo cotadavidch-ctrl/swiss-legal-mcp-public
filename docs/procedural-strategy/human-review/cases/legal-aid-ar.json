@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 1,
+  "systemVersion": "1.0.0",
+  "caseId": "legal-aid-ar",
+  "title": "Appenzell Ausserrhoden legal aid appeal",
+  "caseHash": "a7b7b1f01c20dd8d20c051cfa007cff14f4e796ac774576f702f34b8c995f8a3",
+  "outputHash": "88aa44624269393bab639a81190254ac72a43cd83d796fb32f059350f1106d2f",
+  "input": {
+    "jurisdiction": {
+      "country": "CH",
+      "canton": "AR"
+    },
+    "matter": {
+      "area": "civil",
+      "subarea": "unentgeltliche Rechtspflege",
+      "description": "Appeal against denial of legal aid before the Obergericht Appenzell Ausserrhoden. Issues include Art. 56 ZPO, economic capacity, bank records, advance on costs and whether transfers between accounts of the same applicant were counted twice."
+    },
+    "parties": [
+      {
+        "role": "appellant",
+        "type": "natural_person",
+        "description": "Anonymized self-represented applicant"
+      },
+      {
+        "role": "authority",
+        "type": "court",
+        "description": "Lower cantonal civil authority"
+      }
+    ],
+    "facts": [
+      {
+        "id": "f-application",
+        "date": "2026-02-03",
+        "description": "Applicant requested legal aid for a civil proceeding.",
+        "status": "accepted",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-denial",
+        "date": "2026-02-20",
+        "description": "Lower authority denied legal aid based on asserted economic capacity.",
+        "status": "accepted",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-bank-a",
+        "date": "2026-02-24",
+        "description": "Applicant alleged that a Bank A current-account statement was provided.",
+        "status": "alleged",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-sparkonto-transit",
+        "date": "2026-02-25",
+        "description": "Applicant alleged that an own transit savings account was used only as a temporary transfer account before transfer to Bank B.",
+        "status": "alleged",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-bank-b",
+        "date": "2026-02-25",
+        "description": "Applicant alleged transfer from Bank A to the transit savings account and then to Bank B, with no duplicate assets.",
+        "status": "alleged",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-third-account",
+        "description": "Applicant disputes a possible treatment of the transit savings account as a third additional asset account.",
+        "status": "disputed",
+        "sourceDocumentIds": ["fixture:legal-aid-ar"]
+      },
+      {
+        "id": "f-final-balance",
+        "description": "Final transit-account balance is material but not confirmed in the local fixture.",
+        "status": "uncertain"
+      }
+    ],
+    "proceduralHistory": [
+      {
+        "date": "2026-02-03",
+        "authority": "Lower cantonal civil authority",
+        "action": "Legal aid application filed",
+        "documentId": "fixture:legal-aid-ar"
+      },
+      {
+        "date": "2026-02-20",
+        "authority": "Lower cantonal civil authority",
+        "action": "Legal aid denied",
+        "result": "Application rejected",
+        "documentId": "fixture:legal-aid-ar"
+      },
+      {
+        "date": "2026-03-02",
+        "authority": "Obergericht Appenzell Ausserrhoden",
+        "action": "Appeal filed",
+        "documentId": "fixture:legal-aid-ar"
+      }
+    ],
+    "challengedDecision": {
+      "authority": "Lower cantonal civil authority",
+      "decisionDate": "2026-02-20",
+      "notificationDate": "2026-02-24",
+      "reference": "anonymized-legal-aid-ar",
+      "summary": "Denial of legal aid; economic capacity and bank documentation disputed.",
+      "documentId": "fixture:legal-aid-ar"
+    },
+    "claims": [
+      {
+        "description": "Annul denial of legal aid.",
+        "priority": "primary"
+      },
+      {
+        "description": "Subsidiarily remit to the lower authority for clarification and reassessment.",
+        "priority": "subsidiary"
+      }
+    ],
+    "availableEvidence": [
+      {
+        "id": "e-denial",
+        "type": "official-record",
+        "description": "Denial decision discussing economic capacity.",
+        "date": "2026-02-20",
+        "documentId": "fixture:legal-aid-ar",
+        "authenticity": "confirmed"
+      },
+      {
+        "id": "e-bank-alleged",
+        "type": "bank-record",
+        "description": "Bank records allegedly showing Bank A, transit-account and Bank B transfers.",
+        "date": "2026-02-25",
+        "documentId": "fixture:legal-aid-ar",
+        "authenticity": "unknown"
+      }
+    ],
+    "deadlines": [],
+    "objectives": ["annulment", "avoid-costs", "preserve-rights"],
+    "constraints": {
+      "urgency": "high",
+      "representation": "self-represented",
+      "riskTolerance": "low",
+      "language": "de"
+    },
+    "documents": [
+      {
+        "documentId": "fixture:legal-aid-ar",
+        "documentType": "decision"
+      },
+      {
+        "documentId": "fixture:missing-bank-statement",
+        "documentType": "evidence"
+      }
+    ],
+    "analysisDate": "2026-03-05"
+  },
+  "output": {
+    "caseSummary": {
+      "legalCharacterization": "civil/unentgeltliche Rechtspflege: Appeal against denial of legal aid before the Obergericht Appenzell Ausserrhoden. Issues include Art. 56 ZPO, economic capacity, bank records, advance on costs and whether transfers between accounts of the same applicant were counted twice.",
+      "proceduralPosture": "post-decision challenge or review",
+      "keyFacts": [
+        {
+          "id": "f-application",
+          "date": "2026-02-03",
+          "description": "Applicant requested legal aid for a civil proceeding.",
+          "status": "accepted",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        },
+        {
+          "id": "f-denial",
+          "date": "2026-02-20",
+          "description": "Lower authority denied legal aid based on asserted economic capacity.",
+          "status": "accepted",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        }
+      ],
+      "disputedFacts": [
+        {
+          "id": "f-third-account",
+          "date": null,
+          "description": "Applicant disputes a possible treatment of the transit savings account as a third additional asset account.",
+          "status": "disputed",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        }
+      ],
+      "allegedFacts": [
+        {
+          "id": "f-bank-a",
+          "date": "2026-02-24",
+          "description": "Applicant alleged that a Bank A current-account statement was provided.",
+          "status": "alleged",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        },
+        {
+          "id": "f-sparkonto-transit",
+          "date": "2026-02-25",
+          "description": "Applicant alleged that an own transit savings account was used only as a temporary transfer account before transfer to Bank B.",
+          "status": "alleged",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        },
+        {
+          "id": "f-bank-b",
+          "date": "2026-02-25",
+          "description": "Applicant alleged transfer from Bank A to the transit savings account and then to Bank B, with no duplicate assets.",
+          "status": "alleged",
+          "sourceDocumentIds": ["fixture:legal-aid-ar"]
+        }
+      ],
+      "uncertainFacts": [
+        {
+          "id": "f-final-balance",
+          "date": null,
+          "description": "Final transit-account balance is material but not confirmed in the local fixture.",
+          "status": "uncertain",
+          "sourceDocumentIds": []
+        }
+      ],
+      "missingFacts": ["missing_or_unavailable_documents"]
+    },
+    "jurisdictionAndCompetence": {
+      "likelyJurisdiction": "CH-AR",
+      "likelyAuthorityOrCourt": "Schlichtungsverfahren/Klage or appeal route depending on instance and claim type",
+      "dimensions": {
+        "country_legal_system": {
+          "status": "confirmed",
+          "value": "CH"
+        },
+        "territorial_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "AR"
+        },
+        "subject_matter_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "civil"
+        },
+        "functional_jurisdiction": {
+          "status": "requires_legal_review",
+          "value": "Lower cantonal civil authority"
+        },
+        "issuing_authority": {
+          "status": "confirmed",
+          "value": "Lower cantonal civil authority"
+        },
+        "appellate_authority": {
+          "status": "not_verified",
+          "value": null
+        },
+        "procedural_remedy": {
+          "status": "requires_legal_review",
+          "value": "Denial of legal aid; economic capacity and bank documentation disputed."
+        },
+        "venue_or_filing_destination": {
+          "status": "not_verified",
+          "value": null
+        }
+      },
+      "territorialCompetence": "territorial link to canton AR requires verification",
+      "subjectMatterCompetence": "Schlichtungsverfahren/Klage or appeal route depending on instance and claim type",
+      "confidence": 0.55,
+      "sources": [
+        {
+          "sourceId": "fixture:legal-aid-ar",
+          "providerId": "fixture",
+          "documentIdentifier": "fixture-legal-aid-ar",
+          "courtOrAuthority": null,
+          "date": "2026-02-20",
+          "provisionOrParagraph": null,
+          "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+          "officialUrl": "https://fixture.invalid/legal-aid-ar",
+          "retrievedAt": "2026-08-03T00:00:00.000Z",
+          "confidence": 0.45,
+          "extractionMethod": "explicit_holding"
+        }
+      ]
+    },
+    "admissibility": {
+      "standing": {
+        "id": "standing",
+        "status": "potentially_applicable",
+        "rationale": "Standing cannot be confirmed from roles alone."
+      },
+      "appealableAct": {
+        "id": "appealable_act",
+        "status": "potentially_applicable",
+        "rationale": "A challengeable decision or procedural act must be verified from documents."
+      },
+      "exhaustion": {
+        "id": "exhaustion",
+        "status": "potentially_applicable",
+        "rationale": "Prior administrative/procedural steps affect admissibility."
+      },
+      "formalRequirements": {
+        "id": "formal_requirements",
+        "status": "potentially_applicable",
+        "rationale": "Written form, signature, requests and reasoning commonly require checking."
+      },
+      "languageRequirements": {
+        "id": "language",
+        "status": "potentially_applicable",
+        "rationale": "Language requirements depend on authority/canton."
+      },
+      "representationRequirements": {
+        "id": "representation",
+        "status": "potentially_applicable",
+        "rationale": "Self-represented parties face form and evidence risks."
+      },
+      "risks": []
+    },
+    "deadlines": [
+      {
+        "deadlineType": "appeal_or_objection_deadline",
+        "startEvent": "notification_date",
+        "calculatedDate": null,
+        "calculationStatus": "cannot_calculate",
+        "suspensionRules": [],
+        "restorationPossibility": null,
+        "sources": [],
+        "warnings": [
+          "notification_date_present_but_legal_basis_missing",
+          "do_not_calculate_final_deadline_without_applicable_rule"
+        ]
+      }
+    ],
+    "applicableLaw": [
+      {
+        "source": {
+          "sourceId": "fixture:legal-aid-ar",
+          "providerId": "fixture",
+          "documentIdentifier": "fixture-legal-aid-ar",
+          "courtOrAuthority": null,
+          "date": "2026-02-20",
+          "provisionOrParagraph": null,
+          "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+          "officialUrl": "https://fixture.invalid/legal-aid-ar",
+          "retrievedAt": "2026-08-03T00:00:00.000Z",
+          "confidence": 0.45,
+          "extractionMethod": "explicit_holding"
+        },
+        "provision": "Art. 56 ZPO",
+        "versionDate": "2026-03-05",
+        "relevance": "citation_detected_in_user_supplied_case_material",
+        "confidence": 0.35
+      }
+    ],
+    "burdenOfProof": [
+      {
+        "issue": "Applicant alleged that a Bank A current-account statement was provided.",
+        "burdenOn": "must_be_verified_by_substantive_and_procedural_law",
+        "standard": "not_determined",
+        "sources": [
+          {
+            "sourceId": "fixture:legal-aid-ar",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-legal-aid-ar",
+            "courtOrAuthority": null,
+            "date": "2026-02-20",
+            "provisionOrParagraph": null,
+            "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+            "officialUrl": "https://fixture.invalid/legal-aid-ar",
+            "retrievedAt": "2026-08-03T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "uncertainty": "burden_of_proof_requires_specific_legal_basis_and_claim_mapping"
+      },
+      {
+        "issue": "Applicant alleged that an own transit savings account was used only as a temporary transfer account before transfer to Bank B.",
+        "burdenOn": "must_be_verified_by_substantive_and_procedural_law",
+        "standard": "not_determined",
+        "sources": [
+          {
+            "sourceId": "fixture:legal-aid-ar",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-legal-aid-ar",
+            "courtOrAuthority": null,
+            "date": "2026-02-20",
+            "provisionOrParagraph": null,
+            "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+            "officialUrl": "https://fixture.invalid/legal-aid-ar",
+            "retrievedAt": "2026-08-03T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "uncertainty": "burden_of_proof_requires_specific_legal_basis_and_claim_mapping"
+      },
+      {
+        "issue": "Applicant alleged transfer from Bank A to the transit savings account and then to Bank B, with no duplicate assets.",
+        "burdenOn": "must_be_verified_by_substantive_and_procedural_law",
+        "standard": "not_determined",
+        "sources": [
+          {
+            "sourceId": "fixture:legal-aid-ar",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-legal-aid-ar",
+            "courtOrAuthority": null,
+            "date": "2026-02-20",
+            "provisionOrParagraph": null,
+            "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+            "officialUrl": "https://fixture.invalid/legal-aid-ar",
+            "retrievedAt": "2026-08-03T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "uncertainty": "burden_of_proof_requires_specific_legal_basis_and_claim_mapping"
+      },
+      {
+        "issue": "Applicant disputes a possible treatment of the transit savings account as a third additional asset account.",
+        "burdenOn": "must_be_verified_by_substantive_and_procedural_law",
+        "standard": "not_determined",
+        "sources": [
+          {
+            "sourceId": "fixture:legal-aid-ar",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-legal-aid-ar",
+            "courtOrAuthority": null,
+            "date": "2026-02-20",
+            "provisionOrParagraph": null,
+            "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+            "officialUrl": "https://fixture.invalid/legal-aid-ar",
+            "retrievedAt": "2026-08-03T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "uncertainty": "burden_of_proof_requires_specific_legal_basis_and_claim_mapping"
+      }
+    ],
+    "evidenceAssessment": [
+      {
+        "evidenceId": "e-denial",
+        "proves": [],
+        "strength": "strong",
+        "admissibilityRisk": "not_assessed",
+        "authenticityRisk": "confirmed",
+        "gaps": ["no_mapped_relevant_fact"]
+      },
+      {
+        "evidenceId": "e-bank-alleged",
+        "proves": [],
+        "strength": "unknown",
+        "admissibilityRisk": "not_assessed",
+        "authenticityRisk": "unknown",
+        "gaps": ["no_mapped_relevant_fact"]
+      }
+    ],
+    "legalAidClarification": {
+      "unbeholfenAssessment": {
+        "status": "contextual_possible",
+        "factors": [
+          "representation:self-represented",
+          "request_clarity_not_confirmed",
+          "no_prior_warning_confirmed",
+          "opportunity_count_not_confirmed"
+        ],
+        "warnings": ["self_represented_not_automatically_unbeholfen"]
+      },
+      "proceduralLawBasis": {
+        "art29Abs3Bv": "potentially_relevant_for_legal_aid",
+        "art56Zpo": "not_confirmed_direct_or_supplementary",
+        "mitwirkungspflicht": "must_be_addressed",
+        "cantonalProceduralLaw": "must_verify_AR",
+        "strategicInference": "request clarification only as contingent argument, not as automatic right",
+        "warnings": ["procedural_law_not_confirmed"]
+      },
+      "evidentiaryPosture": {
+        "category": "documentation_incomplete_or_uncertain",
+        "doubleCountingRisk": false,
+        "clarificationDuty": "not_automatic",
+        "partyOmissionRisk": "medium"
+      },
+      "mandatoryCounterargument": "Mitwirkungspflicht: the applicant must substantiate indigence and provide requested financial documents; the authority is not a party adviser or general investigator."
+    },
+    "caseLawAnalysis": {
+      "favorableCases": [],
+      "unfavorableCases": [],
+      "mixedCases": [],
+      "distinguishableCases": [],
+      "patterns": [],
+      "structuredComparability": [],
+      "courtBehavior": [],
+      "limitations": [
+        "insufficient_case_law",
+        "no_percentages_reported_without_complete_corpus",
+        "no_judge_profiling",
+        "no_decisive_precedent_from_unverified_or_fragmentary_case",
+        "terminological_overlap_never_sufficient_for_direct_comparability"
+      ]
+    },
+    "proceduralOptions": [
+      {
+        "optionId": "option-1",
+        "title": "Verify admissible procedural route before merits filing",
+        "description": "Protect procedural rights first, then present merits arguments supported by documents.",
+        "legalBasis": [
+          {
+            "sourceId": "fixture:legal-aid-ar",
+            "providerId": "fixture",
+            "documentIdentifier": "fixture-legal-aid-ar",
+            "courtOrAuthority": null,
+            "date": "2026-02-20",
+            "provisionOrParagraph": null,
+            "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+            "officialUrl": "https://fixture.invalid/legal-aid-ar",
+            "retrievedAt": "2026-08-03T00:00:00.000Z",
+            "confidence": 0.45,
+            "extractionMethod": "explicit_holding"
+          }
+        ],
+        "preconditions": [
+          "verify_competent_authority",
+          "verify_deadline",
+          "confirm_notification_evidence"
+        ],
+        "advantages": ["reduces_admissibility_risk", "keeps_arguments_ordered"],
+        "disadvantages": ["deadline_uncertain"],
+        "risks": ["evidence_gaps"],
+        "costConsiderations": [],
+        "timingConsiderations": ["urgent_deadline_review_required"],
+        "evidenceNeeds": ["e-denial", "e-bank-alleged"],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.55
+      },
+      {
+        "optionId": "option-2",
+        "title": "Alternative protective filing or clarification request",
+        "description": "Where legally available, consider a protective filing or request for clarification while avoiding categorical admissibility claims.",
+        "legalBasis": [],
+        "preconditions": ["professional_review_of_route", "do_not_miss_deadline"],
+        "advantages": ["preserve_rights"],
+        "disadvantages": ["may_be_inadmissible_if_wrong_route"],
+        "risks": ["authority_incompetent", "costs_risk"],
+        "costConsiderations": ["court_or_administrative_costs_must_be_checked"],
+        "timingConsiderations": ["act_before_possible_deadline_expiry"],
+        "evidenceNeeds": ["proof_of_notification", "copy_of_challenged_decision"],
+        "estimatedViability": "indeterminate",
+        "confidence": 0.3
+      }
+    ],
+    "recommendedStrategy": {
+      "primaryRoute": "Verify admissible procedural route before merits filing",
+      "alternativeRoute": "Alternative protective filing or clarification request",
+      "recommendedSequence": [
+        "verify_deadline_and_notification",
+        "confirm_competent_authority",
+        "organize_facts_chronologically",
+        "attach_key_evidence",
+        "address_admissibility_before_merits"
+      ],
+      "immediateActions": ["urgent_deadline_verification", "preserve_rights_if_legally_available"],
+      "documentsToPrepare": [
+        "challenged_decision",
+        "proof_of_notification",
+        "chronology",
+        "evidence_index"
+      ],
+      "evidenceToObtain": ["no_mapped_relevant_fact", "no_mapped_relevant_fact"],
+      "argumentsToPrioritize": ["admissibility", "competence", "timely_filing", "documented_facts"],
+      "argumentsToAvoid": [
+        "unsupported_factual_assertions",
+        "emotional_arguments_without_legal_relevance",
+        "claims_not_tied_to_requested_relief"
+      ],
+      "settlementPosition": null,
+      "protectiveFilings": ["consider_only_after_verifying_legal_basis_and_authority"],
+      "confidence": 0.5
+    },
+    "scenarioAnalysis": [
+      {
+        "scenario": "best_case",
+        "description": "The authority accepts admissibility and the decisive facts are supported by reliable documents.",
+        "triggeringFactors": ["timely_filing", "competent_authority", "documented_key_facts"],
+        "proceduralConsequences": ["merits_review"]
+      },
+      {
+        "scenario": "likely_case",
+        "description": "Outcome remains uncertain because procedural route, deadlines or evidentiary record require verification.",
+        "triggeringFactors": ["uncertain_deadline"],
+        "proceduralConsequences": ["requests_for_clarification_or_evidence_possible"]
+      },
+      {
+        "scenario": "adverse_case",
+        "description": "The matter may fail procedurally or on proof if missing documents, deadlines or facts are not cured.",
+        "triggeringFactors": ["deadline_not_proven", "insufficient_evidence"],
+        "proceduralConsequences": ["inadmissibility_or_dismissal_risk"]
+      }
+    ],
+    "risks": [
+      {
+        "risk": "plazo incierto o no calculable",
+        "probability": "unknown",
+        "impact": "high",
+        "mitigation": "verify legal basis, notification date and suspension rules immediately"
+      },
+      {
+        "risk": "hecho relevante sin soporte probatorio suficiente",
+        "probability": "medium",
+        "impact": "medium",
+        "mitigation": "collect direct documents, official records or witness/expert evidence"
+      },
+      {
+        "risk": "jurisprudencia comparable insuficiente en la muestra recuperada",
+        "probability": "unknown",
+        "impact": "medium",
+        "mitigation": "run targeted case-law searches with narrower issues and court filters"
+      }
+    ],
+    "missingInformation": ["missing_or_unavailable_documents"],
+    "warnings": [
+      "not_legal_advice_no_success_guarantee",
+      "human_legal_review_required",
+      "uncertain_deadline",
+      "insufficient_case_law",
+      "missing_documents",
+      "do_not_destroy_or_hide_evidence",
+      "do_not_make_false_statements"
+    ],
+    "sources": [
+      {
+        "sourceId": "fixture:legal-aid-ar",
+        "providerId": "fixture",
+        "documentIdentifier": "fixture-legal-aid-ar",
+        "courtOrAuthority": null,
+        "date": "2026-02-20",
+        "provisionOrParagraph": null,
+        "passage": "Evaluation fixture: anonymized legal-aid denial appeal in Appenzell Ausserrhoden. The applicant requested unentgeltliche Rechtspflege and alleges that Bank A current-account funds were moved through an own transit savings account before transfer to Bank B. The final transit-account balance and complete bank statements are not confirmed in this fixture. The applicant disputes any duplicate counting of assets and raises a possible Art. 56 ZPO clarification issue.",
+        "officialUrl": "https://fixture.invalid/legal-aid-ar",
+        "retrievedAt": "2026-08-03T00:00:00.000Z",
+        "confidence": 0.45,
+        "extractionMethod": "explicit_holding"
+      }
+    ],
+    "trace": {
+      "timeline": {
+        "entries": [
+          {
+            "date": "2026-02-03",
+            "kind": "fact",
+            "id": "f-application",
+            "description": "Applicant requested legal aid for a civil proceeding.",
+            "confidence": 0.75
+          },
+          {
+            "date": "2026-02-03",
+            "kind": "procedural_event",
+            "id": "fixture:legal-aid-ar",
+            "description": "Lower cantonal civil authority: Legal aid application filed",
+            "confidence": 0.7
+          },
+          {
+            "date": "2026-02-20",
+            "kind": "fact",
+            "id": "f-denial",
+            "description": "Lower authority denied legal aid based on asserted economic capacity.",
+            "confidence": 0.75
+          },
+          {
+            "date": "2026-02-20",
+            "kind": "procedural_event",
+            "id": "fixture:legal-aid-ar",
+            "description": "Lower cantonal civil authority: Legal aid denied",
+            "confidence": 0.7
+          },
+          {
+            "date": "2026-02-20",
+            "kind": "challenged_decision",
+            "id": "fixture:legal-aid-ar",
+            "description": "Denial of legal aid; economic capacity and bank documentation disputed.",
+            "confidence": 0.7
+          },
+          {
+            "date": "2026-02-24",
+            "kind": "fact",
+            "id": "f-bank-a",
+            "description": "Applicant alleged that a Bank A current-account statement was provided.",
+            "confidence": 0.45
+          },
+          {
+            "date": "2026-02-25",
+            "kind": "fact",
+            "id": "f-sparkonto-transit",
+            "description": "Applicant alleged that an own transit savings account was used only as a temporary transfer account before transfer to Bank B.",
+            "confidence": 0.45
+          },
+          {
+            "date": "2026-02-25",
+            "kind": "fact",
+            "id": "f-bank-b",
+            "description": "Applicant alleged transfer from Bank A to the transit savings account and then to Bank B, with no duplicate assets.",
+            "confidence": 0.45
+          },
+          {
+            "date": "2026-03-02",
+            "kind": "procedural_event",
+            "id": "fixture:legal-aid-ar",
+            "description": "Obergericht Appenzell Ausserrhoden: Appeal filed",
+            "confidence": 0.7
+          }
+        ],
+        "contradictions": [],
+        "missingDocuments": ["fixture:missing-bank-statement"]
+      },
+      "issues": [
+        {
+          "id": "competence",
+          "status": "potentially_applicable",
+          "rationale": "Competence depends on matter, authority and territorial link."
+        },
+        {
+          "id": "standing",
+          "status": "potentially_applicable",
+          "rationale": "Standing cannot be confirmed from roles alone."
+        },
+        {
+          "id": "appealable_act",
+          "status": "potentially_applicable",
+          "rationale": "A challengeable decision or procedural act must be verified from documents."
+        },
+        {
+          "id": "exhaustion",
+          "status": "potentially_applicable",
+          "rationale": "Prior administrative/procedural steps affect admissibility."
+        },
+        {
+          "id": "deadline",
+          "status": "potentially_applicable",
+          "rationale": "Deadline calculation requires start event and legal basis."
+        },
+        {
+          "id": "formal_requirements",
+          "status": "potentially_applicable",
+          "rationale": "Written form, signature, requests and reasoning commonly require checking."
+        },
+        {
+          "id": "language",
+          "status": "potentially_applicable",
+          "rationale": "Language requirements depend on authority/canton."
+        },
+        {
+          "id": "representation",
+          "status": "potentially_applicable",
+          "rationale": "Self-represented parties face form and evidence risks."
+        },
+        {
+          "id": "burden_of_proof",
+          "status": "applicable",
+          "rationale": "Disputed or alleged facts require proof planning."
+        },
+        {
+          "id": "suspensive_effect",
+          "status": "not_applicable",
+          "rationale": "Requested only if the objective includes suspensive effect."
+        },
+        {
+          "id": "interim_measures",
+          "status": "not_applicable",
+          "rationale": "Requested only if interim relief is an objective."
+        }
+      ],
+      "loadedDocuments": [
+        {
+          "documentId": "fixture:legal-aid-ar",
+          "documentType": "decision",
+          "status": "loaded",
+          "provider": "fixture"
+        },
+        {
+          "documentId": "fixture:missing-bank-statement",
+          "documentType": "evidence",
+          "status": "not_found",
+          "provider": null
+        }
+      ],
+      "guardrails": [
+        "no_success_guarantee",
+        "no_invented_case_law",
+        "no_invented_deadlines",
+        "no_document_body_logging",
+        "professional_review_recommended_for_high_risk_matters",
+        "no_direct_comparability_from_lexical_overlap_only",
+        "separate_ratio_obiter_party_allegations_and_lower_court_reasoning",
+        "no_automatic_unbeholfen_from_self_representation",
+        "no_automatic_nachfrist_from_first_deficiency"
+      ]
+    },
+    "confidence": {
+      "facts": 0.6,
+      "competence": 0.45,
+      "proceduralRoute": 0.45,
+      "deadline": 0.2,
+      "applicableLaw": 0.55,
+      "comparableCaseLaw": 0.15,
+      "evidence": 0.6,
+      "strategy": 0.45
+    }
+  },
+  "reviewerQuestions": [
+    {
+      "dimension": "fact_reconstruction",
+      "question": "Assess fact reconstruction on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "chronology",
+      "question": "Assess chronology on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "fact_classification",
+      "question": "Assess fact classification on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "competence",
+      "question": "Assess competence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "authority",
+      "question": "Assess authority on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "procedural_route",
+      "question": "Assess procedural route on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "admissibility",
+      "question": "Assess admissibility on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "standing",
+      "question": "Assess standing on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "deadlines",
+      "question": "Assess deadlines on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "applicable_law",
+      "question": "Assess applicable law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "burden_of_proof",
+      "question": "Assess burden of proof on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "evidence_assessment",
+      "question": "Assess evidence assessment on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "comparable_case_law",
+      "question": "Assess comparable case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "adverse_case_law",
+      "question": "Assess adverse case law on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "primary_strategy",
+      "question": "Assess primary strategy on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "alternatives",
+      "question": "Assess alternatives on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "counteranalysis",
+      "question": "Assess counteranalysis on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "risks",
+      "question": "Assess risks on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "confidence",
+      "question": "Assess confidence on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "traceability",
+      "question": "Assess traceability on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "clarity",
+      "question": "Assess clarity on the 0-4/N/A scale. Explain every score below 3."
+    },
+    {
+      "dimension": "practical_utility",
+      "question": "Assess practical utility on the 0-4/N/A scale. Explain every score below 3."
+    }
+  ],
+  "privacyNotice": "This package is anonymized for review. Do not add names, account numbers, addresses, private docket numbers or medical identifiers."
+}

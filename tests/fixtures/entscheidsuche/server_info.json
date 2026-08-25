@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"name\": \"entscheidsuche-mcp\",\n  \"version\": \"0.1.1\",\n  \"elasticsearch_url\": \"https://entscheidsuche.pansoft.de:9200/entscheidsuche.v2-*/_search\",\n  \"facets_url\": \"https://entscheidsuche.ch/docs/Facetten.json\",\n  \"languages\": [\n    \"de\",\n    \"fr\",\n    \"it\"\n  ],\n  \"sort_orders\": [\n    \"relevance\",\n    \"date\",\n    \"scrapedate\"\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "name": "entscheidsuche-mcp",
+        "version": "0.1.1",
+        "elasticsearch_url": "https://entscheidsuche.pansoft.de:9200/entscheidsuche.v2-*/_search",
+        "facets_url": "https://entscheidsuche.ch/docs/Facetten.json",
+        "languages": ["de", "fr", "it"],
+        "sort_orders": ["relevance", "date", "scrapedate"]
+      },
+      "isError": false
+    }
+  }
+}

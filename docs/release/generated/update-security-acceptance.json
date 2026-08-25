@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-08-05T23:50:10.412Z",
+  "status": "PASS",
+  "blockers": [],
+  "checks": {
+    "updaterScripts": [
+      "test:updater",
+      "test:breach-detection",
+      "test:claude-desktop"
+    ],
+    "updaterFiles": [
+      "packages/updater/src/manifest.ts",
+      "packages/updater/src/signature.ts",
+      "packages/updater/src/policy.ts",
+      "packages/updater/src/updater.ts",
+      "packages/updater/src/encryption.ts",
+      "packages/updater/src/securityEvents.ts",
+      "packages/updater/src/breachDetection.ts",
+      "packages/updater/src/updater.test.ts",
+      "packages/updater/src/security.test.ts"
+    ],
+    "documentationFiles": [
+      "docs/release/generated/claude-desktop-acceptance.json",
+      "docs/updater/architecture.md",
+      "docs/updater/manifest-format.md",
+      "docs/updater/signing.md",
+      "docs/updater/installation.md",
+      "docs/updater/rollback.md",
+      "docs/updater/channels.md",
+      "docs/security/threat-model.md",
+      "docs/security/data-classification.md",
+      "docs/security/encryption-at-rest.md",
+      "docs/security/encryption-in-transit.md",
+      "docs/security/key-management.md",
+      "docs/security/breach-detection.md",
+      "docs/security/incident-response.md",
+      "docs/security/prompt-injection.md",
+      "docs/security/integrity.md",
+      "docs/security/claude-desktop.md"
+    ],
+    "claudeDesktopAcceptanceRequired": true,
+    "automaticUpdatesEnabled": false,
+    "remoteTelemetryEnabled": false
+  }
+}

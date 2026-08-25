@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-05T23:49:32.818Z",
+  "results": [
+    {
+      "name": "citation parser",
+      "iterations": 10000,
+      "durationMs": 146.58959099999993,
+      "opsPerSecond": 68217.66765145013
+    },
+    {
+      "name": "citation normalizer",
+      "iterations": 10000,
+      "durationMs": 63.30511000000001,
+      "opsPerSecond": 157965.13109289279
+    },
+    {
+      "name": "ProviderRegistry lookup",
+      "iterations": 50000,
+      "durationMs": 7.055256999999983,
+      "opsPerSecond": 7086914.055717619
+    },
+    {
+      "name": "MCP tool serialization",
+      "iterations": 5000,
+      "durationMs": 1174.8095030000002,
+      "opsPerSecond": 4256.00915487317
+    }
+  ]
+}

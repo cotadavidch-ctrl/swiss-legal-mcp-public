@@ -1,0 +1,53 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 27008,\n  \"hits\": [\n    {\n      \"id\": \"CH_BGE_004_BGE-83-II-414_1957-10-09\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 09.10.1957 BGE 83 II 414\",\n      \"abstract\": \"Regeste\\n<br><em>Responsabilité</em> des entreprises d'assurances chargées de réparer les dommages causés par l'emploi de véhicules automobiles étrangers. Art. 5 al. 2 ACF du 22 juin 1948. Dans quelle mesure cette <em>responsabilité</em> est-elle subsidiaire?\",\n      \"text\": \"Extrait de l'arrêt de la Ire Cour <em>civile</em> du 9 octobre 1957 dans la cause La Zurich, compagnie générale d'assurance contre les accidents et la <em>responsabilité</em> <em>civile</em>, et Olivares contre Gertrud et Kurt Weisskopf L'assurance-<em>responsabilité</em> <em>civile</em> étant une assurance contre les dommages, la <em>responsabilité</em> subsidiaire Or ce n'est pas ce préjudice qui est couvert par l'assurance-<em>responsabilité</em> <em>civile</em>; même si le lésé a <em>civile</em> de Gysin.\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1957-10-09\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-83-II-414_1957-10-09.html\",\n      \"original_url\": null,\n      \"sort\": [\n        37.393967,\n        \"CH_BGE_004_BGE-83-II-414_1957-10-09\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-103-II-330_1977-12-06\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 06.12.1977 BGE 103 II 330\",\n      \"abstract\": \"Regeste\\n<br>Art. 97, art. 261, art. 271 CO. <em>Responsabilité</em> du preneur pour le dommage causé par une explosion survenue dans l'appartement loué, à la suite de l'ouverture des robinets d'une cuisinière à gaz aux fins de suicide (consid. 2). Art. 41 ss CO. <em>Responsabilité</em> des héritiers de l'auteur d'un acte illicite, lorsque le dommage consécutif à cet acte ne s'est produit qu'après le décès (consid. 3). Art. 54 al. 1 CO. Nature de la <em>responsabilité</em> fondée sur cette disposition. Fixation des dommages-intérêts compte tenu de la situation financière des parties, le responsable étant couvert par une assurance de la <em>responsabilité</em> <em>civile</em> et le lésé par une assurance immobilière, inadaptée à la valeur du bâtiment endommagé (consid. 4).\",\n      \"text\": \"En juillet 1972, X. était assuré contre les conséquences de sa <em>responsabilité</em> <em>civile</em> de particulier - soit également la <em>responsabilité</em> <em>civile</em> de son épouse - auprès de l'Union Suisse, Compagnie générale <em>civile</em>. La police d'assurance <em>responsabilité</em> <em>civile</em> contractée par X. auprès de l'Union Suisse, pour une somme de 500'000 fr., BGE 103 II 330 S. 338\\ncouvre la <em>responsabilité</em> <em>civile</em> de son épouse, et cela notamment\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1977-12-06\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-103-II-330_1977-12-06.html\",\n      \"original_url\": null,\n      \"sort\": [\n        37.20365,\n        \"CH_BGE_004_BGE-103-II-330_1977-12-06\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    37.20365,\n    \"CH_BGE_004_BGE-103-II-330_1977-12-06\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 27008,
+        "hits": [
+          {
+            "id": "CH_BGE_004_BGE-83-II-414_1957-10-09",
+            "title": "Tribunal fédéral (ATF) Partie II 09.10.1957 BGE 83 II 414",
+            "abstract": "Regeste\n<br><em>Responsabilité</em> des entreprises d'assurances chargées de réparer les dommages causés par l'emploi de véhicules automobiles étrangers. Art. 5 al. 2 ACF du 22 juin 1948. Dans quelle mesure cette <em>responsabilité</em> est-elle subsidiaire?",
+            "text": "Extrait de l'arrêt de la Ire Cour <em>civile</em> du 9 octobre 1957 dans la cause La Zurich, compagnie générale d'assurance contre les accidents et la <em>responsabilité</em> <em>civile</em>, et Olivares contre Gertrud et Kurt Weisskopf L'assurance-<em>responsabilité</em> <em>civile</em> étant une assurance contre les dommages, la <em>responsabilité</em> subsidiaire Or ce n'est pas ce préjudice qui est couvert par l'assurance-<em>responsabilité</em> <em>civile</em>; même si le lésé a <em>civile</em> de Gysin.",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1957-10-09",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-83-II-414_1957-10-09.html",
+            "original_url": null,
+            "sort": [37.393967, "CH_BGE_004_BGE-83-II-414_1957-10-09"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-103-II-330_1977-12-06",
+            "title": "Tribunal fédéral (ATF) Partie II 06.12.1977 BGE 103 II 330",
+            "abstract": "Regeste\n<br>Art. 97, art. 261, art. 271 CO. <em>Responsabilité</em> du preneur pour le dommage causé par une explosion survenue dans l'appartement loué, à la suite de l'ouverture des robinets d'une cuisinière à gaz aux fins de suicide (consid. 2). Art. 41 ss CO. <em>Responsabilité</em> des héritiers de l'auteur d'un acte illicite, lorsque le dommage consécutif à cet acte ne s'est produit qu'après le décès (consid. 3). Art. 54 al. 1 CO. Nature de la <em>responsabilité</em> fondée sur cette disposition. Fixation des dommages-intérêts compte tenu de la situation financière des parties, le responsable étant couvert par une assurance de la <em>responsabilité</em> <em>civile</em> et le lésé par une assurance immobilière, inadaptée à la valeur du bâtiment endommagé (consid. 4).",
+            "text": "En juillet 1972, X. était assuré contre les conséquences de sa <em>responsabilité</em> <em>civile</em> de particulier - soit également la <em>responsabilité</em> <em>civile</em> de son épouse - auprès de l'Union Suisse, Compagnie générale <em>civile</em>. La police d'assurance <em>responsabilité</em> <em>civile</em> contractée par X. auprès de l'Union Suisse, pour une somme de 500'000 fr., BGE 103 II 330 S. 338\ncouvre la <em>responsabilité</em> <em>civile</em> de son épouse, et cela notamment",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1977-12-06",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-103-II-330_1977-12-06.html",
+            "original_url": null,
+            "sort": [37.20365, "CH_BGE_004_BGE-103-II-330_1977-12-06"]
+          }
+        ],
+        "next_cursor": [37.20365, "CH_BGE_004_BGE-103-II-330_1977-12-06"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-typecheck-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: Formato (Prettier)
+        run: pnpm format
+
+      - name: Lint (ESLint)
+        run: pnpm lint
+
+      - name: Typecheck (tsc --noEmit por paquete)
+        run: pnpm typecheck
+
+      - name: Tests (Vitest)
+        run: pnpm test
+        env:
+          NODE_ENV: test
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: lint-typecheck-test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build de la imagen de apps/mcp-server
+        run: docker build -f apps/mcp-server/Dockerfile -t swiss-legal-mcp-server:ci .

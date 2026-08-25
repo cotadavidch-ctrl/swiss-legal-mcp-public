@@ -1,0 +1,962 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "tools": [
+        {
+          "name": "search",
+          "title": "Entscheide durchsuchen",
+          "description": "Volltext-Suche in Schweizer Gerichtsurteilen, Gerichtsentscheiden, Rechtsprechung und Swiss case law aus entscheidsuche.ch. Geeignet für Entscheide des Bundesgerichts (BGer, BGE) und kantonaler Gerichte wie Kantonsgericht, Obergericht oder Verwaltungsgericht.\n\nTypische Anwendungsfälle:\n  - Bundesgerichtsurteil, BGE oder Gerichtsurteil thematisch suchen\n  - Schweizer Rechtsprechung zu Mietrecht, ZGB, OR, StGB oder BV finden\n  - Geschäftsnummern, Urteilsnummern oder Zitate verifizieren\n  - Verwandte Tools: fetch_document, search_by_case_number, list_hierarchy, list_facets\n\nSuchsyntax (Lucene-Query-String):\n  - Phrasen-/Geschäftsnummer-Suche: \"BGE 142 III 1\" (mit Anführungszeichen)\n  - Boolesche Operatoren: AND, OR, NOT (bzw. +, -)\n  - Wildcards: * und ?\n  - Default-Operator zwischen Begriffen ist AND.\n\nFilter werden mit AND verknüpft. Hierarchie-IDs aus `list_hierarchy` oder `list_facets` übernehmen.\n\nPaginierung: nach dem ersten Aufruf den `next_cursor`-Wert aus der Antwort als `search_after` im nächsten Aufruf übergeben.",
+          "inputSchema": {
+            "$defs": {
+              "Language": {
+                "description": "Verfügbare Sprachen der Entscheide.",
+                "enum": ["de", "fr", "it"],
+                "title": "Language",
+                "type": "string"
+              }
+            },
+            "properties": {
+              "query": {
+                "default": "*",
+                "description": "Volltext-Anfrage. \"...\" für Phrasen, AND/OR/NOT für Boolesche Verknüpfungen, * und ? für Wildcards. \"*\" matcht alles.",
+                "title": "Query",
+                "type": "string"
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Language"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale bevorzugte Sprache für Highlight/Anzeige (de, fr, it). Ohne Angabe wird das erste vorhandene Sprachfeld zurückgegeben — es findet KEINE Filterung statt; dafür `language_filter` setzen."
+              },
+              "sort": {
+                "default": "relevance",
+                "description": "Optionale Sortierung: 'relevance' | 'date' (Entscheiddatum) | 'scrapedate'. Default ist 'relevance'.",
+                "enum": ["relevance", "date", "scrapedate"],
+                "title": "Sort",
+                "type": "string"
+              },
+              "size": {
+                "default": 20,
+                "description": "Treffer pro Seite (1–100).",
+                "maximum": 100,
+                "minimum": 1,
+                "title": "Size",
+                "type": "integer"
+              },
+              "search_after": {
+                "anyOf": [
+                  {
+                    "items": {},
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Cursor aus `next_cursor` der vorigen Antwort.",
+                "title": "Search After"
+              },
+              "decision_date_from": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Untergrenze Entscheiddatum (YYYY-MM-DD, inklusive).",
+                "title": "Decision Date From"
+              },
+              "decision_date_to": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Obergrenze Entscheiddatum (YYYY-MM-DD, inklusive).",
+                "title": "Decision Date To"
+              },
+              "scrape_date_from": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Untergrenze Scrape-Datum (YYYY-MM-DD, inklusive).",
+                "title": "Scrape Date From"
+              },
+              "scrape_date_to": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Obergrenze Scrape-Datum (YYYY-MM-DD, inklusive).",
+                "title": "Scrape Date To"
+              },
+              "hierarchy": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Liste von Hierarchie-IDs (Kanton/Gericht/Kammer). Mehrere IDs werden mit OR verknüpft; mit anderen Filtern AND.",
+                "title": "Hierarchy"
+              },
+              "language_filter": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "$ref": "#/$defs/Language"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Filter nach Dokumentsprache(n).",
+                "title": "Language Filter"
+              },
+              "include_aggregations": {
+                "default": false,
+                "description": "Aggregationen mitliefern (Verteilungen über die Treffer).",
+                "title": "Include Aggregations",
+                "type": "boolean"
+              }
+            },
+            "title": "searchArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "$defs": {
+              "AggregationBucket": {
+                "properties": {
+                  "key": {
+                    "title": "Key"
+                  },
+                  "count": {
+                    "title": "Count",
+                    "type": "integer"
+                  }
+                },
+                "required": ["key", "count"],
+                "title": "AggregationBucket",
+                "type": "object"
+              },
+              "SearchHit": {
+                "description": "Ein einzelner Such-Treffer.",
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "default": "",
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "default": "",
+                    "title": "Abstract",
+                    "type": "string"
+                  },
+                  "text": {
+                    "default": "",
+                    "description": "Highlight-Auszug aus dem Volltext.",
+                    "title": "Text",
+                    "type": "string"
+                  },
+                  "meta": {
+                    "default": "",
+                    "title": "Meta",
+                    "type": "string"
+                  },
+                  "canton": {
+                    "default": "",
+                    "title": "Canton",
+                    "type": "string"
+                  },
+                  "court": {
+                    "default": "",
+                    "description": "Gericht (abgeleitet aus der ID).",
+                    "title": "Court",
+                    "type": "string"
+                  },
+                  "decision_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Decision Date"
+                  },
+                  "scrape_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Scrape Date"
+                  },
+                  "is_pdf": {
+                    "default": false,
+                    "title": "Is Pdf",
+                    "type": "boolean"
+                  },
+                  "document_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Direkter Download-Link auf das Originaldokument.",
+                    "title": "Document Url"
+                  },
+                  "original_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "URL der ursprünglichen Quell-Webseite.",
+                    "title": "Original Url"
+                  },
+                  "sort": {
+                    "anyOf": [
+                      {
+                        "items": {},
+                        "type": "array"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Sort-Werte des Treffers (für search_after).",
+                    "title": "Sort"
+                  }
+                },
+                "required": ["id"],
+                "title": "SearchHit",
+                "type": "object"
+              }
+            },
+            "description": "Antwort des `search`-Tools.",
+            "properties": {
+              "total": {
+                "title": "Total",
+                "type": "integer"
+              },
+              "hits": {
+                "items": {
+                  "$ref": "#/$defs/SearchHit"
+                },
+                "title": "Hits",
+                "type": "array"
+              },
+              "next_cursor": {
+                "anyOf": [
+                  {
+                    "items": {},
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Cursor für die nächste Seite. Im nächsten Request als `search_after` wieder mitgeben. None, wenn keine weiteren Treffer vorhanden sind.",
+                "title": "Next Cursor"
+              },
+              "aggregations": {
+                "anyOf": [
+                  {
+                    "additionalProperties": {
+                      "items": {
+                        "$ref": "#/$defs/AggregationBucket"
+                      },
+                      "type": "array"
+                    },
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Aggregations"
+              }
+            },
+            "required": ["total", "hits"],
+            "title": "SearchResponse",
+            "type": "object"
+          }
+        },
+        {
+          "name": "search_by_case_number",
+          "title": "Nach Geschäftsnummer suchen",
+          "description": "Spezialsuche für Geschäftsnummern, Urteilsnummern und BGE-Zitate in Schweizer Gerichtsurteilen. Dieses Tool setzt die angegebene Geschäftsnummer automatisch in Anführungszeichen und startet damit eine exakte Phrasensuche, zum Beispiel für 'BGE 142 III 1', '5A_396/2015' oder ähnliche Referenzen aus Bundesgericht, BGer, BGE und kantonaler Rechtsprechung.",
+          "inputSchema": {
+            "$defs": {
+              "Language": {
+                "description": "Verfügbare Sprachen der Entscheide.",
+                "enum": ["de", "fr", "it"],
+                "title": "Language",
+                "type": "string"
+              }
+            },
+            "properties": {
+              "case_number": {
+                "description": "Geschäftsnummer (Aktenzeichen), BGE-Zitat oder Urteilsnummer, z.B. 'BGE 142 III 1' oder '5A_396/2015'.",
+                "title": "Case Number",
+                "type": "string"
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Language"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale bevorzugte Sprache für Highlight/Anzeige (de, fr, it). Ohne Angabe wird das erste vorhandene Sprachfeld zurückgegeben — es findet KEINE Filterung statt; dafür `language_filter` setzen."
+              },
+              "sort": {
+                "default": "relevance",
+                "description": "Optionale Sortierung: 'relevance' | 'date' (Entscheiddatum) | 'scrapedate'. Default ist 'relevance'.",
+                "enum": ["relevance", "date", "scrapedate"],
+                "title": "Sort",
+                "type": "string"
+              },
+              "size": {
+                "default": 20,
+                "description": "Treffer pro Seite (1–100).",
+                "maximum": 100,
+                "minimum": 1,
+                "title": "Size",
+                "type": "integer"
+              },
+              "search_after": {
+                "anyOf": [
+                  {
+                    "items": {},
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Cursor aus `next_cursor` der vorigen Antwort.",
+                "title": "Search After"
+              },
+              "decision_date_from": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Untergrenze Entscheiddatum (YYYY-MM-DD).",
+                "title": "Decision Date From"
+              },
+              "decision_date_to": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Obergrenze Entscheiddatum (YYYY-MM-DD).",
+                "title": "Decision Date To"
+              },
+              "scrape_date_from": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Untergrenze Scrape-Datum (YYYY-MM-DD).",
+                "title": "Scrape Date From"
+              },
+              "scrape_date_to": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Obergrenze Scrape-Datum (YYYY-MM-DD).",
+                "title": "Scrape Date To"
+              },
+              "hierarchy": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Hierarchie-IDs für Kanton/Gericht/Kammer.",
+                "title": "Hierarchy"
+              },
+              "language_filter": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "$ref": "#/$defs/Language"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale Filter nach Dokumentsprache(n).",
+                "title": "Language Filter"
+              },
+              "include_aggregations": {
+                "default": false,
+                "description": "Optional Aggregationen mitliefern.",
+                "title": "Include Aggregations",
+                "type": "boolean"
+              }
+            },
+            "required": ["case_number"],
+            "title": "search_by_case_numberArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "$defs": {
+              "AggregationBucket": {
+                "properties": {
+                  "key": {
+                    "title": "Key"
+                  },
+                  "count": {
+                    "title": "Count",
+                    "type": "integer"
+                  }
+                },
+                "required": ["key", "count"],
+                "title": "AggregationBucket",
+                "type": "object"
+              },
+              "SearchHit": {
+                "description": "Ein einzelner Such-Treffer.",
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "default": "",
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "default": "",
+                    "title": "Abstract",
+                    "type": "string"
+                  },
+                  "text": {
+                    "default": "",
+                    "description": "Highlight-Auszug aus dem Volltext.",
+                    "title": "Text",
+                    "type": "string"
+                  },
+                  "meta": {
+                    "default": "",
+                    "title": "Meta",
+                    "type": "string"
+                  },
+                  "canton": {
+                    "default": "",
+                    "title": "Canton",
+                    "type": "string"
+                  },
+                  "court": {
+                    "default": "",
+                    "description": "Gericht (abgeleitet aus der ID).",
+                    "title": "Court",
+                    "type": "string"
+                  },
+                  "decision_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Decision Date"
+                  },
+                  "scrape_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Scrape Date"
+                  },
+                  "is_pdf": {
+                    "default": false,
+                    "title": "Is Pdf",
+                    "type": "boolean"
+                  },
+                  "document_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Direkter Download-Link auf das Originaldokument.",
+                    "title": "Document Url"
+                  },
+                  "original_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "URL der ursprünglichen Quell-Webseite.",
+                    "title": "Original Url"
+                  },
+                  "sort": {
+                    "anyOf": [
+                      {
+                        "items": {},
+                        "type": "array"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Sort-Werte des Treffers (für search_after).",
+                    "title": "Sort"
+                  }
+                },
+                "required": ["id"],
+                "title": "SearchHit",
+                "type": "object"
+              }
+            },
+            "description": "Antwort des `search`-Tools.",
+            "properties": {
+              "total": {
+                "title": "Total",
+                "type": "integer"
+              },
+              "hits": {
+                "items": {
+                  "$ref": "#/$defs/SearchHit"
+                },
+                "title": "Hits",
+                "type": "array"
+              },
+              "next_cursor": {
+                "anyOf": [
+                  {
+                    "items": {},
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Cursor für die nächste Seite. Im nächsten Request als `search_after` wieder mitgeben. None, wenn keine weiteren Treffer vorhanden sind.",
+                "title": "Next Cursor"
+              },
+              "aggregations": {
+                "anyOf": [
+                  {
+                    "additionalProperties": {
+                      "items": {
+                        "$ref": "#/$defs/AggregationBucket"
+                      },
+                      "type": "array"
+                    },
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Aggregations"
+              }
+            },
+            "required": ["total", "hits"],
+            "title": "SearchResponse",
+            "type": "object"
+          }
+        },
+        {
+          "name": "fetch_document",
+          "title": "Entscheid abrufen",
+          "description": "Fetch / retrieve eines einzelnen Schweizer Gerichtsentscheids, Gerichtsurteils oder Bundesgerichtsentscheids anhand seiner Dokument-ID (`_id`). Liefert immer den vollständigen Volltext des Entscheids sowie Metadaten, Titel, Abstract und Links zurück. Geeignet, wenn nach einer Suche der ganze Entscheid gelesen oder weiterverarbeitet werden soll.",
+          "inputSchema": {
+            "$defs": {
+              "Language": {
+                "description": "Verfügbare Sprachen der Entscheide.",
+                "enum": ["de", "fr", "it"],
+                "title": "Language",
+                "type": "string"
+              }
+            },
+            "properties": {
+              "id": {
+                "description": "Dokument-ID (z.B. 'CH_BGer_001_5A_123_2024_2024-06-15').",
+                "title": "Id",
+                "type": "string"
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Language"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optionale bevorzugte Sprache für Titel/Abstract. Ohne Angabe wird das erste vorhandene Sprachfeld zurückgegeben."
+              }
+            },
+            "required": ["id"],
+            "title": "fetch_documentArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "$defs": {
+              "SearchHit": {
+                "description": "Ein einzelner Such-Treffer.",
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "title": {
+                    "default": "",
+                    "title": "Title",
+                    "type": "string"
+                  },
+                  "abstract": {
+                    "default": "",
+                    "title": "Abstract",
+                    "type": "string"
+                  },
+                  "text": {
+                    "default": "",
+                    "description": "Highlight-Auszug aus dem Volltext.",
+                    "title": "Text",
+                    "type": "string"
+                  },
+                  "meta": {
+                    "default": "",
+                    "title": "Meta",
+                    "type": "string"
+                  },
+                  "canton": {
+                    "default": "",
+                    "title": "Canton",
+                    "type": "string"
+                  },
+                  "court": {
+                    "default": "",
+                    "description": "Gericht (abgeleitet aus der ID).",
+                    "title": "Court",
+                    "type": "string"
+                  },
+                  "decision_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Decision Date"
+                  },
+                  "scrape_date": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "ISO-Datum YYYY-MM-DD.",
+                    "title": "Scrape Date"
+                  },
+                  "is_pdf": {
+                    "default": false,
+                    "title": "Is Pdf",
+                    "type": "boolean"
+                  },
+                  "document_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Direkter Download-Link auf das Originaldokument.",
+                    "title": "Document Url"
+                  },
+                  "original_url": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "URL der ursprünglichen Quell-Webseite.",
+                    "title": "Original Url"
+                  },
+                  "sort": {
+                    "anyOf": [
+                      {
+                        "items": {},
+                        "type": "array"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "description": "Sort-Werte des Treffers (für search_after).",
+                    "title": "Sort"
+                  }
+                },
+                "required": ["id"],
+                "title": "SearchHit",
+                "type": "object"
+              }
+            },
+            "properties": {
+              "result": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/SearchHit"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": ["result"],
+            "title": "fetch_documentOutput",
+            "type": "object"
+          }
+        },
+        {
+          "name": "list_hierarchy",
+          "title": "Hierarchie-Buckets",
+          "description": "Liefert die verfügbaren Hierarchie-IDs für Schweizer Kantone, Gerichte und Kammern mit Trefferzahlen. Hilfreich, um Bundesgericht, kantonale Gerichte, Obergerichte oder Verwaltungsgerichte für die weitere Suche einzugrenzen.",
+          "inputSchema": {
+            "properties": {
+              "query": {
+                "default": "*",
+                "description": "Optionale Volltext-Anfrage.",
+                "title": "Query",
+                "type": "string"
+              },
+              "size": {
+                "default": 1000,
+                "description": "Maximale Anzahl Einträge.",
+                "maximum": 10000,
+                "minimum": 1,
+                "title": "Size",
+                "type": "integer"
+              }
+            },
+            "title": "list_hierarchyArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "$defs": {
+              "HierarchyEntry": {
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "count": {
+                    "title": "Count",
+                    "type": "integer"
+                  }
+                },
+                "required": ["id", "count"],
+                "title": "HierarchyEntry",
+                "type": "object"
+              }
+            },
+            "properties": {
+              "entries": {
+                "items": {
+                  "$ref": "#/$defs/HierarchyEntry"
+                },
+                "title": "Entries",
+                "type": "array"
+              }
+            },
+            "required": ["entries"],
+            "title": "HierarchyResponse",
+            "type": "object"
+          }
+        },
+        {
+          "name": "list_facets",
+          "title": "Facetten-Baum (lokalisiert)",
+          "description": "Hierarchischer Facetten-Baum mit lokalisierten Bezeichnungen für Kantone, Gerichte und Kammern. Die `id`-Felder können im `hierarchy`-Filter der Suche verwendet werden.",
+          "inputSchema": {
+            "properties": {},
+            "title": "list_facetsArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "properties": {
+              "result": {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "title": "Result",
+                "type": "array"
+              }
+            },
+            "required": ["result"],
+            "title": "list_facetsOutput",
+            "type": "object"
+          }
+        },
+        {
+          "name": "server_info",
+          "title": "Server-Info",
+          "description": "Versionsinfo und konfigurierte Endpunkt-URLs des MCP-Servers für Schweizer Rechtsprechung und Gerichtsentscheide.",
+          "inputSchema": {
+            "properties": {},
+            "title": "server_infoArguments",
+            "type": "object"
+          },
+          "outputSchema": {
+            "additionalProperties": true,
+            "title": "server_infoDictOutput",
+            "type": "object"
+          }
+        }
+      ]
+    }
+  }
+}

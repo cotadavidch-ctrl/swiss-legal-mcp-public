@@ -1,0 +1,127 @@
+{
+  "content": [
+    {
+      "meta": {
+        "id": "5ecd45f9-b234-493b-8e5f-d435321f4743",
+        "creationDate": "2026-07-23T08:49:56.117Z",
+        "updateDate": "2026-07-26T22:40:52.458Z",
+        "rubric": "KK",
+        "subRubric": "KK04",
+        "language": "fr",
+        "registrationOffice": {
+          "id": "fbbe7886-a446-11e8-99a2-0050569d3c43",
+          "displayName": "Office des faillites de l'Etat Genève",
+          "street": "Route de Chêne",
+          "streetNumber": "54",
+          "swissZipCode": "1211",
+          "town": "Genève 6",
+          "containsPostOfficeBox": true,
+          "postOfficeBox": {
+            "number": null,
+            "swissZipCode": null,
+            "town": null
+          },
+          "municipalityId": null,
+          "uid": null
+        },
+        "publicationOriginator": null,
+        "publicationNumber": "KK04-0000059057",
+        "publicationState": "PUBLISHED",
+        "publicationDate": "2026-07-27T00:00:00.000Z",
+        "expirationDate": "2031-07-27T00:00:00.000Z",
+        "primaryTenantCode": "shab",
+        "onBehalfOf": null,
+        "invoiceAddressId": null,
+        "legalRemedy": "Le créancier qui conteste l’état de collocation parce que sa production a été écartée en tout ou en partie ou parce qu’elle n’a pas été colloquée au rang qu’il revendique intente action contre la masse devant le tribunal du lieu de la faillite, dans les 20 jours qui suivent la publication du dépôt de l’état de collocation. S’il conteste une créance ou le rang auquel elle a été colloquée, il dirige l’action contre le créancier concerné.  <br />Publication selon les art. 221, 249 et 250 LP.",
+        "cantons": ["GE"],
+        "secondaryTenants": [
+          {
+            "tenantCode": "kabge",
+            "publicationDate": "2026-07-27T00:00:00.000Z"
+          }
+        ],
+        "repeatedPublications": null,
+        "customsStampImages": [],
+        "title": {
+          "de": "Kollokationsplan und Inventar [PERSONA REDACTADA], ausgeschlagene Erbschaft",
+          "en": "Collocation plan and inventory [REDACTED PERSON], refused estate",
+          "it": "Graduatoria e inventario [PERSONA REDATTA], eredità rifiutata",
+          "fr": "Etat de collocation et inventaire [PERSONNE CAVIARDEE], succession répudiée"
+        },
+        "dossierReference": null,
+        "copyDeadline": null
+      },
+      "links": [],
+      "attachments": [],
+      "content": {
+        "debtor": {
+          "selectType": "person",
+          "person": {
+            "prename": "REDACTED",
+            "name": "REDACTED",
+            "countryOfOrigin": {
+              "name": {
+                "de": "Schweiz",
+                "fr": "Suisse",
+                "it": "Svizzera",
+                "en": "Switzerland"
+              },
+              "isoCode": "CH"
+            },
+            "dateOfBirth": "1900-01-01T00:00:00.000Z",
+            "dateOfDeath": "2000-01-01T00:00:00.000Z",
+            "residence": {
+              "selectType": "switzerland"
+            },
+            "addressSwitzerland": {
+              "street": "REDACTED",
+              "houseNumber": "0",
+              "swissZipCode": "0000",
+              "town": "REDACTED"
+            }
+          }
+        },
+        "claimOfCreditors": {
+          "daysAfterPublication": 20,
+          "entryDeadline": "2026-08-16T00:00:00.000Z"
+        },
+        "registrationOfficeAndCirculationAuthority": "Office cantonal des faillites, route de Chêne 54, case postale, 1211 Genève 6",
+        "root": {
+          "patterns": {
+            "title": {
+              "de": "{root.content.typeOfCirculation.selectType=='scheduleOfClaims'?'Kollokationsplan ':''}{root.content.typeOfCirculation.selectType=='scheduleOfClaimsAndInventory'?'Kollokationsplan und Inventar ':''}{root.content.typeOfCirculation.selectType=='inventory'?'Inventar ':''}{root.content.debtor.companies.company.name}{root.content.debtor.person.prename} {root.content.debtor.person.name}{root.content.addition == 'legacy'?', Erbschaft':''}{root.content.addition == 'refusedLegacy'?', ausgeschlagene Erbschaft':''}{root.content.addition == 'custom' && root.content.additionCustom?', ':''}{root.content.additionCustom}",
+              "fr": "{root.content.typeOfCirculation.selectType=='scheduleOfClaims'?'Etat de collocation ':''}{root.content.typeOfCirculation.selectType=='scheduleOfClaimsAndInventory'?'Etat de collocation et inventaire ':''}{root.content.typeOfCirculation.selectType=='inventory'?'Inventaire ':''}{root.content.debtor.companies.company.name}{root.content.debtor.person.prename} {root.content.debtor.person.name}{root.content.addition == 'legacy'?', succession':''}{root.content.addition == 'refusedLegacy'?', succession répudiée':''}{root.content.addition == 'custom' && root.content.additionCustom?', ':''}{root.content.additionCustom}",
+              "it": "{root.content.typeOfCirculation.selectType=='scheduleOfClaims'?'Graduatoria ':''}{root.content.typeOfCirculation.selectType=='scheduleOfClaimsAndInventory'?'Graduatoria e inventario ':''}{root.content.typeOfCirculation.selectType=='inventory'?'Inventario ':''}{root.content.debtor.companies.company.name}{root.content.debtor.person.prename} {root.content.debtor.person.name}{root.content.addition == 'legacy'?', eredità':''}{root.content.addition == 'refusedLegacy'?', eredità rifiutata':''}{root.content.addition == 'custom' && root.content.additionCustom?', ':''}{root.content.additionCustom}",
+              "en": "{root.content.typeOfCirculation.selectType=='scheduleOfClaims'?'Collocation plan ':''}{root.content.typeOfCirculation.selectType=='scheduleOfClaimsAndInventory'?'Collocation plan and inventory ':''}{root.content.typeOfCirculation.selectType=='inventory'?'Inventory ':''}{root.content.debtor.companies.company.name}{root.content.debtor.person.prename} {root.content.debtor.person.name}{root.content.addition == 'legacy'?', estate':''}{root.content.addition == 'refusedLegacy'?', refused estate':''}{root.content.addition == 'custom' && root.content.additionCustom?', ':''}{root.content.additionCustom}"
+            },
+            "municipalities": {
+              "municipality1": "{root.content.debtor.companies.company.address.swissZipCode}_{root.content.debtor.companies.company.address.town}",
+              "municipality2": "{root.content.debtor.person.addressSwitzerland.swissZipCode}_{root.content.debtor.person.addressSwitzerland.town}"
+            },
+            "uid": {
+              "uid1": "{root.content.debtor.companies.company.uidOrganisationId}"
+            }
+          }
+        },
+        "contactPointForClaimAndAppeal": "Tribunal de première instance, rue de l'Athénée 6-8, case postale 3736, 1211 Genève 3",
+        "typeOfCirculation": {
+          "selectType": "scheduleOfClaimsAndInventory"
+        },
+        "inventory": {
+          "daysAfterPublication": 10,
+          "entryDeadline": "2026-08-06T00:00:00.000Z"
+        },
+        "contactPointForComplaints": "Cour de justice, Chambre de surveillance des OPF, place du Bourg-de-Four 1, case postale 3108, 1211 Genève 3",
+        "remarks": "REDACTED",
+        "addition": "refusedLegacy"
+      },
+      "commented": false
+    }
+  ],
+  "total": 213826,
+  "pageRequest": {
+    "sortOrders": [],
+    "page": 0,
+    "size": 1
+  }
+}

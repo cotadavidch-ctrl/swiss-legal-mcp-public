@@ -1,0 +1,252 @@
+{
+  "status": "PARTIAL",
+  "created_at": "2026-08-06",
+  "source_policy": {
+    "jurisprudence_source": "Swiss Legal MCP official-source-first resolution",
+    "primary_official_provider": "swiss_federal_supreme_court",
+    "legislation_source": "Fedlex via Swiss Legal MCP",
+    "aggregators_used_as_primary_source": false,
+    "individual_authorship_inferred": false
+  },
+  "target": {
+    "requested_minimum": 50,
+    "requested_objective": 60,
+    "requested_maximum": 70,
+    "verified_full_text_cases_included": 8,
+    "status_reason": "The run verified 8 official full-text decisions suitable for cautious institutional style analysis. The requested 50-case minimum was not reached, so the challenge output is partial."
+  },
+  "selected_profile": {
+    "name": "II. zivilrechtliche Abteilung des Schweizerischen Bundesgerichts",
+    "language": "de",
+    "style_type": "institutional",
+    "individual_judge_style": "not_supported"
+  },
+  "statutes_verified": [
+    {
+      "short_name": "BGG",
+      "title": "Bundesgesetz vom 17. Juni 2005 ueber das Bundesgericht",
+      "systematic_number": "173.110",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/2006/218/20260401/de",
+      "version_date": "2026-04-01",
+      "official_source_url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "verification_status": "official_fedlex_record_verified"
+    },
+    {
+      "short_name": "BV",
+      "title": "Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999",
+      "systematic_number": "101",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/1999/404/20240303/de",
+      "version_date": "2024-03-03",
+      "official_source_url": "https://www.fedlex.admin.ch/eli/cc/1999/404/de",
+      "verification_status": "official_fedlex_record_verified"
+    },
+    {
+      "short_name": "ZGB",
+      "title": "Schweizerisches Zivilgesetzbuch vom 10. Dezember 1907",
+      "systematic_number": "210",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/24/233_245_233/20260701/de",
+      "version_date": "2026-07-01",
+      "official_source_url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de",
+      "verification_status": "official_fedlex_record_verified"
+    },
+    {
+      "short_name": "ZPO",
+      "title": "Schweizerische Zivilprozessordnung vom 19. Dezember 2008",
+      "systematic_number": "272",
+      "eli": "https://fedlex.data.admin.ch/eli/cc/2010/262/20260701/de",
+      "version_date": "2026-07-01",
+      "official_source_url": "https://www.fedlex.admin.ch/eli/cc/2010/262/de",
+      "verification_status": "official_fedlex_record_verified"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "BGer-5A_16-2007",
+      "case_number": "5A_16/2007",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2007-04-11",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_16/2007&rank=1&azaclir=aza&highlight_docid=aza://11-04-2007-5A_16-2007&number_of_ranks=8",
+      "document_id": "doc_462f53a916f270067d767a729bd5bab6",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Pfaendung / Schuldbetreibung; Beschwerde in Zivilsachen",
+      "composition_verified": true,
+      "composition": "Raselli, Escher, Hohl; Gerichtsschreiber Levante",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1.1", "1.2", "1.3", "2", "3", "4", "5"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_36-2007",
+      "case_number": "5A_36/2007",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2007-08-20",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_36/2007&rank=1&azaclir=aza&highlight_docid=aza://20-08-2007-5A_36-2007",
+      "document_id": "doc_533277f0e2e1e8034c43646c9b7f4e55",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Eheschutz; joined proceedings including 5A_391/2007",
+      "composition_verified": true,
+      "composition": "Raselli, Escher, Meyer, Hohl, Marazzi; Gerichtsschreiber Zbinden",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1", "2", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "5"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_388-2015",
+      "case_number": "5A_388/2015",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2015-09-07",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_388/2015&rank=1&azaclir=aza&highlight_docid=aza://07-09-2015-5A_388-2015",
+      "document_id": "doc_7235825b720461148b031862f763990d",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Erwachsenenschutz / Vertretungsbeistandschaft / KESB standing",
+      "composition_verified": true,
+      "composition": "von Werdt, Marazzi, Herrmann, Schoebi, Bovey; Gerichtsschreiber Zbinden",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1", "2", "3", "4", "5", "6"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_386-2016",
+      "case_number": "5A_386/2016",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2016-10-27",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_386/2016&rank=1&azaclir=aza&highlight_docid=aza://27-10-2016-5A_386-2016&number_of_ranks=6",
+      "document_id": "doc_4b5156099db9c6a8d0b979cd35835c1f",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Medizinische Nachbetreuung / Erwachsenenschutz",
+      "composition_verified": true,
+      "composition": "von Werdt, Herrmann, Schoebi, Bovey, Th. Geiser; Gerichtsschreiber Zbinden",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1", "2.1", "2.2", "2.3", "3.1", "3.2", "4"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_366-2016",
+      "case_number": "5A_366/2016",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2016-11-21",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_366/2016&rank=1&azaclir=aza&highlight_docid=aza://21-11-2016-5A_366-2016&number_of_ranks=5",
+      "document_id": "doc_ae9ec3cb4ef97a716bb3d490c95c1eac",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Revisionsverfahren / Stockwerkeigentum",
+      "composition_verified": true,
+      "composition": "von Werdt, Herrmann, Bovey; Gerichtsschreiber Moeckli",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1", "2", "3", "4", "5", "6", "7"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_877-2014",
+      "case_number": "5A_877/2014",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2015-10-05",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_877/2014&rank=1&azaclir=aza&highlight_docid=aza://05-10-2015-5A_877-2014&number_of_ranks=5",
+      "document_id": "doc_9dc2755d0b3f2feda4aa04b72306ebd6",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Definitive Rechtsoeffnung / arbitral award enforcement",
+      "composition_verified": true,
+      "composition": "von Werdt, Marazzi, Herrmann; Gerichtsschreiber Levante",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1.1", "1.2", "2", "3", "4.1", "4.2", "4.3", "4.4", "4.5", "5"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_250-2023",
+      "case_number": "5A_250/2023",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2023-05-12",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_250/2023&rank=1&azaclir=aza&highlight_docid=aza://12-05-2023-5A_250-2023&number_of_ranks=322",
+      "document_id": "doc_d94f9798067ec8a3d6f0dfb1fcc8256b",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Definitive Rechtsoeffnung / insufficient complaint reasoning",
+      "composition_verified": true,
+      "composition": "Escher; Gerichtsschreiber Zingg",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1", "2", "3", "4", "5"],
+      "inclusion_status": "included"
+    },
+    {
+      "case_id": "BGer-5A_936-2022",
+      "case_number": "5A_936/2022",
+      "court": "Swiss Federal Supreme Court",
+      "division": "II. zivilrechtliche Abteilung",
+      "date": "2023-11-08",
+      "language": "de",
+      "official_source": "search.bger.ch",
+      "url_or_id": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=5A_936/2022&rank=1&azaclir=aza&highlight_docid=aza://08-11-2023-5A_936-2022&number_of_ranks=47",
+      "document_id": "doc_7a7459154ffba632fac82c8cf70fb312",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "subject": "Unterhalt und Kinderbelange",
+      "composition_verified": true,
+      "composition": "Herrmann, von Werdt, Schoebi, Bovey, De Rossa; Gerichtsschreiberin Conrad",
+      "judge_or_author_attribution": "not_supported",
+      "considerations_analyzed": ["1.1", "1.2", "2", "3", "4.3", "5.1", "5.2", "5.3", "6"],
+      "inclusion_status": "included"
+    }
+  ],
+  "comparators": [
+    {
+      "case_number": "4A_232/2007",
+      "court": "Swiss Federal Supreme Court",
+      "division": "I. zivilrechtliche Abteilung",
+      "date": "2007-10-02",
+      "language": "de",
+      "document_id": "doc_6a87db0792e3504ac3f1a1c5a7070d98",
+      "identity_status": "identity_verified",
+      "full_text_status": "full_text_verified_official",
+      "reason": "Civil-division comparator only; not part of selected II. civil division profile."
+    }
+  ],
+  "excluded": [
+    {
+      "reference": "BGE 133 III 350",
+      "reason": "Official BGE excerpt verified, but extraction reported missing dispositive; not used as full-text judgment."
+    },
+    {
+      "reference": "BGE 134 III 332",
+      "reason": "Official BGE excerpt verified, but extraction reported missing dispositive; not used as full-text judgment."
+    },
+    {
+      "reference": "5A_391/2007",
+      "reason": "Metadata-only / invalid download URL in standalone resolution. Treated only as joined proceeding within 5A_36/2007."
+    },
+    {
+      "reference": "5A_154/2014",
+      "reason": "Official source found, but requested German profile received French document and completeness was partial with language mismatch warning."
+    },
+    {
+      "reference": "5A_54/2014",
+      "reason": "Official source found, but extraction reported missing dispositive and citation eligibility was blocked."
+    }
+  ],
+  "tools_used": ["search_cases", "resolve_official_swiss_case", "get_law"]
+}

@@ -1,0 +1,820 @@
+{
+  "schemaVersion": 1,
+  "description": "Anonymized procedural-strategy evaluation corpus. No real personal names, full account numbers, addresses, medical identifiers or private docket numbers are included.",
+  "cases": [
+    {
+      "id": "legal-aid-ar",
+      "title": "Appenzell Ausserrhoden legal aid appeal",
+      "kind": "anonymized_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "AR" },
+        "matter": {
+          "area": "civil",
+          "subarea": "unentgeltliche Rechtspflege",
+          "description": "Appeal against denial of legal aid before the Obergericht Appenzell Ausserrhoden. Issues include Art. 56 ZPO, economic capacity, bank records, advance on costs and whether transfers between accounts of the same applicant were counted twice."
+        },
+        "parties": [
+          {
+            "role": "appellant",
+            "type": "natural_person",
+            "description": "Anonymized self-represented applicant"
+          },
+          {
+            "role": "authority",
+            "type": "court",
+            "description": "Lower cantonal civil authority"
+          }
+        ],
+        "facts": [
+          {
+            "id": "f-application",
+            "date": "2026-02-03",
+            "description": "Applicant requested legal aid for a civil proceeding.",
+            "status": "accepted",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-denial",
+            "date": "2026-02-20",
+            "description": "Lower authority denied legal aid based on asserted economic capacity.",
+            "status": "accepted",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-bank-a",
+            "date": "2026-02-24",
+            "description": "Applicant alleged that a Bank A current-account statement was provided.",
+            "status": "alleged",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-sparkonto-transit",
+            "date": "2026-02-25",
+            "description": "Applicant alleged that an own transit savings account was used only as a temporary transfer account before transfer to Bank B.",
+            "status": "alleged",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-bank-b",
+            "date": "2026-02-25",
+            "description": "Applicant alleged transfer from Bank A to the transit savings account and then to Bank B, with no duplicate assets.",
+            "status": "alleged",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-third-account",
+            "description": "Applicant disputes a possible treatment of the transit savings account as a third additional asset account.",
+            "status": "disputed",
+            "sourceDocumentIds": ["fixture:legal-aid-ar"]
+          },
+          {
+            "id": "f-final-balance",
+            "description": "Final transit-account balance is material but not confirmed in the local fixture.",
+            "status": "uncertain"
+          }
+        ],
+        "proceduralHistory": [
+          {
+            "date": "2026-02-03",
+            "authority": "Lower cantonal civil authority",
+            "action": "Legal aid application filed",
+            "documentId": "fixture:legal-aid-ar"
+          },
+          {
+            "date": "2026-02-20",
+            "authority": "Lower cantonal civil authority",
+            "action": "Legal aid denied",
+            "result": "Application rejected",
+            "documentId": "fixture:legal-aid-ar"
+          },
+          {
+            "date": "2026-03-02",
+            "authority": "Obergericht Appenzell Ausserrhoden",
+            "action": "Appeal filed",
+            "documentId": "fixture:legal-aid-ar"
+          }
+        ],
+        "challengedDecision": {
+          "authority": "Lower cantonal civil authority",
+          "decisionDate": "2026-02-20",
+          "notificationDate": "2026-02-24",
+          "reference": "anonymized-legal-aid-ar",
+          "summary": "Denial of legal aid; economic capacity and bank documentation disputed.",
+          "documentId": "fixture:legal-aid-ar"
+        },
+        "claims": [
+          { "description": "Annul denial of legal aid.", "priority": "primary" },
+          {
+            "description": "Subsidiarily remit to the lower authority for clarification and reassessment.",
+            "priority": "subsidiary"
+          }
+        ],
+        "availableEvidence": [
+          {
+            "id": "e-denial",
+            "type": "official-record",
+            "description": "Denial decision discussing economic capacity.",
+            "date": "2026-02-20",
+            "documentId": "fixture:legal-aid-ar",
+            "authenticity": "confirmed"
+          },
+          {
+            "id": "e-bank-alleged",
+            "type": "bank-record",
+            "description": "Bank records allegedly showing Bank A, transit-account and Bank B transfers.",
+            "date": "2026-02-25",
+            "documentId": "fixture:legal-aid-ar",
+            "authenticity": "unknown"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["annulment", "avoid-costs", "preserve-rights"],
+        "constraints": {
+          "urgency": "high",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [
+          { "documentId": "fixture:legal-aid-ar", "documentType": "decision" },
+          { "documentId": "fixture:missing-bank-statement", "documentType": "evidence" }
+        ],
+        "analysisDate": "2026-03-05"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["Schlichtungsverfahren", "appeal route"],
+        "requiredWarnings": ["uncertain_deadline", "missing_documents"],
+        "requiredMissingInformation": ["missing_or_unavailable_documents"],
+        "expectedFactStatuses": {
+          "f-application": "accepted",
+          "f-denial": "accepted",
+          "f-bank-a": "alleged",
+          "f-sparkonto-transit": "alleged",
+          "f-third-account": "disputed",
+          "f-final-balance": "uncertain"
+        },
+        "mustNotContain": ["appeal will be allowed", "guaranteed", "duplicated assets are proven"],
+        "expectedConfidenceMax": { "deadline": 0.5, "strategy": 0.55, "comparableCaseLaw": 0.5 },
+        "requiresProfessionalReview": true,
+        "minimumTraceSources": 1,
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "cantonal-admin-controlled",
+      "title": "Cantonal administrative permit decision",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "ZH" },
+        "matter": {
+          "area": "administrative",
+          "subarea": "permit",
+          "description": "Cantonal administrative permit appeal with Art. 29 BV hearing issue."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized appellant" },
+          { "role": "authority", "type": "public_authority", "description": "Cantonal authority" }
+        ],
+        "facts": [
+          {
+            "id": "f-decision",
+            "date": "2026-01-10",
+            "description": "Authority issued a permit refusal.",
+            "status": "accepted",
+            "sourceDocumentIds": ["fixture:case-2"]
+          }
+        ],
+        "proceduralHistory": [
+          {
+            "date": "2026-01-10",
+            "authority": "Cantonal authority",
+            "action": "Decision issued",
+            "documentId": "fixture:case-2"
+          }
+        ],
+        "challengedDecision": {
+          "authority": "Cantonal authority",
+          "decisionDate": "2026-01-10",
+          "notificationDate": "2026-01-13",
+          "summary": "Permit refusal.",
+          "documentId": "fixture:case-2"
+        },
+        "claims": [{ "description": "Annul the decision.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-decision",
+            "type": "official-record",
+            "description": "Permit refusal decision.",
+            "documentId": "fixture:case-2",
+            "authenticity": "confirmed"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["annulment", "preserve-rights"],
+        "constraints": {
+          "urgency": "high",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [{ "documentId": "fixture:case-2", "documentType": "decision" }],
+        "analysisDate": "2026-01-15"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["administrative"],
+        "requiredWarnings": ["uncertain_deadline"],
+        "mustNotContain": ["guaranteed"],
+        "expectedConfidenceMax": { "deadline": 0.5 },
+        "minimumTraceSources": 1,
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "social-insurance-controlled",
+      "title": "Social insurance objection with confirmed deadline",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH" },
+        "matter": {
+          "area": "social-insurance",
+          "subarea": "invalidity insurance",
+          "description": "Social insurance decision with user-confirmed appeal deadline."
+        },
+        "parties": [
+          {
+            "role": "insured",
+            "type": "natural_person",
+            "description": "Anonymized insured person"
+          },
+          { "role": "insurer", "type": "insurer", "description": "Public social insurer" }
+        ],
+        "facts": [
+          {
+            "id": "f-insurer-decision",
+            "date": "2026-04-01",
+            "description": "Insurer issued a benefit decision.",
+            "status": "accepted"
+          }
+        ],
+        "proceduralHistory": [
+          { "date": "2026-04-01", "authority": "Social insurer", "action": "Decision issued" }
+        ],
+        "challengedDecision": {
+          "authority": "Social insurer",
+          "decisionDate": "2026-04-01",
+          "notificationDate": "2026-04-03",
+          "summary": "Benefit refusal."
+        },
+        "claims": [{ "description": "Challenge benefit refusal.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-decision",
+            "type": "official-record",
+            "description": "Benefit decision.",
+            "authenticity": "confirmed"
+          }
+        ],
+        "deadlines": [
+          {
+            "description": "User-confirmed objection or appeal deadline",
+            "date": "2026-05-03",
+            "basis": "External counsel calculation supplied in fixture",
+            "confirmed": true
+          }
+        ],
+        "objectives": ["annulment", "preserve-rights"],
+        "constraints": {
+          "urgency": "medium",
+          "representation": "lawyer",
+          "riskTolerance": "medium",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-04-10"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["Einsprache", "Beschwerde"],
+        "forbiddenWarnings": ["uncertain_deadline"],
+        "expectedConfidenceMin": { "deadline": 0.65 },
+        "mustNotContain": ["guaranteed"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "employment-controlled",
+      "title": "Employment wage claim",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "BE" },
+        "matter": {
+          "area": "employment",
+          "subarea": "wage",
+          "description": "Civil employment wage claim with disputed overtime records."
+        },
+        "parties": [
+          { "role": "employee", "type": "natural_person", "description": "Anonymized employee" },
+          { "role": "employer", "type": "company", "description": "Anonymized employer" }
+        ],
+        "facts": [
+          {
+            "id": "f-overtime",
+            "description": "Employee alleges unpaid overtime.",
+            "status": "disputed"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Payment of unpaid wages.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-timesheet",
+            "type": "document",
+            "description": "Timesheet extract.",
+            "authenticity": "unknown"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["payment", "settlement"],
+        "constraints": {
+          "urgency": "medium",
+          "representation": "unknown",
+          "riskTolerance": "medium",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-05-01"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["civil employment"],
+        "mustNotContain": ["overtime is proven"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "civil-controlled",
+      "title": "Civil contract dispute",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "VD" },
+        "matter": {
+          "area": "civil",
+          "subarea": "contract",
+          "description": "Civil contract dispute with alleged defective performance."
+        },
+        "parties": [
+          { "role": "claimant", "type": "company", "description": "Anonymized claimant" },
+          { "role": "defendant", "type": "company", "description": "Anonymized defendant" }
+        ],
+        "facts": [
+          {
+            "id": "f-defect",
+            "description": "Claimant alleges defective performance.",
+            "status": "alleged"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Payment or damages.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-contract",
+            "type": "contract",
+            "description": "Contract excerpt.",
+            "authenticity": "confirmed"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["payment"],
+        "constraints": {
+          "urgency": "low",
+          "representation": "lawyer",
+          "riskTolerance": "medium",
+          "language": "fr"
+        },
+        "documents": [],
+        "analysisDate": "2026-05-01"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["Schlichtungsverfahren", "Klage"],
+        "mustNotContain": ["defect is proven"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "debt-enforcement-controlled",
+      "title": "Debt enforcement opposition",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "GE" },
+        "matter": {
+          "area": "debt-enforcement",
+          "subarea": "Rechtsvorschlag",
+          "description": "Debt enforcement opposition and possible legal opening."
+        },
+        "parties": [
+          { "role": "creditor", "type": "company", "description": "Anonymized creditor" },
+          { "role": "debtor", "type": "natural_person", "description": "Anonymized debtor" }
+        ],
+        "facts": [
+          {
+            "id": "f-command",
+            "date": "2026-06-01",
+            "description": "Payment order was served.",
+            "status": "accepted"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Preserve opposition rights.", "priority": "primary" }],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["preserve-rights"],
+        "constraints": {
+          "urgency": "critical",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "fr"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-03"
+      },
+      "golden": {
+        "expectedRouteIncludes": ["Rechtsvorschlag", "Rechtsoeffnung"],
+        "requiredWarnings": ["critical_urgency_professional_review_recommended"],
+        "mustNotContain": ["deadline is"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "uncertain-deadline-controlled",
+      "title": "Uncertain deadline",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "TI" },
+        "matter": {
+          "area": "administrative",
+          "description": "Administrative matter with missing notification proof."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized appellant" },
+          { "role": "authority", "type": "public_authority", "description": "Authority" }
+        ],
+        "facts": [],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Preserve rights.", "priority": "primary" }],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["preserve-rights"],
+        "constraints": {
+          "urgency": "critical",
+          "representation": "unknown",
+          "riskTolerance": "low",
+          "language": "it"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "requiredWarnings": ["uncertain_deadline"],
+        "expectedConfidenceMax": { "deadline": 0.5 },
+        "mustNotContain": ["calculated deadline"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "standing-gap-controlled",
+      "title": "Missing standing",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "LU" },
+        "matter": {
+          "area": "administrative",
+          "description": "Third party wants to challenge an administrative decision without clear affected interest."
+        },
+        "parties": [
+          { "role": "other", "type": "natural_person", "description": "Anonymized third party" }
+        ],
+        "facts": [
+          {
+            "id": "f-interest",
+            "description": "Affected interest is unclear.",
+            "status": "uncertain"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Challenge decision.", "priority": "primary" }],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["annulment"],
+        "constraints": {
+          "urgency": "medium",
+          "representation": "unknown",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "expectedIssueStatuses": { "standing": "insufficient_information" },
+        "mustNotContain": ["standing is confirmed"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "wrong-authority-risk-controlled",
+      "title": "Authority competence risk",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH" },
+        "matter": {
+          "area": "other",
+          "description": "Filing target and territorial link are unclear."
+        },
+        "parties": [
+          { "role": "claimant", "type": "natural_person", "description": "Anonymized claimant" }
+        ],
+        "facts": [],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Unclear filing.", "priority": "primary" }],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["preserve-rights"],
+        "constraints": {
+          "urgency": "high",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "expectedIssueStatuses": { "competence": "insufficient_information" },
+        "mustNotContain": ["competent authority is confirmed"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "contradictory-evidence-controlled",
+      "title": "Contradictory evidence",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "BS" },
+        "matter": {
+          "area": "civil",
+          "description": "Civil matter with contradictory delivery evidence."
+        },
+        "parties": [
+          { "role": "claimant", "type": "company", "description": "Anonymized claimant" },
+          { "role": "defendant", "type": "company", "description": "Anonymized defendant" }
+        ],
+        "facts": [
+          {
+            "id": "f-delivery",
+            "date": "2026-01-01",
+            "description": "Delivery occurred according to claimant.",
+            "status": "disputed"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Payment.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-delivery",
+            "type": "document",
+            "description": "Delivery note.",
+            "authenticity": "disputed"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["payment"],
+        "constraints": {
+          "urgency": "low",
+          "representation": "lawyer",
+          "riskTolerance": "medium",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "expectedEvidenceStrength": { "e-delivery": "weak" },
+        "mustNotContain": ["delivery is proven"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "mixed-case-law-controlled",
+      "title": "Mixed case law",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "ZH" },
+        "matter": {
+          "area": "administrative",
+          "description": "Administrative hearing and proportionality issue with mixed retrieved sample."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized appellant" },
+          { "role": "authority", "type": "public_authority", "description": "Authority" }
+        ],
+        "facts": [
+          { "id": "f-hearing", "description": "Party alleges hearing issue.", "status": "alleged" }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Annul decision.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-letter",
+            "type": "document",
+            "description": "Hearing letter.",
+            "authenticity": "unknown"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["annulment"],
+        "constraints": {
+          "urgency": "medium",
+          "representation": "lawyer",
+          "riskTolerance": "medium",
+          "language": "de"
+        },
+        "documents": [{ "documentId": "fixture:case-2", "documentType": "judgment" }],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "mustNotContain": ["all courts"],
+        "expectedConfidenceMax": { "comparableCaseLaw": 0.5 },
+        "minimumTraceSources": 1,
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "insufficient-corpus-controlled",
+      "title": "Insufficient corpus",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH" },
+        "matter": { "area": "other", "description": "Very sparse matter description." },
+        "parties": [{ "role": "other", "type": "other", "description": "Anonymized person" }],
+        "facts": [],
+        "proceduralHistory": [],
+        "claims": [],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": [],
+        "constraints": {
+          "urgency": "medium",
+          "representation": "unknown",
+          "riskTolerance": "low",
+          "language": "en"
+        },
+        "documents": [],
+        "analysisDate": "2026-06-10"
+      },
+      "golden": {
+        "requiredMissingInformation": ["specific_claims", "evidence_inventory"],
+        "requiredWarnings": ["insufficient_case_law"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "defective-notification-controlled",
+      "title": "Defective notification",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "SG" },
+        "matter": {
+          "area": "administrative",
+          "description": "Administrative decision with disputed notification."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized appellant" },
+          { "role": "authority", "type": "public_authority", "description": "Authority" }
+        ],
+        "facts": [
+          {
+            "id": "f-notification",
+            "description": "Notification date is disputed.",
+            "status": "disputed"
+          }
+        ],
+        "proceduralHistory": [
+          { "date": "2026-07-01", "authority": "Authority", "action": "Decision issued" }
+        ],
+        "challengedDecision": {
+          "authority": "Authority",
+          "decisionDate": "2026-07-01",
+          "summary": "Decision without proof of notification."
+        },
+        "claims": [{ "description": "Annul decision.", "priority": "primary" }],
+        "availableEvidence": [
+          {
+            "id": "e-envelope",
+            "type": "document",
+            "description": "Envelope copy.",
+            "authenticity": "unknown"
+          }
+        ],
+        "deadlines": [],
+        "objectives": ["annulment", "preserve-rights"],
+        "constraints": {
+          "urgency": "critical",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-07-05"
+      },
+      "golden": {
+        "requiredMissingInformation": ["proof_of_notification_date"],
+        "expectedConfidenceMax": { "deadline": 0.5 },
+        "mustNotContain": ["deadline expired"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "missing-essential-document-controlled",
+      "title": "Missing essential document",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "FR" },
+        "matter": {
+          "area": "tax",
+          "description": "Tax objection without challenged assessment document."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized taxpayer" },
+          { "role": "authority", "type": "public_authority", "description": "Tax authority" }
+        ],
+        "facts": [
+          {
+            "id": "f-assessment",
+            "description": "Tax assessment allegedly received.",
+            "status": "alleged"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [{ "description": "Challenge assessment.", "priority": "primary" }],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["annulment"],
+        "constraints": {
+          "urgency": "high",
+          "representation": "unknown",
+          "riskTolerance": "low",
+          "language": "fr"
+        },
+        "documents": [{ "documentId": "fixture:no-assessment", "documentType": "decision" }],
+        "analysisDate": "2026-07-05"
+      },
+      "golden": {
+        "requiredWarnings": ["missing_documents"],
+        "requiredMissingInformation": ["missing_or_unavailable_documents"],
+        "expectedCriticalErrors": 0
+      }
+    },
+    {
+      "id": "professional-review-controlled",
+      "title": "Professional review recommended",
+      "kind": "synthetic_controlled",
+      "input": {
+        "jurisdiction": { "country": "CH", "canton": "ZH" },
+        "matter": {
+          "area": "constitutional",
+          "description": "Potential constitutional complaint after unclear exhaustion of ordinary remedies."
+        },
+        "parties": [
+          { "role": "appellant", "type": "natural_person", "description": "Anonymized appellant" },
+          { "role": "authority", "type": "court", "description": "Court" }
+        ],
+        "facts": [
+          {
+            "id": "f-exhaustion",
+            "description": "Exhaustion of ordinary remedies is uncertain.",
+            "status": "uncertain"
+          }
+        ],
+        "proceduralHistory": [],
+        "claims": [
+          { "description": "Preserve constitutional complaint rights.", "priority": "primary" }
+        ],
+        "availableEvidence": [],
+        "deadlines": [],
+        "objectives": ["preserve-rights"],
+        "constraints": {
+          "urgency": "critical",
+          "representation": "self-represented",
+          "riskTolerance": "low",
+          "language": "de"
+        },
+        "documents": [],
+        "analysisDate": "2026-07-05"
+      },
+      "golden": {
+        "requiredWarnings": ["critical_urgency_professional_review_recommended"],
+        "mustNotContain": ["file directly without review"],
+        "requiresProfessionalReview": true,
+        "expectedCriticalErrors": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+node_modules/
+dist/
+coverage/
+.cache/
+*.local
+*.log
+*.tmp
+_tmp_*
+.DS_Store
+
+# Claude Code local settings (machine-specific, contains local paths)
+.claude/settings.local.json
+
+# Los secretos reales nunca se versionan en este repositorio: usa variables de
+# entorno del proceso (export manual, gestor de entorno local, o secretos de
+# CI/CD). Ver docs/architecture.md para la lista de variables requeridas.
+.aider*
+
+# Temporary E2E test files
+tmp_e2e/
+
+# Package tarballs
+*.tgz
+
+# Internal development validation scripts and artifacts
+_day1-*
+_day1-validation-output/
+
+# Backup files
+*.backup
+*.backup2
+
+# Runtime and audit data (if they exist)
+*/runtime/
+*/audit/
+*/cache/
+*/tmp*/
+
+# Private beta installation artifacts (machine-specific)
+docs/installation/private-beta-*.json
+docs/installation/private-beta-*.md
+docs/validation/private-beta-acceptance/
+
+# Public release hygiene
+/artifacts/
+/results/
+
+/debug_*.js
+/simple_debug.js
+/simple_test.js
+/simple_test.mjs
+/simple_url_test.js
+/test_*.js
+/test_*.mjs
+/run-all-test-cases.js
+
+/response.txt
+/output_final.txt
+/final_output.txt
+/final_answer.ts
+/json_debug.js
+/fix_summary.md
+
+# Root-level development/debug utilities
+/debug_*.js
+/direct_fetch_test.js
+/exhaustive_variant_check_fixed*.js
+/fetch_and_examine.js
+/final_answer.ts
+/json_debug.js
+/run-all-test-cases.js
+/simple_*.js
+/simple_*.mjs
+/test_*.js
+/test_*.mjs
+/test_*.ts
+
+# Stray local files
+/después
+/debug_test.mjs

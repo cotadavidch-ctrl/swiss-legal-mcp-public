@@ -1,0 +1,186 @@
+{
+  "backlog_id": "MCP-IMPROVEMENT-BACKLOG-2026-08-05-001",
+  "created_at": "2026-08-05T18:33:45Z",
+  "source_comparison_id": "AI-LEGAL-CROSS-COMPARISON-2026-08-05-001",
+  "all_implementation_status_note": "Todos los hallazgos de este backlog tienen implementation_status = PROPOSED_NOT_AUTHORIZED. Ninguno ha sido implementado, autorizado ni aplicado automaticamente. human_legal_review_completed=false, publication_performed=false, code_modified=false, git_created=false.",
+  "human_legal_review_completed": false,
+  "publication_performed": false,
+  "code_modified": false,
+  "git_created": false,
+  "findings": [
+    {
+      "finding_id": "FIND-01",
+      "case_ids": ["AILC-06", "AILC-13"],
+      "title": "Limite fijo de caracteres/tokens en resolve_official_swiss_case (require_full_text=true) bloquea la recuperacion de texto integro de sentencias oficiales de longitud moderada",
+      "cause_classification": "MCP_DEFECT",
+      "severity": "high",
+      "evidence": [
+        "AILC-06 (2A.348/2004, caso de regresion/control positivo): resolve_official_swiss_case con require_full_text=true devolvio 'ERROR: el resultado (109.737 caracteres) excede el limite maximo de tokens permitido'.",
+        "AILC-13 (4C.4/2004, caso de regresion/control positivo): la MISMA herramienta, con un caso completamente distinto, devolvio exactamente el mismo valor -- 109.737 caracteres -- excediendo el mismo limite.",
+        "La coincidencia exacta del valor de caracteres entre dos documentos judiciales distintos es evidencia fuerte de un techo fijo/mal configurado en el pipeline de recuperacion, no de una coincidencia de longitud real de los documentos.",
+        "Verificacion independiente realizada en este ejercicio de comparacion: un fetch HTTP simple a servat.unibe.ch obtuvo el texto integro de 2A.348/2004 sin ningun problema de tamano, confirmando que la fuente oficial es accesible y que el fallo es atribuible a la herramienta del MCP, no a la fuente."
+      ],
+      "affected_component": "Tool: resolve_official_swiss_case (retrieval_mode=full text / require_full_text=true)",
+      "files_potentially_affected": [
+        "(no inspeccionado; requiere que el equipo de codigo identifique el modulo de resolve_official_swiss_case responsable de la recuperacion y truncado de texto integro)"
+      ],
+      "recommended_change": "Investigar el limite de tokens/caracteres configurado para la recuperacion de texto integro y evaluar: (a) aumentar el limite a un valor que cubra sentencias de longitud tipica del Tribunal Federal/Tribunal Administrativo Federal, (b) implementar paginacion o resumen progresivo en vez de fallo total cuando se excede el limite, y (c) investigar por que el reintento en modo metadata_only devuelve 'identity.status=identity_mismatch' para el mismo case_reference que si fue encontrado correctamente en el intento de texto integro (ver FIND-04).",
+      "tests_required": [
+        "Prueba de regresion que recupere el texto integro de 2A.348/2004 y 4C.4/2004 y verifique que no se produce error de limite de tokens.",
+        "Prueba con al menos 3 sentencias adicionales de longitud similar o mayor (>100.000 caracteres) para confirmar que el limite corregido cubre el rango realista de documentos oficiales suizos."
+      ],
+      "regression_cases_required": ["AILC-06", "AILC-13"],
+      "risk_of_change": "medio -- cambiar el limite de tokens o anadir paginacion puede afectar el rendimiento/latencia de otras herramientas que dependen del mismo pipeline de recuperacion; requiere prueba de carga antes de desplegar.",
+      "expected_benefit": "Restaura la capacidad de recuperacion de texto integro para al menos 2 de los 5 casos de regresion designados (40% de la suite de regresion), que son precisamente los casos disenados para validar el comportamiento correcto de base de la herramienta.",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P0"
+    },
+    {
+      "finding_id": "FIND-02",
+      "case_ids": ["AILC-21"],
+      "title": "Fallo de decodificacion gzip/HTTP en search_cantonal_legislation para el proveedor cantonal de Ginebra (silgeneve.ch)",
+      "cause_classification": "MCP_DEFECT",
+      "severity": "high",
+      "evidence": [
+        "AILC-21 (caso prioritario, derecho cantonal de Ginebra): search_cantonal_legislation con canton=GE devolvio 'PARSE_ERROR: Respuesta comprimida invalida' al descargar silgeneve.ch/legis/program/books/RSG/content.htm, en dos intentos consecutivos.",
+        "Verificacion independiente realizada en este ejercicio de comparacion: un fetch HTTP simple a la MISMA URL exacta, en la misma sesion, devolvio HTML valido y completo (indice de rs/GE, 70.811 caracteres) sin ningun error de compresion.",
+        "Esto demuestra de forma directa y reproducible que el sitio oficial esta disponible y sirve contenido valido; el fallo reside en como la herramienta del MCP maneja la respuesta HTTP/gzip de ese proveedor especifico."
+      ],
+      "affected_component": "Tool: search_cantonal_legislation (canton=GE / proveedor cantonal de Ginebra, silgeneve.ch)",
+      "files_potentially_affected": [
+        "(no inspeccionado; requiere que el equipo de codigo identifique el cliente HTTP/decodificador usado para el proveedor cantonal de Ginebra)"
+      ],
+      "recommended_change": "Revisar el manejo de encabezados Content-Encoding/Accept-Encoding y la logica de decodificacion gzip usada especificamente para silgeneve.ch; anadir manejo de fallback (peticion sin gzip, o deteccion de contenido no realmente comprimido pese al encabezado) antes de declarar PARSE_ERROR.",
+      "tests_required": [
+        "Prueba de regresion que descargue silgeneve.ch/legis/program/books/RSG/content.htm y verifique una respuesta HTML valida.",
+        "Prueba adicional contra al menos 2 paginas mas profundas del mismo dominio (por ejemplo, una ley especifica dentro de RSG) para confirmar que la correccion no es especifica de una sola URL."
+      ],
+      "regression_cases_required": ["AILC-21"],
+      "risk_of_change": "bajo -- cambio acotado al manejo de decodificacion HTTP de un unico proveedor cantonal; bajo riesgo de afectar otros proveedores si se implementa como logica especifica por dominio.",
+      "expected_benefit": "Restaura la cobertura funcional del proveedor cantonal de Ginebra, incluyendo la capacidad de detectar cambios normativos relevantes y vigentes (ver FIND-03).",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P1"
+    },
+    {
+      "finding_id": "FIND-03",
+      "case_ids": ["AILC-21"],
+      "title": "Posible desactualizacion de la referencia cantonal ginebrina 'LIASI', reemplazada por la LASLP desde el 1.1.2025",
+      "cause_classification": "SOURCE_UNAVAILABLE",
+      "severity": "medium",
+      "evidence": [
+        "Swiss Legal MCP menciono 'LIASI' unicamente como orientacion util en AILC-21, marcandola explicitamente como no verificada (no se afirmo como hecho confirmado -- comportamiento correcto de la herramienta).",
+        "Busqueda web independiente realizada en este ejercicio de comparacion corrobora, via ge.ch, hospicegeneral.ch y resultados indexados de silgeneve.ch, que la Loi sur l'aide sociale et la lutte contre la precarite (LASLP, rsGE J 4 04) reemplazo a la LIASI desde el 1 de enero de 2025.",
+        "Esta verificacion es de fuentes secundarias/indexadas concordantes, no de lectura integra de la fuente primaria (silgeneve.ch libro J) dentro de esta sesion -- por lo tanto se clasifica como hallazgo a confirmar, no como hecho cerrado."
+      ],
+      "affected_component": "Conocimiento de referencia cantonal para Ginebra (aide sociale) usado por el sistema como 'orientacion util'",
+      "files_potentially_affected": [],
+      "recommended_change": "Una vez corregido FIND-02, volver a consultar silgeneve.ch/RSG libro J con search_cantonal_legislation para confirmar contra fuente primaria si LIASI fue derogada/reemplazada por LASLP, y actualizar cualquier material de referencia interno que mencione LIASI como vigente.",
+      "tests_required": [
+        "Prueba manual/asistida por humano contra silgeneve.ch libro J tras la correccion de FIND-02."
+      ],
+      "regression_cases_required": [],
+      "risk_of_change": "bajo",
+      "expected_benefit": "Evita que una futura respuesta presente 'LIASI' como vigente si en efecto fue derogada, mejorando la vigencia (currency) de las respuestas sobre derecho social ginebrino.",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P3"
+    },
+    {
+      "finding_id": "FIND-04",
+      "case_ids": ["AILC-06", "AILC-13"],
+      "title": "Anomalia 'identity_mismatch' en el reintento metadata_only de resolve_official_swiss_case tras el fallo de texto integro",
+      "cause_classification": "TOOL_SELECTION_ISSUE",
+      "severity": "medium",
+      "evidence": [
+        "En ambos AILC-06 y AILC-13, tras el fallo por limite de tokens en modo texto integro, el reintento en retrieval_mode=metadata_only para la MISMA case_reference exacta devolvio 'identity.status=identity_mismatch; legal_use.fetch_status=fetch_failed', pese a que la referencia ya habia sido localizada correctamente por search_cases_by_reference en el mismo caso (con encabezado oficial confirmado)."
+      ],
+      "affected_component": "Tool: resolve_official_swiss_case (logica de verificacion de identidad en retrieval_mode=metadata_only)",
+      "files_potentially_affected": [],
+      "recommended_change": "Investigar por que el modo metadata_only reporta identity_mismatch para una referencia que el propio sistema ya confirmo como existente por otra via (search_cases_by_reference) en la misma sesion; verificar si hay un problema de normalizacion del formato de referencia (espacios, guion bajo vs punto, mayusculas) entre las dos rutas de codigo.",
+      "tests_required": [
+        "Prueba unitaria de resolve_official_swiss_case en modo metadata_only para 2A.348/2004 y 4C.4/2004, verificando que identity.status no sea identity_mismatch para referencias validas conocidas."
+      ],
+      "regression_cases_required": ["AILC-06", "AILC-13"],
+      "risk_of_change": "bajo",
+      "expected_benefit": "Evita que el sistema reporte una senal de discrepancia de identidad falsa/enganosa para casos que en realidad existen y fueron correctamente identificados por otra herramienta del mismo MCP.",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P2"
+    },
+    {
+      "finding_id": "FIND-05",
+      "case_ids": ["AILC-19"],
+      "title": "Fallo persistente (HTTP 204) del proveedor cantonal de Zurich; origen no concluyentemente determinado",
+      "cause_classification": "EXTERNAL_PROVIDER_FAILURE",
+      "severity": "medium",
+      "evidence": [
+        "AILC-19 (caso prioritario, derecho cantonal de Zurich): search_cantonal_legislation con canton=ZH devolvio PROVIDER_UNAVAILABLE (HTTP 204) en dos intentos consecutivos, marcado por la propia herramienta como fallo transitorio/reintentable.",
+        "Claude IA 3 tampoco logro leer el texto legal cantonal integro para este caso y solo confirmo la estructura via el portal judicial, sin acceso directo al texto legal.",
+        "Verificacion independiente realizada en este ejercicio de comparacion: un fetch HTTP simple a un endpoint de zhlex.zh.ch tampoco devolvio contenido sustantivo, lo que no permite descartar ni confirmar con certeza si el origen es enteramente externo (arquitectura del sitio, requerimiento de JavaScript o sesion) o si existe un endpoint alternativo mas fiable no utilizado actualmente por la herramienta."
+      ],
+      "affected_component": "Tool: search_cantonal_legislation (canton=ZH / proveedor cantonal de Zurich)",
+      "files_potentially_affected": [],
+      "recommended_change": "Investigar si zh.ch/zhlex.zh.ch requiere un endpoint, cabecera o mecanismo de sesion distinto al usado actualmente; evaluar una estrategia de reintento con backoff o una fuente alternativa (por ejemplo, el portal judicial cantonal usado exitosamente por Claude IA 3 para confirmar estructura) como via secundaria.",
+      "tests_required": [
+        "Prueba de regresion contra el proveedor cantonal de Zurich una vez identificado un endpoint estable."
+      ],
+      "regression_cases_required": ["AILC-19"],
+      "risk_of_change": "medio -- requiere investigacion previa para determinar si el problema es de endpoint, autenticacion o arquitectura del sitio (posible renderizado JavaScript) antes de poder proponer un cambio de codigo concreto.",
+      "expected_benefit": "Restaura cobertura funcional del proveedor cantonal de Zurich para consultas de derecho de arrendamiento y otras materias cantonales.",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P2"
+    },
+    {
+      "finding_id": "FIND-06",
+      "case_ids": ["AILC-20"],
+      "title": "Ausencia declarada de proveedor de legislacion cantonal para Vaud (VD) -- brecha de cobertura, no defecto",
+      "cause_classification": "SOURCE_UNAVAILABLE",
+      "severity": "low",
+      "evidence": [
+        "AILC-20: search_cantonal_legislation con canton=VD devolvio NOT_FOUND con el mensaje explicito 'El canton VD no tiene un proveedor de legislacion cantonal implementado en esta fase', junto con la lista completa de cantones si cubiertos.",
+        "El sistema se abstuvo correctamente de inventar un plazo procesal en un caso marcado como high_risk -- comportamiento correcto y transparente."
+      ],
+      "affected_component": "Cobertura de proveedores de legislacion cantonal (search_cantonal_legislation)",
+      "files_potentially_affected": [],
+      "recommended_change": "Evaluar, como mejora de cobertura del roadmap (no como correccion de bug), anadir un proveedor de legislacion cantonal para Vaud.",
+      "tests_required": ["Prueba de cobertura para VD una vez implementado un proveedor."],
+      "regression_cases_required": ["AILC-20"],
+      "risk_of_change": "bajo (adicion de nueva cobertura, no modificacion de comportamiento existente)",
+      "expected_benefit": "Amplia la cobertura cantonal declarada del MCP a un canton adicional de alto volumen de consultas (Vaud).",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P3"
+    },
+    {
+      "finding_id": "FIND-07",
+      "case_ids": [],
+      "title": "[INFORMATIVO -- no relacionado con Swiss Legal MCP] El archivo de respuestas de Claude IA 2 no corresponde al lote canonico de 30 casos para 17-18 case_id, pese a declarar el hash correcto del archivo de casos",
+      "cause_classification": "TEST_CASE_PROBLEM",
+      "severity": "medium",
+      "evidence": [
+        "Ver hallazgo de integridad INTEGRITY-01 en ai-legal-cross-comparison.json para el detalle completo.",
+        "AILC-14 a AILC-30 (17 de 30 casos) en claude-ia2-responses.json contestan prompts, titulos y categorias completamente distintos del archivo canonico ai-legal-test-cases.json, pese a que claude-ia2-run-metadata.json declara el mismo test_case_sha256 verificado (7e4eedcb...) que los otros dos sistemas.",
+        "Corroborado independientemente por el propio campo regression_cases de claude-ia2-run-metadata.json, que asocia case_id a referencias legales de forma inconsistente con el canon."
+      ],
+      "affected_component": "N/A -- este hallazgo no afecta ningun componente de Swiss Legal MCP. Afecta unicamente la fiabilidad del artefacto de comparacion claude-ia2-responses.json para 17-18 de sus 30 entradas.",
+      "files_potentially_affected": [],
+      "recommended_change": "N/A para el codigo del MCP. Se recomienda que el propietario del proceso de validacion re-ejecute Claude IA 2 contra el archivo canonico verificado (ai-legal-test-cases.json, hash 7e4eedcb...) antes de usar sus resultados en AILC-13 a AILC-30 para cualquier decision de mejora continua futura.",
+      "tests_required": [],
+      "regression_cases_required": [],
+      "risk_of_change": "N/A",
+      "expected_benefit": "Restaura la validez comparativa completa de los 30 casos en una futura ronda de comparacion de 3 vias.",
+      "human_authorization_required": true,
+      "implementation_status": "PROPOSED_NOT_AUTHORIZED",
+      "priority": "P3"
+    }
+  ],
+  "priority_summary": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 2,
+    "P3": 3
+  }
+}

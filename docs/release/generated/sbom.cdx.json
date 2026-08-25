@@ -1,0 +1,353 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:f5e9c32d-f4c9-4fbb-915e-6cc379495060",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-08-15T17:35:52.714Z",
+    "component": {
+      "type": "application",
+      "name": "swiss-legal-mcp",
+      "version": "1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "pnpm-lock.sha256",
+        "value": "528789af24297795298bd477d3ac7513f6e14d4cf5a5d432afbf5e8fb7b88172"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/admin-cli",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fadmin-cli@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "apps/admin-cli"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/mcp-server",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fmcp-server@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "apps/mcp-server"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "swiss-legal-mcp",
+      "version": "1.0.0",
+      "purl": "pkg:npm/swiss-legal-mcp@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/chronology",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fchronology@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/chronology"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/citations",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fcitations@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/citations"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/contradiction-engine",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fcontradiction-engine@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/contradiction-engine"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/core",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fcore@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/core"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/documents",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fdocuments@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/documents"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/legal-drafting",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Flegal-drafting@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/legal-drafting"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/legal-intelligence",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Flegal-intelligence@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/legal-intelligence"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/legal-language",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Flegal-language@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/legal-language"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/legal-runtime",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Flegal-runtime@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/legal-runtime"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/litigation-intelligence",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Flitigation-intelligence@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/litigation-intelligence"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/matter-store",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fmatter-store@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/matter-store"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/procedural-intelligence",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprocedural-intelligence@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/procedural-intelligence"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-bsv",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-bsv@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/bsv"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-cantonal",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-cantonal@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/cantonal"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-entscheidsuche",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-entscheidsuche@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/entscheidsuche"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-estv",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-estv@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/estv"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-fedlex",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-fedlex@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/fedlex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-fixture",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-fixture@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/fixture"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-seco",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-seco@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/seco"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/provider-shab",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fprovider-shab@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/providers/shab"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/search",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fsearch@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/search"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/shared",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fshared@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/shared"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/shared-web",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fshared-web@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/shared-web"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@swiss-legal-mcp/updater",
+      "version": "1.0.0",
+      "purl": "pkg:npm/%40swiss-legal-mcp%2Fupdater@1.0.0",
+      "properties": [
+        {
+          "name": "workspace:path",
+          "value": "packages/updater"
+        }
+      ]
+    }
+  ]
+}

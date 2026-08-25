@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-08-06T00:18:14.104Z",
+  "scope": "FIND-01 (AILC-06, AILC-13) y FIND-02 (AILC-21) -- cierre puntual",
+  "tarballName": "swiss-legal-mcp-1.0.0.tgz",
+  "tarballSha256": "71a2948927546db57d39e61a1e83d7e9f7ab4ec1a667cb0bf9c73c4333a22d1e",
+  "distMatchesTarball": true,
+  "mcpHandshake": true,
+  "toolInventory": {
+    "expectedCount": 42,
+    "actualCount": 42,
+    "missingTools": [],
+    "unexpectedTools": [],
+    "duplicateTools": []
+  },
+  "ailc": {
+    "AILC_06": {
+      "case_reference": "2A.348/2004",
+      "isError": false,
+      "fetch_status": "fetch_success",
+      "full_text_length": 30561,
+      "token_limit_error_present": false,
+      "is_chunked": false
+    },
+    "AILC_13": {
+      "case_reference": "4C.4/2004",
+      "isError": false,
+      "fetch_status": "fetch_success",
+      "full_text_length": 20752,
+      "token_limit_error_present": false,
+      "is_chunked": false
+    },
+    "AILC_21": {
+      "canton": "GE",
+      "isError": false,
+      "parse_error_present": false,
+      "result_count": 20,
+      "source_url": "https://silgeneve.ch/legis/program/books/RSG/content.htm"
+    },
+    "_stderr_sample": "{\"level\":\"info\",\"time\":\"2026-08-06T00:18:05.467Z\",\"pid\":98348,\"hostname\":\"<hostname>\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"search_shab_publications\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}\n{\"level\":\"info\",\"time\":\"2026-08-06T00:18:05.467Z\",\"pid\":98348,\"hostname\":\"<hostname>\",\"name\":\"swiss-legal-mcp-stdio\",\"tool\":\"get_shab_publication\",\"status\":\"blocked\",\"blockedByPolicy\":{\"providerId\":\"shab\",\"reason\":\"robots_txt_disallow\"},\"msg\":\"Herramienta registrada como bloqueada por politica: visible en tools/list, tools/call devolvera error estructurado sin red\"}\n{\"level\":\"info\",\"time\":\"2026-08-06T00:18:05.469Z\",\"pid\":98348,\"hostname\":\"<hostname>\",\"name\":\"swiss-legal-mcp-stdio\",\"msg\":\"swiss-legal-mcp: servidor stdio conectado\"}\n"
+  },
+  "checks": [
+    {
+      "name": "tarball_present",
+      "passed": true,
+      "detail": ["swiss-legal-mcp-1.0.0.tgz"]
+    },
+    {
+      "name": "dist_stdio_js_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "dist_matches_packaged_tarball",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mcp_handshake",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "tools_list_count_42",
+      "passed": true,
+      "detail": "actual=42"
+    },
+    {
+      "name": "tools_list_no_missing",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "tools_list_no_unexpected",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "tools_list_no_duplicates",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "AILC-06_full_text_no_token_limit_error",
+      "passed": true,
+      "detail": {
+        "case_reference": "2A.348/2004",
+        "isError": false,
+        "fetch_status": "fetch_success",
+        "full_text_length": 30561,
+        "token_limit_error_present": false,
+        "is_chunked": false
+      }
+    },
+    {
+      "name": "AILC-13_full_text_no_token_limit_error",
+      "passed": true,
+      "detail": {
+        "case_reference": "4C.4/2004",
+        "isError": false,
+        "fetch_status": "fetch_success",
+        "full_text_length": 20752,
+        "token_limit_error_present": false,
+        "is_chunked": false
+      }
+    },
+    {
+      "name": "AILC-21_geneva_cantonal_no_parse_error",
+      "passed": true,
+      "detail": {
+        "canton": "GE",
+        "isError": false,
+        "parse_error_present": false,
+        "result_count": 20,
+        "source_url": "https://silgeneve.ch/legis/program/books/RSG/content.htm"
+      }
+    },
+    {
+      "name": "mcp_shutdown_clean",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "finalStatus": "PASS"
+}

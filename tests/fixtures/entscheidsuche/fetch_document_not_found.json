@@ -1,0 +1,14 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+      "content": [],
+      "structuredContent": {
+        "result": null
+      },
+      "isError": false
+    }
+  }
+}

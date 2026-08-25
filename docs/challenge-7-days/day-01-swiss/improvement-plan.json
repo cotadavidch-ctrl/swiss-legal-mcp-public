@@ -1,0 +1,435 @@
+{
+  "status": "PASS",
+  "created_at": "2026-08-06",
+  "source_directory": "docs/challenge-7-days/day-01-swiss",
+  "inputs_read": [
+    "judge-selection.md",
+    "corpus.json",
+    "style-analysis.md",
+    "swiss-federal-court-writing-style.md",
+    "example-brief.md",
+    "generic-vs-skilled-comparison.md",
+    "metadata.json"
+  ],
+  "observed_state": {
+    "verified_official_corpus": 8,
+    "minimum_target": 50,
+    "objective_target": 60,
+    "selected_profile": "II. zivilrechtliche Abteilung des Schweizerischen Bundesgerichts",
+    "language": "de",
+    "individual_judge_style_supported": false,
+    "tools_used": ["search_cases", "resolve_official_swiss_case", "get_law"]
+  },
+  "limitations": [
+    {
+      "id": "LIM-001",
+      "description": "Verified corpus contains only 8 full-text official decisions, below the 50-case minimum.",
+      "evidence": "metadata.json records verified_full_text_cases=8 and corpus.requested_minimum=50.",
+      "tool_affected": "workflow",
+      "probable_cause": "Manual discovery and single-case resolution do not scale.",
+      "type": "METHODOLOGY",
+      "impact": "Day 1 output remains PARTIAL and cannot support representative style claims.",
+      "severity": "P1",
+      "proposed_solution": "Build official corpus workflow with discovery, batch resolution, checkpoint and export.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts"
+      ],
+      "tests_needed": [
+        "offline corpus fixture with at least 60 candidates",
+        "partial failure handling",
+        "checkpoint resume"
+      ],
+      "regression_risk": "medium",
+      "acceptance_criterion": "A run produces at least 50 full_text_verified_official decisions for configured chamber/language/period."
+    },
+    {
+      "id": "LIM-002",
+      "description": "Current search_cases uses an unofficial aggregator and cannot be the official corpus authority.",
+      "evidence": "judge-selection.md says aggregators were used only for discovery; entscheidsucheTools.ts warns search_cases is not official.",
+      "tool_affected": "search_cases",
+      "probable_cause": "Existing jurisprudence search provider is entscheidsuche.ch.",
+      "type": "MCP",
+      "impact": "Every search result requires follow-up official verification.",
+      "severity": "P1",
+      "proposed_solution": "Add official federal discovery instead of overloading aggregator semantics.",
+      "probable_code_files": ["apps/mcp-server/src/tools/officialSwissCaseTools.ts"],
+      "tests_needed": ["official source attribution test", "aggregator warning preservation test"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Official federal discovery returns official Swiss Federal Supreme Court candidates without using aggregators as authority."
+    },
+    {
+      "id": "LIM-003",
+      "description": "No dedicated official federal case search surface exists.",
+      "evidence": "Day 1 used search_cases plus resolve_official_swiss_case; no search_federal_cases tool is recorded.",
+      "tool_affected": "missing official federal search",
+      "probable_cause": "Resolver verifies known references but does not enumerate official search results.",
+      "type": "MCP",
+      "impact": "Candidate discovery is ad hoc.",
+      "severity": "P1",
+      "proposed_solution": "Create search_federal_cases backed by search.bger.ch.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts"
+      ],
+      "tests_needed": ["official search HTML fixture", "pagination/cursor fixture"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Tool discovers official federal candidates by query, language, date and chamber."
+    },
+    {
+      "id": "LIM-004",
+      "description": "Chamber filtering is not first-class in search.",
+      "evidence": "SearchCasesParams has court/canton/date/language/page but no chamber; corpus manually selected II. civil division.",
+      "tool_affected": "search_cases, future official search",
+      "probable_cause": "Chamber metadata is detected after resolution, not during discovery.",
+      "type": "MCP",
+      "impact": "Manual filtering risks mixed corpus.",
+      "severity": "P1",
+      "proposed_solution": "Add validated chamber filter to official federal discovery and corpus export.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts"
+      ],
+      "tests_needed": ["5A included", "4A excluded from primary corpus", "comparator mode allowed"],
+      "regression_risk": "medium",
+      "acceptance_criterion": "Corpus filter can target II. civil division without manual filtering."
+    },
+    {
+      "id": "LIM-005",
+      "description": "Judge/composition filtering cannot support authorship claims.",
+      "evidence": "judge-selection.md rejects individual judge style; style-analysis.md says composition is not authorship.",
+      "tool_affected": "corpus construction",
+      "probable_cause": "Official source exposes composition but not drafting judge.",
+      "type": "SOURCE",
+      "impact": "Individual judge style remains unsupported.",
+      "severity": "P2",
+      "proposed_solution": "Permit composition-presence filtering only with no_authorship_inference warning.",
+      "probable_code_files": ["apps/mcp-server/src/tools/officialSwissCaseResolver.ts"],
+      "tests_needed": ["composition match does not set author match", "warning emitted"],
+      "regression_risk": "high",
+      "acceptance_criterion": "No output attributes style or text to an individual judge unless official authorship exists."
+    },
+    {
+      "id": "LIM-006",
+      "description": "BGE citations can resolve to official extracts that are not full-text case records.",
+      "evidence": "corpus.json excludes BGE 133 III 350 and BGE 134 III 332 for missing dispositive.",
+      "tool_affected": "resolve_official_swiss_case",
+      "probable_cause": "Official report pages and underlying case pages are separate official surfaces.",
+      "type": "MCP",
+      "impact": "BGE citations cannot always be counted in full-text corpus without mapping.",
+      "severity": "P1",
+      "proposed_solution": "Expose BGE-to-underlying-case mapping status in resolver; add separate tool only if necessary.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts",
+        "packages/citations/src/parser.ts"
+      ],
+      "tests_needed": [
+        "BGE maps to official report",
+        "underlying case reference resolved",
+        "official extract not counted as full text"
+      ],
+      "regression_risk": "medium",
+      "acceptance_criterion": "BGE resolution separates official report status from full-text underlying case status."
+    },
+    {
+      "id": "LIM-007",
+      "description": "Pagination is inefficient for massive discovery.",
+      "evidence": "entscheidsucheProvider.ts documents O(page) sequential cursor advancement for search_cases.",
+      "tool_affected": "search_cases",
+      "probable_cause": "Provider backend exposes opaque cursors.",
+      "type": "PROVIDER",
+      "impact": "Large corpus discovery through aggregator is slow and fragile.",
+      "severity": "P1",
+      "proposed_solution": "Use cursor/checkpoint official discovery instead of random page emulation.",
+      "probable_code_files": ["apps/mcp-server/src/tools/officialSwissCaseTools.ts"],
+      "tests_needed": ["cursor resume", "no repeated previous pages"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Corpus discovery resumes from stored cursor without replaying all earlier pages."
+    },
+    {
+      "id": "LIM-008",
+      "description": "No batch resolver is exposed.",
+      "evidence": "Day 1 manually resolved individual references; resolve_official_swiss_case input accepts one reference.",
+      "tool_affected": "resolve_official_swiss_case",
+      "probable_cause": "Existing resolver is optimized for single legal-use verification.",
+      "type": "MCP",
+      "impact": "60-case corpus requires error-prone manual calls.",
+      "severity": "P1",
+      "proposed_solution": "Add batch_resolve_official_cases or internal batch helper with controlled concurrency.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts"
+      ],
+      "tests_needed": ["mixed success/failure list", "concurrency limit", "stable ordering"],
+      "regression_risk": "medium",
+      "acceptance_criterion": "Batch output preserves per-item statuses and never fails all items because one item fails."
+    },
+    {
+      "id": "LIM-009",
+      "description": "Deduplication is manual at corpus level.",
+      "evidence": "metadata.json records duplicates_detected=0 but no corpus tool generated that result.",
+      "tool_affected": "corpus export",
+      "probable_cause": "Resolver handles candidates, not full corpus deduplication.",
+      "type": "MCP",
+      "impact": "Joined proceedings and BGE/case overlaps can inflate counts.",
+      "severity": "P2",
+      "proposed_solution": "Deduplicate by normalized reference, canonical URL, official docid and hashes.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts",
+        "apps/mcp-server/src/tools/caseCorpusTools.ts"
+      ],
+      "tests_needed": ["duplicate BGE/case pair", "joined proceedings", "hash duplicate"],
+      "regression_risk": "medium",
+      "acceptance_criterion": "Export reports duplicate groups and counts only canonical included records."
+    },
+    {
+      "id": "LIM-010",
+      "description": "Status classes are available but not normalized by corpus export.",
+      "evidence": "corpus.json manually separates included, comparators and excluded records.",
+      "tool_affected": "corpus export",
+      "probable_cause": "No corpus schema maps resolver legal-use statuses into dataset inclusion decisions.",
+      "type": "MCP",
+      "impact": "Large runs can accidentally count official extracts or metadata-only records.",
+      "severity": "P2",
+      "proposed_solution": "Define corpus statuses for full_text_verified_official, official_extract, metadata_only and secondary_source.",
+      "probable_code_files": ["apps/mcp-server/src/tools/caseCorpusTools.ts"],
+      "tests_needed": [
+        "all status classes serialized",
+        "blocked statuses excluded from included count"
+      ],
+      "regression_risk": "low",
+      "acceptance_criterion": "Exported counts distinguish included official full text from all other source states."
+    },
+    {
+      "id": "LIM-011",
+      "description": "Language can mismatch requested profile.",
+      "evidence": "corpus.json excludes 5A_154/2014 because a German-profile request resolved a French document with language mismatch warning.",
+      "tool_affected": "resolve_official_swiss_case",
+      "probable_cause": "Portal/interface language and actual decision language can diverge.",
+      "type": "SOURCE",
+      "impact": "German corpus may be contaminated by French/Italian decisions.",
+      "severity": "P2",
+      "proposed_solution": "Apply strict post-fetch document language gate.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts",
+        "apps/mcp-server/src/tools/caseCorpusTools.ts"
+      ],
+      "tests_needed": ["German requested but French document excluded"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Included corpus entries all match requested document language."
+    },
+    {
+      "id": "LIM-012",
+      "description": "Matter and period selection were manual.",
+      "evidence": "corpus.json includes mixed subjects and no structured period criteria beyond individual dates.",
+      "tool_affected": "corpus workflow",
+      "probable_cause": "No corpus filter schema for subject/remedy/period distribution.",
+      "type": "METHODOLOGY",
+      "impact": "Style corpus can mix ordinary merits and simplified non-entry decisions.",
+      "severity": "P2",
+      "proposed_solution": "Add corpus criteria for date range, remedy type, subject keywords and simplified-procedure flag.",
+      "probable_code_files": ["apps/mcp-server/src/tools/caseCorpusTools.ts"],
+      "tests_needed": ["date range inclusion", "subject keyword distribution"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Corpus export records filters and matter distribution."
+    },
+    {
+      "id": "LIM-013",
+      "description": "No structured corpus export exists.",
+      "evidence": "Day 1 corpus.json was manually created and no export_case_corpus tool is recorded.",
+      "tool_affected": "missing export tool",
+      "probable_cause": "Current tools focus on lookup and legal verification, not dataset assembly.",
+      "type": "MCP",
+      "impact": "Challenge reruns are not fully reproducible.",
+      "severity": "P1",
+      "proposed_solution": "Create export_case_corpus after official search and batch resolution stabilize.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/caseCorpusTools.ts",
+        "apps/mcp-server/src/registry.ts"
+      ],
+      "tests_needed": ["JSON schema validation", "stable sort", "trace manifest"],
+      "regression_risk": "low",
+      "acceptance_criterion": "A single export contains included, excluded, filters, counts, source policy, hashes and warnings."
+    },
+    {
+      "id": "LIM-014",
+      "description": "Timeouts and performance are not managed at workload level.",
+      "evidence": "metadata.json contains no run timing/checkpoint; Day 1 used individual long timeout policies during resolution.",
+      "tool_affected": "batch/corpus workflow",
+      "probable_cause": "Only single-case timeout policy exists.",
+      "type": "MCP",
+      "impact": "Large live corpus runs can fail midway.",
+      "severity": "P2",
+      "proposed_solution": "Add scheduler with concurrency limit, retry budget, backoff and checkpoint.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/caseCorpusTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseResolver.ts"
+      ],
+      "tests_needed": ["timeout retry", "partial checkpoint", "cancellation"],
+      "regression_risk": "medium",
+      "acceptance_criterion": "A simulated 60-case run completes with recorded per-item timeout outcomes."
+    },
+    {
+      "id": "LIM-015",
+      "description": "Per-document traceability is not fully preserved in corpus artifact.",
+      "evidence": "corpus.json includes URLs and document_id but omits resolution_id, hashes, retrieved_at and cache_status for each included case.",
+      "tool_affected": "corpus export",
+      "probable_cause": "Manual artifact did not copy full resolver trace output.",
+      "type": "MCP",
+      "impact": "Later audit may require live re-resolution.",
+      "severity": "P2",
+      "proposed_solution": "Export resolver trace fields for every included and excluded item.",
+      "probable_code_files": ["apps/mcp-server/src/tools/caseCorpusTools.ts"],
+      "tests_needed": ["trace fields required", "warnings preserved"],
+      "regression_risk": "low",
+      "acceptance_criterion": "Every corpus entry includes resolution_id, hashes, timestamp, cache status and warnings."
+    },
+    {
+      "id": "LIM-016",
+      "description": "Individual authorship is not available from official source.",
+      "evidence": "selected_candidate.individual_judge_attribution_status is not_supported.",
+      "tool_affected": "style analysis",
+      "probable_cause": "Official judgments list composition but not drafting author.",
+      "type": "SOURCE",
+      "impact": "Individual judge style cannot be supported.",
+      "severity": "P3",
+      "proposed_solution": "Keep individual style unsupported and document institutional-only scope.",
+      "probable_code_files": ["documentation only unless composition filters are added"],
+      "tests_needed": ["guardrail: composition is not author"],
+      "regression_risk": "high",
+      "acceptance_criterion": "No corpus or style output claims individual authorship."
+    },
+    {
+      "id": "LIM-017",
+      "description": "Statutes were verified only at law-version level.",
+      "evidence": "example-brief.md says article-level application must be checked against Fedlex before real filing.",
+      "tool_affected": "get_law",
+      "probable_cause": "Day 1 did not perform article-level extraction.",
+      "type": "METHODOLOGY",
+      "impact": "Example brief is not filing-ready.",
+      "severity": "P3",
+      "proposed_solution": "Require article-level retrieval for future filing-style examples.",
+      "probable_code_files": ["existing Fedlex tools or documentation"],
+      "tests_needed": ["article lookup by ELI and article number"],
+      "regression_risk": "medium",
+      "acceptance_criterion": "Article citations are either article-verified or explicitly law-level only."
+    },
+    {
+      "id": "LIM-018",
+      "description": "Selection gates for full text, official extract, metadata-only and secondary source are manual.",
+      "evidence": "corpus.json excludes BGE extracts, metadata-only, language mismatch and missing dispositive entries.",
+      "tool_affected": "corpus export",
+      "probable_cause": "Resolver statuses are not yet enforced by a corpus builder.",
+      "type": "MCP",
+      "impact": "Large corpus could count unsuitable records.",
+      "severity": "P1",
+      "proposed_solution": "Implement hard corpus inclusion gates based on resolver legal-use status.",
+      "probable_code_files": [
+        "apps/mcp-server/src/tools/caseCorpusTools.ts",
+        "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+      ],
+      "tests_needed": [
+        "official extract excluded",
+        "metadata-only excluded",
+        "secondary source excluded",
+        "full_text_verified_official included"
+      ],
+      "regression_risk": "low",
+      "acceptance_criterion": "Only verified official complete full-text decisions count toward corpus target."
+    }
+  ],
+  "tool_evaluation": {
+    "extend_search_cases": {
+      "recommended": false,
+      "reason": "It is aggregator-based; official federal discovery should not blur this contract."
+    },
+    "create_search_federal_cases": {
+      "recommended": true,
+      "reason": "Needed for official-source federal discovery."
+    },
+    "add_chamber_filters": {
+      "recommended": true,
+      "reason": "Needed for homogeneous II. civil division corpus."
+    },
+    "add_judge_or_composition_filters": {
+      "recommended": "composition_only",
+      "reason": "Composition can be filtered, authorship cannot be inferred."
+    },
+    "create_resolve_bge_to_case": {
+      "recommended": "maybe_after_resolver_extension",
+      "reason": "Prefer extending resolve_official_swiss_case with BGE mapping first."
+    },
+    "create_batch_resolve_official_cases": {
+      "recommended": true,
+      "reason": "Needed to resolve 60 references without manual calls."
+    },
+    "create_export_case_corpus": {
+      "recommended": true,
+      "reason": "Needed for reproducible corpus artifacts and selection gates."
+    }
+  },
+  "recovery_strategy_for_60": {
+    "discovery": "Use official Swiss Federal Supreme Court search, over-collect 100-140 candidates.",
+    "federal_filtering": "Keep only official federal candidates.",
+    "deduplication": "Deduplicate by normalized reference, canonical URL, official docid, document hash and joined proceedings.",
+    "official_resolution": "Resolve with require_official_source, require_full_text, strict_identity_match and German language hint.",
+    "concurrency": "Use 2-4 concurrent live requests with provider-specific rate limits.",
+    "retries": "Use 1-2 retries for transient failures with exponential backoff and jitter.",
+    "checkpoint": "Persist after every candidate: cursor, processed refs, included/excluded refs and warnings.",
+    "validation": "Require identity_verified, official source, complete full-text, German language and no duplicates.",
+    "export": "Write corpus, exclusions, source policy, trace manifest and counts."
+  },
+  "recommended_first_fix": "Implement official federal discovery with chamber/language/date filters, then connect it to batch resolution and corpus export.",
+  "expected_corpus_after_fix": {
+    "included_minimum": 50,
+    "included_objective": 60,
+    "discovered_candidate_range": "100-140",
+    "conditions": [
+      "official site available",
+      "period broad enough",
+      "strict gates applied",
+      "rate limits respected"
+    ]
+  },
+  "proposed_severities": {
+    "P0": [],
+    "P1": [
+      "LIM-001",
+      "LIM-002",
+      "LIM-003",
+      "LIM-004",
+      "LIM-006",
+      "LIM-007",
+      "LIM-008",
+      "LIM-013",
+      "LIM-018"
+    ],
+    "P2": ["LIM-005", "LIM-009", "LIM-010", "LIM-011", "LIM-012", "LIM-014", "LIM-015"],
+    "P3": ["LIM-016", "LIM-017"]
+  },
+  "limitations_by_type": {
+    "MCP": [
+      "LIM-002",
+      "LIM-003",
+      "LIM-004",
+      "LIM-006",
+      "LIM-008",
+      "LIM-009",
+      "LIM-010",
+      "LIM-013",
+      "LIM-014",
+      "LIM-015",
+      "LIM-018"
+    ],
+    "PROVIDER": ["LIM-007"],
+    "SOURCE": ["LIM-005", "LIM-011", "LIM-016"],
+    "METHODOLOGY": ["LIM-001", "LIM-012", "LIM-017"]
+  },
+  "restrictions_honored": {
+    "code_modified": false,
+    "tests_modified": false,
+    "rc_modified": false,
+    "publication_performed": false,
+    "git_created": false
+  }
+}

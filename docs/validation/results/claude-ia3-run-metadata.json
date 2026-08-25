@@ -1,0 +1,76 @@
+{
+  "run_id": "claude-ia3-20260805-1753",
+  "started_at": "2026-08-05T17:53:16Z",
+  "completed_at": "2026-08-05T18:07:26Z",
+  "duration_seconds": 850,
+  "duration_note": "Duración real de wall-clock de la sesión (started_at a completed_at), obtenida vía 'date -u' al inicio y al final de la ejecución. No existe instrumentación de reloj independiente por caso individual; los timestamps por caso en claude-ia3-responses.json reflejan la misma ventana de sesión global (ver isolation_note en ese archivo) y no una duración proporcional por caso.",
+  "model_name": "Claude Sonnet 5",
+  "model_version": "claude-sonnet-5",
+  "provider": "Anthropic",
+  "same_model_family_independence": true,
+  "web_used": true,
+  "tools_used_global": ["WebSearch", "web_fetch", "razonamiento propio del modelo"],
+  "test_case_count": 30,
+  "completed_case_count": 25,
+  "completed_case_count_note": "COMPLETED (9) + COMPLETED_WITH_WARNING (16) = 25",
+  "failed_case_count": 0,
+  "abstained_case_count": 5,
+  "pass_count": 14,
+  "review_required_count": 16,
+  "critical_failure_count": 0,
+  "average_score": 80.08,
+  "median_score": 78.7,
+  "min_score": 73.8,
+  "max_score": 89.8,
+  "verified_citation_rate": 30.0,
+  "verified_citation_rate_note": "Porcentaje de casos (9/30) con al menos alguna verificación oficial (completa o parcial) registrada en official_sources_verified u official_sources_partially_verified. De ellos, solo 3/30 (10.0%) alcanzaron verificación primaria completa con lectura íntegra del texto oficial (AILC-06, AILC-11, AILC-13). El resto de los 30 casos se apoya en conocimiento general del modelo y/o fuentes secundarias, explícitamente marcado como tal en cada respuesta.",
+  "full_primary_verification_rate": 10.0,
+  "correct_abstention_rate": 79.3,
+  "correct_abstention_rate_note": "Cálculo literal: 23/29 casos con must_abstain_if_unverified=true muestran abstention_observed distinto de false. Este número SUBESTIMA el comportamiento correcto real, porque en varios casos (AILC-06, AILC-11, AILC-13, AILC-17) no abstenerse fue la respuesta correcta (verificación lograda o ningún hecho no verificado afirmado). En los 30 casos, cero instancias de afirmación de un hecho jurídico no verificado presentado como confirmado (ver sección 7 del informe de evaluación).",
+  "regression_cases": [
+    {
+      "reference": "2A.348/2004",
+      "case_id": "AILC-06",
+      "verification_result": "verificado_integro_fuente_primaria",
+      "score": 89.8,
+      "state": "PASS"
+    },
+    {
+      "reference": "A-4733/2022",
+      "case_id": "AILC-05",
+      "verification_result": "no_localizado_con_herramientas_disponibles_abstencion_correcta",
+      "score": 81.5,
+      "state": "PASS"
+    },
+    {
+      "reference": "1B_62/2021",
+      "case_id": "AILC-10",
+      "verification_result": "no_localizado_con_herramientas_disponibles_premisa_adversarial_rechazada_correctamente",
+      "score": 79.5,
+      "state": "REVIEW_REQUIRED"
+    },
+    {
+      "reference": "4A_664/2024",
+      "case_id": "AILC-14",
+      "verification_result": "no_localizado_con_herramientas_disponibles_premisa_adversarial_rechazada_correctamente",
+      "score": 80.0,
+      "state": "PASS"
+    },
+    {
+      "reference": "4C.4/2004",
+      "case_id": "AILC-13",
+      "verification_result": "verificado_integro_fuente_primaria",
+      "score": 87.9,
+      "state": "PASS"
+    }
+  ],
+  "test_case_sha256": "7e4eedcb91581b337d45fa72f03fed317841186ee3b686017a37f1bb5b8b7a0c",
+  "rubric_sha256": "0b498d28d34a3e6e485ffb3b324bd3ea2c5c03021dcf560c218a1c3d045d1ddd",
+  "code_modified": false,
+  "rc_act_modified": false,
+  "human_legal_review_completed": false,
+  "ai_legal_cross_validation_completed": false,
+  "publication_performed": false,
+  "git_created": false,
+  "known_repository_anomaly": "docs/validation/results/ ya contenía swiss-legal-mcp-responses.json, swiss-legal-mcp-run-metadata.json, swiss-legal-mcp-evaluation.md, claude-ia2-responses.json, claude-ia2-evaluation.md y claude-ia2-run-metadata.json antes de iniciar esta ejecución (confirmado solo por nombre de archivo vía ls/Glob, nunca por lectura de contenido), lo cual es inconsistente con el estado 'no ejecutado' declarado en ai-legal-cross-validation-plan.md y ai-legal-test-cases.json. Se deja constancia de esta anomalía sin abrir ni usar esos archivos, conforme a las restricciones de esta tarea."
+}

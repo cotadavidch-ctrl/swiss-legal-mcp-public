@@ -1,0 +1,77 @@
+{
+  "run_id": "claude-ia2-20260805T133028Z",
+  "started_at": "2026-08-05T13:30:28Z",
+  "completed_at": "2026-08-05T15:45:00Z",
+  "duration_seconds": 8072,
+  "model_name": "Claude (Anthropic)",
+  "model_version": "claude-sonnet-5",
+  "web_used": true,
+  "tools_used_global": [
+    "WebSearch",
+    "mcp__workspace__web_fetch",
+    "mcp__workspace__bash (sha256sum, validacion de JSON, generacion de artefactos internos)"
+  ],
+  "test_case_count": 30,
+  "completed_case_count": 21,
+  "failed_case_count": 0,
+  "abstained_case_count": 9,
+  "pass_count": 13,
+  "review_required_count": 17,
+  "critical_failure_count": 0,
+  "average_score": 82.46,
+  "median_score": 79.5,
+  "verified_citation_rate": 33.3,
+  "correct_abstention_rate": 90.0,
+  "regression_cases": {
+    "2A.348/2004": [
+      {
+        "case_id": "AILC-06",
+        "score": 90.9,
+        "status": "PASS"
+      },
+      {
+        "case_id": "AILC-23",
+        "score": 90.9,
+        "status": "PASS"
+      }
+    ],
+    "A-4733/2022": [
+      {
+        "case_id": "AILC-14",
+        "score": 70.2,
+        "status": "REVIEW_REQUIRED"
+      }
+    ],
+    "1B_62/2021": [
+      {
+        "case_id": "AILC-10",
+        "score": 90.9,
+        "status": "PASS"
+      }
+    ],
+    "4A_664/2024": [
+      {
+        "case_id": "AILC-17",
+        "score": 70.2,
+        "status": "REVIEW_REQUIRED"
+      }
+    ],
+    "4C.4/2004": [
+      {
+        "case_id": "AILC-11",
+        "score": 90.9,
+        "status": "PASS"
+      },
+      {
+        "case_id": "AILC-13",
+        "score": 80.4,
+        "status": "PASS"
+      }
+    ]
+  },
+  "test_case_sha256": "7e4eedcb91581b337d45fa72f03fed317841186ee3b686017a37f1bb5b8b7a0c",
+  "rubric_sha256": "0b498d28d34a3e6e485ffb3b324bd3ea2c5c03021dcf560c218a1c3d045d1ddd",
+  "code_modified": false,
+  "publication_performed": false,
+  "git_created": false
+}

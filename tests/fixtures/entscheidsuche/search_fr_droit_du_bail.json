@@ -1,0 +1,68 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 38124,\n  \"hits\": [\n    {\n      \"id\": \"SG_KG_002_BO-2017-21_2018-09-10\",\n      \"title\": \"St.Gallen Kantonsgericht Zivilkammern (inkl. Einzelrichter) 10.09.2018 BO.2017.21\",\n      \"abstract\": \"Art. 6 Abs. 1 und 2 ZPO, Art. 243 Abs. 2 lit. c ZPO (SR 272): Abgrenzung der Zuständigkeit von Handelsgericht und ordentlichen Gerichten. Begriff der Hinterlegung von Miet- und Pachtzinsen gemäss Art. 243 Abs. 2 lit. c ZPO. Keine streitwertunabhängige Beurteilung im vereinfachten Verfahren, wenn die Mängelansprüche nicht im Rahmen eines Hinterlegungsverfahrens i.S.v. Art. 259h und Art. 259i OR geltend gemacht wurden (Kantonsgericht, III. Zivilkammer, 10. September 2018, BO.2017.21).\",\n      \"text\": \"., Art. 243 N 20; Bohnet, Le \\n\\n<em>droit</em> <em>du</em> <em>bail</em> en procédure civile suisse, in: 16  Séminaire sur le <em>droit</em> <em>du</em> <em>bail</em>, Hrsg.\",\n      \"meta\": \"Saint-Gall  Zivilkammern (inkl. Einzelrichter)\",\n      \"canton\": \"SG\",\n      \"court\": \"SG_KG\",\n      \"decision_date\": \"2018-09-10\",\n      \"scrape_date\": \"2026-07-18\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/SG_Gerichte/SG_KG_002_BO-2017-21_2018-09-10.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        28.87183,\n        \"SG_KG_002_BO-2017-21_2018-09-10\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-117-II-410_1991-05-16\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 16.05.1991 BGE 117 II 410\",\n      \"abstract\": \"Regeste\\n<br>Prolongation de <em>bail</em>; autorité de chose jugée (art. 273 CO; art. 5 al. 2 des dispositions finales <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em>). 1. Champ d'application de la disposition de <em>droit</em> transitoire figurant à l'art. 5 al. 2 des dispositions finales <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em> (consid. 1). 2. Lorsque, à la suite de la notification d'un congé, une action en contestation de celui-ci ou en prolongation <em>du</em> <em>bail</em> a été ouverte et définitivement liquidée avant le 1er juillet 1990, un nouveau délai au sens de l'art. 273 CO ne commence pas à courir lorsque l'objet de l'action, introduite postérieurement à l'entrée en vigueur <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em>, est identique à celui de la précédente (consid. 2). 3. Le retrait inconditionnel de l'action et l'ordonnance de radiation <em>du</em> rôle bénéficient de l'autorité de la chose jugée (consid. 3).\",\n      \"text\": \"GMÜR (Vom alten zum neuen Mietrecht, S. 20 f.) und LACHAT/MICHELI (Le nouveau <em>droit</em> <em>du</em> <em>bail</em>, S. 54) schliessen Etwas differenzierter argumentiert BARBEY (Commentaire <em>du</em> <em>droit</em> <em>du</em> <em>bail</em>, III/1, N. 267 Introduction).\",\n      \"meta\": \"I. Zivilabteilung\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1991-05-16\",\n      \"scrape_date\": \"2026-05-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-117-II-410_1991-05-16.html\",\n      \"original_url\": null,\n      \"sort\": [\n        27.327156,\n        \"CH_BGE_004_BGE-117-II-410_1991-05-16\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-118-II-441_1992-12-28\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 28.12.1992 BGE 118 II 441\",\n      \"abstract\": \"Regeste\\n<br><em>Bail</em> à ferme agricole. Conclusion <em>du</em> <em>bail</em>; décès <em>du</em> fermier, reprise <em>du</em> <em>bail</em> par le bailleur (art. 18 LBFA). 1. Le contrat de <em>bail</em> à ferme agricole peut aussi être conclu tacitement. La partie à qui incombe le fardeau de la preuve ne peut déduire de l'art. 8 CC un <em>droit</em> à la preuve que dans la mesure où ses offres de preuve portent sur des faits pertinents en <em>droit</em> (consid. 1). 2. En cas de décès <em>du</em> fermier, l'intérêt des survivants à la poursuite de l'exploitation l'emporte, en principe, sur la faculté <em>du</em> bailleur d'opter pour la résiliation ou pour la continuation <em>du</em> <em>bail</em>. Cependant, si plusieurs survivants souhaitent reprendre le <em>bail</em> à ferme, le bailleur peut désigner à sa guise celui qui lui convient. S'il est lui-même héritier <em>du</em> fermier décédé, il peut se substituer à un cohéritier (consid. 2).\",\n      \"text\": \"privatrechtlichen Bestimmungen des LPG, in: ZBJV 123/1987 S. 6; CLAUDE PAQUIER-BOINAY, Le contrat de <em>bail</em> à ferme agricole: conclusion et <em>droit</em> de préaffermage, Diss. solchen Fall den ihm zusagenden Bewerber bezeichnen kann  (BBl 1982 I 281; vgl. auch STUDER/HOFER, Le <em>droit</em> <em>du</em> <em>bail</em> à ferme agricole, Brugg 1988, S. 152).\",\n      \"meta\": \"I. Zivilabteilung\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1992-12-28\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-118-II-441_1992-12-28.html\",\n      \"original_url\": null,\n      \"sort\": [\n        26.901169,\n        \"CH_BGE_004_BGE-118-II-441_1992-12-28\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    26.901169,\n    \"CH_BGE_004_BGE-118-II-441_1992-12-28\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 38124,
+        "hits": [
+          {
+            "id": "SG_KG_002_BO-2017-21_2018-09-10",
+            "title": "St.Gallen Kantonsgericht Zivilkammern (inkl. Einzelrichter) 10.09.2018 BO.2017.21",
+            "abstract": "Art. 6 Abs. 1 und 2 ZPO, Art. 243 Abs. 2 lit. c ZPO (SR 272): Abgrenzung der Zuständigkeit von Handelsgericht und ordentlichen Gerichten. Begriff der Hinterlegung von Miet- und Pachtzinsen gemäss Art. 243 Abs. 2 lit. c ZPO. Keine streitwertunabhängige Beurteilung im vereinfachten Verfahren, wenn die Mängelansprüche nicht im Rahmen eines Hinterlegungsverfahrens i.S.v. Art. 259h und Art. 259i OR geltend gemacht wurden (Kantonsgericht, III. Zivilkammer, 10. September 2018, BO.2017.21).",
+            "text": "., Art. 243 N 20; Bohnet, Le \n\n<em>droit</em> <em>du</em> <em>bail</em> en procédure civile suisse, in: 16  Séminaire sur le <em>droit</em> <em>du</em> <em>bail</em>, Hrsg.",
+            "meta": "Saint-Gall  Zivilkammern (inkl. Einzelrichter)",
+            "canton": "SG",
+            "court": "SG_KG",
+            "decision_date": "2018-09-10",
+            "scrape_date": "2026-07-18",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/SG_Gerichte/SG_KG_002_BO-2017-21_2018-09-10.pdf",
+            "original_url": null,
+            "sort": [28.87183, "SG_KG_002_BO-2017-21_2018-09-10"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-117-II-410_1991-05-16",
+            "title": "Tribunal fédéral (ATF) Partie II 16.05.1991 BGE 117 II 410",
+            "abstract": "Regeste\n<br>Prolongation de <em>bail</em>; autorité de chose jugée (art. 273 CO; art. 5 al. 2 des dispositions finales <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em>). 1. Champ d'application de la disposition de <em>droit</em> transitoire figurant à l'art. 5 al. 2 des dispositions finales <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em> (consid. 1). 2. Lorsque, à la suite de la notification d'un congé, une action en contestation de celui-ci ou en prolongation <em>du</em> <em>bail</em> a été ouverte et définitivement liquidée avant le 1er juillet 1990, un nouveau délai au sens de l'art. 273 CO ne commence pas à courir lorsque l'objet de l'action, introduite postérieurement à l'entrée en vigueur <em>du</em> nouveau <em>droit</em> <em>du</em> <em>bail</em>, est identique à celui de la précédente (consid. 2). 3. Le retrait inconditionnel de l'action et l'ordonnance de radiation <em>du</em> rôle bénéficient de l'autorité de la chose jugée (consid. 3).",
+            "text": "GMÜR (Vom alten zum neuen Mietrecht, S. 20 f.) und LACHAT/MICHELI (Le nouveau <em>droit</em> <em>du</em> <em>bail</em>, S. 54) schliessen Etwas differenzierter argumentiert BARBEY (Commentaire <em>du</em> <em>droit</em> <em>du</em> <em>bail</em>, III/1, N. 267 Introduction).",
+            "meta": "I. Zivilabteilung",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1991-05-16",
+            "scrape_date": "2026-05-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-117-II-410_1991-05-16.html",
+            "original_url": null,
+            "sort": [27.327156, "CH_BGE_004_BGE-117-II-410_1991-05-16"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-118-II-441_1992-12-28",
+            "title": "Tribunal fédéral (ATF) Partie II 28.12.1992 BGE 118 II 441",
+            "abstract": "Regeste\n<br><em>Bail</em> à ferme agricole. Conclusion <em>du</em> <em>bail</em>; décès <em>du</em> fermier, reprise <em>du</em> <em>bail</em> par le bailleur (art. 18 LBFA). 1. Le contrat de <em>bail</em> à ferme agricole peut aussi être conclu tacitement. La partie à qui incombe le fardeau de la preuve ne peut déduire de l'art. 8 CC un <em>droit</em> à la preuve que dans la mesure où ses offres de preuve portent sur des faits pertinents en <em>droit</em> (consid. 1). 2. En cas de décès <em>du</em> fermier, l'intérêt des survivants à la poursuite de l'exploitation l'emporte, en principe, sur la faculté <em>du</em> bailleur d'opter pour la résiliation ou pour la continuation <em>du</em> <em>bail</em>. Cependant, si plusieurs survivants souhaitent reprendre le <em>bail</em> à ferme, le bailleur peut désigner à sa guise celui qui lui convient. S'il est lui-même héritier <em>du</em> fermier décédé, il peut se substituer à un cohéritier (consid. 2).",
+            "text": "privatrechtlichen Bestimmungen des LPG, in: ZBJV 123/1987 S. 6; CLAUDE PAQUIER-BOINAY, Le contrat de <em>bail</em> à ferme agricole: conclusion et <em>droit</em> de préaffermage, Diss. solchen Fall den ihm zusagenden Bewerber bezeichnen kann  (BBl 1982 I 281; vgl. auch STUDER/HOFER, Le <em>droit</em> <em>du</em> <em>bail</em> à ferme agricole, Brugg 1988, S. 152).",
+            "meta": "I. Zivilabteilung",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1992-12-28",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-118-II-441_1992-12-28.html",
+            "original_url": null,
+            "sort": [26.901169, "CH_BGE_004_BGE-118-II-441_1992-12-28"]
+          }
+        ],
+        "next_cursor": [26.901169, "CH_BGE_004_BGE-118-II-441_1992-12-28"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

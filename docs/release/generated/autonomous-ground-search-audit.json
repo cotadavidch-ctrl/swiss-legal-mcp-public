@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-08-16T02:45:09.716Z",
+  "objective": "Find one official current-court Swiss decision with at least two autonomous grounds that independently support the dispositive.",
+  "official_sources_considered": [
+    "BGer official search",
+    "BVGer official source adapters already supported by resolver",
+    "BStGer official source adapters already supported by resolver",
+    "AR official source adapters already supported by resolver"
+  ],
+  "official_source_used_for_positive_case": "BGer official search",
+  "positive_case_reference": "2A.348/2004",
+  "positive_case_final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=2A.348/2004&rank=1&azaclir=aza&highlight_docid=aza://01-12-2004-2A-348-2004&number_of_ranks=3",
+  "positive_case_document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+  "positive_case_status": "verified_official_positive_case",
+  "search_method": "Official-source resolver refresh against Swiss official case adapters; candidates rejected unless full text was official, identity verified, and both grounds belonged to the current court dispositive.",
+  "accepted_ground_evidence": [
+    {
+      "ground_id": "autonomous_ground_1",
+      "summary": "Autonomer Entscheidgrund des Bundesgerichts: Erforderlich ist, dass die von der Stiftung bezogenen Eingangsumsätze tatsächlich, sei es unmittelbar oder mittelbar für Ausgangsumsätze, d.h. für steuerbare Lieferungen oder Dienstleistungen verwendet werden. Mit Ausnahme der fakturierten Forschungskosten von Fr. 8'480'543.-- (MWST-Betrag von Fr. 551'235.--), konnte dieser Nachweis im vorliegenden Fall nicht erbracht werden. Demnach haben die Eidgenössische Steuerverwaltung und die Vorinstanz den von der Beschwerdeführerin geltend gemachten Vorsteuerabzug im Umfange von Fr. 5'376'638.-- zu Recht nicht anerkannt. Eine Verletzung von Bundesrecht liegt nicht vor. Die Beschwerde ist schon aus diesem Grund abzuweisen.",
+      "supporting_sections": [
+        "reasoning"
+      ],
+      "evidence_hashes": [
+        "55b3c31aca159d8f29b38cba16a627c13c081c02b4d32958e712425be517d65b"
+      ],
+      "current_court": true,
+      "independently_sufficient_for_current_dispositive": true
+    },
+    {
+      "ground_id": "autonomous_ground_2",
+      "summary": "Autonomer Entscheidgrund des Bundesgerichts: Mit Ausnahme der zuvor erwähnten fakturierten Forschungsleistungen erbringt die Beschwerdeführerin keinen Beweis dafür, dass sie in der geprüften Steuerperiode weitere Leistungen gegen Entgelt deklariert oder in Rechnung gestellt hat. Soweit von ihr ein Vorsteuerabzug geltend gemacht wird, der über den von der Eidgenössischen Steuerverwaltung bewilligten Betrag hinausgeht, wurde ihr dieser korrekterweise verweigert. Die Vorinstanz stellt demnach in ihrem Entscheid zu Recht fest, dass mit Ausnahme der fakturierten Forschungsleistungen keine entgeltlichen Ausgangsumsätze vorliegen und die Beschwerde auch mangels Entgeltlichkeit abzuweisen sei.",
+      "supporting_sections": [
+        "reasoning"
+      ],
+      "evidence_hashes": [
+        "da00b81df9be6996198261569659fa5fafb13b77870cc4e0aac1b4453c588600"
+      ],
+      "current_court": true,
+      "independently_sufficient_for_current_dispositive": true
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "reference": "1B_62/2021",
+      "reason": "Lower-instance detention grounds; Federal Supreme Court decision is procedural inadmissibility."
+    },
+    {
+      "reference": "4A_664/2024",
+      "reason": "Abstract procedural doctrine about attacking independent lower-court grounds; not a concrete autonomous ground applied by the current court."
+    }
+  ],
+  "false_positive_regression": {
+    "reference": "1B_62/2021",
+    "pass": true,
+    "reason": "1B_62/2021 is a procedural inadmissibility decision; Fluchtgefahr and Kollusionsgefahr are lower-instance detention grounds, not autonomous grounds of the Federal Supreme Court judgment."
+  },
+  "counterfactual_validation": {
+    "ground_1_without_ground_2": "YES",
+    "ground_2_without_ground_1": "YES"
+  },
+  "omitted_ground_validation": {
+    "validation_status": "blocked",
+    "document_id": "doc_0c5b058c1a5e38f5a2b476815bd98c9b",
+    "document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+    "total_verified_ground_count": 2,
+    "reviewed_ground_count": 1,
+    "included_ground_ids": [
+      "autonomous_ground_2"
+    ],
+    "excluded_ground_ids": [
+      "autonomous_ground_1"
+    ],
+    "omitted_ground_ids": [
+      "autonomous_ground_1"
+    ],
+    "verified_ground_ids": [
+      "autonomous_ground_1",
+      "autonomous_ground_2"
+    ],
+    "ratio_status": "ratio_not_confirmed",
+    "blockers": [
+      "autonomous_ground_not_reviewed"
+    ],
+    "warnings": [
+      "omitted_autonomous_ground:autonomous_ground_1"
+    ],
+    "comparability_eligibility": "blocked",
+    "drafting_eligibility": "blocked",
+    "strategy_eligibility": "blocked",
+    "citation_eligibility": "blocked",
+    "no_network_request": true,
+    "source_analysis_hash": "f0b8fcf79f4a9d182ca6107d73b8d6df0b2cac70d44118690be468132da097af",
+    "persistence_verified": true
+  }
+}

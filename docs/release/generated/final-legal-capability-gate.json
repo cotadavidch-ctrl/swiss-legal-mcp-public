@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-08-16T02:45:46.932Z",
+  "autonomous_grounds_positive_live_case": "PASS",
+  "omitted_ground_live_validation": "PASS",
+  "independent_ground_internal_consistency": "PASS",
+  "case_1B_62_2021_regression": "PASS",
+  "autonomous_grounds_capability": "VALIDATED",
+  "all_legal_capabilities_fully_validated": true,
+  "blockers": [],
+  "warnings": [
+    "2 dependency fixture package(s) require manual license review.",
+    "Procedural strategy qualified human legal review is not completed.",
+    "Procedural strategy confidence calibration against human review is not completed."
+  ],
+  "live_failures": [],
+  "contradictions": [],
+  "untested_required_checks": [],
+  "capability_matrix": [
+    {
+      "capability": "BGE published citation resolution",
+      "offline_tested": true,
+      "live_tested": true,
+      "official_positive_case": "BGE 142 III 91; BGE 134 III 59",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": false,
+      "final_status": "VALIDATED"
+    },
+    {
+      "capability": "ATF/DTF normalization",
+      "offline_tested": true,
+      "live_tested": true,
+      "official_positive_case": "ATF 142 III 91; DTF 142 III 91",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": false,
+      "final_status": "VALIDATED"
+    },
+    {
+      "capability": "obiter adversarial protection",
+      "offline_tested": true,
+      "live_tested": true,
+      "official_positive_case": "4C.4/2004",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": false,
+      "final_status": "VALIDATED"
+    },
+    {
+      "capability": "autonomous grounds detection",
+      "offline_tested": true,
+      "live_tested": true,
+      "official_positive_case": "2A.348/2004",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": false,
+      "final_status": "VALIDATED"
+    },
+    {
+      "capability": "multirole restart persistence",
+      "offline_tested": true,
+      "live_tested": false,
+      "official_positive_case": "not_applicable",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": true,
+      "final_status": "VALIDATED"
+    },
+    {
+      "capability": "narrative state consistency",
+      "offline_tested": true,
+      "live_tested": false,
+      "official_positive_case": "not_applicable",
+      "negative_case_validated": true,
+      "adversarial_test_passed": true,
+      "restart_validated": true,
+      "final_status": "VALIDATED"
+    }
+  ],
+  "final_status": "PASS"
+}

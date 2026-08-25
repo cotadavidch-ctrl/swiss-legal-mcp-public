@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 7,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 0,\n  \"hits\": [],\n  \"next_cursor\": null,\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 0,
+        "hits": [],
+        "next_cursor": null,
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

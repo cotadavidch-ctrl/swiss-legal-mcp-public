@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-05T23:50:33.660Z",
+  "artifacts": [
+    "docs/release/generated/api-inventory.json",
+    "docs/release/generated/sbom.cdx.json",
+    "docs/release/generated/pnpm-sbom.cdx.json",
+    "docs/release/generated/license-inventory.json",
+    "docs/release/generated/third-party-licenses.json",
+    "docs/release/generated/build-hashes.json",
+    "docs/release/generated/benchmark-baseline.json",
+    "docs/release/generated/procedural-strategy-evaluation.json",
+    "docs/release/generated/procedural-strategy-human-validation.json",
+    "docs/release/generated/procedural-strategy-live-evaluation-plan.json",
+    "docs/release/generated/procedural-strategy-live-evaluation.json",
+    "docs/release/generated/legal-capability-live-check.json",
+    "docs/release/generated/multirole-persistence-check.json"
+  ],
+  "checksums": [
+    "docs/release/generated/api-inventory.json.sha256",
+    "docs/release/generated/sbom.cdx.json.sha256",
+    "docs/release/generated/pnpm-sbom.cdx.json.sha256",
+    "docs/release/generated/license-inventory.json.sha256",
+    "docs/release/generated/third-party-licenses.json.sha256",
+    "docs/release/generated/build-hashes.json.sha256",
+    "docs/release/generated/benchmark-baseline.json.sha256",
+    "docs/release/generated/procedural-strategy-evaluation.json.sha256",
+    "docs/release/generated/procedural-strategy-human-validation.json.sha256",
+    "docs/release/generated/procedural-strategy-live-evaluation-plan.json.sha256",
+    "docs/release/generated/procedural-strategy-live-evaluation.json.sha256",
+    "docs/release/generated/legal-capability-live-check.json.sha256",
+    "docs/release/generated/multirole-persistence-check.json.sha256"
+  ],
+  "packDryRun": "build:package: bundle escrito en dist/stdio.js\nbuild:package: tamano: 765971 bytes\nbuild:package: dependencias externas reales (declaradas en apps/mcp-server): @modelcontextprotocol/sdk, cheerio, domhandler, express, express-rate-limit, fast-xml-parser, pdf-parse, pino, pino-http, zod\nbuild:package: dependencias externas realmente referenciadas en el bundle: @modelcontextprotocol/sdk/client/index.js, @modelcontextprotocol/sdk/client/streamableHttp.js, @modelcontextprotocol/sdk/server/mcp.js, @modelcontextprotocol/sdk/server/stdio.js, @modelcontextprotocol/sdk/types.js, cheerio, fast-xml-parser, node:async_hooks, node:crypto, node:dns/promises, node:fs, node:net, node:os, node:path, node:zlib, pdf-parse, pino, zod\nbuild:package: 0 referencias @swiss-legal-mcp/* sin inlinear, 0 rutas absolutas.\nbuild:package: registro de frescura escrito (sourceHash=b62f40ea6219f2fe8e641df1cc960651bc727bd10c1a94bdf0a526aec6e3392e).\npackage: swiss-legal-mcp@1.0.0\nTarball Contents\ndist/.source-hash.json\ndist/stdio.js\nLICENSE\nNOTICE\npackage.json\nREADME.md\nSECURITY.md\nTHIRD_PARTY_NOTICES.md\nTarball Details\nswiss-legal-mcp-1.0.0.tgz\n"
+}

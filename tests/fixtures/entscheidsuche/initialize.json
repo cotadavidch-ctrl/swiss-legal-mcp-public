@@ -1,0 +1,28 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {
+        "experimental": {},
+        "prompts": {
+          "listChanged": false
+        },
+        "resources": {
+          "subscribe": false,
+          "listChanged": false
+        },
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "serverInfo": {
+        "name": "entscheidsuche",
+        "version": "1.27.0"
+      },
+      "instructions": "MCP-Server für entscheidsuche.ch — eine Suchmaschine für Schweizer Gerichtsentscheide, Gerichtsurteile, Rechtsprechung und Swiss case law. Die Tools helfen bei Entscheiden des Bundesgerichts (BGer, BGE) sowie kantonalen Gerichten, Obergerichten, Verwaltungsgerichten und weiteren Schweizer Gerichten. Unterstützt Volltextsuche, Geschäftsnummern- bzw. Urteilsnummern-Suche, Volltext-Abruf einzelner Entscheide, Hierarchien für Kantone und Gerichte sowie Facetten für Filter und Recherche."
+    }
+  }
+}

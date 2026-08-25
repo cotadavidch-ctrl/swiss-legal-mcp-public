@@ -1,0 +1,16 @@
+{
+  "head": { "link": [], "vars": ["work"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "work": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328"
+        }
+      },
+      { "work": { "type": "uri", "value": "https://fedlex.data.admin.ch/eli/cc/28/353_351_341" } }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "head": { "link": [], "vars": ["p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Expression"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isEmbodiedBy"
+        },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20000101/de/doc"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#isEmbodiedBy"
+        },
+        "o": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/eli/cc/1999/404/20000101/de/pdf-a"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#language"
+        },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/language/DEU"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#title"
+        },
+        "o": { "type": "literal", "value": "Consolidation: 101 - 2000-01-01" }
+      }
+    ]
+  }
+}

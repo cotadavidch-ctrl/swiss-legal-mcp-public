@@ -1,0 +1,152 @@
+{
+  "status": 200,
+  "note": "Aggregacion de decision_date recortada (bucket original tenia miles de entradas trimestrales en su mayoria a 0). Se conservan solo los primeros 10 buckets con count>0 por clave, mas los totales originales.",
+  "total": 51130,
+  "hits_count": 1,
+  "aggregations_trimmed": {
+    "decision_date": {
+      "sample_nonzero_buckets": [
+        {
+          "key": "1876-01-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "1881-01-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "1882-01-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "1886-04-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "1887-01-01T00:00:00.000Z",
+          "count": 2
+        },
+        {
+          "key": "1887-10-01T00:00:00.000Z",
+          "count": 2
+        },
+        {
+          "key": "1889-01-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "1892-01-01T00:00:00.000Z",
+          "count": 2
+        },
+        {
+          "key": "1892-10-01T00:00:00.000Z",
+          "count": 2
+        },
+        {
+          "key": "1898-04-01T00:00:00.000Z",
+          "count": 1
+        }
+      ],
+      "total_buckets_original": 603,
+      "nonzero_buckets_original": 320
+    },
+    "scrape_date": {
+      "sample_nonzero_buckets": [
+        {
+          "key": "2023-01-01T00:00:00.000Z",
+          "count": 17809
+        },
+        {
+          "key": "2025-04-01T00:00:00.000Z",
+          "count": 1
+        },
+        {
+          "key": "2025-10-01T00:00:00.000Z",
+          "count": 2
+        },
+        {
+          "key": "2026-01-01T00:00:00.000Z",
+          "count": 375
+        },
+        {
+          "key": "2026-04-01T00:00:00.000Z",
+          "count": 18012
+        },
+        {
+          "key": "2026-07-01T00:00:00.000Z",
+          "count": 14931
+        }
+      ],
+      "total_buckets_original": 15,
+      "nonzero_buckets_original": 6
+    },
+    "hierarchy": {
+      "sample_nonzero_buckets": [
+        {
+          "key": "VD",
+          "count": 16451
+        },
+        {
+          "key": "VD_TC",
+          "count": 16447
+        },
+        {
+          "key": "CH",
+          "count": 14699
+        },
+        {
+          "key": "GE",
+          "count": 13716
+        },
+        {
+          "key": "GE_CJ",
+          "count": 12900
+        },
+        {
+          "key": "CH_BGer",
+          "count": 7456
+        },
+        {
+          "key": "CH_BVGE",
+          "count": 4810
+        },
+        {
+          "key": "CH_BVGE_001",
+          "count": 4810
+        },
+        {
+          "key": "VD_TC_003",
+          "count": 3967
+        },
+        {
+          "key": "VD_TC_031",
+          "count": 3586
+        }
+      ],
+      "total_buckets_original": 246,
+      "nonzero_buckets_original": 246
+    },
+    "language": {
+      "sample_nonzero_buckets": [
+        {
+          "key": "fr",
+          "count": 49238
+        },
+        {
+          "key": "de",
+          "count": 982
+        },
+        {
+          "key": "it",
+          "count": 871
+        },
+        {
+          "key": "lt",
+          "count": 32
+        }
+      ],
+      "total_buckets_original": 4,
+      "nonzero_buckets_original": 4
+    }
+  }
+}

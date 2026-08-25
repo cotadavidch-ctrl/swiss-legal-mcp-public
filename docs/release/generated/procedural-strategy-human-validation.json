@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-16T17:47:56.991Z",
+  "status": "prepared_no_human_reviews",
+  "humanReviewPrepared": true,
+  "humanReviewCompleted": false,
+  "liveEvaluationCompleted": true,
+  "criticalFindingsOpen": 0,
+  "calibrationCompleted": false,
+  "preparedCases": [
+    {
+      "caseId": "legal-aid-ar",
+      "title": "Appenzell Ausserrhoden legal aid appeal",
+      "caseHash": "a7b7b1f01c20dd8d20c051cfa007cff14f4e796ac774576f702f34b8c995f8a3",
+      "outputHash": "88aa44624269393bab639a81190254ac72a43cd83d796fb32f059350f1106d2f"
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "title": "Cantonal administrative permit decision",
+      "caseHash": "280995f2cee3c3fb1929737d1b7978e2f9406733f81f6443361e83507869d31a",
+      "outputHash": "13ea29eaaf1f4dd151cba9848c0e9f72e856055cf6d34dfcf6a9d4510ec8e6b6"
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "title": "Social insurance objection with confirmed deadline",
+      "caseHash": "6c3ee43f59f39e25b27a3acbf2d8b43db9a7ab30933d0f762aff2a4de2a6b272",
+      "outputHash": "eeebc8e65f2359ad6f14def2977c1f912a36b9aa5c0f9e6b3061b99bc2487b15"
+    },
+    {
+      "caseId": "employment-controlled",
+      "title": "Employment wage claim",
+      "caseHash": "98c049df532ea379876b68bd7eb39186d7c155f07c66d2914f17cee4a3615062",
+      "outputHash": "aa9043dc506b3f35e23871ec002ea395142fcb94b4a3f71b0449dea8bb0fd1d6"
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "title": "Uncertain deadline",
+      "caseHash": "ef88979d77076e3bded2ab6ea497ad77f3db991ead1008980ca24b6e3c5a9989",
+      "outputHash": "c897cb3309f67cd3a964a82a2e1ace614ac3c8d6cd170cbf000d0d9e5967cacb"
+    }
+  ],
+  "reviewers": [],
+  "caseReviews": [],
+  "summary": {
+    "reviewedCases": 0,
+    "qualifiedReviewers": 0,
+    "averageCriticalDimensionScore": null,
+    "agreementByDimension": {},
+    "blockers": [
+      "qualified_human_review_missing"
+    ]
+  }
+}

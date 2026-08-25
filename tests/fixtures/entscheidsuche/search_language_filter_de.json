@@ -1,0 +1,98 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 1815,\n  \"hits\": [\n    {\n      \"id\": \"SG_HG_001_HG-2003-42_2005-03-23\",\n      \"title\": \"St.Gallen Handelsgericht 23.03.2005 HG.2003.42\",\n      \"abstract\": \"Art. 1, 3, 14, 17 f., 23, 25, 27, 32, 34 ff. des Übereinkommens über den Beförderungsvertrag im internationalen Strassenverkehr (Convention relative au <em>Contrat</em> de transport international de marchandises par route (CMR, SR 0.741.611). Zu entscheiden war im Wesentlichen über die Aktivlegitimation und Passivlegitimation der Parteien; insbesondere über die Frachtführerstellung der Beklagten und über die Gültigkeit einer Zession nach iranischem Recht (Handelsgericht, 23. März 2005, HG.2003.42)\",\n      \"text\": \"Übereinkommens über den \\nBeförderungsvertrag im internationalen Strassenverkehr (Convention \\nrelative au <em>Contrat</em> Es handelt sich denn \\n\\nzumindest hier um einen Fall von Fixkostenspedition (\\\"<em>contrat</em> à prix préetabli\",\n      \"meta\": \"St.Gallen Handelsgericht \",\n      \"canton\": \"SG\",\n      \"court\": \"SG_HG\",\n      \"decision_date\": \"2005-03-23\",\n      \"scrape_date\": \"2026-05-12\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/SG_Gerichte/SG_HG_001_HG-2003-42_2005-03-23.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        23.93592,\n        \"SG_HG_001_HG-2003-42_2005-03-23\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-132-III-753_2006\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2006 BGE 132 III 753\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> d'apprentissage (art. 344 ss CO) et <em>contrat</em> d'enseignement. Délimitation entre <em>contrat</em> d'apprentissage et <em>contrat</em> d'enseignement (consid. 2.1 et 2.2). Prétention de salaire en présence d'un <em>contrat</em> d'apprentissage de fait (consid. 2.3 et 2.4).\",\n      \"text\": \"\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2006-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-132-III-753_2006.html\",\n      \"original_url\": null,\n      \"sort\": [\n        15.260265,\n        \"CH_BGE_005_BGE-132-III-753_2006\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-114-II-53_1988-03-01\",\n      \"title\": \"Bundesgericht (BGE) Teil II 01.03.1988 BGE 114 II 53\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> d'entreprise totale: nature juridique, résiliation par le maître. Le <em>contrat</em> dit d'entreprise totale doit être qualifié, en droit, de <em>contrat</em> d'entreprise. Sa résiliation par le maître est soumise aux règles du <em>contrat</em> d'entreprise, quel que soit le moment où elle intervient.\",\n      \"text\": \"\",\n      \"meta\": \"I. Zivilabteilung\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1988-03-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-114-II-53_1988-03-01.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.631109,\n        \"CH_BGE_004_BGE-114-II-53_1988-03-01\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_005_BGE-128-III-428_2002\",\n      \"title\": \"Bundesgericht (BGE) Teil III 2002 BGE 128 III 428\",\n      \"abstract\": \"Regeste\\n<br><em>Contrat</em> de prêt. Prêt sans intérêt en tant que <em>contrat</em> de durée; résiliation du <em>contrat</em> pour de justes motifs (consid. 3 et 4).\",\n      \"text\": \"\",\n      \"meta\": \"Eidgenossenschaft Bundesgericht (BGE) Teil III\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"2002-01-01\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-128-III-428_2002.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.610705,\n        \"CH_BGE_005_BGE-128-III-428_2002\"\n      ]\n    },\n    {\n      \"id\": \"ZH_SVG_001_AL-2009-00063_2010-02-14\",\n      \"title\": \"Zürich Sozialversicherungsgericht 14.02.2010 AL.2009.00063\",\n      \"abstract\": \"Anspruch auf AL, Selbstangaben des Bf gegenüber SVA genügen nicht als Nachweis für eine beitragspflichtige Beschäftigung, fehlende Kontoauszüge\",\n      \"text\": \"September 2007 mit dem Titel \\\"<em>contrat</em> du travail\\\" (Urk. 7/35 = Urk. 3/1). Juni 2008 mit dem Titel \\\"resiliation du <em>contrat</em> de travail\\\" sei das Arbeitsverhältnis mit dem Beschwerdeführer\",\n      \"meta\": \"Zürich Sozialversicherungsgericht \",\n      \"canton\": \"ZH\",\n      \"court\": \"ZH_SVG\",\n      \"decision_date\": \"2010-02-14\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/ZH_Sozialversicherungsgericht/ZH_SVG_001_AL-2009-00063_2010-02-14.html\",\n      \"original_url\": null,\n      \"sort\": [\n        14.554268,\n        \"ZH_SVG_001_AL-2009-00063_2010-02-14\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    14.554268,\n    \"ZH_SVG_001_AL-2009-00063_2010-02-14\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 1815,
+        "hits": [
+          {
+            "id": "SG_HG_001_HG-2003-42_2005-03-23",
+            "title": "St.Gallen Handelsgericht 23.03.2005 HG.2003.42",
+            "abstract": "Art. 1, 3, 14, 17 f., 23, 25, 27, 32, 34 ff. des Übereinkommens über den Beförderungsvertrag im internationalen Strassenverkehr (Convention relative au <em>Contrat</em> de transport international de marchandises par route (CMR, SR 0.741.611). Zu entscheiden war im Wesentlichen über die Aktivlegitimation und Passivlegitimation der Parteien; insbesondere über die Frachtführerstellung der Beklagten und über die Gültigkeit einer Zession nach iranischem Recht (Handelsgericht, 23. März 2005, HG.2003.42)",
+            "text": "Übereinkommens über den \nBeförderungsvertrag im internationalen Strassenverkehr (Convention \nrelative au <em>Contrat</em> Es handelt sich denn \n\nzumindest hier um einen Fall von Fixkostenspedition (\"<em>contrat</em> à prix préetabli",
+            "meta": "St.Gallen Handelsgericht ",
+            "canton": "SG",
+            "court": "SG_HG",
+            "decision_date": "2005-03-23",
+            "scrape_date": "2026-05-12",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/SG_Gerichte/SG_HG_001_HG-2003-42_2005-03-23.pdf",
+            "original_url": null,
+            "sort": [23.93592, "SG_HG_001_HG-2003-42_2005-03-23"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-132-III-753_2006",
+            "title": "Bundesgericht (BGE) Teil III 2006 BGE 132 III 753",
+            "abstract": "Regeste\n<br><em>Contrat</em> d'apprentissage (art. 344 ss CO) et <em>contrat</em> d'enseignement. Délimitation entre <em>contrat</em> d'apprentissage et <em>contrat</em> d'enseignement (consid. 2.1 et 2.2). Prétention de salaire en présence d'un <em>contrat</em> d'apprentissage de fait (consid. 2.3 et 2.4).",
+            "text": "",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2006-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-132-III-753_2006.html",
+            "original_url": null,
+            "sort": [15.260265, "CH_BGE_005_BGE-132-III-753_2006"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-114-II-53_1988-03-01",
+            "title": "Bundesgericht (BGE) Teil II 01.03.1988 BGE 114 II 53",
+            "abstract": "Regeste\n<br><em>Contrat</em> d'entreprise totale: nature juridique, résiliation par le maître. Le <em>contrat</em> dit d'entreprise totale doit être qualifié, en droit, de <em>contrat</em> d'entreprise. Sa résiliation par le maître est soumise aux règles du <em>contrat</em> d'entreprise, quel que soit le moment où elle intervient.",
+            "text": "",
+            "meta": "I. Zivilabteilung",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1988-03-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-114-II-53_1988-03-01.html",
+            "original_url": null,
+            "sort": [14.631109, "CH_BGE_004_BGE-114-II-53_1988-03-01"]
+          },
+          {
+            "id": "CH_BGE_005_BGE-128-III-428_2002",
+            "title": "Bundesgericht (BGE) Teil III 2002 BGE 128 III 428",
+            "abstract": "Regeste\n<br><em>Contrat</em> de prêt. Prêt sans intérêt en tant que <em>contrat</em> de durée; résiliation du <em>contrat</em> pour de justes motifs (consid. 3 et 4).",
+            "text": "",
+            "meta": "Eidgenossenschaft Bundesgericht (BGE) Teil III",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "2002-01-01",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-128-III-428_2002.html",
+            "original_url": null,
+            "sort": [14.610705, "CH_BGE_005_BGE-128-III-428_2002"]
+          },
+          {
+            "id": "ZH_SVG_001_AL-2009-00063_2010-02-14",
+            "title": "Zürich Sozialversicherungsgericht 14.02.2010 AL.2009.00063",
+            "abstract": "Anspruch auf AL, Selbstangaben des Bf gegenüber SVA genügen nicht als Nachweis für eine beitragspflichtige Beschäftigung, fehlende Kontoauszüge",
+            "text": "September 2007 mit dem Titel \"<em>contrat</em> du travail\" (Urk. 7/35 = Urk. 3/1). Juni 2008 mit dem Titel \"resiliation du <em>contrat</em> de travail\" sei das Arbeitsverhältnis mit dem Beschwerdeführer",
+            "meta": "Zürich Sozialversicherungsgericht ",
+            "canton": "ZH",
+            "court": "ZH_SVG",
+            "decision_date": "2010-02-14",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/ZH_Sozialversicherungsgericht/ZH_SVG_001_AL-2009-00063_2010-02-14.html",
+            "original_url": null,
+            "sort": [14.554268, "ZH_SVG_001_AL-2009-00063_2010-02-14"]
+          }
+        ],
+        "next_cursor": [14.554268, "ZH_SVG_001_AL-2009-00063_2010-02-14"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

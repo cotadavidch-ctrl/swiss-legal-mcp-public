@@ -1,0 +1,53 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 5,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 27008,\n  \"hits\": [\n    {\n      \"id\": \"CH_BGE_004_BGE-95-II-541_1969-09-30\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 30.09.1969 BGE 95 II 541\",\n      \"abstract\": \"Regeste\\n<br><em>Responsabilité</em> de l'hôtelier; art. 487 ss. CO.. La <em>responsabilité</em> causale de l'hôtelier n'est pas engagée lorsqu'il met une case de coffre-fort (safe) à la disposition d'un client pour y déposer des objets de valeur (consid. 1). <em>Responsabilité</em> de l'hôtelier bailleur de safe (consid. 2 et 3). Faute de la partie lésée (consid. 4).\",\n      \"text\": \"Arrêt de la Ire Cour <em>civile</em> du 30 septembre 1969 dans la cause Zietz contre Hôtel Mirabeau SA C.- Dame Zietz a ouvert action contre l'Hôtel Mirabeau SA devant la Cour <em>civile</em> du Tribunal cantonal Elle invoque, d'une part, les art. 487 à 489 CO sur la <em>responsabilité</em> de l'hôtelier, d'autre BGE 95 II 541 S. 543\\npart, les art. 99, 101 et 253 CO sur la <em>responsabilité</em> du loueur de safe. Dans ces circonstances, la <em>responsabilité</em> réputée causale de l'hôtelier n'était pas engagée.\\n\\n\\n\\n    2\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1969-09-30\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-95-II-541_1969-09-30.html\",\n      \"original_url\": null,\n      \"sort\": [\n        37.859398,\n        \"CH_BGE_004_BGE-95-II-541_1969-09-30\"\n      ]\n    },\n    {\n      \"id\": \"CH_BGE_004_BGE-81-II-301_1955-09-23\",\n      \"title\": \"Tribunal fédéral (ATF) Partie II 23.09.1955 BGE 81 II 301\",\n      \"abstract\": \"Regeste\\n<br><em>Responsabilité</em> du canton. Recevabilité du recours en réforme. Lorsque le canton intervient comme Etat souverain, sa <em>responsabilité</em> ne peut découler, en principe, que du droit public cantonal. Si celui-ci renvoie aux règles du code des obligations, les dispositions de ce code constituent du droit cantonal supplétif. Irrecevabilité du recours en réforme contre un jugement qui statue sur une telle <em>responsabilité</em>.\",\n      \"text\": \"Arrêt de la Ire Cour <em>civile</em> du 23 septembre 1955 dans la cause Allaman contre Etat de Genève. envers les tiers, dans la mesure du moins où il s'agit de la <em>responsabilité</em> dérivant de l'exercice de Il ne prévoit une telle <em>responsabilité</em> que dans certains domaines particuliers (cf. art. 42, 427, 955 Dans les autres cas, la <em>responsabilité</em> du canton ne peut découler que du droit public cantonal. Sa <em>responsabilité</em> ne peut donc être fondée sur le droit civil.\",\n      \"meta\": \"Ire Cour civile\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BGE\",\n      \"decision_date\": \"1955-09-23\",\n      \"scrape_date\": \"2026-05-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-81-II-301_1955-09-23.html\",\n      \"original_url\": null,\n      \"sort\": [\n        37.719696,\n        \"CH_BGE_004_BGE-81-II-301_1955-09-23\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    37.719696,\n    \"CH_BGE_004_BGE-81-II-301_1955-09-23\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 27008,
+        "hits": [
+          {
+            "id": "CH_BGE_004_BGE-95-II-541_1969-09-30",
+            "title": "Tribunal fédéral (ATF) Partie II 30.09.1969 BGE 95 II 541",
+            "abstract": "Regeste\n<br><em>Responsabilité</em> de l'hôtelier; art. 487 ss. CO.. La <em>responsabilité</em> causale de l'hôtelier n'est pas engagée lorsqu'il met une case de coffre-fort (safe) à la disposition d'un client pour y déposer des objets de valeur (consid. 1). <em>Responsabilité</em> de l'hôtelier bailleur de safe (consid. 2 et 3). Faute de la partie lésée (consid. 4).",
+            "text": "Arrêt de la Ire Cour <em>civile</em> du 30 septembre 1969 dans la cause Zietz contre Hôtel Mirabeau SA C.- Dame Zietz a ouvert action contre l'Hôtel Mirabeau SA devant la Cour <em>civile</em> du Tribunal cantonal Elle invoque, d'une part, les art. 487 à 489 CO sur la <em>responsabilité</em> de l'hôtelier, d'autre BGE 95 II 541 S. 543\npart, les art. 99, 101 et 253 CO sur la <em>responsabilité</em> du loueur de safe. Dans ces circonstances, la <em>responsabilité</em> réputée causale de l'hôtelier n'était pas engagée.\n\n\n\n    2",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1969-09-30",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-95-II-541_1969-09-30.html",
+            "original_url": null,
+            "sort": [37.859398, "CH_BGE_004_BGE-95-II-541_1969-09-30"]
+          },
+          {
+            "id": "CH_BGE_004_BGE-81-II-301_1955-09-23",
+            "title": "Tribunal fédéral (ATF) Partie II 23.09.1955 BGE 81 II 301",
+            "abstract": "Regeste\n<br><em>Responsabilité</em> du canton. Recevabilité du recours en réforme. Lorsque le canton intervient comme Etat souverain, sa <em>responsabilité</em> ne peut découler, en principe, que du droit public cantonal. Si celui-ci renvoie aux règles du code des obligations, les dispositions de ce code constituent du droit cantonal supplétif. Irrecevabilité du recours en réforme contre un jugement qui statue sur une telle <em>responsabilité</em>.",
+            "text": "Arrêt de la Ire Cour <em>civile</em> du 23 septembre 1955 dans la cause Allaman contre Etat de Genève. envers les tiers, dans la mesure du moins où il s'agit de la <em>responsabilité</em> dérivant de l'exercice de Il ne prévoit une telle <em>responsabilité</em> que dans certains domaines particuliers (cf. art. 42, 427, 955 Dans les autres cas, la <em>responsabilité</em> du canton ne peut découler que du droit public cantonal. Sa <em>responsabilité</em> ne peut donc être fondée sur le droit civil.",
+            "meta": "Ire Cour civile",
+            "canton": "CH",
+            "court": "CH_BGE",
+            "decision_date": "1955-09-23",
+            "scrape_date": "2026-05-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_004_BGE-81-II-301_1955-09-23.html",
+            "original_url": null,
+            "sort": [37.719696, "CH_BGE_004_BGE-81-II-301_1955-09-23"]
+          }
+        ],
+        "next_cursor": [37.719696, "CH_BGE_004_BGE-81-II-301_1955-09-23"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

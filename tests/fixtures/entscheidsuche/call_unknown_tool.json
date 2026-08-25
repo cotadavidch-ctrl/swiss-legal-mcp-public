@@ -1,0 +1,16 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 8,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Unknown tool: this_tool_does_not_exist"
+        }
+      ],
+      "isError": true
+    }
+  }
+}

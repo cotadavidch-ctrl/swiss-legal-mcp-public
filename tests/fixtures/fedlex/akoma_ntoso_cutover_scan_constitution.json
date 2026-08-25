@@ -1,0 +1,16 @@
+{
+  "_comment": "No es una respuesta SPARQL cruda: es un resumen, capturado en vivo el 2026-07-26 durante la integracion de FedlexProvider, de un escaneo formato-por-version sobre las 38 Consolidation reales de la Constitucion federal (eli/cc/1999/404). Para cada fecha se listaron los jolux:userFormat presentes en sus manifestaciones (via jolux:isEmbodiedBy). Confirma el punto exacto de corte real de disponibilidad de Akoma Ntoso/XML: 2021-01-01, no una fecha aproximada.",
+  "workEli": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+  "formatsByDate": {
+    "2000-01-01": ["doc", "pdf-a"],
+    "2005-03-02": ["doc", "pdf-a"],
+    "2012-09-23": ["doc", "pdf-a"],
+    "2017-09-24": ["pdf-a"],
+    "2020-01-01": ["doc", "pdf-a"],
+    "2021-01-01": ["doc", "pdf-a", "docx", "xml", "html"],
+    "2021-03-07": ["doc", "html", "pdf-a", "xml", "docx"],
+    "2024-03-03": ["html", "pdf-a", "xml", "docx"],
+    "2029-01-01": ["docx", "pdf-a", "html", "xml"]
+  },
+  "conclusion": "El primer Consolidation con manifestacion XML/Akoma Ntoso real es el de 2021-01-01. Todas las versiones anteriores (2000 a 2020) solo tienen doc y/o pdf-a. Esto reemplaza la estimacion previa (\"aproximadamente 2022-2024\") por un dato verificado."
+}

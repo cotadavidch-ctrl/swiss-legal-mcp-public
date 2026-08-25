@@ -1,0 +1,70 @@
+{
+  "run_id": "SWISS-LEGAL-MCP-RUN-2026-08-05-001",
+  "project_version": "1.0.0",
+  "started_at": "2026-08-05T12:30:00Z",
+  "completed_at": "2026-08-05T12:55:00Z",
+  "duration_seconds": 1500,
+  "node_version": "v22.22.3",
+  "pnpm_version": "not_found",
+  "operating_system": "Linux 6.8.0-124-generic x86_64 (Ubuntu 22.04-based sandbox)",
+  "mcp_handshake": "PASS",
+  "expected_tool_count": 42,
+  "actual_tool_count": 42,
+  "missing_tools": [],
+  "unexpected_tools": [],
+  "duplicate_tools": [],
+  "test_case_count": 30,
+  "completed_case_count": 17,
+  "failed_case_count": 2,
+  "abstained_case_count": 11,
+  "pass_count": 20,
+  "review_required_count": 10,
+  "critical_failure_count": 0,
+  "average_score": 82.2,
+  "median_score": 81.65,
+  "verified_citation_rate": 0.767,
+  "correct_abstention_rate": 1.0,
+  "regression_cases": [
+    {
+      "case_id": "AILC-05",
+      "reference": "A-4733/2022",
+      "final_status": "REVIEW_REQUIRED",
+      "score": 77.5,
+      "critical_error": false
+    },
+    {
+      "case_id": "AILC-06",
+      "reference": "2A.348/2004",
+      "final_status": "REVIEW_REQUIRED",
+      "score": 74.2,
+      "critical_error": false
+    },
+    {
+      "case_id": "AILC-10",
+      "reference": "1B_62/2021",
+      "final_status": "PASS",
+      "score": 81.0,
+      "critical_error": false
+    },
+    {
+      "case_id": "AILC-13",
+      "reference": "4C.4/2004",
+      "final_status": "REVIEW_REQUIRED",
+      "score": 75.2,
+      "critical_error": false
+    },
+    {
+      "case_id": "AILC-14",
+      "reference": "4A_664/2024",
+      "final_status": "PASS",
+      "score": 80.2,
+      "critical_error": false
+    }
+  ],
+  "test_case_sha256": "7e4eedcb91581b337d45fa72f03fed317841186ee3b686017a37f1bb5b8b7a0c",
+  "rubric_sha256": "0b498d28d34a3e6e485ffb3b324bd3ea2c5c03021dcf560c218a1c3d045d1ddd",
+  "tarball_sha256": "e5cce98aa4b5d9cb3a3ee79956c7c90baa643fbf4453b8bb242db7ff7ae0af29",
+  "code_modified": false,
+  "publication_performed": false,
+  "git_created": false
+}

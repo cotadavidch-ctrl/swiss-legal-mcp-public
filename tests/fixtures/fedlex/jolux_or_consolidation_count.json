@@ -1,0 +1,16 @@
+{
+  "head": { "link": [], "vars": ["n"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "n": {
+          "type": "typed-literal",
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "value": "100"
+        }
+      }
+    ]
+  }
+}

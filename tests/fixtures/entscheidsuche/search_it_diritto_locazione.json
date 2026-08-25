@@ -1,0 +1,68 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 6,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 8233,\n  \"hits\": [\n    {\n      \"id\": \"CH_BVGE_001_A-5372-2018_2019-12-16\",\n      \"title\": \"Bundesverwaltungsgericht 16.12.2019 A-5372/2018\",\n      \"abstract\": \"Tasse <em>di</em> bollo | Tassa <em>di</em> bollo d'emissione su obbligazioni <em>di</em> prestiti\",\n      \"text\": \"mutuo e i \\n\\ncontratti <em>di</em> <em>locazione</em>. un tale contratto <em>di</em> \\n\\n<em>locazione</em>. -\\n\\nsione <em>di</em> un contratto <em>di</em> <em>locazione</em> per un posto <em>di</em> attracco. un nuovo contratto <em>di</em> <em>locazione</em> decennale. mutuo/<em>di</em> <em>locazione</em>.\",\n      \"meta\": \"Abteilung I\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BVGE\",\n      \"decision_date\": \"2019-12-16\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BVGer/CH_BVGE_001_A-5372-2018_2019-12-16.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        30.551357,\n        \"CH_BVGE_001_A-5372-2018_2019-12-16\"\n      ]\n    },\n    {\n      \"id\": \"NE_TC_005_CCC-2002-11_2003-01-20\",\n      \"title\": \"Neuchâtel Tribunal Cantonal Cour de cassation civile 20.01.2003 CCC.2002.11 (INT.2003.33)\",\n      \"abstract\": \"Loyer indexé. Droit transitoire.\",\n      \"text\": \"droit transitoire, in : 6ème séminaire sur le droit du bail, Neuchâtel\\n1990, p.6; Roncoroni, Il nuovo <em>diritto</em> della <em>locazione</em> : considerazioni <em>di</em> <em>diritto</em> intertemporale, in : Il nuovo <em>diritto</em> <em>di</em> <em>locazione</em>,\\njournée\",\n      \"meta\": \"Neuchâtel  Cour de cassation civile\",\n      \"canton\": \"NE\",\n      \"court\": \"NE_TC\",\n      \"decision_date\": \"2003-01-20\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": false,\n      \"document_url\": \"https://entscheidsuche.ch/docs/NE_Omni/NE_TC_005_CCC-2002-11_2003-01-20.html\",\n      \"original_url\": null,\n      \"sort\": [\n        29.521132,\n        \"NE_TC_005_CCC-2002-11_2003-01-20\"\n      ]\n    },\n    {\n      \"id\": \"CH_BVGE_001_A-6743-2014_2016-01-19\",\n      \"title\": \"Bundesverwaltungsgericht 19.01.2016 A-6743/2014\",\n      \"abstract\": \"Personale federale | Compenso e spese accessorie per l'utilizzazione <em>di</em> un alloggio <em>di</em> servizio\",\n      \"text\": \"In proposito \\n\\noccorre rilevare che il <em>diritto</em> della <em>locazione</em> non tratta e non regola l'uso <em>di</em> \\n\\nlocali Le disposizioni \\n\\nprocedurali del <em>diritto</em> della <em>locazione</em> non trovano applicazione a meno che \\n\\nesse derogando alla legislazione sul <em>diritto</em> <em>di</em> \\n\\n<em>locazione</em>. un certo schema; in questo punto il <em>diritto</em> \\n\\npubblico diverge dal <em>diritto</em> privato della <em>locazione</em> ( secondo il \\n\\n<em>diritto</em> privato e non secondo le Direttive DFF 2013, <em>di</em> modo che il canone \\n\\n<em>di</em> <em>locazione</em>\",\n      \"meta\": \"Abteilung I\",\n      \"canton\": \"CH\",\n      \"court\": \"CH_BVGE\",\n      \"decision_date\": \"2016-01-19\",\n      \"scrape_date\": \"2023-01-01\",\n      \"is_pdf\": true,\n      \"document_url\": \"https://entscheidsuche.ch/docs/CH_BVGer/CH_BVGE_001_A-6743-2014_2016-01-19.pdf\",\n      \"original_url\": null,\n      \"sort\": [\n        29.315514,\n        \"CH_BVGE_001_A-6743-2014_2016-01-19\"\n      ]\n    }\n  ],\n  \"next_cursor\": [\n    29.315514,\n    \"CH_BVGE_001_A-6743-2014_2016-01-19\"\n  ],\n  \"aggregations\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 8233,
+        "hits": [
+          {
+            "id": "CH_BVGE_001_A-5372-2018_2019-12-16",
+            "title": "Bundesverwaltungsgericht 16.12.2019 A-5372/2018",
+            "abstract": "Tasse <em>di</em> bollo | Tassa <em>di</em> bollo d'emissione su obbligazioni <em>di</em> prestiti",
+            "text": "mutuo e i \n\ncontratti <em>di</em> <em>locazione</em>. un tale contratto <em>di</em> \n\n<em>locazione</em>. -\n\nsione <em>di</em> un contratto <em>di</em> <em>locazione</em> per un posto <em>di</em> attracco. un nuovo contratto <em>di</em> <em>locazione</em> decennale. mutuo/<em>di</em> <em>locazione</em>.",
+            "meta": "Abteilung I",
+            "canton": "CH",
+            "court": "CH_BVGE",
+            "decision_date": "2019-12-16",
+            "scrape_date": "2023-01-01",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BVGer/CH_BVGE_001_A-5372-2018_2019-12-16.pdf",
+            "original_url": null,
+            "sort": [30.551357, "CH_BVGE_001_A-5372-2018_2019-12-16"]
+          },
+          {
+            "id": "NE_TC_005_CCC-2002-11_2003-01-20",
+            "title": "Neuchâtel Tribunal Cantonal Cour de cassation civile 20.01.2003 CCC.2002.11 (INT.2003.33)",
+            "abstract": "Loyer indexé. Droit transitoire.",
+            "text": "droit transitoire, in : 6ème séminaire sur le droit du bail, Neuchâtel\n1990, p.6; Roncoroni, Il nuovo <em>diritto</em> della <em>locazione</em> : considerazioni <em>di</em> <em>diritto</em> intertemporale, in : Il nuovo <em>diritto</em> <em>di</em> <em>locazione</em>,\njournée",
+            "meta": "Neuchâtel  Cour de cassation civile",
+            "canton": "NE",
+            "court": "NE_TC",
+            "decision_date": "2003-01-20",
+            "scrape_date": "2023-01-01",
+            "is_pdf": false,
+            "document_url": "https://entscheidsuche.ch/docs/NE_Omni/NE_TC_005_CCC-2002-11_2003-01-20.html",
+            "original_url": null,
+            "sort": [29.521132, "NE_TC_005_CCC-2002-11_2003-01-20"]
+          },
+          {
+            "id": "CH_BVGE_001_A-6743-2014_2016-01-19",
+            "title": "Bundesverwaltungsgericht 19.01.2016 A-6743/2014",
+            "abstract": "Personale federale | Compenso e spese accessorie per l'utilizzazione <em>di</em> un alloggio <em>di</em> servizio",
+            "text": "In proposito \n\noccorre rilevare che il <em>diritto</em> della <em>locazione</em> non tratta e non regola l'uso <em>di</em> \n\nlocali Le disposizioni \n\nprocedurali del <em>diritto</em> della <em>locazione</em> non trovano applicazione a meno che \n\nesse derogando alla legislazione sul <em>diritto</em> <em>di</em> \n\n<em>locazione</em>. un certo schema; in questo punto il <em>diritto</em> \n\npubblico diverge dal <em>diritto</em> privato della <em>locazione</em> ( secondo il \n\n<em>diritto</em> privato e non secondo le Direttive DFF 2013, <em>di</em> modo che il canone \n\n<em>di</em> <em>locazione</em>",
+            "meta": "Abteilung I",
+            "canton": "CH",
+            "court": "CH_BVGE",
+            "decision_date": "2016-01-19",
+            "scrape_date": "2023-01-01",
+            "is_pdf": true,
+            "document_url": "https://entscheidsuche.ch/docs/CH_BVGer/CH_BVGE_001_A-6743-2014_2016-01-19.pdf",
+            "original_url": null,
+            "sort": [29.315514, "CH_BVGE_001_A-6743-2014_2016-01-19"]
+          }
+        ],
+        "next_cursor": [29.315514, "CH_BVGE_001_A-6743-2014_2016-01-19"],
+        "aggregations": null
+      },
+      "isError": false
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "document_purpose": "Metadatos de la sesion de implementacion de las mejoras generales del producto (busqueda federal masiva, resolucion por lotes, deduplicacion, checkpoint, exportacion de corpus). Este archivo solo consume/documenta los resultados de herramientas MCP publicas nuevas; no contiene logica de produccion.",
+  "generated_at": "2026-08-06T23:06:30Z",
+  "repository_root": "swiss-legal-mcp",
+  "product_version_at_start": "1.0.0",
+  "environment": {
+    "node_version": "v22.22.3",
+    "sandbox_platform": "linux-x64 (Ubuntu 22.04, kernel 6.8.0-124-generic)",
+    "node_modules_installed_for_platform": "darwin-x64",
+    "outbound_network_access": false,
+    "git_repository_present": false,
+    "notes": "El directorio de trabajo es un montaje del repositorio del usuario dentro de un entorno de desarrollo aislado sin acceso saliente a Internet y sin binarios nativos compatibles con linux-x64 para varias dependencias (rolldown/vite, esbuild, @napi-rs/canvas via pdfjs-dist). Ver implementation-report.md, seccion 'Limitaciones de entorno', para el detalle completo y honesto de que se pudo y que no se pudo ejecutar en este entorno concreto."
+  },
+  "mandatory_source_documents_read": [
+    "docs/challenge-7-days/day-01-swiss/limitations-analysis.md",
+    "docs/challenge-7-days/day-01-swiss/improvement-plan.md",
+    "docs/challenge-7-days/day-01-swiss/improvement-plan.json",
+    "docs/challenge-7-days/day-01-swiss/metadata.json",
+    "docs/release/RC-1.0.0.md",
+    "docs/validation/results/targeted-fix-find-01-02.md",
+    "docs/security/npm-audit-runtime-assessment.md"
+  ],
+  "architectural_principle_followed": "Toda la logica nueva vive en src/, providers/, servicios compartidos, contratos/esquemas, herramientas MCP, pruebas generales y documentacion general del producto. Ningun archivo bajo docs/challenge-7-days/ contiene logica de produccion; esta carpeta solo consume herramientas MCP publicas, guarda resultados y documenta la prueba de aceptacion. Ninguna herramienta nueva se llama 'challenge', 'day-01' ni 'judge-style'.",
+  "contract_decision": {
+    "search": "new_search_federal_cases",
+    "batch_resolution": "new_batch_resolve_official_cases",
+    "rationale": "Documentado en docs/providers/official-swiss-case-search.md, seccion 'Decision de contrato: extender vs. crear'. Sigue la recomendacion ya existente en improvement-plan.md: search_cases debe permanecer un agregador no oficial explicito (entscheidsuche.ch); mezclar semantica oficial/no oficial en la misma herramienta habria introducido ambiguedad. resolve_official_swiss_case mantiene su contrato 1:1 estable; batch_resolve_official_cases lo reutiliza integramente por elemento."
+  },
+  "new_mcp_tools": ["search_federal_cases", "batch_resolve_official_cases", "export_case_corpus"],
+  "new_shared_services": [
+    "@swiss-legal-mcp/shared#saveCheckpoint",
+    "@swiss-legal-mcp/shared#loadCheckpoint",
+    "@swiss-legal-mcp/shared#checkpointExists",
+    "@swiss-legal-mcp/shared#deleteCheckpoint"
+  ],
+  "files_created": [
+    "packages/shared/src/checkpointStore.ts",
+    "packages/shared/src/checkpointStore.test.ts",
+    "apps/mcp-server/src/tools/caseDeduplication.ts",
+    "apps/mcp-server/src/tools/caseDeduplication.test.ts",
+    "apps/mcp-server/src/tools/officialFederalCaseSearch.ts",
+    "apps/mcp-server/src/tools/officialFederalCaseSearch.test.ts",
+    "apps/mcp-server/src/tools/officialFederalCaseBatch.ts",
+    "apps/mcp-server/src/tools/officialFederalCaseBatch.test.ts",
+    "apps/mcp-server/src/tools/caseCorpusExport.ts",
+    "apps/mcp-server/src/tools/caseCorpusExport.test.ts",
+    "docs/providers/official-swiss-case-search.md"
+  ],
+  "files_modified": [
+    "packages/shared/src/index.ts",
+    "apps/mcp-server/src/tools/officialSwissCaseTools.ts",
+    "docs/tool-catalog.md"
+  ],
+  "generated_artifacts_touched_as_byproduct_of_validation": [
+    "docs/release/generated/api-inventory.json"
+  ],
+  "protected_files_not_modified": ["docs/release/RC-1.0.0.md"],
+  "git_repository_created": false,
+  "publication_performed": false
+}

@@ -1,0 +1,18 @@
+HTTP/2 200 
+cache-control: no-cache
+pragma: no-cache
+content-length: 2101734
+content-type: application/pdf
+expires: -1
+set-cookie: dnn_IsMobile=False; path=/; HttpOnly
+set-cookie: .ASPXANONYMOUS=5GF-k3bQQVyLAKi-EG3jpCOHR310aIursXfrfq9DH6ciJ636I3p6mBh6TKZ_M1jZJGev316aFra_GZCoM7SvoF1HqZ7Zv9PXY28XEAn8VRNTVM3D0; expires=Sun, 04-Oct-2026 06:31:09 GMT; path=/; HttpOnly
+content-disposition: inline; filename*=utf-8''KSIR%206.pdf
+set-cookie: dnn_IsMobile=False; path=/; HttpOnly
+set-cookie: .ASPXANONYMOUS=5GF-k3bQQVyLAKi-EG3jpCOHR310aIursXfrfq9DH6ciJ636I3p6mBh6TKZ_M1jZJGev316aFra_GZCoM7SvoF1HqZ7Zv9PXY28XEAn8VRNTVM3D0; expires=Sun, 04-Oct-2026 06:31:09 GMT; path=/; HttpOnly
+set-cookie: language=de-DE; path=/; HttpOnly
+set-cookie: bsv_ga_clientid=d93b0147-4856-483f-98fb-403e7a9df809; expires=Wed, 26-Aug-2026 19:51:10 GMT; path=/
+set-cookie: bsv_ga_session=1785095470; expires=Sun, 26-Jul-2026 20:21:10 GMT; path=/
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+date: Sun, 26 Jul 2026 19:51:09 GMT
+

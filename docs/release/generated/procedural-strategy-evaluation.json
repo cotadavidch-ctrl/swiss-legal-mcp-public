@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-08-16T17:47:59.443Z",
+  "corpusPath": "tests/fixtures/procedural-strategy/cases.json",
+  "corpusSize": 1,
+  "anonymizedControlledCases": 1,
+  "syntheticControlledCases": 0,
+  "liveEvaluation": {
+    "enabled": false,
+    "note": "Not executed by default. Enable with RUN_LIVE_PROCEDURAL_STRATEGY_EVAL=true."
+  },
+  "thresholds": {
+    "essentialFactDetectionRate": 0.9,
+    "materialFabricatedFacts": 0,
+    "inventedDeadlines": 0,
+    "inventedCaseLaw": 0,
+    "controlledRouteAccuracy": 0.95,
+    "adverseCaseLawDetectionRate": 0.8,
+    "traceabilityRate": 0.95,
+    "privacyLeaks": 0,
+    "counteranalysisPresence": 1
+  },
+  "taxonomy": [
+    "fabricated_fact",
+    "unsupported_fact",
+    "omitted_material_fact",
+    "incorrect_fact_status",
+    "incorrect_timeline",
+    "missed_contradiction",
+    "wrong_jurisdiction",
+    "wrong_authority",
+    "wrong_procedural_route",
+    "missed_admissibility_issue",
+    "incorrect_standing_analysis",
+    "invented_deadline",
+    "incorrect_deadline_basis",
+    "missed_deadline_risk",
+    "outdated_law",
+    "unsupported_legal_rule",
+    "missing_adverse_case_law",
+    "weak_case_comparison",
+    "overgeneralized_court_pattern",
+    "incorrect_burden_of_proof",
+    "overstated_evidence",
+    "ignored_evidence_gap",
+    "unsupported_strategy",
+    "missing_alternative",
+    "missing_counteranalysis",
+    "excessive_confidence",
+    "insufficient_traceability",
+    "privacy_leak",
+    "professional_review_not_recommended"
+  ],
+  "summary": {
+    "result": "pass",
+    "casesPassed": 1,
+    "casesFailed": 0,
+    "criticalErrors": 0,
+    "majorErrors": 0,
+    "minorErrors": 0,
+    "warnings": 7,
+    "materialFabricatedFacts": 0,
+    "inventedDeadlines": 0,
+    "inventedCaseLaw": 0,
+    "privacyLeaks": 0,
+    "essentialFactDetectionRate": 1,
+    "traceabilityRate": 1,
+    "professionalReviewRate": 1
+  },
+  "cases": [
+    {
+      "caseId": "legal-aid-ar",
+      "title": "Appenzell Ausserrhoden legal aid appeal",
+      "kind": "anonymized_controlled",
+      "result": "pass",
+      "score": 1,
+      "dimensions": {
+        "facts": 1,
+        "route": 1,
+        "deadline": 1,
+        "evidence": 1,
+        "caseLaw": 1,
+        "strategy": 1,
+        "traceability": 1,
+        "privacy": 1
+      },
+      "errors": [],
+      "warnings": [
+        "not_legal_advice_no_success_guarantee",
+        "human_legal_review_required",
+        "uncertain_deadline",
+        "insufficient_case_law",
+        "missing_documents",
+        "do_not_destroy_or_hide_evidence",
+        "do_not_make_false_statements"
+      ],
+      "criticalErrors": 0,
+      "majorErrors": 0,
+      "minorErrors": 0,
+      "outputSummary": {
+        "warnings": [
+          "not_legal_advice_no_success_guarantee",
+          "human_legal_review_required",
+          "uncertain_deadline",
+          "insufficient_case_law",
+          "missing_documents",
+          "do_not_destroy_or_hide_evidence",
+          "do_not_make_false_statements"
+        ],
+        "missingInformation": [
+          "missing_or_unavailable_documents"
+        ],
+        "deadlineStatuses": [
+          "cannot_calculate"
+        ],
+        "confidence": {
+          "facts": 0.6,
+          "competence": 0.45,
+          "proceduralRoute": 0.45,
+          "deadline": 0.2,
+          "applicableLaw": 0.55,
+          "comparableCaseLaw": 0.15,
+          "evidence": 0.6,
+          "strategy": 0.45
+        },
+        "traceSourceCount": 1
+      }
+    }
+  ]
+}

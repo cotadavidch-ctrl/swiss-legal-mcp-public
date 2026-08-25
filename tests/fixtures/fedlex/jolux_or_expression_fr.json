@@ -1,0 +1,50 @@
+{
+  "head": { "link": [], "vars": ["p", "o"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "p": { "type": "uri", "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" },
+        "o": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#Expression"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#historicalLegalId"
+        },
+        "o": { "type": "literal", "value": "220" }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#language"
+        },
+        "o": {
+          "type": "uri",
+          "value": "http://publications.europa.eu/resource/authority/language/FRA"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#title"
+        },
+        "o": {
+          "type": "literal",
+          "value": "Loi f\u00E9d\u00E9rale du 30 mars 1911 compl\u00E9tant le Code civil suisse (Livre cinqui\u00E8me: Droit des obligations)"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "http://data.legilux.public.lu/resource/ontology/jolux#titleShort"
+        },
+        "o": { "type": "literal", "value": "CO" }
+      }
+    ]
+  }
+}

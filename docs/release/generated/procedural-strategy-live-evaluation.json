@@ -1,0 +1,2355 @@
+{
+  "status": "completed",
+  "executionTimestamp": "2026-08-03T18:30:53.353Z",
+  "casesEvaluated": [
+    "legal-aid-ar",
+    "cantonal-admin-controlled",
+    "social-insurance-controlled",
+    "employment-controlled",
+    "uncertain-deadline-controlled"
+  ],
+  "providersUsed": [
+    "entscheidsuche"
+  ],
+  "providerHealth": [
+    {
+      "id": "entscheidsuche",
+      "status": "healthy",
+      "checkedAt": "2026-08-03T18:30:46.570Z",
+      "httpStatus": 200,
+      "operation": "GET /mcp"
+    },
+    {
+      "id": "fedlex",
+      "status": "reachable",
+      "checkedAt": "2026-08-03T18:30:46.570Z",
+      "httpStatus": 405,
+      "operation": "HEAD /sparqlendpoint",
+      "warning": "Fedlex endpoint reachable but HEAD is not an accepted SPARQL operation."
+    }
+  ],
+  "queries": [
+    {
+      "caseId": "legal-aid-ar",
+      "operation": "entscheidsuche.search",
+      "query": "unentgeltliche Rechtspflege Bedürftigkeit Bankunterlagen",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:47.265Z",
+      "latencyMs": 597,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RP-2008-38_2008-10-16",
+          "title": "Bundesstrafgericht 16.10.2008 RP.2008.38",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG) A. gelangt gegen die Herausgabe der Bankunterlagen betreffend die auf seinen Namen lautenden Konten Juli 2008 sei",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:ZH_SRK_001_ST-2015-198_2016-01-29",
+          "title": "Zürich Steuerrekursgericht 29.01.2016 ST.2015.198",
+          "snippet": "Staats- und Gemeindesteuern 2012 | Sehr intensive spekulative Börsentätigkeit mit Warrants stellt nach den oberinstanzlichen Präjudizien eine selbstständige Erwerbstätigkeit dar, weshalb der erlittene hohe Verlust grundsätzlich zur Verrechnung zugelassen werden kann. Mangels vollständiger Aufzeichnungen und aufgrund intransparenter Vermögensverhältnisse ist dieser indessen zu schätzen. Eine vollständige Verweigerung wie gemäss Vorinstanz führt zu weit. Abweisung eines Gesuchs um unentgeltliche P",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-63_2007-07-23",
+          "title": "Bundesstrafgericht 23.07.2007 RR.2007.63",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_BB-2013-133_2014-04-16",
+          "title": "Bundesstrafgericht 16.04.2014 BB.2013.133",
+          "snippet": "Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 S",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2018-125_2018-07-24",
+          "title": "Bundesstrafgericht 24.07.2018 RR.2018.125",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "operation": "entscheidsuche.search",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:47.862Z",
+      "latencyMs": 393,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BGE_005_BGE-139-III-278_2013",
+          "title": "Bundesgericht (BGE) Teil III 2013 BGE 139 III 278",
+          "snippet": "Regeste Art . 15 ff. und 26 Abs. 1 LugÜ; Art . 59 f. ZPO ; Zuständigkeit bei Verbrauchersachen; Beweislast; Prüfung der Zuständigkeit von Amtes wegen. Beweislast für das Vorliegen einer Verbrauchersache nach Art . 15 Abs. 1 lit. c LugÜ (E. 3). Bedeutung und Umfang der Prüfung der Zuständigkeit von Amtes wegen (E. 4). . 59 Abs. 2 lit. b und Art . 60 ZPO (RAMON MABILLARD, in: Basler Kommentar, Lugano-Übereinkommen, 2011 Schnyder [Hrsg.], 2011, N. 6 zu Art . 25 LugÜ). 4.3 Gemäss Art . 60 ZPO prüft ",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-244_2024-02-26",
+          "title": "Aargau Obergericht Zivilkammern 26.02.2024 ZSU.2023.244",
+          "snippet": "Aufl. 2017, N. 7 zu Art . 55 ZPO und N. 6 zu Art . 56 ZPO ). GEHRI, BSK ZPO , N. 8 zu Art . 56 ZPO ; SUTTER-SOMM/GRIEDER, ZPO -Komm., N. 19 zu Art . 56 ZPO ; Urteil GEHRI, BSK ZPO , N. 12 zu Art . 56 ZPO m. H.). Da sich die ge- richtliche Fragepflicht nach Art . 56 ZPO nicht auf Tatsachen erstreckt, die nicht Folglich hat die Vorinstanz ihre gerichtliche Fragepflicht gemäss Art . 56 ZPO nicht verletzt.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-64_2023-05-23",
+          "title": "Aargau Obergericht Zivilkammern 23.05.2023 ZSU.2023.64",
+          "snippet": "Aufl. 2017, N. 7 zu Art . 55 ZPO und N. 6 zu Art . 56 ZPO ). Aufl. 2016, N. 19 zu Art . 56 ZPO ; BGE 4A_444/2013 E. 6.3.3 m. H). GEHRI, a.a.O., N. 12 zu Art . 56 ZPO m. H.). Da sich die gerichtliche Fragepflicht nach Art . 56 ZPO nicht auf Tatsachen erstreckt, die gar nicht Folglich hat die Vorinstanz ihre gerichtliche Fragepflicht gemäss Art . 56 ZPO nicht verletzt.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BGer_004_4A-495-2024_2025-01-07",
+          "title": "Bundesgericht I. Zivilrechtliche Abteilung 07.01.2025 4A_495/2024",
+          "snippet": "Juli 2024 (1B 23 56 ). Sachverhalt: A. . 55 Abs. 1 ZPO ). Der Zweckgedanke der allgemeinen gerichtlichen Fragepflicht nach Art . 56 ZPO besteht darin, dass eine Vor allem dient die gerichtliche Fragepflicht nicht dazu, prozessuale Nachlässigkeiten der Parteien auszugleichen Nach Art . 150 Abs. 1 ZPO müssen nur die Behauptungen bewiesen werden, die ausdrücklich bestritten werden",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:GR_KG_003_KSK-2019-5_2019-07-12",
+          "title": "Graubünden Kantonsgericht Schuldbetreibungs- und Konkurskammer 12.07.2019 KSK 2019 5",
+          "snippet": "provisorische Rechtsöffnung | Rechtsöffnung Aufl., Zürich 2015, N 10 zu Art . 56 ZPO ). Aufl., Basel 2017, N 4 zu Art . 56 ZPO m.w.H.). . 56 ZPO ). ., N 12 ff. zu Art . 56 ZPO m.w.H.). Damit liegt keine Konstellation vor, welche eine gerichtliche Hilfestel- lung im Sinne von Art . 56 ZPO",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "operation": "entscheidsuche.search",
+      "query": "unentgeltliche Rechtspflege Kostenvorschuss Vermögen Bankkonto",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:48.255Z",
+      "latencyMs": 395,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RP-2014-19_2014-03-04",
+          "title": "Bundesstrafgericht 04.03.2014 RP.2014.19",
+          "snippet": "Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG). Februar 2014 erstreckte (RP.2014.6 act. 2/Hauptverfahren RR.2013.369); der Kostenvorschuss je- doch April 2006, E. 6.1 m.w.H.); - der Gesuchsteller seinen Antrag auf unentgeltliche Rechtspflege mit er bereits in den Verfahren RP.2013.65 und RP.2014.6 gemacht hatte; nämlich, dass sein gesamtes Vermögen Gunsten der Kas",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-63_2007-07-23",
+          "title": "Bundesstrafgericht 23.07.2007 RR.2007.63",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-117-A_2007-09-19",
+          "title": "Bundesstrafgericht 19.09.2007 RR.2007.117_A",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RP-2008-35_2008-10-13",
+          "title": "Bundesstrafgericht 13.10.2008 RP.2008.35",
+          "snippet": "Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch u",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:ZH_VG_001_-SB-2021-00099_2022-01-12",
+          "title": "Zürich Verwaltungsgericht 12.01.2022  SB.2021.00099",
+          "snippet": "Staats- und Gemeindesteuern 2014 | Unentgeltliche Rechtspflege . Gegenstand des vorliegenden Verfahrens (E. 2.1). Abweisung des Gesuchs um unentgeltliche Rechtspflege mangels nachgewiesener Mittellosigkeit und zufolge offensichtlicher Aussichtslosigkeit (E. 2.5). Ausgangsgemässe Regelung der Kosten- und Entschädigungsfolgen (E. 3). Abweisung der (vereinigten) Beschwerden. Rechtsgebiet: Steuerrecht Betreff: Staats- und Gemeindesteuern 2014 Unentgeltliche Rechtspflege Abweisung des Gesuchs um unen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "operation": "entscheidsuche.search",
+      "query": "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:48.650Z",
+      "latencyMs": 466,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_001_101-2022-386_2022-12-23",
+          "title": "Freiburg Kantonsgericht Zivilappellationshöfe 23.12.2022 101 2022 386",
+          "snippet": "Urteil des I. Zivilappellationshofes des Kantonsgerichts | Erbrecht .________ zu informieren und sämtliche Dokumente inklusive Bankauszüge und Korrespondenzen offen zu Wiederherstellung der aufschiebenden Wirkung sei nicht zu gewähren, auf neue Tatsa- chen und neue Beweismittel ( Noven Das erste Betreibungsverfahren habe mit einem Verlustschein nach einem notwendig gewordenen Beschwerdeverfahren Der Anspruch auf rechtliches Gehör gemäss Art. 29 Abs. 2 BV – genauso wie das Recht auf ein faires Ve",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BGer_005_5A-493-2016_2016-11-29",
+          "title": "Bundesgericht II. Zivilrechtliche Abteilung 29.11.2016 5A_493/2016",
+          "snippet": "Dem Gesuch um Vereinigung des vorliegenden Verfahrens mit dem Beschwerdeverfahren 5A_331/2016 gegen den Solch \"echte\" Noven sind im bundesgerichtlichen Verfahren unzulässig. Gehör im Zusammenhang mit der Feststellung der finanziellen Verhältnisse der Beschwerdegegnerin (s. geltend er habe im obergerichtlichen Verfahren die Edition der kompletten Steuererklärung 2014 sowie der Bankauszüge Die Rüge der Verletzung des Anspruchs auf rechtliches Gehör bzw. auf Beweisabnahme ist unbegründet.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-239_2023-12-18",
+          "title": "Aargau Obergericht Zivilkammern 18.12.2023 ZSU.2023.239",
+          "snippet": "Das gilt so- wohl für echte als auch für unechte Noven und auch in Verfahren, welche wie das Verfahren Der Anspruch auf rechtliches Gehör verlangt, dass die Behörde die Vor- bringen des vom Entscheid in u.a. dazu auf, aktuelle Belege zu seinem Vermögen (Steuerer- klärung, definitive Steuerveranlagung, Bankauszüge Das Gesuch um Bewilligung der unentgeltlichen Rechts- pflege für das Beschwerdeverfahren ist deshalb",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:ZH_KSG_001_AA050020_2005-09-10",
+          "title": "Zürich Kassationsgericht 10.09.2005 AA050020",
+          "snippet": "Natur des Eheschutzverfahrens, Anspruch auf rechtliches Gehör , Rüge der aktenwidrigen bzw. willkürlichen tatsächlichen Annahme, Unentgeltliche Prozessführung Gehör vorliege (KG act. 1 S. 4 f.). b) Aus Art. 29 Abs. 2 BV (Anspruch auf rechtliches Gehör ) folgt die Pflicht der Behörden und der Gerichte Durch die fehlende Begründung werde sein Anspruch auf rechtliches Gehör verletzt (KG act. 1 S. 8). Indem die Vorinstanz darauf nicht eingehe, verletze sie seinen Anspruch auf rechtliches Gehör . Dam",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BGer_005_5A-763-2018_2019-07-01",
+          "title": "Bundesgericht II. Zivilrechtliche Abteilung 01.07.2019 5A_763/2018",
+          "snippet": "Im ordentlichen Beschwerdeverfahren sind in rechtlicher Hinsicht alle Rügen gemäss Art. 95 f. Echte Noven sind in jedem Fall unzulässig bzw. von Art. 99 Abs. 1 BGG gar nicht erfasst. Der Anspruch auf rechtliches Gehör nach Art. 29 Abs. 2 BV schliesst als Teilgehalt den Anspruch ein, Bei echten Noven ist das Kriterium der Neuheit (Art. 317 Abs. 1 Bst. b ZPO) ohne weiteres gegeben. ________- Bankauszüge beantragt.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "operation": "entscheidsuche.search",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:49.116Z",
+      "latencyMs": 480,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_001_102-2022-31_2022-03-29",
+          "title": "Freiburg Kantonsgericht Zivilappellationshöfe 29.03.2022 102 2022 31",
+          "snippet": "Urteil des II. Zivilappellationshofes des Kantonsgerichts | Beschwerde unentgeltliche Rechtspflege Mai 2021 Beschwerde gegen den die unentgeltliche Rechtspflege abweisenden Entscheid und beantragt unter Art. 319 ZPO ist der Entscheid über die unentgeltliche Rechtspflege mit Beschwerde anfechtbar. Demzufolge sei die unentgeltliche Rechtspflege zu verweigern. Damit verletze sie seinen Anspruch auf unentgeltliche Rechtspflege . 3.3. Das Gesuch von A.________ um unentgeltliche Rechtspflege wird gutg",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-295_2017-07-21",
+          "title": "Bundesstrafgericht 21.07.2017 RR.2016.295",
+          "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). demokrati- schen Gesellschaft notwendig ist für die nationale ode",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-184_2017-07-21",
+          "title": "Bundesstrafgericht 21.07.2017 RR.2016.184",
+          "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). demokrati- schen Gesellschaft notwendig ist für die nationale ode",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2022-23_2022-07-12",
+          "title": "Bundesstrafgericht 12.07.2022 RR.2022.23",
+          "snippet": "Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG) Dem Beschwerdeführer ",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-205_2017-07-21",
+          "title": "Bundesstrafgericht 21.07.2017 RR.2016.205",
+          "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). Des Weiteren ersuchte er um unentgeltliche Rechtspflege und Ernen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "kantonale Verwaltungsbeschwerde rechtliches Gehoer Art. 29 BV",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:49.596Z",
+      "latencyMs": 406,
+      "retries": 1,
+      "resultCount": 0,
+      "results": [],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 0
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:50.003Z",
+      "latencyMs": 431,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_007_602-2025-31_2025-07-31",
+          "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 31.07.2025 602 2025 31",
+          "snippet": "Urteil des II. Verwaltungsgerichtshofes des Kantonsgerichts | Beschwerde gegen Zwischenentscheide hatte, sondern vielmehr die ohne Bewilligung ausgeführten Arbeiten und Nutzungsänderungen, bzw. das fehlende Es sei nicht klar, welche Unterlagen der Vorinstanz fehlen, um die baurechtliche Situation der Parzelle Für die Feststellung des Sachverhalts gilt im Verwaltungsverfahren grundsätzlich die Untersuchungsmaxime Beschwerdeführerinnen kann nicht gefolgt werden, wenn sie vorbringen, sie würden nic",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:VS_BZG_999_S1-13-22_2013-11-14",
+          "title": "Wallis Sonstiges Gericht Sonstige Kammer 14.11.2013 S1 13 22",
+          "snippet": "S1 13 22 URTEIL VOM 14. NOVEMBER 2013 Kantonsgericht Wallis Sozialversicherungsrechtliche Abteilung Besetzung: Dr. Lionel Seeberger, Präsident; Eve-Marie Dayer-Schmid und Thomas Brunner, Kantonsrichter/in; Petra Stoffel, Gerichtsschreiberin in Sachen X_________, Beschwerdeführer, vertreten durch Rechtsanwalt A_________ gegen AUSGLEICHSKASSE DES KANTONS WALLIS, Beschwerdegegnerin (Erlassgesuch / guter Glaube) Beschwerde gegen den Einspracheentscheid vom 8. Januar 2013 September 2009 teilte die Au",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_007_603-2022-152_2024-01-18",
+          "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 18.01.2024 603 2022 152",
+          "snippet": "Urteil des III. Verwaltungsgerichtshofes des Kantonsgerichts | Wirtschaft Nachdem die Vorinstanz sie mehrmals auf fehlende Dokumente aufmerksam gemacht hatte, reichte die Beschwerdeführerin Gemäss den eingereichten Unterlagen belaufe sich der Umsatz, der unter Ziffer 20A der MWST-Abrechnungen April 2023 auf Abweisung der Beschwerde . behaupteten Umsätze, wenn sie nach vereinbarten Entgelten abrechnen würde, festzustellen, dass im Verwaltungsverfahren Die Beschwerde wird abgewiesen. II.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:VS_BZG_999_F1-24-83_2024-06-30",
+          "title": "Wallis Sonstiges Gericht Sonstige Kammer 30.06.2024 F1 24 83",
+          "snippet": "F1 24 83 URTEIL VOM 30. JUNI 2024 Kantonsgericht Wallis Steuerrechtliche Abteilung Es wirken mit: Dr. Thierry Schnyder, Präsident; Frédéric Fellay, Richter, Nicole Inniger Steiner, Beisitzerin, Vanessa Brigger, Gerichtsschreiberin, in Sachen X _________, Grossbritannien, Beschwerdeführerin, gegen STEUERVERWALTUNG DES KANTONS WALLIS, Vorinstanz, (Einkommens- und Vermögenssteuer der natürlichen Personen) Beschwerde gegen den Einspracheentscheid vom 5. Juni 2023. Rechtsmittelverfahren bei steuerrec",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_007_601-2023-46_2023-12-05",
+          "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 05.12.2023 601 2023 46",
+          "snippet": "Urteil des I. Verwaltungsgerichtshofes des Kantonsgerichts | Schule und Bildung Privatrecht, Zivilprozess, Schuldbetreibungs- und Konkursrecht\" (Privatrecht) sowie \"Verwaltungsrecht und Verwaltungsverfahren Auf die weiteren Parteivorbringen und die eingereichten Unterlagen wird – soweit für die Entscheidfindung April 2023 attestiert ebenfalls, dass die fehlende Abmeldung krankheitsbedingt erfolgt sei. Es ist auf die Mitwirkungspflicht der Beschwerdeführerin zu verweisen (Art. 47 VRG). Die Beschw",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:50.434Z",
+      "latencyMs": 360,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:VS_BZG_999_S2-24-81_2025-04-29",
+          "title": "Wallis Sonstiges Gericht Sonstige Kammer 29.04.2025 S2 24 81",
+          "snippet": "S2 24 81 URTEIL VOM 29. APRIL 2025 Kantonsgericht Wallis Sozialversicherungsrechtliche Abteilung Besetzung: Michael Steiner, Präsident; Candido Prada und Dr. Thierry Schnyder, Kantonsrichter; Petra Stoffel, Gerichtsschreiberin in Sachen X _________, Beschwerdeführerin, vertreten durch Rechtsanwältin Graziella Walker Salzmann, Naters gegen SWICA GESUNDHEITSORGANISATION, Beschwerdegegnerin (obligatorische Krankenpflegeversicherung, Kostengutsprache, Akteneinsicht) Beschwerde gegen den Entscheid vo",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_011_608-2016-167_2017-11-14",
+          "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 14.11.2017 608 2016 167",
+          "snippet": "Urteil des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Auf Einsprache hin wurde ein Strafverfahren eröffnet, das am 28. Auf die Beschwerde ist einzutreten. Dies bedeutet eine gesteigerte Mitwirkungspflicht der ins Recht gefassten Person bei der Abklärung bzw innert nützlicher Frist begleichen zu können (BGE 108 V 183). Diese Frist kann weder verlängert noch unterbrochen werden.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_011_608-2014-51_2015-11-12",
+          "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 12.11.2015 608 2014 51",
+          "snippet": "Entscheid des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Dezember 2013 Einsprache , welche die Ausgleichskasse mit Einspracheentscheid vom 14. Februar 2014 Beschwerde an das Kantonsgericht Freiburg. Dies bedeutet eine gesteigerte Mitwirkungspflicht der ins Recht gefassten Person bei der Abklärung bzw innert nützlicher Frist begleichen zu können (BGE 108 V 183). Diese Frist kann weder verlängert noch unterbrochen werden.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:FR_TC_011_605-2012-487_2015-06-22",
+          "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 22.06.2015 605 2012 487",
+          "snippet": "Entscheid des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Mai 2012 Einsprache . Mit Einspracheentscheid vom 21. innert nützlicher Frist begleichen zu können (BGE 108 V 183). nichts zu ändern vermögen (antizipierte Beweiswürdigung; UELI KIESER, Das Verwaltungsverfahren in der Sozialversicherung Dass er dies auch tatsächlich getan hat, wird vom Beschwerdeführer im Rahmen der ihm obliegenden Mitwirkungspflicht Diese Frist kann weder verlängert n",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BVGE_001_C-3655-2026_2026-07-21",
+          "title": "Bundesverwaltungsgericht 21.07.2026 C-3655/2026",
+          "snippet": "Rente | Alters- und Hinterlassenenversicherung, Rentenanspruch / Nichteintreten auf Einsprache (Einspracheentscheid vom 28. April 2026) Auf die frist - und formgerecht eingereichte Beschwerde ist daher grundsätzlich einzutreten (Art. Delegationsnorm von Art. 81 ATSG – in Art. 10 Abs. 1 ATSV (SR 830.11) festgelegt hat, konkretisieren die Mitwirkungspflicht BGE 142 V 152 E. 2.4, vgl. auch HANSJÖRG SEILER, Rechtsfragen des Einsprachever- fahrens in der Sozialversicherung innert Frist verbessert hat",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Sozialversicherungsrecht unvollstaendige Akten Beweislast",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:50.794Z",
+      "latencyMs": 282,
+      "retries": 1,
+      "resultCount": 0,
+      "results": [],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 0
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "employment-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:51.077Z",
+      "latencyMs": 370,
+      "retries": 1,
+      "resultCount": 5,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:GR_VG_001_U-2014-96_2017-04-04",
+          "title": "Graubünden Verwaltungsgericht 1. Kammer 04.04.2017 U 2014 96",
+          "snippet": "Personalrecht ( Lohnforderung ) | Personalrecht Aufl., Art. 329a N. 2; GEISER/MÜLLER, Arbeitsrecht in der Schweiz, 3. Aufl., Art. 329a N. 2; GEI- SER/MÜLLER, Arbeitsrecht in der Schweiz, 3. Die Herabsetzung des Beweismasses darf allerdings nicht zu einer Umkehr der Beweislast führen. Demzufolge betrage die Lohnforderung aus Überstunden total Fr. 13'666.25 netto. Eine Lohnforderung aus nicht kompensierten Überstunden sei auch aus diesem Grunde nicht ausge- wiesen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:BL_KG_001_410-2014-73_2014-06-10",
+          "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.06.2014 410 2014 73 (410 14 73)",
+          "snippet": "Arbeitsrecht Schweizer, Hauptstrasse 40, Post- fach 331, 4450 Sissach, Beschwerdegegner Gegenstand Arbeitsrecht auch ihr Entstehen durch die Dauer des Arbeitsver- hältnisses zu beweisen, während der Beklagte die Beweislast Mangels Nachweises, dass der Beklagte allfällige Überstunden angeordnet oder ge- nehmigt habe, sei der dass der Beschwerdeführer in seiner Berechnung Seite 4 http://www.bl.ch/kantonsgericht der Lohnforderung Die Vorinstanz habe die Beweislast richtig verteilt und in zutreffend",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:GR_KG_006_ZF-2008-4_2008-05-05",
+          "title": "Graubünden Kantonsgericht I. Zivilkammer 05.05.2008 ZF 2008 4",
+          "snippet": "Forderung aus Arbeitsvertrag | OR Arbeitsvertrag Die Darle- gungs-, Substantiierungs- und Beweislast für geleistete Überstunden trägt daher grundsätzlich In der Folge hat die Vorin- 7 stanz dann aber doch eine Umkehrung der Beweislast vorgenommen. Diese Umkehrung der Beweislast ist unhaltbar. Juni 1999 4C.33/1999, in: Schweizerisches Arbeitsrecht , Rechtsprechung SARB 2000 Nr. 155; Urteil des Oktober 1996, in: Schweizerisches Arbeitsrecht , Rechtsprechung SARB 1998 Nr. 55; Urteil des Appellation",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BGer_004_4A-533-2018_2019-04-23",
+          "title": "Bundesgericht I. Zivilrechtliche Abteilung 23.04.2019 4A_533/2018",
+          "snippet": "Beschwerdegegners nicht ohne Weiteres zur Folge, dass die Vorbringen der Beschwerdeführerin, für die sie die Beweislast Betreffend die von der Beschwerdeführerin behauptete Tilgung der Lohnforderung durch die Zahlung von Sie trage die Beweislast dafür, die eingeklagten Lohnforderungen mit dieser Zahlung teilweise beglichen nie angewiesen, Überstunden zu leisten. Entschädigung auch ROMINA CARCAGNI ROESLER, Home Office, ArbR, Mitteilungen des Instituts für Schweizerisches Arbeitsrecht",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BVGE_001_A-4874-2020_2022-03-14",
+          "title": "Bundesverwaltungsgericht 14.03.2022 A-4874/2020",
+          "snippet": "Aufl&ouml;sung des Arbeitsverh&auml;ltnisses | fristlose Auflösung des Arbeitsvertrages Oktober 2020 betreffend Lohnforderung eingereicht hat, wird sie mit instruktionsrichterlicher Verfügung Beschwerdeverfahren betreffend eine Kündigung trägt die kündigende Behörde daher die (objektive) Beweislast Die Überstunden habe die Be- schwerdeführerin jeweils zeitnah kompensieren können. Dezember 2016 E. 5.2; THOMAS GEISER/ROLAND MÜLLER/KURT PÄRLI, Arbeitsrecht in der Schweiz, 4. Wiegen die Verfehlungen",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 5
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "employment-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Arbeitsvertrag Lohnklage Schlichtungsverfahren Beweise",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:51.447Z",
+      "latencyMs": 807,
+      "retries": 1,
+      "resultCount": 1,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:BL_KG_001_400-2013-230_2013-12-10",
+          "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.12.2013 400 2013 230 (400 13 230)",
+          "snippet": "Arbeitsrecht; Lohn Nach gescheitertem Schlichtungsverfahren liess er am 4. Die von der Unia eingereichte Mail- Bestätigung beweise offensichtlich nicht, dass ein Ladendetektiv In diesem Umfang werde die Lohnklage von der Arbeitgeberin aner- kannt. Gemäss Arbeitsvertrag sei er als Sicherheitsagent angestellt worden, was darauf hinweise, dass es sich Im Arbeitsvertrag vom 18.",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 1
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:52.253Z",
+      "latencyMs": 616,
+      "retries": 1,
+      "resultCount": 4,
+      "results": [
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:CH_BVGE_001_D-5001-2009_2009-11-11",
+          "title": "Bundesverwaltungsgericht 11.11.2009 D-5001/2009",
+          "snippet": "Asyl und Wegweisung | Asyl und Wegweisung; Verfügung des BFM vom 21. Apr... Wiederherstellung der Frist ; Urteil des Bundesverwaltungsgerichts vom 2. Andererseits ist – sofern das Gesuch um Wiederherstellung der Frist gutzuheissen ist – die gegen Juli 2009 reichte der Rechtsvertreter des Beschwerdeführers das Gesuch um Wiederherstellung der Frist Das Gesuch um Wiederherstellung der Frist im Sinne von Art. 24 VwVG wird gutgeheissen. 2. Betreffend Gesuch um Wiederherstellung der Frist sind keine V",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:GR_VG_001_U-2021-54_2021-10-28",
+          "title": "Graubünden Verwaltungsgericht 1. Kammer 28.10.2021 U 2021 54",
+          "snippet": "Aufenthaltsbewilligung | Fremdenpolizei Juni 2021 wurde ausnahmsweise zur Vereinfachung als Gesuch um Wiederherstellung einer versäumten Frist nicht eingehalten, was ein Nichteintreten auf das Gesuch um Wiederherstellung der Frist zur Folge Selbst aber wenn das Gesuch um Wiederherstellung der Frist rechtzeitig eingereicht worden wäre, hätte Zusammengefasst ergibt sich, dass auf das Gesuch um Wiederherstellung der Frist nach Art. 10 VRG nicht Das Gesuch um Wiederherstellung der Frist wird abgewie",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:AG_OG_006_WBE-2023-152_2023-07-10",
+          "title": "Aargau Obergericht Verwaltungsgericht 10.07.2023 WBE.2023.152",
+          "snippet": "Entsprechend sei das Gesuch um Wiederherstellung der Frist innert 10 Tagen seit Wegfall des Hinderungsgrundes Die Vorinstanz wies das Gesuch um Wiederherstellung der Beschwerde- frist ab und trat auf die Verwaltungsbeschwerde Das Ge- such um Wiederherstellung der Frist ist innert 10 Tagen seit Wegfall des Säumnisgrundes einzureichen Eine Wiederherstellung ist nur möglich, wenn die Wahrung einer Frist oder eines gerichtlichen Termins Ein Grund, der die Wiederherstellung einer Frist rechtfertigen ",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        },
+        {
+          "providerId": "entscheidsuche",
+          "documentId": "entscheidsuche:SZ_VG_001_III-2021-185_2022-03-30",
+          "title": "Schwyz Verwaltungsgericht 3. Kammer 30.03.2022 III 2021 185",
+          "snippet": "Planungs- und Baurecht (Baubewilligung; Ausnützung; Wiederherstellung ) | Planungs- und Baurecht Hierfür wird ihnen eine Frist von zwei Monaten ab Rechtskraft dieses Beschlusses angesetzt. 2. (Kosten; Rechtsmittelbelehrung; Zustellung ). K. März 2021 Verwaltungsbeschwerde beim Regierungsrat erheben mit dem Antrag, der angefochtene Beschluss Es drängten sich daher Massnahmen zur Wiederherstellung auf (Erw. 2.3). Aus Sicht der Baubewilligungsbehörde lässt sich die unklare Dispositivziffer 3 der Ba",
+          "officialCharacter": "unofficial_aggregator",
+          "aggregatorName": "entscheidsuche.ch"
+        }
+      ],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 4
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "operation": "entscheidsuche.search",
+      "query": "mangelhafte Zustellung Verwaltungsentscheid Fristbeginn rechtliches Gehoer",
+      "filters": {
+        "sources": [
+          "entscheidsuche"
+        ],
+        "language": "de",
+        "limit": 5
+      },
+      "timestamp": "2026-08-03T18:30:52.869Z",
+      "latencyMs": 481,
+      "retries": 1,
+      "resultCount": 0,
+      "results": [],
+      "providersConsulted": [
+        {
+          "providerId": "entscheidsuche",
+          "queried": true,
+          "resultCount": 0
+        }
+      ],
+      "warnings": [
+        "entscheidsuche.ch is an unofficial aggregator; verify selected authorities against official court sources."
+      ],
+      "status": "partial"
+    }
+  ],
+  "results": [
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RP-2008-38_2008-10-16",
+      "title": "Bundesstrafgericht 16.10.2008 RP.2008.38",
+      "snippet": "Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG);;Internationale Rechtshilfe in Strafsachen an die USA Unentgeltliche Rechtspflege (Art. 65 VwVG) A. gelangt gegen die Herausgabe der Bankunterlagen betreffend die auf seinen Namen lautenden Konten Juli 2008 sei",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:ZH_SRK_001_ST-2015-198_2016-01-29",
+      "title": "Zürich Steuerrekursgericht 29.01.2016 ST.2015.198",
+      "snippet": "Staats- und Gemeindesteuern 2012 | Sehr intensive spekulative Börsentätigkeit mit Warrants stellt nach den oberinstanzlichen Präjudizien eine selbstständige Erwerbstätigkeit dar, weshalb der erlittene hohe Verlust grundsätzlich zur Verrechnung zugelassen werden kann. Mangels vollständiger Aufzeichnungen und aufgrund intransparenter Vermögensverhältnisse ist dieser indessen zu schätzen. Eine vollständige Verweigerung wie gemäss Vorinstanz führt zu weit. Abweisung eines Gesuchs um unentgeltliche P",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-63_2007-07-23",
+      "title": "Bundesstrafgericht 23.07.2007 RR.2007.63",
+      "snippet": "Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG) ;;Internationale Rechtshilfe in Strafsachen an die Niederlande Unen",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_BB-2013-133_2014-04-16",
+      "title": "Bundesstrafgericht 16.04.2014 BB.2013.133",
+      "snippet": "Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 StPO). Unentgeltliche Rechtspflege (Art. 29 Abs. 3 BV).;;Einziehung bei Einstellung des Verfahrens (Art. 320 Abs. 2 i.V.m. Art. 322 Abs. 2 S",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2018-125_2018-07-24",
+      "title": "Bundesstrafgericht 24.07.2018 RR.2018.125",
+      "snippet": "Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland. Herausgabe von Beweismitteln (Art. 74 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Internationale Rechtshilfe in Strafsachen an Deutschland",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGE_005_BGE-139-III-278_2013",
+      "title": "Bundesgericht (BGE) Teil III 2013 BGE 139 III 278",
+      "snippet": "Regeste Art . 15 ff. und 26 Abs. 1 LugÜ; Art . 59 f. ZPO ; Zuständigkeit bei Verbrauchersachen; Beweislast; Prüfung der Zuständigkeit von Amtes wegen. Beweislast für das Vorliegen einer Verbrauchersache nach Art . 15 Abs. 1 lit. c LugÜ (E. 3). Bedeutung und Umfang der Prüfung der Zuständigkeit von Amtes wegen (E. 4). . 59 Abs. 2 lit. b und Art . 60 ZPO (RAMON MABILLARD, in: Basler Kommentar, Lugano-Übereinkommen, 2011 Schnyder [Hrsg.], 2011, N. 6 zu Art . 25 LugÜ). 4.3 Gemäss Art . 60 ZPO prüft ",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-244_2024-02-26",
+      "title": "Aargau Obergericht Zivilkammern 26.02.2024 ZSU.2023.244",
+      "snippet": "Aufl. 2017, N. 7 zu Art . 55 ZPO und N. 6 zu Art . 56 ZPO ). GEHRI, BSK ZPO , N. 8 zu Art . 56 ZPO ; SUTTER-SOMM/GRIEDER, ZPO -Komm., N. 19 zu Art . 56 ZPO ; Urteil GEHRI, BSK ZPO , N. 12 zu Art . 56 ZPO m. H.). Da sich die ge- richtliche Fragepflicht nach Art . 56 ZPO nicht auf Tatsachen erstreckt, die nicht Folglich hat die Vorinstanz ihre gerichtliche Fragepflicht gemäss Art . 56 ZPO nicht verletzt.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-64_2023-05-23",
+      "title": "Aargau Obergericht Zivilkammern 23.05.2023 ZSU.2023.64",
+      "snippet": "Aufl. 2017, N. 7 zu Art . 55 ZPO und N. 6 zu Art . 56 ZPO ). Aufl. 2016, N. 19 zu Art . 56 ZPO ; BGE 4A_444/2013 E. 6.3.3 m. H). GEHRI, a.a.O., N. 12 zu Art . 56 ZPO m. H.). Da sich die gerichtliche Fragepflicht nach Art . 56 ZPO nicht auf Tatsachen erstreckt, die gar nicht Folglich hat die Vorinstanz ihre gerichtliche Fragepflicht gemäss Art . 56 ZPO nicht verletzt.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGer_004_4A-495-2024_2025-01-07",
+      "title": "Bundesgericht I. Zivilrechtliche Abteilung 07.01.2025 4A_495/2024",
+      "snippet": "Juli 2024 (1B 23 56 ). Sachverhalt: A. . 55 Abs. 1 ZPO ). Der Zweckgedanke der allgemeinen gerichtlichen Fragepflicht nach Art . 56 ZPO besteht darin, dass eine Vor allem dient die gerichtliche Fragepflicht nicht dazu, prozessuale Nachlässigkeiten der Parteien auszugleichen Nach Art . 150 Abs. 1 ZPO müssen nur die Behauptungen bewiesen werden, die ausdrücklich bestritten werden",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_KG_003_KSK-2019-5_2019-07-12",
+      "title": "Graubünden Kantonsgericht Schuldbetreibungs- und Konkurskammer 12.07.2019 KSK 2019 5",
+      "snippet": "provisorische Rechtsöffnung | Rechtsöffnung Aufl., Zürich 2015, N 10 zu Art . 56 ZPO ). Aufl., Basel 2017, N 4 zu Art . 56 ZPO m.w.H.). . 56 ZPO ). ., N 12 ff. zu Art . 56 ZPO m.w.H.). Damit liegt keine Konstellation vor, welche eine gerichtliche Hilfestel- lung im Sinne von Art . 56 ZPO",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RP-2014-19_2014-03-04",
+      "title": "Bundesstrafgericht 04.03.2014 RP.2014.19",
+      "snippet": "Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG).;; Unentgeltliche Rechtspflege (Art. 65 VwVG). Februar 2014 erstreckte (RP.2014.6 act. 2/Hauptverfahren RR.2013.369); der Kostenvorschuss je- doch April 2006, E. 6.1 m.w.H.); - der Gesuchsteller seinen Antrag auf unentgeltliche Rechtspflege mit er bereits in den Verfahren RP.2013.65 und RP.2014.6 gemacht hatte; nämlich, dass sein gesamtes Vermögen Gunsten der Kas",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-117-A_2007-09-19",
+      "title": "Bundesstrafgericht 19.09.2007 RR.2007.117_A",
+      "snippet": "Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege (Art. 30 lit. b SGG i.V.m. Art. 65 Abs. 1 und 2 VwVG);;Internationale Rechtshilfe in Strafsachen an Österreich Unentgeltliche Rechtspflege",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RP-2008-35_2008-10-13",
+      "title": "Bundesstrafgericht 13.10.2008 RP.2008.35",
+      "snippet": "Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch um unentgeltliche Rechtspflege (Art. 65 Abs.1 und 2 VwVG i.V.m. Art. 30 lit. b SGG);;Internationale Rechtshilfe in Strafsachen an Portugal Gesuch u",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:ZH_VG_001_-SB-2021-00099_2022-01-12",
+      "title": "Zürich Verwaltungsgericht 12.01.2022  SB.2021.00099",
+      "snippet": "Staats- und Gemeindesteuern 2014 | Unentgeltliche Rechtspflege . Gegenstand des vorliegenden Verfahrens (E. 2.1). Abweisung des Gesuchs um unentgeltliche Rechtspflege mangels nachgewiesener Mittellosigkeit und zufolge offensichtlicher Aussichtslosigkeit (E. 2.5). Ausgangsgemässe Regelung der Kosten- und Entschädigungsfolgen (E. 3). Abweisung der (vereinigten) Beschwerden. Rechtsgebiet: Steuerrecht Betreff: Staats- und Gemeindesteuern 2014 Unentgeltliche Rechtspflege Abweisung des Gesuchs um unen",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_101-2022-386_2022-12-23",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 23.12.2022 101 2022 386",
+      "snippet": "Urteil des I. Zivilappellationshofes des Kantonsgerichts | Erbrecht .________ zu informieren und sämtliche Dokumente inklusive Bankauszüge und Korrespondenzen offen zu Wiederherstellung der aufschiebenden Wirkung sei nicht zu gewähren, auf neue Tatsa- chen und neue Beweismittel ( Noven Das erste Betreibungsverfahren habe mit einem Verlustschein nach einem notwendig gewordenen Beschwerdeverfahren Der Anspruch auf rechtliches Gehör gemäss Art. 29 Abs. 2 BV – genauso wie das Recht auf ein faires Ve",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGer_005_5A-493-2016_2016-11-29",
+      "title": "Bundesgericht II. Zivilrechtliche Abteilung 29.11.2016 5A_493/2016",
+      "snippet": "Dem Gesuch um Vereinigung des vorliegenden Verfahrens mit dem Beschwerdeverfahren 5A_331/2016 gegen den Solch \"echte\" Noven sind im bundesgerichtlichen Verfahren unzulässig. Gehör im Zusammenhang mit der Feststellung der finanziellen Verhältnisse der Beschwerdegegnerin (s. geltend er habe im obergerichtlichen Verfahren die Edition der kompletten Steuererklärung 2014 sowie der Bankauszüge Die Rüge der Verletzung des Anspruchs auf rechtliches Gehör bzw. auf Beweisabnahme ist unbegründet.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-239_2023-12-18",
+      "title": "Aargau Obergericht Zivilkammern 18.12.2023 ZSU.2023.239",
+      "snippet": "Das gilt so- wohl für echte als auch für unechte Noven und auch in Verfahren, welche wie das Verfahren Der Anspruch auf rechtliches Gehör verlangt, dass die Behörde die Vor- bringen des vom Entscheid in u.a. dazu auf, aktuelle Belege zu seinem Vermögen (Steuerer- klärung, definitive Steuerveranlagung, Bankauszüge Das Gesuch um Bewilligung der unentgeltlichen Rechts- pflege für das Beschwerdeverfahren ist deshalb",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:ZH_KSG_001_AA050020_2005-09-10",
+      "title": "Zürich Kassationsgericht 10.09.2005 AA050020",
+      "snippet": "Natur des Eheschutzverfahrens, Anspruch auf rechtliches Gehör , Rüge der aktenwidrigen bzw. willkürlichen tatsächlichen Annahme, Unentgeltliche Prozessführung Gehör vorliege (KG act. 1 S. 4 f.). b) Aus Art. 29 Abs. 2 BV (Anspruch auf rechtliches Gehör ) folgt die Pflicht der Behörden und der Gerichte Durch die fehlende Begründung werde sein Anspruch auf rechtliches Gehör verletzt (KG act. 1 S. 8). Indem die Vorinstanz darauf nicht eingehe, verletze sie seinen Anspruch auf rechtliches Gehör . Dam",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGer_005_5A-763-2018_2019-07-01",
+      "title": "Bundesgericht II. Zivilrechtliche Abteilung 01.07.2019 5A_763/2018",
+      "snippet": "Im ordentlichen Beschwerdeverfahren sind in rechtlicher Hinsicht alle Rügen gemäss Art. 95 f. Echte Noven sind in jedem Fall unzulässig bzw. von Art. 99 Abs. 1 BGG gar nicht erfasst. Der Anspruch auf rechtliches Gehör nach Art. 29 Abs. 2 BV schliesst als Teilgehalt den Anspruch ein, Bei echten Noven ist das Kriterium der Neuheit (Art. 317 Abs. 1 Bst. b ZPO) ohne weiteres gegeben. ________- Bankauszüge beantragt.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_102-2022-31_2022-03-29",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 29.03.2022 102 2022 31",
+      "snippet": "Urteil des II. Zivilappellationshofes des Kantonsgerichts | Beschwerde unentgeltliche Rechtspflege Mai 2021 Beschwerde gegen den die unentgeltliche Rechtspflege abweisenden Entscheid und beantragt unter Art. 319 ZPO ist der Entscheid über die unentgeltliche Rechtspflege mit Beschwerde anfechtbar. Demzufolge sei die unentgeltliche Rechtspflege zu verweigern. Damit verletze sie seinen Anspruch auf unentgeltliche Rechtspflege . 3.3. Das Gesuch von A.________ um unentgeltliche Rechtspflege wird gutg",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-295_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.295",
+      "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). demokrati- schen Gesellschaft notwendig ist für die nationale ode",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-184_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.184",
+      "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). demokrati- schen Gesellschaft notwendig ist für die nationale ode",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2022-23_2022-07-12",
+      "title": "Bundesstrafgericht 12.07.2022 RR.2022.23",
+      "snippet": "Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG);;Auslieferung an die Republik Kosovo; Auslieferungsentscheid (Art. 55 IRSG); unentgeltliche Rechtspflege (Art. 65 VwVG) Dem Beschwerdeführer ",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-205_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.205",
+      "snippet": "Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG).;;Auslieferung an Italien. Auslieferungsentscheid (Art. 55 IRSG). Unentgeltliche Rechtspflege (Art. 65 VwVG). Des Weiteren ersuchte er um unentgeltliche Rechtspflege und Ernen",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_602-2025-31_2025-07-31",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 31.07.2025 602 2025 31",
+      "snippet": "Urteil des II. Verwaltungsgerichtshofes des Kantonsgerichts | Beschwerde gegen Zwischenentscheide hatte, sondern vielmehr die ohne Bewilligung ausgeführten Arbeiten und Nutzungsänderungen, bzw. das fehlende Es sei nicht klar, welche Unterlagen der Vorinstanz fehlen, um die baurechtliche Situation der Parzelle Für die Feststellung des Sachverhalts gilt im Verwaltungsverfahren grundsätzlich die Untersuchungsmaxime Beschwerdeführerinnen kann nicht gefolgt werden, wenn sie vorbringen, sie würden nic",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S1-13-22_2013-11-14",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 14.11.2013 S1 13 22",
+      "snippet": "S1 13 22 URTEIL VOM 14. NOVEMBER 2013 Kantonsgericht Wallis Sozialversicherungsrechtliche Abteilung Besetzung: Dr. Lionel Seeberger, Präsident; Eve-Marie Dayer-Schmid und Thomas Brunner, Kantonsrichter/in; Petra Stoffel, Gerichtsschreiberin in Sachen X_________, Beschwerdeführer, vertreten durch Rechtsanwalt A_________ gegen AUSGLEICHSKASSE DES KANTONS WALLIS, Beschwerdegegnerin (Erlassgesuch / guter Glaube) Beschwerde gegen den Einspracheentscheid vom 8. Januar 2013 September 2009 teilte die Au",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_603-2022-152_2024-01-18",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 18.01.2024 603 2022 152",
+      "snippet": "Urteil des III. Verwaltungsgerichtshofes des Kantonsgerichts | Wirtschaft Nachdem die Vorinstanz sie mehrmals auf fehlende Dokumente aufmerksam gemacht hatte, reichte die Beschwerdeführerin Gemäss den eingereichten Unterlagen belaufe sich der Umsatz, der unter Ziffer 20A der MWST-Abrechnungen April 2023 auf Abweisung der Beschwerde . behaupteten Umsätze, wenn sie nach vereinbarten Entgelten abrechnen würde, festzustellen, dass im Verwaltungsverfahren Die Beschwerde wird abgewiesen. II.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_F1-24-83_2024-06-30",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 30.06.2024 F1 24 83",
+      "snippet": "F1 24 83 URTEIL VOM 30. JUNI 2024 Kantonsgericht Wallis Steuerrechtliche Abteilung Es wirken mit: Dr. Thierry Schnyder, Präsident; Frédéric Fellay, Richter, Nicole Inniger Steiner, Beisitzerin, Vanessa Brigger, Gerichtsschreiberin, in Sachen X _________, Grossbritannien, Beschwerdeführerin, gegen STEUERVERWALTUNG DES KANTONS WALLIS, Vorinstanz, (Einkommens- und Vermögenssteuer der natürlichen Personen) Beschwerde gegen den Einspracheentscheid vom 5. Juni 2023. Rechtsmittelverfahren bei steuerrec",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_601-2023-46_2023-12-05",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 05.12.2023 601 2023 46",
+      "snippet": "Urteil des I. Verwaltungsgerichtshofes des Kantonsgerichts | Schule und Bildung Privatrecht, Zivilprozess, Schuldbetreibungs- und Konkursrecht\" (Privatrecht) sowie \"Verwaltungsrecht und Verwaltungsverfahren Auf die weiteren Parteivorbringen und die eingereichten Unterlagen wird – soweit für die Entscheidfindung April 2023 attestiert ebenfalls, dass die fehlende Abmeldung krankheitsbedingt erfolgt sei. Es ist auf die Mitwirkungspflicht der Beschwerdeführerin zu verweisen (Art. 47 VRG). Die Beschw",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S2-24-81_2025-04-29",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 29.04.2025 S2 24 81",
+      "snippet": "S2 24 81 URTEIL VOM 29. APRIL 2025 Kantonsgericht Wallis Sozialversicherungsrechtliche Abteilung Besetzung: Michael Steiner, Präsident; Candido Prada und Dr. Thierry Schnyder, Kantonsrichter; Petra Stoffel, Gerichtsschreiberin in Sachen X _________, Beschwerdeführerin, vertreten durch Rechtsanwältin Graziella Walker Salzmann, Naters gegen SWICA GESUNDHEITSORGANISATION, Beschwerdegegnerin (obligatorische Krankenpflegeversicherung, Kostengutsprache, Akteneinsicht) Beschwerde gegen den Entscheid vo",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2016-167_2017-11-14",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 14.11.2017 608 2016 167",
+      "snippet": "Urteil des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Auf Einsprache hin wurde ein Strafverfahren eröffnet, das am 28. Auf die Beschwerde ist einzutreten. Dies bedeutet eine gesteigerte Mitwirkungspflicht der ins Recht gefassten Person bei der Abklärung bzw innert nützlicher Frist begleichen zu können (BGE 108 V 183). Diese Frist kann weder verlängert noch unterbrochen werden.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2014-51_2015-11-12",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 12.11.2015 608 2014 51",
+      "snippet": "Entscheid des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Dezember 2013 Einsprache , welche die Ausgleichskasse mit Einspracheentscheid vom 14. Februar 2014 Beschwerde an das Kantonsgericht Freiburg. Dies bedeutet eine gesteigerte Mitwirkungspflicht der ins Recht gefassten Person bei der Abklärung bzw innert nützlicher Frist begleichen zu können (BGE 108 V 183). Diese Frist kann weder verlängert noch unterbrochen werden.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_605-2012-487_2015-06-22",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 22.06.2015 605 2012 487",
+      "snippet": "Entscheid des II. Sozialversicherungsgerichtshofes des Kantonsgerichts | Alters- und Hinterlassenenversicherung Mai 2012 Einsprache . Mit Einspracheentscheid vom 21. innert nützlicher Frist begleichen zu können (BGE 108 V 183). nichts zu ändern vermögen (antizipierte Beweiswürdigung; UELI KIESER, Das Verwaltungsverfahren in der Sozialversicherung Dass er dies auch tatsächlich getan hat, wird vom Beschwerdeführer im Rahmen der ihm obliegenden Mitwirkungspflicht Diese Frist kann weder verlängert n",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BVGE_001_C-3655-2026_2026-07-21",
+      "title": "Bundesverwaltungsgericht 21.07.2026 C-3655/2026",
+      "snippet": "Rente | Alters- und Hinterlassenenversicherung, Rentenanspruch / Nichteintreten auf Einsprache (Einspracheentscheid vom 28. April 2026) Auf die frist - und formgerecht eingereichte Beschwerde ist daher grundsätzlich einzutreten (Art. Delegationsnorm von Art. 81 ATSG – in Art. 10 Abs. 1 ATSV (SR 830.11) festgelegt hat, konkretisieren die Mitwirkungspflicht BGE 142 V 152 E. 2.4, vgl. auch HANSJÖRG SEILER, Rechtsfragen des Einsprachever- fahrens in der Sozialversicherung innert Frist verbessert hat",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2014-96_2017-04-04",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 04.04.2017 U 2014 96",
+      "snippet": "Personalrecht ( Lohnforderung ) | Personalrecht Aufl., Art. 329a N. 2; GEISER/MÜLLER, Arbeitsrecht in der Schweiz, 3. Aufl., Art. 329a N. 2; GEI- SER/MÜLLER, Arbeitsrecht in der Schweiz, 3. Die Herabsetzung des Beweismasses darf allerdings nicht zu einer Umkehr der Beweislast führen. Demzufolge betrage die Lohnforderung aus Überstunden total Fr. 13'666.25 netto. Eine Lohnforderung aus nicht kompensierten Überstunden sei auch aus diesem Grunde nicht ausge- wiesen",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:BL_KG_001_410-2014-73_2014-06-10",
+      "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.06.2014 410 2014 73 (410 14 73)",
+      "snippet": "Arbeitsrecht Schweizer, Hauptstrasse 40, Post- fach 331, 4450 Sissach, Beschwerdegegner Gegenstand Arbeitsrecht auch ihr Entstehen durch die Dauer des Arbeitsver- hältnisses zu beweisen, während der Beklagte die Beweislast Mangels Nachweises, dass der Beklagte allfällige Überstunden angeordnet oder ge- nehmigt habe, sei der dass der Beschwerdeführer in seiner Berechnung Seite 4 http://www.bl.ch/kantonsgericht der Lohnforderung Die Vorinstanz habe die Beweislast richtig verteilt und in zutreffend",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_KG_006_ZF-2008-4_2008-05-05",
+      "title": "Graubünden Kantonsgericht I. Zivilkammer 05.05.2008 ZF 2008 4",
+      "snippet": "Forderung aus Arbeitsvertrag | OR Arbeitsvertrag Die Darle- gungs-, Substantiierungs- und Beweislast für geleistete Überstunden trägt daher grundsätzlich In der Folge hat die Vorin- 7 stanz dann aber doch eine Umkehrung der Beweislast vorgenommen. Diese Umkehrung der Beweislast ist unhaltbar. Juni 1999 4C.33/1999, in: Schweizerisches Arbeitsrecht , Rechtsprechung SARB 2000 Nr. 155; Urteil des Oktober 1996, in: Schweizerisches Arbeitsrecht , Rechtsprechung SARB 1998 Nr. 55; Urteil des Appellation",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGer_004_4A-533-2018_2019-04-23",
+      "title": "Bundesgericht I. Zivilrechtliche Abteilung 23.04.2019 4A_533/2018",
+      "snippet": "Beschwerdegegners nicht ohne Weiteres zur Folge, dass die Vorbringen der Beschwerdeführerin, für die sie die Beweislast Betreffend die von der Beschwerdeführerin behauptete Tilgung der Lohnforderung durch die Zahlung von Sie trage die Beweislast dafür, die eingeklagten Lohnforderungen mit dieser Zahlung teilweise beglichen nie angewiesen, Überstunden zu leisten. Entschädigung auch ROMINA CARCAGNI ROESLER, Home Office, ArbR, Mitteilungen des Instituts für Schweizerisches Arbeitsrecht",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BVGE_001_A-4874-2020_2022-03-14",
+      "title": "Bundesverwaltungsgericht 14.03.2022 A-4874/2020",
+      "snippet": "Aufl&ouml;sung des Arbeitsverh&auml;ltnisses | fristlose Auflösung des Arbeitsvertrages Oktober 2020 betreffend Lohnforderung eingereicht hat, wird sie mit instruktionsrichterlicher Verfügung Beschwerdeverfahren betreffend eine Kündigung trägt die kündigende Behörde daher die (objektive) Beweislast Die Überstunden habe die Be- schwerdeführerin jeweils zeitnah kompensieren können. Dezember 2016 E. 5.2; THOMAS GEISER/ROLAND MÜLLER/KURT PÄRLI, Arbeitsrecht in der Schweiz, 4. Wiegen die Verfehlungen",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:BL_KG_001_400-2013-230_2013-12-10",
+      "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.12.2013 400 2013 230 (400 13 230)",
+      "snippet": "Arbeitsrecht; Lohn Nach gescheitertem Schlichtungsverfahren liess er am 4. Die von der Unia eingereichte Mail- Bestätigung beweise offensichtlich nicht, dass ein Ladendetektiv In diesem Umfang werde die Lohnklage von der Arbeitgeberin aner- kannt. Gemäss Arbeitsvertrag sei er als Sicherheitsagent angestellt worden, was darauf hinweise, dass es sich Im Arbeitsvertrag vom 18.",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BVGE_001_D-5001-2009_2009-11-11",
+      "title": "Bundesverwaltungsgericht 11.11.2009 D-5001/2009",
+      "snippet": "Asyl und Wegweisung | Asyl und Wegweisung; Verfügung des BFM vom 21. Apr... Wiederherstellung der Frist ; Urteil des Bundesverwaltungsgerichts vom 2. Andererseits ist – sofern das Gesuch um Wiederherstellung der Frist gutzuheissen ist – die gegen Juli 2009 reichte der Rechtsvertreter des Beschwerdeführers das Gesuch um Wiederherstellung der Frist Das Gesuch um Wiederherstellung der Frist im Sinne von Art. 24 VwVG wird gutgeheissen. 2. Betreffend Gesuch um Wiederherstellung der Frist sind keine V",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2021-54_2021-10-28",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 28.10.2021 U 2021 54",
+      "snippet": "Aufenthaltsbewilligung | Fremdenpolizei Juni 2021 wurde ausnahmsweise zur Vereinfachung als Gesuch um Wiederherstellung einer versäumten Frist nicht eingehalten, was ein Nichteintreten auf das Gesuch um Wiederherstellung der Frist zur Folge Selbst aber wenn das Gesuch um Wiederherstellung der Frist rechtzeitig eingereicht worden wäre, hätte Zusammengefasst ergibt sich, dass auf das Gesuch um Wiederherstellung der Frist nach Art. 10 VRG nicht Das Gesuch um Wiederherstellung der Frist wird abgewie",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_006_WBE-2023-152_2023-07-10",
+      "title": "Aargau Obergericht Verwaltungsgericht 10.07.2023 WBE.2023.152",
+      "snippet": "Entsprechend sei das Gesuch um Wiederherstellung der Frist innert 10 Tagen seit Wegfall des Hinderungsgrundes Die Vorinstanz wies das Gesuch um Wiederherstellung der Beschwerde- frist ab und trat auf die Verwaltungsbeschwerde Das Ge- such um Wiederherstellung der Frist ist innert 10 Tagen seit Wegfall des Säumnisgrundes einzureichen Eine Wiederherstellung ist nur möglich, wenn die Wahrung einer Frist oder eines gerichtlichen Termins Ein Grund, der die Wiederherstellung einer Frist rechtfertigen ",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    },
+    {
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:SZ_VG_001_III-2021-185_2022-03-30",
+      "title": "Schwyz Verwaltungsgericht 3. Kammer 30.03.2022 III 2021 185",
+      "snippet": "Planungs- und Baurecht (Baubewilligung; Ausnützung; Wiederherstellung ) | Planungs- und Baurecht Hierfür wird ihnen eine Frist von zwei Monaten ab Rechtskraft dieses Beschlusses angesetzt. 2. (Kosten; Rechtsmittelbelehrung; Zustellung ). K. März 2021 Verwaltungsbeschwerde beim Regierungsrat erheben mit dem Antrag, der angefochtene Beschluss Es drängten sich daher Massnahmen zur Wiederherstellung auf (Erw. 2.3). Aus Sicht der Baubewilligungsbehörde lässt sich die unklare Dispositivziffer 3 der Ba",
+      "officialCharacter": "unofficial_aggregator",
+      "aggregatorName": "entscheidsuche.ch"
+    }
+  ],
+  "selectedAuthorities": [
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGE_005_BGE-139-III-278_2013",
+      "title": "Bundesgericht (BGE) Teil III 2013 BGE 139 III 278",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "federal supreme court candidate",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-244_2024-02-26",
+      "title": "Aargau Obergericht Zivilkammern 26.02.2024 ZSU.2023.244",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-64_2023-05-23",
+      "title": "Aargau Obergericht Zivilkammern 23.05.2023 ZSU.2023.64",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_101-2022-386_2022-12-23",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 23.12.2022 101 2022 386",
+      "query": "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_102-2022-31_2022-03-29",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 29.03.2022 102 2022 31",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "ZPO",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-295_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.295",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-184_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.184",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BVGE_001_D-5001-2009_2009-11-11",
+      "title": "Bundesverwaltungsgericht 11.11.2009 D-5001/2009",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2021-54_2021-10-28",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 28.10.2021 U 2021 54",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_006_WBE-2023-152_2023-07-10",
+      "title": "Aargau Obergericht Verwaltungsgericht 10.07.2023 WBE.2023.152",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    }
+  ],
+  "adverseAuthorities": [
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_602-2025-31_2025-07-31",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 31.07.2025 602 2025 31",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S1-13-22_2013-11-14",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 14.11.2013 S1 13 22",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_603-2022-152_2024-01-18",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 18.01.2024 603 2022 152",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S2-24-81_2025-04-29",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 29.04.2025 S2 24 81",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2016-167_2017-11-14",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 14.11.2017 608 2016 167",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2014-51_2015-11-12",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 12.11.2015 608 2014 51",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2014-96_2017-04-04",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 04.04.2017 U 2014 96",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "administrative procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:BL_KG_001_410-2014-73_2014-06-10",
+      "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.06.2014 410 2014 73 (410 14 73)",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_KG_006_ZF-2008-4_2008-05-05",
+      "title": "Graubünden Kantonsgericht I. Zivilkammer 05.05.2008 ZF 2008 4",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "unknown from returned metadata",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    }
+  ],
+  "comparableCases": [
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RP-2008-38_2008-10-16",
+      "title": "Bundesstrafgericht 16.10.2008 RP.2008.38",
+      "query": "unentgeltliche Rechtspflege Bedürftigkeit Bankunterlagen",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context",
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:ZH_SRK_001_ST-2015-198_2016-01-29",
+      "title": "Zürich Steuerrekursgericht 29.01.2016 ST.2015.198",
+      "query": "unentgeltliche Rechtspflege Bedürftigkeit Bankunterlagen",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context",
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-63_2007-07-23",
+      "title": "Bundesstrafgericht 23.07.2007 RR.2007.63",
+      "query": "unentgeltliche Rechtspflege Bedürftigkeit Bankunterlagen",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context",
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGE_005_BGE-139-III-278_2013",
+      "title": "Bundesgericht (BGE) Teil III 2013 BGE 139 III 278",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "federal supreme court candidate",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-244_2024-02-26",
+      "title": "Aargau Obergericht Zivilkammern 26.02.2024 ZSU.2023.244",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-64_2023-05-23",
+      "title": "Aargau Obergericht Zivilkammern 23.05.2023 ZSU.2023.64",
+      "query": "Art. 56 ZPO gerichtliche Fragepflicht unvollständige Unterlagen",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "civil procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "Art. 56 ZPO",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RP-2014-19_2014-03-04",
+      "title": "Bundesstrafgericht 04.03.2014 RP.2014.19",
+      "query": "unentgeltliche Rechtspflege Kostenvorschuss Vermögen Bankkonto",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-63_2007-07-23",
+      "title": "Bundesstrafgericht 23.07.2007 RR.2007.63",
+      "query": "unentgeltliche Rechtspflege Kostenvorschuss Vermögen Bankkonto",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2007-117-A_2007-09-19",
+      "title": "Bundesstrafgericht 19.09.2007 RR.2007.117_A",
+      "query": "unentgeltliche Rechtspflege Kostenvorschuss Vermögen Bankkonto",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_101-2022-386_2022-12-23",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 23.12.2022 101 2022 386",
+      "query": "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BGer_005_5A-493-2016_2016-11-29",
+      "title": "Bundesgericht II. Zivilrechtliche Abteilung 29.11.2016 5A_493/2016",
+      "query": "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+      "classification": "irrelevant",
+      "basis": "No reliable connection beyond provider-returned text: rechtliches gehör noven beschwerdeverfahren bankauszüge bundesgericht ii. zivilrechtliche abteilung 29.11.2016 5a_493/20",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "federal supreme court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "No procedural relevance established from returned metadata."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_001_ZSU-2023-239_2023-12-18",
+      "title": "Aargau Obergericht Zivilkammern 18.12.2023 ZSU.2023.239",
+      "query": "rechtliches Gehör Noven Beschwerdeverfahren Bankauszüge",
+      "classification": "irrelevant",
+      "basis": "No reliable connection beyond provider-returned text: rechtliches gehör noven beschwerdeverfahren bankauszüge aargau obergericht zivilkammern 18.12.2023 zsu.2023.239 das gilt",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "economic capacity and bank records",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "No procedural relevance established from returned metadata."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_001_102-2022-31_2022-03-29",
+      "title": "Freiburg Kantonsgericht Zivilappellationshöfe 29.03.2022 102 2022 31",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "ZPO",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-295_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.295",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "legal-aid-ar",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BSTG_001_RR-2016-184_2017-07-21",
+      "title": "Bundesstrafgericht 21.07.2017 RR.2016.184",
+      "query": "Rückweisung wirtschaftliche Verhältnisse unentgeltliche Rechtspflege",
+      "classification": "favorable",
+      "basis": "Returned metadata/snippet concerns right to be heard, judicial clarification or remittal, which can support procedural relief.",
+      "matter": "legal aid / civil procedure",
+      "procedure": "unknown from returned metadata",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential procedural relief candidate",
+      "similarities": [
+        "legal-aid context"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_602-2025-31_2025-07-31",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 31.07.2025 602 2025 31",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S1-13-22_2013-11-14",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 14.11.2013 S1 13 22",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "cantonal-admin-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_007_603-2022-152_2024-01-18",
+      "title": "Freiburg Kantonsgericht Verwaltungsgerichtshöfe 18.01.2024 603 2022 152",
+      "query": "Verwaltungsverfahren fehlende Unterlagen Mitwirkungspflicht Beschwerde",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "missing or incomplete documents",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "returned metadata suggests missing/incomplete documentation issue",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "documentation issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:VS_BZG_999_S2-24-81_2025-04-29",
+      "title": "Wallis Sonstiges Gericht Sonstige Kammer 29.04.2025 S2 24 81",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2016-167_2017-11-14",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 14.11.2017 608 2016 167",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "social-insurance-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:FR_TC_011_608-2014-51_2015-11-12",
+      "title": "Freiburg Kantonsgericht Sozialversicherungsgerichtshöfe 12.11.2015 608 2014 51",
+      "query": "Sozialversicherung Einsprache Beschwerde Frist Mitwirkungspflicht",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "social insurance",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "party cooperation duty surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2014-96_2017-04-04",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 04.04.2017 U 2014 96",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "administrative procedure",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:BL_KG_001_410-2014-73_2014-06-10",
+      "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.06.2014 410 2014 73 (410 14 73)",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "appeal/complaint",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_KG_006_ZF-2008-4_2008-05-05",
+      "title": "Graubünden Kantonsgericht I. Zivilkammer 05.05.2008 ZF 2008 4",
+      "query": "Arbeitsrecht Lohnforderung Überstunden Beweislast",
+      "classification": "unfavorable",
+      "basis": "Returned metadata/snippet concerns cooperation duties, proof burden or incomplete documents, which can support an adverse argument.",
+      "matter": "employment",
+      "procedure": "unknown from returned metadata",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "proof burden expressly surfaced by query/result text",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "potential rejection/risk candidate",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "employment-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:BL_KG_001_400-2013-230_2013-12-10",
+      "title": "Basel-Land Kantonsgericht Abteilung Zivilrecht 10.12.2013 400 2013 230 (400 13 230)",
+      "query": "Arbeitsvertrag Lohnklage Schlichtungsverfahren Beweise",
+      "classification": "distinguishable",
+      "basis": "Same broad legal area appears, but returned metadata is not enough to align procedure and determinative facts.",
+      "matter": "employment",
+      "procedure": "unknown from returned metadata",
+      "instance": "cantonal authority/court candidate",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "not explicit in returned metadata",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "not determined",
+      "similarities": [
+        "no material similarity established from metadata"
+      ],
+      "differences": [
+        "cantonal procedural posture may differ"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:CH_BVGE_001_D-5001-2009_2009-11-11",
+      "title": "Bundesverwaltungsgericht 11.11.2009 D-5001/2009",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:GR_VG_001_U-2021-54_2021-10-28",
+      "title": "Graubünden Verwaltungsgericht 1. Kammer 28.10.2021 U 2021 54",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    },
+    {
+      "caseId": "uncertain-deadline-controlled",
+      "providerId": "entscheidsuche",
+      "documentId": "entscheidsuche:AG_OG_006_WBE-2023-152_2023-07-10",
+      "title": "Aargau Obergericht Verwaltungsgericht 10.07.2023 WBE.2023.152",
+      "query": "Verwaltungsbeschwerde unklare Zustellung Frist Wiederherstellung",
+      "classification": "mixed",
+      "basis": "Returned metadata/snippet concerns deadline/restoration/notification issues with fact-sensitive outcomes.",
+      "matter": "cantonal administrative procedure",
+      "procedure": "appeal/complaint",
+      "instance": "unknown from returned metadata",
+      "appliedNorm": "not explicit in returned metadata",
+      "determinativeFacts": "notification and deadline trigger",
+      "burdenOfProof": "not explicit in returned metadata",
+      "missingDocuments": "not explicit in returned metadata",
+      "ratioDecidendi": "Needs full-text legal review; live harness records only provider-returned metadata/snippet evidence.",
+      "outcome": "fact-sensitive candidate",
+      "similarities": [
+        "deadline issue"
+      ],
+      "differences": [
+        "full facts and ratio require legal review"
+      ],
+      "proceduralRelevance": "Potentially relevant procedural authority candidate for human review."
+    }
+  ],
+  "limitations": [
+    "Live evaluation uses anonymized abstract legal queries only; no private case documents are sent.",
+    "Entscheidsuche.ch is an unofficial aggregator; official court sources must be checked by a qualified reviewer before professional reliance.",
+    "Comparability is based on returned metadata, titles and snippets unless a provider exposes full text through the configured tool.",
+    "Fedlex free-text search is limited; federal norms are used as statutory anchors rather than semantic precedent search."
+  ],
+  "providerFailures": [],
+  "privacyValidation": {
+    "passed": true,
+    "findings": [],
+    "queryHash": "f3912bbf889ee27c0d14eba88bbb7879a76e99e0e38eb3a4eb0f22737c278a68"
+  },
+  "confidenceBefore": {
+    "legal-aid-ar": 0.43,
+    "cantonal-admin-controlled": 0.43,
+    "social-insurance-controlled": 0.41,
+    "employment-controlled": 0.35,
+    "civil-controlled": 0.35,
+    "debt-enforcement-controlled": 0.27,
+    "uncertain-deadline-controlled": 0.27,
+    "standing-gap-controlled": 0.27,
+    "wrong-authority-risk-controlled": 0.25,
+    "contradictory-evidence-controlled": 0.35,
+    "mixed-case-law-controlled": 0.41,
+    "insufficient-corpus-controlled": 0.25,
+    "defective-notification-controlled": 0.38,
+    "missing-essential-document-controlled": 0.27,
+    "professional-review-controlled": 0.27
+  },
+  "confidenceAfter": {
+    "legal-aid-ar": 0.43,
+    "cantonal-admin-controlled": 0.33,
+    "social-insurance-controlled": 0.31,
+    "employment-controlled": 0.25,
+    "civil-controlled": 0.15,
+    "debt-enforcement-controlled": 0.07,
+    "uncertain-deadline-controlled": 0.22,
+    "standing-gap-controlled": 0.07,
+    "wrong-authority-risk-controlled": 0.05,
+    "contradictory-evidence-controlled": 0.15,
+    "mixed-case-law-controlled": 0.21,
+    "insufficient-corpus-controlled": 0.05,
+    "defective-notification-controlled": 0.18,
+    "missing-essential-document-controlled": 0.07,
+    "professional-review-controlled": 0.07
+  },
+  "openIssues": [
+    "qualified_human_review_missing",
+    "confidence_calibration_missing"
+  ]
+}

@@ -1,0 +1,1909 @@
+{
+  "generatedAt": "2026-08-16T02:45:09.716Z",
+  "officialCases": {
+    "bge142": {
+      "reference": "BGE 142 III 91",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "0b87c999b22426fcfa985acb8a817b42db84ad59f5a6301f161d4b2b8dd0a9f9",
+      "bytes_received": 44183,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=show_document&highlight_docid=atf%3A%2F%2F142-III-91%3Ade",
+      "decision_date": "2016-02-09",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokume",
+        "main_ground": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 3 Referenzen BGE: 140&nbsp;III&nbsp;496 , 138&nbsp;III&nbsp;59 , 135&nbsp;III&nbsp;112 Artikel: Art. 271 Abs. 1 OR, Art. 271 Abs. 2 OR, Art. 271 OR,",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [
+              95
+            ],
+            "text_hash": "fc03a229d7d47ccc7b276022280de5ade2c17cb20fccaec85c2c119123885889",
+            "excerpt": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch "
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [
+              92,
+              93,
+              94,
+              95
+            ],
+            "text_hash": "1017690b93584e84ed75f01fa2c3b588622da0a9e7666a4fff4089894fb4cbec",
+            "excerpt": "Erwägungen Aus den Erwägungen: 3. (...) 3.2.1 Eine ordentliche Kündigung des Mietvertrags setzt keine besonderen Kündigungsgründe voraus. Mieter und Vermieter sind grundsätzlich frei, das (unbefristete) Mietverhältnis unter Einhaltung der vertraglichen oder gesetzlichen Fristen und Termine zu kündig"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [
+              92
+            ],
+            "text_hash": "0240cc8bbad8b637a6e3db8c2abd01ed5106e893e4a8ce4339484baaa42bf3d8",
+            "excerpt": "In teilweiser Gutheissung der Beschwerde hebt das Bundesgericht den angefochtenen Entscheid auf und und hebt die am 21."
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "BGE 142 III 91",
+        "normalized_reference": "BGE 142 III 91",
+        "citation_family": "published_federal_report",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": null,
+        "sequence_number": "142-III-91",
+        "chamber_or_division": "III",
+        "publication_type": "official_report",
+        "normalization_confidence": 0.95,
+        "reporter": "BGE",
+        "published_report_volume": "142",
+        "published_report_division": "III",
+        "published_report_page": "91",
+        "canonical_published_citation": "BGE 142 III 91"
+      },
+      "document_id": "doc_0b87c999b22426fcfa985acb8a817b42",
+      "resolution_id": "e37bffadc68c9b4e6b784c7f",
+      "selected_candidate_id": "9a3f688d3be908aa",
+      "publication_mapping_status": "mapping_verified",
+      "published_citation": "BGE 142 III 91",
+      "case_reference": "4A_327/2015",
+      "official_docid": "atf://142-III-91:de"
+    },
+    "bge134": {
+      "reference": "BGE 134 III 59",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "c2db1d54b5128583cab3ff93d8d9307d452d1e3ed4790870b6fff96989a05767",
+      "bytes_received": 55322,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=show_document&highlight_docid=atf%3A%2F%2F134-III-59%3Ade",
+      "decision_date": "2007-11-12",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 2 Referenzen BGE: 86&nbsp;II&nbsp;71 , 115&nbsp;II&nbsp;72 , 116&nbsp;IV&nbsp;262 , 117&nbsp;IB&nbsp;367 mehr... , 119&nbsp;IB&nbsp;311 , 133&nbsp;III&nbsp;97 Artikel: Art. 175 DBG, § 208 ",
+        "main_ground": "Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 2 Referenzen BGE: 86&nbsp;II&nbsp;71 , 115&nbsp;II&nbsp;72 , 116&nbsp;IV&nbsp;262 , 117&nbsp;IB&nbsp;367 mehr... , 119&nbsp;IB&nbsp;311 , 133&nbsp;III&nbsp;97 Artikel: Art. 175 DBG, § 208 StG, Art. 177 Abs. 1 DBG, § 210 Abs. 1 StG mehr... , Art. 20 Abs. 1 OR, Art. 181 DBG, Art. 53 Abs. 2 OR Navigation Neue Suche &auml;hnliche Leitentscheide suchen &nbsp; &nbsp; Drucken nach oben Back false",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [
+              67
+            ],
+            "text_hash": "380de920147ac7f993713e71445d10763609f32efaeaf77151e81cabaca4a5fe",
+            "excerpt": "Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 2 Referenzen BGE: 86&nbsp;II&nbsp;71 , 115&nbsp;II&nbsp;72 , 116&nbsp;IV&nbsp;262 , 117&nbsp;IB&nbsp;367 mehr... , 119&nbsp;IB&nbsp;311 , 133&nbsp;III&nbsp;97 Artikel: Art. 175 DBG, § 208 StG, Art. 177 Abs. 1"
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [
+              63,
+              64,
+              65,
+              66,
+              67
+            ],
+            "text_hash": "658b41acdddfeb348478d633e0076714a3f61811a063ebf337b99cad956fdadd",
+            "excerpt": "Erwägungen Aus den Erwägungen: 2. 2.1 Die Beklagte wendete im kantonalen Verfahren ein, die Klägerin bzw. die Eheleute A. könnten keinen Ersatz für ihnen persönlich auferlegte Bussen verlangen. Das Handelsgericht führte dazu zusammengefasst aus, eigentliche strafrechtliche Sanktionen, auch Geldbusse"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [
+              62
+            ],
+            "text_hash": "45b2c5d89ea7d0fbe948f1d6eff6428273f3df38b7f0b901e09a5302e4277490",
+            "excerpt": "in teilweiser Gutheissung der Klage, der Klägerin Fr."
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "BGE 134 III 59",
+        "normalized_reference": "BGE 134 III 59",
+        "citation_family": "published_federal_report",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": null,
+        "sequence_number": "134-III-59",
+        "chamber_or_division": "III",
+        "publication_type": "official_report",
+        "normalization_confidence": 0.95,
+        "reporter": "BGE",
+        "published_report_volume": "134",
+        "published_report_division": "III",
+        "published_report_page": "59",
+        "canonical_published_citation": "BGE 134 III 59"
+      },
+      "document_id": "doc_c2db1d54b5128583cab3ff93d8d9307d",
+      "resolution_id": "d74ac52c29c5171bb18b4d9d",
+      "selected_candidate_id": "f601ac4daf69f5d2",
+      "publication_mapping_status": "mapping_verified",
+      "published_citation": "BGE 134 III 59",
+      "case_reference": "4C.3/2007",
+      "official_docid": "atf://134-III-59:de"
+    },
+    "atf142": {
+      "reference": "ATF 142 III 91",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "0b87c999b22426fcfa985acb8a817b42db84ad59f5a6301f161d4b2b8dd0a9f9",
+      "bytes_received": 44183,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=show_document&highlight_docid=atf%3A%2F%2F142-III-91%3Ade",
+      "decision_date": "2016-02-09",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokume",
+        "main_ground": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 3 Referenzen BGE: 140&nbsp;III&nbsp;496 , 138&nbsp;III&nbsp;59 , 135&nbsp;III&nbsp;112 Artikel: Art. 271 Abs. 1 OR, Art. 271 Abs. 2 OR, Art. 271 OR,",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [
+              95
+            ],
+            "text_hash": "fc03a229d7d47ccc7b276022280de5ade2c17cb20fccaec85c2c119123885889",
+            "excerpt": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch "
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [
+              92,
+              93,
+              94,
+              95
+            ],
+            "text_hash": "1017690b93584e84ed75f01fa2c3b588622da0a9e7666a4fff4089894fb4cbec",
+            "excerpt": "Erwägungen Aus den Erwägungen: 3. (...) 3.2.1 Eine ordentliche Kündigung des Mietvertrags setzt keine besonderen Kündigungsgründe voraus. Mieter und Vermieter sind grundsätzlich frei, das (unbefristete) Mietverhältnis unter Einhaltung der vertraglichen oder gesetzlichen Fristen und Termine zu kündig"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [
+              92
+            ],
+            "text_hash": "0240cc8bbad8b637a6e3db8c2abd01ed5106e893e4a8ce4339484baaa42bf3d8",
+            "excerpt": "In teilweiser Gutheissung der Beschwerde hebt das Bundesgericht den angefochtenen Entscheid auf und und hebt die am 21."
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "ATF 142 III 91",
+        "normalized_reference": "BGE 142 III 91",
+        "citation_family": "published_federal_report",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": null,
+        "sequence_number": "142-III-91",
+        "chamber_or_division": "III",
+        "publication_type": "official_report",
+        "normalization_confidence": 0.95,
+        "reporter": "ATF",
+        "published_report_volume": "142",
+        "published_report_division": "III",
+        "published_report_page": "91",
+        "canonical_published_citation": "BGE 142 III 91"
+      },
+      "document_id": "doc_0b87c999b22426fcfa985acb8a817b42",
+      "resolution_id": "e37bffadc68c9b4e6b784c7f",
+      "selected_candidate_id": "9a3f688d3be908aa",
+      "publication_mapping_status": "mapping_verified",
+      "published_citation": "BGE 142 III 91",
+      "case_reference": "4A_327/2015",
+      "official_docid": "atf://142-III-91:de"
+    },
+    "dtf142": {
+      "reference": "DTF 142 III 91",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "0b87c999b22426fcfa985acb8a817b42db84ad59f5a6301f161d4b2b8dd0a9f9",
+      "bytes_received": 44183,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=show_document&highlight_docid=atf%3A%2F%2F142-III-91%3Ade",
+      "decision_date": "2016-02-09",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokume",
+        "main_ground": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch franz&ouml;sisch italienisch Sachverhalt Erwägungen 3 Referenzen BGE: 140&nbsp;III&nbsp;496 , 138&nbsp;III&nbsp;59 , 135&nbsp;III&nbsp;112 Artikel: Art. 271 Abs. 1 OR, Art. 271 Abs. 2 OR, Art. 271 OR,",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [
+              95
+            ],
+            "text_hash": "fc03a229d7d47ccc7b276022280de5ade2c17cb20fccaec85c2c119123885889",
+            "excerpt": "mbauarbeiten mit dem Verbleib der Beschwerdeführerin im Mietobjekt unvereinbar wären. Die Rüge der Verletzung von Art. 271 Abs. 1 OR ist begründet und die am 21. November 2013 per 31. Dezember 2016 ausgesprochene Kündigung ist als treuwidrig aufzuheben. (...) Inhalt Ganzes Dokument Regeste: deutsch "
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [
+              92,
+              93,
+              94,
+              95
+            ],
+            "text_hash": "1017690b93584e84ed75f01fa2c3b588622da0a9e7666a4fff4089894fb4cbec",
+            "excerpt": "Erwägungen Aus den Erwägungen: 3. (...) 3.2.1 Eine ordentliche Kündigung des Mietvertrags setzt keine besonderen Kündigungsgründe voraus. Mieter und Vermieter sind grundsätzlich frei, das (unbefristete) Mietverhältnis unter Einhaltung der vertraglichen oder gesetzlichen Fristen und Termine zu kündig"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [
+              92
+            ],
+            "text_hash": "0240cc8bbad8b637a6e3db8c2abd01ed5106e893e4a8ce4339484baaa42bf3d8",
+            "excerpt": "In teilweiser Gutheissung der Beschwerde hebt das Bundesgericht den angefochtenen Entscheid auf und und hebt die am 21."
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "DTF 142 III 91",
+        "normalized_reference": "BGE 142 III 91",
+        "citation_family": "published_federal_report",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": null,
+        "sequence_number": "142-III-91",
+        "chamber_or_division": "III",
+        "publication_type": "official_report",
+        "normalization_confidence": 0.95,
+        "reporter": "DTF",
+        "published_report_volume": "142",
+        "published_report_division": "III",
+        "published_report_page": "91",
+        "canonical_published_citation": "BGE 142 III 91"
+      },
+      "document_id": "doc_0b87c999b22426fcfa985acb8a817b42",
+      "resolution_id": "e37bffadc68c9b4e6b784c7f",
+      "selected_candidate_id": "9a3f688d3be908aa",
+      "publication_mapping_status": "mapping_verified",
+      "published_citation": "BGE 142 III 91",
+      "case_reference": "4A_327/2015",
+      "official_docid": "atf://142-III-91:de"
+    },
+    "case4c4": {
+      "reference": "4C.4/2004",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "1a088fc5f425cb52226d5ff07c45a4e926184f1a836e9279af4a9c436eca5668",
+      "bytes_received": 39295,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=4C.4/2004&rank=1&azaclir=aza&highlight_docid=aza://20-04-2004-4C-4-2004&number_of_ranks=2",
+      "decision_date": "2004-04-20",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "ich vorgesehenen gemeinschaftlichen Gläubigerschaft nur um dispositives Gesetzesrecht (anstatt vieler: Pestalozzi/Wettenschwiler, a.a.O., N. 3 und 5 zu Art. 544 OR ). Die erwähnte vertragliche Abrede zwischen den damaligen Prozessparteien, wonach die obsiegenden Streitgenossen an",
+        "main_ground": "ich vorgesehenen gemeinschaftlichen Gläubigerschaft nur um dispositives Gesetzesrecht (anstatt vieler: Pestalozzi/Wettenschwiler, a.a.O., N. 3 und 5 zu Art. 544 OR ). Die erwähnte vertragliche Abrede zwischen den damaligen Prozessparteien, wonach die obsiegenden Streitgenossen an den Prozessentschädigungen als Solidargläubiger berechtigt sind, hätte somit auch dann Bestand, wenn die Streitgenossen effektiv eine einfache Gesellschaft gebildet hätten, wie dies der Kläger geltend macht. 4. Wenn abe",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [
+          "obiter_2_1",
+          "obiter_3_1",
+          "obiter_4_1"
+        ],
+        "obiter_details": [
+          {
+            "obiter_id": "obiter_2_1",
+            "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+            "supporting_sections": [
+              "facts"
+            ],
+            "supporting_page_numbers": [],
+            "supporting_document_units": [
+              "facts"
+            ],
+            "passage_authority_level": "unknown",
+            "passage_origin": "unknown",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+            "relation_to_main_ground": "explicitly_marked_non_decisive",
+            "necessary_for_dispositive": false,
+            "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+            "confidence": 0.92,
+            "reviewed": true
+          },
+          {
+            "obiter_id": "obiter_3_1",
+            "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+            "supporting_sections": [
+              "procedural_history"
+            ],
+            "supporting_page_numbers": [],
+            "supporting_document_units": [
+              "procedural_history"
+            ],
+            "passage_authority_level": "unknown",
+            "passage_origin": "unknown",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+            "relation_to_main_ground": "explicitly_marked_non_decisive",
+            "necessary_for_dispositive": false,
+            "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+            "confidence": 0.92,
+            "reviewed": true
+          },
+          {
+            "obiter_id": "obiter_4_1",
+            "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+            "supporting_sections": [
+              "party_arguments"
+            ],
+            "supporting_page_numbers": [],
+            "supporting_document_units": [
+              "party_arguments"
+            ],
+            "passage_authority_level": "unknown",
+            "passage_origin": "unknown",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+            "relation_to_main_ground": "explicitly_marked_non_decisive",
+            "necessary_for_dispositive": false,
+            "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+            "confidence": 0.92,
+            "reviewed": true
+          }
+        ],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [],
+            "text_hash": "c6c791fb6c3294643eeae7ef8b1effd9a8e8cbc00a9a340d9dbab541f3b6cedb",
+            "excerpt": "ich vorgesehenen gemeinschaftlichen Gläubigerschaft nur um dispositives Gesetzesrecht (anstatt vieler: Pestalozzi/Wettenschwiler, a.a.O., N. 3 und 5 zu Art. 544 OR ). Die erwähnte vertragliche Abrede zwischen den damaligen Prozessparteien, wonach die obsiegenden Streitgenossen an den Prozessentschäd"
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [],
+            "text_hash": "8298cd7953a2c574a2f8f1f6e85d0975635ec605298a12a101e5111cc198c4ad",
+            "excerpt": "1. Im vorliegenden Fall ist umstritten, ob in Bezug auf die vom Beklagten erklärte Verrechnung die Voraussetzung der Gegenseitigkeit der zu verrechnenden Forderungen ( Art. 120 Abs. 1 OR ) erfüllt war. Dabei hatte das Kantonsgericht zu prüfen, in welcher Form die Streitgenossen X.________ und Y.____"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [],
+            "text_hash": "549a3166f24627c5d3ebdf0072585363ce7a9daa5b67bcc370343c2827331fed",
+            "excerpt": ": 1. Die Berufung wird abgewiesen, soweit darauf einzutreten ist. 2. Die Gerichtsgebühr von Fr. 3'000.-- wird dem Kläger auferlegt. 3. Der Kläger hat den Beklagten für das bundesgerichtliche Verfahren mit Fr. 3'500.-- zu entschädigen. 4. Dieses Urteil wird den Parteien und dem Kantonsgericht von Gra"
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": [
+          "obiter_excluded_from_ratio"
+        ]
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [],
+      "obiter_details": [
+        {
+          "obiter_id": "obiter_2_1",
+          "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+          "supporting_sections": [
+            "facts"
+          ],
+          "supporting_page_numbers": [],
+          "supporting_document_units": [
+            "facts"
+          ],
+          "passage_authority_level": "unknown",
+          "passage_origin": "unknown",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+          "relation_to_main_ground": "explicitly_marked_non_decisive",
+          "necessary_for_dispositive": false,
+          "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+          "confidence": 0.92,
+          "reviewed": true
+        },
+        {
+          "obiter_id": "obiter_3_1",
+          "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+          "supporting_sections": [
+            "procedural_history"
+          ],
+          "supporting_page_numbers": [],
+          "supporting_document_units": [
+            "procedural_history"
+          ],
+          "passage_authority_level": "unknown",
+          "passage_origin": "unknown",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+          "relation_to_main_ground": "explicitly_marked_non_decisive",
+          "necessary_for_dispositive": false,
+          "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+          "confidence": 0.92,
+          "reviewed": true
+        },
+        {
+          "obiter_id": "obiter_4_1",
+          "summary": "obiter dictum als rechtswidrig und ungültig erklärt hatte.",
+          "supporting_sections": [
+            "party_arguments"
+          ],
+          "supporting_page_numbers": [],
+          "supporting_document_units": [
+            "party_arguments"
+          ],
+          "passage_authority_level": "unknown",
+          "passage_origin": "unknown",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "text_excerpt_hash": "b2a51bfe33ddb44e82f3fc71ab4fee452761c224e479ca03dcbd25411f5d966f",
+          "relation_to_main_ground": "explicitly_marked_non_decisive",
+          "necessary_for_dispositive": false,
+          "classification_reason": "The passage contains an explicit non-decisive/obiter marker and is kept outside ratio_summary.",
+          "confidence": 0.92,
+          "reviewed": true
+        }
+      ],
+      "normalized": {
+        "raw_reference": "4C.4/2004",
+        "normalized_reference": "4C.4/2004",
+        "citation_family": "federal_case_number",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": 2004,
+        "sequence_number": "4",
+        "chamber_or_division": "4C",
+        "publication_type": "case_number",
+        "normalization_confidence": 0.94
+      },
+      "document_id": "doc_1a088fc5f425cb52226d5ff07c45a4e9",
+      "resolution_id": "a9f19809f4f0f3d907717eb6",
+      "selected_candidate_id": "555eeb3d71ba0549",
+      "publication_mapping_status": "not_applicable",
+      "published_citation": null,
+      "case_reference": null,
+      "official_docid": null
+    },
+    "case4a664": {
+      "reference": "4A_664/2024",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "55b20adcdcf71eb6259e031e3a71cd974a9477376ed313752a5ef7c263057e7f",
+      "bytes_received": 80095,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=4A_664/2024&rank=1&azaclir=aza&highlight_docid=aza://25-09-2025-4A_664-2024&number_of_ranks=49",
+      "decision_date": "2025-09-25",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "e. Die Beschwerdeführerin zeigt nicht auf, inwiefern diese Feststellungen unzutreffend sein sollten. Vielmehr ergibt sich aus der von ihr wiedergegebenen Passage, dass sie auf ihre Ausführungen zur vorübergehenden Liefereinstellung im vierten Quartal 2017 verwiesen und gestützt a",
+        "main_ground": "e. Die Beschwerdeführerin zeigt nicht auf, inwiefern diese Feststellungen unzutreffend sein sollten. Vielmehr ergibt sich aus der von ihr wiedergegebenen Passage, dass sie auf ihre Ausführungen zur vorübergehenden Liefereinstellung im vierten Quartal 2017 verwiesen und gestützt auf eine analoge Anwendung dieser Ausführungen eine Berechnung der angeblichen Ersparnisse für die definitive Liefereinstellung vorgenommen hat. Es ist hingegen nicht ersichtlich und wird seitens der Beschwerdeführerin ni",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [
+          {
+            "ground_id": "autonomous_ground_1",
+            "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Einerseits habe die Beschwerdeführerin den Bruttogewinn nicht hinreichend substanziiert behauptet. Sie bringe ihre Tatsachenbehauptungen lediglich pauschal vor und verweise weitgehend auf mehrere hundert Seiten an Beilagen. Namentlich lasse sich den Rechtsschriften - mit einer Ausnahme - nicht entnehmen, von welcher Gewinnmarge die Beschwerdeführerin jeweils für welches Jahr in welchem Land ausgehe. Zudem werde nicht ausgeführt, wie sich die behauptete Gesamtgewinnmarge von 62 % ermitteln oder überprüfen lasse und wie sich daraus der geltend gemachte Schaden im Einzelnen zusammensetze. Die Beschwerdeführerin lege in",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": true,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_independently_sufficient",
+            "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "042c8e4b72dab89eeca3f462aede14766517570c9a733b2d3d80233daf31a8f9"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "current_court",
+            "belongs_to_current_decision": true,
+            "applied_by_current_court": true,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "lower_authority_reasoning"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.42
+          },
+          {
+            "ground_id": "autonomous_ground_2",
+            "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Andererseits habe die Beschwerdeführerin die fraglichen Beweismittel nicht formgerecht angeboten, da die umfangreichen Beweisofferten nicht eindeutig den damit zu beweisenden Tatsachenbehauptungen zugeordnet werden können. Sie habe damit gegen das Prinzip der Beweisverbindung verstossen, weshalb die ohnehin unzureichend substanziiert behaupteten Tatsachen von vornherein als beweislos zu behandeln seien. Insgesamt habe die Beschwerdeführerin daher weder den von ihr behaupteten Brutto- noch den nach Abzug ihrer Einsparungen resultierenden Nettoschaden rechtsgenügend dargelegt.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": true,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_independently_sufficient",
+            "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "d52c1d8c4d51a0e1c0c35c8d7db0bab08bb30e1fdfb817f107a1e98732ee1054"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "current_court",
+            "belongs_to_current_decision": true,
+            "applied_by_current_court": true,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "lower_authority_reasoning"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.42
+          },
+          {
+            "ground_id": "autonomous_ground_3",
+            "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Zum Bestand und zur Höhe des behaupteten Bruttogewinns sei anzumerken, dass unbelegt bleibe, ob die behaupteten Umsätze tatsächlich erzielt worden seien. Zudem habe die Beschwerdeführerin auch die für die Ermittlung des Nettogewinns erforderlichen Angaben zu ihren Einsparungen nicht hinreichend substanziiert behauptet. Sie verweise hierzu auf ihre Ausführungen zum vorübergehenden Lieferstopp durch die Beschwerdegegnerin im vierten Quartal 2017 und ersten Quartal 2018, die analog anzuwenden seien. Es liege aber auf der Hand, dass die Kostenersparnisse aufgrund der dauerhaften Liefereinstellung anders ausfallen müsste",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": true,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_independently_sufficient",
+            "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "1bb9689c7474645ab6f2d93ddfc32da5efd898622862895fd5bebe43dea5f7d3"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "current_court",
+            "belongs_to_current_decision": true,
+            "applied_by_current_court": true,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "lower_authority_reasoning"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.42
+          },
+          {
+            "ground_id": "autonomous_ground_4",
+            "summary": "selbständigen Begründungen beruht, ist für jede einzelne darzutun, weshalb sie Recht verletzt, denn soweit nicht beanstandete Begründungen das angefochtene Urteil selbständig stützen, fehlt das Rechtsschutzinteresse an der Beurteilung der gehörig begründeten Rügen ( BGE 142 III 364 E.",
+            "legal_issue": null,
+            "doctrine_only": true,
+            "applied_to_case": false,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_doctrine_only",
+            "rejection_reason": "abstract procedural standard, not a concrete independent ground",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "c2cf2a48dc11c0456fcd75597ef8e9887e0f69268f62f0e7f8aebb7acb63f97a"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "doctrine",
+            "belongs_to_current_decision": false,
+            "applied_by_current_court": false,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "E.2.4"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "abstract_procedural_doctrine_not_applied",
+            "reviewed": true,
+            "confidence": 0.78
+          },
+          {
+            "ground_id": "autonomous_ground_5",
+            "summary": "selbständig tragende Begründungen.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": false,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_applied",
+            "rejection_reason": "no concrete application to this case detected",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "7e2d62c0b0a37e0ff8fe0eff6f8529f6b756659ddcc0f89164da7f0f88e2ed8c"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "unknown",
+            "belongs_to_current_decision": false,
+            "applied_by_current_court": false,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "E.562.49"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.42
+          }
+        ],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [],
+            "text_hash": "5e24ebb216800d584d5d0b460618d9274fe2eddea40fa9a7b048e0ba7960b0ab",
+            "excerpt": "e. Die Beschwerdeführerin zeigt nicht auf, inwiefern diese Feststellungen unzutreffend sein sollten. Vielmehr ergibt sich aus der von ihr wiedergegebenen Passage, dass sie auf ihre Ausführungen zur vorübergehenden Liefereinstellung im vierten Quartal 2017 verwiesen und gestützt auf eine analoge Anwe"
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [],
+            "text_hash": "b50257cdbaa038e7f0cb51431dc0b593737a1ca3850783b872354ac20c105f94",
+            "excerpt": "an das Handelsgericht zurückzuweisen, wobei dieses zu beurteilen habe, ob die genannten Voraussetzungen vorliegen (zit. Urteil 4A _237/2023 E. 6.6). B.d. Mit Urteil vom 7. November 2024 verpflichtete das Handelsgericht die Beklagte, der Klägerin EUR 984'881.02 nebst Zins auf den Teilbetrag von EUR 9"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [],
+            "text_hash": "db2a529a81b1655206fb28349d03db46fe3a20b6828b87ab37a6adca6434fd67",
+            "excerpt": ": 1. Die Beschwerde wird abgewiesen, soweit darauf eingetreten wird. 2. Die Gerichtskosten von Fr. 11'000.-- werden der Beschwerdeführerin auferlegt. 3. Die Beschwerdeführerin hat die Beschwerdegegnerin für das bundesgerichtliche Verfahren mit Fr. 13'000.-- zu entschädigen. 4. Dieses Urteil wird den"
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [
+        {
+          "ground_id": "autonomous_ground_1",
+          "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Einerseits habe die Beschwerdeführerin den Bruttogewinn nicht hinreichend substanziiert behauptet. Sie bringe ihre Tatsachenbehauptungen lediglich pauschal vor und verweise weitgehend auf mehrere hundert Seiten an Beilagen. Namentlich lasse sich den Rechtsschriften - mit einer Ausnahme - nicht entnehmen, von welcher Gewinnmarge die Beschwerdeführerin jeweils für welches Jahr in welchem Land ausgehe. Zudem werde nicht ausgeführt, wie sich die behauptete Gesamtgewinnmarge von 62 % ermitteln oder überprüfen lasse und wie sich daraus der geltend gemachte Schaden im Einzelnen zusammensetze. Die Beschwerdeführerin lege in",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": true,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_independently_sufficient",
+          "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "042c8e4b72dab89eeca3f462aede14766517570c9a733b2d3d80233daf31a8f9"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "current_court",
+          "belongs_to_current_decision": true,
+          "applied_by_current_court": true,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "lower_authority_reasoning"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.42
+        },
+        {
+          "ground_id": "autonomous_ground_2",
+          "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Andererseits habe die Beschwerdeführerin die fraglichen Beweismittel nicht formgerecht angeboten, da die umfangreichen Beweisofferten nicht eindeutig den damit zu beweisenden Tatsachenbehauptungen zugeordnet werden können. Sie habe damit gegen das Prinzip der Beweisverbindung verstossen, weshalb die ohnehin unzureichend substanziiert behaupteten Tatsachen von vornherein als beweislos zu behandeln seien. Insgesamt habe die Beschwerdeführerin daher weder den von ihr behaupteten Brutto- noch den nach Abzug ihrer Einsparungen resultierenden Nettoschaden rechtsgenügend dargelegt.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": true,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_independently_sufficient",
+          "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "d52c1d8c4d51a0e1c0c35c8d7db0bab08bb30e1fdfb817f107a1e98732ee1054"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "current_court",
+          "belongs_to_current_decision": true,
+          "applied_by_current_court": true,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "lower_authority_reasoning"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.42
+        },
+        {
+          "ground_id": "autonomous_ground_3",
+          "summary": "stützte die Vorinstanz auf mehrere jeweils selbständig tragende Begründungen Zum Bestand und zur Höhe des behaupteten Bruttogewinns sei anzumerken, dass unbelegt bleibe, ob die behaupteten Umsätze tatsächlich erzielt worden seien. Zudem habe die Beschwerdeführerin auch die für die Ermittlung des Nettogewinns erforderlichen Angaben zu ihren Einsparungen nicht hinreichend substanziiert behauptet. Sie verweise hierzu auf ihre Ausführungen zum vorübergehenden Lieferstopp durch die Beschwerdegegnerin im vierten Quartal 2017 und ersten Quartal 2018, die analog anzuwenden seien. Es liege aber auf der Hand, dass die Kostenersparnisse aufgrund der dauerhaften Liefereinstellung anders ausfallen müsste",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": true,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_independently_sufficient",
+          "rejection_reason": "not shown as independently sufficient for the dispositive outcome",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "1bb9689c7474645ab6f2d93ddfc32da5efd898622862895fd5bebe43dea5f7d3"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "current_court",
+          "belongs_to_current_decision": true,
+          "applied_by_current_court": true,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "lower_authority_reasoning"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.42
+        },
+        {
+          "ground_id": "autonomous_ground_4",
+          "summary": "selbständigen Begründungen beruht, ist für jede einzelne darzutun, weshalb sie Recht verletzt, denn soweit nicht beanstandete Begründungen das angefochtene Urteil selbständig stützen, fehlt das Rechtsschutzinteresse an der Beurteilung der gehörig begründeten Rügen ( BGE 142 III 364 E.",
+          "legal_issue": null,
+          "doctrine_only": true,
+          "applied_to_case": false,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_doctrine_only",
+          "rejection_reason": "abstract procedural standard, not a concrete independent ground",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "c2cf2a48dc11c0456fcd75597ef8e9887e0f69268f62f0e7f8aebb7acb63f97a"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "doctrine",
+          "belongs_to_current_decision": false,
+          "applied_by_current_court": false,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "E.2.4"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "abstract_procedural_doctrine_not_applied",
+          "reviewed": true,
+          "confidence": 0.78
+        },
+        {
+          "ground_id": "autonomous_ground_5",
+          "summary": "selbständig tragende Begründungen.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": false,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_applied",
+          "rejection_reason": "no concrete application to this case detected",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "7e2d62c0b0a37e0ff8fe0eff6f8529f6b756659ddcc0f89164da7f0f88e2ed8c"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "unknown",
+          "belongs_to_current_decision": false,
+          "applied_by_current_court": false,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "E.562.49"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.42
+        }
+      ],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "4A_664/2024",
+        "normalized_reference": "4A_664/2024",
+        "citation_family": "federal_case_number",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": 2024,
+        "sequence_number": "664",
+        "chamber_or_division": "4A",
+        "publication_type": "case_number",
+        "normalization_confidence": 0.94
+      },
+      "document_id": "doc_55b20adcdcf71eb6259e031e3a71cd97",
+      "resolution_id": "bedf3be1a8a20da3cf25f596",
+      "selected_candidate_id": "661cef9c1b3e21b2",
+      "publication_mapping_status": "not_applicable",
+      "published_citation": null,
+      "case_reference": null,
+      "official_docid": null
+    },
+    "case1b62": {
+      "reference": "1B_62/2021",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "e4cc2fe22b2f3638a253d96d8b47ed760f13202532f1dd8be3e2acb9bca41b77",
+      "bytes_received": 33199,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=1B_62/2021&rank=1&azaclir=aza&highlight_docid=aza://10-02-2021-1B_62-2021&number_of_ranks=458",
+      "decision_date": "2021-02-10",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "50 Jahren nicht fliehen und ersucht sinngemäss, ihn gegen Kaution freizulassen. Das Appellationsgericht hat die Eingabe zuständigkeitshalber dem Bundesgericht zur allfälligen Behandlung als Haftbeschwerde überwiesen. Vernehmlassungen wurden keine eingeholt. 2. Gegen den Haftentsc",
+        "main_ground": "50 Jahren nicht fliehen und ersucht sinngemäss, ihn gegen Kaution freizulassen. Das Appellationsgericht hat die Eingabe zuständigkeitshalber dem Bundesgericht zur allfälligen Behandlung als Haftbeschwerde überwiesen. Vernehmlassungen wurden keine eingeholt. 2. Gegen den Haftentscheid des Appellationsgerichts vom 26. Januar 2021 steht die Beschwerde in Strafsachen offen, weshalb die Eingabe von A.________ als solche entgegenzunehmen ist. Es ist allerdings Sache des Beschwerdeführers, sowohl darzu",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [],
+        "independent_grounds_count": 0,
+        "independent_grounds_reviewed": 0,
+        "independent_ground_details": [
+          {
+            "ground_id": "autonomous_ground_1",
+            "summary": "selbständige Begründungen, so muss sich die Beschwerde mit jeder einzelnen auseinandersetzen, sonst wird darauf nicht eingetreten ( BGE 142 III 364 E.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": false,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_applied",
+            "rejection_reason": "no concrete application to this case detected",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "4cf6699010c4fff5932d8f50ae3728ea84c59c23ca5af91575c164a27f60f284"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "unknown",
+            "belongs_to_current_decision": false,
+            "applied_by_current_court": false,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "E.2.2"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.78
+          },
+          {
+            "ground_id": "autonomous_ground_2",
+            "summary": "selbständigen Begründungen an, weshalb auf die Beschwerde wegen Verletzung der gesetzlichen Begründungspflicht im vereinfachten Verfahren nicht einzutreten ist.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": false,
+            "dispositive_dependency": false,
+            "independently_sufficient": false,
+            "autonomous_ground_status": "rejected_not_applied",
+            "rejection_reason": "no concrete application to this case detected",
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "243546e0f5d7d257b303f225fd85db9192688c5174ab4a9f7b4c6ab3cfe014d8"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "lower_authority",
+            "passage_origin": "lower_authority_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "unknown",
+            "belongs_to_current_decision": false,
+            "applied_by_current_court": false,
+            "linked_to_current_dispositive": false,
+            "independently_sufficient_for_current_dispositive": false,
+            "supporting_document_units": [
+              "E.3.4"
+            ],
+            "autonomous": false,
+            "sufficient_for_dispositive": false,
+            "relationship_to_other_grounds": "single_or_unverified_ground",
+            "reviewed": true,
+            "confidence": 0.78
+          }
+        ],
+        "no_independent_alternative_grounds_detected": true,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [],
+            "text_hash": "1ea48f9b106f27a24366cf7572031cba63f0e6475943e885e65ddc3341af164b",
+            "excerpt": "50 Jahren nicht fliehen und ersucht sinngemäss, ihn gegen Kaution freizulassen. Das Appellationsgericht hat die Eingabe zuständigkeitshalber dem Bundesgericht zur allfälligen Behandlung als Haftbeschwerde überwiesen. Vernehmlassungen wurden keine eingeholt. 2. Gegen den Haftentscheid des Appellation"
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [],
+            "text_hash": "e1960e1580cd44a8991177077d18e88b32c50388d9bd00fa87cb77d9843b2592",
+            "excerpt": "1. Am 26. Januar 2021 hiess das Appellationsgericht des Kantons Basel-Stadt die Beschwerde der Staatsanwaltschaft gegen die Verfügung des Zwangsmassnahmengerichts vom 14. Januar 2021 gut und verfügte gegen A.________ Untersuchungshaft bis zum 11. April 2021 . Es erwog, ein dringender Tatverdacht sei"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [],
+            "text_hash": "86e6638e2c4a394d935829b818ae79307092e2d56c6de0ca8bcd118370c0be6e",
+            "excerpt": "das präsidierende Mitglied: 1. Auf die Beschwerde wird nicht eingetreten. 2. Es werden keine Kosten erhoben. 3. Dieses Urteil wird dem Beschwerdeführer, der Staatsanwaltschaft des Kantons Basel-Stadt, dem Appellationsgericht des Kantons Basel-Stadt, Einzelgericht, und B.________ schriftlich mitgetei"
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 0,
+      "independent_grounds_reviewed": 0,
+      "independent_ground_details": [
+        {
+          "ground_id": "autonomous_ground_1",
+          "summary": "selbständige Begründungen, so muss sich die Beschwerde mit jeder einzelnen auseinandersetzen, sonst wird darauf nicht eingetreten ( BGE 142 III 364 E.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": false,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_applied",
+          "rejection_reason": "no concrete application to this case detected",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "4cf6699010c4fff5932d8f50ae3728ea84c59c23ca5af91575c164a27f60f284"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "unknown",
+          "belongs_to_current_decision": false,
+          "applied_by_current_court": false,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "E.2.2"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.78
+        },
+        {
+          "ground_id": "autonomous_ground_2",
+          "summary": "selbständigen Begründungen an, weshalb auf die Beschwerde wegen Verletzung der gesetzlichen Begründungspflicht im vereinfachten Verfahren nicht einzutreten ist.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": false,
+          "dispositive_dependency": false,
+          "independently_sufficient": false,
+          "autonomous_ground_status": "rejected_not_applied",
+          "rejection_reason": "no concrete application to this case detected",
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "243546e0f5d7d257b303f225fd85db9192688c5174ab4a9f7b4c6ab3cfe014d8"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "lower_authority",
+          "passage_origin": "lower_authority_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "unknown",
+          "belongs_to_current_decision": false,
+          "applied_by_current_court": false,
+          "linked_to_current_dispositive": false,
+          "independently_sufficient_for_current_dispositive": false,
+          "supporting_document_units": [
+            "E.3.4"
+          ],
+          "autonomous": false,
+          "sufficient_for_dispositive": false,
+          "relationship_to_other_grounds": "single_or_unverified_ground",
+          "reviewed": true,
+          "confidence": 0.78
+        }
+      ],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "1B_62/2021",
+        "normalized_reference": "1B_62/2021",
+        "citation_family": "federal_case_number",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": 2021,
+        "sequence_number": "62",
+        "chamber_or_division": "1B",
+        "publication_type": "case_number",
+        "normalization_confidence": 0.94
+      },
+      "document_id": "doc_e4cc2fe22b2f3638a253d96d8b47ed76",
+      "resolution_id": "d911652ac8d9123dda28d65f",
+      "selected_candidate_id": "6ebee7f8b9664dbe",
+      "publication_mapping_status": "not_applicable",
+      "published_citation": null,
+      "case_reference": null,
+      "official_docid": null
+    },
+    "case2a348": {
+      "reference": "2A.348/2004",
+      "pass": true,
+      "fetch_status": "fetch_success",
+      "network_transport": "live_http",
+      "mock_or_fixture": false,
+      "identity_status": "identity_verified",
+      "official_identity_verified": true,
+      "reading_status": "full_text_verified_official",
+      "official_verification_status": "full_text_verified_official",
+      "document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+      "bytes_received": 53120,
+      "final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=2A.348/2004&rank=1&azaclir=aza&highlight_docid=aza://01-12-2004-2A-348-2004&number_of_ranks=3",
+      "decision_date": "2004-12-01",
+      "ratio_status": "ratio_confirmed",
+      "ratio_analysis": {
+        "ratio_summary": "ranchenbroschüre Erziehung, Unterricht, Fortbildung, Forschung und Entwicklung vom April 1995 (610.507-18, Ziffer 1.5). Die Vorbringen der Beschwerdeführerin beziehen sich auf Art. 30 MWSTV , der den Ausschluss des Vorsteuerabzugsrechts regelt. Ihr Argument, die im vorliegenden F",
+        "main_ground": "ranchenbroschüre Erziehung, Unterricht, Fortbildung, Forschung und Entwicklung vom April 1995 (610.507-18, Ziffer 1.5). Die Vorbringen der Beschwerdeführerin beziehen sich auf Art. 30 MWSTV , der den Ausschluss des Vorsteuerabzugsrechts regelt. Ihr Argument, die im vorliegenden Fall vorgenommene Kürzung basiere nicht auf einem in der Verordnung genannten Ausschlussgrund, ist deshalb unzutreffend, weil diese Bestimmung nicht isoliert betrachtet werden darf und für die Geltendmachung des Vorsteuer",
+        "subsidiary_grounds": [],
+        "independent_alternative_grounds": [
+          "independent_ground_1",
+          "independent_ground_2"
+        ],
+        "independent_grounds_count": 2,
+        "independent_grounds_reviewed": 2,
+        "independent_ground_details": [
+          {
+            "ground_id": "autonomous_ground_1",
+            "summary": "Autonomer Entscheidgrund des Bundesgerichts: Erforderlich ist, dass die von der Stiftung bezogenen Eingangsumsätze tatsächlich, sei es unmittelbar oder mittelbar für Ausgangsumsätze, d.h. für steuerbare Lieferungen oder Dienstleistungen verwendet werden. Mit Ausnahme der fakturierten Forschungskosten von Fr. 8'480'543.-- (MWST-Betrag von Fr. 551'235.--), konnte dieser Nachweis im vorliegenden Fall nicht erbracht werden. Demnach haben die Eidgenössische Steuerverwaltung und die Vorinstanz den von der Beschwerdeführerin geltend gemachten Vorsteuerabzug im Umfange von Fr. 5'376'638.-- zu Recht nicht anerkannt. Eine Verletzung von Bundesrecht liegt nicht vor. Die Beschwerde ist schon aus diesem Grund abzuweisen.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": true,
+            "dispositive_dependency": true,
+            "independently_sufficient": true,
+            "autonomous_ground_status": "verified",
+            "rejection_reason": null,
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "55b3c31aca159d8f29b38cba16a627c13c081c02b4d32958e712425be517d65b"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "current_court",
+            "passage_origin": "current_court_original_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "current_court",
+            "belongs_to_current_decision": true,
+            "applied_by_current_court": true,
+            "linked_to_current_dispositive": true,
+            "independently_sufficient_for_current_dispositive": true,
+            "supporting_document_units": [
+              "E.3.4.3"
+            ],
+            "autonomous": true,
+            "sufficient_for_dispositive": true,
+            "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+            "reviewed": true,
+            "confidence": 0.78
+          },
+          {
+            "ground_id": "autonomous_ground_2",
+            "summary": "Autonomer Entscheidgrund des Bundesgerichts: Mit Ausnahme der zuvor erwähnten fakturierten Forschungsleistungen erbringt die Beschwerdeführerin keinen Beweis dafür, dass sie in der geprüften Steuerperiode weitere Leistungen gegen Entgelt deklariert oder in Rechnung gestellt hat. Soweit von ihr ein Vorsteuerabzug geltend gemacht wird, der über den von der Eidgenössischen Steuerverwaltung bewilligten Betrag hinausgeht, wurde ihr dieser korrekterweise verweigert. Die Vorinstanz stellt demnach in ihrem Entscheid zu Recht fest, dass mit Ausnahme der fakturierten Forschungsleistungen keine entgeltlichen Ausgangsumsätze vorliegen und die Beschwerde auch mangels Entgeltlichkeit abzuweisen sei.",
+            "legal_issue": null,
+            "doctrine_only": false,
+            "applied_to_case": true,
+            "dispositive_dependency": true,
+            "independently_sufficient": true,
+            "autonomous_ground_status": "verified",
+            "rejection_reason": null,
+            "supporting_sections": [
+              "reasoning"
+            ],
+            "supporting_page_numbers": [],
+            "evidence_hashes": [
+              "da00b81df9be6996198261569659fa5fafb13b77870cc4e0aac1b4453c588600"
+            ],
+            "link_to_dispositive": "final_reasoning_to_dispositive",
+            "passage_authority_level": "current_court",
+            "passage_origin": "current_court_adopted_reasoning",
+            "pagination_type": "html_unpaginated",
+            "page_reference_status": "not_applicable_html",
+            "source_decision_level": "current_court",
+            "belongs_to_current_decision": true,
+            "applied_by_current_court": true,
+            "linked_to_current_dispositive": true,
+            "independently_sufficient_for_current_dispositive": true,
+            "supporting_document_units": [
+              "E.4.3"
+            ],
+            "autonomous": true,
+            "sufficient_for_dispositive": true,
+            "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+            "reviewed": true,
+            "confidence": 0.78
+          }
+        ],
+        "no_independent_alternative_grounds_detected": false,
+        "obiter": [],
+        "obiter_details": [],
+        "dispositive_link": "final_reasoning_to_dispositive",
+        "ratio_evidence": [
+          {
+            "section_id": "final_reasoning",
+            "page_numbers": [],
+            "text_hash": "e26b7401d7ece6dd9326b9b7361bd441e27c7bb0d85bba5fe4049b62cbc46ffe",
+            "excerpt": "ranchenbroschüre Erziehung, Unterricht, Fortbildung, Forschung und Entwicklung vom April 1995 (610.507-18, Ziffer 1.5). Die Vorbringen der Beschwerdeführerin beziehen sich auf Art. 30 MWSTV , der den Ausschluss des Vorsteuerabzugsrechts regelt. Ihr Argument, die im vorliegenden Fall vorgenommene Kür"
+          },
+          {
+            "section_id": "reasoning",
+            "page_numbers": [],
+            "text_hash": "93404eeb9927519cc2746cdf064da47116542d009f2ab6b52a553461981f5b3c",
+            "excerpt": "1. 1.1 Beschwerdeentscheide der Eidgenössischen Steuerrekurskommission können nach den Artikeln 97 ff. OG mit Verwaltungsgerichtsbeschwerde beim Bundesgericht angefochten werden ( Art. 54 Abs. 1 MWSTV ; Art. 66 Abs. 1 des Bundesgesetzes vom 2. September 1999 über die Mehrwertsteuer [MWSTG; SR 641.20"
+          },
+          {
+            "section_id": "dispositive",
+            "page_numbers": [],
+            "text_hash": "4b6654ac62afce54a8e3bdc7e8ff74ecb25bcca325d7ccb89cebe6249a4501b0",
+            "excerpt": ": 1. Die Verwaltungsgerichtsbeschwerde wird abgewiesen. 2. Die Gerichtsgebühr von Fr. 40'000.-- wird der Beschwerdeführerin auferlegt. 3. Dieses Urteil wird der Beschwerdeführerin, der Eidgenössischen Steuerverwaltung und der Eidgenössischen Steuerrekurskommission schriftlich mitgeteilt. Lausanne, 1"
+          }
+        ],
+        "ratio_status": "ratio_confirmed",
+        "ratio_confidence": 0.86,
+        "warnings": []
+      },
+      "independent_grounds_count": 2,
+      "independent_grounds_reviewed": 2,
+      "independent_ground_details": [
+        {
+          "ground_id": "autonomous_ground_1",
+          "summary": "Autonomer Entscheidgrund des Bundesgerichts: Erforderlich ist, dass die von der Stiftung bezogenen Eingangsumsätze tatsächlich, sei es unmittelbar oder mittelbar für Ausgangsumsätze, d.h. für steuerbare Lieferungen oder Dienstleistungen verwendet werden. Mit Ausnahme der fakturierten Forschungskosten von Fr. 8'480'543.-- (MWST-Betrag von Fr. 551'235.--), konnte dieser Nachweis im vorliegenden Fall nicht erbracht werden. Demnach haben die Eidgenössische Steuerverwaltung und die Vorinstanz den von der Beschwerdeführerin geltend gemachten Vorsteuerabzug im Umfange von Fr. 5'376'638.-- zu Recht nicht anerkannt. Eine Verletzung von Bundesrecht liegt nicht vor. Die Beschwerde ist schon aus diesem Grund abzuweisen.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": true,
+          "dispositive_dependency": true,
+          "independently_sufficient": true,
+          "autonomous_ground_status": "verified",
+          "rejection_reason": null,
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "55b3c31aca159d8f29b38cba16a627c13c081c02b4d32958e712425be517d65b"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "current_court",
+          "passage_origin": "current_court_original_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "current_court",
+          "belongs_to_current_decision": true,
+          "applied_by_current_court": true,
+          "linked_to_current_dispositive": true,
+          "independently_sufficient_for_current_dispositive": true,
+          "supporting_document_units": [
+            "E.3.4.3"
+          ],
+          "autonomous": true,
+          "sufficient_for_dispositive": true,
+          "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+          "reviewed": true,
+          "confidence": 0.78
+        },
+        {
+          "ground_id": "autonomous_ground_2",
+          "summary": "Autonomer Entscheidgrund des Bundesgerichts: Mit Ausnahme der zuvor erwähnten fakturierten Forschungsleistungen erbringt die Beschwerdeführerin keinen Beweis dafür, dass sie in der geprüften Steuerperiode weitere Leistungen gegen Entgelt deklariert oder in Rechnung gestellt hat. Soweit von ihr ein Vorsteuerabzug geltend gemacht wird, der über den von der Eidgenössischen Steuerverwaltung bewilligten Betrag hinausgeht, wurde ihr dieser korrekterweise verweigert. Die Vorinstanz stellt demnach in ihrem Entscheid zu Recht fest, dass mit Ausnahme der fakturierten Forschungsleistungen keine entgeltlichen Ausgangsumsätze vorliegen und die Beschwerde auch mangels Entgeltlichkeit abzuweisen sei.",
+          "legal_issue": null,
+          "doctrine_only": false,
+          "applied_to_case": true,
+          "dispositive_dependency": true,
+          "independently_sufficient": true,
+          "autonomous_ground_status": "verified",
+          "rejection_reason": null,
+          "supporting_sections": [
+            "reasoning"
+          ],
+          "supporting_page_numbers": [],
+          "evidence_hashes": [
+            "da00b81df9be6996198261569659fa5fafb13b77870cc4e0aac1b4453c588600"
+          ],
+          "link_to_dispositive": "final_reasoning_to_dispositive",
+          "passage_authority_level": "current_court",
+          "passage_origin": "current_court_adopted_reasoning",
+          "pagination_type": "html_unpaginated",
+          "page_reference_status": "not_applicable_html",
+          "source_decision_level": "current_court",
+          "belongs_to_current_decision": true,
+          "applied_by_current_court": true,
+          "linked_to_current_dispositive": true,
+          "independently_sufficient_for_current_dispositive": true,
+          "supporting_document_units": [
+            "E.4.3"
+          ],
+          "autonomous": true,
+          "sufficient_for_dispositive": true,
+          "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+          "reviewed": true,
+          "confidence": 0.78
+        }
+      ],
+      "obiter_details": [],
+      "normalized": {
+        "raw_reference": "2A.348/2004",
+        "normalized_reference": "2A.348/2004",
+        "citation_family": "federal_case_number",
+        "court_family": "swiss_federal_supreme_court",
+        "possible_courts": [
+          "swiss_federal_supreme_court"
+        ],
+        "possible_cantons": [],
+        "decision_year": 2004,
+        "sequence_number": "348",
+        "chamber_or_division": "2A",
+        "publication_type": "case_number",
+        "normalization_confidence": 0.94
+      },
+      "document_id": "doc_0c5b058c1a5e38f5a2b476815bd98c9b",
+      "resolution_id": "828c85519f7b203116a8130c",
+      "selected_candidate_id": "6a441317a6290193",
+      "publication_mapping_status": "not_applicable",
+      "published_citation": null,
+      "case_reference": null,
+      "official_docid": null
+    }
+  },
+  "checks": {
+    "bge_regression_pass": true,
+    "obiter_adversarial_pass": true,
+    "doctrine_4a664_pass": true,
+    "case1b62_false_positive_rejected_pass": true,
+    "autonomous_positive_live_case_pass": true,
+    "omitted_ground_blocker_pass": true,
+    "autonomous_ground_internal_consistency_pass": true,
+    "multirole_direct_pass": true,
+    "multirole_by_id_pass": true
+  },
+  "adversarial": {
+    "passages": [
+      {
+        "id": "4C4-obiter-adversarial",
+        "exactText": "Ob zwischen den Parteien eine einfache Gesellschaft bestand, kann offen gelassen werden.",
+        "sourceDocumentId": "doc_1a088fc5f425cb52226d5ff07c45a4e9",
+        "consideration": "4",
+        "author": "reviewing_court",
+        "function": "obiter_dictum",
+        "importance": "low",
+        "autonomousGround": false,
+        "contextBefore": "Das Bundesgericht prüft die verbindlichen Feststellungen.",
+        "contextAfter": "Selbst wenn eine einfache Gesellschaft angenommen würde, änderte dies am Ausgang nichts.",
+        "quoteVerified": true,
+        "quoteVerification": {
+          "quote_matches_user_input": true,
+          "quote_extracted_from_source": true,
+          "quote_verified_against_source": true,
+          "context_checked": true,
+          "source_location_verified": true,
+          "source_document_full_text_read": true,
+          "quote_translation": false,
+          "quote_paraphrase": false
+        },
+        "language": "de",
+        "contextChecked": true,
+        "quoteStatus": "quote_verified_against_source",
+        "caller_asserted_function": "conclusion",
+        "caller_asserted_importance": "decisive",
+        "caller_asserted_autonomous_ground": true,
+        "system_inferred_function": "obiter_dictum",
+        "verified_function": "obiter_dictum",
+        "classification_status": "conflict_detected",
+        "semantic_conflicts": [
+          "open_question_vs_decisive",
+          "hypothetical_reasoning_vs_main_ground",
+          "unnecessary_reasoning_vs_dispositive",
+          "caller_assertion_vs_source_text",
+          "obiter_vs_autonomous_ground"
+        ],
+        "classification_blockers": [
+          "classification_conflict_detected"
+        ],
+        "classification_evidence": [
+          {
+            "source": "exact_text",
+            "excerpt_hash": "8cae76a24d672f9caf2080ebc0660436e3475b1206c809e4e58c05b4dcfea84a",
+            "matched_markers": [
+              "kann offen gelassen werden",
+              "selbst wenn"
+            ]
+          }
+        ],
+        "classification_confidence": 0.9,
+        "reviewed": true,
+        "necessary_for_dispositive": false,
+        "sufficient_for_dispositive": false
+      }
+    ],
+    "warnings": [
+      "classification_conflict_detected"
+    ]
+  },
+  "autonomousGrounds": {
+    "positive_case_reference": "2A.348/2004",
+    "positive_case_status": "verified_official_positive_case",
+    "positive_case_document_id": "doc_0c5b058c1a5e38f5a2b476815bd98c9b",
+    "positive_case_document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+    "positive_case_final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=2A.348/2004&rank=1&azaclir=aza&highlight_docid=aza://01-12-2004-2A-348-2004&number_of_ranks=3",
+    "positive_case_decision_date": "2004-12-01",
+    "counterfactual_without_ground_2_ground_1_still_sufficient": "YES",
+    "counterfactual_without_ground_1_ground_2_still_sufficient": "YES",
+    "rejected_candidate_reference": "1B_62/2021",
+    "rejected_candidate_reason": "1B_62/2021 is a procedural inadmissibility decision; Fluchtgefahr and Kollusionsgefahr are lower-instance detention grounds, not autonomous grounds of the Federal Supreme Court judgment.",
+    "rejected_candidate_document_id": "doc_e4cc2fe22b2f3638a253d96d8b47ed76",
+    "rejected_candidate_document_hash": "e4cc2fe22b2f3638a253d96d8b47ed760f13202532f1dd8be3e2acb9bca41b77",
+    "rejected_candidate_final_url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=highlight_simple_query&page=1&from_date=&to_date=&sort=relevance&insertion_date=&top_subcollection_aza=all&query_words=1B_62/2021&rank=1&azaclir=aza&highlight_docid=aza://10-02-2021-1B_62-2021&number_of_ranks=458",
+    "rejected_candidate_decision_date": "2021-02-10",
+    "verified_grounds": [
+      {
+        "ground_id": "autonomous_ground_1",
+        "summary": "Autonomer Entscheidgrund des Bundesgerichts: Erforderlich ist, dass die von der Stiftung bezogenen Eingangsumsätze tatsächlich, sei es unmittelbar oder mittelbar für Ausgangsumsätze, d.h. für steuerbare Lieferungen oder Dienstleistungen verwendet werden. Mit Ausnahme der fakturierten Forschungskosten von Fr. 8'480'543.-- (MWST-Betrag von Fr. 551'235.--), konnte dieser Nachweis im vorliegenden Fall nicht erbracht werden. Demnach haben die Eidgenössische Steuerverwaltung und die Vorinstanz den von der Beschwerdeführerin geltend gemachten Vorsteuerabzug im Umfange von Fr. 5'376'638.-- zu Recht nicht anerkannt. Eine Verletzung von Bundesrecht liegt nicht vor. Die Beschwerde ist schon aus diesem Grund abzuweisen.",
+        "legal_issue": null,
+        "doctrine_only": false,
+        "applied_to_case": true,
+        "dispositive_dependency": true,
+        "independently_sufficient": true,
+        "autonomous_ground_status": "verified",
+        "rejection_reason": null,
+        "supporting_sections": [
+          "reasoning"
+        ],
+        "supporting_page_numbers": [],
+        "evidence_hashes": [
+          "55b3c31aca159d8f29b38cba16a627c13c081c02b4d32958e712425be517d65b"
+        ],
+        "link_to_dispositive": "final_reasoning_to_dispositive",
+        "passage_authority_level": "current_court",
+        "passage_origin": "current_court_original_reasoning",
+        "pagination_type": "html_unpaginated",
+        "page_reference_status": "not_applicable_html",
+        "source_decision_level": "current_court",
+        "belongs_to_current_decision": true,
+        "applied_by_current_court": true,
+        "linked_to_current_dispositive": true,
+        "independently_sufficient_for_current_dispositive": true,
+        "supporting_document_units": [
+          "E.3.4.3"
+        ],
+        "autonomous": true,
+        "sufficient_for_dispositive": true,
+        "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+        "reviewed": true,
+        "confidence": 0.78
+      },
+      {
+        "ground_id": "autonomous_ground_2",
+        "summary": "Autonomer Entscheidgrund des Bundesgerichts: Mit Ausnahme der zuvor erwähnten fakturierten Forschungsleistungen erbringt die Beschwerdeführerin keinen Beweis dafür, dass sie in der geprüften Steuerperiode weitere Leistungen gegen Entgelt deklariert oder in Rechnung gestellt hat. Soweit von ihr ein Vorsteuerabzug geltend gemacht wird, der über den von der Eidgenössischen Steuerverwaltung bewilligten Betrag hinausgeht, wurde ihr dieser korrekterweise verweigert. Die Vorinstanz stellt demnach in ihrem Entscheid zu Recht fest, dass mit Ausnahme der fakturierten Forschungsleistungen keine entgeltlichen Ausgangsumsätze vorliegen und die Beschwerde auch mangels Entgeltlichkeit abzuweisen sei.",
+        "legal_issue": null,
+        "doctrine_only": false,
+        "applied_to_case": true,
+        "dispositive_dependency": true,
+        "independently_sufficient": true,
+        "autonomous_ground_status": "verified",
+        "rejection_reason": null,
+        "supporting_sections": [
+          "reasoning"
+        ],
+        "supporting_page_numbers": [],
+        "evidence_hashes": [
+          "da00b81df9be6996198261569659fa5fafb13b77870cc4e0aac1b4453c588600"
+        ],
+        "link_to_dispositive": "final_reasoning_to_dispositive",
+        "passage_authority_level": "current_court",
+        "passage_origin": "current_court_adopted_reasoning",
+        "pagination_type": "html_unpaginated",
+        "page_reference_status": "not_applicable_html",
+        "source_decision_level": "current_court",
+        "belongs_to_current_decision": true,
+        "applied_by_current_court": true,
+        "linked_to_current_dispositive": true,
+        "independently_sufficient_for_current_dispositive": true,
+        "supporting_document_units": [
+          "E.4.3"
+        ],
+        "autonomous": true,
+        "sufficient_for_dispositive": true,
+        "relationship_to_other_grounds": "each_ground_independently_supports_outcome",
+        "reviewed": true,
+        "confidence": 0.78
+      }
+    ],
+    "complete_ground_validation": {
+      "validation_status": "complete",
+      "document_id": "doc_0c5b058c1a5e38f5a2b476815bd98c9b",
+      "document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+      "total_verified_ground_count": 2,
+      "reviewed_ground_count": 2,
+      "included_ground_ids": [
+        "autonomous_ground_1",
+        "autonomous_ground_2"
+      ],
+      "excluded_ground_ids": [],
+      "omitted_ground_ids": [],
+      "verified_ground_ids": [
+        "autonomous_ground_1",
+        "autonomous_ground_2"
+      ],
+      "ratio_status": "ratio_confirmed",
+      "blockers": [],
+      "warnings": [],
+      "comparability_eligibility": "eligible",
+      "drafting_eligibility": "eligible",
+      "strategy_eligibility": "eligible",
+      "citation_eligibility": "eligible",
+      "no_network_request": true,
+      "source_analysis_hash": "527a7ed883f674571be3dc6e0301a52f002a4fb3064e46ab959cd7b998a43892",
+      "persistence_verified": true
+    },
+    "omitted_ground_validation": {
+      "validation_status": "blocked",
+      "document_id": "doc_0c5b058c1a5e38f5a2b476815bd98c9b",
+      "document_hash": "0c5b058c1a5e38f5a2b476815bd98c9b59fdcb7f8836d939ba191f0a5ddb6f58",
+      "total_verified_ground_count": 2,
+      "reviewed_ground_count": 1,
+      "included_ground_ids": [
+        "autonomous_ground_2"
+      ],
+      "excluded_ground_ids": [
+        "autonomous_ground_1"
+      ],
+      "omitted_ground_ids": [
+        "autonomous_ground_1"
+      ],
+      "verified_ground_ids": [
+        "autonomous_ground_1",
+        "autonomous_ground_2"
+      ],
+      "ratio_status": "ratio_not_confirmed",
+      "blockers": [
+        "autonomous_ground_not_reviewed"
+      ],
+      "warnings": [
+        "omitted_autonomous_ground:autonomous_ground_1"
+      ],
+      "comparability_eligibility": "blocked",
+      "drafting_eligibility": "blocked",
+      "strategy_eligibility": "blocked",
+      "citation_eligibility": "blocked",
+      "no_network_request": true,
+      "source_analysis_hash": "f0b8fcf79f4a9d182ca6107d73b8d6df0b2cac70d44118690be468132da097af",
+      "persistence_verified": true
+    },
+    "rejected_candidate_samples": [
+      {
+        "reference": "1B_62/2021",
+        "reason": "Lower-instance detention grounds; Federal Supreme Court decision is procedural inadmissibility."
+      },
+      {
+        "reference": "4A_664/2024",
+        "reason": "Abstract procedural doctrine about attacking independent lower-court grounds; not a concrete autonomous ground applied by the current court."
+      }
+    ]
+  },
+  "multirole": {
+    "analysis_id": "analysis_95e386c113c02ebe1489cd01358f8f5d",
+    "direct_validation": {
+      "analysis_id": "analysis_95e386c113c02ebe1489cd01358f8f5d",
+      "analysis_hash": "95e386c113c02ebe1489cd01358f8f5dfd58ef160d21cafa37cdcccca62d555e",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-16T02:45:09.657Z",
+      "updated_at": "2026-08-16T02:45:09.657Z",
+      "persistence_verified": false,
+      "network_request_performed": false,
+      "validation_status": "not_run",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_8e129e52b5693421",
+      "narrative_state_check_hash": "8e129e52b5693421e8d5dcfa571113f5afa2805f456baa7dbf29e54abb631ba1",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "by_id_validation": {
+      "analysis_id": "analysis_95e386c113c02ebe1489cd01358f8f5d",
+      "analysis_hash": "95e386c113c02ebe1489cd01358f8f5dfd58ef160d21cafa37cdcccca62d555e",
+      "schema_version": 1,
+      "evidence_snapshot_hash": "1e55ff91875c58b04a0c6391f5200d8c14d4cabb67d9b52271a535e688f21a9a",
+      "role_count": 6,
+      "role_ids": [
+        "claimant_or_appellant",
+        "respondent_or_authority",
+        "first_instance_court",
+        "appellate_court",
+        "neutral_risk_assessment",
+        "deliberation_panel"
+      ],
+      "role_hashes": {
+        "claimant_or_appellant": "ee74c6e3c077d1aed246d8426e5c50c3705da1634b978b26e3f4d1ec19714c8d",
+        "respondent_or_authority": "751265a032c316eb05b723fd53528382907431644e07a305195613386a98b891",
+        "first_instance_court": "0bdf4a31fa15fa0e8c26c8e97f96b4919487aa4134d3bd9c73369a2f8bcd8933",
+        "appellate_court": "eb8981c44878b15d02366dd2407aad7a86b212d9417dc56b3a8ab9e7b346c6ff",
+        "neutral_risk_assessment": "42bfa505c8e85cce546a8b8c8ddbc0c75dd4bcece520093b659808f9439d77ca",
+        "deliberation_panel": "74a0f233cdc8b426dfb6e6164e2a2f1b1de4ea5c902224fa593dd9c10da21fe3"
+      },
+      "narrative_hash": "c5afd37b76913e0d05ec7a504e6caab944ea1848fd550cd5f65e8f8ee07e0ba9",
+      "created_at": "2026-08-16T02:45:09.657Z",
+      "updated_at": "2026-08-16T02:45:09.657Z",
+      "persistence_verified": true,
+      "network_request_performed": false,
+      "validation_status": "passed_with_warnings",
+      "narrative_state_mismatch": false,
+      "narrative_state_check_id": "narrative_state_8e129e52b5693421",
+      "narrative_state_check_hash": "8e129e52b5693421e8d5dcfa571113f5afa2805f456baa7dbf29e54abb631ba1",
+      "narrative_state_source": "analysis_object",
+      "narrative_state_consistency_verified": true,
+      "role_integrity": "verified",
+      "evidence_consistency": "verified",
+      "unresolved_conflicts": [
+        "record_verification_and_procedural_competence"
+      ]
+    },
+    "direct_findings": [
+      {
+        "code": "prosecution_role_correctly_excluded",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "prosecution",
+        "message": "prosecution role excluded outside an identified criminal case"
+      },
+      {
+        "code": "defence_role_correctly_excluded",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "defence",
+        "message": "defence role excluded outside an identified criminal case"
+      },
+      {
+        "code": "jurisdiction_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "concrete jurisdiction dimensions remain unverified"
+      },
+      {
+        "code": "burden_holder_not_verified",
+        "severity": "warning",
+        "category": "warning",
+        "affected_role": "analysis",
+        "message": "burden analysis requires review"
+      },
+      {
+        "code": "burden_holder_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "burden holder or procedural maxim remains unverified"
+      },
+      {
+        "code": "standard_of_review_not_verified",
+        "severity": "warning",
+        "category": "warning",
+        "affected_role": "analysis",
+        "message": "review standard missing"
+      },
+      {
+        "code": "standard_of_review_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "review standard remains unverified"
+      },
+      {
+        "code": "predicted_outcome_correctly_conditioned",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "outcome scenarios are conditional while essentials are missing"
+      }
+    ],
+    "by_id_findings": [
+      {
+        "code": "prosecution_role_correctly_excluded",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "prosecution",
+        "message": "prosecution role excluded outside an identified criminal case"
+      },
+      {
+        "code": "defence_role_correctly_excluded",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "defence",
+        "message": "defence role excluded outside an identified criminal case"
+      },
+      {
+        "code": "jurisdiction_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "concrete jurisdiction dimensions remain unverified"
+      },
+      {
+        "code": "burden_holder_not_verified",
+        "severity": "warning",
+        "category": "warning",
+        "affected_role": "analysis",
+        "message": "burden analysis requires review"
+      },
+      {
+        "code": "burden_holder_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "burden holder or procedural maxim remains unverified"
+      },
+      {
+        "code": "standard_of_review_not_verified",
+        "severity": "warning",
+        "category": "warning",
+        "affected_role": "analysis",
+        "message": "review standard missing"
+      },
+      {
+        "code": "standard_of_review_correctly_left_unverified",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "review standard remains unverified"
+      },
+      {
+        "code": "predicted_outcome_correctly_conditioned",
+        "severity": "informational",
+        "category": "control_applied",
+        "affected_role": "analysis",
+        "message": "outcome scenarios are conditional while essentials are missing"
+      }
+    ]
+  }
+}

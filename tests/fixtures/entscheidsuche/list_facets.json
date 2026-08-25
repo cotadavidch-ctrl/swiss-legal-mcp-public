@@ -1,0 +1,408 @@
+{
+  "status": 200,
+  "parsed": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"CH\",\n  \"label\": {\n    \"de\": \"Eidgenossenschaft\",\n    \"fr\": \"Conféderation\",\n    \"it\": \"Confederazione\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"AG\",\n  \"label\": {\n    \"de\": \"Aargau\",\n    \"fr\": \"Argovie\",\n    \"it\": \"Argovia\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"AI\",\n  \"label\": {\n    \"de\": \"Appenzell Innerrhoden\",\n    \"fr\": \"Appenzell Rhodes-Intérieures\",\n    \"it\": \"Appenzello Interno\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"AR\",\n  \"label\": {\n    \"de\": \"Appenzell Ausserrhoden\",\n    \"fr\": \"Appenzell Rhodes-Extérieures\",\n    \"it\": \"Appenzello Interno\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"BE\",\n  \"label\": {\n    \"de\": \"Bern\",\n    \"fr\": \"Berne\",\n    \"it\": \"Berna\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"BL\",\n  \"label\": {\n    \"de\": \"Basel-Land\",\n    \"fr\": \"Bâle-Campagne\",\n    \"it\": \"Basilea Campagna\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"BS\",\n  \"label\": {\n    \"de\": \"Basel-Stadt\",\n    \"fr\": \"Bâle-Ville\",\n    \"it\": \"Basilea Città\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"FR\",\n  \"label\": {\n    \"de\": \"Freiburg\",\n    \"fr\": \"Fribourg\",\n    \"it\": \"Friburgo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"GE\",\n  \"label\": {\n    \"de\": \"Genf\",\n    \"fr\": \"Genève\",\n    \"it\": \"Ginevra\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"GL\",\n  \"label\": {\n    \"de\": \"Glarus\",\n    \"fr\": \"Glaris\",\n    \"it\": \"Glarona\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"GR\",\n  \"label\": {\n    \"de\": \"Graubünden\",\n    \"fr\": \"Grisons\",\n    \"it\": \"Grigioni\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"JU\",\n  \"label\": {\n    \"de\": \"Jura\",\n    \"fr\": \"Jura\",\n    \"it\": \"Giura\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"LU\",\n  \"label\": {\n    \"de\": \"Luzern\",\n    \"fr\": \"Lucerne\",\n    \"it\": \"Lucerna\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"NE\",\n  \"label\": {\n    \"de\": \"Neuenburg\",\n    \"fr\": \"Neuchâtel\",\n    \"it\": \"Neuchâtel\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"NW\",\n  \"label\": {\n    \"de\": \"Nidwalden\",\n    \"fr\": \"Nidwald\",\n    \"it\": \"Nidvaldo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"OW\",\n  \"label\": {\n    \"de\": \"Obwalden\",\n    \"fr\": \"Obwald\",\n    \"it\": \"Obvaldo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"SG\",\n  \"label\": {\n    \"de\": \"St.Gallen\",\n    \"fr\": \"Saint-Gall\",\n    \"it\": \"San Gallo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"SH\",\n  \"label\": {\n    \"de\": \"Schaffhausen\",\n    \"fr\": \"Schaffhouse\",\n    \"it\": \"Sciaffusa\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"SO\",\n  \"label\": {\n    \"de\": \"Solothurn\",\n    \"fr\": \"Soleure\",\n    \"it\": \"Soletta\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"SZ\",\n  \"label\": {\n    \"de\": \"Schwyz\",\n    \"fr\": \"Schwytz\",\n    \"it\": \"Svitto\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"TI\",\n  \"label\": {\n    \"de\": \"Tessin\",\n    \"fr\": \"Tessin\",\n    \"it\": \"Ticino\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"TG\",\n  \"label\": {\n    \"de\": \"Thurgau\",\n    \"fr\": \"Thurgovie\",\n    \"it\": \"Turgovia\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"UR\",\n  \"label\": {\n    \"de\": \"Uri\",\n    \"fr\": \"Uri\",\n    \"it\": \"Uri\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"VD\",\n  \"label\": {\n    \"de\": \"Waadt\",\n    \"fr\": \"Vaud\",\n    \"it\": \"Vaud\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"VS\",\n  \"label\": {\n    \"de\": \"Wallis\",\n    \"fr\": \"Valais\",\n    \"it\": \"Vallese\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"ZG\",\n  \"label\": {\n    \"de\": \"Zug\",\n    \"fr\": \"Zoug\",\n    \"it\": \"Zugo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"ZH\",\n  \"label\": {\n    \"de\": \"Zürich\",\n    \"fr\": \"Zurich\",\n    \"it\": \"Zurigo\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        },
+        {
+          "type": "text",
+          "text": "{\n  \"id\": \"TA\",\n  \"label\": {\n    \"de\": \"Schiedsgerichte\",\n    \"fr\": \"Tribunaux d'arbitrage\",\n    \"it\": \"Tribunali arbitrali\",\n    \"en\": null\n  },\n  \"children\": []\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": [
+          {
+            "id": "CH",
+            "label": {
+              "de": "Eidgenossenschaft",
+              "fr": "Conféderation",
+              "it": "Confederazione",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "AG",
+            "label": {
+              "de": "Aargau",
+              "fr": "Argovie",
+              "it": "Argovia",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "AI",
+            "label": {
+              "de": "Appenzell Innerrhoden",
+              "fr": "Appenzell Rhodes-Intérieures",
+              "it": "Appenzello Interno",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "AR",
+            "label": {
+              "de": "Appenzell Ausserrhoden",
+              "fr": "Appenzell Rhodes-Extérieures",
+              "it": "Appenzello Interno",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "BE",
+            "label": {
+              "de": "Bern",
+              "fr": "Berne",
+              "it": "Berna",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "BL",
+            "label": {
+              "de": "Basel-Land",
+              "fr": "Bâle-Campagne",
+              "it": "Basilea Campagna",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "BS",
+            "label": {
+              "de": "Basel-Stadt",
+              "fr": "Bâle-Ville",
+              "it": "Basilea Città",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "FR",
+            "label": {
+              "de": "Freiburg",
+              "fr": "Fribourg",
+              "it": "Friburgo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "GE",
+            "label": {
+              "de": "Genf",
+              "fr": "Genève",
+              "it": "Ginevra",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "GL",
+            "label": {
+              "de": "Glarus",
+              "fr": "Glaris",
+              "it": "Glarona",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "GR",
+            "label": {
+              "de": "Graubünden",
+              "fr": "Grisons",
+              "it": "Grigioni",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "JU",
+            "label": {
+              "de": "Jura",
+              "fr": "Jura",
+              "it": "Giura",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "LU",
+            "label": {
+              "de": "Luzern",
+              "fr": "Lucerne",
+              "it": "Lucerna",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "NE",
+            "label": {
+              "de": "Neuenburg",
+              "fr": "Neuchâtel",
+              "it": "Neuchâtel",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "NW",
+            "label": {
+              "de": "Nidwalden",
+              "fr": "Nidwald",
+              "it": "Nidvaldo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "OW",
+            "label": {
+              "de": "Obwalden",
+              "fr": "Obwald",
+              "it": "Obvaldo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "SG",
+            "label": {
+              "de": "St.Gallen",
+              "fr": "Saint-Gall",
+              "it": "San Gallo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "SH",
+            "label": {
+              "de": "Schaffhausen",
+              "fr": "Schaffhouse",
+              "it": "Sciaffusa",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "SO",
+            "label": {
+              "de": "Solothurn",
+              "fr": "Soleure",
+              "it": "Soletta",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "SZ",
+            "label": {
+              "de": "Schwyz",
+              "fr": "Schwytz",
+              "it": "Svitto",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "TI",
+            "label": {
+              "de": "Tessin",
+              "fr": "Tessin",
+              "it": "Ticino",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "TG",
+            "label": {
+              "de": "Thurgau",
+              "fr": "Thurgovie",
+              "it": "Turgovia",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "UR",
+            "label": {
+              "de": "Uri",
+              "fr": "Uri",
+              "it": "Uri",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "VD",
+            "label": {
+              "de": "Waadt",
+              "fr": "Vaud",
+              "it": "Vaud",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "VS",
+            "label": {
+              "de": "Wallis",
+              "fr": "Valais",
+              "it": "Vallese",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "ZG",
+            "label": {
+              "de": "Zug",
+              "fr": "Zoug",
+              "it": "Zugo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "ZH",
+            "label": {
+              "de": "Zürich",
+              "fr": "Zurich",
+              "it": "Zurigo",
+              "en": null
+            },
+            "children": []
+          },
+          {
+            "id": "TA",
+            "label": {
+              "de": "Schiedsgerichte",
+              "fr": "Tribunaux d'arbitrage",
+              "it": "Tribunali arbitrali",
+              "en": null
+            },
+            "children": []
+          }
+        ]
+      },
+      "isError": false
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "head": { "link": [], "vars": ["work"] },
+  "results": {
+    "distinct": false,
+    "ordered": true,
+    "bindings": [
+      {
+        "work": {
+          "type": "uri",
+          "value": "https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184"
+        }
+      }
+    ]
+  }
+}
