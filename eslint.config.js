@@ -30,6 +30,7 @@ export default tseslint.config(
       "test_*.ts",
       "eslint.config.js",
       "scripts/**",
+      "tmp_e2e/**",
     ],
   },
   js.configs.recommended,
@@ -82,6 +83,18 @@ export default tseslint.config(
     rules: {
       // Unico punto legitimo para reportar un fallo de arranque antes de
       // que exista un logger estructurado, o para la salida de un CLI.
+      "no-console": "off",
+    },
+  },
+  {
+    files: [
+      "apps/mcp-server/tests/matter_e2e_real.test.ts",
+      "apps/mcp-server/tests/matter_e2e_real_temp.test.ts",
+    ],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
       "no-console": "off",
     },
   },
