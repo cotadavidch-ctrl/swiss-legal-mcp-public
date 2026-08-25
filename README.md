@@ -60,4 +60,6 @@ La licencia y esta documentación no constituyen asesoramiento jurídico.
 
 ## Release Gate
 
-No se han publicado paquetes, imágenes Docker, tags ni releases.
+La versión pública inicial `v1.0.0` ha sido publicada como GitHub Release.
+
+El repositorio no publica actualmente paquetes npm ni imágenes Docker como artefactos de distribución.
