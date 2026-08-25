@@ -32,6 +32,9 @@ jobs:
       - name: Typecheck (tsc --noEmit por paquete)
         run: pnpm typecheck
 
+      - name: Build workspace
+        run: pnpm build
+
       - name: Tests (Vitest)
         run: pnpm test
         env:
