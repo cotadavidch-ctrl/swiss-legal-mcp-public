@@ -29,3 +29,20 @@ Security controls added for local use:
 - Claude Desktop stdio production acceptance.
 
 See `docs/updater/` and `docs/security/` for current limits and procedures.
+
+
+### Local Docker Compose credentials (October 2026)
+
+Docker Compose requires two independently generated private values in an untracked
+.env file: SWISS_LEGAL_MCP_POSTGRES_PASSWORD and SWISS_LEGAL_MCP_BEARER_TOKEN.
+Copy .env.example and populate them with secure random values.
+Services bind only to 127.0.0.1 for local development. Never expose these
+ports publicly without reviewed authentication, TLS and network controls.
+
+Static development credentials formerly in docker-compose.yml were removed.
+They were not production credentials, but instances initialized from these
+values must rotate both. Updating the Compose variable does not rotate a
+PostgreSQL password in a persistent postgres_data volume. Change the live
+PostgreSQL role password, or recreate a disposable empty development volume
+after checking it holds no valuable data. Rotate any reused MCP bearer token.
+The old Git commit is immutable and may remain visible in public history.

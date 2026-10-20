@@ -78,3 +78,8 @@ docs/validation/private-beta-acceptance/
 # Stray local files
 /después
 /debug_test.mjs
+
+# Local runtime credentials are never tracked
+.env
+.env.*
+!.env.example
