@@ -32,16 +32,22 @@ See `docs/updater/` and `docs/security/` for current limits and procedures.
 
 ### Local Docker Compose credentials (October 2026)
 
-Docker Compose requires two independently generated private values in an untracked
-.env file: SWISS_LEGAL_MCP_POSTGRES_PASSWORD and SWISS_LEGAL_MCP_BEARER_TOKEN.
-Copy .env.example and populate them with secure random values.
-Services bind only to 127.0.0.1 for local development. Never expose these
-ports publicly without reviewed authentication, TLS and network controls.
+Docker Compose loads secrets from two untracked, required files:
 
-Static development credentials formerly in docker-compose.yml were removed.
-They were not production credentials, but instances initialized from these
-values must rotate both. Updating the Compose variable does not rotate a
-PostgreSQL password in a persistent postgres_data volume. Change the live
-PostgreSQL role password, or recreate a disposable empty development volume
-after checking it holds no valuable data. Rotate any reused MCP bearer token.
-The old Git commit is immutable and may remain visible in public history.
+- `postgres.env` containing `POSTGRES_PASSWORD`, accessible only to PostgreSQL.
+- `mcp.env` containing `MCP_HTTP_BEARER_TOKEN`, accessible only to the MCP server.
+
+Copy the matching `*.env.example` template to each private file, generate
+independent random values, and restrict file permissions to the account owner.
+Compose fails when either file is missing. Do not commit populated files.
+
+Ports bind only to `127.0.0.1` for local development. Do not publish them
+without reviewing authentication, TLS, firewall rules and deployment access.
+
+The previous development password and token were hard-coded in public Git
+history. Anyone who reused them in a running installation must rotate both.
+Environment changes alone do not update existing PostgreSQL role passwords
+stored in a persistent `postgres_data` volume; perform an in-database
+password rotation or, for a disposable empty development volume, recreate
+it after verifying that no data needs to be preserved. Historic Git commits
+remain publicly accessible even after current files have been corrected.

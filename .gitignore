@@ -83,3 +83,7 @@ docs/validation/private-beta-acceptance/
 .env
 .env.*
 !.env.example
+
+# Per-service Docker Compose secret files
+postgres.env
+mcp.env
