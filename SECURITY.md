@@ -30,7 +30,6 @@ Security controls added for local use:
 
 See `docs/updater/` and `docs/security/` for current limits and procedures.
 
-
 ### Local Docker Compose credentials (October 2026)
 
 Docker Compose requires two independently generated private values in an untracked
