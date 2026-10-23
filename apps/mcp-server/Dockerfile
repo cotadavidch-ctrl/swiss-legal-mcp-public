@@ -29,6 +29,9 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
+# Internal packages expose dist/index.js, required by the HTTP server.
+RUN pnpm -r --if-present run build
+
 ENV NODE_ENV=production
 EXPOSE 3000
 
