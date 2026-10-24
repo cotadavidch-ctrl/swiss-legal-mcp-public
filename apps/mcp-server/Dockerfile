@@ -8,7 +8,7 @@
 # paquete. Es la opcion mas simple para esta fase; una imagen mas ligera
 # (compilacion a JS por paquete + install --prod) queda para la auditoria de
 # rendimiento de Fase 8 (ver IMPLEMENTATION_STATUS.md).
-FROM node:22-slim
+FROM node:22.23.4-slim
 
 RUN corepack enable
 WORKDIR /workspace
