@@ -1,3 +1,4 @@
+import { tlsAwareFetch } from "./bgerTlsFetch.js";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
@@ -43,6 +44,14 @@ async function asyncFetch(
   } = {},
   signal?: AbortSignal,
 ): Promise<OfficialCaseHttpResponse> {
+  // Mismo cinturon que liveHttpFetch: en NODE_ENV=test no se sale a la red salvo opt-in explicito,
+  // para que las pruebas "sin red" sean deterministas y no dependan del portal.
+  if (
+    process["env"]["NODE_ENV"] === "test" &&
+    process["env"]["SWISS_LEGAL_MCP_LIVE_HTTP"] !== "1"
+  ) {
+    throw new Error("live_http_disabled_in_test");
+  }
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
   if (signal) {
@@ -50,12 +59,25 @@ async function asyncFetch(
   }
 
   try {
-    const response = await fetch(url, {
-      method: options.method ?? "GET",
-      body: options.body,
-      headers: options.headers,
-      signal: controller.signal,
-    });
+    let currentUrl = url;
+    const hops: string[] = [url];
+    let response: Response;
+    for (let hop = 0; ; hop += 1) {
+      response = await tlsAwareFetch(currentUrl, {
+        method: options.method ?? "GET",
+        ...(options.body === undefined ? {} : { body: options.body }),
+        headers: { "Accept-Encoding": "identity", ...options.headers },
+        signal: controller.signal,
+      });
+      const location = response.headers.get("location");
+      if (response.status >= 300 && response.status < 400 && location) {
+        if (hop >= 5) throw new Error("redirect_policy_blocked");
+        currentUrl = new URL(location, currentUrl).toString();
+        hops.push(currentUrl);
+        continue;
+      }
+      break;
+    }
 
     clearTimeout(timeout);
 
@@ -70,9 +92,9 @@ async function asyncFetch(
 
     return {
       requested_url: url,
-      final_url: response.url,
+      final_url: currentUrl,
       status_code: response.status,
-      redirect_chain: Array.from(response.redirected ? [url, response.url] : [url]),
+      redirect_chain: hops,
       response_headers: headers,
       mime_type: response.headers.get("content-type") ?? null,
       content_length: Number(response.headers.get("content-length")) || bytesReceived,
@@ -143,12 +165,12 @@ async function liveHttpFetch(
     }
     let response: Response;
     try {
-      response = await fetch(currentUrl, {
+      response = await tlsAwareFetch(currentUrl, {
         method: options.method ?? "GET",
-        redirect: "manual",
         signal: controller.signal,
         headers: {
           Accept: "text/html,application/pdf,text/plain;q=0.9,*/*;q=0.1",
+          "Accept-Encoding": "identity",
           "User-Agent": "swiss-legal-mcp/1.0 official-case-resolver",
           ...options.headers,
         },
@@ -2351,18 +2373,24 @@ export function verifySwissCaseIdentity(input: {
   const confidence = Number(Math.min(1, Math.max(0, score / denominator)).toFixed(2));
   const independentEvidenceCount = evidenceSources.size;
   const circularVerification = independentEvidenceCount < 2;
-  const status: IdentityStatus = circularVerification
-    ? "identity_not_verifiable"
-    : mismatched.length > 0
+  // Una discrepancia real prevalece siempre sobre la falta de evidencia independiente.
+  const status: IdentityStatus =
+    mismatched.length > 0
       ? "identity_mismatch"
-      : ambiguity.length > 0
-        ? "identity_ambiguous"
-        : confidence >= 0.82 && input.candidate.official
-          ? "identity_verified"
-          : confidence >= 0.62
-            ? "identity_probable"
-            : "identity_not_verifiable";
-  const finalStatus = input.strict && status !== "identity_verified" ? "identity_mismatch" : status;
+      : circularVerification
+        ? "identity_not_verifiable"
+        : ambiguity.length > 0
+          ? "identity_ambiguous"
+          : confidence >= 0.82 && input.candidate.official
+            ? "identity_verified"
+            : confidence >= 0.62
+              ? "identity_probable"
+              : "identity_not_verifiable";
+  // Modo estricto: solo una discrepancia real es `identity_mismatch`. Un dato que falta, una
+  // coincidencia probable o ambigua conservan su estado verdadero (siguen sin estar verificadas:
+  // official_identity_verified=false y requires_human_review=true), en vez de presentarse como
+  // contradiccion cuando no hay ningun campo discrepante (FIND-04).
+  const finalStatus: IdentityStatus = status;
   return {
     status: finalStatus,
     matched_fields: matched,
@@ -2851,7 +2879,7 @@ async function fetchFromHttpResponse(
     retrieved_at: response.retrieved_at,
     extractor_version: extractorVersion,
     source_version: hash.slice(0, 16),
-    text: stripTags(content),
+    text: extractJudgmentText(content),
     sections,
     section_evidence: sectionEvidence,
     ...pageMetrics,
@@ -3181,7 +3209,7 @@ function findBgerExactDocumentUrl(html: string, reference: string | null): strin
     .map((href) => safeDecodeUriComponent(href));
   const exact = hrefs.find((href) => docIdVariants.some((variant) => href.includes(variant)));
   if (!exact) return null;
-  return new URL(exact, "https://search.bger.ch").toString();
+  return new URL(exact, "https://www.bger.ch").toString();
 }
 
 function bgerDocIdVariants(reference: string): readonly string[] {
@@ -3248,7 +3276,7 @@ function findBgerPublishedDocumentMapping(
 }
 
 function makeBgerPublishedDocumentUrl(docid: string): string {
-  const url = new URL("https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php");
+  const url = new URL("https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php");
   url.searchParams.set("lang", "de");
   url.searchParams.set("type", "show_document");
   url.searchParams.set("highlight_docid", docid);
@@ -3977,6 +4005,21 @@ function hasPdfMagicBytes(bytes: Uint8Array): boolean {
 
 function isAccessRestrictionPage(content: string): boolean {
   const text = stripTags(content).toLowerCase();
+  // Marcadores de desafio antibot/proteccion del portal. El portal legitimo incluye ademas un
+  // script de monitorizacion de Incapsula, asi que el marcador por si solo NO basta: un desafio
+  // real es una pagina minima sin contenido del tribunal. Nunca se intenta eludir.
+  const looksLikeRealPortalPage =
+    content.length > 8000 &&
+    /eurospider|bundesgericht|tribunal f[ée]d[ée]ral|tribunale federale/i.test(content);
+  if (
+    !looksLikeRealPortalPage &&
+    (/cf-chl|cf-browser-verification|_incapsula_|incap_ses|g-recaptcha|hcaptcha/i.test(content) ||
+      /\b(just a moment|checking your browser|attention required|pardon our interruption|enable javascript and cookies)\b/i.test(
+        text,
+      ))
+  ) {
+    return true;
+  }
   return (
     /\b(captcha|challenge page|security challenge|bot challenge)\b/i.test(text) ||
     /\blogin required\b/i.test(text) ||
@@ -7932,8 +7975,39 @@ function extractYear(value: string): number | null {
   return match ? Number(match[0]) : null;
 }
 
-function stripTags(value: string): string {
-  return value.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<[^>]+>/g, " ");
+/**
+ * HTML -> texto. Elimina por completo el CONTENIDO de <script>, <style>, <noscript> y los
+ * comentarios (antes solo <script>): el HTML del tribunal lleva CSS de impresion en un <style>
+ * que acababa mezclado con el texto de la sentencia.
+ */
+/**
+ * Texto de la sentencia sin la navegacion del portal. El portal Eurospider encierra el fallo en
+ * <div id="highlight_result"> y la navegacion lateral en <div id="highlight_navigation">. Si el
+ * contenedor existe se usa solo ese tramo; si no, se conserva todo el documento (PDF u otros
+ * formatos). Normaliza espacios (&nbsp;, tabuladores, lineas en blanco) sin tocar el contenido.
+ */
+export function extractJudgmentText(html: string): string {
+  let body = html;
+  const start = html.search(/<div[^>]*\bid=["']highlight_result["'][^>]*>/i);
+  if (start >= 0) {
+    const rest = html.slice(start);
+    const end = rest.search(/<div[^>]*\bid=["']highlight_navigation["'][^>]*>/i);
+    body = end > 0 ? rest.slice(0, end) : rest;
+  }
+  return stripTags(body.replace(/<(?:br|\/p|\/div|\/h[1-6]|\/li|\/tr)\b[^>]*>/gi, "\n"))
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/[ \t\u00a0]+/g, " ")
+    .replace(/ ?\n ?/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+export function stripTags(value: string): string {
+  return value
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<(script|style|noscript)\b[\s\S]*?<\/\1\s*>/gi, "")
+    .replace(/<[^>]+>/g, " ");
 }
 
 function sha256(value: string): string {
@@ -7949,11 +8023,11 @@ function makeResolutionId(reference: string, sourceUrl: string): string {
 }
 
 function makeBgerSearchUrl(reference: string): string {
-  return `https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?from_date=&lang=de&query_words=${encodeURIComponent(reference)}&to_date=&top_subcollection_aza=all&type=simple_query`;
+  return `https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?from_date=&lang=de&query_words=${encodeURIComponent(reference)}&to_date=&top_subcollection_aza=all&type=simple_query`;
 }
 
 function makeBgerPublishedSearchUrl(reference: string): string {
-  const url = new URL("https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php");
+  const url = new URL("https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php");
   url.searchParams.set("from_date", "");
   url.searchParams.set("lang", "de");
   url.searchParams.set("query_words", reference);

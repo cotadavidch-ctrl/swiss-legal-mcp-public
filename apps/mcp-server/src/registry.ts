@@ -44,6 +44,11 @@ import { registerLegalDraftingTools } from "./tools/legalDraftingTools.js";
 import { registerMultiroleLegalAnalysisTools } from "./tools/multiroleLegalAnalysisTools.js";
 import { registerOfficialSwissCaseTools } from "./tools/officialSwissCaseTools.js";
 import { registerMatterRuntimeTools } from "./tools/matterRuntimeTools.js";
+import { registerDeadlineTools } from "./tools/deadlineTools.js";
+import { registerDecisionDocumentTools } from "./tools/decisionDocumentTools.js";
+import { registerQuoteTools } from "./tools/quoteTools.js";
+import { registerOpposingSubmissionTools } from "./tools/opposingSubmissionTools.js";
+import { registerDecisionReviewTools } from "./tools/decisionReviewTools.js";
 
 export interface Registries {
   readonly providers: ProviderRegistry;
@@ -368,6 +373,21 @@ export function buildRegistries(env: Env): Registries {
   // orquestacion de investigacion juridica y QA de borradores. Herramientas
   // aditivas y locales: no sustituyen ni relajan proveedores oficiales.
   registerMatterRuntimeTools(tools);
+
+  // Calculo determinista de plazos procesales federales con base legal (Fedlex). Local, sin red.
+  registerDeadlineTools(tools);
+
+  // Entrada de documentos: analisis pasivo de una resolucion (fechas, instruccion de recursos, plazo).
+  registerDecisionDocumentTools(tools);
+
+  // Verificacion literal de citas textuales contra el texto oficial de la fuente.
+  registerQuoteTools(tools);
+
+  // Replica: admisiones, contradicciones y citas inexactas de la parte contraria (heuristico).
+  registerOpposingSubmissionTools(tools);
+
+  // Revision de resoluciones en dos pasos: preparar material y verificar lo que afirme el modelo.
+  registerDecisionReviewTools(tools);
 
   return { providers, legislationProviders, tools };
 }

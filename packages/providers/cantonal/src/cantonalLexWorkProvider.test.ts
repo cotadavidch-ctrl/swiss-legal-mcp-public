@@ -169,3 +169,14 @@ describe("CantonalLexWorkProvider (Berna)", () => {
     await expect(provider.searchDocuments({ query: "a" })).rejects.toThrow();
   });
 });
+
+import { normalizeArticleNumber } from "./lexWorkContentTree.js";
+
+describe("normalizeArticleNumber", () => {
+  it("trata 'Art. 5', '§ 5', 'Art.&nbsp;5' y '5' como el mismo articulo", () => {
+    for (const raw of ["Art. 5", "§ 5", "§5", "Art.&nbsp;5", "5", "ART. 5"]) {
+      expect(normalizeArticleNumber(raw)).toBe("5");
+    }
+    expect(normalizeArticleNumber("§ 5a")).toBe("5a");
+  });
+});

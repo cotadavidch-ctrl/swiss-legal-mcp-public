@@ -27,7 +27,7 @@ function fakeFedlexDoc(id: string, overrides: Record<string, unknown> = {}) {
     title: `Documento ${id}`,
     fullText: "Texto real sin citas reconocibles.",
     provenance: {
-      sourceUrl: `https://fedlex.example.test/${id}`,
+      sourceUrl: `https://fedlex.data.admin.ch/eli/cc/test/${id}`,
       retrievedAt: "2026-07-28T00:00:00.000Z",
       contentHash: "a".repeat(64),
       officialCharacter: "official" as const,
@@ -165,7 +165,7 @@ describe("find_cited_sources (proveedores falsos, sin red)", () => {
     const client = await buildServer({ fedlex });
     const result = await client.callTool({
       name: "find_cited_sources",
-      arguments: { provider: "fedlex", documentId: "https://fedlex.example.test/101" },
+      arguments: { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/101" },
     });
     expect(result.isError).toBeFalsy();
     const structured = result.structuredContent as {
@@ -190,7 +190,7 @@ describe("find_cited_sources (proveedores falsos, sin red)", () => {
     const client = await buildServer({ fedlex });
     const result = await client.callTool({
       name: "find_cited_sources",
-      arguments: { provider: "fedlex", documentId: "https://fedlex.example.test/102" },
+      arguments: { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/102" },
     });
     const structured = result.structuredContent as {
       citations: Array<{ raw: string; origin: string }>;
@@ -209,7 +209,7 @@ describe("find_cited_sources (proveedores falsos, sin red)", () => {
     const client = await buildServer({ fedlex });
     const result = await client.callTool({
       name: "find_cited_sources",
-      arguments: { provider: "fedlex", documentId: "https://fedlex.example.test/103" },
+      arguments: { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/103" },
     });
     const structured = result.structuredContent as { status: string };
     expect(structured.status).toBe("insufficient_source_text");
@@ -252,7 +252,7 @@ describe("find_cited_sources (proveedores falsos, sin red)", () => {
     const client = await buildServer({ fedlex, entscheidsuche });
     const result = await client.callTool({
       name: "find_cited_sources",
-      arguments: { provider: "fedlex", documentId: "https://fedlex.example.test/104" },
+      arguments: { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/104" },
     });
     const structured = result.structuredContent as {
       citations: Array<Record<string, unknown>>;
@@ -273,10 +273,10 @@ describe("build_case_citation_network (proveedores falsos, sin red)", () => {
     // debe responder segun el 'eli' pedido, no segun el orden de llamada.
     const fedlex = fakeFedlexProvider({
       getLaw: vi.fn(async (ref: { eli?: string }) => {
-        if (ref.eli === "https://fedlex.example.test/a") {
+        if (ref.eli === "https://fedlex.data.admin.ch/eli/cc/test/a") {
           return fakeFedlexDoc("fedlex:a", { fullText: "Cita real RS 220 aqui." });
         }
-        if (ref.eli === "https://fedlex.example.test/b") {
+        if (ref.eli === "https://fedlex.data.admin.ch/eli/cc/test/b") {
           return fakeFedlexDoc("fedlex:b", { fullText: "Otra cita real RS 220 tambien." });
         }
         return fakeFedlexDoc("fedlex:220");
@@ -287,8 +287,8 @@ describe("build_case_citation_network (proveedores falsos, sin red)", () => {
       name: "build_case_citation_network",
       arguments: {
         documents: [
-          { provider: "fedlex", documentId: "https://fedlex.example.test/a" },
-          { provider: "fedlex", documentId: "https://fedlex.example.test/b" },
+          { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/a" },
+          { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/b" },
         ],
       },
     });
@@ -314,7 +314,9 @@ describe("build_case_citation_network (proveedores falsos, sin red)", () => {
     const result = await client.callTool({
       name: "build_case_citation_network",
       arguments: {
-        documents: [{ provider: "fedlex", documentId: "https://fedlex.example.test/x" }],
+        documents: [
+          { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/x" },
+        ],
       },
     });
     const structured = result.structuredContent as { status: string };
@@ -332,7 +334,7 @@ describe("build_case_citation_network (proveedores falsos, sin red)", () => {
       name: "build_case_citation_network",
       arguments: {
         documents: [
-          { provider: "fedlex", documentId: "https://fedlex.example.test/ok" },
+          { provider: "fedlex", documentId: "https://fedlex.data.admin.ch/eli/cc/test/ok" },
           { provider: "seco", documentId: "seco:999" },
         ],
       },

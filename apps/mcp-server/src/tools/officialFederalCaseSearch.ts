@@ -1,3 +1,4 @@
+import { tlsAwareFetch } from "./bgerTlsFetch.js";
 import { deduplicateStable, type DeduplicationSummary } from "./caseDeduplication.js";
 
 /**
@@ -184,7 +185,8 @@ export interface FederalCaseSearchOutput {
   readonly discovery_strategy: DiscoveryStrategyLog;
 }
 
-const SEARCH_HOST = "search.bger.ch";
+// www.bger.ch sirve el mismo Eurospider oficial sin el desafio Incapsula de search.bger.ch
+const SEARCH_HOST = "www.bger.ch";
 const ALLOWED_SEARCH_HOSTS = new Set(["search.bger.ch", "bger.ch", "www.bger.ch"]);
 const DEFAULT_PAGE_SIZE = 20;
 const MAX_PAGE_SIZE = 50;
@@ -241,15 +243,29 @@ async function liveFederalSearchFetch(url: string): Promise<FederalSearchHttpRes
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), DEFAULT_TIMEOUT_MS);
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      redirect: "follow",
-      signal: controller.signal,
-      headers: {
-        Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
-        "User-Agent": "swiss-legal-mcp/1.0 official-federal-case-search",
-      },
-    });
+    let currentUrl = url;
+    let response: Response;
+    for (let hop = 0; ; hop += 1) {
+      if (!ALLOWED_SEARCH_HOSTS.has(new URL(currentUrl).hostname)) {
+        throw new Error(`network_policy_blocked:${new URL(currentUrl).hostname}`);
+      }
+      response = await tlsAwareFetch(currentUrl, {
+        method: "GET",
+        signal: controller.signal,
+        headers: {
+          Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",
+          "Accept-Encoding": "identity",
+          "User-Agent": "swiss-legal-mcp/1.0 official-federal-case-search",
+        },
+      });
+      const location = response.headers.get("location");
+      if (response.status >= 300 && response.status < 400 && location) {
+        if (hop >= 5) throw new Error("redirect_policy_blocked");
+        currentUrl = new URL(location, currentUrl).toString();
+        continue;
+      }
+      break;
+    }
     const bytes = new Uint8Array(await response.arrayBuffer());
     if (bytes.byteLength > MAX_RESPONSE_BYTES) {
       throw new Error("response_too_large");
@@ -257,7 +273,7 @@ async function liveFederalSearchFetch(url: string): Promise<FederalSearchHttpRes
     const body = new TextDecoder("utf-8", { fatal: false }).decode(bytes);
     return {
       status_code: response.status,
-      final_url: response.url || url,
+      final_url: currentUrl,
       body,
       headers: Object.fromEntries(response.headers.entries()),
     };
@@ -342,6 +358,7 @@ function toSwissDate(isoDate: string): string {
 const RESULT_ANCHOR_PATTERN =
   /<a\s[^>]*href=["']([^"']*(?:type=show_document|highlight_docid)[^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 const DOCID_PATTERN = /aza:\/\/(\d{2})-(\d{2})-(\d{4})-(.+)$/i;
+const DOCID_PATTERN_ISO = /^(\d{4})-(\d{2})-(\d{2})-(.+)$/;
 
 function decodeHtmlEntities(value: string): string {
   return value
@@ -437,6 +454,52 @@ function extractNextCursorFromHtml(html: string, currentUrl: string): string | n
   }
 }
 
+/**
+ * Clasificacion explicita de una respuesta 2xx del portal que no contiene
+ * candidatos. Una pagina sin resultados NO es automaticamente "cero sentencias":
+ * puede ser un desafio antibot, una pagina de error/mantenimiento o HTML que
+ * este parser no reconoce. Nunca se intenta eludir un desafio; solo se informa
+ * indisponibilidad explicita.
+ */
+export type PortalPageClassification =
+  | "results"
+  | "confirmed_zero_results"
+  | "access_challenge"
+  | "unrecognized_response"
+  | "zero_results_unconfirmed";
+
+const ANTIBOT_PATTERN =
+  /cf-chl|cf-browser-verification|just a moment|attention required|checking your browser|captcha|g-recaptcha|_incapsula_|incap_ses|pardon our interruption|request unsuccessful|access denied|enable javascript and cookies|bot detection|verify you are (?:a )?human/i;
+const ZERO_RESULTS_PATTERN =
+  /keine\s+(?:treffer|dokumente|ergebnisse)|aucun\s+(?:r[ée]sultat|document)|nessun\s+(?:risultato|documento)|\b0\s+(?:treffer|r[ée]sultats?|risultati)/i;
+const PORTAL_STRUCTURE_PATTERN =
+  /query_words|clir\/http|eurospider|search\.bger\.ch|bundesgericht|tribunal f[ée]d[ée]ral|tribunale federale/i;
+
+export function classifyPortalPage(input: {
+  readonly body: string;
+  readonly headers: Record<string, string>;
+  readonly parsedResultCount: number;
+}): PortalPageClassification {
+  if (input.parsedResultCount > 0) return "results";
+  const headerBlob = Object.entries(input.headers)
+    .map(([k, v]) => `${k}: ${v}`)
+    .join("\n");
+  // El portal legitimo incluye un script de monitorizacion de Incapsula: el marcador solo cuenta
+  // como desafio si la pagina no tiene el contenido del portal (un desafio real es una pagina minima).
+  const hasPortalContent = input.body.length > 8000 && PORTAL_STRUCTURE_PATTERN.test(input.body);
+  if (
+    (!hasPortalContent && ANTIBOT_PATTERN.test(input.body)) ||
+    /cf-mitigated\s*:\s*challenge/i.test(headerBlob)
+  ) {
+    return "access_challenge";
+  }
+  if (input.body.trim().length === 0 || !PORTAL_STRUCTURE_PATTERN.test(input.body)) {
+    return "unrecognized_response";
+  }
+  if (ZERO_RESULTS_PATTERN.test(input.body)) return "confirmed_zero_results";
+  return "zero_results_unconfirmed";
+}
+
 function parseResultsPage(
   html: string,
   requestedUrl: string,
@@ -454,9 +517,13 @@ function parseResultsPage(
     const url = new URL(href);
     const docid = url.searchParams.get("highlight_docid");
     if (!docid) continue;
-    const docidMatch = DOCID_PATTERN.exec(docid);
-    if (!docidMatch) continue;
-    const [, day, month, year, tail] = docidMatch;
+    // Formato historico `aza://DD-MM-AAAA-<exp>` y formato actual `AAAA-MM-DD-<exp>`.
+    const legacy = DOCID_PATTERN.exec(docid);
+    const current = legacy ? null : DOCID_PATTERN_ISO.exec(docid);
+    if (!legacy && !current) continue;
+    const [day, month, year, tail] = legacy
+      ? [legacy[1], legacy[2], legacy[3], legacy[4]]
+      : [current![3], current![2], current![1], current![4]];
     const decisionDate = day && month && year ? `${year}-${month}-${day}` : null;
     const caseReference = tail ? inferCaseReferenceFromDocidTail(tail) : null;
     const prefix = extractPrefix(caseReference);
@@ -598,6 +665,45 @@ async function runSingleQuery(options: {
       totalDiscovered = extractTotalHits(response.body);
     }
     const pageResults = parseResultsPage(response.body, response.final_url);
+    const pageClass = classifyPortalPage({
+      body: response.body,
+      headers: response.headers,
+      parsedResultCount: pageResults.length,
+    });
+    if (pageClass === "access_challenge") {
+      warnings.push(
+        "access_challenge_detected: the official portal returned an anti-bot/verification page; this is provider unavailability, not absence of jurisprudence. No bypass attempted.",
+      );
+      sourceStatus = collected.length > 0 ? "partial" : "unavailable";
+      partial = true;
+      break;
+    }
+    if (pageClass === "unrecognized_response") {
+      warnings.push(
+        "unrecognized_portal_response: the response is not a recognizable court-search page (empty, error or incomplete HTML); treated as provider unavailability, never as zero results.",
+      );
+      sourceStatus = collected.length > 0 ? "partial" : "unavailable";
+      partial = true;
+      break;
+    }
+    if (pageClass === "zero_results_unconfirmed") {
+      warnings.push(
+        "zero_results_unconfirmed: the page looks like the portal but lists no cases and has no explicit no-hit marker; absence of jurisprudence is NOT asserted.",
+      );
+      partial = true;
+      if (collected.length === 0) sourceStatus = "partial";
+    }
+    if (
+      pageClass !== "results" &&
+      pageClass !== "confirmed_zero_results" &&
+      totalDiscovered !== null &&
+      totalDiscovered > 0 &&
+      pageResults.length === 0
+    ) {
+      warnings.push(
+        "results_declared_but_not_parsed: the page announces hits but no case links could be parsed; the parser may be out of date.",
+      );
+    }
     collected.push(...pageResults);
 
     const nextCursor = extractNextCursorFromHtml(response.body, response.final_url);

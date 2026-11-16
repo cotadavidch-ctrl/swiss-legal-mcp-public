@@ -40,6 +40,8 @@ export type SwissLegalDocumentType =
   | "RechtlichesMemorandum"
   | "unknown";
 
+import type { DraftQuoteCheck } from "./quoteTools.js";
+
 export type DraftingCheckStatus =
   "passed" | "warning" | "failed" | "not_verified" | "not_applicable";
 export type DraftingSeverity = "blocker" | "major" | "warning" | "informational";
@@ -618,7 +620,19 @@ export function buildRechtsbegehren(input: DraftingCaseInput) {
   const legalAid = matchingObjectiveIndexes(/unentgelt|legal aid|assistance juridique/);
   const suspensive = matchingObjectiveIndexes(/aufschieb|suspensive/);
   const extension = matchingObjectiveIndexes(/frist|extension|erstreck|nachfrist/);
-  const fileAccess = matchingObjectiveIndexes(/akteneinsicht|file access|edition|kontoauszug/);
+  // Categorias separadas: acceso al expediente, aportacion/edicion de documentos y
+  // extracto bancario son pretensiones juridicamente distintas y nunca se sustituyen.
+  const fileAccess = matchingObjectiveIndexes(
+    /akteneinsicht|file access|inspect\w*\s+(of\s+)?(the\s+)?(case\s+)?file|acc[eè]s au dossier|consultation du dossier|acceso al expediente/,
+  );
+  const bankStatement = matchingObjectiveIndexes(
+    /kontoauszug|kontoauszüge|kontoauszuege|bank statement|relev[eé] bancaire|extracto bancario/,
+  );
+  const documentEditionAll = matchingObjectiveIndexes(
+    /\bedition\b|editionsbegehren|editionsverfügung|editionsverfuegung|\bedier|production of documents|production de pi[eè]ces|aportaci[oó]n de documentos/,
+  );
+  // Una edicion de Kontoauszug es una unica pretension de extracto bancario, no dos.
+  const documentEdition = documentEditionAll.filter((index) => !bankStatement.includes(index));
   const costs = matchingObjectiveIndexes(/kosten|entschädigung|entschaedigung/);
 
   if (annulment.length > 0 && remand.length > 0) {
@@ -634,7 +648,7 @@ export function buildRechtsbegehren(input: DraftingCaseInput) {
       supportedBy: linkedClaimIds(claims, "aufheb"),
     });
   }
-  if (remand.length > 0 || (requests.length === 0 && input.challengedAct?.type === "decision")) {
+  if (remand.length > 0) {
     pushRequest({
       objectiveIndexes: remand,
       kind: annulment.length > 0 ? "Eventualantrag" : "Hauptantrag",
@@ -674,9 +688,30 @@ export function buildRechtsbegehren(input: DraftingCaseInput) {
     pushRequest({
       objectiveIndexes: fileAccess,
       kind: "Verfahrensantrag",
-      text: "Die Vorinstanz sei anzuweisen, den bezeichneten Kontoauszug beizuziehen beziehungsweise zur Edition aufzufordern.",
-      classification: "evidence_taking",
-      supportedBy: linkedClaimIds(claims, "akteneinsicht|file access|kontoauszug|edition"),
+      text: "Es sei Akteneinsicht in die vollständigen Verfahrensakten zu gewähren.",
+      classification: "file_access",
+      supportedBy: linkedClaimIds(claims, "akteneinsicht|file access"),
+    });
+  }
+  if (documentEdition.length > 0) {
+    // El objeto exacto de la edicion se conserva textualmente: no se infiere ningun documento.
+    const originals = documentEdition.map((index) => objectives[index]).join(" | ");
+    pushRequest({
+      objectiveIndexes: documentEdition,
+      kind: "Beweisantrag",
+      text: `Es sei die Edition der bezeichneten Urkunden anzuordnen [Gegenstand gemäss Antrag: ${originals}].`,
+      classification: "document_edition",
+      supportedBy: linkedClaimIds(claims, "\\bedition\\b|editionsbegehren"),
+    });
+  }
+  if (bankStatement.length > 0) {
+    const originals = bankStatement.map((index) => objectives[index]).join(" | ");
+    pushRequest({
+      objectiveIndexes: bankStatement,
+      kind: "Beweisantrag",
+      text: `Der bezeichnete Kontoauszug sei beizuziehen beziehungsweise zur Edition einzufordern [Gegenstand gemäss Antrag: ${originals}].`,
+      classification: "bank_statement",
+      supportedBy: linkedClaimIds(claims, "kontoauszug|bank statement"),
     });
   }
   if (costs.length > 0) {
@@ -1746,6 +1781,7 @@ export function validateDraft(params: {
   readonly rebuttal?: ReturnType<typeof buildRebuttalMatrix>;
   readonly tone?: ToneProfile;
   readonly languageProfile?: SwissLegalLanguageProfile;
+  readonly quoteCheck?: DraftQuoteCheck;
 }) {
   const requirements = params.requirements ?? determineProceduralRequirements(params.input);
   const requests = params.requests ?? buildRechtsbegehren(params.input);
@@ -1833,11 +1869,33 @@ export function validateDraft(params: {
     invented_data: containsForbiddenInventedPattern(params.cleanDocument) ? "failed" : "passed",
     human_review_required: "warning",
     costs: costsStatus.status,
+    quotes: params.quoteCheck?.status ?? "not_applicable",
   };
+  if (
+    params.quoteCheck &&
+    params.quoteCheck.status !== "passed" &&
+    params.quoteCheck.status !== "not_applicable"
+  ) {
+    warnings.add(
+      params.quoteCheck.status === "failed" ? "quotes_altered_or_not_found" : "quotes_not_verified",
+    );
+  }
   const readyForFiling = !Object.entries(checks).some(
     ([field, status]) =>
       field === "human_review_required" ||
       status === "failed" ||
+      // Verificaciones esenciales: pretensiones, citas, base legal, pruebas y vigencia
+      // temporal no pueden quedar en advertencia o sin verificar.
+      ([
+        "requests",
+        "legal_basis",
+        "citations",
+        "evidence",
+        "temporal_applicability",
+        "costs",
+      ].includes(field) &&
+        status !== "passed" &&
+        status !== "not_applicable") ||
       ([
         "jurisdiction",
         "territorial_jurisdiction",
@@ -1859,7 +1917,13 @@ export function validateDraft(params: {
         status === "not_verified"),
   );
   const severities = classifyDraftingWarnings([...warnings], checks);
-  return { checks, readyForFiling, warnings: [...warnings], severities };
+  return {
+    checks,
+    readyForFiling,
+    warnings: [...warnings],
+    severities,
+    quoteVerification: params.quoteCheck ?? null,
+  };
 }
 
 function classifyDraftingWarnings(
@@ -1930,11 +1994,18 @@ function containsForbiddenInventedPattern(cleanDocument: string): boolean {
 
 export function reviewSwissLegalDocument(
   input: DraftingCaseInput & { readonly cleanDocument: string },
+  quoteCheck?: DraftQuoteCheck,
 ) {
   const requirements = determineProceduralRequirements(input);
-  const validation = validateDraft({ cleanDocument: input.cleanDocument, input, requirements });
+  const validation = validateDraft({
+    cleanDocument: input.cleanDocument,
+    input,
+    requirements,
+    ...(quoteCheck ? { quoteCheck } : {}),
+  });
   return {
     legal_drafting_check: validation.checks,
+    quoteVerification: validation.quoteVerification,
     readyForFiling: validation.readyForFiling,
     warnings: validation.warnings,
     suggestedCorrections: [

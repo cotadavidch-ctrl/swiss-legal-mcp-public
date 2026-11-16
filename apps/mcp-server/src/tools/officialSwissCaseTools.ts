@@ -144,6 +144,43 @@ export function registerOfficialSwissCaseTools(tools: ToolRegistry): void {
     strictInput: true,
     requiredProviderIds: [],
     handler: async (input) => {
+      // Si el llamador aporta un candidato, hay que COMPARAR ese candidato con la referencia
+      // pedida. Antes, con `requested_reference` se ignoraba el candidato y se devolvia la
+      // identidad almacenada de la propia referencia (cualquier candidato salia verificado).
+      const referenceToCheck = input.requested_reference ?? input.case_reference;
+      const hasCandidateInput = Boolean(input.candidate_reference ?? input.candidate_url);
+      const hasStoredIdentifier = Boolean(input.resolution_id ?? input.document_id);
+      if (hasCandidateInput && !hasStoredIdentifier && referenceToCheck) {
+        const normalizedRequested = normalizeSwissCaseReference(referenceToCheck);
+        const candidateUrl = input.candidate_url ?? input.candidate_reference!;
+        return verifySwissCaseIdentity({
+          normalized: normalizedRequested,
+          candidate: {
+            candidate_id: "manual-candidate",
+            source: input.official ? "manual_official" : "manual_secondary",
+            source_url: candidateUrl,
+            canonical_url: candidateUrl,
+            official: input.official,
+            court: input.candidate_court_family,
+            court_family: input.candidate_court_family,
+            canton: null,
+            reference: input.candidate_reference ?? null,
+            decision_date: input.candidate_date ?? null,
+            chamber: input.candidate_chamber ?? null,
+            language: null,
+            title: input.candidate_reference ?? null,
+            mime_type: "text/html",
+            content_kind: "unknown",
+            score: 0,
+            matched_features: [],
+            mismatched_features: [],
+            missing_features: [],
+            selection_reason: "manual identity verification input",
+            rejected_reason: null,
+          },
+          strict: input.strict_identity_match,
+        });
+      }
       if (
         input.resolution_id ||
         input.document_id ||

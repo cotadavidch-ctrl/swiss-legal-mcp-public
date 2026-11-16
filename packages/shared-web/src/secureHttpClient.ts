@@ -67,8 +67,35 @@ function isValidUtf8(bytes: Uint8Array): boolean {
  */
 function isAlreadyDecodedContent(bytes: Uint8Array, contentType: string | null): boolean {
   if (bytes.byteLength === 0) return true;
-  if (contentType?.toLowerCase().includes("pdf")) return startsWithPdfMagic(bytes);
-  return isValidUtf8(bytes);
+  const type = contentType?.toLowerCase() ?? "";
+  if (type.includes("pdf")) return startsWithPdfMagic(bytes);
+  if (isValidUtf8(bytes)) return true;
+  // Texto en una codificacion de un byte (p. ej. windows-1252, tipico del HTML exportado desde
+  // Word, como silgeneve.ch): no es UTF-8 valido pero tampoco es un payload comprimido.
+  return isTextualType(type) && looksLikePlainText(bytes);
+}
+
+function isTextualType(type: string): boolean {
+  return /^text\/|[/+](?:xml|json|html|xhtml)\b/.test(type);
+}
+
+/**
+ * Heuristica conservadora de "esto es texto plano, no datos comprimidos": no empieza con la firma
+ * gzip (0x1f 0x8b; un gzip real siempre la lleva), y la muestra inicial no contiene bytes nulos y
+ * tiene menos de un 1 % de caracteres de control (salvo tab/LF/CR/FF). Los datos comprimidos o
+ * aleatorios incumplen esto de forma practicamente segura.
+ */
+function looksLikePlainText(bytes: Uint8Array): boolean {
+  if (bytes.byteLength >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b) return false;
+  const sample = bytes.subarray(0, Math.min(bytes.byteLength, 4096));
+  let control = 0;
+  for (const byte of sample) {
+    if (byte === 0x00) return false;
+    if (byte < 0x20 && byte !== 0x09 && byte !== 0x0a && byte !== 0x0d && byte !== 0x0c) {
+      control += 1;
+    }
+  }
+  return control / sample.byteLength < 0.01;
 }
 
 export interface SecureHttpClientConfig {

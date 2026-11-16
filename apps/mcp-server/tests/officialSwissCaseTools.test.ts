@@ -2829,7 +2829,22 @@ describe("official Swiss case source comparison, cache and legal use", () => {
       requested_reference: "9C_999/2026",
     });
     expect(identity.circular_verification_detected).toBe(true);
-    expect(identity.status).toBe("identity_mismatch");
+    // Sin discrepancia real no hay "mismatch": el estado verdadero es no verificable.
+    expect(identity.status).toBe("identity_not_verifiable");
+    expect(identity.mismatched_fields).toEqual([]);
+    expect(identity.official_identity_verified).toBe(false);
+    expect(identity.requires_human_review).toBe(true);
+  });
+
+  it("strict: falta de sala sin discrepancias no se presenta como identity_mismatch (FIND-04)", () => {
+    const result = verifySwissCaseIdentity({
+      normalized: normalizeSwissCaseReference("9C_999/2026"),
+      candidate: candidate({}),
+      strict: true,
+    });
+    expect(result.mismatched_fields).toEqual([]);
+    expect(result.status).not.toBe("identity_mismatch");
+    expect(result.official_identity_verified).toBe(false);
   });
 
   it("compares persisted official and secondary documents by document IDs", async () => {

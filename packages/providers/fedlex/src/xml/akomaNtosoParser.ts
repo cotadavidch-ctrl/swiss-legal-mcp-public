@@ -61,7 +61,76 @@ const parser = new XMLParser({
     ["article", "paragraph", "item", "section", "chapter", "subdivision", "p"].includes(tagName),
 });
 
+/**
+ * Segunda lectura que CONSERVA EL ORDEN de nodos mixtos (texto + <sup>/<ref>/<i>...). El arbol
+ * de `parser` agrupa por nombre de etiqueta y pierde la posicion relativa de un <sup> dentro de
+ * su parrafo (art. 336c CO salia con "bis c. f" en lugar de "c bis."). Solo se usa para el texto.
+ */
+const orderedParser = new XMLParser({
+  ignoreAttributes: false,
+  attributeNamePrefix: "@_",
+  textNodeName: "#text",
+  parseTagValue: false,
+  parseAttributeValue: false,
+  trimValues: false,
+  preserveOrder: true,
+  processEntities: { enabled: false },
+  htmlEntities: false,
+});
+
 export type XmlNode = Record<string, unknown>;
+
+/** Arbol ordenado asociado a cada arbol devuelto por parseAkomaNtosoXml. */
+const orderedTrees = new WeakMap<object, unknown>();
+
+/** Etiquetas en linea: su texto se concatena sin anadir separador. El resto separa con espacio. */
+const INLINE_TAGS = new Set(["sup", "sub", "i", "b", "u", "em", "strong", "ref", "a", "span", "inline"]);
+
+type OrderedNode = Record<string, unknown>;
+
+function findOrderedByEId(nodes: unknown, eId: string): OrderedNode[] | undefined {
+  if (!Array.isArray(nodes)) return undefined;
+  for (const item of nodes as OrderedNode[]) {
+    const attrs = item[":@"] as Record<string, string> | undefined;
+    const tag = Object.keys(item).find((k) => k !== ":@");
+    if (!tag) continue;
+    if (attrs?.["@_eId"] === eId) return [item];
+    const found = findOrderedByEId(item[tag], eId);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+function collectOrdered(nodes: unknown, out: string[]): void {
+  if (!Array.isArray(nodes)) return;
+  for (const item of nodes as OrderedNode[]) {
+    const tag = Object.keys(item).find((k) => k !== ":@");
+    if (!tag) continue;
+    if (tag === "#text") {
+      const raw = item["#text"];
+      out.push(typeof raw === "string" ? raw : "");
+    } else if (tag === NOTE_ELEMENT) {
+      continue;
+    } else if (INLINE_TAGS.has(tag)) {
+      collectOrdered(item[tag], out);
+    } else {
+      out.push(" ");
+      collectOrdered(item[tag], out);
+      out.push(" ");
+    }
+  }
+}
+
+/** Texto de un articulo en orden documental, o undefined si no hay arbol ordenado disponible. */
+function orderedArticleText(tree: XmlNode, eId: string): string | undefined {
+  const ordered = orderedTrees.get(tree);
+  if (!ordered) return undefined;
+  const node = findOrderedByEId(ordered, eId);
+  if (!node) return undefined;
+  const out: string[] = [];
+  collectOrdered(node, out);
+  return out.join("").replace(/\s+/g, " ").trim();
+}
 
 function assertWellFormed(xml: string): void {
   const result = XMLValidator.validate(xml);
@@ -77,7 +146,9 @@ export function parseAkomaNtosoXml(xml: string, maxBytes: number = MAX_XML_BYTES
   assertSize(xml, maxBytes);
   assertNoDoctype(xml);
   assertWellFormed(xml);
-  return parser.parse(xml) as XmlNode;
+  const tree = parser.parse(xml) as XmlNode;
+  orderedTrees.set(tree, orderedParser.parse(xml));
+  return tree;
 }
 
 /**
@@ -114,25 +185,57 @@ export function extractText(node: unknown): string {
   return parts.join(" ").replace(/\s+/g, " ").trim();
 }
 
-function collectText(node: unknown, parts: string[]): void {
+/** Elemento Akoma Ntoso de las notas editoriales (historia de modificaciones, remisiones). */
+const NOTE_ELEMENT = "authorialNote";
+
+function collectText(node: unknown, parts: string[], includeNotes = false): void {
   if (typeof node === "string") {
     const trimmed = node.trim();
     if (trimmed.length > 0) parts.push(trimmed);
     return;
   }
   if (Array.isArray(node)) {
-    for (const item of node) collectText(item, parts);
+    for (const item of node) collectText(item, parts, includeNotes);
     return;
   }
   if (node !== null && typeof node === "object") {
     for (const [key, value] of Object.entries(node as XmlNode)) {
+      if (key === NOTE_ELEMENT && !includeNotes) continue;
       if (key === "#text") {
-        collectText(value, parts);
+        collectText(value, parts, includeNotes);
       } else if (!key.startsWith("@_")) {
-        collectText(value, parts);
+        collectText(value, parts, includeNotes);
       }
     }
   }
+}
+
+/** Recoge el texto de cada nota editorial (<authorialNote>) por separado, en orden. */
+export function extractEditorialNotes(node: unknown): string[] {
+  const notes: string[] = [];
+  const visit = (n: unknown): void => {
+    if (Array.isArray(n)) {
+      for (const item of n) visit(item);
+      return;
+    }
+    if (n !== null && typeof n === "object") {
+      for (const [key, value] of Object.entries(n as XmlNode)) {
+        if (key === NOTE_ELEMENT) {
+          const items = Array.isArray(value) ? value : [value];
+          for (const item of items) {
+            const parts: string[] = [];
+            collectText(item, parts, true);
+            const text = parts.join(" ").replace(/\s+/g, " ").trim();
+            if (text.length > 0) notes.push(text);
+          }
+        } else if (!key.startsWith("@_")) {
+          visit(value);
+        }
+      }
+    }
+  };
+  visit(node);
+  return notes;
 }
 
 /**
@@ -154,7 +257,10 @@ export interface AkomaNtosoArticle {
   readonly eId: string;
   readonly articleNumber: string;
   readonly heading?: string;
+  /** Texto normativo SIN las notas editoriales. */
   readonly fullText: string;
+  /** Notas editoriales de Fedlex (historia de modificaciones), separadas del texto normativo. */
+  readonly editorialNotes: readonly string[];
 }
 
 /** Localiza un articulo real por numero y devuelve su texto literal completo (heading + cuerpo). */
@@ -171,7 +277,8 @@ export function findArticleByNumber(
     eId,
     articleNumber,
     ...(heading && heading.length > 0 ? { heading } : {}),
-    fullText: extractText(node),
+    fullText: orderedArticleText(tree, eId) ?? extractText(node),
+    editorialNotes: extractEditorialNotes(node),
   };
 }
 
@@ -202,7 +309,8 @@ export function findArticleInAnnex(
     eId: matchedEId,
     articleNumber,
     ...(heading && heading.length > 0 ? { heading } : {}),
-    fullText: extractText(node),
+    fullText: orderedArticleText(tree, matchedEId) ?? extractText(node),
+    editorialNotes: extractEditorialNotes(node),
   };
 }
 

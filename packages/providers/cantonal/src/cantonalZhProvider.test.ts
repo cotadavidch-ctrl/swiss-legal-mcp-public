@@ -131,6 +131,19 @@ describe("CantonalZhProvider", () => {
     expect(outcome.sourceAttribution.officialCharacter).toBe("official");
   });
 
+  it("HTTP 204 del portal (sin coincidencias) es cero resultados, no caida del proveedor", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response(null, { status: 204 })),
+    );
+    const provider = new CantonalZhProvider(baseConfig());
+    const outcome = await provider.searchDocuments({ title: "TituloQueNoExiste" });
+
+    expect(outcome.results).toHaveLength(0);
+    expect(outcome.pagination.numberOfResults).toBe(0);
+    expect(outcome.coverageWarnings.join(" ")).toContain("HTTP 204");
+  });
+
   it("search() delega en searchDocuments usando el texto como titulo", async () => {
     vi.stubGlobal(
       "fetch",

@@ -102,7 +102,7 @@ function describeFamily(family: ResolvedCantonalProvider["family"], cantonCode: 
       capabilities: {
         search: true,
         fullText: true,
-        articleLevel: false,
+        articleLevel: true,
         versioning: "ninguno" as const,
       },
       coverage: {
@@ -113,7 +113,7 @@ function describeFamily(family: ResolvedCantonalProvider["family"], cantonCode: 
       limitations: [
         `${cantonName} publica libros adicionales reales (modificaciones futuras, concordatos, legislacion comunal) no cubiertos en esta fase`,
         "no hay busqueda de texto libre real: filtra en memoria sobre el catalogo del libro (el motor de busqueda real del sitio no es reproducible via GET simple)",
-        "no hay extraccion de articulo individual: el HTML exportado desde Word no tiene una estructura de articulo verificada de forma fiable",
+        "el articulo se extrae del texto completo por su cabecera 'Art. N' (secuencia monotona); si no se localiza se rechaza, no se aproxima. Verificado sobre la LGD de Geneve; un texto con cabeceras atipicas puede no extraerse",
       ],
       officialSource: code === "GE" ? "https://silgeneve.ch" : "https://rsn.ne.ch",
     };
@@ -346,7 +346,7 @@ export function registerCantonalTools(tools: ToolRegistry): void {
   tools.register({
     name: "get_cantonal_article",
     description:
-      "Recupera un articulo concreto (version vigente) de una ley cantonal. Requiere 'canton' + 'systematicNumber' + 'articleNumber'. Solo soportado en los 19 cantones LexWork (arbol de contenido real con granularidad de articulo) -- NO soportado en Zurich, Schwyz, Geneve/Neuchatel ni Jura (ninguna de esas fuentes expone una estructura de articulo verificada en esta fase; use get_cantonal_law para el documento completo).",
+      "Recupera un articulo concreto (version vigente) de una ley cantonal. Requiere 'canton' + 'systematicNumber' + 'articleNumber'. Soportado en los 19 cantones LexWork (arbol de contenido real) y en Geneve/Neuchatel (extraccion por cabecera 'Art. N' del texto completo; use el identificador de ley tal como lo devuelve search_cantonal_legislation, p. ej. rsg_l1_20) -- NO soportado en Zurich, Schwyz ni Jura (ninguna de esas fuentes expone una estructura de articulo verificada en esta fase; use get_cantonal_law para el documento completo).",
     inputSchema: {
       canton: z.string().length(2),
       systematicNumber: z.string().min(1),
@@ -356,14 +356,13 @@ export function registerCantonalTools(tools: ToolRegistry): void {
     requireAnyProviderIds: LEXWORK_CANTONS.map((d) => `cantonal-${d.cantonCode.toLowerCase()}`),
     handler: async (input, context) => {
       const resolved = resolveCantonalProvider(context.providers, input.canton);
-      if (resolved.family === "lexwork") {
+      if (resolved.family === "lexwork" || resolved.family === "sil") {
         const doc = await resolved.provider.getArticle(input.systematicNumber, input.articleNumber);
         return envelope(input.canton, resolved, doc);
       }
-      const familyLabel: Record<Exclude<ResolvedCantonalProvider["family"], "lexwork">, string> = {
+      const familyLabel: Record<Exclude<ResolvedCantonalProvider["family"], "lexwork" | "sil">, string> = {
         "zh-own": "ZH-Lex",
         sz: "la coleccion sistematica de Schwyz",
-        sil: "la plataforma SIL (Geneve/Neuchatel)",
         ju: "el portal de Jura",
       };
       throw new NotFoundError(

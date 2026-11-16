@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NotFoundError, ProviderUnavailableError } from "@swiss-legal-mcp/core";
-import { CantonalSilProvider } from "./cantonalSilProvider.js";
+import { CantonalSilProvider, extractSilArticle } from "./cantonalSilProvider.js";
 import type { CantonalSilConfig } from "./config.js";
 
 const fixturesDir = path.resolve(
@@ -144,10 +144,23 @@ describe("CantonalSilProvider (Genève)", () => {
     await expect(provider.getDocument("cantonal-ge:no_existe")).rejects.toThrow(NotFoundError);
   });
 
-  it("getArticle no está soportado: lanza explícitamente sin aproximar", async () => {
+  it("getArticle rechaza (no aproxima) cuando el texto no tiene cabeceras 'Art. N' fiables", async () => {
     installMockFetch();
     const provider = new CantonalSilProvider(geConfig());
-    await expect(provider.getArticle("rsg_a1_01", "1")).rejects.toThrow(ProviderUnavailableError);
+    await expect(provider.getArticle("rsg_a1_01", "1")).rejects.toThrow(NotFoundError);
+  });
+
+  it("extractSilArticle: usa la secuencia de cabeceras y no confunde citas intercaladas ni la tabla final", () => {
+    const law =
+      "Art. 42 Responsabilidad civil y penal El cumplimiento no exime. Section 2 Sanctions Art. 43 Amendes 1 Est passible d’une amende administrative de 200 francs à 400 000 francs tout contrevenant : a) à la présente loi; 2 Les amendes peuvent être infligées tant à des personnes morales qu'à des personnes physiques. Art. 44 Procès-verbaux 1 Les contraventions sont constatées par les agents. Art. 45 Emoluments 1 Le département perçoit un émolument. Section 4 Voies de recours Art. 49(1) Qualité pour recourir La commune. RSG Intitulé Date d'adoption L 1 20 L sur la gestion des déchets";
+    const a43 = extractSilArticle(law, "43");
+    expect(a43?.text).toContain("200 francs à 400 000 francs");
+    expect(a43?.text).not.toContain("Art. 44");
+    const a45 = extractSilArticle(law, "45");
+    expect(a45?.text).toContain("Emoluments");
+    expect(a45?.text).not.toContain("Section 4");
+    expect(extractSilArticle(law, "49")?.text).not.toContain("RSG Intitulé");
+    expect(extractSilArticle(law, "7")).toBeNull();
   });
 
   it("healthCheck es exitoso cuando el catálogo real responde", async () => {

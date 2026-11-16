@@ -301,7 +301,9 @@ describe("verify_legal_citation (proveedores falsos, sin red)", () => {
       expect(structured.recommended_use.use).toBe("discovery_only");
     }
     expect(entscheidsuche.searchByCaseNumber).toHaveBeenCalledWith({ caseNumber: "BGE 142 III 1" });
-  });
+    // Nota: verify_legal_citation hace una resolucion oficial EN VIVO (liveOfficialCaseResolution)
+    // aunque los proveedores sean falsos; por eso puede superar los 5 s por defecto.
+  }, 30_000);
 
   it.each([
     ["1B_352/2019", "2019-10-30", "Strafverfahren; Kontosperre"],

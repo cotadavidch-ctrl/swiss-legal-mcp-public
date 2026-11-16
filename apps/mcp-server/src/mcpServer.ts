@@ -13,6 +13,8 @@ export interface CreateMcpServerOptions {
   readonly name: string;
   readonly version: string;
   readonly tools: ToolRegistry;
+  /** Advertise all defined tools; execution still enforces provider health and policy. */
+  readonly exposeUnavailableTools?: boolean;
   readonly providers: ProviderRegistry;
   readonly legislationProviders?: LegislationProviderRegistry;
   readonly logger: Logger;
@@ -37,7 +39,7 @@ export function createMcpServer(options: CreateMcpServerOptions): McpServer {
 
   for (const toolInfo of options.tools.list()) {
     const registerDespiteBlocked = toolInfo.blockedByPolicy !== undefined;
-    if (toolInfo.status !== "active" && !registerDespiteBlocked) {
+    if (toolInfo.status !== "active" && !registerDespiteBlocked && !options.exposeUnavailableTools) {
       options.logger.info(
         { tool: toolInfo.name, status: toolInfo.status, reason: toolInfo.reason },
         "Herramienta no registrada: sin proveedor activo",

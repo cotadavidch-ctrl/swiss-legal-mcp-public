@@ -30,7 +30,7 @@ function fakeDoc(
     title: `Documento ${id}`,
     fullText,
     provenance: {
-      sourceUrl: `https://fedlex.example.test/${id}`,
+      sourceUrl: `https://fedlex.data.admin.ch/eli/cc/test/${id}`,
       retrievedAt: "2026-07-28T00:00:00.000Z",
       contentHash: "a".repeat(64),
       officialCharacter: "official" as const,
@@ -108,8 +108,14 @@ describe("compare_legal_documents (proveedores falsos, sin red)", () => {
     const result = await client.callTool({
       name: "compare_legal_documents",
       arguments: {
-        documentA: { provider: "fedlex", documentId: "https://fedlex.example.test/220-v1" },
-        documentB: { provider: "fedlex", documentId: "https://fedlex.example.test/220-v2" },
+        documentA: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220-v1",
+        },
+        documentB: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220-v2",
+        },
       },
     });
     expect(result.isError).toBeFalsy();
@@ -140,8 +146,14 @@ describe("compare_legal_documents (proveedores falsos, sin red)", () => {
     const result = await client.callTool({
       name: "compare_legal_documents",
       arguments: {
-        documentA: { provider: "fedlex", documentId: "https://fedlex.example.test/220" },
-        documentB: { provider: "fedlex", documentId: "https://fedlex.example.test/220" },
+        documentA: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220",
+        },
+        documentB: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220",
+        },
       },
     });
     const structured = result.structuredContent as {
@@ -161,8 +173,14 @@ describe("compare_legal_documents (proveedores falsos, sin red)", () => {
     const result = await client.callTool({
       name: "compare_legal_documents",
       arguments: {
-        documentA: { provider: "fedlex", documentId: "https://fedlex.example.test/220-a" },
-        documentB: { provider: "fedlex", documentId: "https://fedlex.example.test/220-b" },
+        documentA: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220-a",
+        },
+        documentB: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220-b",
+        },
       },
     });
     const structured = result.structuredContent as { status: string; warnings: string[] };
@@ -175,7 +193,10 @@ describe("compare_legal_documents (proveedores falsos, sin red)", () => {
     const result = await client.callTool({
       name: "compare_legal_documents",
       arguments: {
-        documentA: { provider: "fedlex", documentId: "https://fedlex.example.test/220" },
+        documentA: {
+          provider: "fedlex",
+          documentId: "https://fedlex.data.admin.ch/eli/cc/test/220",
+        },
         documentB: { provider: "seco", documentId: "seco:1" },
       },
     });

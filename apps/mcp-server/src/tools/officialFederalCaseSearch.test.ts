@@ -53,7 +53,7 @@ function fixedTransport(response: FederalSearchHttpResponse): FederalSearchHttpT
 }
 
 describe("discoverFederalCaseCandidates - federal-exclusive source", () => {
-  it("only ever queries search.bger.ch, ignoring any attempt to point elsewhere", async () => {
+  it("only ever queries the official Federal Supreme Court host www.bger.ch (search.bger.ch is behind an anti-bot challenge), ignoring any attempt to point elsewhere", async () => {
     const requestedUrls: string[] = [];
     setFederalCaseSearchHttpTransportForTests(async (url) => {
       requestedUrls.push(url);
@@ -61,7 +61,7 @@ describe("discoverFederalCaseCandidates - federal-exclusive source", () => {
     });
     await discoverFederalCaseCandidates({ query: "test" });
     expect(requestedUrls).toHaveLength(1);
-    expect(new URL(requestedUrls[0]!).hostname).toBe("search.bger.ch");
+    expect(new URL(requestedUrls[0]!).hostname).toBe("www.bger.ch");
   });
 
   it("forces official_only true and warns if the caller requested official_only=false", async () => {
