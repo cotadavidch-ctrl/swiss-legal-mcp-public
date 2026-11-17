@@ -470,16 +470,13 @@ describe("Herramientas cantonales canton-aware (Fase 5B, proveedores falsos, sin
     expect(ju.getDocument).toHaveBeenCalledWith("cantonal-ju:20002:36641");
   });
 
-  it("get_cantonal_article devuelve error explicito para SZ/SIL/JU (ninguno soporta articulo individual)", async () => {
+  it("get_cantonal_article devuelve error explicito para SZ y JU (sin articulo individual); GE/SIL delega en getArticle", async () => {
     const sz = makeFakeSzProvider();
     const ge = makeFakeSilProvider("GE");
     const ju = makeFakeJuProvider();
     const client = await buildServer([makeFakeLexWorkProvider(), sz, ge, ju]);
 
-    for (const [canton, provider] of [
-      ["SZ", sz],
-      ["GE", ge],
-    ] as const) {
+    for (const [canton, provider] of [["SZ", sz]] as const) {
       const result = await client.callTool({
         name: "get_cantonal_article",
         arguments: { canton, systematicNumber: "100.100", articleNumber: "1" },
@@ -489,6 +486,12 @@ describe("Herramientas cantonales canton-aware (Fase 5B, proveedores falsos, sin
       const text = (result.content as Array<{ text?: string }>)[0]?.text ?? "";
       expect(text).toContain(canton);
     }
+
+    await client.callTool({
+      name: "get_cantonal_article",
+      arguments: { canton: "GE", systematicNumber: "rsg_l1_20", articleNumber: "43" },
+    });
+    expect(ge.getArticle).toHaveBeenCalledWith("rsg_l1_20", "43");
 
     const juResult = await client.callTool({
       name: "get_cantonal_article",

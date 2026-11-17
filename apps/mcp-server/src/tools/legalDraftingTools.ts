@@ -10,6 +10,7 @@ import {
   reviewSwissLegalDocument,
   validateDraft,
 } from "./legalDraftingRules.js";
+import { checkDraftQuotesForReadiness } from "./quoteTools.js";
 
 const documentTypeSchema = z.enum([
   "Einsprache",
@@ -395,7 +396,10 @@ export function registerLegalDraftingTools(tools: ToolRegistry): void {
     },
     strictInput: true,
     requiredProviderIds: [],
-    handler: async (input) => validateDraft({ cleanDocument: input.cleanDocument, input }),
+    handler: async (input, context) => {
+      const quoteCheck = await checkDraftQuotesForReadiness(input.cleanDocument, context);
+      return validateDraft({ cleanDocument: input.cleanDocument, input, quoteCheck });
+    },
   });
 
   tools.register({
@@ -408,7 +412,10 @@ export function registerLegalDraftingTools(tools: ToolRegistry): void {
     },
     strictInput: true,
     requiredProviderIds: [],
-    handler: async (input) => reviewSwissLegalDocument(input),
+    handler: async (input, context) => {
+      const quoteCheck = await checkDraftQuotesForReadiness(input.cleanDocument, context);
+      return reviewSwissLegalDocument(input, quoteCheck);
+    },
   });
 
   tools.register({
@@ -418,6 +425,18 @@ export function registerLegalDraftingTools(tools: ToolRegistry): void {
     inputSchema: baseDraftingInputSchema,
     strictInput: true,
     requiredProviderIds: [],
-    handler: async (input) => buildSwissLegalDraft(input),
+    handler: async (input, context) => {
+      const draft = buildSwissLegalDraft(input);
+      // Las citas entrecomilladas del borrador generado se verifican contra la fuente oficial:
+      // un borrador con citas alteradas, ausentes o sin verificar nunca queda listo para presentar.
+      const quoteCheck = await checkDraftQuotesForReadiness(draft.cleanDocument, context);
+      const blocks = quoteCheck.status !== "passed" && quoteCheck.status !== "not_applicable";
+      return {
+        ...draft,
+        readyForFiling: draft.readyForFiling && !blocks,
+        legal_drafting_check: { ...draft.legal_drafting_check, quotes: quoteCheck.status },
+        quoteVerification: quoteCheck,
+      };
+    },
   });
 }

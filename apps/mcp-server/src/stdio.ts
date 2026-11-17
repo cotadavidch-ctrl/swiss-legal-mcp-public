@@ -17,8 +17,10 @@ async function main(): Promise<void> {
 
   const server: McpServer = createMcpServer({
     name: "swiss-legal-mcp",
-    version: "1.0.0",
+    version: "1.1.0",
     tools,
+    // Stable discovery: unavailable sources remain visible, but calls are still blocked.
+    exposeUnavailableTools: true,
     providers,
     legislationProviders,
     logger,

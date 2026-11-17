@@ -364,6 +364,117 @@ describe("FedlexProvider (SPARQL mockeado con datos reales, sin red)", () => {
     );
   });
 
+  describe("RS compartido por una obra derogada y otra vigente", () => {
+    const OLD = "https://fedlex.data.admin.ch/eli/cc/60/271_269_275";
+    const CURRENT = "https://fedlex.data.admin.ch/eli/cc/2006/218";
+    const clientFor = (opts: { failOld?: boolean; oldHasVersion?: boolean }) => {
+      const base = makeFakeClient();
+      return {
+        ...base,
+        query: vi.fn(async (sparql: string, key?: string, signal?: AbortSignal) => {
+          if (sparql.includes('"173.110"')) {
+            return jsonResult(["work"], [{ work: uri(OLD) }, { work: uri(CURRENT) }]);
+          }
+          if (sparql.includes("jolux:isMemberOf") && sparql.includes(`<${OLD}>`)) {
+            if (opts.failOld) throw new Error("SPARQL no responde");
+            return jsonResult(
+              ["consolidation", "dateApplicability", "dateEndApplicability"],
+              opts.oldHasVersion
+                ? [
+                    {
+                      consolidation: uri(`${OLD}/19430101`),
+                      dateApplicability: typedLiteral("1943-01-01"),
+                    },
+                  ]
+                : [],
+            );
+          }
+          if (sparql.includes("jolux:isMemberOf") && sparql.includes(`<${CURRENT}>`)) {
+            return jsonResult(
+              ["consolidation", "dateApplicability", "dateEndApplicability"],
+              [
+                {
+                  consolidation: uri(`${CURRENT}/20070101`),
+                  dateApplicability: typedLiteral("2007-01-01"),
+                },
+              ],
+            );
+          }
+          return base.query(sparql, key, signal);
+        }),
+      } as unknown as FedlexSparqlClient;
+    };
+
+    it("descarta la obra sin version aplicable y elige la vigente", async () => {
+      const provider = providerWith(clientFor({ oldHasVersion: false }));
+      const resolve = (
+        provider as unknown as {
+          resolveWorkEli: (ref: { systematicNumber: string; language: "de" }) => Promise<string>;
+        }
+      ).resolveWorkEli.bind(provider);
+      await expect(resolve({ systematicNumber: "173.110", language: "de" })).resolves.toBe(CURRENT);
+    });
+
+    it("si ambas tienen version aplicable sigue siendo ambiguo", async () => {
+      const provider = providerWith(clientFor({ oldHasVersion: true }));
+      await expect(
+        provider.getLaw({ systematicNumber: "173.110", language: "de", date: "2026-01-01" }),
+      ).rejects.toThrow(AmbiguousCitationError);
+    });
+
+    it("si falla la consulta de una candidata no se descarta nada (sigue ambiguo)", async () => {
+      const provider = providerWith(clientFor({ failOld: true }));
+      await expect(
+        provider.getLaw({ systematicNumber: "173.110", language: "de" }),
+      ).rejects.toThrow(AmbiguousCitationError);
+    });
+  });
+
+  describe("isHistorical: una version en vigor cuyo fin esta programado NO es historica", () => {
+    const WORK = "https://fedlex.data.admin.ch/eli/cc/27/317_321_377";
+    const clientWith = (rows: Array<{ from: string; to?: string }>) => {
+      const base = makeFakeClient();
+      return {
+        ...base,
+        query: vi.fn(async (sparql: string, key?: string, signal?: AbortSignal) => {
+          if (
+            sparql.includes("jolux:isMemberOf") &&
+            sparql.includes(`<${CONSTITUTION_WORK_ELI}>`)
+          ) {
+            return jsonResult(
+              ["consolidation", "dateApplicability", "dateEndApplicability"],
+              rows.map((r) => ({
+                consolidation: uri(`${WORK}/${r.from.replaceAll("-", "")}`),
+                dateApplicability: typedLiteral(r.from),
+                ...(r.to ? { dateEndApplicability: typedLiteral(r.to) } : {}),
+              })),
+            );
+          }
+          return base.query(sparql, key, signal);
+        }),
+      } as unknown as FedlexSparqlClient;
+    };
+    const run = (rows: Array<{ from: string; to?: string }>, date?: string) =>
+      providerWith(clientWith(rows)).getLaw({
+        systematicNumber: "101",
+        language: "de",
+        ...(date ? { date } : {}),
+      });
+
+    it("version vigente hoy con fin FUTURO (ya hay otra consolidada): isHistorical=false", async () => {
+      const doc = await run([{ from: "2000-01-01", to: "2099-06-30" }, { from: "2099-07-01" }]);
+      expect(doc.legislation?.version.isHistorical).toBe(false);
+    });
+
+    it("version cuyo fin ya paso: isHistorical=true", async () => {
+      const doc = await run(
+        [{ from: "2000-01-01", to: "2001-06-09" }, { from: "2001-06-10" }],
+        "2000-06-01",
+      );
+      expect(doc.legislation?.version.isHistorical).toBe(true);
+    });
+  });
+
   it("healthCheck devuelve healthy cuando el ASK responde", async () => {
     const provider = providerWith(makeFakeClient());
     const health = await provider.healthCheck();

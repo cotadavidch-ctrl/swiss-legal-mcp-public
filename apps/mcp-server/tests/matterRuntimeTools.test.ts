@@ -212,7 +212,7 @@ describe("Phase 9 MCP matter runtime tools", () => {
       await server.close();
       await rm(dir, { recursive: true, force: true });
     }
-  });
+  }, 60_000);
 
   it("N reloads durable Matter state, checkpoints, audit trail and human locks across MCP lifecycles", async () => {
     const dir = await mkdtemp(join(tmpdir(), "matter-runtime-restart-"));

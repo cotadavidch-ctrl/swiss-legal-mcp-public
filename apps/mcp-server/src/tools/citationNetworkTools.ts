@@ -9,6 +9,7 @@ import {
 } from "@swiss-legal-mcp/citations";
 import type { EntscheidsucheMcpProvider } from "@swiss-legal-mcp/provider-entscheidsuche";
 import { resolveCantonalProvider } from "./cantonalTools.js";
+import { normalizeFedlexIdentifier } from "./fedlexIdentifier.js";
 import { makeCantonalCitationLookup, makeCaseLawCitationLookup } from "./citationSupport.js";
 
 const languageSchema = z.enum(["de", "fr", "it"]);
@@ -67,13 +68,13 @@ async function fetchSourceDocument(
     if (ref.provider === "fedlex") {
       const fedlex = context.legislationProviders?.get("fedlex");
       if (!fedlex) return { ok: false, message: "Proveedor 'fedlex' no disponible." };
-      const language = (ref.language as "de" | "fr" | "it" | undefined) ?? "de";
-      const document = ref.articleNumber
-        ? await fedlex.getArticle({
-            lawRef: { eli: ref.documentId, language },
-            articleNumber: ref.articleNumber,
-          })
-        : await fedlex.getLaw({ eli: ref.documentId, language });
+      const id = normalizeFedlexIdentifier(ref.documentId);
+      const language = (ref.language as "de" | "fr" | "it" | undefined) ?? id.language ?? "de";
+      const articleNumber = ref.articleNumber ?? id.articleNumber;
+      const lawRef = { eli: id.workEli, language, ...(id.date ? { date: id.date } : {}) };
+      const document = articleNumber
+        ? await fedlex.getArticle({ lawRef, articleNumber })
+        : await fedlex.getLaw(lawRef);
       return { ok: true, document };
     }
     if (ref.provider === "cantonal") {

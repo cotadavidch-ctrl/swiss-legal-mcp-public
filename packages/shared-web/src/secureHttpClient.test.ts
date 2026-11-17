@@ -238,6 +238,45 @@ describe("SecureHttpClient", () => {
     expect(new TextDecoder().decode(result.bytes)).toBe("<html>contenido ya plano brotli</html>");
   });
 
+  it("acepta HTML ya descomprimido en windows-1252 (no UTF-8) aunque el header anuncie gzip", async () => {
+    // silgeneve.ch: HTML exportado desde Word en windows-1252; Node ya lo descomprimio.
+    const html = Buffer.from(
+      "<html><body>Loi sur l aide sociale \u00e9t\u00e9</body></html>",
+      "latin1",
+    );
+    installQueuedFetch([
+      new Response(new Uint8Array(html), {
+        status: 200,
+        headers: { "content-encoding": "gzip", "content-type": "text/html" },
+      }),
+    ]);
+    const client = new SecureHttpClient(baseConfig());
+    const result = await client.get("https://example.test/latin1");
+    expect(result.bytes.byteLength).toBe(html.byteLength);
+  });
+
+  it("rechaza texto 'plano' que en realidad empieza con la firma gzip pero esta corrupto", async () => {
+    installQueuedFetch([
+      new Response(new Uint8Array([0x1f, 0x8b, 0x08, 0x00, 0xe9, 0xe9, 0xe9, 0xe9, 0x41, 0x42]), {
+        status: 200,
+        headers: { "content-encoding": "gzip", "content-type": "text/html" },
+      }),
+    ]);
+    const client = new SecureHttpClient(baseConfig());
+    await expect(client.get("https://example.test/gzip-corrupto")).rejects.toThrow(ParseError);
+  });
+
+  it("rechaza un binario con bytes nulos aunque el tipo sea text/html", async () => {
+    installQueuedFetch([
+      new Response(new Uint8Array([0xe9, 0xe9, 0x00, 0x13, 0x7f, 0xe9, 0x00, 0x01]), {
+        status: 200,
+        headers: { "content-encoding": "br", "content-type": "text/html" },
+      }),
+    ]);
+    const client = new SecureHttpClient(baseConfig());
+    await expect(client.get("https://example.test/binario")).rejects.toThrow(ParseError);
+  });
+
   it("descomprime deflate valido dentro de limites", async () => {
     installQueuedFetch([
       new Response(deflateSync("hola deflate"), {

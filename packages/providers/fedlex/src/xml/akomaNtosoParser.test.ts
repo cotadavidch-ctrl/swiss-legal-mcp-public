@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   articleNumberToEId,
+  extractEditorialNotes,
   extractText,
   findArticleByNumber,
   findArticleInAnnex,
@@ -183,5 +184,43 @@ describe("articleNumberToEId", () => {
 
   it("rechaza un formato no reconocido", () => {
     expect(() => articleNumberToEId("cuarenta y uno")).toThrow(XmlSecurityError);
+  });
+});
+
+describe("notas editoriales (authorialNote)", () => {
+  const tree = {
+    article: {
+      "@_eId": "art_336_c",
+      heading: "Sperrfrist",
+      paragraph: [
+        {
+          "@_eId": "art_336_c/para_1",
+          content: {
+            p: [
+              "Nach Ablauf der Probezeit darf der Arbeitgeber nicht kündigen:",
+              {
+                authorialNote: {
+                  "@_marker": "1",
+                  p: "Fassung gemäss Ziff. I des BG vom 18. März 1988, in Kraft seit 1. Jan. 1989",
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  };
+
+  it("el texto normativo NO incluye las notas editoriales", () => {
+    const text = extractText(tree.article);
+    expect(text).toContain("Nach Ablauf der Probezeit");
+    expect(text).not.toContain("Fassung gemäss");
+    expect(text).not.toContain("1988");
+  });
+
+  it("las notas se recogen por separado, sin perderlas", () => {
+    const notes = extractEditorialNotes(tree.article);
+    expect(notes).toHaveLength(1);
+    expect(notes[0]).toContain("Fassung gemäss Ziff. I des BG vom 18. März 1988");
   });
 });

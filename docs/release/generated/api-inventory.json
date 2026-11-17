@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-06T22:59:45.407Z",
+  "generatedAt": "2026-11-17T05:36:55.726Z",
   "packages": [
     {
       "path": "apps/admin-cli",
       "name": "@swiss-legal-mcp/admin-cli",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -40,7 +40,7 @@
     {
       "path": "apps/mcp-server",
       "name": "@swiss-legal-mcp/mcp-server",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./src/index.ts",
@@ -57,6 +57,9 @@
         "@swiss-legal-mcp/citations",
         "@swiss-legal-mcp/core",
         "@swiss-legal-mcp/documents",
+        "@swiss-legal-mcp/legal-drafting",
+        "@swiss-legal-mcp/legal-runtime",
+        "@swiss-legal-mcp/matter-store",
         "@swiss-legal-mcp/provider-bsv",
         "@swiss-legal-mcp/provider-cantonal",
         "@swiss-legal-mcp/provider-entscheidsuche",
@@ -85,7 +88,7 @@
     {
       "path": "",
       "name": "swiss-legal-mcp",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/stdio.js",
@@ -99,7 +102,9 @@
         "build",
         "build:package",
         "build:verify",
+        "canary:portal",
         "ci",
+        "deploy:local",
         "diagnose:official-case-pipeline",
         "eval:procedural-strategy",
         "format",
@@ -114,6 +119,7 @@
         "review:procedural-strategy",
         "sbom",
         "test",
+        "test:ailc-tools",
         "test:breach-detection",
         "test:claude-desktop",
         "test:coverage",
@@ -152,9 +158,32 @@
       ]
     },
     {
+      "path": "packages/chronology",
+      "name": "@swiss-legal-mcp/chronology",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
       "path": "packages/citations",
       "name": "@swiss-legal-mcp/citations",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -176,9 +205,33 @@
       ]
     },
     {
+      "path": "packages/contradiction-engine",
+      "name": "@swiss-legal-mcp/contradiction-engine",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/core",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
       "path": "packages/core",
       "name": "@swiss-legal-mcp/core",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -202,7 +255,7 @@
     {
       "path": "packages/documents",
       "name": "@swiss-legal-mcp/documents",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -222,9 +275,193 @@
       ]
     },
     {
+      "path": "packages/legal-drafting",
+      "name": "@swiss-legal-mcp/legal-drafting",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/contradiction-engine",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/legal-intelligence",
+        "@swiss-legal-mcp/litigation-intelligence",
+        "@swiss-legal-mcp/procedural-intelligence",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/legal-intelligence",
+      "name": "@swiss-legal-mcp/legal-intelligence",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/contradiction-engine",
+        "@swiss-legal-mcp/core",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/legal-language",
+      "name": "@swiss-legal-mcp/legal-language",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/legal-runtime",
+      "name": "@swiss-legal-mcp/legal-runtime",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/contradiction-engine",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/legal-drafting",
+        "@swiss-legal-mcp/legal-intelligence",
+        "@swiss-legal-mcp/legal-language",
+        "@swiss-legal-mcp/litigation-intelligence",
+        "@swiss-legal-mcp/matter-store",
+        "@swiss-legal-mcp/procedural-intelligence",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/litigation-intelligence",
+      "name": "@swiss-legal-mcp/litigation-intelligence",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/contradiction-engine",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/legal-intelligence",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/matter-store",
+      "name": "@swiss-legal-mcp/matter-store",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/legal-drafting",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
+      "path": "packages/procedural-intelligence",
+      "name": "@swiss-legal-mcp/procedural-intelligence",
+      "version": "1.1.0",
+      "private": true,
+      "license": "Apache-2.0",
+      "main": "./dist/index.js",
+      "types": "./src/index.ts",
+      "bin": null,
+      "scripts": [
+        "build",
+        "typecheck"
+      ],
+      "dependencies": [
+        "@swiss-legal-mcp/chronology",
+        "@swiss-legal-mcp/contradiction-engine",
+        "@swiss-legal-mcp/core",
+        "@swiss-legal-mcp/legal-intelligence",
+        "@swiss-legal-mcp/litigation-intelligence",
+        "zod"
+      ],
+      "devDependencies": [
+        "@types/node",
+        "typescript",
+        "vitest"
+      ]
+    },
+    {
       "path": "packages/providers/bsv",
       "name": "@swiss-legal-mcp/provider-bsv",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -252,7 +489,7 @@
     {
       "path": "packages/providers/cantonal",
       "name": "@swiss-legal-mcp/provider-cantonal",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -278,7 +515,7 @@
     {
       "path": "packages/providers/entscheidsuche",
       "name": "@swiss-legal-mcp/provider-entscheidsuche",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -304,7 +541,7 @@
     {
       "path": "packages/providers/estv",
       "name": "@swiss-legal-mcp/provider-estv",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -330,7 +567,7 @@
     {
       "path": "packages/providers/fedlex",
       "name": "@swiss-legal-mcp/provider-fedlex",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -356,7 +593,7 @@
     {
       "path": "packages/providers/fixture",
       "name": "@swiss-legal-mcp/provider-fixture",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -381,7 +618,7 @@
     {
       "path": "packages/providers/seco",
       "name": "@swiss-legal-mcp/provider-seco",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -407,7 +644,7 @@
     {
       "path": "packages/providers/shab",
       "name": "@swiss-legal-mcp/provider-shab",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -432,7 +669,7 @@
     {
       "path": "packages/search",
       "name": "@swiss-legal-mcp/search",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -450,7 +687,7 @@
     {
       "path": "packages/shared",
       "name": "@swiss-legal-mcp/shared",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -473,7 +710,7 @@
     {
       "path": "packages/shared-web",
       "name": "@swiss-legal-mcp/shared-web",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -500,7 +737,7 @@
     {
       "path": "packages/updater",
       "name": "@swiss-legal-mcp/updater",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -525,6 +762,10 @@
   ],
   "publicExports": [
     {
+      "file": "packages/chronology/src/index.ts",
+      "export": "export {"
+    },
+    {
       "file": "packages/citations/src/index.ts",
       "export": "export {"
     },
@@ -538,6 +779,18 @@
     },
     {
       "file": "packages/citations/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/contradiction-engine/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/core/src/index.ts",
       "export": "export {"
     },
     {
@@ -567,6 +820,34 @@
     {
       "file": "packages/documents/src/index.ts",
       "export": "export { computeContentHash } from \"./contentHash.js\";"
+    },
+    {
+      "file": "packages/legal-drafting/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/legal-intelligence/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/legal-language/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/legal-runtime/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/litigation-intelligence/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/matter-store/src/index.ts",
+      "export": "export {"
+    },
+    {
+      "file": "packages/procedural-intelligence/src/index.ts",
+      "export": "export {"
     },
     {
       "file": "packages/providers/bsv/src/index.ts",
@@ -797,6 +1078,10 @@
       "export": "export {"
     },
     {
+      "file": "packages/shared/src/index.ts",
+      "export": "export {"
+    },
+    {
       "file": "packages/shared-web/src/index.ts",
       "export": "export { sha256Hex } from \"./contentHash.js\";"
     },
@@ -859,12 +1144,28 @@
   ],
   "mcpTools": [
     {
+      "name": "analyze_decision_document",
+      "file": "apps/mcp-server/src/tools/decisionDocumentTools.ts"
+    },
+    {
+      "name": "analyze_matter",
+      "file": "apps/mcp-server/src/tools/matterRuntimeTools.ts"
+    },
+    {
+      "name": "analyze_opposing_submission",
+      "file": "apps/mcp-server/src/tools/opposingSubmissionTools.ts"
+    },
+    {
       "name": "analyze_procedural_strategy",
       "file": "apps/mcp-server/src/tools/proceduralStrategyTools.ts"
     },
     {
       "name": "analyze_swiss_legal_positions",
       "file": "apps/mcp-server/src/tools/multiroleLegalAnalysisTools.ts"
+    },
+    {
+      "name": "audit_legal_draft",
+      "file": "apps/mcp-server/src/tools/matterRuntimeTools.ts"
     },
     {
       "name": "batch_resolve_official_cases",
@@ -893,6 +1194,14 @@
     {
       "name": "compare_swiss_case_sources",
       "file": "apps/mcp-server/src/tools/officialSwissCaseTools.ts"
+    },
+    {
+      "name": "compute_legal_deadline",
+      "file": "apps/mcp-server/src/tools/deadlineTools.ts"
+    },
+    {
+      "name": "create_or_update_matter",
+      "file": "apps/mcp-server/src/tools/matterRuntimeTools.ts"
     },
     {
       "name": "draft_swiss_legal_document",
@@ -955,6 +1264,10 @@
       "file": "apps/mcp-server/src/tools/fedlexTools.ts"
     },
     {
+      "name": "get_matter_state",
+      "file": "apps/mcp-server/src/tools/matterRuntimeTools.ts"
+    },
+    {
       "name": "get_official_document",
       "file": "apps/mcp-server/src/tools/administrativeTools.ts"
     },
@@ -965,6 +1278,14 @@
     {
       "name": "identify_applicable_version",
       "file": "apps/mcp-server/src/tools/citationTools.ts"
+    },
+    {
+      "name": "prepare_decision_review",
+      "file": "apps/mcp-server/src/tools/decisionReviewTools.ts"
+    },
+    {
+      "name": "research_legal_issues",
+      "file": "apps/mcp-server/src/tools/matterRuntimeTools.ts"
     },
     {
       "name": "resolve_official_swiss_case",
@@ -1033,6 +1354,14 @@
     {
       "name": "verify_legal_citation",
       "file": "apps/mcp-server/src/tools/citationTools.ts"
+    },
+    {
+      "name": "verify_quoted_passages",
+      "file": "apps/mcp-server/src/tools/quoteTools.ts"
+    },
+    {
+      "name": "verify_review_findings",
+      "file": "apps/mcp-server/src/tools/decisionReviewTools.ts"
     },
     {
       "name": "verify_swiss_case_identity",

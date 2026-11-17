@@ -192,7 +192,27 @@ export class FedlexProvider implements LegislationProvider {
         );
       }
       if (works.length > 1) {
-        throw new AmbiguousCitationError(ref.systematicNumber, works);
+        // Varios actos pueden compartir RS/SR porque uno fue derogado o sustituido (p. ej. BGG
+        // 173.110, ZPO 272). Se descartan SOLO los que no tienen ninguna version aplicable en la
+        // fecha pedida; si queda exactamente uno, es el vigente. Si falla la consulta de
+        // cualquier candidato no se descarta nada (se mantiene la ambiguedad).
+        const target = ref.date ?? todayIso();
+        const applicable: string[] = [];
+        let lookupFailed = false;
+        for (const work of works) {
+          try {
+            const consolidations = await this.getConsolidations(work, signal);
+            if (this.resolveConsolidationForDate(consolidations, target)) applicable.push(work);
+          } catch {
+            lookupFailed = true;
+            applicable.push(work);
+          }
+        }
+        if (applicable.length === 1 && !lookupFailed) return applicable[0]!;
+        throw new AmbiguousCitationError(
+          ref.systematicNumber,
+          applicable.length > 0 ? applicable : works,
+        );
       }
       return works[0]!;
     }
@@ -233,8 +253,11 @@ export class FedlexProvider implements LegislationProvider {
         (!c.dateEndApplicability || c.dateEndApplicability >= targetDate),
     );
     if (!match) return undefined;
-    const isCurrent = match === sorted[sorted.length - 1] && !match.dateEndApplicability;
-    return { ...match, isHistorical: !isCurrent };
+    // Historica = su vigencia ya TERMINO (fecha de fin anterior a hoy). Una version en vigor hoy
+    // cuyo fin esta programado en el futuro (porque ya hay otra consolidada) NO es historica.
+    const ended =
+      match.dateEndApplicability !== undefined && match.dateEndApplicability < todayIso();
+    return { ...match, isHistorical: ended };
   }
 
   private async getManifestation(
@@ -393,6 +416,9 @@ export class FedlexProvider implements LegislationProvider {
         articleNumber: ref.articleNumber,
         ...(article.heading !== undefined ? { articleHeading: article.heading } : {}),
         articleText: article.fullText,
+        ...(article.editorialNotes.length > 0
+          ? { rawMetadata: { editorialNotes: article.editorialNotes } }
+          : {}),
         retrievedAt: new Date().toISOString(),
       });
 

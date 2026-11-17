@@ -258,12 +258,32 @@ export class CantonalSilProvider implements LegalSourceProvider {
     return doc;
   }
 
-  /** No soportado: el HTML exportado desde Word no tiene estructura de artículo verificada de forma fiable. */
-  async getArticle(docKey: string, _articleNumber: string): Promise<never> {
-    throw new ProviderUnavailableError(
-      this.id,
-      `${this.config.cantonName} no soporta recuperación de artículo individual: la ley '${docKey}' solo está disponible como documento completo (HTML exportado desde Word, sin estructura de artículo verificada de forma fiable en la auditoría). Use get_cantonal_law para el documento completo.`,
-    );
+  /**
+   * Extrae un articulo del texto completo de la ley por su cabecera "Art. N". Solo se acepta la
+   * secuencia de cabeceras monotona (se descartan citas intercaladas) y el texto se entrega LITERAL;
+   * si no se localiza la cabecera, se rechaza en lugar de adivinar.
+   */
+  async getArticle(docKey: string, articleNumber: string): Promise<NormalizedDocument> {
+    const doc = await this.getDocument(`${this.id}:${docKey}`);
+    const found = extractSilArticle(doc.fullText ?? "", articleNumber);
+    if (!found) {
+      throw new NotFoundError(
+        `${this.id}:${docKey}`,
+        `No se localizó el artículo '${articleNumber}' en la ley '${docKey}' de ${this.config.cantonName} (cabecera 'Art. N' no encontrada en la secuencia).`,
+      );
+    }
+    return parseNormalizedDocument({
+      ...doc,
+      id: `${this.id}:${docKey}#Art.${found.number}`,
+      title: `${doc.title} -- Art. ${found.number}`,
+      fullText: found.text,
+      rawMetadata: {
+        ...(doc.rawMetadata ?? {}),
+        articleNumber: found.number,
+        extraction: "heading-sequence",
+      },
+      contentNature: "literal",
+    });
   }
 
   // ---- LegalSourceProvider ----
@@ -342,4 +362,41 @@ function decodeSilHtml(bytes: Uint8Array): string {
   } catch {
     return new TextDecoder("windows-1252").decode(bytes);
   }
+}
+
+/** "11a" -> { n: 11, suffix: "A" } para ordenar cabeceras en secuencia. */
+function articleKey(raw: string): { n: number; suffix: string } {
+  const m = /^(\d+)([A-Za-z]?)$/.exec(raw.trim());
+  return { n: Number(m?.[1] ?? 0), suffix: (m?.[2] ?? "").toUpperCase() };
+}
+
+/** Extrae el texto literal de un articulo de una ley SIL (Ginebra, Neuchatel) por su cabecera. */
+export function extractSilArticle(
+  fullText: string,
+  articleNumber: string,
+): { number: string; text: string } | null {
+  const want = articleKey(articleNumber);
+  if (want.n === 0) return null;
+  const tableAt = fullText.search(/\sRSG\s+Intitulé\s|\sRSN\s+Intitulé\s/);
+  const body = tableAt > 0 ? fullText.slice(0, tableAt) : fullText;
+  const headings: { number: string; start: number; key: { n: number; suffix: string } }[] = [];
+  let last = { n: 0, suffix: "" };
+  for (const m of body.matchAll(/(?:^|\s)(Art\.\s*(\d+[A-Za-z]?))(?:\(\d+\))?\s/g)) {
+    const key = articleKey(m[2]!);
+    const after = key.n > last.n || (key.n === last.n && key.suffix > last.suffix);
+    if (!after) continue;
+    headings.push({
+      number: `${key.n}${key.suffix}`,
+      start: m.index + (m[0].startsWith(" ") ? 1 : 0),
+      key,
+    });
+    last = key;
+  }
+  const i = headings.findIndex((h) => h.key.n === want.n && h.key.suffix === want.suffix);
+  if (i < 0) return null;
+  const end = headings[i + 1]?.start ?? body.length;
+  let text = body.slice(headings[i]!.start, end).trim();
+  const chapterAt = text.search(/\s(?:Chapitre|Section|Titre)\s+[IVX\d]/);
+  if (chapterAt > 0) text = text.slice(0, chapterAt).trim();
+  return { number: headings[i]!.number, text };
 }

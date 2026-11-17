@@ -29,13 +29,13 @@ export function extractFullText(root: LexWorkContentNode, lang: string): string 
     .join("\n\n");
 }
 
-/** Normaliza "Art.&nbsp;1", "Art. 1", "1" al mismo identificador comparable ("1"). */
+/** Normaliza "Art.&nbsp;1", "Art. 1", "§ 1", "1" al mismo identificador comparable ("1"). */
 export function normalizeArticleNumber(raw: string): string {
   return raw
     .replace(/&nbsp;/gi, " ")
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, "")
-    .replace(/^art\.?/i, "")
+    .replace(/^(?:art\.?|§)/i, "")
     .toLowerCase();
 }
 

@@ -2,6 +2,7 @@ import { z } from "zod";
 import { NotFoundError, type ToolContext } from "@swiss-legal-mcp/core";
 import type { NormalizedDocument } from "@swiss-legal-mcp/documents";
 import { resolveCantonalProvider } from "./cantonalTools.js";
+import { normalizeFedlexIdentifier } from "./fedlexIdentifier.js";
 
 export const legalDocumentLanguageSchema = z.enum(["de", "fr", "it"]);
 export const legalDocumentProviderSchema = z.enum([
@@ -49,15 +50,19 @@ export async function resolveLegalDocument(
           reason: "unsupported",
         };
       }
-      const language = ref.language ?? "de";
-      if (ref.articleNumber) {
-        const document = await fedlex.getArticle({
-          lawRef: { eli: ref.documentId, language },
-          articleNumber: ref.articleNumber,
-        });
+      const id = normalizeFedlexIdentifier(ref.documentId);
+      const language = ref.language ?? id.language ?? "de";
+      const articleNumber = ref.articleNumber ?? id.articleNumber;
+      const lawRef = {
+        eli: id.workEli,
+        language,
+        ...(id.date ? { date: id.date } : {}),
+      };
+      if (articleNumber) {
+        const document = await fedlex.getArticle({ lawRef, articleNumber });
         return { ok: true, document, method: "structured_article" };
       }
-      const document = await fedlex.getLaw({ eli: ref.documentId, language });
+      const document = await fedlex.getLaw(lawRef);
       return { ok: true, document, method: "whole_document" };
     }
 

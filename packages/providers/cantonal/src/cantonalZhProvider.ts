@@ -211,9 +211,34 @@ export class CantonalZhProvider implements LegalSourceProvider {
     if (params.title) url.searchParams.set("enactmentTitle", params.title);
     url.searchParams.set("page", String(params.page ?? 1));
 
-    const response = await this.httpClient.get(url.toString(), {
-      expectedContentTypeIncludes: ["application/json"],
-    });
+    let response: Awaited<ReturnType<typeof this.httpClient.get>>;
+    try {
+      response = await this.httpClient.get(url.toString(), {
+        expectedContentTypeIncludes: ["application/json"],
+      });
+    } catch (error) {
+      // Verificado en vivo (2026-11-12): el servlet de ZH responde HTTP 204 sin cuerpo cuando
+      // el filtro no tiene coincidencias. Es "cero resultados", no una caida del proveedor.
+      if (error instanceof Error && /\bHTTP 204 descargando\b/.test(error.message)) {
+        return {
+          results: [],
+          pagination: {
+            page: params.page ?? 1,
+            numberOfResults: 0,
+            numberOfResultPages: 0,
+            moreSearchResultsThanAllowed: false,
+          },
+          sourceAttribution: buildOfficialSourceAttribution(
+            url.toString(),
+            new Date().toISOString(),
+          ),
+          coverageWarnings: [
+            "El portal de ZH respondio sin contenido (HTTP 204): ninguna ley vigente coincide con el filtro. Solo cubre la Loseblattsammlung y filtra por subcadena de titulo; pruebe con otro termino del titulo.",
+          ],
+        };
+      }
+      throw error;
+    }
     const json: unknown = JSON.parse(new TextDecoder().decode(response.bytes));
     const parsed = zhSearchResponseSchema.parse(json);
 

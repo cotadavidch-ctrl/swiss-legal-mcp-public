@@ -5,7 +5,6 @@ import { describe, expect, it } from "vitest";
 import { createLogger, loadEnv } from "@swiss-legal-mcp/shared";
 import { createMcpServer } from "../src/mcpServer.js";
 import { buildRegistries } from "../src/registry.js";
-import { LegislationProviderRegistry, ProviderRegistry, ToolRegistry } from "@swiss-legal-mcp/core";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 
@@ -132,7 +131,6 @@ describe("Matter E2E with real provider", () => {
       const matterId = (
         createResult.structuredContent as { structured_result: { matter_id: string } }
       ).structured_result.matter_id;
-      console.log(`Matter ID: ${matterId}`);
 
       // Step 1.5: get matter state BEFORE research
       const stateBeforeResult = await client.callTool({
@@ -151,7 +149,6 @@ describe("Matter E2E with real provider", () => {
           versionBeforeResearch = versionCountBeforeMatch[1];
         }
       }
-      console.log(`State before research: ${stateBeforeText}`);
 
       // Step 2: research_legal_issues with REAL provider
       const researchResult = await client.callTool({
@@ -159,7 +156,6 @@ describe("Matter E2E with real provider", () => {
         arguments: { matter_id: matterId, language: "DE" },
       });
       expect(researchResult.isError).toBeFalsy();
-      console.log(`Research result: ${JSON.stringify(researchResult.structuredContent)}`);
 
       // Step 3: destroy/recreate runtime/store (close and reopen)
       await client.close();
@@ -184,7 +180,6 @@ describe("Matter E2E with real provider", () => {
           versionAfterResearch = versionCountAfterMatch[1];
         }
       }
-      console.log(`State after research: ${stateAfterText}`);
 
       // Step 5: analyze_matter
       const analyzeResult = await client.callTool({
@@ -192,7 +187,6 @@ describe("Matter E2E with real provider", () => {
         arguments: { matter_id: matterId, stage: "CHRONOLOGY" },
       });
       expect(analyzeResult.isError).toBeFalsy();
-      console.log(`Analyze result: ${JSON.stringify(analyzeResult.structuredContent)}`);
 
       // Step 6: audit_legal_draft
       const auditResult = await client.callTool({
@@ -216,7 +210,6 @@ describe("Matter E2E with real provider", () => {
         },
       });
       expect(auditResult.isError).toBeFalsy();
-      console.log(`Audit result: ${JSON.stringify(auditResult.structuredContent)}`);
 
       // Output summary to stderr so it appears in vitest output
       const summary = {
@@ -247,5 +240,6 @@ describe("Matter E2E with real provider", () => {
       if (server) await server.close();
       await rm(dir, { recursive: true, force: true });
     }
-  });
+    // Usa proveedores reales (red): el limite por defecto de 5 s falla bajo carga.
+  }, 60_000);
 });
