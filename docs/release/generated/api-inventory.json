@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T19:00:47.214Z",
+  "generatedAt": "2026-11-17T05:36:55.726Z",
   "packages": [
     {
       "path": "apps/admin-cli",
       "name": "@swiss-legal-mcp/admin-cli",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -40,7 +40,7 @@
     {
       "path": "apps/mcp-server",
       "name": "@swiss-legal-mcp/mcp-server",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./src/index.ts",
@@ -88,7 +88,7 @@
     {
       "path": "",
       "name": "swiss-legal-mcp",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/stdio.js",
@@ -160,7 +160,7 @@
     {
       "path": "packages/chronology",
       "name": "@swiss-legal-mcp/chronology",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -183,7 +183,7 @@
     {
       "path": "packages/citations",
       "name": "@swiss-legal-mcp/citations",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -207,7 +207,7 @@
     {
       "path": "packages/contradiction-engine",
       "name": "@swiss-legal-mcp/contradiction-engine",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -231,7 +231,7 @@
     {
       "path": "packages/core",
       "name": "@swiss-legal-mcp/core",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -255,7 +255,7 @@
     {
       "path": "packages/documents",
       "name": "@swiss-legal-mcp/documents",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -277,7 +277,7 @@
     {
       "path": "packages/legal-drafting",
       "name": "@swiss-legal-mcp/legal-drafting",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -305,7 +305,7 @@
     {
       "path": "packages/legal-intelligence",
       "name": "@swiss-legal-mcp/legal-intelligence",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -330,7 +330,7 @@
     {
       "path": "packages/legal-language",
       "name": "@swiss-legal-mcp/legal-language",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -353,7 +353,7 @@
     {
       "path": "packages/legal-runtime",
       "name": "@swiss-legal-mcp/legal-runtime",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -384,7 +384,7 @@
     {
       "path": "packages/litigation-intelligence",
       "name": "@swiss-legal-mcp/litigation-intelligence",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -410,7 +410,7 @@
     {
       "path": "packages/matter-store",
       "name": "@swiss-legal-mcp/matter-store",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -434,7 +434,7 @@
     {
       "path": "packages/procedural-intelligence",
       "name": "@swiss-legal-mcp/procedural-intelligence",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -461,7 +461,7 @@
     {
       "path": "packages/providers/bsv",
       "name": "@swiss-legal-mcp/provider-bsv",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -489,7 +489,7 @@
     {
       "path": "packages/providers/cantonal",
       "name": "@swiss-legal-mcp/provider-cantonal",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -515,7 +515,7 @@
     {
       "path": "packages/providers/entscheidsuche",
       "name": "@swiss-legal-mcp/provider-entscheidsuche",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -541,7 +541,7 @@
     {
       "path": "packages/providers/estv",
       "name": "@swiss-legal-mcp/provider-estv",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -567,7 +567,7 @@
     {
       "path": "packages/providers/fedlex",
       "name": "@swiss-legal-mcp/provider-fedlex",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -593,7 +593,7 @@
     {
       "path": "packages/providers/fixture",
       "name": "@swiss-legal-mcp/provider-fixture",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -618,7 +618,7 @@
     {
       "path": "packages/providers/seco",
       "name": "@swiss-legal-mcp/provider-seco",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -644,7 +644,7 @@
     {
       "path": "packages/providers/shab",
       "name": "@swiss-legal-mcp/provider-shab",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -669,7 +669,7 @@
     {
       "path": "packages/search",
       "name": "@swiss-legal-mcp/search",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -687,7 +687,7 @@
     {
       "path": "packages/shared",
       "name": "@swiss-legal-mcp/shared",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -710,7 +710,7 @@
     {
       "path": "packages/shared-web",
       "name": "@swiss-legal-mcp/shared-web",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",
@@ -737,7 +737,7 @@
     {
       "path": "packages/updater",
       "name": "@swiss-legal-mcp/updater",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "private": true,
       "license": "Apache-2.0",
       "main": "./dist/index.js",

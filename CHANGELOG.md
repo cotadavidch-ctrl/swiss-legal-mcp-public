@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 - 2026-11-17
+
+- Version bump to 1.1.0 across all workspace packages and the MCP server identity.
+- Downloads from official sources (including `*.bger.ch` through the pinned TLS chain) now enforce a byte limit WHILE receiving: a declared `Content-Length` above the limit is rejected immediately and a stream without it is cut as soon as it exceeds the limit (previously the whole body was buffered before the size check).
 
 - `consistencyFindings` adds `arithmeticMismatches` (a stated surplus, shortfall or balance that no subtraction of two or three of the amounts cited in the decision produces), compares values with a maximum stated in the same sentence, and counts months and number words ("sechs Monate"). Review flags now recognise "kann nicht angefochten werden" and "non è dato alcun ricorso" as excluded appeal, "il n'est pas nécessaire de vérifier" as refused examination, and a relative mentioned in one sentence with presumed support in the next; the origin-based-treatment entry also fires on Italian wording. Found by running the tool on three self-written decisions (DE, FR, IT) with planted defects.
 

@@ -65,6 +65,7 @@ async function asyncFetch(
     for (let hop = 0; ; hop += 1) {
       response = await tlsAwareFetch(currentUrl, {
         method: options.method ?? "GET",
+        maxBytes: maxOfficialCaseResponseBytes,
         ...(options.body === undefined ? {} : { body: options.body }),
         headers: { "Accept-Encoding": "identity", ...options.headers },
         signal: controller.signal,
@@ -167,6 +168,7 @@ async function liveHttpFetch(
     try {
       response = await tlsAwareFetch(currentUrl, {
         method: options.method ?? "GET",
+        maxBytes: maxOfficialCaseResponseBytes,
         signal: controller.signal,
         headers: {
           Accept: "text/html,application/pdf,text/plain;q=0.9,*/*;q=0.1",

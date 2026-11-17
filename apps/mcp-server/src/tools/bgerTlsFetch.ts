@@ -56,6 +56,56 @@ export interface TlsAwareInit {
   readonly headers?: Record<string, string>;
   readonly body?: string;
   readonly signal?: AbortSignal;
+  /** Maximo de bytes del cuerpo; se aplica DURANTE la descarga (por defecto 8 MB). */
+  readonly maxBytes?: number;
+}
+
+export const DEFAULT_MAX_RESPONSE_BYTES = 8_000_000;
+
+export class ResponseTooLargeError extends Error {
+  constructor() {
+    super("response_too_large");
+    this.name = "ResponseTooLargeError";
+  }
+}
+
+/** Presupuesto de bytes: se consume por trozos y falla en cuanto se supera, sin acumular de mas. */
+export function createByteBudget(max: number): (chunkBytes: number) => void {
+  let total = 0;
+  return (chunkBytes: number): void => {
+    total += chunkBytes;
+    if (total > max) throw new ResponseTooLargeError();
+  };
+}
+
+function declaredLength(headers: Headers): number {
+  const n = Number(headers.get("content-length") ?? "0");
+  return Number.isFinite(n) ? n : 0;
+}
+
+/** Envuelve el cuerpo de una respuesta fetch para que el flujo falle al superar el maximo. */
+function limitFetchBody(res: Response, max: number): Response {
+  if (declaredLength(res.headers) > max) {
+    void res.body?.cancel();
+    throw new ResponseTooLargeError();
+  }
+  if (!res.body) return res;
+  const consume = createByteBudget(max);
+  const limited = res.body.pipeThrough(
+    new TransformStream<Uint8Array, Uint8Array>({
+      transform(chunk, controller) {
+        try {
+          consume(chunk.byteLength);
+          controller.enqueue(chunk);
+        } catch (error) {
+          controller.error(error);
+        }
+      },
+    }),
+  );
+  const out = new Response(limited, { status: res.status, statusText: res.statusText, headers: res.headers });
+  Object.defineProperty(out, "url", { value: res.url });
+  return out;
 }
 
 /**
@@ -64,14 +114,16 @@ export interface TlsAwareInit {
  */
 export async function tlsAwareFetch(url: string, init: TlsAwareInit = {}): Promise<Response> {
   const parsed = new URL(url);
+  const maxBytes = init.maxBytes ?? DEFAULT_MAX_RESPONSE_BYTES;
   if (!isBgerHost(parsed.hostname)) {
-    return fetch(url, {
+    const res = await fetch(url, {
       method: init.method ?? "GET",
       redirect: "manual",
       ...(init.signal ? { signal: init.signal } : {}),
       ...(init.headers ? { headers: init.headers } : {}),
       ...(init.body === undefined ? {} : { body: init.body }),
     });
+    return limitFetchBody(res, maxBytes);
   }
   return new Promise<Response>((resolve, reject) => {
     const req = https.request(
@@ -84,8 +136,24 @@ export async function tlsAwareFetch(url: string, init: TlsAwareInit = {}): Promi
         ...(init.signal ? { signal: init.signal } : {}),
       },
       (res) => {
+        const declared = Number(res.headers["content-length"] ?? "0");
+        if (Number.isFinite(declared) && declared > maxBytes) {
+          res.destroy();
+          reject(new ResponseTooLargeError());
+          return;
+        }
+        const consume = createByteBudget(maxBytes);
         const chunks: Buffer[] = [];
-        res.on("data", (chunk: Buffer) => chunks.push(chunk));
+        res.on("data", (chunk: Buffer) => {
+          try {
+            consume(chunk.byteLength);
+            chunks.push(chunk);
+          } catch (error) {
+            chunks.length = 0;
+            res.destroy();
+            reject(error instanceof Error ? error : new ResponseTooLargeError());
+          }
+        });
         res.on("error", reject);
         res.on("end", () => {
           const headers = new Headers();

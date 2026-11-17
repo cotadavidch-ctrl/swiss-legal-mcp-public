@@ -251,6 +251,7 @@ async function liveFederalSearchFetch(url: string): Promise<FederalSearchHttpRes
       }
       response = await tlsAwareFetch(currentUrl, {
         method: "GET",
+        maxBytes: MAX_RESPONSE_BYTES,
         signal: controller.signal,
         headers: {
           Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.1",

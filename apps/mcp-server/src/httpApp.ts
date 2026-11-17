@@ -44,7 +44,7 @@ export interface HttpApp {
 export function createHttpApp(deps: HttpAppDeps): HttpApp {
   const mcpServer = createMcpServer({
     name: deps.serverName ?? "swiss-legal-mcp",
-    version: deps.serverVersion ?? "1.0.0",
+    version: deps.serverVersion ?? "1.1.0",
     tools: deps.tools,
     providers: deps.providers,
     ...(deps.legislationProviders !== undefined
