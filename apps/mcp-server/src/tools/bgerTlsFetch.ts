@@ -103,7 +103,11 @@ function limitFetchBody(res: Response, max: number): Response {
       },
     }),
   );
-  const out = new Response(limited, { status: res.status, statusText: res.statusText, headers: res.headers });
+  const out = new Response(limited, {
+    status: res.status,
+    statusText: res.statusText,
+    headers: res.headers,
+  });
   Object.defineProperty(out, "url", { value: res.url });
   return out;
 }

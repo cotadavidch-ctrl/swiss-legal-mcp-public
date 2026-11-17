@@ -392,7 +392,10 @@ describe("correcciones tras la auditoria de ChatGPT (EVAL-D1)", () => {
   });
 
   it("no senala meses ni garantias generales como 'terminos ausentes'", () => {
-    const out = termsNotInNorm(["Das Gesuch für Oktober bis Dezember wird abgewiesen."], "Art. 9 Schutz vor Willkür");
+    const out = termsNotInNorm(
+      ["Das Gesuch für Oktober bis Dezember wird abgewiesen."],
+      "Art. 9 Schutz vor Willkür",
+    );
     expect(out).not.toContain("Oktober");
     expect(out).not.toContain("Dezember");
   });
@@ -401,7 +404,9 @@ describe("correcciones tras la auditoria de ChatGPT (EVAL-D1)", () => {
     expect(cantonConflictWarning("nach § 14 SHG (LS 851.1)", "AR")).toMatch(/canton equivocado/i);
     expect(cantonConflictWarning("nach § 14 SHG (LS 851.1)", "ZH")).toBeNull();
     expect(cantonConflictWarning("nach Art. 9 BV", "AR")).toBeNull();
-    expect(cantonConflictWarning("nach § 14 SHG (LS 851.1)", undefined)).toMatch(/indique 'canton'/);
+    expect(cantonConflictWarning("nach § 14 SHG (LS 851.1)", undefined)).toMatch(
+      /indique 'canton'/,
+    );
   });
 });
 
@@ -452,14 +457,19 @@ describe("coherencia interna (texto propio, sin copiar casos de evaluacion)", ()
   });
 
   it("compara plazo y via del recurso con el ATSG solo si la resolucion cita ATSG o AVIG", () => {
-    const stmts = st("Einsprachen sind binnen zehn Tagen direkt beim Versicherungsgericht einzureichen.");
+    const stmts = st(
+      "Einsprachen sind binnen zehn Tagen direkt beim Versicherungsgericht einzureichen.",
+    );
     expect(findAppealIssues(stmts, "nach Art. 17 AVIG").map((x) => x.type)).toEqual([
       "appeal_period_mismatch",
       "appeal_authority_mismatch",
     ]);
     expect(findAppealIssues(stmts, "nach Art. 5 BV")).toEqual([]);
     expect(
-      findAppealIssues(st("Einsprache ist innert 30 Tagen bei der verfügenden Stelle zu erheben."), "ATSG"),
+      findAppealIssues(
+        st("Einsprache ist innert 30 Tagen bei der verfügenden Stelle zu erheben."),
+        "ATSG",
+      ),
     ).toEqual([]);
   });
 
@@ -486,7 +496,12 @@ describe("citas cantonales en frances (texto propio)", () => {
         verifyCitedNorms: false,
       },
     });
-    const sc = r.structuredContent as { keyFacts: { citedCantonalNormsNotVerifiable: { citation: string }[]; citedFederalNorms: unknown[] } };
+    const sc = r.structuredContent as {
+      keyFacts: {
+        citedCantonalNormsNotVerifiable: { citation: string }[];
+        citedFederalNorms: unknown[];
+      };
+    };
     const cits = sc.keyFacts.citedCantonalNormsNotVerifiable.map((c) => c.citation);
     expect(cits).toContain("Art. 12 LAB");
     expect(cits).toContain("Art. 7 LPA");
@@ -499,7 +514,9 @@ import { findDateTensions } from "../src/tools/decisionConsistency.js";
 describe("fechas en tension y relevancia de la norma", () => {
   it("detecta dos fechas contrapuestas en la misma frase", () => {
     const out = findDateTensions(
-      st("Das Ende wird einerseits mit 3. Mai 2026 bezeichnet, während die Übersicht den 9. Juni 2026 nennt."),
+      st(
+        "Das Ende wird einerseits mit 3. Mai 2026 bezeichnet, während die Übersicht den 9. Juni 2026 nennt.",
+      ),
     );
     expect(out.map((x) => x.type)).toContain("dates_in_tension");
   });
@@ -509,7 +526,9 @@ describe("fechas en tension y relevancia de la norma", () => {
       st("Le retrait du 2 mars 2026 faisait suite au constat du 10 mars 2026."),
     );
     expect(out.map((x) => x.type)).toContain("effect_before_cause");
-    expect(findDateTensions(st("Le retrait du 12 mars 2026 faisait suite au constat du 10 mars 2026."))).toEqual([]);
+    expect(
+      findDateTensions(st("Le retrait du 12 mars 2026 faisait suite au constat du 10 mars 2026.")),
+    ).toEqual([]);
   });
 
   it("detecta el fin de la relacion laboral con dos fechas distintas en frases separadas", () => {
@@ -532,7 +551,8 @@ describe("fechas en tension y relevancia de la norma", () => {
         text,
         findings: [
           {
-            quote: "Die Gesuchstellerin muss beweisen, dass ihr unter keinen Umständen Hilfe zufliessen könnte.",
+            quote:
+              "Die Gesuchstellerin muss beweisen, dass ihr unter keinen Umständen Hilfe zufliessen könnte.",
             claim: "Prueba negativa imposible",
             norms: ["Art. 9 BV"],
           },
@@ -549,11 +569,15 @@ describe("fechas en tension y relevancia de la norma", () => {
 describe("fechas: remisión al mismo hecho", () => {
   it("marca una orden fechada antes del hecho al que dice hacer seguimiento", () => {
     const out = findDateTensions(
-      st("La infraction a été constatée le 4 août 2026; l'ordre notifié le 29 juillet 2026 faisait suite au même constat."),
+      st(
+        "La infraction a été constatée le 4 août 2026; l'ordre notifié le 29 juillet 2026 faisait suite au même constat.",
+      ),
     );
     expect(out.map((x) => x.type)).toContain("effect_before_cause");
     const ok = findDateTensions(
-      st("La infraction a été constatée le 4 août 2026; l'ordre notifié le 9 août 2026 faisait suite au même constat."),
+      st(
+        "La infraction a été constatée le 4 août 2026; l'ordre notifié le 9 août 2026 faisait suite au même constat.",
+      ),
     );
     expect(ok).toEqual([]);
   });
@@ -562,14 +586,18 @@ describe("fechas: remisión al mismo hecho", () => {
 describe("entrada de notificacion", () => {
   it("se activa con 'solo se entrega a un tercero' y con 'ejecutada antes de la notificacion'", () => {
     expect(
-      activatedGrounds("Die Verfügung wird nur der Kasse zugestellt; eine Eröffnung an Herrn X ist nicht vorgesehen.").map((g) => g.id),
+      activatedGrounds(
+        "Die Verfügung wird nur der Kasse zugestellt; eine Eröffnung an Herrn X ist nicht vorgesehen.",
+      ).map((g) => g.id),
     ).toContain("decision-notification");
     expect(
-      activatedGrounds("La décision sera exécutée avant toute notification à la société.").map((g) => g.id),
+      activatedGrounds("La décision sera exécutée avant toute notification à la société.").map(
+        (g) => g.id,
+      ),
     ).toContain("decision-notification");
-    expect(activatedGrounds("Die Verfügung wird dem Gesuchsteller zugestellt.").map((g) => g.id)).not.toContain(
-      "decision-notification",
-    );
+    expect(
+      activatedGrounds("Die Verfügung wird dem Gesuchsteller zugestellt.").map((g) => g.id),
+    ).not.toContain("decision-notification");
   });
 });
 
@@ -589,7 +617,10 @@ describe("senal lexical en frances y clasificacion de la norma", () => {
 
   it("no senala terminos que la norma si contiene", () => {
     expect(
-      termsNotInNorm(["Est passible d'une amende administrative tout contrevenant à la présente loi."], ART43),
+      termsNotInNorm(
+        ["Est passible d'une amende administrative tout contrevenant à la présente loi."],
+        ART43,
+      ),
     ).toEqual([]);
   });
 
@@ -604,7 +635,8 @@ describe("senal lexical en frances y clasificacion de la norma", () => {
         findings: [
           {
             checklistId: "M3",
-            quote: "Le service considère comme aggravante la nationalité étrangère de l'associé gérant.",
+            quote:
+              "Le service considère comme aggravante la nationalité étrangère de l'associé gérant.",
             claim: "Discriminacion por nacionalidad",
             norms: ["Art. 8 Abs. 2 BV"],
           },
@@ -618,7 +650,10 @@ describe("senal lexical en frances y clasificacion de la norma", () => {
         verifyNorms: false,
       },
     });
-    const sc = r.structuredContent as { results: { normFit: string }[]; summary: { supportedOnlyByGeneralClauses: number } };
+    const sc = r.structuredContent as {
+      results: { normFit: string }[];
+      summary: { supportedOnlyByGeneralClauses: number };
+    };
     expect(sc.results[1]!.normFit).toBe("not_applicable");
     expect(sc.results[0]!.normFit).not.toBe("general_clause_only");
     expect(sc.summary.supportedOnlyByGeneralClauses).toBe(0);
@@ -628,12 +663,18 @@ describe("senal lexical en frances y clasificacion de la norma", () => {
 describe("entradas de seguro de desempleo y de extranjeria", () => {
   it("se activan por la ley citada y no por otras", () => {
     expect(
-      activatedGrounds("Die Einstellung in der Anspruchsberechtigung wird für 20 Tage verfügt (Art. 30 AVIG).").map((g) => g.id),
+      activatedGrounds(
+        "Die Einstellung in der Anspruchsberechtigung wird für 20 Tage verfügt (Art. 30 AVIG).",
+      ).map((g) => g.id),
     ).toContain("alv-suspension");
     expect(
-      activatedGrounds("Révocation de l'autorisation de séjour selon l'art. 62 LEI.").map((g) => g.id),
+      activatedGrounds("Révocation de l'autorisation de séjour selon l'art. 62 LEI.").map(
+        (g) => g.id,
+      ),
     ).toContain("foreigners-measures");
-    const none = activatedGrounds("Die Baubewilligung wird gestützt auf Art. 2 BauG verweigert.").map((g) => g.id);
+    const none = activatedGrounds(
+      "Die Baubewilligung wird gestützt auf Art. 2 BauG verweigert.",
+    ).map((g) => g.id);
     expect(none).not.toContain("alv-suspension");
     expect(none).not.toContain("foreigners-measures");
   });
@@ -652,10 +693,14 @@ describe("dos valores para la misma referencia (frases propias)", () => {
 
   it("detecta dos cantidades de dias y un importe nulo contra otro", () => {
     expect(
-      findSameReferenceConflicts(st("Pour le même mois, on retient trois et neuf jours de suspension.")).map((x) => x.kind),
+      findSameReferenceConflicts(
+        st("Pour le même mois, on retient trois et neuf jours de suspension."),
+      ).map((x) => x.kind),
     ).toEqual([]); // 'neuf' no esta en la tabla: no se inventa
     expect(
-      findSameReferenceConflicts(st("Für denselben Monat werden vier und elf Tage angesetzt.")).map((x) => x.kind),
+      findSameReferenceConflicts(st("Für denselben Monat werden vier und elf Tage angesetzt.")).map(
+        (x) => x.kind,
+      ),
     ).toEqual(["days"]);
     expect(
       findSameReferenceConflicts(
@@ -665,14 +710,20 @@ describe("dos valores para la misma referencia (frases propias)", () => {
   });
 
   it("no senala una frase con un solo valor ni una sin referencia comun", () => {
-    expect(findSameReferenceConflicts(st("Für denselben Monat werden CHF 900 angesetzt."))).toEqual([]);
-    expect(findSameReferenceConflicts(st("Es werden CHF 900 und CHF 1'500 angesetzt."))).toEqual([]);
+    expect(findSameReferenceConflicts(st("Für denselben Monat werden CHF 900 angesetzt."))).toEqual(
+      [],
+    );
+    expect(findSameReferenceConflicts(st("Es werden CHF 900 und CHF 1'500 angesetzt."))).toEqual(
+      [],
+    );
   });
 
   it("dos fechas con 'sans qu' en la misma frase son una tension de fechas", () => {
     expect(
       findDateTensions(
-        st("L'inspection est datée du 2 mars 2026 dans l'exposé et du 9 mai 2026 dans le dispositif sans qu'une seconde inspection soit mentionnée."),
+        st(
+          "L'inspection est datée du 2 mars 2026 dans l'exposé et du 9 mai 2026 dans le dispositif sans qu'une seconde inspection soit mentionnée.",
+        ),
       ).map((x) => x.type),
     ).toContain("dates_in_tension");
   });
@@ -682,7 +733,9 @@ describe("fechas sin año y palabras intercaladas", () => {
   it("dos fechas sin año contrapuestas en una frase", () => {
     expect(
       findDateTensions(
-        st("La visite est datée du 7 juillet dans l'exposé et du 19 septembre dans le dispositif sans qu'une seconde visite soit citée."),
+        st(
+          "La visite est datée du 7 juillet dans l'exposé et du 19 septembre dans le dispositif sans qu'une seconde visite soit citée.",
+        ),
       ).map((x) => x.type),
     ).toContain("dates_in_tension");
     expect(findDateTensions(st("La visite a eu lieu le 7 juillet."))).toEqual([]);
@@ -690,16 +743,26 @@ describe("fechas sin año y palabras intercaladas", () => {
 
   it("'vier und elf entschädigungsberechtigte Tage' cuenta como dos valores", () => {
     expect(
-      findSameReferenceConflicts(st("Für denselben Zeitraum werden vier und elf anrechenbare Tage angesetzt.")).map((x) => x.kind),
+      findSameReferenceConflicts(
+        st("Für denselben Zeitraum werden vier und elf anrechenbare Tage angesetzt."),
+      ).map((x) => x.kind),
     ).toEqual(["days"]);
   });
 });
 
 describe("entradas ATSG: devolucion, deberes y tribunal de seguros", () => {
   it("se activan por su contenido", () => {
-    expect(activatedGrounds("Die Rückerstattung der bezogenen Leistungen wird verfügt.").map((g) => g.id)).toContain("social-insurance-recovery");
-    expect(activatedGrounds("Die Mitwirkungspflicht wurde verletzt.").map((g) => g.id)).toContain("social-insurance-duties");
-    expect(activatedGrounds("Beschwerde ans Versicherungsgericht des Kantons Bern.").map((g) => g.id)).toContain("insurance-court-procedure");
+    expect(
+      activatedGrounds("Die Rückerstattung der bezogenen Leistungen wird verfügt.").map(
+        (g) => g.id,
+      ),
+    ).toContain("social-insurance-recovery");
+    expect(activatedGrounds("Die Mitwirkungspflicht wurde verletzt.").map((g) => g.id)).toContain(
+      "social-insurance-duties",
+    );
+    expect(
+      activatedGrounds("Beschwerde ans Versicherungsgericht des Kantons Bern.").map((g) => g.id),
+    ).toContain("insurance-court-procedure");
     expect(activatedGrounds("Die Baubewilligung wird verweigert.").map((g) => g.id)).toEqual([]);
   });
 });
@@ -709,7 +772,9 @@ import { cleanCantonalHtml } from "../src/tools/decisionReviewTools.js";
 describe("limpieza del texto cantonal", () => {
   it("quita etiquetas, entidades y asteriscos de nota", () => {
     expect(
-      cleanCantonalHtml("3 Allgemeine Voraussetzungen&nbsp;<strong>*</strong> 1 Bauvorhaben sind zu bewilligen &amp; geprüft"),
+      cleanCantonalHtml(
+        "3 Allgemeine Voraussetzungen&nbsp;<strong>*</strong> 1 Bauvorhaben sind zu bewilligen &amp; geprüft",
+      ),
     ).toBe("3 Allgemeine Voraussetzungen 1 Bauvorhaben sind zu bewilligen & geprüft");
   });
 });
@@ -744,13 +809,16 @@ describe("limites en italiano", () => {
   it("importe fuera de una banda y dias sobre un maximo", () => {
     expect(
       findLimitViolations(
-        st("La multa prevista va da 100 a 20 000 franchi.", "Viene inflitta una multa di 25 000 franchi."),
+        st(
+          "La multa prevista va da 100 a 20 000 franchi.",
+          "Viene inflitta una multa di 25 000 franchi.",
+        ),
       ).map((x) => x.value),
     ).toEqual([25000]);
     expect(
-      findLimitViolations(st("La sospensione dura al massimo 60 giorni.", "Si fissano 75 giorni di sospensione.")).map(
-        (x) => x.value,
-      ),
+      findLimitViolations(
+        st("La sospensione dura al massimo 60 giorni.", "Si fissano 75 giorni di sospensione."),
+      ).map((x) => x.value),
     ).toEqual([75]);
   });
 });
@@ -758,7 +826,9 @@ describe("limites en italiano", () => {
 describe("plazo ATSG en italiano y frances", () => {
   it("opposizione entro 10 giorni frente a 30 dias (LPGA)", () => {
     expect(
-      findAppealIssues(st("L'opposizione va presentata entro 10 giorni."), "secondo la LPGA").map((x) => x.type),
+      findAppealIssues(st("L'opposizione va presentata entro 10 giorni."), "secondo la LPGA").map(
+        (x) => x.type,
+      ),
     ).toEqual(["appeal_period_mismatch"]);
     expect(
       findAppealIssues(st("L'opposizione va presentata entro 30 giorni."), "secondo la LPGA"),
@@ -785,12 +855,21 @@ describe("pistas del checklist en italiano", () => {
 
 describe("IV y citas de IVG/AHVG", () => {
   it("la entrada de renta IV se activa por IVG y las citas se reconocen", async () => {
-    expect(activatedGrounds("Die IV-Stelle verneint den Anspruch auf eine Invalidenrente.").map((g) => g.id)).toContain("iv-pension-basis");
-    expect(activatedGrounds("Die Baubewilligung wird verweigert.").map((g) => g.id)).not.toContain("iv-pension-basis");
+    expect(
+      activatedGrounds("Die IV-Stelle verneint den Anspruch auf eine Invalidenrente.").map(
+        (g) => g.id,
+      ),
+    ).toContain("iv-pension-basis");
+    expect(activatedGrounds("Die Baubewilligung wird verweigert.").map((g) => g.id)).not.toContain(
+      "iv-pension-basis",
+    );
     const client = await connect();
     const r = await client.callTool({
       name: "prepare_decision_review",
-      arguments: { text: "Verfügung der IV-Stelle. Gestützt auf Art. 28 IVG und Art. 21 AHVG wird entschieden.", verifyCitedNorms: false },
+      arguments: {
+        text: "Verfügung der IV-Stelle. Gestützt auf Art. 28 IVG und Art. 21 AHVG wird entschieden.",
+        verifyCitedNorms: false,
+      },
     });
     const sc = r.structuredContent as { keyFacts: { citedFederalNorms: { citation: string }[] } };
     expect(sc.keyFacts.citedFederalNorms.map((c) => c.citation)).toEqual(
@@ -811,7 +890,18 @@ describe("mas leyes federales reconocidas", () => {
     });
     const sc = r.structuredContent as { keyFacts: { citedFederalNorms: { citation: string }[] } };
     const cits = sc.keyFacts.citedFederalNorms.map((c) => c.citation);
-    for (const expected of ["Art. 25 KVG", "Art. 6 UVG", "Art. 2 BVG", "Art. 132 DBG", "Art. 1 StHG", "Art. 22 RPG", "Art. 58 VZAE", "Art. 9 BüG", "Art. 25 LAMal", "Art. 22 LAT"]) {
+    for (const expected of [
+      "Art. 25 KVG",
+      "Art. 6 UVG",
+      "Art. 2 BVG",
+      "Art. 132 DBG",
+      "Art. 1 StHG",
+      "Art. 22 RPG",
+      "Art. 58 VZAE",
+      "Art. 9 BüG",
+      "Art. 25 LAMal",
+      "Art. 22 LAT",
+    ]) {
       expect(cits).toContain(expected);
     }
   });
@@ -829,7 +919,16 @@ describe("leyes federales adicionales", () => {
     });
     const sc = r.structuredContent as { keyFacts: { citedFederalNorms: { citation: string }[] } };
     const cits = sc.keyFacts.citedFederalNorms.map((c) => c.citation);
-    for (const e of ["Art. 31 VGG", "Art. 90 SVG", "Art. 10 MWSTG", "Art. 6 ArG", "Art. 3 GlG", "Art. 1 USG", "Art. 6 BPG", "Art. 31 LTAF"]) {
+    for (const e of [
+      "Art. 31 VGG",
+      "Art. 90 SVG",
+      "Art. 10 MWSTG",
+      "Art. 6 ArG",
+      "Art. 3 GlG",
+      "Art. 1 USG",
+      "Art. 6 BPG",
+      "Art. 31 LTAF",
+    ]) {
       expect(cits).toContain(e);
     }
   });
@@ -840,10 +939,15 @@ describe("ley de proteccion de datos", () => {
     const client = await connect();
     const r = await client.callTool({
       name: "prepare_decision_review",
-      arguments: { text: "Verfügung der Behörde. Gestützt auf Art. 6 DSG und vu l'art. 6 LPD wird das Gesuch geprüft.", verifyCitedNorms: false },
+      arguments: {
+        text: "Verfügung der Behörde. Gestützt auf Art. 6 DSG und vu l'art. 6 LPD wird das Gesuch geprüft.",
+        verifyCitedNorms: false,
+      },
     });
     const sc = r.structuredContent as { keyFacts: { citedFederalNorms: { citation: string }[] } };
-    expect(sc.keyFacts.citedFederalNorms.map((c) => c.citation)).toEqual(expect.arrayContaining(["Art. 6 DSG", "Art. 6 LPD"]));
+    expect(sc.keyFacts.citedFederalNorms.map((c) => c.citation)).toEqual(
+      expect.arrayContaining(["Art. 6 DSG", "Art. 6 LPD"]),
+    );
   });
 });
 
@@ -851,13 +955,17 @@ describe("mejoras tras el ensayo con textos propios", () => {
   it("limite en la misma frase con contraste y meses con palabras", () => {
     expect(
       findLimitViolations(
-        st("La multa inflitta è di 5 000 franchi, mentre la legge prevede un importo massimo di 2 000 franchi."),
+        st(
+          "La multa inflitta è di 5 000 franchi, mentre la legge prevede un importo massimo di 2 000 franchi.",
+        ),
       ).map((x) => x.value),
     ).toEqual([5000]);
     expect(
-      findLimitViolations(st("Die Leistungen werden für sechs Monate gesperrt, die Sperre darf höchstens drei Monate dauern.")).map(
-        (x) => x.value,
-      ),
+      findLimitViolations(
+        st(
+          "Die Leistungen werden für sechs Monate gesperrt, die Sperre darf höchstens drei Monate dauern.",
+        ),
+      ).map((x) => x.value),
     ).toEqual([6]);
   });
 
@@ -872,13 +980,19 @@ describe("mejoras tras el ensayo con textos propios", () => {
     expect(out[0]!.stated).toBe(1200);
     expect(
       findArithmeticMismatches(
-        st("Das Einkommen beträgt CHF 2'950.", "Der Bedarf beläuft sich auf CHF 2'711, es besteht ein Überschuss von CHF 239."),
+        st(
+          "Das Einkommen beträgt CHF 2'950.",
+          "Der Bedarf beläuft sich auf CHF 2'711, es besteht ein Überschuss von CHF 239.",
+        ),
       ),
     ).toEqual([]);
     // resta de tres importes (1840 - 900 - 300 = 640)
     expect(
       findArithmeticMismatches(
-        st("Bedarf CHF 1'840, abgezogen werden CHF 900 und CHF 300.", "Der Fehlbetrag beträgt CHF 640."),
+        st(
+          "Bedarf CHF 1'840, abgezogen werden CHF 900 und CHF 300.",
+          "Der Fehlbetrag beträgt CHF 640.",
+        ),
       ),
     ).toEqual([]);
   });
@@ -889,18 +1003,22 @@ describe("mejoras tras el ensayo con textos propios", () => {
     ).map((f) => f.type);
     expect(de).toEqual(expect.arrayContaining(["appeal_excluded", "family_support_basis"]));
     expect(de).not.toContain("appeal_instruction_missing");
-    const it_ = reviewDecision("Decisione. Contro la presente decisione non è dato alcun ricorso.").map((f) => f.type);
+    const it_ = reviewDecision(
+      "Decisione. Contro la presente decisione non è dato alcun ricorso.",
+    ).map((f) => f.type);
     expect(it_).toContain("appeal_excluded");
     expect(
-      reviewDecision("Décision. Il n'est pas nécessaire de vérifier ses recherches d'emploi.").map((f) => f.type),
+      reviewDecision("Décision. Il n'est pas nécessaire de vérifier ses recherches d'emploi.").map(
+        (f) => f.type,
+      ),
     ).toContain("examination_refused");
   });
 
   it("origen como agravante en italiano activa la entrada de trato por origen", () => {
     expect(
-      activatedGrounds("Il servizio revoca il permesso perché è di origine nordafricana, il che costituisce un fattore aggravante.").map(
-        (g) => g.id,
-      ),
+      activatedGrounds(
+        "Il servizio revoca il permesso perché è di origine nordafricana, il che costituisce un fattore aggravante.",
+      ).map((g) => g.id),
     ).toContain("origin-based-treatment");
   });
 });

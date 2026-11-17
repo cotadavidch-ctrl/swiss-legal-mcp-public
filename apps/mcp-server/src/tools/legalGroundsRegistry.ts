@@ -305,7 +305,8 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "ar-decision-form-and-appeal",
-    topic: "Contenido de la resolución e instrucción de recursos en Appenzell Ausserrhoden (VRPG AR)",
+    topic:
+      "Contenido de la resolución e instrucción de recursos en Appenzell Ausserrhoden (VRPG AR)",
     jurisdiction: "Cantón de Appenzell Ausserrhoden (VRPG, bGS 143.1)",
     cue: /Appenzell\s+Ausserrhoden|\bbGS\s+\d{3}|\bVRPG\b/,
     cueScope: "anywhere",
@@ -382,7 +383,8 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "alv-suspension",
-    topic: "Suspensión en el derecho a la prestación del seguro de desempleo (Einstellung): causas, autoridad competente y duración",
+    topic:
+      "Suspensión en el derecho a la prestación del seguro de desempleo (Einstellung): causas, autoridad competente y duración",
     jurisdiction: "Derecho federal (AVIG, SR 837.0; ATSG, SR 830.1)",
     cue: /Einstellung\w*\s+in\s+der\s+Anspruchsberechtigung|Einstelltage|Einstellungsdauer|\bAVIG\b[^.]{0,200}\bEinstellung|suspension\s+du\s+droit\s+à\s+l['’]indemnité|\bLACI\b[^.]{0,200}suspension/i,
     cueScope: "anywhere",
@@ -435,7 +437,8 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "foreigners-measures",
-    topic: "Medidas de extranjería (revocación de permisos): causas, proporcionalidad y ejercicio de la discrecionalidad",
+    topic:
+      "Medidas de extranjería (revocación de permisos): causas, proporcionalidad y ejercicio de la discrecionalidad",
     jurisdiction: "Derecho federal (AIG/LEI, SR 142.20)",
     cue: /\b(?:AIG|LEI|AuG)\b|Widerruf\s+der\s+(?:Aufenthalts|Niederlassungs)?bewilligung|révocation\s+de\s+l['’]autorisation\s+de\s+(?:séjour|établissement)|revoca\s+del(?:l['’]autorizzazione|\s+permesso)/i,
     cueScope: "anywhere",
@@ -471,8 +474,10 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "social-insurance-recovery",
-    topic: "Devolución de prestaciones de seguros sociales indebidamente percibidas (Rückerstattung)",
-    jurisdiction: "Derecho federal (ATSG, SR 830.1); la ayuda social cantonal tiene su propia regulación",
+    topic:
+      "Devolución de prestaciones de seguros sociales indebidamente percibidas (Rückerstattung)",
+    jurisdiction:
+      "Derecho federal (ATSG, SR 830.1); la ayuda social cantonal tiene su propia regulación",
     cue: /Rückerstattung|Rückforderung|zurückzuerstatten|zurückerstatten|restitution\s+de\s+prestations|remboursement\s+de\s+prestations|restituzione\s+delle\s+prestazioni/i,
     cueScope: "anywhere",
     summary:
@@ -506,7 +511,8 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "social-insurance-duties",
-    topic: "Deberes de información y de colaboración en los seguros sociales (Aufklärung, Beratung, Mitwirkung)",
+    topic:
+      "Deberes de información y de colaboración en los seguros sociales (Aufklärung, Beratung, Mitwirkung)",
     jurisdiction: "Derecho federal (ATSG, SR 830.1)",
     cue: /Mitwirkungspflicht|Auskunftspflicht|Meldepflicht|Beratungspflicht|Aufklärungspflicht|devoir\s+de\s+collaborer|obligation\s+de\s+(?:collaborer|renseigner)|obbligo\s+di\s+collaborare/i,
     cueScope: "anywhere",
@@ -540,8 +546,10 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "insurance-court-procedure",
-    topic: "Procedimiento ante el tribunal cantonal de seguros: hechos, pruebas, costas y forma de la sentencia",
-    jurisdiction: "Derecho federal (ATSG Art. 61, SR 830.1); el procedimiento concreto lo regula el derecho cantonal",
+    topic:
+      "Procedimiento ante el tribunal cantonal de seguros: hechos, pruebas, costas y forma de la sentencia",
+    jurisdiction:
+      "Derecho federal (ATSG Art. 61, SR 830.1); el procedimiento concreto lo regula el derecho cantonal",
     cue: /Versicherungsgericht|tribunal\s+(?:cantonal\s+)?des\s+assurances|tribunale\s+(?:cantonale\s+)?delle\s+assicurazioni/i,
     cueScope: "anywhere",
     summary:
@@ -574,7 +582,8 @@ export const LEGAL_GROUNDS: readonly LegalGround[] = [
   },
   {
     id: "iv-pension-basis",
-    topic: "Renta de invalidez (IV): requisitos, prioridad de la integración y deber de colaboración",
+    topic:
+      "Renta de invalidez (IV): requisitos, prioridad de la integración y deber de colaboración",
     jurisdiction: "Derecho federal (IVG, SR 831.20; ATSG, SR 830.1)",
     cue: /\bIVG\b|\bLAI\b|Invalidenrente|Invalidenversicherung|IV-Stelle|rente\s+d['’]invalidité|assurance-invalidité|rendita\s+d['’]invalidità/i,
     cueScope: "anywhere",

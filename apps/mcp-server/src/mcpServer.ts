@@ -39,7 +39,11 @@ export function createMcpServer(options: CreateMcpServerOptions): McpServer {
 
   for (const toolInfo of options.tools.list()) {
     const registerDespiteBlocked = toolInfo.blockedByPolicy !== undefined;
-    if (toolInfo.status !== "active" && !registerDespiteBlocked && !options.exposeUnavailableTools) {
+    if (
+      toolInfo.status !== "active" &&
+      !registerDespiteBlocked &&
+      !options.exposeUnavailableTools
+    ) {
       options.logger.info(
         { tool: toolInfo.name, status: toolInfo.status, reason: toolInfo.reason },
         "Herramienta no registrada: sin proveedor activo",

@@ -385,7 +385,11 @@ export function extractSilArticle(
     const key = articleKey(m[2]!);
     const after = key.n > last.n || (key.n === last.n && key.suffix > last.suffix);
     if (!after) continue;
-    headings.push({ number: `${key.n}${key.suffix}`, start: m.index + (m[0].startsWith(" ") ? 1 : 0), key });
+    headings.push({
+      number: `${key.n}${key.suffix}`,
+      start: m.index + (m[0].startsWith(" ") ? 1 : 0),
+      key,
+    });
     last = key;
   }
   const i = headings.findIndex((h) => h.key.n === want.n && h.key.suffix === want.suffix);

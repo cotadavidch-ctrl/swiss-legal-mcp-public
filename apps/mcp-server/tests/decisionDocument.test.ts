@@ -384,7 +384,12 @@ describe("reviewDecision en frances e italiano (texto propio)", () => {
       "Décision. La vérification des revenus n'est pas nécessaire. Il y a lieu de présumer que le requérant dispose de ressources. L'aide sociale est refusée. Aucun recours n'est possible.",
     ).map((f) => f.type);
     expect(types).toEqual(
-      expect.arrayContaining(["examination_refused", "inference_without_evidence", "emergency_aid_not_addressed", "appeal_excluded"]),
+      expect.arrayContaining([
+        "examination_refused",
+        "inference_without_evidence",
+        "emergency_aid_not_addressed",
+        "appeal_excluded",
+      ]),
     );
   });
 
@@ -393,13 +398,20 @@ describe("reviewDecision en frances e italiano (texto propio)", () => {
       "Decisione. L'esame dei redditi non è necessario. Si presume che il richiedente disponga di risorse. L'aiuto sociale è rifiutato. Nessun ricorso è dato.",
     ).map((f) => f.type);
     expect(types).toEqual(
-      expect.arrayContaining(["examination_refused", "inference_without_evidence", "emergency_aid_not_addressed", "appeal_excluded"]),
+      expect.arrayContaining([
+        "examination_refused",
+        "inference_without_evidence",
+        "emergency_aid_not_addressed",
+        "appeal_excluded",
+      ]),
     );
   });
 
   it("no marca el aid cuando se cita el art. 12 Cst", () => {
     expect(
-      reviewDecision("Décision. L'aide sociale est refusée. Les situations de détresse selon l'art. 12 Cst. sont examinées.").map((f) => f.type),
+      reviewDecision(
+        "Décision. L'aide sociale est refusée. Les situations de détresse selon l'art. 12 Cst. sont examinées.",
+      ).map((f) => f.type),
     ).not.toContain("emergency_aid_not_addressed");
   });
 });

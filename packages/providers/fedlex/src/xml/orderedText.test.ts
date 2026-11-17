@@ -9,7 +9,9 @@ const xml = `<akomaNtoso><act><body>
 describe("texto de articulo en orden documental", () => {
   it("mantiene la posicion de <sup> y <ref> y omite notas editoriales", () => {
     const a = findArticleByNumber(parseAkomaNtosoXml(xml), "336c");
-    expect(a?.fullText).toContain("cbis. bis zum Ende des Urlaubs nach Artikel 329 Absatz 2; ferner");
+    expect(a?.fullText).toContain(
+      "cbis. bis zum Ende des Urlaubs nach Artikel 329 Absatz 2; ferner",
+    );
     expect(a?.fullText).not.toContain("Fassung gemäss");
     expect(a?.fullText).toContain("mehr als elf Tage");
   });

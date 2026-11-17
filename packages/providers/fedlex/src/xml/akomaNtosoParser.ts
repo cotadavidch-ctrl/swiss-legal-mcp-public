@@ -84,7 +84,19 @@ export type XmlNode = Record<string, unknown>;
 const orderedTrees = new WeakMap<object, unknown>();
 
 /** Etiquetas en linea: su texto se concatena sin anadir separador. El resto separa con espacio. */
-const INLINE_TAGS = new Set(["sup", "sub", "i", "b", "u", "em", "strong", "ref", "a", "span", "inline"]);
+const INLINE_TAGS = new Set([
+  "sup",
+  "sub",
+  "i",
+  "b",
+  "u",
+  "em",
+  "strong",
+  "ref",
+  "a",
+  "span",
+  "inline",
+]);
 
 type OrderedNode = Record<string, unknown>;
 

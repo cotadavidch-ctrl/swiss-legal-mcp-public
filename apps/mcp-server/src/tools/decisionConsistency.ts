@@ -308,7 +308,9 @@ const LOOSE_MONTHS =
 /** Fechas sin año ("7 juillet"): clave "mes-dia" para comparar dentro de una frase. */
 function looseDates(text: string): string[] {
   const out = new Set<string>();
-  for (const m of text.matchAll(new RegExp(`\\b(\\d{1,2})(?:\\.|er|º)?\\s+(${LOOSE_MONTHS})\\b`, "gi"))) {
+  for (const m of text.matchAll(
+    new RegExp(`\\b(\\d{1,2})(?:\\.|er|º)?\\s+(${LOOSE_MONTHS})\\b`, "gi"),
+  )) {
     out.add(`${m[2]!.toLowerCase()}-${m[1]!.padStart(2, "0")}`);
   }
   return [...out];
@@ -317,8 +319,7 @@ function looseDates(text: string): string[] {
 /** Fechas con su posicion en el texto (orden de aparicion). */
 function positionedDates(text: string): { iso: string; at: number }[] {
   const out: { iso: string; at: number }[] = [];
-  const re =
-    /\b\d{1,2}(?:\.|er)?\s+(?:[A-Za-zÀ-ÿ]{3,9})\s+\d{4}\b|\b\d{1,2}\.\d{1,2}\.\d{4}\b/g;
+  const re = /\b\d{1,2}(?:\.|er)?\s+(?:[A-Za-zÀ-ÿ]{3,9})\s+\d{4}\b|\b\d{1,2}\.\d{1,2}\.\d{4}\b/g;
   for (const m of text.matchAll(re)) {
     const d = datesOf(m[0])[0];
     if (d) out.push({ iso: d, at: m.index });
@@ -429,7 +430,10 @@ const ZERO_WORD = /\b(?:nul|nulle|null|zéro|zero|gratuit)\b/i;
 function wordDayPairs(text: string): number[] {
   const out: number[] = [];
   const names = Object.keys(WORD_NUMBERS).join("|");
-  const re = new RegExp(`\\b(\\d+|${names})\\s+(?:und|et|e)\\s+(\\d+|${names})\\s+(?:\\w+\\s+){0,2}\\w*(?:Tage|Tagen|jours|giorni)`, "gi");
+  const re = new RegExp(
+    `\\b(\\d+|${names})\\s+(?:und|et|e)\\s+(\\d+|${names})\\s+(?:\\w+\\s+){0,2}\\w*(?:Tage|Tagen|jours|giorni)`,
+    "gi",
+  );
   for (const m of text.matchAll(re)) {
     for (const g of [m[1], m[2]]) {
       const v = toInt(g!);

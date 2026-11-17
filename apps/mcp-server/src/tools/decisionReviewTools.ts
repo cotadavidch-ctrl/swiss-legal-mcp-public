@@ -368,8 +368,7 @@ function statementCues(statements: readonly Statement[], cue: RegExp | null, lim
     .map((s) => s.id);
 }
 
-const FEDERAL_ABBREVIATIONS =
-  /\((OR\|[^)]+)\)/.exec(ARTICLE_RE.source)?.[1] ?? "BV";
+const FEDERAL_ABBREVIATIONS = /\((OR\|[^)]+)\)/.exec(ARTICLE_RE.source)?.[1] ?? "BV";
 
 function keyFactsOf(statements: readonly Statement[], fullText: string) {
   const dates: { iso: string; statement: string; location: string }[] = [];
@@ -565,16 +564,51 @@ const TITLE_ALIASES: Readonly<Record<string, { query: string; title: RegExp }>> 
     query: "Sozialhilfe",
     title: /^(?:Gesetz über (?:die )?(?:öffentliche )?Sozialhilfe|Sozialhilfegesetz)$/,
   },
-  VRPG: { query: "Verwaltungsrechtspflege", title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/ },
-  VRG: { query: "Verwaltungsrechtspflege", title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/ },
-  VRP: { query: "Verwaltungsrechtspflege", title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/ },
-  StG: { query: "Steuergesetz", title: /^(?:Steuergesetz|Gesetz über die Staats- und Gemeindesteuern)$/ },
+  VRPG: {
+    query: "Verwaltungsrechtspflege",
+    title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/,
+  },
+  VRG: {
+    query: "Verwaltungsrechtspflege",
+    title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/,
+  },
+  VRP: {
+    query: "Verwaltungsrechtspflege",
+    title: /^(?:Gesetz über die )?Verwaltungsrechtspflege(?:gesetz)?$/,
+  },
+  StG: {
+    query: "Steuergesetz",
+    title: /^(?:Steuergesetz|Gesetz über die Staats- und Gemeindesteuern)$/,
+  },
   BauG: { query: "Baugesetz", title: /^(?:Baugesetz|Planungs- und Baugesetz)$/ },
-  PBG: { query: "Baugesetz", title: /^(?:Planungs- und Baugesetz|Gesetz über das Planungs- und Bauwesen)$/ },
+  PBG: {
+    query: "Baugesetz",
+    title: /^(?:Planungs- und Baugesetz|Gesetz über das Planungs- und Bauwesen)$/,
+  },
 };
 const NOT_A_LAW = new Set([
-  "Abs", "Absatz", "Ziff", "Ziffer", "lit", "und", "der", "die", "das", "des", "vom", "im", "bis",
-  "BGE", "ATF", "DTF", "Art", "Satz", "Nr", "al", "cpv", "let",
+  "Abs",
+  "Absatz",
+  "Ziff",
+  "Ziffer",
+  "lit",
+  "und",
+  "der",
+  "die",
+  "das",
+  "des",
+  "vom",
+  "im",
+  "bis",
+  "BGE",
+  "ATF",
+  "DTF",
+  "Art",
+  "Satz",
+  "Nr",
+  "al",
+  "cpv",
+  "let",
 ]);
 
 /**
@@ -744,11 +778,12 @@ async function checkNorm(
         scope: null,
         officialExcerpt: null,
         ...base,
-        note: /§/.test(citation) && !opts.canton
-          ? "Norma cantonal o comunal con '§': indique 'canton' para verificarla (solo cantones con lectura de artículos)."
-          : opts.canton
-            ? `La sigla '${cantonal?.[2] ?? "?"}' no se pudo resolver de forma única en el catálogo oficial del cantón ${opts.canton.toUpperCase()} (sin coincidencia, ambigua o canton sin lectura de artículos).`
-            : "No se reconoce como ley federal soportada. Indique 'canton' para verificar derecho cantonal de los cantones con acceso a artículo.",
+        note:
+          /§/.test(citation) && !opts.canton
+            ? "Norma cantonal o comunal con '§': indique 'canton' para verificarla (solo cantones con lectura de artículos)."
+            : opts.canton
+              ? `La sigla '${cantonal?.[2] ?? "?"}' no se pudo resolver de forma única en el catálogo oficial del cantón ${opts.canton.toUpperCase()} (sin coincidencia, ambigua o canton sin lectura de artículos).`
+              : "No se reconoce como ley federal soportada. Indique 'canton' para verificar derecho cantonal de los cantones con acceso a artículo.",
       };
     } else {
       try {
@@ -801,8 +836,21 @@ async function checkNorm(
 }
 
 const ROMANCE_STOP = new Set([
-  "également","cependant","toutefois","lorsque","pourtant","ensuite","notamment","indépendamment",
-  "expressément","société","entreprise","destinataire","procès-verbal","parcelle","décision",
+  "également",
+  "cependant",
+  "toutefois",
+  "lorsque",
+  "pourtant",
+  "ensuite",
+  "notamment",
+  "indépendamment",
+  "expressément",
+  "société",
+  "entreprise",
+  "destinataire",
+  "procès-verbal",
+  "parcelle",
+  "décision",
 ]);
 
 /** Raices de palabras de parte o de procedimiento: no son contenido de la norma. */
@@ -827,7 +875,17 @@ const PROCEDURE_STEMS = new Set([
 ]);
 
 const MONTHS = new Set([
-  "januar","februar","märz","april","juni","juli","august","september","oktober","november","dezember",
+  "januar",
+  "februar",
+  "märz",
+  "april",
+  "juni",
+  "juli",
+  "august",
+  "september",
+  "oktober",
+  "november",
+  "dezember",
 ]);
 
 /**
@@ -1214,10 +1272,9 @@ export function registerDecisionReviewTools(tools: ToolRegistry): void {
               : [],
         }));
         const verifiedNorms = norms.filter((n) => n.status === "verified_exists");
-        const normFit: NormFit =
-          /^I\d/.test(f.checklistId ?? "")
-            ? "not_applicable"
-            : norms.length === 0
+        const normFit: NormFit = /^I\d/.test(f.checklistId ?? "")
+          ? "not_applicable"
+          : norms.length === 0
             ? "no_norm"
             : verifiedNorms.length === 0
               ? "unverified"
@@ -1232,7 +1289,10 @@ export function registerDecisionReviewTools(tools: ToolRegistry): void {
                     )
                   ? "specific_weak"
                   : "specific";
-        if (status === "supported" && (normFit === "general_clause_only" || normFit === "specific_weak")) {
+        if (
+          status === "supported" &&
+          (normFit === "general_clause_only" || normFit === "specific_weak")
+        ) {
           reasons.push(NORM_FIT_NOTE[normFit]);
         }
         results.push({
@@ -1273,7 +1333,9 @@ export function registerDecisionReviewTools(tools: ToolRegistry): void {
         },
         results,
         warnings: [
-          ...(cantonConflictWarning(input.text, input.canton) ? [cantonConflictWarning(input.text, input.canton)!] : []),
+          ...(cantonConflictWarning(input.text, input.canton)
+            ? [cantonConflictWarning(input.text, input.canton)!]
+            : []),
           "Verificado: que la cita es literal y que el artículo existe. NO verificado: que el artículo diga lo que se le atribuye ni que el razonamiento sea correcto. `termsNotInNorm` es una señal léxica: términos de la cita o de la afirmación que no aparecen en el artículo invocado.",
           "Si indicó `asOfDate`, `versionAtDate` compara el artículo a esa fecha con el vigente (solo derecho federal). El derecho cantonal solo se verifica en versión vigente.",
           "No presente como hecho ningún hallazgo 'rejected'. Los 'quote_only' llevan normas sin verificar (derecho cantonal o fuente no disponible).",

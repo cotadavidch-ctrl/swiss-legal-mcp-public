@@ -360,7 +360,10 @@ export function registerCantonalTools(tools: ToolRegistry): void {
         const doc = await resolved.provider.getArticle(input.systematicNumber, input.articleNumber);
         return envelope(input.canton, resolved, doc);
       }
-      const familyLabel: Record<Exclude<ResolvedCantonalProvider["family"], "lexwork" | "sil">, string> = {
+      const familyLabel: Record<
+        Exclude<ResolvedCantonalProvider["family"], "lexwork" | "sil">,
+        string
+      > = {
         "zh-own": "ZH-Lex",
         sz: "la coleccion sistematica de Schwyz",
         ju: "el portal de Jura",

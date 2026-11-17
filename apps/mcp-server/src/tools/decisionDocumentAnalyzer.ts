@@ -470,7 +470,9 @@ export function reviewDecision(text: string): DecisionReviewFlag[] {
 
   const hasRemedyHeading =
     REMEDY_HEADINGS.test(text) ||
-    /(?:Einsprache|Beschwerde|Rekurs|recours|opposition|réclamation|ricorso|opposizione)\w*[^.]{0,160}(?:binnen|innert|innerhalb|dans\s+un\s+délai|entro|nel\s+termine)/i.test(text);
+    /(?:Einsprache|Beschwerde|Rekurs|recours|opposition|réclamation|ricorso|opposizione)\w*[^.]{0,160}(?:binnen|innert|innerhalb|dans\s+un\s+délai|entro|nel\s+termine)/i.test(
+      text,
+    );
   const excluded = matching(APPEAL_EXCLUDED_RE);
   if (excluded.length > 0) {
     add(
@@ -561,7 +563,12 @@ export function reviewDecision(text: string): DecisionReviewFlag[] {
     /(?:Sozialhilfe|Unterstützung|Leistung)[^.]{0,120}(?:abgelehnt|nicht\s+anerkannt|verweigert)|(?:abgelehnt|nicht\s+anerkannt|verweigert)[^.]{0,120}(?:Sozialhilfe|Unterstützung|Leistung)|(?:aide\s+sociale|prestation|soutien)[^.]{0,120}(?:refusé|rejeté|n['’]est\s+pas\s+(?:accordé|reconnu))|(?:aiuto\s+sociale|prestazione|sostegno)[^.]{0,120}(?:rifiutat|respint|negat)/i.test(
       text,
     );
-  if (deniesAid && !/Nothilfe|Art\.\s*12\s+BV|Hilfe\s+in\s+Notlagen|aide\s+d['’]urgence|art\.\s*12\s+Cst|situations?\s+de\s+détresse|aiuto\s+d['’]urgenza|art\.\s*12\s+Cost|situazioni?\s+di\s+bisogno/i.test(text)) {
+  if (
+    deniesAid &&
+    !/Nothilfe|Art\.\s*12\s+BV|Hilfe\s+in\s+Notlagen|aide\s+d['’]urgence|art\.\s*12\s+Cst|situations?\s+de\s+détresse|aiuto\s+d['’]urgenza|art\.\s*12\s+Cost|situazioni?\s+di\s+bisogno/i.test(
+      text,
+    )
+  ) {
     add(
       "emergency_aid_not_addressed",
       "high",
@@ -583,8 +590,10 @@ export function reviewDecision(text: string): DecisionReviewFlag[] {
   }
 
   // Un familiar en una frase y el apoyo supuesto en la siguiente ("Tiene un hermano. Se presume que le ayuda").
-  const FAMILY_WORD = /\b(?:Bruder|Brüder|Schwester|Geschwister|frère|frères|sœur|fratello|sorella|fratelli)\b/i;
-  const SUPPORT_WORD = /unterstütz|Unterstützung|soutien|soutenir|aider|aide\b|sostegno|sostenere|aiutare|aiuto/i;
+  const FAMILY_WORD =
+    /\b(?:Bruder|Brüder|Schwester|Geschwister|frère|frères|sœur|fratello|sorella|fratelli)\b/i;
+  const SUPPORT_WORD =
+    /unterstütz|Unterstützung|soutien|soutenir|aider|aide\b|sostegno|sostenere|aiutare|aiuto/i;
   const familyAdjacent = statements.filter((st, idx) => {
     if (!FAMILY_WORD.test(st.text)) return false;
     if (FAMILY_RE.test(st.text)) return true;
