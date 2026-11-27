@@ -1,0 +1,15 @@
+# Articulos citados por la skill wiedererwaegung-revision
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 58 VwVG
+
+Art. 58 1 Die Vorinstanz kann bis zu ihrer Vernehmlassung die angefochtene Verfügung in Wiedererwägung ziehen. 2 Sie eröffnet eine neue Verfügung ohne Verzug den Parteien und bringt sie der Beschwerdeinstanz zur Kenntnis. 3 Die Beschwerdeinstanz setzt die Behandlung der Beschwerde fort, soweit diese durch die neue Verfügung der Vorinstanz nicht gegenstandslos geworden ist; Artikel 57 findet Anwendung, wenn die neue Verfügung auf einem erheblich veränderten Sachverhalt beruht oder eine erheblich veränderte Rechtslage schafft.
+
+## Art. 66 VwVG
+
+Art. 66 1 Die Beschwerdeinstanz zieht ihren Entscheid von Amtes wegen oder auf Begehren einer Partei in Revision, wenn ihn ein Verbrechen oder Vergehen beeinflusst hat. 2 Ausserdem zieht sie ihn auf Begehren einer Partei in Revision, wenn: a. die Partei neue erhebliche Tatsachen oder Beweismittel vorbringt; b. die Partei nachweist, dass die Beschwerdeinstanz aktenkundige erhebliche Tatsachen oder bestimmte Begehren übersehen hat; c. die Partei nachweist, dass die Beschwerdeinstanz die Bestimmungen der Artikel 10, 59 oder 76 über den Ausstand, der Artikel 26–28 über die Akteneinsicht oder der Artikel 29–33 über das rechtliche Gehör verletzt hat; oder d. der Europäische Gerichtshof für Menschenrechte in einem endgültigen Urteil festgestellt hat, dass die Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK) oder die Protokolle dazu verletzt worden sind, oder den Fall durch eine gütliche Einigung (Art. 39 EMRK) abgeschlossen hat, sofern eine Entschädigung nicht geeignet ist, die Folgen der Verletzung auszugleichen, und die Revision notwendig ist, um die Verletzung zu beseitigen. 3 Gründe im Sinne von Absatz 2 Buchstaben a–c gelten nicht als Revisionsgründe, wenn die Partei sie im Rahmen des Verfahrens, das dem Beschwerdeentscheid voranging, oder auf dem Wege einer Beschwerde, die ihr gegen den Beschwerdeentscheid zustand, geltend machen konnte.
+
+## Art. 67 VwVG
+
+Art. 67 1 Das Revisionsbegehren ist der Beschwerdeinstanz innert 90 Tagen nach Entdeckung des Revisionsgrundes, spätestens aber innert 10 Jahren nach Eröffnung des Beschwerdeentscheides schriftlich einzureichen. 1bis Im Fall von Artikel 66 Absatz 2 Buchstabe d ist das Revisionsbegehren innert 90 Tagen einzureichen, nachdem das Urteil des Europäischen Gerichtshofs für Menschenrechte nach Artikel 44 der Europäischen Menschenrechtskonvention vom 4. November 1950 endgültig geworden ist. 2 Nach Ablauf von 10 Jahren seit Eröffnung des Beschwerdeentscheides ist ein Revisionsbegehren nur aus dem Grunde von Artikel 66 Absatz 1 zulässig. 3 Auf Inhalt, Form, Verbesserung und Ergänzung des Revisionsbegehrens finden die Artikel 52 und 53 Anwendung; die Begründung hat insbesondere den Revisionsgrund und die Rechtzeitigkeit des Revisionsbegehrens darzutun. Dieses hat auch die Begehren für den Fall eines neuen Beschwerdeentscheides zu enthalten.

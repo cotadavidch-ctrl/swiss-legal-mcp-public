@@ -1,4 +1,4 @@
-import { tlsAwareFetch } from "./bgerTlsFetch.js";
+import { paceBgerRequest, tlsAwareFetch } from "./bgerTlsFetch.js";
 import { deduplicateStable, type DeduplicationSummary } from "./caseDeduplication.js";
 
 /**
@@ -240,6 +240,7 @@ async function liveFederalSearchFetch(url: string): Promise<FederalSearchHttpRes
   if (!ALLOWED_SEARCH_HOSTS.has(parsed.hostname)) {
     throw new Error(`network_policy_blocked:${parsed.hostname}`);
   }
+  await paceBgerRequest(url);
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), DEFAULT_TIMEOUT_MS);
   try {
@@ -251,6 +252,7 @@ async function liveFederalSearchFetch(url: string): Promise<FederalSearchHttpRes
       }
       response = await tlsAwareFetch(currentUrl, {
         method: "GET",
+        paced: true,
         maxBytes: MAX_RESPONSE_BYTES,
         signal: controller.signal,
         headers: {
@@ -455,6 +457,30 @@ function extractNextCursorFromHtml(html: string, currentUrl: string): string | n
   }
 }
 
+/** Minimo de resultados en una pagina para suponer que existe otra (el portal da ~10 por pagina). */
+const MIN_RESULTS_TO_PROBE_NEXT_PAGE = 5;
+
+/**
+ * El portal acepta `page=N` pero ya no pinta el enlace "Vorwaerts" ni el total de
+ * resultados (verificado en vivo el 2026-11-22), asi que sin enlace la busqueda se
+ * quedaba siempre en la primera pagina. Se construye la URL de la pagina siguiente
+ * incrementando `page`, solo para nuestras propias URLs de busqueda.
+ */
+export function synthesizeNextPageUrl(currentUrl: string): string | null {
+  try {
+    const url = new URL(currentUrl);
+    if (!url.searchParams.has("query_words") || url.searchParams.get("type") !== "simple_query") {
+      return null;
+    }
+    const current = Number(url.searchParams.get("page") ?? "1");
+    if (!Number.isInteger(current) || current < 1) return null;
+    url.searchParams.set("page", String(current + 1));
+    return url.toString();
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Clasificacion explicita de una respuesta 2xx del portal que no contiene
  * candidatos. Una pagina sin resultados NO es automaticamente "cero sentencias":
@@ -634,12 +660,19 @@ async function runSingleQuery(options: {
       dateTo: options.dateTo,
     });
 
+  let probing = false; // la URL actual es una pagina siguiente deducida, no un enlace del portal
   while (currentUrl && collected.length < options.maxResultsForQuery && pagesFetched < maxPages) {
     let response: FederalSearchHttpResponse;
     try {
       response = await fetchWithRetry(currentUrl);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
+      if (probing) {
+        // Una pagina deducida que falla no invalida lo ya obtenido.
+        warnings.push(`next_page_probe_failed:${message}`);
+        currentUrl = null;
+        break;
+      }
       warnings.push(`fetch_failed:${message}`);
       sourceStatus = collected.length > 0 ? "partial" : "unavailable";
       partial = true;
@@ -656,6 +689,11 @@ async function runSingleQuery(options: {
       break;
     }
     if (response.status_code < 200 || response.status_code >= 300) {
+      if (probing && collected.length > 0) {
+        warnings.push(`next_page_probe_http_${response.status_code}`);
+        currentUrl = null;
+        break;
+      }
       warnings.push(`unexpected_http_status:${response.status_code}`);
       sourceStatus = collected.length > 0 ? "partial" : "unavailable";
       partial = true;
@@ -677,6 +715,14 @@ async function runSingleQuery(options: {
       );
       sourceStatus = collected.length > 0 ? "partial" : "unavailable";
       partial = true;
+      break;
+    }
+    if (probing && pageResults.length === 0) {
+      // Pagina deducida sin resultados: fin natural (o pagina de error); lo ya obtenido es valido.
+      if (pageClass !== "confirmed_zero_results") {
+        warnings.push(`next_page_probe_empty:${pageClass}`);
+      }
+      currentUrl = null;
       break;
     }
     if (pageClass === "unrecognized_response") {
@@ -705,10 +751,25 @@ async function runSingleQuery(options: {
         "results_declared_but_not_parsed: the page announces hits but no case links could be parsed; the parser may be out of date.",
       );
     }
+    const known = new Set(collected.map((item) => item.official_url ?? item.case_number));
+    const fresh = pageResults.filter((item) => !known.has(item.official_url ?? item.case_number));
     collected.push(...pageResults);
 
-    const nextCursor = extractNextCursorFromHtml(response.body, response.final_url);
-    if (!nextCursor) break;
+    let nextCursor = extractNextCursorFromHtml(response.body, response.final_url);
+    probing = false;
+    if (
+      !nextCursor &&
+      pageClass === "results" &&
+      fresh.length > 0 &&
+      pageResults.length >= MIN_RESULTS_TO_PROBE_NEXT_PAGE
+    ) {
+      nextCursor = synthesizeNextPageUrl(currentUrl);
+      probing = nextCursor !== null;
+    }
+    if (!nextCursor) {
+      currentUrl = null;
+      break;
+    }
     currentUrl = nextCursor;
   }
 
@@ -804,7 +865,9 @@ export async function discoverFederalCaseCandidates(
       language,
       dateFrom: input.date_from ?? null,
       dateTo: input.date_to ?? null,
-      maxResultsForQuery: maxResults,
+      // Con filtro de sala el portal no filtra: se pide mas presupuesto bruto para que, tras
+      // quedarse con la sala pedida, siga habiendo suficientes resultados.
+      maxResultsForQuery: input.chamber ? Math.min(maxResults * 4, MAX_MAX_RESULTS) : maxResults,
       startUrl,
     });
     collected = [...run.results];

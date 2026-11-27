@@ -1,0 +1,29 @@
+{
+  "name": "swiss-legal-local",
+  "owner": {
+    "name": "swiss-legal-mcp"
+  },
+  "plugins": [
+    {
+      "name": "litigacion-civil-suiza",
+      "source": "./litigacion-civil-suiza",
+      "description": "Litigacion civil suiza (ZPO, OR, SchKG, BGG)."
+    },
+    {
+      "name": "litigacion-administrativa-suiza",
+      "source": "./litigacion-administrativa-suiza",
+      "description": "Litigacion administrativa y de seguros sociales suiza (VwVG, ATSG, BGG)."
+    },
+    {
+      "name": "litigacion-laboral-suiza",
+      "source": "./litigacion-laboral-suiza",
+      "description": "Litigacion laboral suiza (OR, ZPO, BGG)."
+    },
+    {
+      "name": "litigacion-penal-suiza",
+      "source": "./litigacion-penal-suiza",
+      "description": "Litigacion penal suiza (StPO, BGG)."
+    }
+  ],
+  "description": "Plugins de litigacion para derecho suizo, apoyados en swiss-legal-mcp."
+}

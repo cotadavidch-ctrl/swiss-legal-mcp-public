@@ -1,0 +1,7 @@
+# Articulos citados por la skill rueckforderung-sozialversicherung
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 25 ATSG
+
+Art. 25 Rückerstattung 1 Unrechtmässig bezogene Leistungen sind zurückzuerstatten. Wer Leistungen in gutem Glauben empfangen hat, muss sie nicht zurückerstatten, wenn eine grosse Härte vorliegt. 2 Der Rückforderungsanspruch erlischt drei Jahre, nachdem die Versicherungseinrichtung davon Kenntnis erhalten hat, spätestens aber fünf Jahre seit der Auszahlung der einzelnen Leistung. Wird der Rückerstattungsanspruch aus einer strafbaren Handlung hergeleitet, für welche das Strafrecht eine längere Verjährungsfrist vorsieht, so ist diese Frist massgebend. 3 Zuviel bezahlte Beiträge können zurückgefordert werden. Der Anspruch erlischt mit dem Ablauf eines Jahres, nachdem der Beitragspflichtige von seinen zu hohen Zahlungen Kenntnis erhalten hat, spätestens aber fünf Jahre nach Ablauf des Kalenderjahres, in dem die Beiträge bezahlt wurden.

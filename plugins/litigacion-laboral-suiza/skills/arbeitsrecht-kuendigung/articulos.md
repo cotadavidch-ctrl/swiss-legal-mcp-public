@@ -1,0 +1,27 @@
+# Articulos citados por la skill arbeitsrecht-kuendigung
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 197 ZPO
+
+Art. 197 Grundsatz Dem Entscheidverfahren geht ein Schlichtungsversuch vor einer Schlichtungsbehörde voraus.
+
+## Art. 209 ZPO
+
+Art. 209 Klagebewilligung 1 Kommt es zu keiner Einigung, so hält die Schlichtungsbehörde dies im Protokoll fest und erteilt die Klagebewilligung: a. bei der Anfechtung von Miet- und Pachtzinserhöhungen: dem Vermieter oder Verpächter; b. in den übrigen Fällen: der klagenden Partei. 2 Die Klagebewilligung enthält: a. die Namen und Adressen der Parteien und allfälliger Vertretungen; b. das Rechtsbegehren der klagenden Partei mit Streitgegenstand und eine allfällige Widerklage; c. das Datum der Einleitung des Schlichtungsverfahrens; d. die Verfügung über die Kosten des Schlichtungsverfahrens; e. das Datum der Klagebewilligung; f. die Unterschrift der Schlichtungsbehörde. 3 Nach Eröffnung berechtigt die Klagebewilligung während dreier Monate zur Einreichung der Klage beim Gericht. 4 In Streitigkeiten aus Miete und Pacht von Wohn- und Geschäftsräumen sowie aus landwirtschaftlicher Pacht beträgt die Klagefrist 30 Tage.
+
+## Art. 243 ZPO
+
+Art. 243 Geltungsbereich 1 Das vereinfachte Verfahren gilt für vermögensrechtliche Streitigkeiten bis zu einem Streitwert von 30 000 Franken. 2 Es gilt ohne Rücksicht auf den Streitwert bei Streitigkeiten: a. nach dem Gleichstellungsgesetz vom 24. März 1995; b. wegen Gewalt, Drohungen oder Nachstellungen nach Artikel 28b ZGB oder betreffend eine elektronische Überwachung nach Artikel 28c ZGB; c. aus Miete und Pacht von Wohn- und Geschäftsräumen sowie aus landwirtschaftlicher Pacht, sofern die Hinterlegung von Miet- und Pachtzinsen, der Schutz vor missbräuchlichen Miet- und Pachtzinsen, der Kündigungsschutz oder die Erstreckung des Miet- oder Pachtverhältnisses betroffen ist; d. zur Durchsetzung des Auskunftsrechts nach Artikel 25 DSG; e. nach dem Mitwirkungsgesetz vom 17. Dezember 1993; f. aus Zusatzversicherungen zur sozialen Krankenversicherung nach dem Bundesgesetz vom 18. März 1994 über die Krankenversicherung. 3 Es findet keine Anwendung in Streitigkeiten vor der einzigen kantonalen Instanz nach den Artikeln 5 und 8 und vor dem Handelsgericht nach Artikel 6.
+
+## Art. 336 OR
+
+Art. 336 1 Die Kündigung eines Arbeitsverhältnisses ist missbräuchlich, wenn eine Partei sie ausspricht: a. wegen einer Eigenschaft, die der anderen Partei kraft ihrer Persönlichkeit zusteht, es sei denn, diese Eigenschaft stehe in einem Zusammenhang mit dem Arbeitsverhältnis oder beeinträchtige wesentlich die Zusammenarbeit im Betrieb; b. weil die andere Partei ein verfassungsmässiges Recht ausübt, es sei denn, die Rechtsausübung verletze eine Pflicht aus dem Arbeitsverhältnis oder beeinträchtige wesentlich die Zusammenarbeit im Betrieb; c. ausschliesslich um die Entstehung von Ansprüchen der anderen Partei aus dem Arbeitsverhältnis zu vereiteln; d. weil die andere Partei nach Treu und Glauben Ansprüche aus dem Arbeitsverhältnis geltend macht; e. weil die andere Partei schweizerischen obligatorischen Militär- oder Schutzdienst oder schweizerischen Zivildienst leistet oder eine nicht freiwillig übernommene gesetzliche Pflicht erfüllt. 2 Die Kündigung des Arbeitsverhältnisses durch den Arbeitgeber ist im Weiteren missbräuchlich, wenn sie ausgesprochen wird: a. weil der Arbeitnehmer einem Arbeitnehmerverband angehört oder nicht angehört oder weil er eine gewerkschaftliche Tätigkeit rechtmässig ausübt; b. während der Arbeitnehmer gewählter Arbeitnehmervertreter in einer betrieblichen oder in einer dem Unternehmen angeschlossenen Einrichtung ist, und der Arbeitgeber nicht beweisen kann, dass er einen begründeten Anlass zur Kündigung hatte; c. im Rahmen einer Massenentlassung, ohne dass die Arbeitnehmervertretung oder, falls es keine solche gibt, die Arbeitnehmer, konsultiert worden sind (Art. 335f). 3 Der Schutz eines Arbeitnehmervertreters nach Absatz 2 Buchstabe b, dessen Mandat infolge Übergangs des Arbeitsverhältnisses endet (Art. 333), besteht so lange weiter, als das Mandat gedauert hätte, falls das Arbeitsverhältnis nicht übertragen worden wäre.
+
+## Art. 336a OR
+
+Art. 336a 1 Die Partei, die das Arbeitsverhältnis missbräuchlich kündigt, hat der anderen Partei eine Entschädigung auszurichten. 2 Die Entschädigung wird vom Richter unter Würdigung aller Umstände festgesetzt, darf aber den Betrag nicht übersteigen, der dem Lohn des Arbeitnehmers für sechs Monate entspricht. Schadenersatzansprüche aus einem anderen Rechtstitel sind vorbehalten. 3 Ist die Kündigung nach Artikel 336 Absatz 2 Buchstabe c missbräuchlich, so darf die Entschädigung nicht mehr als den Lohn des Arbeitnehmers für zwei Monate betragen.
+
+## Art. 336b OR
+
+Art. 336b 1 Wer gestützt auf Artikel 336 und 336a eine Entschädigung geltend machen will, muss gegen die Kündigung längstens bis zum Ende der Kündigungsfrist beim Kündigenden schriftlich Einsprache erheben. 2 Ist die Einsprache gültig erfolgt und einigen sich die Parteien nicht über die Fortsetzung des Arbeitsverhältnisses, so kann die Partei, der gekündigt worden ist, ihren Anspruch auf Entschädigung geltend machen. Wird nicht innert 180 Tagen nach Beendigung des Arbeitsverhältnisses eine Klage anhängig gemacht, ist der Anspruch verwirkt.

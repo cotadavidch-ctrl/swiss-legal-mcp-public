@@ -270,7 +270,7 @@ export interface ExtractedQuote {
 
 const QUOTE_RE = /[«“„"]([^«»“”„"\n]{30,1500}?)[»”“"]/g;
 export const ARTICLE_RE =
-  /Art\.\s*(\d+[a-z]{0,2})(?:\s*(?:Abs\.|al\.|cpv\.)\s*\d+[a-z]?(?:\s*(?:und|et|e|bis|,|-|–)\s*\d+[a-z]?)*)?(?:\s*(?:lit\.|let\.)\s*[a-z])?\s+(OR|CO|ZGB|CC|ATSG|LPGA|BGG|LTF|VwVG|PA|SchKG|LP|AVIG|LACI|StGB|CP|BV|Cst|StPO|CPP|ZPO|CPC|ZUG|LAS|AIG|LEI|AsylG|LAsi|Cost|IVG|LAI|AHVG|LAVS|UVG|LAA|BVG|LPP|StHG|LHID|KVG|LAMal|DBG|LIFD|RPG|LAT|VZAE|OASA|BüG|LN|VGG|LTAF|SVG|LCR|MWSTG|LTVA|ArG|LTr|GlG|LEg|USG|LPE|BPG|LPers|DSG|LPD)\b/g;
+  /Art\.\s*(\d+[a-z]{0,2})(?:\s*(?:Abs\.|al\.|cpv\.)\s*\d+[a-z]?(?:\s*(?:und|et|e|bis|,|-|–)\s*\d+[a-z]?)*)?(?:\s*(?:lit\.|let\.)\s*[a-z])?\s+(OR|CO|ZGB|CC|ATSG|LPGA|BGG|LTF|VwVG|PA|SchKG|LP|AVIG|LACI|StGB|CP|BV|Cst|StPO|CPP|ZPO|CPC|ZUG|LAS|AIG|LEI|AsylG|LAsi|Cost|IVG|LAI|AHVG|LAVS|UVG|LAA|BVG|LPP|StHG|LHID|KVG|LAMal|DBG|LIFD|RPG|LAT|VZAE|OASA|BüG|LN|VGG|LTAF|SVG|LCR|MWSTG|LTVA|ArG|LTr|GlG|LEg|USG|LPE|BPG|LPers|DSG|LPD|UVV|OLAA|OAINF|KVV|AVIV|OACI|OADI|IVV|RAI|OAI|AHVV|RAVS|OAVS|ATSV)\b/g;
 const CASE_RE =
   /\b(?:(?:BGE|ATF|DTF)\s+\d+\s+[IVX]+\s+\d+|\d[A-Z]_\d+\/\d{4}|\d[A-Z]\.\d+\/\d{4}|[A-Z]-\d+\/\d{4})\b/g;
 
@@ -323,8 +323,12 @@ export interface LawSource {
   readonly language: "de" | "fr" | "it";
 }
 
-const IT_ABBREV = new Set(["Cost"]);
+const IT_ABBREV = new Set(["Cost", "OAINF", "OADI", "OAI", "OAVS"]);
 const FR_ABBREV = new Set([
+  "OLAA",
+  "OACI",
+  "RAI",
+  "RAVS",
   "CO",
   "CC",
   "LPGA",
@@ -397,6 +401,21 @@ const LAW_TABLE: Readonly<Record<string, { eli?: string; sr?: string }>> = {
   // Identificadores comprobados en Fedlex el 2026-11-15 (SR unico) o por ELI cuando el SR es ambiguo.
   UVG: { sr: "832.20" },
   LAA: { sr: "832.20" },
+  // Ordenanzas de seguros sociales: SR comprobados en Fedlex el 2026-11-23 (get_article del Art. 1 o 50).
+  UVV: { sr: "832.202" },
+  OLAA: { sr: "832.202" },
+  OAINF: { sr: "832.202" },
+  KVV: { sr: "832.102" },
+  AVIV: { sr: "837.02" },
+  OACI: { sr: "837.02" },
+  OADI: { sr: "837.02" },
+  IVV: { sr: "831.201" },
+  RAI: { sr: "831.201" },
+  OAI: { sr: "831.201" },
+  AHVV: { sr: "831.101" },
+  RAVS: { sr: "831.101" },
+  OAVS: { sr: "831.101" },
+  ATSV: { sr: "830.11" },
   BVG: { sr: "831.40" },
   LPP: { sr: "831.40" },
   StHG: { sr: "642.14" },

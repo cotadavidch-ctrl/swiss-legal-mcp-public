@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import "./helpers/reportRoot.js";
 import {
   adjustConfidenceAfterLive,
   averageConfidence,

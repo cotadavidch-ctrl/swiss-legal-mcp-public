@@ -19,3 +19,7 @@ tests/fixtures/**/*.htm
 _day1-validation-output/**
 debug_sections.js
 final_answer.ts
+
+# plugins generados por scripts/build-plugins.mjs (la fuente es plugins/src)
+plugins/litigacion-*/
+plugins/src/skills/*/articulos.md

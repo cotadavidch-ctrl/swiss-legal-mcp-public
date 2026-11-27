@@ -3,6 +3,7 @@ import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import {
   LegislationProviderRegistry,
+  NotFoundError,
   ProviderRegistry,
   ToolRegistry,
   type LegalSourceProvider,
@@ -12,6 +13,13 @@ import { FEDLEX_CAPABILITIES } from "@swiss-legal-mcp/provider-fedlex";
 import { createLogger } from "@swiss-legal-mcp/shared";
 import { createMcpServer } from "../src/mcpServer.js";
 import { registerCitationTools } from "../src/tools/citationTools.js";
+import type * as OfficialResolverModule from "../src/tools/officialSwissCaseResolver.js";
+import { resolveOfficialSwissCase } from "../src/tools/officialSwissCaseResolver.js";
+
+vi.mock("../src/tools/officialSwissCaseResolver.js", async (importOriginal) => {
+  const actual = await importOriginal<typeof OfficialResolverModule>();
+  return { ...actual, resolveOfficialSwissCase: vi.fn(actual.resolveOfficialSwissCase) };
+});
 
 const logger = createLogger({ level: "silent" });
 
@@ -225,6 +233,131 @@ describe("verify_legal_citation (proveedores falsos, sin red)", () => {
     expect(structured.source_quality).toBe("OFFICIAL_PRIMARY");
     expect(structured.material_verification.status).toBe("not_requested");
     expect(structured.material_verification.citation_quality).toBe("UNABLE_TO_VERIFY");
+  });
+
+  it("muestra una BGE como verificada (sin avisos obsoletos) cuando la lectura oficial en vivo la confirma", async () => {
+    vi.mocked(resolveOfficialSwissCase).mockResolvedValueOnce({
+      legal_use: {
+        official_verification_status: "full_text_verified_official",
+        ratio_status: "ratio_not_confirmed",
+      },
+      fetch: {
+        fetch_status: "fetch_success",
+        final_url: "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?x=1",
+      },
+      identity: { status: "identity_verified" },
+      warnings: [],
+    } as unknown as Awaited<ReturnType<typeof resolveOfficialSwissCase>>);
+    const client = await buildServer({ fedlex: fakeFedlexProvider() });
+    const result = await client.callTool({
+      name: "verify_legal_citation",
+      arguments: { citation: "BGE 133 III 335" },
+    });
+    expect(result.isError).toBeFalsy();
+    const out = result.structuredContent as {
+      match: string;
+      warnings: string[];
+      officialSource: string | null;
+      officialCaseVerification: { status: string; warnings: string[] };
+    };
+    expect(out.officialCaseVerification.status).toBe("officially_verified");
+    expect(out.officialCaseVerification.warnings).toEqual([]);
+    const nested = (
+      out.officialCaseVerification as unknown as {
+        fullTextReading: {
+          status: string;
+          warnings: string[];
+          full_text_verified_official: boolean;
+          unread_sections: string[];
+        };
+      }
+    ).fullTextReading;
+    expect(nested.status).toBe("full_text_verified_official");
+    expect(nested.full_text_verified_official).toBe(true);
+    expect(nested.warnings).toEqual([]);
+    expect(nested.unread_sections).toEqual([]);
+    expect(out.match).toBe("exact");
+    expect(out.officialSource).toContain("bger.ch");
+    expect(out.warnings).not.toContain("unverified_reference");
+    expect(out.warnings).not.toContain("full_text_not_read");
+  });
+
+  it("mantiene una BGE como no verificada si la lectura oficial falla", async () => {
+    vi.mocked(resolveOfficialSwissCase).mockResolvedValueOnce({
+      legal_use: {
+        official_verification_status: "not_verified",
+        ratio_status: "ratio_not_confirmed",
+      },
+      fetch: { fetch_status: "fetch_failed", final_url: null },
+      identity: { status: "identity_not_verifiable" },
+      warnings: [],
+    } as unknown as Awaited<ReturnType<typeof resolveOfficialSwissCase>>);
+    const client = await buildServer({ fedlex: fakeFedlexProvider() });
+    const result = await client.callTool({
+      name: "verify_legal_citation",
+      arguments: { citation: "BGE 133 III 335" },
+    });
+    const out = result.structuredContent as {
+      match: string;
+      officialCaseVerification: { status: string };
+    };
+    expect(out.officialCaseVerification.status).not.toBe("officially_verified");
+    expect(out.match).not.toBe("exact");
+  });
+
+  it("resuelve 'Art. 210 Abs. 6 OR' por la tabla de leyes federales verificadas", async () => {
+    const getArticle = vi.fn(async () =>
+      fakeFedlexDoc({
+        title: "OR — Art. 210",
+        fullText:
+          "Art. 210 1 Die Klagen verjähren mit Ablauf von zwei Jahren. 2 Die Frist beträgt fünf Jahre. 3 Für Kulturgüter gilt eine Sonderregel. 4 Eine Vereinbarung ist ungültig. 5 Die Einreden bleiben bestehen. 6 Der Verkäufer kann die Verjährung nicht geltend machen.",
+      }),
+    );
+    const client = await buildServer({ fedlex: fakeFedlexProvider({ getArticle }) });
+    const result = await client.callTool({
+      name: "verify_legal_citation",
+      arguments: { citation: "Art. 210 Abs. 6 OR" },
+    });
+    expect(result.isError).toBeFalsy();
+    const out = result.structuredContent as { match: string; warnings: string[]; type: string };
+    expect(out.match).toBe("exact");
+    // ya no se etiqueta como 'unresolvable' junto a un 'exact'
+    expect(out.type).toBe("article_by_abbreviation");
+    expect(out.warnings.join(" ")).toContain("tabla de leyes federales verificadas");
+    expect(getArticle).toHaveBeenCalledWith(
+      expect.objectContaining({ articleNumber: "210" }),
+      undefined,
+    );
+  });
+
+  it("no da por verificado un apartado que no existe en el articulo", async () => {
+    const getArticle = vi.fn(async () =>
+      fakeFedlexDoc({
+        fullText: "Art. 210 1 Die Klagen verjähren. 2 Die Frist beträgt fünf Jahre.",
+      }),
+    );
+    const client = await buildServer({ fedlex: fakeFedlexProvider({ getArticle }) });
+    const result = await client.callTool({
+      name: "verify_legal_citation",
+      arguments: { citation: "Art. 210 Abs. 9 OR" },
+    });
+    const out = result.structuredContent as { match: string; warnings: string[] };
+    expect(out.match).toBe("probable");
+    expect(out.warnings.join(" ")).toContain("no se localizo el apartado 9");
+  });
+
+  it("un articulo inexistente en una ley conocida da not_found con mensaje especifico", async () => {
+    const getArticle = vi.fn(async () => {
+      throw new NotFoundError("fedlex", "OR Art. 5000");
+    });
+    const client = await buildServer({ fedlex: fakeFedlexProvider({ getArticle }) });
+    const result = await client.callTool({
+      name: "verify_legal_citation",
+      arguments: { citation: "Art. 5000 OR" },
+    });
+    const out = result.structuredContent as { match: string; warnings: string[] };
+    expect(out.match).toBe("not_found");
+    expect(out.warnings.join(" ")).toContain("no figura en OR");
   });
 
   it("devuelve not_found cuando el texto no contiene ninguna cita reconocible", async () => {

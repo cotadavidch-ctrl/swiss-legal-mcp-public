@@ -258,11 +258,42 @@ describe("analyze_procedural_strategy", () => {
       confidence: Record<string, number>;
     };
 
-    expect(structured.deadlines).toEqual([
+    // el plazo aportado por el usuario se mantiene tal cual
+    expect(structured.deadlines[0]).toEqual(
       expect.objectContaining({ calculationStatus: "confirmed", calculatedDate: "2026-02-12" }),
-    ]);
+    );
+    // las reglas conocidas de seguros sociales se listan, pero nunca con una fecha calculada
+    const rest = structured.deadlines.slice(1);
+    expect(rest.length).toBeGreaterThan(0);
+    for (const deadline of rest) {
+      expect(deadline.calculationStatus).toBe("rule_known_date_not_calculated");
+      expect(deadline.calculatedDate).toBeNull();
+    }
     expect(structured.warnings).not.toContain("uncertain_deadline");
     expect(structured.confidence.deadline).toBeGreaterThanOrEqual(0.65);
+  });
+
+  it("sin plazo confirmado por el usuario, el aviso uncertain_deadline se mantiene en seguros sociales", async () => {
+    const client = await buildClient();
+    const result = await client.callTool({
+      name: "analyze_procedural_strategy",
+      arguments: {
+        ...baseCase(),
+        matter: {
+          area: "social-insurance",
+          subarea: "invalidity insurance",
+          description: "Fixture social insurance decision without a confirmed deadline",
+        },
+      },
+    });
+    const structured = result.structuredContent as {
+      deadlines: Array<{ calculationStatus: string }>;
+      warnings: string[];
+    };
+    expect(
+      structured.deadlines.some((d) => d.calculationStatus === "rule_known_date_not_calculated"),
+    ).toBe(true);
+    expect(structured.warnings).toContain("uncertain_deadline");
   });
 
   it("diferencia rutas de deuda y medidas suspensivas sin afirmar competencia definitiva", async () => {
@@ -462,5 +493,83 @@ describe("analyze_procedural_strategy", () => {
     expect(structured.jurisdictionAndCompetence.dimensions.appellate_authority?.status).toBe(
       "not_verified",
     );
+  });
+});
+
+describe("analyze_procedural_strategy: reglas procesales verificadas (zivil)", () => {
+  function civilSaleCase(amount: string) {
+    return {
+      jurisdiction: { country: "CH", canton: "BE" },
+      matter: {
+        area: "civil",
+        subarea: "Grundstückkauf, Sachgewährleistung",
+        description: `Kauf einer Eigentumswohnung im Kanton Bern. Baumängel, Sanierungskosten ${amount}.`,
+      },
+      parties: [
+        { role: "claimant", type: "natural_person", description: "Käuferin" },
+        { role: "defendant", type: "natural_person", description: "Verkäufer" },
+      ],
+      claims: [{ description: `Minderung bzw. Schadenersatz ${amount}`, priority: "primary" }],
+      objectives: ["payment"],
+      analysisDate: "2026-11-22",
+    };
+  }
+
+  type Structured = {
+    applicableLaw: Array<{ provision: string; relevance: string; excerpt?: string }>;
+    deadlines: Array<{ deadlineType: string; calculationStatus: string; legalBasis?: string[] }>;
+    jurisdictionAndCompetence: { likelyAuthorityOrCourt: string };
+  };
+
+  it("kennt Schlichtungsverfahren, Klagefrist und Kaufrecht und liefert wörtliche Auszüge", async () => {
+    const client = await buildClient();
+    const result = await client.callTool({
+      name: "analyze_procedural_strategy",
+      arguments: civilSaleCase("CHF 98 500"),
+    });
+    expect(result.isError).toBeFalsy();
+    const s = result.structuredContent as Structured;
+    const provisions = s.applicableLaw
+      .filter((law) => law.relevance === "verified_procedural_rule")
+      .map((law) => law.provision);
+    expect(provisions).toEqual(
+      expect.arrayContaining([
+        "Art. 197 ZPO",
+        "Art. 209 Abs. 3 ZPO",
+        "Art. 201 OR",
+        "Art. 210 Abs. 6 OR",
+      ]),
+    );
+    expect(provisions).not.toContain("Art. 243 Abs. 1 ZPO");
+    const zpo197 = s.applicableLaw.find((law) => law.provision === "Art. 197 ZPO");
+    expect(zpo197?.excerpt).toContain("Schlichtungsversuch");
+    expect(s.jurisdictionAndCompetence.likelyAuthorityOrCourt).toContain("Schlichtungsgesuch");
+    const klage = s.deadlines.find((d) => d.deadlineType.startsWith("Klage beim Gericht"));
+    expect(klage?.calculationStatus).toBe("rule_known_date_not_calculated");
+    expect(klage?.legalBasis?.[0]).toContain("dreier Monate");
+  });
+
+  it("wendet das vereinfachte Verfahren nur bis CHF 30 000 an", async () => {
+    const client = await buildClient();
+    const result = await client.callTool({
+      name: "analyze_procedural_strategy",
+      arguments: civilSaleCase("CHF 12 000"),
+    });
+    const s = result.structuredContent as Structured;
+    expect(s.applicableLaw.map((law) => law.provision)).toContain("Art. 243 Abs. 1 ZPO");
+  });
+
+  it("fügt für Verwaltungssachen keine Zivilprozessregeln hinzu, nur die des VwVG", async () => {
+    const client = await buildClient();
+    const result = await client.callTool({
+      name: "analyze_procedural_strategy",
+      arguments: baseCase(),
+    });
+    const s = result.structuredContent as Structured;
+    const verified = s.applicableLaw
+      .filter((law) => law.relevance === "verified_procedural_rule")
+      .map((law) => law.provision);
+    expect(verified.some((provision) => /\b(ZPO|OR|SchKG|StPO)\b/.test(provision))).toBe(false);
+    expect(verified).toEqual(expect.arrayContaining(["Art. 50 Abs. 1 VwVG"]));
   });
 });

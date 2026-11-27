@@ -35,6 +35,8 @@ import { registerAdministrativeTools } from "./tools/administrativeTools.js";
 import { registerShabTools } from "./tools/shabTools.js";
 import { registerCantonalTools } from "./tools/cantonalTools.js";
 import { registerCitationTools } from "./tools/citationTools.js";
+import { registerCorpusStyleTools } from "./tools/corpusStyleTools.js";
+import { registerLegalCouncilTools } from "./tools/legalCouncilTools.js";
 import { registerSearchAcrossSourcesTools } from "./tools/searchAcrossSourcesTools.js";
 import { registerExtractPassagesTools } from "./tools/extractPassagesTools.js";
 import { registerCompareDocumentsTools } from "./tools/compareDocumentsTools.js";
@@ -368,6 +370,8 @@ export function buildRegistries(env: Env): Registries {
   // orquestacion/guardrails con adaptadores extensibles; no convierte
   // agregadores en fuentes oficiales ni rebaja la politica de lectura completa.
   registerOfficialSwissCaseTools(tools);
+  registerCorpusStyleTools(tools);
+  registerLegalCouncilTools(tools);
 
   // Fase 9: memoria operacional de Matter, pipeline parcial/completo,
   // orquestacion de investigacion juridica y QA de borradores. Herramientas

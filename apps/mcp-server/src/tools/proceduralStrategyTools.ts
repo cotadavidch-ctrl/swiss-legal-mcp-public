@@ -6,6 +6,7 @@ import {
   evaluateCaseComparability,
   verifyOfficialCaseReference,
 } from "./jurisprudenceGuardrails.js";
+import { selectProceduralRoutes, type ProceduralRoute } from "./proceduralRulesRegistry.js";
 
 const MAX_FACTS = 80;
 const MAX_DOCUMENTS = 30;
@@ -257,8 +258,18 @@ async function analyzeProceduralStrategy(input: ProceduralStrategyInput, context
   const uncertainFacts = input.facts.filter((fact) => fact.status === "uncertain");
   const missingFacts = identifyMissingFacts(input, loadedDocuments);
   const issues = identifyIssues(input);
-  const deadlines = analyzeDeadlines(input, issues);
-  const route = determineProceduralRoute(input, issues, sources);
+  const ruleRoutes = selectProceduralRoutes({
+    area: input.matter.area,
+    subarea: input.matter.subarea,
+    text: [
+      input.matter.description,
+      ...input.facts.map((fact) => fact.description),
+      ...input.claims.map((claim) => claim.description),
+    ].join(" "),
+    claimsText: input.claims.map((claim) => claim.description).join(" "),
+  });
+  const deadlines = analyzeDeadlines(input, issues, ruleRoutes);
+  const route = determineProceduralRoute(input, issues, sources, ruleRoutes);
   const evidence = assessEvidence(input);
   const caseLaw = await analyzeCaseLaw(input, context);
   const legalAidClarification = analyzeLegalAidClarificationDuty({
@@ -295,7 +306,7 @@ async function analyzeProceduralStrategy(input: ProceduralStrategyInput, context
       risks: risks.filter((risk) => risk.risk.includes("admisibilidad")).map((risk) => risk.risk),
     },
     deadlines,
-    applicableLaw: inferApplicableLaw(input, sources),
+    applicableLaw: inferApplicableLaw(input, sources, ruleRoutes),
     burdenOfProof: inferBurdenOfProof(input, sources),
     evidenceAssessment: evidence,
     legalAidClarification,
@@ -527,6 +538,7 @@ function issueResult(issues: ReturnType<typeof identifyIssues>, id: string) {
 function analyzeDeadlines(
   input: ProceduralStrategyInput,
   issues: ReturnType<typeof identifyIssues>,
+  ruleRoutes: readonly ProceduralRoute[] = [],
 ) {
   const explicit = input.deadlines.map((deadline) => ({
     deadlineType: deadline.description,
@@ -572,13 +584,45 @@ function analyzeDeadlines(
       warnings: ["uncertain_deadline", "proof_of_notification_and_legal_basis_required"],
     });
   }
-  return explicit;
+  const ruleDeadlines = ruleRoutes.flatMap((route) =>
+    route.deadlines.map((deadline) => ({
+      deadlineType: deadline.description,
+      startEvent: deadline.startEvent,
+      calculatedDate: null,
+      calculationStatus: "rule_known_date_not_calculated",
+      suspensionRules: [],
+      restorationPossibility: null,
+      sources: [],
+      legalBasis: route.rules
+        .filter((rule) => deadline.ruleIds.includes(rule.id))
+        .map((rule) => `${rule.provision}: ${rule.excerpt}`),
+      warnings: ["verify_start_event_and_applicable_version", "human_legal_review_required"],
+    })),
+  );
+  return [...explicit, ...ruleDeadlines];
+}
+
+/**
+ * Hay incertidumbre sobre el plazo cuando alguno no esta confirmado. Las entradas
+ * `rule_known_date_not_calculated` (regla de la ruta, fecha sin calcular) son informativas: si el
+ * usuario ya aporto un plazo confirmado, no lo vuelven incierto.
+ */
+function hasUncertainDeadline(
+  deadlines: ReadonlyArray<{ readonly calculationStatus: string }>,
+): boolean {
+  const anyConfirmed = deadlines.some((deadline) => deadline.calculationStatus === "confirmed");
+  return deadlines.some(
+    (deadline) =>
+      deadline.calculationStatus !== "confirmed" &&
+      !(anyConfirmed && deadline.calculationStatus === "rule_known_date_not_calculated"),
+  );
 }
 
 function determineProceduralRoute(
   input: ProceduralStrategyInput,
   issues: ReturnType<typeof identifyIssues>,
   sources: TraceSource[],
+  ruleRoutes: readonly ProceduralRoute[] = [],
 ) {
   const area = input.matter.area;
   const canton = input.jurisdiction.canton ?? "unknown";
@@ -605,7 +649,12 @@ function determineProceduralRoute(
   return {
     jurisdictionAndCompetence: {
       likelyJurisdiction: `CH${canton !== "unknown" ? `-${canton}` : ""}`,
-      likelyAuthorityOrCourt: routeByArea[area] ?? routeByArea["other"],
+      likelyAuthorityOrCourt: [
+        routeByArea[area] ?? routeByArea["other"],
+        ruleRoutes.find((route) => route.id === "civil-claim")?.summary,
+      ]
+        .filter((part): part is string => typeof part === "string" && part.length > 0)
+        .join(" | "),
       dimensions: {
         country_legal_system: {
           status: "confirmed",
@@ -948,9 +997,7 @@ function buildScenarios(
   deadlines: ReturnType<typeof analyzeDeadlines>,
   evidence: ReturnType<typeof assessEvidence>,
 ) {
-  const deadlineUncertain = deadlines.some(
-    (deadline) => deadline.calculationStatus !== "confirmed",
-  );
+  const deadlineUncertain = hasUncertainDeadline(deadlines);
   const evidenceWeak = evidence.some(
     (item) => item.strength === "weak" || item.strength === "unknown",
   );
@@ -1059,9 +1106,7 @@ function buildWarnings(
     ...(input.constraints.urgency === "critical"
       ? ["critical_urgency_professional_review_recommended"]
       : []),
-    ...(deadlines.some((deadline) => deadline.calculationStatus !== "confirmed")
-      ? ["uncertain_deadline"]
-      : []),
+    ...(hasUncertainDeadline(deadlines) ? ["uncertain_deadline"] : []),
     ...(caseLaw.limitations.includes("insufficient_case_law") ? ["insufficient_case_law"] : []),
     ...(caseLaw.structuredComparability.some(
       (item) => item.verification.status !== "officially_verified",
@@ -1079,17 +1124,34 @@ function buildWarnings(
   ];
 }
 
-function inferApplicableLaw(input: ProceduralStrategyInput, sources: TraceSource[]) {
+function inferApplicableLaw(
+  input: ProceduralStrategyInput,
+  sources: TraceSource[],
+  ruleRoutes: readonly ProceduralRoute[] = [],
+) {
   const citations = parseCitations(
     `${input.matter.description} ${input.facts.map((fact) => fact.description).join(" ")}`,
   );
-  return citations.slice(0, 10).map((citation) => ({
+  const verifiedRules = ruleRoutes.flatMap((route) =>
+    route.rules.map((rule) => ({
+      source: null,
+      provision: rule.provision,
+      versionDate: rule.consideredVersion,
+      relevance: "verified_procedural_rule",
+      excerpt: rule.excerpt,
+      verifiedOn: rule.verifiedOn,
+      routeId: route.id,
+      confidence: 0.9,
+    })),
+  );
+  const detected = citations.slice(0, 10).map((citation) => ({
     source: sources.find((source) => source.passage.includes(citation.raw)) ?? null,
     provision: citation.raw,
     versionDate: input.analysisDate,
     relevance: "citation_detected_in_user_supplied_case_material",
     confidence: 0.35,
   }));
+  return [...verifiedRules, ...detected];
 }
 
 function inferBurdenOfProof(input: ProceduralStrategyInput, sources: TraceSource[]) {

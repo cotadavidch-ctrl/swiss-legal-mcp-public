@@ -29,6 +29,9 @@ export type DeadlineRuleSet =
   | "SCHKG_RECHTSVORSCHLAG"
   | "ZPO_BERUFUNG"
   | "ZPO_BERUFUNG_SUMMARISCH"
+  | "ZPO_BERUFUNG_ANTWORT"
+  | "ZPO_BERUFUNG_ANTWORT_SUMMARISCH"
+  | "OR_MIETE_KUENDIGUNG_ANFECHTUNG"
   | "ZPO_BESCHWERDE"
   | "ZPO_BESCHWERDE_10TAGE"
   | "STPO_BESCHWERDE"
@@ -50,7 +53,12 @@ export interface DeadlineInput {
   readonly holidays?: readonly string[];
   /** BGG Art. 100 Abs. 2: true si el caso es una de las excepciones de 10 dias. */
   readonly bggTenDayException?: boolean;
-  /** Procedimiento exento de suspension (BGG 46 Abs. 2 / VwVG 22a Abs. 2 / ZPO 145 Abs. 2). */
+  /**
+   * Procedimiento exento de suspension (BGG 46 Abs. 2 / VwVG 22a Abs. 2 / ZPO 145 Abs. 2).
+   * `true`: exento. `false`: el llamador CONFIRMA que NO es una excepcion (por ejemplo, proceso
+   * civil ordinario), asi que rige la suspension y no se muestra una fecha anterior como prudente.
+   * Sin indicar: se muestra la fecha sin suspension como fecha prudente.
+   */
   readonly stillstandExempt?: boolean;
   /** Plazo indicado en la Rechtsmittelbelehrung (dias), para detectar discrepancias. */
   readonly statedDeadlineDays?: number;
@@ -198,6 +206,49 @@ const RULES: Readonly<Record<DeadlineRuleSet, RuleSetDefinition>> = {
     ...ZPO_COMMON,
     notes: [
       "Art. 314 Abs. 2 ZPO: en los litigios de derecho de familia de los Art. 271, 276, 302 y 305 ZPO el plazo es de 30 dias, no de 10. Si es su caso use ZPO_BERUFUNG con stillstandExempt=true.",
+      ZPO_NOTES[0] as string,
+    ],
+  },
+  ZPO_BERUFUNG_ANTWORT: {
+    days: 30,
+    basis: ["Art. 312 Abs. 2 ZPO: Berufungsantwort innert 30 Tagen"],
+    stillstand: "applies_unless_exempt",
+    stillstandBasis:
+      "Art. 145 Abs. 1 ZPO (Abs. 2: nicht im Schlichtungs- und im summarischen Verfahren)",
+    ...ZPO_COMMON,
+    notes: [
+      ...ZPO_NOTES,
+      "La fecha de notificacion es la de la entrega de la Berufung a la parte contraria, no la de la sentencia.",
+      "Art. 144 Abs. 1 ZPO: los plazos legales no pueden prorrogarse. Si el tribunal fija un plazo distinto en su orden, prevalece la ley y debe aclararse con el tribunal.",
+      "Art. 313 Abs. 1 ZPO: la Anschlussberufung se plantea dentro de la Berufungsantwort, asi que este plazo tambien rige para ella.",
+      "Art. 314 Abs. 1 ZPO: en el procedimiento SUMARIO la Berufungsantwort es de 10 dias y la Anschlussberufung es inadmisible. Use ZPO_BERUFUNG_ANTWORT_SUMMARISCH.",
+    ],
+  },
+  ZPO_BERUFUNG_ANTWORT_SUMMARISCH: {
+    days: 10,
+    basis: ["Art. 314 Abs. 1 ZPO: Berufungsantwort im summarischen Verfahren innert zehn Tagen"],
+    stillstand: "none",
+    stillstandBasis:
+      "Art. 145 Abs. 2 lit. b ZPO: sin suspension de plazos en el procedimiento sumario",
+    ...ZPO_COMMON,
+    notes: [
+      "Art. 314 Abs. 1 ZPO: en el sumario la Anschlussberufung es inadmisible. Art. 314 Abs. 2 ZPO: en los litigios de derecho de familia de los Art. 271, 276, 302 y 305 ZPO la Berufungsantwort es de 30 dias y la Anschlussberufung es admisible; en ese caso use ZPO_BERUFUNG_ANTWORT con stillstandExempt=true.",
+      "La fecha de notificacion es la de la entrega de la Berufung a la parte contraria.",
+      ZPO_NOTES[0] as string,
+    ],
+  },
+  OR_MIETE_KUENDIGUNG_ANFECHTUNG: {
+    days: 30,
+    basis: [
+      "Art. 273 Abs. 1 OR: Begehren um Anfechtung der Kuendigung innert 30 Tagen nach Empfang der Kuendigung bei der Schlichtungsbehoerde",
+    ],
+    stillstand: "does_not_apply_verify",
+    stillstandBasis:
+      "Art. 145 ZPO: no esta claro que la suspension rija para este plazo de conciliacion; se calcula sin suspension (fecha prudente)",
+    ...ZPO_COMMON,
+    notes: [
+      "Art. 273 Abs. 2 OR: la peticion de prorroga del arrendamiento es de 30 dias tras la recepcion de la resolucion en un contrato indefinido, y como tarde 60 dias antes del fin del contrato en uno de duracion determinada; este ruleSet cubre solo el plazo de 30 dias de la impugnacion.",
+      "El plazo cuenta desde la RECEPCION de la rescision, no desde su fecha.",
       ZPO_NOTES[0] as string,
     ],
   },
@@ -586,7 +637,7 @@ export function computeDeadline(input: DeadlineInput): DeadlineResult {
   let safe = deadline;
   if (stillstandMode === "yes") {
     const noSuspension = rollForward(withoutStillstand.end).date;
-    if (noSuspension.getTime() < safe.getTime()) {
+    if (noSuspension.getTime() < safe.getTime() && input.stillstandExempt !== false) {
       safe = noSuspension;
       alternativeDates.push({
         date: iso(deadline),

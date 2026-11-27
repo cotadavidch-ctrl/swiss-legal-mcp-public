@@ -1,5 +1,12 @@
 import https from "node:https";
 import tls from "node:tls";
+import {
+  assertBgerNotCoolingDown,
+  looksLikeBgerChallenge,
+  recordBgerChallenge,
+  recordBgerSuccess,
+} from "./bgerGuard.js";
+import { readBgerCache, writeBgerCache } from "./bgerCache.js";
 
 /**
  * www.bger.ch (y search.bger.ch) no envian el certificado intermedio en el handshake TLS
@@ -52,6 +59,8 @@ function bgerCa(): string[] {
 }
 
 export interface TlsAwareInit {
+  /** El llamador ya espero su turno con paceBgerRequest (fuera de su limite de tiempo). */
+  readonly paced?: boolean;
   readonly method?: string;
   readonly headers?: Record<string, string>;
   readonly body?: string;
@@ -113,6 +122,102 @@ function limitFetchBody(res: Response, max: number): Response {
 }
 
 /**
+ * Ritmo educado hacia *.bger.ch. El portal responde con un reto antibots (Incapsula) cuando
+ * recibe muchas peticiones seguidas, y eso dejaba sin corpus justo cuando hacian falta mas
+ * paginas. Se reserva una franja de tiempo por peticion (separacion minima entre peticiones
+ * a cualquier host bger.ch), incluso si varias llamadas concurrentes compiten. No es una
+ * forma de eludir el reto: reduce la carga que lo provoca. Ajustable con
+ * SWISS_LEGAL_BGER_MIN_INTERVAL_MS (0 = sin espera; en NODE_ENV=test es 0).
+ */
+const DEFAULT_BGER_MIN_INTERVAL_MS = 2500;
+let nextBgerSlotAt = 0;
+
+export function bgerMinIntervalMs(): number {
+  if (process["env"]["NODE_ENV"] === "test") return 0;
+  const raw = process["env"]["SWISS_LEGAL_BGER_MIN_INTERVAL_MS"];
+  const value = raw === undefined ? Number.NaN : Number(raw);
+  if (Number.isFinite(value) && value >= 0) return value;
+  // Un poco de variacion (0-700 ms) para que las peticiones no lleguen con cadencia de reloj.
+  return DEFAULT_BGER_MIN_INTERVAL_MS + Math.floor(Math.random() * 700);
+}
+
+/**
+ * Tope por ventana (por defecto 10 peticiones por minuto): una racha larga de sentencias nuevas
+ * (corpus de decenas) con solo ~1 s entre peticiones volvio a provocar el reto antibots. Con el
+ * tope, una racha se reparte (~6 s por peticion) y lo ya descargado sale de la cache.
+ * SWISS_LEGAL_BGER_MAX_PER_MINUTE lo ajusta (0 = sin tope; en NODE_ENV=test es 0).
+ */
+const DEFAULT_BGER_MAX_PER_MINUTE = 8;
+const recentBgerStarts: number[] = [];
+
+export function bgerMaxPerMinute(): number {
+  if (process["env"]["NODE_ENV"] === "test") return 0;
+  const raw = process["env"]["SWISS_LEGAL_BGER_MAX_PER_MINUTE"];
+  const value = raw === undefined ? Number.NaN : Number(raw);
+  return Number.isFinite(value) && value >= 0 ? value : DEFAULT_BGER_MAX_PER_MINUTE;
+}
+
+export function resetBgerPacingForTests(): void {
+  nextBgerSlotAt = 0;
+  recentBgerStarts.length = 0;
+}
+
+export async function waitForBgerSlot(
+  intervalMs: number = bgerMinIntervalMs(),
+  signal?: AbortSignal,
+  window: { readonly max: number; readonly ms: number } = {
+    max: bgerMaxPerMinute(),
+    ms: 60_000,
+  },
+): Promise<void> {
+  if (intervalMs <= 0 && window.max <= 0) return;
+  const now = Date.now();
+  let start = Math.max(now, nextBgerSlotAt);
+  if (window.max > 0 && recentBgerStarts.length >= window.max) {
+    // la peticion (max) posiciones atras debe haber salido de la ventana
+    const blocking = recentBgerStarts[recentBgerStarts.length - window.max]!;
+    start = Math.max(start, blocking + window.ms);
+  }
+  nextBgerSlotAt = start + Math.max(0, intervalMs);
+  if (window.max > 0) {
+    recentBgerStarts.push(start);
+    if (recentBgerStarts.length > window.max * 4) recentBgerStarts.splice(0, window.max * 2);
+  }
+  const wait = start - now;
+  if (wait <= 0) return;
+  await new Promise<void>((resolve, reject) => {
+    const timer = setTimeout(resolve, wait);
+    signal?.addEventListener(
+      "abort",
+      () => {
+        clearTimeout(timer);
+        reject(signal.reason instanceof Error ? signal.reason : new Error("aborted"));
+      },
+      { once: true },
+    );
+  });
+}
+
+/**
+ * Espera el turno de ritmo ANTES de que el llamador arranque su limite de tiempo. Si la espera
+ * (p. ej. por el tope de 10 peticiones por minuto) corriera dentro de ese limite (15-30 s),
+ * abortaria la peticion: "fetch_failed: This operation was aborted" y lotes a medias. Lo que ya
+ * esta en la cache en disco no espera. Despues se llama a tlsAwareFetch con `paced: true`.
+ */
+export async function paceBgerRequest(url: string, signal?: AbortSignal): Promise<void> {
+  let host: string;
+  try {
+    host = new URL(url).hostname;
+  } catch {
+    return;
+  }
+  if (!isBgerHost(host)) return;
+  if (await readBgerCache(url)) return;
+  assertBgerNotCoolingDown();
+  await waitForBgerSlot(undefined, signal);
+}
+
+/**
  * Como fetch (sin seguir redirecciones), pero para hosts *.bger.ch completa la cadena TLS
  * con el intermedio pinneado. Para el resto de hosts delega en fetch global.
  */
@@ -129,6 +234,21 @@ export async function tlsAwareFetch(url: string, init: TlsAwareInit = {}): Promi
     });
     return limitFetchBody(res, maxBytes);
   }
+  const method = init.method ?? "GET";
+  const cacheable = method === "GET" && init.body === undefined;
+  if (cacheable) {
+    // La cache va antes de la pausa: lo ya descargado se sirve aunque el portal bloquee.
+    const hit = await readBgerCache(url);
+    if (hit) {
+      const headers = new Headers({ "x-swiss-legal-cache": "hit" });
+      if (hit.contentType) headers.set("content-type", hit.contentType);
+      const cached = new Response(hit.body, { status: hit.status, headers });
+      Object.defineProperty(cached, "url", { value: url });
+      return cached;
+    }
+  }
+  assertBgerNotCoolingDown();
+  if (!init.paced) await waitForBgerSlot(undefined, init.signal);
   return new Promise<Response>((resolve, reject) => {
     const req = https.request(
       parsed,
@@ -168,12 +288,27 @@ export async function tlsAwareFetch(url: string, init: TlsAwareInit = {}): Promi
           const status = res.statusCode ?? 0;
           const nullBody = [101, 204, 205, 304].includes(status);
           // https.request no descomprime: se pide identidad (ver cabecera Accept-Encoding).
-          const response = new Response(nullBody ? null : Buffer.concat(chunks), {
-            status,
-            headers,
-          });
+          const bodyBuffer = nullBody ? null : Buffer.concat(chunks);
+          let toCache: Buffer | null = null;
+          if (status === 200 && bodyBuffer) {
+            if (looksLikeBgerChallenge(bodyBuffer)) {
+              // El reto se devuelve tal cual (los llamadores lo clasifican), pero se pausa el acceso.
+              recordBgerChallenge();
+            } else {
+              recordBgerSuccess();
+              if (cacheable) toCache = bodyBuffer;
+            }
+          }
+          const response = new Response(bodyBuffer, { status, headers });
           Object.defineProperty(response, "url", { value: url });
-          resolve(response);
+          if (toCache) {
+            // Se espera a que termine de guardarse: una segunda peticion inmediata debe ya encontrarla.
+            void writeBgerCache(url, status, headers.get("content-type"), toCache).then(() =>
+              resolve(response),
+            );
+          } else {
+            resolve(response);
+          }
         });
       },
     );

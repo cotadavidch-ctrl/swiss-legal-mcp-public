@@ -2,6 +2,7 @@ import { mkdtemp, readFile, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { REPORT_ROOT as OUT } from "./helpers/reportRoot.js";
 import {
   importHumanReview,
   prepareHumanReviewPackage,
@@ -24,7 +25,7 @@ async function baseReviewPayload() {
       "uncertain-deadline-controlled",
     ].map(async (caseId) => {
       const prepared = JSON.parse(
-        await readFile(`docs/procedural-strategy/human-review/cases/${caseId}.json`, "utf8"),
+        await readFile(`${OUT}/docs/procedural-strategy/human-review/cases/${caseId}.json`, "utf8"),
       ) as { caseId: string; caseHash: string; outputHash: string };
       return prepared;
     }),
@@ -91,7 +92,10 @@ describe("procedural-strategy human review package", () => {
 
   it("prepares five review cases without importing fake reviews", async () => {
     const report = JSON.parse(
-      await readFile("docs/release/generated/procedural-strategy-human-validation.json", "utf8"),
+      await readFile(
+        `${OUT}/docs/release/generated/procedural-strategy-human-validation.json`,
+        "utf8",
+      ),
     ) as {
       humanReviewPrepared: boolean;
       humanReviewCompleted: boolean;
@@ -104,7 +108,7 @@ describe("procedural-strategy human review package", () => {
   });
 
   it("prepares an exportable per-case package without golden labels", async () => {
-    const caseDir = "artifacts/procedural-strategy-human-review/legal-aid-ar";
+    const caseDir = `${OUT}/artifacts/procedural-strategy-human-review/legal-aid-ar`;
     await expect(stat(`${caseDir}/case-input.json`)).resolves.toBeDefined();
     await expect(stat(`${caseDir}/system-output.json`)).resolves.toBeDefined();
     await expect(stat(`${caseDir}/source-list.json`)).resolves.toBeDefined();
@@ -121,7 +125,7 @@ describe("procedural-strategy human review package", () => {
 
   it("prepares anonymized live-evaluation queries without executing live search", async () => {
     const planText = await readFile(
-      "docs/release/generated/procedural-strategy-live-evaluation-plan.json",
+      `${OUT}/docs/release/generated/procedural-strategy-live-evaluation-plan.json`,
       "utf8",
     );
     const plan = JSON.parse(planText) as { status: string; liveEvaluationCompleted: boolean };
@@ -209,7 +213,10 @@ describe("procedural-strategy human review package", () => {
 
     await expect(importHumanReview(file)).resolves.toBeUndefined();
     const report = JSON.parse(
-      await readFile("docs/release/generated/procedural-strategy-human-validation.json", "utf8"),
+      await readFile(
+        `${OUT}/docs/release/generated/procedural-strategy-human-validation.json`,
+        "utf8",
+      ),
     ) as { criticalFindingsOpen: number; status: string };
     expect(report.criticalFindingsOpen).toBe(1);
     expect(report.status).toBe("human_review_incomplete");

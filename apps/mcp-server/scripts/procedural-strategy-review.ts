@@ -11,14 +11,20 @@ import { createMcpServer } from "../src/mcpServer.js";
 import { buildRegistries } from "../src/registry.js";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+// Carpeta donde se escriben informes y paquetes. Los tests la cambian a una temporal para no
+// ensuciar el repositorio; por defecto es la raiz del proyecto.
+const OUTPUT_ROOT = process.env["SWISS_LEGAL_REPORT_ROOT"] ?? ROOT;
 const CORPUS_PATH = resolve(ROOT, "tests/fixtures/procedural-strategy/cases.json");
-const PACKAGE_DIR = resolve(ROOT, "docs/procedural-strategy/human-review");
-const ARTIFACT_PACKAGE_DIR = resolve(ROOT, "artifacts/procedural-strategy-human-review");
-const GENERATED_DIR = resolve(ROOT, "docs/release/generated");
+const PACKAGE_DIR = resolve(OUTPUT_ROOT, "docs/procedural-strategy/human-review");
+const ARTIFACT_PACKAGE_DIR = resolve(OUTPUT_ROOT, "artifacts/procedural-strategy-human-review");
+const GENERATED_DIR = resolve(OUTPUT_ROOT, "docs/release/generated");
 const HUMAN_VALIDATION_JSON = resolve(GENERATED_DIR, "procedural-strategy-human-validation.json");
 const LIVE_PLAN_JSON = resolve(GENERATED_DIR, "procedural-strategy-live-evaluation-plan.json");
 const LIVE_EVALUATION_JSON = resolve(GENERATED_DIR, "procedural-strategy-live-evaluation.json");
-const HUMAN_VALIDATION_MD = resolve(ROOT, "docs/procedural-strategy/human-validation-report.md");
+const HUMAN_VALIDATION_MD = resolve(
+  OUTPUT_ROOT,
+  "docs/procedural-strategy/human-validation-report.md",
+);
 const SELECTED_CASE_IDS = [
   "legal-aid-ar",
   "cantonal-admin-controlled",
@@ -416,7 +422,7 @@ async function writeReviewDocs(preparedCases: readonly Record<string, string>[])
     `${JSON.stringify(buildEmptyReviewTemplate(preparedCases), null, 2)}\n`,
   );
   await writeFile(
-    resolve(ROOT, "docs/procedural-strategy/reviewer-guide.md"),
+    resolve(OUTPUT_ROOT, "docs/procedural-strategy/reviewer-guide.md"),
     [
       "# Reviewer guide",
       "",
@@ -435,7 +441,7 @@ async function writeReviewDocs(preparedCases: readonly Record<string, string>[])
     ].join("\n"),
   );
   await writeFile(
-    resolve(ROOT, "docs/procedural-strategy/reviewer-schema.md"),
+    resolve(OUTPUT_ROOT, "docs/procedural-strategy/reviewer-schema.md"),
     [
       "# Reviewer schema",
       "",
@@ -449,7 +455,7 @@ async function writeReviewDocs(preparedCases: readonly Record<string, string>[])
     ].join("\n"),
   );
   await writeFile(
-    resolve(ROOT, "docs/procedural-strategy/adjudication.md"),
+    resolve(OUTPUT_ROOT, "docs/procedural-strategy/adjudication.md"),
     [
       "# Adjudication",
       "",
@@ -459,7 +465,7 @@ async function writeReviewDocs(preparedCases: readonly Record<string, string>[])
     ].join("\n"),
   );
   await writeFile(
-    resolve(ROOT, "docs/procedural-strategy/calibration.md"),
+    resolve(OUTPUT_ROOT, "docs/procedural-strategy/calibration.md"),
     [
       "# Calibration",
       "",
@@ -476,7 +482,7 @@ async function writeReviewDocs(preparedCases: readonly Record<string, string>[])
     ].join("\n"),
   );
   await writeFile(
-    resolve(ROOT, "docs/procedural-strategy/live-evaluation.md"),
+    resolve(OUTPUT_ROOT, "docs/procedural-strategy/live-evaluation.md"),
     [
       "# Live evaluation",
       "",
@@ -836,6 +842,9 @@ function parseArgs(argv: readonly string[]) {
 }
 
 function formatGeneratedReviewArtifacts(): void {
+  // Con una carpeta de salida distinta (tests) no se formatea nada: las rutas de abajo son las
+  // del repositorio y en un arbol limpio todavia no existen.
+  if (OUTPUT_ROOT !== ROOT) return;
   const files = [
     "artifacts/procedural-strategy-human-review",
     "docs/procedural-strategy/adjudication.md",

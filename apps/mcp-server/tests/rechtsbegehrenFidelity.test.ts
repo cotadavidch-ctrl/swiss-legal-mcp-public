@@ -25,6 +25,65 @@ const texts = (objectives: string[]) =>
     .join("\n");
 
 describe("Rechtsbegehren: fidelidad de pretensiones", () => {
+  it("una Berufung civil que pide anular y pagar emite las dos peticiones y conserva el importe", () => {
+    const out = buildRechtsbegehren({
+      jurisdiction: { country: "CH", canton: "BE" },
+      challengedAct: {
+        type: "decision" as const,
+        reference: "Urteil Regionalgericht Bern-Mittelland",
+      },
+      procedure: { remedy: "Berufung" },
+      objectives: [
+        "Aufhebung des Urteils und Verpflichtung der Beklagten zur Zahlung von CHF 31'200 nebst Zins",
+        "Eventualiter Rückweisung an die Vorinstanz",
+      ],
+      claims: [],
+    } as never);
+    expect(out.requests.map((r) => r.classification)).toEqual(["annulment", "payment", "remand"]);
+    expect(out.requests[0]!.text).toBe("Das angefochtene Urteil sei aufzuheben.");
+    expect(out.requests[1]!.text).toBe(
+      "Die Gegenpartei sei zu verpflichten, CHF 31'200 nebst Zins zu bezahlen.",
+    );
+    expect(out.requests[2]!.kind).toBe("Eventualantrag");
+  });
+
+  it("anular y devolver sin decir que la devolucion es subsidiaria sigue avisando de contradiccion", () => {
+    const warn = (objectives: string[]) => buildRechtsbegehren(input(objectives) as never).warnings;
+    expect(warn(["Aufhebung der Verfügung", "Rückweisung an die Vorinstanz"])).toContain(
+      "contradictory_requests",
+    );
+  });
+
+  it("si la devolucion se pide como subsidiaria, solo exige revisar la jerarquia", () => {
+    for (const eventual of [
+      "Eventualiter Rückweisung an die Vorinstanz",
+      "Subsidiär Rückweisung an die Vorinstanz",
+      "Hilfsweise sei die Sache zurückzuweisen",
+    ]) {
+      const warnings = buildRechtsbegehren(
+        input(["Aufhebung der Verfügung", eventual]) as never,
+      ).warnings;
+      expect(warnings).toContain("requests_require_hierarchy_review");
+      expect(warnings).not.toContain("contradictory_requests");
+    }
+  });
+
+  it("la peticion de pago no inventa el importe: sin cifra conserva la frase original", () => {
+    expect(texts(["Zahlung des offenen Werklohns"])).toContain(
+      "[Gegenstand, Betrag und Zins gemäss Antrag: Zahlung des offenen Werklohns]",
+    );
+    expect(texts(["Zahlung von CHF 5'000 nebst Zins zu 5% seit 01.03.2026"])).toBe(
+      "Die Gegenpartei sei zu verpflichten, CHF 5'000 nebst Zins zu 5% seit 01.03.2026 zu bezahlen.",
+    );
+  });
+
+  it("sin sentencia de tribunal sigue hablando de Verfügung y no inventa pago", () => {
+    expect(texts(["Aufhebung der Verfügung"])).toContain(
+      "Die angefochtene Verfügung sei aufzuheben.",
+    );
+    expect(classes(["Aufhebung der Verfügung"])).toEqual(["annulment"]);
+  });
+
   it("Akteneinsicht sola nunca produce Kontoauszug, Edition ni Rueckweisung inventada", () => {
     expect(classes(["Akteneinsicht"])).toEqual(["file_access"]);
     expect(texts(["Akteneinsicht"])).not.toMatch(/Kontoauszug|Edition|zurückzuweisen/);

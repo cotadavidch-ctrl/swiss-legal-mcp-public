@@ -321,7 +321,10 @@ export async function exportCaseCorpus(
       `candidate_pool_partial: obtained=${discovered.length} requested=${candidatePoolSize}. ` +
         "The official portal did not expose enough discoverable candidates under the given " +
         "filters/date range to reach the requested pool size; this reflects real official-source " +
-        "availability, not a fabricated shortfall or a silently re-imposed limit.",
+        "availability, not a fabricated shortfall or a silently re-imposed limit. " +
+        "Hint: the portal requires ALL words of the query to match, so a multi-word query is " +
+        'very selective; retry with a single general key term (e.g. "Kaufvertrag") and/or a ' +
+        "wider date range, then filter the larger pool yourself.",
     );
     strategyPartial = true;
   }
