@@ -1,0 +1,15 @@
+# Articulos citados por la skill festnahme
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 158 StPO
+
+Art. 158 Hinweise bei der ersten Einvernahme 1 Polizei oder Staatsanwaltschaft weisen die beschuldigte Person zu Beginn der ersten Einvernahme in einer ihr verständlichen Sprache darauf hin, dass: a. gegen sie ein Vorverfahren eingeleitet worden ist und welche Straftaten Gegenstand des Verfahrens bilden; b. sie die Aussage und die Mitwirkung verweigern kann; c. sie berechtigt ist, eine Verteidigung zu bestellen oder gegebenenfalls eine amtliche Verteidigung zu beantragen; d. sie eine Übersetzerin oder einen Übersetzer verlangen kann. 2 Einvernahmen ohne diese Hinweise sind nicht verwertbar.
+
+## Art. 217 StPO
+
+Art. 217 Durch die Polizei 1 Die Polizei ist verpflichtet, eine Person vorläufig festzunehmen und auf den Polizeiposten zu bringen, die: a. sie bei einem Verbrechen oder Vergehen auf frischer Tat ertappt oder unmittelbar nach der Begehung einer solchen Tat angetroffen hat; b. zur Verhaftung ausgeschrieben ist. 2 Sie kann eine Person vorläufig festnehmen und auf den Polizeiposten bringen, die gestützt auf Ermittlungen oder andere zuverlässige Informationen eines Verbrechens oder Vergehens verdächtig ist. 3 Sie kann eine Person, die sie bei der Begehung einer Übertretung auf frischer Tat ertappt oder unmittelbar nach Begehung einer solchen Tat angetroffen hat, vorläufig festnehmen und auf den Polizeiposten bringen, wenn: a. die Person ihre Personalien nicht bekannt gibt; b. die Person nicht in der Schweiz wohnt und nicht unverzüglich eine Sicherheit für die zu erwartende Busse leistet; c. die Festnahme nötig ist, um die Person von weiteren Übertretungen abzuhalten.
+
+## Art. 219 StPO
+
+Art. 219 Vorgehen der Polizei 1 Die Polizei stellt nach der Festnahme unverzüglich die Identität der festgenommenen Person fest, informiert diese in einer ihr verständlichen Sprache über die Gründe der Festnahme und klärt sie im Sinne von Artikel 158 über ihre Rechte auf. Danach informiert sie unverzüglich die Staatsanwaltschaft über die Festnahme. 2 Anschliessend befragt sie die festgenommene Person in Anwendung von Artikel 159 zu dem gegen sie bestehenden Verdacht und trifft unverzüglich die geeigneten Abklärungen, um den Tatverdacht und die weiteren Haftgründe zu erhärten oder zu entkräften. 3 Ergeben die Abklärungen, dass Haftgründe nicht oder nicht mehr bestehen, so lässt sie die festgenommene Person sofort frei. Bestätigen die Abklärungen den Tatverdacht und einen Haftgrund, so führt sie die Person unverzüglich der Staatsanwaltschaft zu. 4 Entlassung oder Zuführung erfolgen in jedem Falle spätestens nach 24 Stunden; ging der Festnahme eine Anhaltung voraus, so ist deren Dauer an die Frist anzurechnen. 5 Hat die Polizei eine Person im Sinne von Artikel 217 Absatz 3 vorläufig festgenommen und soll die Person länger als 3 Stunden festgehalten werden, so muss dies von Polizeiangehörigen angeordnet werden, die dazu vom Bund oder vom Kanton ermächtigt sind.

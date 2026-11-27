@@ -70,14 +70,34 @@ async function resolveSystematicNumber(
           note: `${result.items.length} resultado(s) real(es) para systematicNumber='${systematicNumber}'`,
         }),
       );
-      if (result.items.length > 0) {
-        for (const item of result.items) {
+      // Un mismo numero sistematico puede corresponder a varias obras de Fedlex (la vigente y
+      // otras antiguas o derogadas, p. ej. 173.110 = BGG y la antigua ley de organizacion
+      // judicial). Cada obra se pide por separado: antes, si una fallaba (sin version aplicable
+      // hoy) se abandonaba el bucle y se perdia la vigente.
+      const federal: CitationCandidate[] = [];
+      const skipped: string[] = [];
+      for (const item of result.items) {
+        try {
           const doc = await fedlex.getLaw({
             eli: item.eli,
             language: ctx.preferredLanguage ?? "de",
           });
-          candidates.push({ document: doc, providerId: "fedlex" });
+          federal.push({ document: doc, providerId: "fedlex" });
+        } catch (error) {
+          skipped.push(error instanceof Error ? error.message : String(error));
         }
+      }
+      const inForce = federal.filter(
+        (candidate) => candidate.document.legislation?.inForceStatus === "in_force",
+      );
+      const chosen = inForce.length > 0 ? inForce : federal;
+      candidates.push(...chosen);
+      if (chosen.length > 0 && (skipped.length > 0 || chosen.length < federal.length)) {
+        warnings.push(
+          `El numero sistematico '${systematicNumber}' corresponde a varias obras de Fedlex; se uso la vigente y se omitieron ${skipped.length + (federal.length - chosen.length)} historica(s) o derogada(s).`,
+        );
+      } else if (chosen.length === 0 && skipped.length > 0) {
+        warnings.push(`Fedlex no pudo resolver '${systematicNumber}': ${skipped[0]}`);
       }
     } catch (error) {
       warnings.push(

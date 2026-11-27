@@ -1,6 +1,7 @@
 import {
   NotFoundError,
   ProviderUnavailableError,
+  rankByQuery,
   type DocumentId,
   type HealthStatus,
   type LegalSourceProvider,
@@ -129,26 +130,29 @@ export class EstvProvider implements LegalSourceProvider {
       );
     }
 
-    const queryLower = params.query?.toLowerCase();
-    const documents: NormalizedDocument[] = [];
+    const candidates: {
+      listing: (typeof listings)[number];
+      item: (typeof listings)[number]["items"][number];
+    }[] = [];
     for (const listing of listings) {
       for (const item of listing.items) {
-        if (queryLower) {
-          const haystack = `${item.title} ${item.description ?? ""}`.toLowerCase();
-          if (!haystack.includes(queryLower)) continue;
-        }
         if (params.dateFrom && item.issuedDate && item.issuedDate < params.dateFrom) continue;
         if (params.dateTo && item.issuedDate && item.issuedDate > params.dateTo) continue;
-
-        documents.push(
-          mapEstvItemToNormalizedDocument(item, {
-            listingUrl: listing.listingUrl,
-            retrievedAt: listing.retrievedAt,
-            contentHash: listing.contentHash,
-          }),
-        );
+        candidates.push({ listing, item });
       }
     }
+    const ranked = rankByQuery(
+      candidates,
+      ({ item }) => `${item.title} ${item.description ?? ""}`,
+      params.query,
+    );
+    const documents: NormalizedDocument[] = ranked.items.map(({ listing, item }) =>
+      mapEstvItemToNormalizedDocument(item, {
+        listingUrl: listing.listingUrl,
+        retrievedAt: listing.retrievedAt,
+        contentHash: listing.contentHash,
+      }),
+    );
 
     const start = (page - 1) * pageSize;
     const pageItems = documents.slice(start, start + pageSize);

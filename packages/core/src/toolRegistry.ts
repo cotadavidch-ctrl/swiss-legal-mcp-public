@@ -178,12 +178,58 @@ export class ToolRegistry {
       : z.object(definition.inputSchema);
     const parsed = inputObjectSchema.safeParse(rawInput ?? {});
     if (!parsed.success) {
-      const issues = parsed.error.issues.map(
-        (issue) => `${issue.path.join(".")}: ${issue.message}`,
-      );
+      const issues = parsed.error.issues.map((issue) => {
+        const where = issue.path.join(".");
+        if (issue.code === "unrecognized_keys") {
+          const unknown = issue.keys.join(", ");
+          const valid = validKeysAt(definition.inputSchema, issue.path);
+          return `${where}: campo(s) desconocido(s) "${unknown}"${
+            valid ? `. Campos validos (en snake_case): ${valid.join(", ")}` : ""
+          }`;
+        }
+        return `${where}: ${issue.message}`;
+      });
       throw new ToolValidationError(name, issues);
     }
 
     return definition.handler(parsed.data, context);
   }
+}
+
+/** Nombres de campo validos en la ruta indicada del esquema, para mensajes de error utiles. */
+function validKeysAt(
+  shape: Record<string, z.ZodTypeAny>,
+  path: ReadonlyArray<PropertyKey>,
+): string[] | null {
+  let keys: string[] | null = Object.keys(shape);
+  let current: z.ZodTypeAny | undefined;
+  for (const segment of path) {
+    if (typeof segment === "number") {
+      current = unwrapSchema(current);
+      const element = (current as { element?: z.ZodTypeAny } | undefined)?.element;
+      current = element;
+      continue;
+    }
+    if (current === undefined) {
+      current = shape[String(segment)];
+    } else {
+      const inner = unwrapSchema(current) as { shape?: Record<string, z.ZodTypeAny> } | undefined;
+      current = inner?.shape?.[String(segment)];
+    }
+    if (current === undefined) return null;
+  }
+  if (path.length === 0) return keys;
+  const target = unwrapSchema(current) as { shape?: Record<string, z.ZodTypeAny> } | undefined;
+  keys = target?.shape ? Object.keys(target.shape) : null;
+  return keys;
+}
+
+function unwrapSchema(schema: z.ZodTypeAny | undefined): z.ZodTypeAny | undefined {
+  let current = schema;
+  for (let i = 0; i < 6 && current; i += 1) {
+    const def = (current as { def?: { innerType?: z.ZodTypeAny; element?: z.ZodTypeAny } }).def;
+    if (def?.innerType) current = def.innerType;
+    else break;
+  }
+  return current;
 }

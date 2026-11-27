@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import {
   discoverFederalCaseCandidates,
   setFederalCaseSearchHttpTransportForTests,
+  synthesizeNextPageUrl,
   type FederalSearchHttpResponse,
   type FederalSearchHttpTransport,
 } from "./officialFederalCaseSearch.js";
@@ -217,6 +218,90 @@ describe("discoverFederalCaseCandidates - pagination and volume", () => {
     const output = await discoverFederalCaseCandidates({ query: "x" });
     expect(output.total_discovered).toBeNull();
     expect(output.warnings.some((w) => w.startsWith("total_discovered_unavailable"))).toBe(true);
+  });
+});
+
+describe("discoverFederalCaseCandidates - paginacion sin enlace 'Vorwärts' (portal 2026-11)", () => {
+  function entries(startIndex: number, count: number) {
+    return Array.from({ length: count }, (_, i) => ({
+      reference: `4A_${startIndex + i}/2024`,
+      date: "01-01-2024",
+    }));
+  }
+
+  it("pide la pagina siguiente por numero cuando no hay enlace y se detiene cuando ya no hay resultados nuevos", async () => {
+    const requested: string[] = [];
+    setFederalCaseSearchHttpTransportForTests(async (url) => {
+      requested.push(url);
+      const page = Number(new URL(url).searchParams.get("page") ?? "1");
+      const body =
+        page <= 2
+          ? resultsPageHtml({ entries: entries(page * 100, 10) })
+          : resultsPageHtml({ entries: [] });
+      return { ...okResponse(body), final_url: url };
+    });
+    const output = await discoverFederalCaseCandidates({ query: "Kaufvertrag", max_results: 50 });
+    expect(output.results).toHaveLength(20);
+    expect(requested.map((u) => new URL(u).searchParams.get("page"))).toEqual([null, "2", "3"]);
+    expect(output.source_status).toBe("official");
+  });
+
+  it("respeta max_results y no sigue pidiendo paginas de mas", async () => {
+    let calls = 0;
+    setFederalCaseSearchHttpTransportForTests(async (url) => {
+      calls += 1;
+      const page = Number(new URL(url).searchParams.get("page") ?? "1");
+      return {
+        ...okResponse(resultsPageHtml({ entries: entries(page * 100, 10) })),
+        final_url: url,
+      };
+    });
+    const output = await discoverFederalCaseCandidates({ query: "Kaufvertrag", max_results: 15 });
+    expect(output.results).toHaveLength(15);
+    expect(calls).toBe(2);
+  });
+
+  it("un fallo al pedir una pagina deducida no invalida lo ya obtenido", async () => {
+    let calls = 0;
+    setFederalCaseSearchHttpTransportForTests(async (url) => {
+      calls += 1;
+      if (calls === 1) {
+        return { ...okResponse(resultsPageHtml({ entries: entries(100, 10) })), final_url: url };
+      }
+      throw new Error("boom");
+    });
+    const output = await discoverFederalCaseCandidates({ query: "Kaufvertrag", max_results: 50 });
+    expect(output.results).toHaveLength(10);
+    expect(output.source_status).toBe("official");
+    expect(output.warnings.some((w) => w.startsWith("next_page_probe_failed"))).toBe(true);
+  });
+
+  it("con una sola pagina corta no pide otra", async () => {
+    let calls = 0;
+    setFederalCaseSearchHttpTransportForTests(async (url) => {
+      calls += 1;
+      return { ...okResponse(resultsPageHtml({ entries: entries(100, 3) })), final_url: url };
+    });
+    const output = await discoverFederalCaseCandidates({ query: "Kaufvertrag", max_results: 50 });
+    expect(output.results).toHaveLength(3);
+    expect(calls).toBe(1);
+  });
+});
+
+describe("synthesizeNextPageUrl", () => {
+  it("incrementa page solo en URLs de busqueda propias", () => {
+    expect(
+      synthesizeNextPageUrl(
+        "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&query_words=x&type=simple_query",
+      ),
+    ).toContain("page=2");
+    expect(
+      synthesizeNextPageUrl(
+        "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?query_words=x&type=simple_query&page=4",
+      ),
+    ).toContain("page=5");
+    expect(synthesizeNextPageUrl("https://example.org/doc")).toBeNull();
+    expect(synthesizeNextPageUrl("not a url")).toBeNull();
   });
 });
 

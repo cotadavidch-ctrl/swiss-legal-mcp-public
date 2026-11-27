@@ -1,0 +1,14 @@
+{
+  "name": "litigacion-civil-suiza",
+  "version": "0.7.0",
+  "author": {
+    "name": "swiss-legal-mcp"
+  },
+  "description": "Litigacion civil suiza (ZPO, OR, SchKG, BGG): alta de asunto, cronologia y prueba, plazos, Berufung y su respuesta, ejecucion por deudas y recurso al Tribunal Federal.",
+  "keywords": [
+    "swiss-legal-mcp",
+    "legal",
+    "suiza",
+    "litigacion"
+  ]
+}

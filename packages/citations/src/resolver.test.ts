@@ -131,6 +131,84 @@ describe("resolveCitation: systematic_number", () => {
     expect(resolution.evidence[0]?.providerConsulted).toBe("fedlex");
   });
 
+  it("si un numero sistematico corresponde a una obra antigua sin version aplicable y a la vigente, usa la vigente (173.110 = BGG)", async () => {
+    const item = (id: string) => ({
+      id,
+      eli: `https://fedlex.example.test/eli/${id}`,
+      title: id,
+      systematicNumber: "173.110",
+      language: "de" as const,
+      inForceStatus: "in_force",
+    });
+    const provider = fakeFedlexProvider({
+      searchLegislation: vi.fn(async () => ({
+        items: [item("old-OG"), item("BGG")],
+        pagination: { page: 1, pageSize: 20 },
+        appliedFilters: {},
+        officialAttribution: {
+          sourceUrl: "https://fedlex.example.test/sparqlendpoint",
+          officialCharacter: "official" as const,
+        },
+        capabilities: {} as LegislationProvider["capabilities"],
+        warnings: [],
+      })),
+      getLaw: vi.fn(async (ref: { eli?: string }) => {
+        if (ref.eli?.endsWith("old-OG")) {
+          throw new Error("No hay ninguna version aplicable en la fecha para la obra antigua");
+        }
+        return fakeDocument("BGG", "Bundesgerichtsgesetz");
+      }),
+    });
+    const [citation] = parseCitations("SR 173.110");
+    const resolution = await resolveCitation(citation!, {
+      legislationProviders: buildRegistry(provider),
+    });
+    expect(resolution.match).toBe("exact");
+    expect(resolution.document?.title).toBe("Bundesgerichtsgesetz");
+    expect(resolution.warnings.join(" ")).toContain("se uso la vigente");
+  });
+
+  it("prefiere la obra en vigor cuando hay una derogada con el mismo numero", async () => {
+    const mk = (id: string, status: string) => ({
+      id,
+      eli: `https://fedlex.example.test/eli/${id}`,
+      title: id,
+      systematicNumber: "101",
+      language: "de" as const,
+      inForceStatus: status,
+    });
+    const provider = fakeFedlexProvider({
+      searchLegislation: vi.fn(async () => ({
+        items: [mk("BV-1874", "no_longer_in_force"), mk("BV-1999", "in_force")],
+        pagination: { page: 1, pageSize: 20 },
+        appliedFilters: {},
+        officialAttribution: {
+          sourceUrl: "https://fedlex.example.test/sparqlendpoint",
+          officialCharacter: "official" as const,
+        },
+        capabilities: {} as LegislationProvider["capabilities"],
+        warnings: [],
+      })),
+      getLaw: vi.fn(async (ref: { eli?: string }) => {
+        const old = ref.eli?.endsWith("BV-1874") === true;
+        const doc = fakeDocument("BV", old ? "BV 1874" : "BV 1999");
+        if (old && doc.legislation) {
+          return {
+            ...doc,
+            legislation: { ...doc.legislation, inForceStatus: "no_longer_in_force" as const },
+          };
+        }
+        return doc;
+      }),
+    });
+    const [citation] = parseCitations("SR 101");
+    const resolution = await resolveCitation(citation!, {
+      legislationProviders: buildRegistry(provider),
+    });
+    expect(resolution.match).toBe("exact");
+    expect(resolution.document?.title).toBe("BV 1999");
+  });
+
   it("resuelve not_found cuando ninguna fuente real devuelve resultados", async () => {
     const provider = fakeFedlexProvider();
     const [citation] = parseCitations("RS 999.999");

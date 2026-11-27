@@ -3,6 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { createLogger, loadStdioEnv } from "@swiss-legal-mcp/shared";
 import { createMcpServer } from "./mcpServer.js";
 import { buildRegistries } from "./registry.js";
+import { prewarmFedlexLaws } from "./prewarm.js";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 async function main(): Promise<void> {
@@ -17,7 +18,7 @@ async function main(): Promise<void> {
 
   const server: McpServer = createMcpServer({
     name: "swiss-legal-mcp",
-    version: "1.1.0",
+    version: "1.2.0",
     tools,
     // Stable discovery: unavailable sources remain visible, but calls are still blocked.
     exposeUnavailableTools: true,
@@ -26,9 +27,11 @@ async function main(): Promise<void> {
     logger,
   });
   let shuttingDown = false;
+  const prewarmController = new AbortController();
   const shutdown = (signal: string): void => {
     if (shuttingDown) return;
     shuttingDown = true;
+    prewarmController.abort();
     logger.info({ signal }, "cerrando servidor stdio");
     void server
       .close()
@@ -48,6 +51,13 @@ async function main(): Promise<void> {
   // instante, Node terminaría el proceso con el comportamiento por defecto
   // (código de salida 143) en vez de cerrar limpiamente (código 0).
   logger.info("swiss-legal-mcp: servidor stdio conectado");
+
+  // Precarga en segundo plano de las leyes mas verificadas: la primera consulta de cada ley
+  // tarda ~7-12 s en frio. No retrasa la conexion ni afecta a las pruebas (NODE_ENV=test);
+  // se desactiva con SWISS_LEGAL_PREWARM=0.
+  if (process["env"]["NODE_ENV"] !== "test" && process["env"]["SWISS_LEGAL_PREWARM"] !== "0") {
+    void prewarmFedlexLaws(legislationProviders, logger, prewarmController.signal);
+  }
 }
 
 main().catch((error: unknown) => {

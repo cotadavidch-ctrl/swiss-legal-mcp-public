@@ -1925,6 +1925,56 @@ describe("official Swiss case multi-candidate identity, metadata and ambiguity",
     expect(result.legal_use.comparability_eligibility).toBe("blocked");
   });
 
+  it("maps a published BGE citation when the portal links results with the current BGE-v-d-p docid", async () => {
+    setOfficialSwissCaseHttpTransportForTests(async (url) => {
+      if (url.includes("type=simple_query")) {
+        return liveResponse(
+          url,
+          bgerPublishedSearchHtml().replace(
+            "highlight_docid=atf%3A%2F%2F142-III-91%3Ade",
+            "highlight_docid=BGE-142-III-91",
+          ),
+        );
+      }
+      return liveResponse(url, bgerPublishedDocumentHtml());
+    });
+    const result = await resolveOfficialSwissCase({
+      case_reference: "BGE 142 III 91",
+      require_official_source: true,
+      require_full_text: true,
+      strict_identity_match: true,
+      retrieval_mode: "refresh",
+    });
+    expect(result.fetch).toMatchObject({
+      fetch_status: "fetch_success",
+      publication_mapping_status: "mapping_verified",
+      official_docid: "atf://142-III-91:de",
+    });
+  });
+
+  it("does not map BGE 142 III 9 to the link of BGE 142 III 91", async () => {
+    setOfficialSwissCaseHttpTransportForTests(async (url) => {
+      if (url.includes("type=simple_query")) {
+        return liveResponse(
+          url,
+          bgerPublishedSearchHtml().replace(
+            "highlight_docid=atf%3A%2F%2F142-III-91%3Ade",
+            "highlight_docid=BGE-142-III-91",
+          ),
+        );
+      }
+      return liveResponse(url, bgerPublishedDocumentHtml());
+    });
+    const result = await resolveOfficialSwissCase({
+      case_reference: "BGE 142 III 9",
+      require_official_source: true,
+      require_full_text: true,
+      strict_identity_match: true,
+      retrieval_mode: "refresh",
+    });
+    expect(result.fetch?.fetch_status).toBe("fetch_failed");
+  });
+
   it("maps a published BGE citation through the official BGer CLIR docid", async () => {
     setOfficialSwissCaseHttpTransportForTests(async (url) => {
       if (url.includes("type=simple_query")) return liveResponse(url, bgerPublishedSearchHtml());

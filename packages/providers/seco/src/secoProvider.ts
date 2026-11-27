@@ -1,6 +1,7 @@
 import {
   NotFoundError,
   ProviderUnavailableError,
+  rankByQuery,
   type DocumentId,
   type HealthStatus,
   type LegalSourceProvider,
@@ -137,15 +138,14 @@ export class SecoProvider implements LegalSourceProvider {
 
     const { items, listingUrl, retrievedAt, contentHash } = await this.loadListing(language);
 
-    const queryLower = params.query?.toLowerCase();
-    const filtered = items.filter((item) => {
-      if (queryLower && !item.title.toLowerCase().includes(queryLower)) return false;
+    const dated = items.filter((item) => {
       if (params.dateFrom && item.publicationDate && item.publicationDate < params.dateFrom)
         return false;
       if (params.dateTo && item.publicationDate && item.publicationDate > params.dateTo)
         return false;
       return true;
     });
+    const filtered = rankByQuery(dated, (item) => item.title, params.query).items;
 
     const documents = filtered.map((item) =>
       mapSecoItemToNormalizedDocument(item, { language, listingUrl, retrievedAt, contentHash }),

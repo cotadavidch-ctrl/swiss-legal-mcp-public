@@ -1,0 +1,11 @@
+# Articulos citados por la skill arrest
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 271 SchKG
+
+Art. 271 1 Der Gläubiger kann für eine fällige Forderung, soweit diese nicht durch ein Pfand gedeckt ist, Vermögensstücke des Schuldners, die sich in der Schweiz befinden, mit Arrest belegen lassen: 1. wenn der Schuldner keinen festen Wohnsitz hat; 2. wenn der Schuldner in der Absicht, sich der Erfüllung seiner Verbindlichkeiten zu entziehen, Vermögensgegenstände beiseite schafft, sich flüchtig macht oder Anstalten zur Flucht trifft; 3. wenn der Schuldner auf der Durchreise begriffen ist oder zu den Personen gehört, welche Messen und Märkte besuchen, für Forderungen, die ihrer Natur nach sofort zu erfüllen sind; 4. wenn der Schuldner nicht in der Schweiz wohnt, kein anderer Arrestgrund gegeben ist, die Forderung aber einen genügenden Bezug zur Schweiz aufweist oder auf einer Schuldanerkennung im Sinne von Artikel 82 Absatz 1 beruht; 5. wenn der Gläubiger gegen den Schuldner einen provisorischen oder einen definitiven Verlustschein besitzt; 6. wenn der Gläubiger gegen den Schuldner einen definitiven Rechtsöffnungstitel besitzt. 2 In den unter den Ziffern 1 und 2 genannten Fällen kann der Arrest auch für eine nicht verfallene Forderung verlangt werden; derselbe bewirkt gegenüber dem Schuldner die Fälligkeit der Forderung. 3 Im unter Absatz 1 Ziffer 6 genannten Fall entscheidet das Gericht bei ausländischen Entscheiden, die nach dem Übereinkommen vom 30. Oktober 2007 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen zu vollstrecken sind, auch über deren Vollstreckbarkeit.
+
+## Art. 272 SchKG
+
+Art. 272 1 Der Arrest wird vom Gericht am Betreibungsort oder am Ort, wo die Vermögensgegenstände sich befinden, bewilligt, wenn der Gläubiger glaubhaft macht, dass: 1. seine Forderung besteht; 2. ein Arrestgrund vorliegt; 3. Vermögensgegenstände vorhanden sind, die dem Schuldner gehören. 2 Wohnt der Gläubiger im Ausland und bezeichnet er keinen Zustellungsort in der Schweiz, so ist das Betreibungsamt Zustellungsort.

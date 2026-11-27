@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.2.0 - 2026-11-27
+
+- Version bump to 1.2.0 across all workspace packages and the MCP server identity.
+
+- Adds `prepare_legal_council` and `validate_legal_council`: a strategy council with five simulated voices (own lawyer, opposing counsel, favorable, strict and neutral judge). The server prepares each voice's brief from already verified material (procedural routes, known-rule deadlines, grounds, a case-law research plan) and validates what the model writes: cited norms and case law against official sources, facts used, role leakage, guarantee language, overstated confidence, undifferentiated judges, cross-review and a synthesis that hides the strongest counter-argument. Tool input is strict snake_case; an unknown field now returns an error listing the valid fields (also for nested objects).
+- Adds `analyze_case_corpus_style` (recurring formulas, structure and citations of a corpus of federal judgments, time-budgeted and resumable).
+- Procedural rules registry (ZPO, BGG, OR, DBG with literal excerpts and verification date): routes for civil claims, sale defects, appeal to the Federal Supreme Court and tax assessment feed `analyze_procedural_strategy`.
+- Federal court portal protection: request pacing with jitter and a per-minute cap, cooldown persisted to disk when the portal challenges the client, disk cache of read decisions. No bypass of any protection; requests are slower and spread out.
+- Corpus size: pagination reaches beyond the first page, dispositive formulas of single-judge decisions and simplified-procedure facts are recognised, BGE full texts are found, and a pool warning explains short corpora.
+- Citations: abbreviation-based resolution of articles ("Art. 100 BGG"), social-insurance ordinances (UVV, KVV, AVIV, IVV, AHVV, ATSV and FR/IT forms), per-work resolution preferring the in-force version, exact match when verified live.
+- Case numbers of the former Federal Insurance Court (EVG, until 2006: "I 122/06", "U 122/06", "K 45/04") are recognised, searched in the portal's own spelling and verified by their docid (checked live with I 122/06).
+- Four Swiss litigation plugins (civil, administrative and social insurance, labour, criminal) generated from one source (`plugins/src`, `node scripts/build-plugins.mjs`): 14 original skills (matter intake, chronology and evidence, deadlines, appeal, Federal Supreme Court, citation review, confidentiality, court-mail triage). Every article cited was checked against Fedlex and a test keeps skills in sync with the real tools.
+- `compute_legal_deadline`: new rule sets `ZPO_BERUFUNG_ANTWORT`, `ZPO_BERUFUNG_ANTWORT_SUMMARISCH` (Art. 312 and 314 ZPO) and `OR_MIETE_KUENDIGUNG_ANFECHTUNG` (Art. 273 OR); `stillstandExempt: false` confirms an ordinary procedure so the result is firm and no earlier "safe date" is shown.
+- `generate_rechtsbegehren` quotes only the amount and interest in a payment request; `validate_legal_council` warns with `no_authorities_cited` when no voice cites case law.
+- `analyze_procedural_strategy` now returns verified procedural rules (literal excerpts checked against Fedlex on 2026-11-24) for social insurance (ATSG), tenancy, debt enforcement (SchKG), criminal procedure (StPO), employment termination (OR 336b) and federal administrative procedure (VwVG), not only civil and tax cases. `prepare_legal_council` suggests the Federal Supreme Court chamber by subject and drops useless search words.
+- `validate_legal_council` now tells a case number the portal does not know (`authority_not_found`, error) apart from one that could not be checked (`authority_unverified`, warning); it only asserts non-existence when the portal answered and there is no sign of blocking, cooldown or network failure. Reviewer and target names of one character are accepted.
+- `generate_rechtsbegehren` no longer reports `contradictory_requests` when the remand is requested as subsidiary (eventualiter, hilfsweise) and recognises more wordings of a remand request. Family-law skill added to the civil plugin.
+- Swiss litigation plugins expanded to 104 original skills: civil 42, administrative and social insurance 39, labour 50, criminal 49, with twelve shared matter-management skills.
+- Sale and works routes include the 60-day defect-notice rules in force since 1 January 2026 (Art. 201 Abs. 4, 367 Abs. 1bis, 370 Abs. 4 OR) with a transitional-law warning, and flag Art. 219 Abs. 3 OR as repealed.
+- Every plugin skill now carries the information to request, the deliverable, typical mistakes, a final quality checklist and, where it cites law, the literal official text of each cited article (`articulos.md`, fetched from Fedlex).
+- Procedural-strategy tests write reports to a temporary folder instead of the repository.
+- Local deploy script with live smoke test and rollback (`scripts/deploy-local.mjs`).
+
 ## 1.1.0 - 2026-11-17
 
 - Version bump to 1.1.0 across all workspace packages and the MCP server identity.

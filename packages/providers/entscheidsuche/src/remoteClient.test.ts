@@ -126,6 +126,46 @@ describe("EntscheidsucheRemoteClient (transporte mockeado, sin red real)", () =>
     await client.close();
   });
 
+  it("se recupera de un fallo al conectar usando una conexion nueva (sin 'already started')", async () => {
+    let initializeAttempts = 0;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (_input: string | URL, init?: RequestInit) => {
+        if ((init?.method ?? "GET") === "GET") {
+          return new Response(null, { status: 405 });
+        }
+        const body = JSON.parse((init?.body as string | undefined) ?? "{}") as {
+          method: string;
+          id?: number;
+        };
+        if (body.method === "initialize") {
+          initializeAttempts += 1;
+          if (initializeAttempts === 1) {
+            return new Response("service unavailable", { status: 503 });
+          }
+          return jsonResponse({
+            jsonrpc: "2.0",
+            id: body.id,
+            result: {
+              protocolVersion: "2025-06-18",
+              capabilities: { tools: {} },
+              serverInfo: { name: "mock-entscheidsuche", version: "0.0.0" },
+            },
+          });
+        }
+        if (body.method === "notifications/initialized") {
+          return new Response(null, { status: 202 });
+        }
+        return toolCallResult(body.id, { total: 0, hits: [] });
+      }),
+    );
+    const client = new EntscheidsucheRemoteClient(baseConfig());
+    const result = await client.callTool("search", { query: "*" });
+    expect(result.isError).toBeFalsy();
+    expect(initializeAttempts).toBe(2);
+    await client.close();
+  });
+
   it("clasifica 429 como RateLimitedError cuando se agotan los reintentos", async () => {
     installMockFetch({
       onPost: () => new Response("too many requests", { status: 429 }),

@@ -1,3 +1,4 @@
+import { articleExcerptForCitation } from "./articleExcerpt.js";
 import { z } from "zod";
 import type { ToolContext, ToolRegistry } from "@swiss-legal-mcp/core";
 import { analyzeDecisionText } from "./decisionDocumentAnalyzer.js";
@@ -472,6 +473,20 @@ const CANTONAL_LAWS: Readonly<Record<string, Readonly<Record<string, string>>>> 
 };
 
 const SUPPORTED_ABBREVIATIONS = [
+  "UVV",
+  "OLAA",
+  "OAINF",
+  "KVV",
+  "AVIV",
+  "OACI",
+  "OADI",
+  "IVV",
+  "RAI",
+  "OAI",
+  "AHVV",
+  "RAVS",
+  "OAVS",
+  "ATSV",
   "OR",
   "CO",
   "ZGB",
@@ -679,7 +694,7 @@ async function resolveCantonalSr(
   }
 }
 
-async function checkNorm(
+export async function checkNorm(
   citation: string,
   cache: Map<string, NormCheck>,
   context: ToolContext & { signal?: AbortSignal },
@@ -737,7 +752,7 @@ async function checkNorm(
           citation,
           status: "verified_exists",
           scope: "federal",
-          officialExcerpt: current.slice(0, 600),
+          officialExcerpt: articleExcerptForCitation(current, citation),
           fullText: current.slice(0, 20_000),
           note: null,
           ...(versionAtDate ? { versionAtDate } : {}),
@@ -1219,6 +1234,21 @@ export function registerDecisionReviewTools(tools: ToolRegistry): void {
         norms: (Omit<NormCheck, "fullText"> & { termsNotInNorm: string[] })[];
         reasons: string[];
       }[] = [];
+      if (input.verifyNorms) {
+        // Las normas distintas se consultan en paralelo (maximo 4 a la vez) y quedan en la cache
+        // que usa el bucle siguiente; antes se pedian una tras otra y 3 hallazgos tardaban ~12 s.
+        const unique = [...new Set(input.findings.flatMap((f) => f.norms ?? []))];
+        for (let i = 0; i < unique.length; i += 4) {
+          await Promise.all(
+            unique.slice(i, i + 4).map((citation) =>
+              checkNorm(citation, cache, context, {
+                canton: input.canton,
+                asOfDate: input.asOfDate,
+              }),
+            ),
+          );
+        }
+      }
       for (const [index, f] of input.findings.entries()) {
         const verification = verifyQuoteAgainstText(f.quote, input.text);
         const quoteOk =

@@ -1,0 +1,14 @@
+{
+  "name": "litigacion-penal-suiza",
+  "version": "0.7.0",
+  "author": {
+    "name": "swiss-legal-mcp"
+  },
+  "description": "Litigacion penal suiza (StPO, BGG): plazos y recursos del proceso penal, y recurso al Tribunal Federal en materia penal.",
+  "keywords": [
+    "swiss-legal-mcp",
+    "legal",
+    "suiza",
+    "litigacion"
+  ]
+}

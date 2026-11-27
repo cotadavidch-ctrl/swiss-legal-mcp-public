@@ -1,0 +1,14 @@
+{
+  "name": "litigacion-administrativa-suiza",
+  "version": "0.7.0",
+  "author": {
+    "name": "swiss-legal-mcp"
+  },
+  "description": "Litigacion administrativa suiza y de seguros sociales (VwVG, ATSG, BGG): recurso administrativo federal, Einsprache y recurso cantonal, y recurso al Tribunal Federal.",
+  "keywords": [
+    "swiss-legal-mcp",
+    "legal",
+    "suiza",
+    "litigacion"
+  ]
+}

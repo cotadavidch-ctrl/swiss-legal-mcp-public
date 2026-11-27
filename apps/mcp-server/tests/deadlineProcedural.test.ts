@@ -84,6 +84,56 @@ describe("plazos ZPO y StPO", () => {
     expect(r.stillstandApplied).toBe(true);
   });
 
+  it("Berufungsantwort: 30 dias con suspension de verano, igual que la Berufung", () => {
+    const r = computeDeadline({
+      ruleSet: "ZPO_BERUFUNG_ANTWORT",
+      notificationDate: "2026-07-20",
+      notificationProof: "proven",
+    });
+    expect(r.durationDays).toBe(30);
+    expect(r.deadlineDate).toBe("2026-09-14");
+    expect(r.stillstandApplied).toBe(true);
+    expect(r.legalBasis.join(" ")).toContain("Art. 312 Abs. 2 ZPO");
+  });
+
+  it("Berufungsantwort en sumario: 10 dias y sin suspension", () => {
+    const r = computeDeadline({
+      ruleSet: "ZPO_BERUFUNG_ANTWORT_SUMMARISCH",
+      notificationDate: "2026-07-01",
+      notificationProof: "proven",
+    });
+    expect(r.durationDays).toBe(10);
+    expect(r.deadlineDate).toBe("2026-07-13");
+    expect(r.stillstandApplied).toBe(false);
+  });
+
+  it("proceso ordinario confirmado (stillstandExempt=false): no hay fecha prudente anterior y el resultado es firme", () => {
+    const base = {
+      ruleSet: "ZPO_BERUFUNG" as const,
+      notificationDate: "2026-07-20",
+      notificationProof: "proven" as const,
+    };
+    const dudoso = computeDeadline(base);
+    expect(dudoso.status).toBe("conditional");
+    expect(dudoso.safeDate).toBe("2026-08-19");
+    const confirmado = computeDeadline({ ...base, stillstandExempt: false });
+    expect(confirmado.deadlineDate).toBe("2026-09-14");
+    expect(confirmado.safeDate).toBe("2026-09-14");
+    expect(confirmado.status).toBe("computed");
+    expect(confirmado.alternativeDates).toEqual([]);
+  });
+
+  it("impugnacion del despido de alquiler: 30 dias desde la recepcion, calculo prudente sin suspension", () => {
+    const r = computeDeadline({
+      ruleSet: "OR_MIETE_KUENDIGUNG_ANFECHTUNG",
+      notificationDate: "2026-07-20",
+      notificationProof: "proven",
+    });
+    expect(r.durationDays).toBe(30);
+    expect(r.deadlineDate).toBe("2026-08-19");
+    expect(r.legalBasis.join(" ")).toContain("Art. 273 Abs. 1 OR");
+  });
+
   it("StPO Einsprache contra Strafbefehl: 10 dias desde el dia siguiente, sin suspension", () => {
     const r = computeDeadline({
       ruleSet: "STPO_EINSPRACHE_STRAFBEFEHL",

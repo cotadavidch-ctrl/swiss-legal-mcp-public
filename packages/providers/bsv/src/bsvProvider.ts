@@ -1,6 +1,7 @@
 import {
   NotFoundError,
   ProviderUnavailableError,
+  rankByQuery,
   type DocumentId,
   type HealthStatus,
   type LegalSourceProvider,
@@ -122,36 +123,41 @@ export class BsvProvider implements LegalSourceProvider {
       throw new ProviderUnavailableError(PROVIDER_ID, "No hay ninguna carpeta BSV configurada.");
     }
 
-    const queryLower = params.query?.toLowerCase();
-    const documents: NormalizedDocument[] = [];
+    const candidates: {
+      folder: (typeof folders)[number];
+      item: (typeof folders)[number]["items"][number];
+    }[] = [];
     for (const folder of folders) {
       for (const item of folder.items) {
-        if (queryLower && !item.description.toLowerCase().includes(queryLower)) continue;
         if (params.dateFrom && item.changedDate && item.changedDate < params.dateFrom) continue;
         if (params.dateTo && item.changedDate && item.changedDate > params.dateTo) continue;
-
-        const dates = extractBsvDates(item.description);
-        const syntheticVersion: BsvVersionDetail = {
-          version: item.versionCount ?? 1,
-          downloadUrl: `${this.config.baseUrl}/de/d/${item.docId}/download`,
-          isCurrent: true,
-          freeText: item.description,
-          ...(item.changedDate ? { changedDate: item.changedDate } : {}),
-          ...(dates.effectiveDate ? { effectiveDate: dates.effectiveDate } : {}),
-          ...(dates.standDate ? { standDate: dates.standDate } : {}),
-        };
-        documents.push(
-          mapBsvVersionToNormalizedDocument(syntheticVersion, {
-            docId: item.docId,
-            ...(item.abbreviation ? { abbreviation: item.abbreviation } : {}),
-            description: item.description,
-            folderUrl: folder.folderUrl,
-            retrievedAt: folder.retrievedAt,
-            contentHash: folder.contentHash,
-          }),
-        );
+        candidates.push({ folder, item });
       }
     }
+    const documents: NormalizedDocument[] = rankByQuery(
+      candidates,
+      ({ item }) => item.description,
+      params.query,
+    ).items.map(({ folder, item }) => {
+      const dates = extractBsvDates(item.description);
+      const syntheticVersion: BsvVersionDetail = {
+        version: item.versionCount ?? 1,
+        downloadUrl: `${this.config.baseUrl}/de/d/${item.docId}/download`,
+        isCurrent: true,
+        freeText: item.description,
+        ...(item.changedDate ? { changedDate: item.changedDate } : {}),
+        ...(dates.effectiveDate ? { effectiveDate: dates.effectiveDate } : {}),
+        ...(dates.standDate ? { standDate: dates.standDate } : {}),
+      };
+      return mapBsvVersionToNormalizedDocument(syntheticVersion, {
+        docId: item.docId,
+        ...(item.abbreviation ? { abbreviation: item.abbreviation } : {}),
+        description: item.description,
+        folderUrl: folder.folderUrl,
+        retrievedAt: folder.retrievedAt,
+        contentHash: folder.contentHash,
+      });
+    });
 
     const start = (page - 1) * pageSize;
     const pageItems = documents.slice(start, start + pageSize);

@@ -36,6 +36,11 @@ export function canonicalizeSwissCaseNumber(rawCaseNumber: string): string | nul
   const match = standardPattern.exec(trimmed);
 
   if (!match) {
+    // Expedientes del antiguo Tribunal Federal de Seguros (EVG): "I 122/06" -> "I_122/06".
+    const evg = /^([BCHIKMPUY])[._\s-](\d{1,4})\/(\d{2})$/i.exec(trimmed);
+    if (evg && parseInt(evg[2]!, 10) > 0) {
+      return `${evg[1]!.toUpperCase()}_${parseInt(evg[2]!, 10)}/${evg[3]}`;
+    }
     return null;
   }
 

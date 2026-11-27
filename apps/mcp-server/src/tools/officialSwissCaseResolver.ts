@@ -1,4 +1,4 @@
-import { tlsAwareFetch } from "./bgerTlsFetch.js";
+import { paceBgerRequest, tlsAwareFetch } from "./bgerTlsFetch.js";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
@@ -52,6 +52,7 @@ async function asyncFetch(
   ) {
     throw new Error("live_http_disabled_in_test");
   }
+  await paceBgerRequest(url, signal);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
   if (signal) {
@@ -65,6 +66,7 @@ async function asyncFetch(
     for (let hop = 0; ; hop += 1) {
       response = await tlsAwareFetch(currentUrl, {
         method: options.method ?? "GET",
+        paced: true,
         maxBytes: maxOfficialCaseResponseBytes,
         ...(options.body === undefined ? {} : { body: options.body }),
         headers: { "Accept-Encoding": "identity", ...options.headers },
@@ -159,6 +161,7 @@ async function liveHttpFetch(
   const redirectChain: string[] = [];
   for (let hop = 0; ; hop += 1) {
     if (!isAllowedCandidateUrl(currentUrl)) throw new Error("network_policy_blocked");
+    await paceBgerRequest(currentUrl, signal);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15_000);
     if (signal) {
@@ -168,6 +171,7 @@ async function liveHttpFetch(
     try {
       response = await tlsAwareFetch(currentUrl, {
         method: options.method ?? "GET",
+        paced: true,
         maxBytes: maxOfficialCaseResponseBytes,
         signal: controller.signal,
         headers: {
@@ -1690,6 +1694,26 @@ export function normalizeSwissCaseReference(raw: string): NormalizedCaseReferenc
       chamber_or_division: chamber.toUpperCase(),
       publication_type: "case_number",
       normalization_confidence: 0.94,
+    };
+  }
+
+  // Expedientes del antiguo Tribunal Federal de Seguros (EVG, hasta 2006): una letra, numero y ano de dos cifras ("I 122/06").
+  const evg = /^([BCHIKMPUY])[_\s.-]?(\d{1,4})\/(\d{2})$/i.exec(trimmed);
+  if (evg) {
+    const [, letter, sequence, shortYear] = evg as unknown as [string, string, string, string];
+    const year = Number(shortYear) <= 7 ? 2000 + Number(shortYear) : 1900 + Number(shortYear);
+    return {
+      raw_reference: raw,
+      normalized_reference: `${letter.toUpperCase()}_${Number(sequence)}/${shortYear}`,
+      citation_family: "federal_case_number",
+      court_family: "swiss_federal_supreme_court",
+      possible_courts: ["swiss_federal_supreme_court"],
+      possible_cantons: [],
+      decision_year: year,
+      sequence_number: sequence,
+      chamber_or_division: letter.toUpperCase(),
+      publication_type: "case_number",
+      normalization_confidence: 0.9,
     };
   }
 
@@ -3216,6 +3240,8 @@ function findBgerExactDocumentUrl(html: string, reference: string | null): strin
 
 function bgerDocIdVariants(reference: string): readonly string[] {
   const trimmed = reference.trim();
+  const evg = /^([A-Z])_(\d+)\/(\d{2})$/.exec(trimmed);
+  if (evg) return [`-${evg[1]}_${evg[2]}-${evg[3]}`];
   return [
     trimmed.replace("/", "-"),
     trimmed.replace(/[._/]/g, "-"),
@@ -3250,7 +3276,17 @@ function findBgerPublishedDocumentMapping(
     .map((match) => decodeHtmlAttribute(match[1] ?? ""))
     .map((href) => href.replaceAll("&amp;", "&"))
     .map((href) => safeDecodeUriComponent(href));
-  const exactHref = hrefs.find((href) => href.includes(docid) || href.includes(encodedDocid));
+  // El portal enlaza los resultados con dos formatos de docid: el historico
+  // `atf://142-III-91:de` y el actual `BGE-142-III-91`. Ambos apuntan al mismo
+  // documento; el formato actual se compara por valor exacto del parametro para
+  // que `BGE-142-III-9` no coincida con `BGE-142-III-91`.
+  const currentFormatDocid = new RegExp(
+    `highlight_docid=BGE-${parts.volume}-${parts.division}-${parts.page}(?:&|$)`,
+    "i",
+  );
+  const exactHref = hrefs.find(
+    (href) => href.includes(docid) || href.includes(encodedDocid) || currentFormatDocid.test(href),
+  );
   if (!exactHref) return null;
   const documentUrl = makeBgerPublishedDocumentUrl(docid);
   const plain = stripTags(html).replace(/\s+/g, " ");
@@ -4322,7 +4358,10 @@ function extractBgerReferenceFromUrl(raw: string): string | null {
   const match = /aza:\/?\/?\d{2}-\d{2}-(?:19|20)\d{2}-(\d+[A-Z])([_-])(\d+)-((?:19|20)\d{2})/i.exec(
     decoded,
   );
-  if (!match) return null;
+  if (!match) {
+    const evg = /(?:^|[^0-9A-Za-z])-?([BCHIKMPUY])_(\d+)-(\d{2})(?![0-9])/i.exec(decoded);
+    return evg ? `${evg[1]!.toUpperCase()}_${Number(evg[2])}/${evg[3]}` : null;
+  }
   const chamber = match[1]!.toUpperCase();
   const separator = match[2] === "_" ? "_" : ".";
   return `${chamber}${separator}${Number(match[3])}/${match[4]}`;
@@ -4670,7 +4709,10 @@ export function verifyCompleteness(fetch: FullTextFetchResult): CompletenessRepo
     lower_authority_reasoning: /Vorinstanz|autorité inférieure|autorità inferiore/i,
     reasoning: /Erwägung|Considérant|Considerand/i,
     final_reasoning: /Erwägung|Considérant|Considerand/i,
-    dispositive: /Demnach erkennt|Par ces motifs|Per questi motivi|Dispositiv/i,
+    dispositive: new RegExp(
+      `${DE_DISPOSITIVE_FORMULA}|${DE_DISPOSITIVE_BARE}|${FR_IT_DISPOSITIVE_FORMULA}|Dispositiv`,
+      "i",
+    ),
     costs: /Kosten|frais judiciaires|spese giudiziarie/i,
   };
   const extractionFailureSuspects = missing.filter((section) =>
@@ -7327,6 +7369,24 @@ export function extractSectionsWithEvidence(content: string): {
   return { sections, evidence };
 }
 
+/**
+ * Formulas con que el Tribunal Federal abre la parte dispositiva. Ademas de "Demnach erkennt
+ * das Bundesgericht" (sala colegiada), las decisiones del presidente, del juez unico o del
+ * miembro presidente usan "Demnach verfuegt der Praesident", "erkennt das praesidierende
+ * Mitglied", etc.; no reconocerlas dejaba esas sentencias sin dispositivo y el corpus las
+ * excluia (21 de 60 en una consulta civil real).
+ */
+const DE_DISPOSITIVE_ACTORS =
+  "(?:das\\s+Bundesgericht|das\\s+präsidierende\\s+Mitglied|der\\s+(?:Präsident|Einzelrichter|Instruktionsrichter|Abteilungspräsident)|die\\s+(?:Präsidentin|Einzelrichterin|Instruktionsrichterin|Abteilungspräsidentin))";
+const DE_DISPOSITIVE_FORMULA =
+  `Demnach\\s+(?:erkennt|beschliesst|verfügt|entscheidet)(?:\\s+${DE_DISPOSITIVE_ACTORS})?` +
+  `|(?:erkennt|beschliesst|verfügt)\\s+(?:das\\s+präsidierende\\s+Mitglied|der\\s+(?:Präsident|Einzelrichter|Instruktionsrichter)|die\\s+(?:Präsidentin|Einzelrichterin|Instruktionsrichterin))`;
+/** Decisiones simplificadas (presidente, juez unico, retiro): "..., dass ...; erkannt:" / "im Verfahren nach Art. 32 Abs. 2 BGG verfügt:". Solo al inicio de linea. */
+const DE_DISPOSITIVE_BARE =
+  "(?:im\\s+Verfahren\\s+nach\\s+Art\\.\\s*\\d+\\s+Abs\\.\\s*\\d+\\s+BGG\\s+)?(?:erkannt|beschlossen|verfügt|erkennt|beschliesst)\\s*:";
+const FR_IT_DISPOSITIVE_FORMULA =
+  "La Cour prononce|Le Tribunal fédéral prononce|Le juge unique prononce|Le Président (?:ordonne|prononce)|La Présidente (?:ordonne|prononce)|Par ces motifs|Per questi motivi|Il Tribunale federale pronuncia|Il giudice unico pronuncia";
+
 function extractJudgmentSectionsHeuristically(text: string): {
   readonly sections: Record<string, string>;
   readonly evidence: Record<string, SectionDetectionInfo>;
@@ -7369,10 +7429,10 @@ function extractJudgmentSectionsHeuristically(text: string): {
     // dispositivo en la gran mayoria de decisiones BGE publicadas donde la
     // seccion se abre con "Demnach erkennt das Bundesgericht:" sin una
     // formula de resultado en la primera frase.
-    const dispHeadingMatch =
-      /(Demnach erkennt(?:\s+das Bundesgericht)?|Das Bundesgericht erkennt|Le Tribunal fédéral prononce|Il Tribunale federale pronuncia|Par ces motifs|La Cour prononce|Dispositiv\s*:)/im.exec(
-        text,
-      );
+    const dispHeadingMatch = new RegExp(
+      `(${DE_DISPOSITIVE_FORMULA}|Das Bundesgericht erkennt|${FR_IT_DISPOSITIVE_FORMULA}|Dispositiv\\s*:)`,
+      "im",
+    ).exec(text);
     const dispOutcomeMatch =
       /(In teilweiser Gutheissung[\s\S]*?\.|Das Bundesgericht (?:heisst|weist)[\s\S]*?\.|Le Tribunal fédéral[\s\S]*?(?:admet|rejette)[\s\S]*?\.|Il Tribunale federale[\s\S]*?(?:accoglie|respinge)[\s\S]*?\.)/i.exec(
         text,
@@ -7453,8 +7513,7 @@ function extractJudgmentSectionsHeuristically(text: string): {
   // Formulas de dispositivo (parte final resolutiva). Se añade la formula
   // italiana explicita de pronunciamiento (antes solo "Per questi motivi",
   // que es el marcador de transicion pero no una formula del propio Tribunal).
-  const dispositiveMarker =
-    "(?:^|[\\r\\n]\\s*)(La Cour prononce|Le Tribunal fédéral prononce|Demnach erkennt(?:\\s+das Bundesgericht)?|Das Obergericht erkennt|erkennt das Obergericht|Par ces motifs|Per questi motivi|Il Tribunale federale pronuncia|Dispositiv\\s*:?)";
+  const dispositiveMarker = `(?:^|[\\r\\n]\\s*)(${DE_DISPOSITIVE_FORMULA}|${DE_DISPOSITIVE_BARE}|Das Obergericht erkennt|erkennt das Obergericht|${FR_IT_DISPOSITIVE_FORMULA}|Dispositiv\\s*:?)`;
   const reasoning = new RegExp(
     `(Erwägungen|Erwägung|Considérants?\\s+en\\s+droit|Considérant|En droit|Considerando\\s+in\\s+diritto|Considerand[io]|In diritto|Diritto|La Cour considère en droit|Das Bundesgericht zieht in Erwägung|Das Bundesverwaltungsgericht zieht in Erwägung|Das Bundesverwaltungsgericht stellt fest und erwägt)\\s*:?([\\s\\S]*?)${dispositiveMarker}`,
     "i",
@@ -7472,6 +7531,18 @@ function extractJudgmentSectionsHeuristically(text: string): {
       "heading",
       classifyMarkerLanguage(dispositive[1]),
     );
+  }
+  // Verfahren simplificado (presidente, juez unico): "Der Präsident hat in Erwägung, dass ...;
+  // dass ...; erkannt:". No hay apartado "Sachverhalt": los hechos y la motivacion son esa misma
+  // lista de "dass". Sin esto la sentencia se marcaba como "faltan hechos" y se excluia del corpus.
+  if (!sections["facts"]) {
+    const simplified = new RegExp(
+      `(?:hat|zieht)\\s+in\\s+Erwägung\\s*,?\\s*(dass[\\s\\S]*?)${dispositiveMarker}`,
+      "i",
+    ).exec(text);
+    if (simplified?.[1] && simplified[1].trim().length > 120) {
+      setSection("facts", simplified[1].trim(), "heading", "de");
+    }
   }
   const costsPattern =
     /Kosten|Gerichtskosten|Verfahrenskosten|Auslagen|frais judiciaires|frais de procédure|dépenses obligatoires|indemnité|émolument|spese giudiziarie|spese processuali/i;
@@ -8025,7 +8096,10 @@ function makeResolutionId(reference: string, sourceUrl: string): string {
 }
 
 function makeBgerSearchUrl(reference: string): string {
-  return `https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?from_date=&lang=de&query_words=${encodeURIComponent(reference)}&to_date=&top_subcollection_aza=all&type=simple_query`;
+  // El portal indexa los expedientes EVG con espacio ("I 122/06"), no con guion bajo.
+  const evg = /^([A-Z])_(\d+)\/(\d{2})$/.exec(reference);
+  const query = evg ? `${evg[1]} ${evg[2]}/${evg[3]}` : reference;
+  return `https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?from_date=&lang=de&query_words=${encodeURIComponent(query)}&to_date=&top_subcollection_aza=all&type=simple_query`;
 }
 
 function makeBgerPublishedSearchUrl(reference: string): string {

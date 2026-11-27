@@ -124,20 +124,45 @@ function createSizeLimitedFetch(maxBytes: number): FetchLike {
  * (ver entscheidsucheProvider.ts), que solo cachea resultados exitosos.
  */
 export class EntscheidsucheRemoteClient {
-  private readonly client: Client;
-  private readonly transport: StreamableHTTPClientTransport;
+  private client: Client;
+  private transport: StreamableHTTPClientTransport;
   private readonly breaker: CircuitBreaker;
   private connectPromise: Promise<void> | undefined;
 
   constructor(private readonly config: EntscheidsucheConfig) {
-    this.client = new Client({ name: "swiss-legal-mcp-entscheidsuche-client", version: "1.0.0" });
-    this.transport = new StreamableHTTPClientTransport(new URL(config.endpoint), {
-      fetch: createSizeLimitedFetch(config.maxResponseBytes),
-    });
+    this.client = this.createClient();
+    this.transport = this.createTransport();
     this.breaker = new CircuitBreaker(
       config.circuitBreakerFailureThreshold,
       config.circuitBreakerResetMs,
     );
+  }
+
+  private createClient(): Client {
+    return new Client({ name: "swiss-legal-mcp-entscheidsuche-client", version: "1.0.0" });
+  }
+
+  private createTransport(): StreamableHTTPClientTransport {
+    return new StreamableHTTPClientTransport(new URL(this.config.endpoint), {
+      fetch: createSizeLimitedFetch(this.config.maxResponseBytes),
+    });
+  }
+
+  /**
+   * Descarta la conexion actual y prepara una nueva. Un transporte ya iniciado
+   * no puede volver a conectarse ("already started"), asi que tras cualquier
+   * fallo de conexion o cierre hay que usar cliente y transporte nuevos.
+   */
+  private async resetConnection(): Promise<void> {
+    const oldClient = this.client;
+    this.connectPromise = undefined;
+    this.client = this.createClient();
+    this.transport = this.createTransport();
+    try {
+      await oldClient.close();
+    } catch {
+      // la conexion vieja ya estaba rota: no importa
+    }
   }
 
   get circuitState() {
@@ -146,8 +171,11 @@ export class EntscheidsucheRemoteClient {
 
   private async ensureConnected(): Promise<void> {
     if (!this.connectPromise) {
-      this.connectPromise = this.client.connect(this.transport).catch((error: unknown) => {
-        this.connectPromise = undefined;
+      const client = this.client;
+      this.connectPromise = client.connect(this.transport).catch(async (error: unknown) => {
+        if (this.client === client) {
+          await this.resetConnection();
+        }
         throw error;
       });
     }
@@ -183,6 +211,10 @@ export class EntscheidsucheRemoteClient {
         }
         this.breaker.recordFailure();
         const transient = isTransientError(error);
+        if (transient) {
+          // La conexion puede haberse cortado: el reintento debe abrir una nueva.
+          await this.resetConnection();
+        }
         if (!transient || attempt >= this.config.maxRetries) {
           throw toTypedError(error, name);
         }
@@ -201,7 +233,7 @@ export class EntscheidsucheRemoteClient {
 
   /** Cierre ordenado del cliente MCP remoto. */
   async close(): Promise<void> {
-    await this.client.close();
     this.connectPromise = undefined;
+    await this.client.close();
   }
 }

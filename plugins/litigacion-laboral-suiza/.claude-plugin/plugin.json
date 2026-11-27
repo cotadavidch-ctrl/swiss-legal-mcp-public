@@ -1,0 +1,14 @@
+{
+  "name": "litigacion-laboral-suiza",
+  "version": "0.7.0",
+  "author": {
+    "name": "swiss-legal-mcp"
+  },
+  "description": "Litigacion laboral suiza (OR, ZPO, BGG): despido, oposicion escrita y plazos, conciliacion, Berufung y recurso al Tribunal Federal con el umbral laboral.",
+  "keywords": [
+    "swiss-legal-mcp",
+    "legal",
+    "suiza",
+    "litigacion"
+  ]
+}

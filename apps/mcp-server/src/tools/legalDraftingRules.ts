@@ -616,7 +616,9 @@ export function buildRechtsbegehren(input: DraftingCaseInput) {
   };
 
   const annulment = matchingObjectiveIndexes(/annul|aufheb|cancel|aufhebung/);
-  const remand = matchingObjectiveIndexes(/remand|rückweisung|rueckweisung|neubeurteilung/);
+  const remand = matchingObjectiveIndexes(
+    /remand|rückweisung|rueckweisung|neubeurteilung|zur(?:ü|ue)ckweis|zur(?:ü|ue)ckzuweis|rückverweis|renvoi|rinvio/,
+  );
   const legalAid = matchingObjectiveIndexes(/unentgelt|legal aid|assistance juridique/);
   const suspensive = matchingObjectiveIndexes(/aufschieb|suspensive/);
   const extension = matchingObjectiveIndexes(/frist|extension|erstreck|nachfrist/);
@@ -634,24 +636,66 @@ export function buildRechtsbegehren(input: DraftingCaseInput) {
   // Una edicion de Kontoauszug es una unica pretension de extracto bancario, no dos.
   const documentEdition = documentEditionAll.filter((index) => !bankStatement.includes(index));
   const costs = matchingObjectiveIndexes(/kosten|entschädigung|entschaedigung/);
+  // Condena a pagar (Berufung civil con pretension reformatoria). Un mismo objetivo puede pedir
+  // anular y condenar: se emiten dos peticiones y nunca se pierde la parte de pago.
+  const payment = matchingObjectiveIndexes(
+    /zahl|verpflicht|payment|\bpay\b|\bpago\b|condena|condamn|paiement/,
+  );
+  // Si el acto impugnado es una sentencia de un tribunal, la peticion habla de "Urteil".
+  const courtJudgment =
+    /berufung|appel\b|apelaci/i.test(input.procedure?.remedy ?? "") ||
+    /urteil|jugement|sentenza|sentencia/i.test(input.challengedAct?.reference ?? "");
 
   if (annulment.length > 0 && remand.length > 0) {
     warnings.add("requests_require_hierarchy_review");
-    warnings.add("contradictory_requests");
+    // Pedir la devolucion expresamente como subsidiaria (eventualiter, hilfsweise...) es una
+    // jerarquia normal de pretensiones, no una contradiccion.
+    const remandIsEventual = remand.every((index) =>
+      /eventual|subsidi|hilfsweise|à titre (?:subsidiaire|éventuel)|in subordine/i.test(
+        objectives[index] ?? "",
+      ),
+    );
+    if (!remandIsEventual) warnings.add("contradictory_requests");
   }
   if (annulment.length > 0) {
     pushRequest({
       objectiveIndexes: annulment,
       kind: "Hauptantrag",
-      text: "Die angefochtene Verfügung sei aufzuheben.",
+      text: courtJudgment
+        ? "Das angefochtene Urteil sei aufzuheben."
+        : "Die angefochtene Verfügung sei aufzuheben.",
       classification: "annulment",
       supportedBy: linkedClaimIds(claims, "aufheb"),
+    });
+  }
+  if (payment.length > 0) {
+    // El importe, los intereses y el sujeto obligado se conservan tal como los formulo el usuario:
+    // la herramienta no infiere cifras ni porcentajes.
+    const originals = payment.map((index) => objectives[index]).join(" | ");
+    // Si el objetivo trae importes, la peticion cita solo "CHF ... [nebst Zins ...]" tal como se
+    // escribio; si no, se conserva la frase original entre corchetes para que revise una persona.
+    const amounts = payment.flatMap((index) =>
+      [
+        ...(objectives[index] ?? "").matchAll(
+          /(?:CHF|Fr\.)\s?\d[\d'’.\u00a0 ]*\d(?:\s+nebst\s+Zins(?:\s+zu\s+\d+(?:[.,]\d+)?\s?%)?(?:\s+seit\s+\d{1,2}\.\d{1,2}\.\d{4})?)?/g,
+        ),
+      ].map((match) => match[0].trim()),
+    );
+    pushRequest({
+      objectiveIndexes: payment,
+      kind: "Hauptantrag",
+      text:
+        amounts.length > 0
+          ? `Die Gegenpartei sei zu verpflichten, ${amounts.join(" sowie ")} zu bezahlen.`
+          : `Die Gegenpartei sei zur Zahlung zu verpflichten [Gegenstand, Betrag und Zins gemäss Antrag: ${originals}].`,
+      classification: "payment",
+      supportedBy: linkedClaimIds(claims, "zahl|verpflicht|payment|pago"),
     });
   }
   if (remand.length > 0) {
     pushRequest({
       objectiveIndexes: remand,
-      kind: annulment.length > 0 ? "Eventualantrag" : "Hauptantrag",
+      kind: annulment.length > 0 || payment.length > 0 ? "Eventualantrag" : "Hauptantrag",
       text: "Die Sache sei zur neuen Beurteilung an die Vorinstanz zurückzuweisen.",
       classification: "remand",
       supportedBy: linkedClaimIds(claims, "rückweisung|rueckweisung|neubeurteilung|new decision"),

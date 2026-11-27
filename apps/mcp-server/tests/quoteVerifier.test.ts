@@ -114,6 +114,24 @@ describe("extractQuotesFromDraft", () => {
     expect(lawSourceForAbbreviation("OR")?.eli).toContain("eli/cc/27/317_321_377");
     expect(lawSourceForAbbreviation("ATSG")?.systematicNumber).toBe("830.1");
     expect(lawSourceForAbbreviation("LPGA")?.language).toBe("fr");
+    // ordenanzas de seguros sociales (SR comprobados en Fedlex)
+    expect(lawSourceForAbbreviation("UVV")).toMatchObject({
+      systematicNumber: "832.202",
+      language: "de",
+    });
+    expect(lawSourceForAbbreviation("OLAA")).toMatchObject({
+      systematicNumber: "832.202",
+      language: "fr",
+    });
+    expect(lawSourceForAbbreviation("OAINF")).toMatchObject({
+      systematicNumber: "832.202",
+      language: "it",
+    });
+    expect(lawSourceForAbbreviation("KVV")?.systematicNumber).toBe("832.102");
+    expect(lawSourceForAbbreviation("AVIV")?.systematicNumber).toBe("837.02");
+    expect(lawSourceForAbbreviation("IVV")?.systematicNumber).toBe("831.201");
+    expect(lawSourceForAbbreviation("AHVV")?.systematicNumber).toBe("831.101");
+    expect(lawSourceForAbbreviation("ATSV")?.systematicNumber).toBe("830.11");
     expect(lawSourceForAbbreviation("XYZ")).toBeNull();
   });
 });

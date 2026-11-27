@@ -1,0 +1,11 @@
+# Articulos citados por la skill revision-zivil
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 328 ZPO
+
+Art. 328 Revisionsgründe 1 Eine Partei kann beim Gericht, welches als letzte Instanz in der Sache entschieden hat, die Revision des rechtskräftigen Entscheids verlangen, wenn: a. sie nachträglich erhebliche Tatsachen erfährt oder entscheidende Beweismittel findet, die sie im früheren Verfahren trotz gehöriger Aufmerksamkeit nicht beibringen konnte; ausgeschlossen sind Tatsachen und Beweismittel, die erst nach dem Entscheid entstanden sind; b. ein Strafverfahren ergeben hat, dass durch ein Verbrechen oder ein Vergehen zum Nachteil der betreffenden Partei auf den Entscheid eingewirkt wurde; eine Verurteilung durch das Strafgericht ist nicht erforderlich; ist das Strafverfahren nicht durchführbar, so kann der Beweis auf andere Weise erbracht werden; c. geltend gemacht wird, dass die Klageanerkennung, der Klagerückzug oder der gerichtliche Vergleich wegen formeller oder materieller Mängel unwirksam ist; d. sie einen Ausstandsgrund erst nach Abschluss des Verfahrens entdeckt und kein anderes Rechtsmittel zur Verfügung steht. 2 Die Revision wegen Verletzung der Europäischen Menschenrechtskonvention vom 4. November 1950 (EMRK) kann verlangt werden, wenn: a. der Europäische Gerichtshof für Menschenrechte in einem endgültigen Urteil (Art. 44 EMRK) festgestellt hat, dass die EMRK oder die Protokolle dazu verletzt worden sind, oder den Fall durch eine gütliche Einigung (Art. 39 EMRK) abgeschlossen hat; b. eine Entschädigung nicht geeignet ist, die Folgen der Verletzung auszugleichen; und c. die Revision notwendig ist, um die Verletzung zu beseitigen.
+
+## Art. 329 ZPO
+
+Art. 329 Revisionsgesuch und Revisionsfristen 1 Das Revisionsgesuch ist innert 90 Tagen seit Entdeckung des Revisionsgrundes schriftlich und begründet einzureichen. 2 Nach Ablauf von zehn Jahren seit Eintritt der Rechtskraft des Entscheids kann die Revision nicht mehr verlangt werden, ausser im Falle von Artikel 328 Absatz 1 Buchstabe b.

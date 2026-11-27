@@ -225,3 +225,5 @@ export {
   type TraceLink,
   type TraceRelation,
 } from "./matterModel.js";
+
+export { rankByQuery, type QueryRankResult } from "./textMatch.js";

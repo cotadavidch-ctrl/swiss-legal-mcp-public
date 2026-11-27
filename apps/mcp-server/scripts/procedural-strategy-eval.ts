@@ -10,22 +10,25 @@ import { createMcpServer } from "../src/mcpServer.js";
 import { buildRegistries } from "../src/registry.js";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+// Carpeta donde se escriben informes y paquetes. Los tests la cambian a una temporal para no
+// ensuciar el repositorio; por defecto es la raiz del proyecto.
+const OUTPUT_ROOT = process.env["SWISS_LEGAL_REPORT_ROOT"] ?? ROOT;
 const CORPUS_PATH = resolve(ROOT, "tests/fixtures/procedural-strategy/cases.json");
 const JSON_REPORT_PATH = resolve(
-  ROOT,
+  OUTPUT_ROOT,
   "docs/release/generated/procedural-strategy-evaluation.json",
 );
 const LIVE_PLAN_PATH = resolve(
-  ROOT,
+  OUTPUT_ROOT,
   "docs/release/generated/procedural-strategy-live-evaluation-plan.json",
 );
 const LIVE_REPORT_PATH = resolve(
-  ROOT,
+  OUTPUT_ROOT,
   "docs/release/generated/procedural-strategy-live-evaluation.json",
 );
-const MARKDOWN_REPORT_PATH = resolve(ROOT, "docs/procedural-strategy/evaluation-report.md");
+const MARKDOWN_REPORT_PATH = resolve(OUTPUT_ROOT, "docs/procedural-strategy/evaluation-report.md");
 const LIVE_MARKDOWN_REPORT_PATH = resolve(
-  ROOT,
+  OUTPUT_ROOT,
   "docs/procedural-strategy/live-evaluation-report.md",
 );
 

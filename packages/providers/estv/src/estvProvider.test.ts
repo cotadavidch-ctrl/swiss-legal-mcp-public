@@ -87,6 +87,19 @@ afterEach(() => {
 });
 
 describe("EstvProvider", () => {
+  it("searchDocuments acepta varias palabras que no aparecen seguidas en el titulo", async () => {
+    installMockFetch();
+    const provider = new EstvProvider(baseConfig());
+    const outcome = await provider.searchDocuments({
+      query: "Abzug Bestechungsgeldern Kreisschreiben",
+    });
+    expect(outcome.results.length).toBeGreaterThan(0);
+    const widened = await provider.searchDocuments({ query: "Bestechungsgeldern Xyzzyplugh" });
+    expect(widened.results.length).toBeGreaterThan(0);
+    const nothing = await provider.searchDocuments({ query: "Xyzzyplugh" });
+    expect(nothing.results).toEqual([]);
+  });
+
   it("searchDocuments agrega las tres paginas de listado configuradas", async () => {
     const calls = installMockFetch();
     const provider = new EstvProvider(baseConfig());

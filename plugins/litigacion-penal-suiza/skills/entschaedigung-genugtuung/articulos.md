@@ -1,0 +1,15 @@
+# Articulos citados por la skill entschaedigung-genugtuung
+
+Fuente: Fedlex, texto aleman, descargado el 2026-11-27 con `get_article`. Texto literal salvo la retirada de notas de modificacion. Confirma la version vigente antes de usarlo.
+
+## Art. 429 StPO
+
+Art. 429 Ansprüche 1 Wird die beschuldigte Person ganz oder teilweise freigesprochen oder wird das Verfahren gegen sie eingestellt, so hat sie Anspruch auf: a. eine nach dem Anwaltstarif festgelegte Entschädigung ihrer Aufwendungen für die angemessene Ausübung ihrer Verfahrensrechte, wobei beim Anwaltstarif nicht unterschieden wird zwischen der zugesprochenen Entschädigung und den Honoraren für die private Verteidigung; b. Entschädigung der wirtschaftlichen Einbussen, die ihr aus ihrer notwendigen Beteiligung am Strafverfahren entstanden sind; c. Genugtuung für besonders schwere Verletzungen ihrer persönlichen Verhältnisse, insbesondere bei Freiheitsentzug. 2 Die Strafbehörde prüft den Anspruch von Amtes wegen. Sie kann die beschuldigte Person auffordern, ihre Ansprüche zu beziffern und zu belegen. 3 Hat die beschuldigte Person eine Wahlverteidigung mit ihrer Verteidigung betraut, so steht der Anspruch auf Entschädigung nach Absatz 1 Buchstabe a ausschliesslich der Verteidigung zu unter Vorbehalt der Abrechnung mit ihrer Klientschaft. Gegen den Entschädigungsentscheid kann die Verteidigung das Rechtsmittel ergreifen, das gegen den Endentscheid zulässig ist.
+
+## Art. 430 StPO
+
+Art. 430 Herabsetzung oder Verweigerung der Entschädigung oder Genugtuung 1 Die Strafbehörde kann die Entschädigung oder Genugtuung herabsetzen oder verweigern, wenn: a. die beschuldigte Person rechtswidrig und schuldhaft die Einleitung des Verfahrens bewirkt oder dessen Durchführung erschwert hat; b. die Privatklägerschaft die beschuldigte Person zu entschädigen hat; oder c. die Aufwendungen der beschuldigten Person geringfügig sind. 2 Im Rechtsmittelverfahren können Entschädigung und Genugtuung zudem herabgesetzt werden, wenn die Voraussetzungen von Artikel 428 Absatz 2 erfüllt sind.
+
+## Art. 431 StPO
+
+Art. 431 Entschädigung und Genugtuung wegen rechtswidrig angewandter Zwangsmassnahmen und überlanger Haft 1 Sind gegenüber der beschuldigten Person rechtswidrig Zwangsmassnahmen angewandt worden, so spricht ihr die Strafbehörde eine angemessene Entschädigung und Genugtuung zu. 2 Im Fall von Untersuchungs- und Sicherheitshaft besteht der Anspruch, wenn die zulässige Haftdauer überschritten ist und der übermässige Freiheitsentzug nicht an die wegen anderer Straftaten ausgesprochenen Sanktionen angerechnet werden kann. 3 Der Anspruch nach Absatz 2 entfällt, wenn die beschuldigte Person: a. zu einer Geldstrafe, zu gemeinnütziger Arbeit oder zu einer Busse verurteilt wird, die umgewandelt eine Freiheitsstrafe ergäbe, die nicht wesentlich kürzer wäre als die ausgestandene Untersuchungs- und Sicherheitshaft; b. zu einer bedingten Freiheitsstrafe verurteilt wird, deren Dauer die ausgestandene Untersuchungs- und Sicherheitshaft überschreitet.
